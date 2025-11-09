@@ -10,11 +10,13 @@ const languageOptions = [
 const hoursContent = {
   en: {
     title: 'Opening Hours',
-    subtitle: 'We look forward to welcoming you to the Hairsalon.',
+    subtitle: 'We look forward to welcoming you to the salon.',
     scheduleHeading: 'Opening hours',
     schedule: [
-      { day: 'Monday – Wednesday', hours: '08:30 – 14:00' },
-      { day: 'Tuesday – Thursday', hours: '08:30 – 13:30 / 17:30 – 20:00' },
+      { day: 'Monday', closed: true },
+      { day: 'Tuesday', hours: '08:30 – 13:30 / 17:30 – 20:00' },
+      { day: 'Wednesday', hours: '08:30 – 14:00' },
+      { day: 'Thursday', hours: '08:30 – 13:30 / 17:30 – 20:00' },
       { day: 'Friday', hours: '08:30 – 18:00' },
       { day: 'Saturday', hours: '08:30 – 15:00' }
     ],
@@ -24,15 +26,18 @@ const hoursContent = {
     phoneLabel: 'Phone',
     phoneDisplay: '210 3465 554',
     callCta: 'Call us',
-    facebookCta: 'Facebook Page'
+    facebookCta: 'Facebook Page',
+    closedLabel: 'Closed'
   },
   el: {
     title: 'Ωράριο Λειτουργίας',
-    subtitle: 'Σας περιμένουμε στο κομμωτήριο μας.',
+    subtitle: 'Σας περιμένουμε στο σαλόνι μας.',
     scheduleHeading: 'Ωράριο',
     schedule: [
-      { day: 'Δευτέρα - Τετάρτη', hours: '08:30 - 14:00' },
-      { day: 'Τρίτη - Πέμπτη', hours: '08:30 - 13:30 / 17:30 - 20:00' },
+      { day: 'Δευτέρα', closed: true },
+      { day: 'Τρίτη', hours: '08:30 - 13:30 / 17:30 - 20:00' },
+      { day: 'Τετάρτη', hours: '08:30 - 14:00' },
+      { day: 'Πέμπτη', hours: '08:30 - 13:30 / 17:30 - 20:00' },
       { day: 'Παρασκευή', hours: '08:30 - 18:00' },
       { day: 'Σάββατο', hours: '08:30 - 15:00' }
     ],
@@ -42,7 +47,8 @@ const hoursContent = {
     phoneLabel: 'Τηλέφωνο',
     phoneDisplay: '210 34 65 554',
     callCta: 'Κάλεσέ μας',
-    facebookCta: 'Σελίδα στο Facebook'
+    facebookCta: 'Σελίδα στο Facebook',
+    closedLabel: 'Κλειστά'
   }
 };
 
@@ -81,9 +87,13 @@ const ContactForm = ({ language, setLanguage }) => {
       <p className="contact-description">{content.subtitle}</p>
       <div className="hours-table" role="list" aria-label={content.scheduleHeading}>
         {content.schedule.map((entry) => (
-          <div key={`${entry.day}-${entry.hours}`} className="hours-row" role="listitem">
+          <div
+            key={`${entry.day}-${entry.hours || 'closed'}`}
+            className={`hours-row${entry.closed ? ' closed' : ''}`}
+            role="listitem"
+          >
             <span className="hours-day">{entry.day}</span>
-            <span className="hours-time">{entry.hours}</span>
+            <span className="hours-time">{entry.closed ? content.closedLabel : entry.hours}</span>
           </div>
         ))}
       </div>
