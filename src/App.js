@@ -13,6 +13,7 @@ import Footer from './components/Footer';
 import Home from './pages/Home';
 import Services from './pages/Services';
 import Contact from './pages/Contact';
+import Chatbot from './components/Chatbot';
 import './App.css';
 import BackgroundAnimation from './components/BackgroundAnimation'; // Import the new component
 
@@ -129,6 +130,7 @@ const AppContent = () => {
               </Routes>
             </main>
             <Footer />
+            <Chatbot language={language} />
           </Content>
         </Layout>
       </Layout>
