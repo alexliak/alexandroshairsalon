@@ -15,6 +15,7 @@ const responseData = {
       services: ['service', 'price', 'cost', 'menu', 'cut', 'color', 'treatment', 'styling'],
       appointment: ['appointment', 'book', 'reservation']
     },
+    languageToggleLabel: 'Switch chatbot language',
     categories: [
       {
         keywords: ['hour', 'open', 'close', 'schedule', 'opening', 'time'],
@@ -56,6 +57,7 @@ const responseData = {
       services: ['υπηρεσιες', 'τιμες', 'κοστος', 'μενου', 'κουρεμα', 'χρωμα', 'θεραπεια', 'χτενισμα'],
       appointment: ['ραντεβου', 'κρατηση', 'κλεισω']
     },
+    languageToggleLabel: 'Αλλαγή γλώσσας συνομιλητή',
     categories: [
       {
         keywords: ['ωραριο', 'δουλευετε', 'ανοιχτα', 'κλειστα', 'ωρες', 'ωρα'],
@@ -122,7 +124,7 @@ const serviceDetails = {
   }
 };
 
-const Chatbot = ({ language = 'el' }) => {
+const Chatbot = ({ language = 'el', setLanguage }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [inputValue, setInputValue] = useState('');
   const [messages, setMessages] = useState([]);
@@ -237,14 +239,36 @@ const Chatbot = ({ language = 'el' }) => {
         <div className="chatbot-window" aria-label="Website assistant">
           <header className="chatbot-header">
             <div>Alexandros Hair Salon</div>
-            <button
-              type="button"
-              className="chatbot-close"
-              onClick={() => setIsOpen(false)}
-              aria-label="Close assistant"
-            >
-              <CloseOutlined />
-            </button>
+            <div className="chatbot-actions">
+              {typeof setLanguage === 'function' ? (
+                <div className="chatbot-lang-toggle" role="group" aria-label={content.languageToggleLabel}>
+                  <button
+                    type="button"
+                    className={`chatbot-lang-btn ${language === 'en' ? 'active' : ''}`}
+                    onClick={() => setLanguage('en')}
+                    aria-pressed={language === 'en'}
+                  >
+                    EN
+                  </button>
+                  <button
+                    type="button"
+                    className={`chatbot-lang-btn ${language === 'el' ? 'active' : ''}`}
+                    onClick={() => setLanguage('el')}
+                    aria-pressed={language === 'el'}
+                  >
+                    EL
+                  </button>
+                </div>
+              ) : null}
+              <button
+                type="button"
+                className="chatbot-close"
+                onClick={() => setIsOpen(false)}
+                aria-label="Close assistant"
+              >
+                <CloseOutlined />
+              </button>
+            </div>
           </header>
           <div className="chatbot-messages" role="log" aria-live="polite">
             {messages.map((message, index) => (

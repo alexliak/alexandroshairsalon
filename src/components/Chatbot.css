@@ -55,6 +55,44 @@
   letter-spacing: 0.05em;
 }
 
+.chatbot-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.chatbot-lang-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: rgba(18, 18, 25, 0.3);
+  border-radius: 999px;
+  padding: 3px;
+}
+
+.chatbot-lang-btn {
+  padding: 4px 10px;
+  border-radius: 999px;
+  border: none;
+  background: transparent;
+  color: #fef7ff;
+  font-size: 0.75rem;
+  letter-spacing: 0.06em;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.chatbot-lang-btn:hover,
+.chatbot-lang-btn:focus {
+  background: rgba(237, 147, 237, 0.35);
+  outline: none;
+}
+
+.chatbot-lang-btn.active {
+  background: rgba(237, 147, 237, 0.8);
+  color: #120f18;
+}
+
 .chatbot-close {
   background: transparent;
   border: none;

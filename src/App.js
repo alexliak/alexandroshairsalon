@@ -130,7 +130,7 @@ const AppContent = () => {
               </Routes>
             </main>
             <Footer />
-            <Chatbot language={language} />
+            <Chatbot language={language} setLanguage={setLanguage} />
           </Content>
         </Layout>
       </Layout>
