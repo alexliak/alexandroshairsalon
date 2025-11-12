@@ -46,4 +46,42 @@
 @media (max-width: 768px) {
   .homeA-container { gap: 22px; padding: 12px; }
   .language-toggle-wrapper { justify-content: center; }
+
+  .heroA-banner::before {
+    padding-top: 68%;
+  }
+
+  .heroA-text {
+    padding: 18px;
+    gap: 8px;
+  }
+
+  .heroA-title {
+    font-size: 1.6rem;
+    line-height: 1.2;
+  }
+
+  .heroA-lead {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    max-width: 90%;
+  }
+}
+
+@media (max-width: 520px) {
+  .heroA-banner::before {
+    padding-top: 80%;
+  }
+
+  .heroA-text {
+    padding: 16px;
+  }
+
+  .heroA-title {
+    font-size: 1.35rem;
+  }
+
+  .heroA-lead {
+    font-size: 0.88rem;
+  }
 }
