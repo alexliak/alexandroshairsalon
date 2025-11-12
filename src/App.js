@@ -1,21 +1,21 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Layout, Menu } from 'antd';
-import { BrowserRouter as Router, Route, Routes, Link, useLocation } from 'react-router-dom';
 import {
   HomeOutlined,
-  AppstoreOutlined,
-  MailOutlined,
+  ScissorOutlined,
+  ClockCircleOutlined,
   PhoneOutlined,
-  FacebookOutlined,
   EnvironmentOutlined,
+  FacebookOutlined
 } from '@ant-design/icons';
+import { BrowserRouter as Router, Routes, Route, Link, useLocation } from 'react-router-dom';
 import Footer from './components/Footer';
 import Home from './pages/Home';
 import Services from './pages/Services';
 import Contact from './pages/Contact';
 import Chatbot from './components/Chatbot';
+import AccessibilityControls from './components/AccessibilityControls';
 import './App.css';
-import BackgroundAnimation from './components/BackgroundAnimation'; // Import the new component
 
 const { Sider, Content } = Layout;
 const { SubMenu } = Menu;
@@ -45,6 +45,10 @@ const navLabels = {
 const AppContent = () => {
   const [collapsed, setCollapsed] = useState(false);
   const [language, setLanguage] = useState('en');
+  const [accessibility, setAccessibility] = useState({
+    largeText: false,
+    highContrast: false
+  });
   const location = useLocation();
   const logoSrc = `${process.env.PUBLIC_URL}/images/logo.jpg`;
   const labels = navLabels[language];
@@ -57,10 +61,47 @@ const AppContent = () => {
     return isGreek ? 'Αλλαγή γλώσσας στα Ελληνικά' : 'Switch language to Greek';
   };
 
+  useEffect(() => {
+    const classMap = {
+      largeText: 'accessibility-large-text',
+      highContrast: 'accessibility-high-contrast'
+    };
+
+    Object.entries(classMap).forEach(([key, className]) => {
+      if (accessibility[key]) {
+        document.body.classList.add(className);
+      } else {
+        document.body.classList.remove(className);
+      }
+    });
+
+    return () => {
+      Object.values(classMap).forEach((className) => document.body.classList.remove(className));
+    };
+  }, [accessibility]);
+
+  const toggleAccessibility = (key) => {
+    setAccessibility((prev) => ({
+      ...prev,
+      [key]: !prev[key]
+    }));
+  };
+
+  const handleSkipToMain = (event) => {
+    event.preventDefault();
+    const main = document.getElementById('main-content');
+    if (main) {
+      main.setAttribute('tabindex', '-1');
+      main.focus({ preventScroll: true });
+      window.scrollTo({ top: main.offsetTop, behavior: 'smooth' });
+    }
+  };
+
   return (
     <>
-      <a className="skip-link" href="#main-content">{isGreek ? 'Μετάβαση στο περιεχόμενο' : 'Skip to main content'}</a>
-      <BackgroundAnimation />
+      <a className="skip-link" href="#main-content" onClick={handleSkipToMain}>
+        {isGreek ? 'Μετάβαση στο περιεχόμενο' : 'Skip to main content'}
+      </a>
       <Layout className="fullscreen-layout">
         <Sider
           theme="dark"
@@ -107,10 +148,10 @@ const AppContent = () => {
             <Menu.Item key="/" icon={<HomeOutlined />}>
               <Link to="/">{labels.home}</Link>
             </Menu.Item>
-            <Menu.Item key="/services" icon={<AppstoreOutlined />}>
+            <Menu.Item key="/services" icon={<ScissorOutlined />}>
               <Link to="/services">{labels.services}</Link>
             </Menu.Item>
-            <Menu.Item key="/hours" icon={<MailOutlined />}>
+            <Menu.Item key="/hours" icon={<ClockCircleOutlined />}>
               <Link to="/hours">{labels.hours}</Link>
             </Menu.Item>
             <SubMenu key="/social" icon={<FacebookOutlined />} title="Social">
@@ -119,14 +160,37 @@ const AppContent = () => {
               </Menu.Item>
             </SubMenu>
           </Menu>
+          <div className="sidebar-accessibility">
+            <AccessibilityControls
+              language={language}
+              settings={accessibility}
+              onToggle={toggleAccessibility}
+              inline
+              collapsed={collapsed}
+            />
+          </div>
         </Sider>
         <Layout className="content-layout">
           <Content className="content-container">
             <main className="content" id="main-content" tabIndex="-1">
               <Routes>
-                <Route path="/" element={<Home language={language} setLanguage={setLanguage} />} />
-                <Route path="/services" element={<Services language={language} setLanguage={setLanguage} />} />
-                <Route path="/hours" element={<Contact language={language} setLanguage={setLanguage} />} />
+                <Route
+                  path="/"
+                  element={(
+                    <Home
+                      language={language}
+                      setLanguage={setLanguage}
+                    />
+                  )}
+                />
+                <Route
+                  path="/services"
+                  element={<Services language={language} setLanguage={setLanguage} />}
+                />
+                <Route
+                  path="/hours"
+                  element={<Contact language={language} setLanguage={setLanguage} />}
+                />
               </Routes>
             </main>
             <Footer />

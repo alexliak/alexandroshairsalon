@@ -18,12 +18,12 @@ const languageOptions = [
 ];
 
 const carouselImages = [
-  '/images/portfolio/01.jpg',
-  '/images/portfolio/02.jpg',
-  '/images/portfolio/03.jpg',
+    '/images/portfolio/01.jpg',
+    '/images/portfolio/02.jpg',
+    '/images/portfolio/03.jpg',
   '/images/portfolio/04.jpg',
   '/images/portfolio/hairdresser-grooming-their-client.jpg'
-];
+  ];
 
 const homeContent = {
   en: {
@@ -149,7 +149,7 @@ const Home = ({ language, setLanguage }) => {
               </button>
             ))}
           </div>
-        </div>
+      </div>
         <section className="cardA-section">
           <h2 className="section-title">
             <HistoryOutlined /> {content.story.title}
@@ -174,9 +174,9 @@ const Home = ({ language, setLanguage }) => {
               <div key={text} className="highlight-card">
                 <span className="highlight-icon" aria-hidden="true"><Icon /></span>
                 <p>{text}</p>
-              </div>
+            </div>
             ))}
-          </div>
+            </div>
         </section>
 
         <section className="cardA-section">
@@ -187,9 +187,9 @@ const Home = ({ language, setLanguage }) => {
                 <span className="philosophy-icon" aria-hidden="true"><Icon /></span>
                 <h3>{title}</h3>
                 <p>{body}</p>
-              </div>
+            </div>
             ))}
-          </div>
+      </div>
         </section>
       </main>
     </div>
