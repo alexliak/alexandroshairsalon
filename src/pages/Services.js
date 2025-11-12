@@ -309,7 +309,7 @@ const Services = ({ language, setLanguage }) => {
                   {category.services.map((service) => (
                     <tr key={service.name}>
                       <th scope="row">{service.name}</th>
-                      <td>{service.price}</td>
+                      <td data-label={content.columnHeaders.price}>{service.price}</td>
                     </tr>
                   ))}
                 </tbody>
