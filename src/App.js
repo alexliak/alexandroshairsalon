@@ -109,6 +109,7 @@ const AppContent = () => {
           collapsed={collapsed}
           onCollapse={(value) => setCollapsed(value)}
           breakpoint="lg"
+          collapsedWidth={64}
           onBreakpoint={(broken) => {
             setCollapsed(broken);
           }}
