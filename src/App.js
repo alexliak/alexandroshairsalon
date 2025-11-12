@@ -119,7 +119,11 @@ const AppContent = () => {
             <img src={logoSrc} alt="Alexandros Hair Salon logo" className="logo-image" />
             {!collapsed && <span className="logo-text">Alexandros Hair Salon</span>}
           </div>
-          <div className="language-toggle sidebar-language-toggle" role="group" aria-label={languageToggleLabel}>
+          <div
+            className={`language-toggle sidebar-language-toggle${collapsed ? ' compact' : ''}`}
+            role="group"
+            aria-label={languageToggleLabel}
+          >
             {languageOptions.map((option) => (
               <button
                 key={option.value}
