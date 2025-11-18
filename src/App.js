@@ -6,7 +6,9 @@ import {
   ClockCircleOutlined,
   PhoneOutlined,
   EnvironmentOutlined,
-  FacebookOutlined
+  FacebookOutlined,
+  MenuOutlined,
+  CloseOutlined
 } from '@ant-design/icons';
 import { BrowserRouter as Router, Routes, Route, Link, useLocation } from 'react-router-dom';
 import Footer from './components/Footer';
@@ -44,7 +46,9 @@ const navLabels = {
 
 const AppContent = () => {
   const [collapsed, setCollapsed] = useState(false);
-  const [language, setLanguage] = useState('en');
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 1024);
+  const [language, setLanguage] = useState('el');
   const [accessibility, setAccessibility] = useState({
     largeText: false,
     highContrast: false
@@ -80,6 +84,29 @@ const AppContent = () => {
     };
   }, [accessibility]);
 
+  useEffect(() => {
+    if (mobileMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [mobileMenuOpen]);
+
+  useEffect(() => {
+    const handleResize = () => {
+      const mobile = window.innerWidth <= 1024;
+      setIsMobile(mobile);
+      if (!mobile) {
+        setMobileMenuOpen(false);
+      }
+    };
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
   const toggleAccessibility = (key) => {
     setAccessibility((prev) => ({
       ...prev,
@@ -97,30 +124,59 @@ const AppContent = () => {
     }
   };
 
+  const handleMenuClick = () => {
+    setMobileMenuOpen(false);
+  };
+
+  const toggleMobileMenu = () => {
+    setMobileMenuOpen(!mobileMenuOpen);
+  };
+
+  const closeMobileMenu = () => {
+    setMobileMenuOpen(false);
+  };
+
   return (
     <>
       <a className="skip-link" href="#main-content" onClick={handleSkipToMain}>
         {isGreek ? 'Μετάβαση στο περιεχόμενο' : 'Skip to main content'}
       </a>
+      <button
+        className="mobile-menu-toggle"
+        onClick={toggleMobileMenu}
+        aria-label={isGreek ? 'Άνοιγμα μενού' : 'Open menu'}
+        aria-expanded={mobileMenuOpen}
+        aria-controls="mobile-sidebar"
+      >
+        {mobileMenuOpen ? <CloseOutlined /> : <MenuOutlined />}
+      </button>
+      {mobileMenuOpen && (
+        <div className="mobile-menu-overlay" onClick={closeMobileMenu} aria-hidden="true" />
+      )}
       <Layout className="fullscreen-layout">
         <Sider
           theme="dark"
-          collapsible
+          collapsible={!isMobile}
           collapsed={collapsed}
           onCollapse={(value) => setCollapsed(value)}
           breakpoint="lg"
           collapsedWidth={64}
           onBreakpoint={(broken) => {
-            setCollapsed(broken);
+            setIsMobile(broken);
+            if (broken) {
+              setCollapsed(false);
+              setMobileMenuOpen(false);
+            }
           }}
-          className="sidebar-robot"
+          className={`sidebar-robot ${mobileMenuOpen ? 'mobile-open' : ''}`}
+          id="mobile-sidebar"
         >
           <div className="logo">
             <img src={logoSrc} alt="Alexandros Hair Salon logo" className="logo-image" />
-            {!collapsed && <span className="logo-text">Alexandros Hair Salon</span>}
+            {(!collapsed || isMobile) && <span className="logo-text">Alexandros Hair Salon</span>}
           </div>
           <div
-            className={`language-toggle sidebar-language-toggle${collapsed ? ' compact' : ''}`}
+            className={`language-toggle sidebar-language-toggle${collapsed && !isMobile ? ' compact' : ''}`}
             role="group"
             aria-label={languageToggleLabel}
           >
@@ -137,7 +193,7 @@ const AppContent = () => {
               </button>
             ))}
           </div>
-          <Menu theme="dark" mode="inline" selectedKeys={[location.pathname]}>
+          <Menu theme="dark" mode="inline" selectedKeys={[location.pathname]} onClick={handleMenuClick}>
             <Menu.Item key="/find-us" icon={<EnvironmentOutlined />}>
               <a
                 href="https://www.google.com/maps/place/alexandroshairsalon/@37.976933,23.7162736,17z/data=!3m1!4b1!4m6!3m5!1s0x14a1bd200f79f18d:0x3024d28633f32b4!8m2!3d37.976933!4d23.7162736!16s%2Fg%2F11cm0h21cx?entry=ttu"
@@ -171,7 +227,7 @@ const AppContent = () => {
               settings={accessibility}
               onToggle={toggleAccessibility}
               inline
-              collapsed={collapsed}
+              collapsed={collapsed && !isMobile}
             />
           </div>
         </Sider>

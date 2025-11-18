@@ -41,11 +41,11 @@ const homeContent = {
       title: 'Our Story',
       paragraphs: [
         'Founded in 1992 by master stylist Giota Liakopoulou, our salon began as a vision to bring professional, personalised hair care to the Thiseio community.',
-        'In 2001, Alexandros Liakopoulou joined the family tradition, bringing fresh perspectives and advanced training from prestigious academies.'
+        'In 2004, Alexandros Liakopoulou joined the family tradition, bringing fresh perspectives and advanced training from prestigious academies.'
       ],
       milestones: [
         { year: '1992', description: 'Salon founded by master stylist Giota Liakopoulou' },
-        { year: '2001', description: 'Alexandros joins after extensive international training' },
+        { year: '2004', description: 'Alexandros joins after extensive training' },
         { year: 'Today', description: 'Serving thousands of satisfied clients with consistent excellence' }
       ]
     },
@@ -82,11 +82,11 @@ const homeContent = {
       title: 'Η Ιστορία μας',
       paragraphs: [
         'Το 1992 η Γιώτα Λιακοπούλου δημιούργησε ένα χώρο επαγγελματικής, προσωπικής περιποίησης στο Θησείο.',
-        'Το 2001 ο Αλέξανδρος συνέχισε την παράδοση με νέες ιδέες και εκπαίδευση από καταξιωμένες ακαδημίες.'
+        'Το 2004 ο Αλέξανδρος συνέχισε την παράδοση με νέες ιδέες και εκπαίδευση από καταξιωμένες ακαδημίες.'
       ],
       milestones: [
         { year: '1992', description: 'Ίδρυση του σαλονιού από τη Γιώτα Λιακοπούλου' },
-        { year: '2001', description: 'Ο Αλέξανδρος εντάσσεται μετά από διεθνή εκπαίδευση' },
+        { year: '2004', description: 'Ο Αλέξανδρος εντάσσεται μετά από εκπαίδευση' },
         { year: 'Σήμερα', description: 'Χιλιάδες ευχαριστημένοι πελάτες με συνέπεια' }
       ]
     },

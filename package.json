@@ -19,7 +19,8 @@
         "start": "react-scripts start",
         "build": "react-scripts build",
         "test": "react-scripts test",
-        "eject": "react-scripts eject"
+        "eject": "react-scripts eject",
+        "convert-logo": "node scripts/convert-logo.js"
     },
     "eslintConfig": {
         "extends": [
@@ -42,15 +43,16 @@
     "devDependencies": {
         "autoprefixer": "^10.4.19",
         "postcss": "^8.4.39",
+        "sharp": "^0.34.5",
         "tailwindcss": "^3.4.4"
-    }, 
+    },
     "overrides": {
-    "nth-check": "^2.1.1",
-    "css-select": "^4.3.0",
-    "svgo": "^2.8.0",
-    "@svgr/plugin-svgo": "^6.5.1",
-    "postcss": "^8.4.39",
-    "resolve-url-loader": "^5.0.0",
-    "webpack-dev-server": "^4.15.1"
+        "nth-check": "^2.1.1",
+        "css-select": "^4.3.0",
+        "svgo": "^2.8.0",
+        "@svgr/plugin-svgo": "^6.5.1",
+        "postcss": "^8.4.39",
+        "resolve-url-loader": "^5.0.0",
+        "webpack-dev-server": "^4.15.1"
     }
 }
