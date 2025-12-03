@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import {
   ScissorOutlined,
   BgColorsOutlined,
@@ -7,7 +8,8 @@ import {
   PhoneOutlined,
   StarOutlined,
   HighlightOutlined,
-  InfoCircleOutlined
+  InfoCircleOutlined,
+  ArrowRightOutlined
 } from '@ant-design/icons';
 import './Services.css';
 
@@ -25,6 +27,7 @@ const serviceContent = {
     contactNote: 'For more information call us at ',
     phoneDisplay: '210 3465 554',
     phoneAriaLabel: 'Call Alexandros Hair Salon',
+    ctaContact: 'View opening hours',
     categories: [
       {
         key: 'wash',
@@ -135,9 +138,10 @@ const serviceContent = {
     intro:
       'Ένας κατανοητός κατάλογος με τις βασικές υπηρεσίες και τις τιμές μας. Για εξατομικευμένες ανάγκες είμαστε πάντα διαθέσιμοι να συζητήσουμε.',
     columnHeaders: { service: 'Υπηρεσία', price: 'Τιμή' },
-    contactNote: 'Για περισσότερες πληροφορίες καλέστε μας στο ',
-    phoneDisplay: '210 3465 554',
-    phoneAriaLabel: 'Επικοινωνία με το Alexandros Hair Salon',
+      contactNote: 'Για περισσότερες πληροφορίες καλέστε μας στο ',
+      phoneDisplay: '210 3465 554',
+      phoneAriaLabel: 'Επικοινωνία με το Alexandros Hair Salon',
+      ctaContact: 'Δείτε το ωράριο λειτουργίας',
     categories: [
       {
         key: 'wash',
@@ -345,6 +349,11 @@ const Services = ({ language, setLanguage }) => {
         </a>
         .
       </p>
+      <div className="services-cta-links">
+        <Link to="/hours" className="services-cta-link">
+          {content.ctaContact} <ArrowRightOutlined />
+        </Link>
+      </div>
       <div className="phone-icon-container">
         <a href="tel:+302103465554">
           <PhoneOutlined className="phone-icon" aria-label={content.phoneAriaLabel} />

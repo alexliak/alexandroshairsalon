@@ -24,11 +24,22 @@ const CustomCarousel = ({ images }) => {
     return () => clearInterval(shuffleInterval);
   }, [images]);
 
+  const getImageAlt = (imagePath) => {
+    const imageName = imagePath.split('/').pop().replace(/\.(jpg|jpeg|png)$/i, '');
+    return `Alexandros Hair Salon - Κομμωτήριο Θησείο, κέντρο Αθήνας - ${imageName}`;
+  };
+
   return (
     <Carousel autoplay>
       {shuffledImages.map((image, index) => (
         <div key={index} className="carousel-slide">
-          <img src={image} alt={`slide-${index}`} className="carousel-image" />
+          <img 
+            src={image} 
+            alt={getImageAlt(image)} 
+            className="carousel-image"
+            loading={index === 0 ? "eager" : "lazy"}
+            decoding="async"
+          />
         </div>
       ))}
     </Carousel>

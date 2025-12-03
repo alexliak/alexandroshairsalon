@@ -1,5 +1,6 @@
 import React from 'react';
-import { PhoneOutlined, FacebookOutlined, EnvironmentOutlined, ClockCircleOutlined } from '@ant-design/icons';
+import { Link } from 'react-router-dom';
+import { PhoneOutlined, FacebookOutlined, EnvironmentOutlined, ClockCircleOutlined, ArrowRightOutlined } from '@ant-design/icons';
 import './Contact.css';
 
 const languageOptions = [
@@ -27,7 +28,8 @@ const hoursContent = {
     phoneDisplay: '210 3465 554',
     callCta: 'Call us',
     facebookCta: 'Facebook Page',
-    closedLabel: 'Closed'
+    closedLabel: 'Closed',
+    ctaServices: 'View our services'
   },
   el: {
     title: 'Ωράριο Λειτουργίας',
@@ -48,7 +50,8 @@ const hoursContent = {
     phoneDisplay: '210 34 65 554',
     callCta: 'Κάλεσέ μας',
     facebookCta: 'Σελίδα στο Facebook',
-    closedLabel: 'Κλειστά'
+    closedLabel: 'Κλειστά',
+    ctaServices: 'Δείτε τις υπηρεσίες μας'
   }
 };
 
@@ -117,6 +120,11 @@ const ContactForm = ({ language, setLanguage }) => {
         >
           <FacebookOutlined aria-hidden="true" /> <span>{content.facebookCta}</span>
         </a>
+      </div>
+      <div className="contact-cta-links">
+        <Link to="/services" className="contact-cta-link">
+          {content.ctaServices} <ArrowRightOutlined />
+        </Link>
       </div>
     </div>
   );

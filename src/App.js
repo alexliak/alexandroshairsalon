@@ -84,6 +84,37 @@ const AppContent = () => {
     };
   }, [accessibility]);
 
+  // Dynamic canonical URL and title based on route
+  useEffect(() => {
+    const baseUrl = 'https://alexandroshairsalon.gr';
+    const canonicalMap = {
+      '/': `${baseUrl}/`,
+      '/services': `${baseUrl}/services`,
+      '/hours': `${baseUrl}/hours`
+    };
+
+    const titleMap = {
+      '/': 'Alexandros Hair Salon | Κομμωτήριο Κέντρο Αθήνας - Θησείο | Από το 1992',
+      '/services': 'Υπηρεσίες & Τιμές | Alexandros Hair Salon | Κομμωτήριο Θησείο',
+      '/hours': 'Ωράριο Λειτουργίας | Alexandros Hair Salon | Κομμωτήριο Θησείο'
+    };
+
+    const canonicalUrl = canonicalMap[location.pathname] || `${baseUrl}${location.pathname}`;
+    const pageTitle = titleMap[location.pathname] || 'Alexandros Hair Salon';
+
+    // Update canonical link
+    let canonicalLink = document.querySelector('link[rel="canonical"]');
+    if (!canonicalLink) {
+      canonicalLink = document.createElement('link');
+      canonicalLink.setAttribute('rel', 'canonical');
+      document.head.appendChild(canonicalLink);
+    }
+    canonicalLink.setAttribute('href', canonicalUrl);
+
+    // Update page title
+    document.title = pageTitle;
+  }, [location.pathname]);
+
   useEffect(() => {
     if (mobileMenuOpen) {
       document.body.style.overflow = 'hidden';
@@ -172,7 +203,7 @@ const AppContent = () => {
           id="mobile-sidebar"
         >
           <div className="logo">
-            <img src={logoSrc} alt="Alexandros Hair Salon logo" className="logo-image" />
+            <img src={logoSrc} alt="Alexandros Hair Salon - Κομμωτήριο κέντρο Αθήνας, Θησείο" className="logo-image" />
             {(!collapsed || isMobile) && <span className="logo-text">Alexandros Hair Salon</span>}
           </div>
           <div

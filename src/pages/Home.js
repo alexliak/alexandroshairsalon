@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import {
   CrownOutlined,
   TeamOutlined,
@@ -7,7 +8,8 @@ import {
   HistoryOutlined,
   BulbOutlined,
   SmileOutlined,
-  CheckCircleOutlined
+  CheckCircleOutlined,
+  ArrowRightOutlined
 } from '@ant-design/icons';
 import CustomCarousel from '../components/Carousel';
 import './Home.css';
@@ -50,13 +52,15 @@ const homeContent = {
       ]
     },
     highlightsTitle: 'Why Choose Us?',
-    highlights: [
-      { icon: CrownOutlined, text: '32 years of excellence in professional hairdressing' },
-      { icon: TeamOutlined, text: 'Family-owned business with personal attention to every client' },
-      { icon: ExperimentOutlined, text: 'State-of-the-art facilities in a relaxing, welcoming atmosphere' },
-      { icon: SafetyCertificateOutlined, text: 'Expert professionals continuously trained in the latest techniques' },
-      { icon: BulbOutlined, text: 'Personalised consultations to achieve your perfect look' }
-    ],
+      highlights: [
+        { icon: CrownOutlined, text: '32 years of excellence in professional hairdressing' },
+        { icon: TeamOutlined, text: 'Family-owned business with personal attention to every client' },
+        { icon: ExperimentOutlined, text: 'State-of-the-art facilities in a relaxing, welcoming atmosphere' },
+        { icon: SafetyCertificateOutlined, text: 'Expert professionals continuously trained in the latest techniques' },
+        { icon: BulbOutlined, text: 'Personalised consultations to achieve your perfect look' }
+      ],
+      ctaServices: 'View our services',
+      ctaContact: 'Contact us',
     philosophy: {
       title: 'Our Philosophy',
       cards: [
@@ -76,13 +80,13 @@ const homeContent = {
     hero: {
       title: 'Υπεροχή στην κομμωτική από το 1992',
       lead:
-        'Για πάνω από τρεις δεκαετίες, είμαστε σημείο αναφοράς για περιποίηση και styling στο Θησείο.'
+        'Για πάνω από τρεις δεκαετίες, είμαστε σημείο αναφοράς για περιποίηση και styling στο Θησείο, κέντρο Αθήνας. Επαγγελματικό κομμωτήριο με προσωπική φροντίδα.'
     },
     story: {
       title: 'Η Ιστορία μας',
       paragraphs: [
-        'Το 1992 η Γιώτα Λιακοπούλου δημιούργησε ένα χώρο επαγγελματικής, προσωπικής περιποίησης στο Θησείο.',
-        'Το 2004 ο Αλέξανδρος συνέχισε την παράδοση με νέες ιδέες και εκπαίδευση από καταξιωμένες ακαδημίες.'
+        'Το 1992 η Γιώτα Λιακοπούλου δημιούργησε ένα χώρο επαγγελματικής, προσωπικής περιποίησης στο Θησείο, στο κέντρο της Αθήνας. Ένα κομμωτήριο που συνδυάζει την παράδοση με τη σύγχρονη τεχνολογία.',
+        'Το 2004 ο Αλέξανδρος συνέχισε την παράδοση με νέες ιδέες και εκπαίδευση από καταξιωμένες ακαδημίες. Σήμερα, το Alexandros Hair Salon είναι ένα από τα πιο αξιόπιστα κομμωτήρια στο κέντρο της Αθήνας.'
       ],
       milestones: [
         { year: '1992', description: 'Ίδρυση του σαλονιού από τη Γιώτα Λιακοπούλου' },
@@ -91,13 +95,15 @@ const homeContent = {
       ]
     },
     highlightsTitle: 'Γιατί να μας επιλέξετε;',
-    highlights: [
-      { icon: CrownOutlined, text: '32 χρόνια υπεροχής στην επαγγελματική κομμωτική' },
-      { icon: TeamOutlined, text: 'Οικογενειακή επιχείρηση με προσωπική φροντίδα' },
-      { icon: ExperimentOutlined, text: 'Σύγχρονες εγκαταστάσεις, χαλαρωτική ατμόσφαιρα' },
-      { icon: SafetyCertificateOutlined, text: 'Εξειδικευμένοι επαγγελματίες με συνεχή εκπαίδευση' },
-      { icon: BulbOutlined, text: 'Εξατομικευμένες συμβουλές για το ιδανικό look' }
-    ],
+      highlights: [
+        { icon: CrownOutlined, text: '32 χρόνια υπεροχής στην επαγγελματική κομμωτική στο κέντρο Αθήνας' },
+        { icon: TeamOutlined, text: 'Οικογενειακό κομμωτήριο στο Θησείο με προσωπική φροντίδα' },
+        { icon: ExperimentOutlined, text: 'Σύγχρονες εγκαταστάσεις κομμωτηρίου, χαλαρωτική ατμόσφαιρα' },
+        { icon: SafetyCertificateOutlined, text: 'Εξειδικευμένοι κομμωτές με συνεχή εκπαίδευση' },
+        { icon: BulbOutlined, text: 'Εξατομικευμένες συμβουλές για το ιδανικό look' }
+      ],
+      ctaServices: 'Δείτε τις υπηρεσίες μας',
+      ctaContact: 'Επικοινωνήστε μαζί μας',
     philosophy: {
       title: 'Η Φιλοσοφία μας',
       cards: [
@@ -177,6 +183,14 @@ const Home = ({ language, setLanguage }) => {
             </div>
             ))}
             </div>
+          <div className="home-cta-links">
+            <Link to="/services" className="home-cta-link">
+              {content.ctaServices} <ArrowRightOutlined />
+            </Link>
+            <Link to="/hours" className="home-cta-link">
+              {content.ctaContact} <ArrowRightOutlined />
+            </Link>
+          </div>
         </section>
 
         <section className="cardA-section">

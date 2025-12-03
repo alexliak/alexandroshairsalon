@@ -129,6 +129,38 @@
     gap: 10px;
   }
 
+  .contact-cta-links {
+    display: flex;
+    justify-content: center;
+    margin-top: 1.5rem;
+  }
+
+  .contact-cta-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    background: linear-gradient(135deg, #ed93ed 0%, #c471c4 100%);
+    color: #fff;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(237, 147, 237, 0.3);
+  }
+
+  .contact-cta-link:hover {
+    background: linear-gradient(135deg, #c471c4 0%, #ed93ed 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(237, 147, 237, 0.4);
+    color: #fff;
+  }
+
+  .contact-cta-link:focus {
+    outline: 2px solid #ed93ed;
+    outline-offset: 2px;
+  }
+
   @media (max-width: 768px) {
     .contact-card {
       margin: 0 auto;
