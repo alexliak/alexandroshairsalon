@@ -17,6 +17,7 @@ import Services from './pages/Services';
 import Contact from './pages/Contact';
 import Chatbot from './components/Chatbot';
 import AccessibilityControls from './components/AccessibilityControls';
+import { initGA, trackPageView } from './utils/analytics';
 import './App.css';
 
 const { Sider, Content } = Layout;
@@ -84,6 +85,14 @@ const AppContent = () => {
     };
   }, [accessibility]);
 
+  // Initialize Google Analytics on mount
+  useEffect(() => {
+    const measurementId = process.env.REACT_APP_GA_MEASUREMENT_ID;
+    if (measurementId) {
+      initGA(measurementId);
+    }
+  }, []);
+
   // Dynamic canonical URL and title based on route
   useEffect(() => {
     const baseUrl = 'https://alexandroshairsalon.gr';
@@ -113,6 +122,9 @@ const AppContent = () => {
 
     // Update page title
     document.title = pageTitle;
+
+    // Track page view in Google Analytics
+    trackPageView(location.pathname);
   }, [location.pathname]);
 
   useEffect(() => {
