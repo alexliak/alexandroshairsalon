@@ -41,3 +41,14 @@ export const trackEvent = (eventName, eventParams = {}) => {
   }
 };
 
+// Track Google Ads conversion
+export const trackGoogleAdsConversion = (conversionId, conversionLabel, value = 1.0, currency = 'EUR') => {
+  if (window.gtag) {
+    window.gtag('event', 'conversion', {
+      'send_to': `${conversionId}/${conversionLabel}`,
+      'value': value,
+      'currency': currency
+    });
+  }
+};
+

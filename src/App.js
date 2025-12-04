@@ -15,13 +15,13 @@ import Footer from './components/Footer';
 import Home from './pages/Home';
 import Services from './pages/Services';
 import Contact from './pages/Contact';
+import Landing50 from './pages/Landing50';
 import Chatbot from './components/Chatbot';
 import AccessibilityControls from './components/AccessibilityControls';
 import { initGA, trackPageView } from './utils/analytics';
 import './App.css';
 
 const { Sider, Content } = Layout;
-const { SubMenu } = Menu;
 
 const languageOptions = [
   { value: 'en', label: 'EN' },
@@ -66,6 +66,9 @@ const AppContent = () => {
     return isGreek ? 'Αλλαγή γλώσσας στα Ελληνικά' : 'Switch language to Greek';
   };
 
+  // Check if current route is landing page (standalone, no sidebar/footer)
+  const isLandingPage = location.pathname === '/prosfora50';
+
   useEffect(() => {
     const classMap = {
       largeText: 'accessibility-large-text',
@@ -99,17 +102,27 @@ const AppContent = () => {
     const canonicalMap = {
       '/': `${baseUrl}/`,
       '/services': `${baseUrl}/services`,
-      '/hours': `${baseUrl}/hours`
+      '/hours': `${baseUrl}/hours`,
+      '/prosfora50': `${baseUrl}/prosfora50`
     };
 
     const titleMap = {
       '/': 'Alexandros Hair Salon | Κομμωτήριο Κέντρο Αθήνας - Θησείο | Από το 1992',
       '/services': 'Υπηρεσίες & Τιμές | Alexandros Hair Salon | Κομμωτήριο Θησείο',
-      '/hours': 'Ωράριο Λειτουργίας | Alexandros Hair Salon | Κομμωτήριο Θησείο'
+      '/hours': 'Ωράριο Λειτουργίας | Alexandros Hair Salon | Κομμωτήριο Θησείο',
+      '/prosfora50': 'Προσφορά 50% Καλωσορίσματος - Alexandros Hair Salon'
+    };
+
+    const descriptionMap = {
+      '/': 'Alexandros Hair Salon – Κομμωτήριο στο κέντρο της Αθήνας, Θησείο. Επαγγελματική κομμωτική από το 1992.',
+      '/services': 'Υπηρεσίες & Τιμές | Alexandros Hair Salon | Κομμωτήριο Θησείο',
+      '/hours': 'Ωράριο Λειτουργίας | Alexandros Hair Salon | Κομμωτήριο Θησείο',
+      '/prosfora50': 'Κλείσε ραντεβού για κούρεμα, βαφή, ανταύγειες με 50% έκπτωση στην πρώτη σου επίσκεψη. Θησείο, Αθήνα.'
     };
 
     const canonicalUrl = canonicalMap[location.pathname] || `${baseUrl}${location.pathname}`;
     const pageTitle = titleMap[location.pathname] || 'Alexandros Hair Salon';
+    const pageDescription = descriptionMap[location.pathname] || 'Alexandros Hair Salon – Κομμωτήριο στο κέντρο της Αθήνας, Θησείο.';
 
     // Update canonical link
     let canonicalLink = document.querySelector('link[rel="canonical"]');
@@ -122,6 +135,15 @@ const AppContent = () => {
 
     // Update page title
     document.title = pageTitle;
+
+    // Update meta description
+    let metaDescription = document.querySelector('meta[name="description"]');
+    if (!metaDescription) {
+      metaDescription = document.createElement('meta');
+      metaDescription.setAttribute('name', 'description');
+      document.head.appendChild(metaDescription);
+    }
+    metaDescription.setAttribute('content', pageDescription);
 
     // Track page view in Google Analytics
     trackPageView(location.pathname);
@@ -178,6 +200,12 @@ const AppContent = () => {
   const closeMobileMenu = () => {
     setMobileMenuOpen(false);
   };
+
+  // Landing page renders standalone (no sidebar/footer/chatbot)
+  // To remove later: delete Landing50.js, Landing50.css, this route, and sitemap entry
+  if (isLandingPage) {
+    return <Landing50 />;
+  }
 
   return (
     <>
@@ -236,34 +264,62 @@ const AppContent = () => {
               </button>
             ))}
           </div>
-          <Menu theme="dark" mode="inline" selectedKeys={[location.pathname]} onClick={handleMenuClick}>
-            <Menu.Item key="/find-us" icon={<EnvironmentOutlined />}>
-              <a
-                href="https://www.google.com/maps/place/alexandroshairsalon/@37.976933,23.7162736,17z/data=!3m1!4b1!4m6!3m5!1s0x14a1bd200f79f18d:0x3024d28633f32b4!8m2!3d37.976933!4d23.7162736!16s%2Fg%2F11cm0h21cx?entry=ttu"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                {labels.findUs}
-              </a>
-            </Menu.Item>
-            <Menu.Item key="/call" icon={<PhoneOutlined />}>
-              <a href="tel:+302103465554">{labels.callUs}</a>
-            </Menu.Item>
-            <Menu.Item key="/" icon={<HomeOutlined />}>
-              <Link to="/">{labels.home}</Link>
-            </Menu.Item>
-            <Menu.Item key="/services" icon={<ScissorOutlined />}>
-              <Link to="/services">{labels.services}</Link>
-            </Menu.Item>
-            <Menu.Item key="/hours" icon={<ClockCircleOutlined />}>
-              <Link to="/hours">{labels.hours}</Link>
-            </Menu.Item>
-            <SubMenu key="/social" icon={<FacebookOutlined />} title="Social">
-              <Menu.Item key="/social/facebook">
-                <a href="https://www.facebook.com/alexandros.hairsalon" target="_blank" rel="noopener noreferrer">Facebook</a>
-              </Menu.Item>
-            </SubMenu>
-          </Menu>
+          <Menu 
+            theme="dark" 
+            mode="inline" 
+            selectedKeys={[location.pathname]} 
+            onClick={handleMenuClick}
+            items={[
+              {
+                key: '/find-us',
+                icon: <EnvironmentOutlined />,
+                label: (
+                  <a
+                    href="https://www.google.com/maps/place/alexandroshairsalon/@37.976933,23.7162736,17z/data=!3m1!4b1!4m6!3m5!1s0x14a1bd200f79f18d:0x3024d28633f32b4!8m2!3d37.976933!4d23.7162736!16s%2Fg%2F11cm0h21cx?entry=ttu"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {labels.findUs}
+                  </a>
+                )
+              },
+              {
+                key: '/call',
+                icon: <PhoneOutlined />,
+                label: <a href="tel:+302103465554">{labels.callUs}</a>
+              },
+              {
+                key: '/',
+                icon: <HomeOutlined />,
+                label: <Link to="/">{labels.home}</Link>
+              },
+              {
+                key: '/services',
+                icon: <ScissorOutlined />,
+                label: <Link to="/services">{labels.services}</Link>
+              },
+              {
+                key: '/hours',
+                icon: <ClockCircleOutlined />,
+                label: <Link to="/hours">{labels.hours}</Link>
+              },
+              {
+                key: '/social',
+                icon: <FacebookOutlined />,
+                label: 'Social',
+                children: [
+                  {
+                    key: '/social/facebook',
+                    label: (
+                      <a href="https://www.facebook.com/alexandros.hairsalon" target="_blank" rel="noopener noreferrer">
+                        Facebook
+                      </a>
+                    )
+                  }
+                ]
+              }
+            ]}
+          />
           <div className="sidebar-accessibility">
             <AccessibilityControls
               language={language}
@@ -307,7 +363,12 @@ const AppContent = () => {
 };
 
 const App = () => (
-  <Router>
+  <Router
+    future={{
+      v7_startTransition: true,
+      v7_relativeSplatPath: true
+    }}
+  >
     <AppContent />
   </Router>
 );
