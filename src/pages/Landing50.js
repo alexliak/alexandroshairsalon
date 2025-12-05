@@ -6,18 +6,24 @@ import './Landing50.css';
 const Landing50 = () => {
   useEffect(() => {
     // Track page view in Google Analytics
-    if (window.gtag) {
+    if (window.gtag && process.env.REACT_APP_GA_MEASUREMENT_ID) {
       window.gtag('config', process.env.REACT_APP_GA_MEASUREMENT_ID, {
         page_path: '/prosfora50',
       });
+    }
+    
+    // If user came from static HTML, ensure we're on the React route
+    if (window.location.pathname === '/prosfora50.html') {
+      window.history.replaceState({}, '', '/prosfora50');
     }
   }, []);
 
   const handleCTAClick = () => {
     // Track conversion event for Google Ads
+    // Note: Replace 'CONVERSION_LABEL' with your actual conversion label from Google Ads
     if (window.gtag) {
       window.gtag('event', 'conversion', {
-        'send_to': process.env.REACT_APP_GA_ADS_CONVERSION_ID || 'AW-CONVERSION_ID/CONVERSION_LABEL',
+        'send_to': 'AW-17777442875/CONVERSION_LABEL',
         'value': 1.0,
         'currency': 'EUR'
       });

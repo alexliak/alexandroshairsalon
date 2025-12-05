@@ -351,6 +351,10 @@ const AppContent = () => {
                   path="/hours"
                   element={<Contact language={language} setLanguage={setLanguage} />}
                 />
+                <Route
+                  path="/prosfora50"
+                  element={<Landing50 />}
+                />
               </Routes>
             </main>
             <Footer />
