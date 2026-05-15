@@ -6,8 +6,9 @@ import './Landing50.css';
 const Landing50 = () => {
   useEffect(() => {
     // Track page view in Google Analytics
-    if (window.gtag && process.env.REACT_APP_GA_MEASUREMENT_ID) {
-      window.gtag('config', process.env.REACT_APP_GA_MEASUREMENT_ID, {
+    if (window.gtag) {
+      const measurementId = process.env.REACT_APP_GA_MEASUREMENT_ID || 'G-S7ZQL4YMJ7';
+      window.gtag('config', measurementId, {
         page_path: '/prosfora50',
       });
     }
@@ -23,7 +24,7 @@ const Landing50 = () => {
     // Note: Replace 'CONVERSION_LABEL' with your actual conversion label from Google Ads
     if (window.gtag) {
       window.gtag('event', 'conversion', {
-        'send_to': 'AW-17777442875/CONVERSION_LABEL',
+        'send_to': 'G-S7ZQL4YMJ7/CONVERSION_LABEL',
         'value': 1.0,
         'currency': 'EUR'
       });

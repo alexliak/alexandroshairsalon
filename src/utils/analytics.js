@@ -28,7 +28,8 @@ export const initGA = (measurementId) => {
 // Track page views (for React Router)
 export const trackPageView = (path) => {
   if (window.gtag) {
-    window.gtag('config', process.env.REACT_APP_GA_MEASUREMENT_ID, {
+    const measurementId = process.env.REACT_APP_GA_MEASUREMENT_ID || 'G-S7ZQL4YMJ7';
+    window.gtag('config', measurementId, {
       page_path: path,
     });
   }
@@ -45,7 +46,7 @@ export const trackEvent = (eventName, eventParams = {}) => {
 export const trackGoogleAdsConversion = (conversionLabel, value = 1.0, currency = 'EUR') => {
   if (window.gtag) {
     window.gtag('event', 'conversion', {
-      'send_to': `AW-17777442875/${conversionLabel}`,
+      'send_to': `G-S7ZQL4YMJ7/${conversionLabel}`,
       'value': value,
       'currency': currency
     });

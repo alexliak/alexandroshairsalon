@@ -8,7 +8,8 @@ import {
   EnvironmentOutlined,
   FacebookOutlined,
   MenuOutlined,
-  CloseOutlined
+  CloseOutlined,
+  ShoppingOutlined
 } from '@ant-design/icons';
 import { BrowserRouter as Router, Routes, Route, Link, useLocation } from 'react-router-dom';
 import Footer from './components/Footer';
@@ -16,9 +17,10 @@ import Home from './pages/Home';
 import Services from './pages/Services';
 import Contact from './pages/Contact';
 import Landing50 from './pages/Landing50';
+import Shop from './pages/Shop';
 import Chatbot from './components/Chatbot';
 import AccessibilityControls from './components/AccessibilityControls';
-import { initGA, trackPageView } from './utils/analytics';
+import { trackPageView } from './utils/analytics';
 import './App.css';
 
 const { Sider, Content } = Layout;
@@ -34,14 +36,16 @@ const navLabels = {
     callUs: 'Call Us',
     home: 'Home',
     services: 'Services',
-    hours: 'Opening Hours'
+    hours: 'Opening Hours',
+    shop: 'Online Shop'
   },
   el: {
     findUs: 'Πού θα μας βρείτε',
     callUs: 'Τηλεφώνησέ μας',
     home: 'Αρχική',
     services: 'Υπηρεσίες',
-    hours: 'Ωράριο'
+    hours: 'Ωράριο',
+    shop: 'Online Shop'
   }
 };
 
@@ -89,11 +93,11 @@ const AppContent = () => {
   }, [accessibility]);
 
   // Initialize Google Analytics on mount
+  // Note: The gtag script is already loaded in index.html with G-S7ZQL4YMJ7
+  // This useEffect is kept for compatibility but gtag should already be available
   useEffect(() => {
-    const measurementId = process.env.REACT_APP_GA_MEASUREMENT_ID;
-    if (measurementId) {
-      initGA(measurementId);
-    }
+    // gtag is already initialized in index.html, so tracking will work automatically
+    // The trackPageView calls will use the measurement ID from analytics.js fallback
   }, []);
 
   // Dynamic canonical URL and title based on route
@@ -304,6 +308,11 @@ const AppContent = () => {
                 label: <Link to="/hours">{labels.hours}</Link>
               },
               {
+                key: '/shop',
+                icon: <ShoppingOutlined />,
+                label: <Link to="/shop">{labels.shop}</Link>
+              },
+              {
                 key: '/social',
                 icon: <FacebookOutlined />,
                 label: 'Social',
@@ -354,6 +363,10 @@ const AppContent = () => {
                 <Route
                   path="/prosfora50"
                   element={<Landing50 />}
+                />
+                <Route
+                  path="/shop"
+                  element={<Shop language={language} />}
                 />
               </Routes>
             </main>
