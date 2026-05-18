@@ -278,9 +278,9 @@ const AppContent = () => {
             items={[
               {
                 key: '/shop',
-                icon: <ShoppingOutlined style={{ color: '#d6006e', fontSize: '1.1rem' }} />,
+                icon: <ShoppingOutlined style={{ color: '#c4a46a', fontSize: '1.1rem' }} />,
                 label: (
-                  <Link to="/shop" style={{ fontWeight: 800, color: '#d6006e', fontSize: '1rem', letterSpacing: '0.02em' }}>
+                  <Link to="/shop" style={{ fontWeight: 800, color: '#c4a46a', fontSize: '1rem', letterSpacing: '0.02em' }}>
                     {labels.shop}
                   </Link>
                 ),

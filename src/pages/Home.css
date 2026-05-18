@@ -9,7 +9,7 @@
 }
 
 /* Hero banner 16:9 */
-.heroA-banner { position: relative; width: 100%; border: 1px solid rgba(204,144,204,0.45); border-radius: 18px; overflow: hidden; box-shadow: 0 18px 40px rgba(204,144,204,0.24); }
+.heroA-banner { position: relative; width: 100%; border: 1px solid rgba(196, 164, 106, 0.25); border-radius: 18px; overflow: hidden; box-shadow: 0 8px 32px rgba(0,0,0,0.3); }
 .heroA-banner::before { content: ''; display: block; width: 100%; padding-top: 56.25%; }
 .heroA-banner > * { position: absolute; inset: 0; }
 .heroA-banner .ant-carousel, .heroA-banner .slick-slider, .heroA-banner .slick-list, .heroA-banner .slick-track, .heroA-banner .slick-slide { height: 100%; }
@@ -17,26 +17,26 @@
 
 .heroA-overlay { pointer-events: none; background: linear-gradient(90deg, rgba(18,18,30,0.78) 0%, rgba(18,18,30,0.25) 45%, rgba(18,18,30,0) 70%); }
 .heroA-text { pointer-events: auto; height: 100%; display: flex; flex-direction: column; justify-content: center; gap: 12px; padding: 24px; }
-.heroA-title { margin: 0; font-size: 2.2rem; color: #fff; text-shadow: 0 0 12px rgba(237,147,237,0.6); }
+.heroA-title { margin: 0; font-size: 2.2rem; color: #fff; text-shadow: 0 0 12px rgba(196, 164, 106, 0.35); }
 .heroA-lead { margin: 0; max-width: 720px; color: #efe6ff; line-height: 1.7; }
 
 /* Content area */
 .homeA-content { width: 100%; max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr; gap: 22px; }
-.cardA-section { border: 1px solid rgba(237,147,237,0.3); border-radius: 16px; background: rgba(18,18,30,0.78); box-shadow: 0 18px 40px rgba(18,18,35,0.28); padding: 22px; color: #f5e6ff; }
+.cardA-section { border: 1px solid rgba(196, 164, 106, 0.18); border-radius: 16px; background: rgba(18,18,30,0.78); box-shadow: 0 8px 28px rgba(18,18,35,0.25); padding: 22px; color: #f5e6ff; }
 .section-title { margin: 0 0 12px; color: #fff; font-size: 1.6rem; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
 .section-paragraph { margin: 0 0 10px; color: #f0e8ff; line-height: 1.75; }
 .timeline { list-style: none; padding: 0; margin: 10px 0 0; display: flex; flex-direction: column; gap: 10px; }
-.timeline li { display: flex; gap: 12px; align-items: center; padding: 10px 12px; border-left: 3px solid rgba(237,147,237,0.6); background: rgba(255,255,255,0.04); border-radius: 10px; }
-.timeline-year { font-weight: 600; min-width: 64px; color: #ed93ed; }
+.timeline li { display: flex; gap: 12px; align-items: center; padding: 10px 12px; border-left: 3px solid rgba(196, 164, 106, 0.5); background: rgba(255,255,255,0.04); border-radius: 10px; }
+.timeline-year { font-weight: 600; min-width: 64px; color: #c4a46a; }
 .timeline-desc { color: #f5e6ff; }
 .highlights-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px,1fr)); gap: 12px; }
-.highlight-card { display: flex; gap: 10px; padding: 14px; border-radius: 12px; background: rgba(255,255,255,0.06); border: 1px solid rgba(237,147,237,0.2); }
-.highlight-icon { font-size: 1.3rem; color: #ed93ed; line-height: 1; }
+.highlight-card { display: flex; gap: 10px; padding: 14px; border-radius: 12px; background: rgba(255,255,255,0.06); border: 1px solid rgba(196, 164, 106, 0.15); }
+.highlight-icon { font-size: 1.3rem; color: #c4a46a; line-height: 1; }
 .philosophy-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px,1fr)); gap: 14px; }
-.philosophy-card { background: rgba(255,255,255,0.06); border: 1px solid rgba(237,147,237,0.2); border-radius: 14px; padding: 16px; display: flex; flex-direction: column; gap: 8px; }
+.philosophy-card { background: rgba(255,255,255,0.06); border: 1px solid rgba(196, 164, 106, 0.15); border-radius: 14px; padding: 16px; display: flex; flex-direction: column; gap: 8px; }
 .philosophy-card h3 { margin: 0; color: #fff; font-size: 1.15rem; }
 .philosophy-card p { margin: 0; color: #e7d6f6; line-height: 1.6; }
-.philosophy-icon { font-size: 1.5rem; color: #ed93ed; }
+.philosophy-icon { font-size: 1.5rem; color: #c4a46a; }
 
 @media (max-width: 900px) {
   .heroA-title { font-size: 1.9rem; }
@@ -153,24 +153,24 @@
   align-items: center;
   gap: 0.5rem;
   padding: 0.75rem 1.5rem;
-  background: linear-gradient(135deg, #ed93ed 0%, #c471c4 100%);
+  background: linear-gradient(135deg, #9a5a6e 0%, #7a3a5a 100%);
   color: #fff;
   text-decoration: none;
   border-radius: 8px;
   font-weight: 500;
   transition: all 0.3s ease;
-  box-shadow: 0 2px 8px rgba(237, 147, 237, 0.3);
+  box-shadow: 0 2px 8px rgba(154, 90, 110, 0.3);
 }
 
 .home-cta-link:hover {
-  background: linear-gradient(135deg, #c471c4 0%, #ed93ed 100%);
+  background: linear-gradient(135deg, #7a3a5a 0%, #9a5a6e 100%);
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(237, 147, 237, 0.4);
+  box-shadow: 0 4px 12px rgba(154, 90, 110, 0.4);
   color: #fff;
 }
 
 .home-cta-link:focus {
-  outline: 2px solid #ed93ed;
+  outline: 2px solid #c4a46a;
   outline-offset: 2px;
 }
 
@@ -179,7 +179,7 @@
     flex-direction: column;
     align-items: stretch;
   }
-  
+
   .home-cta-link {
     justify-content: center;
   }
@@ -190,8 +190,8 @@
   display: flex;
   align-items: center;
   gap: 1rem;
-  background: linear-gradient(135deg, #1a1a1a 0%, #2d0020 100%);
-  border: 2px solid #d6006e;
+  background: linear-gradient(135deg, #1a1a1a 0%, #221818 100%);
+  border: 1.5px solid rgba(196, 164, 106, 0.45);
   border-radius: 14px;
   padding: 1.25rem 1.5rem;
   text-decoration: none;
@@ -199,25 +199,25 @@
   position: relative;
   overflow: hidden;
   transition: transform 0.2s, box-shadow 0.2s;
-  box-shadow: 0 4px 20px rgba(214,0,110,0.25);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
 }
 
 .shop-home-banner::before {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, rgba(214,0,110,0.08), transparent);
+  background: linear-gradient(135deg, rgba(196, 164, 106, 0.06), transparent);
   pointer-events: none;
 }
 
 .shop-home-banner:hover {
   transform: translateY(-3px);
-  box-shadow: 0 8px 30px rgba(214,0,110,0.4);
+  box-shadow: 0 8px 30px rgba(196, 164, 106, 0.2);
   color: #fff;
 }
 
 .shop-home-badge {
-  background: #d6006e;
+  background: #9a5a6e;
   color: #fff;
   font-size: 0.7rem;
   font-weight: 800;
@@ -249,7 +249,7 @@
 }
 
 .shop-home-cta {
-  background: #d6006e;
+  background: #9a5a6e;
   color: #fff;
   font-size: 0.85rem;
   font-weight: 700;
@@ -261,7 +261,7 @@
 }
 
 .shop-home-banner:hover .shop-home-cta {
-  background: #b0005a;
+  background: #7a3a5a;
 }
 
 @media (max-width: 600px) {

@@ -8,7 +8,7 @@
   text-align: center;
   margin-bottom: 2.5rem;
   padding: 2rem 1.5rem;
-  border-bottom: 3px solid #d6006e;
+  border-bottom: 2px solid rgba(196, 164, 106, 0.4);
 }
 
 .shop-header h1 {
@@ -17,11 +17,11 @@
   color: #ffffff;
   margin-bottom: 0.5rem;
   letter-spacing: 0.03em;
-  text-shadow: 0 0 30px rgba(214, 0, 110, 0.4);
+  text-shadow: 0 0 24px rgba(196, 164, 106, 0.25);
 }
 
 .shop-subtitle {
-  color: #d6006e;
+  color: #c4a46a;
   font-size: 1rem;
   font-weight: 700;
   letter-spacing: 0.1em;
@@ -60,7 +60,7 @@
 }
 
 .product-card {
-  background: #fff;
+  background: #faf8f5;
   border-radius: 12px;
   box-shadow: 0 2px 12px rgba(0,0,0,0.08);
   overflow: hidden;
@@ -108,7 +108,7 @@
 
 .product-image-placeholder small {
   font-size: 0.72rem;
-  color: #d6006e;
+  color: #c4a46a;
   opacity: 0.75;
   letter-spacing: 0.04em;
   text-transform: uppercase;
@@ -132,7 +132,7 @@
 .product-category {
   font-size: 0.7rem;
   font-weight: 700;
-  color: #d6006e;
+  color: #888;
   text-transform: uppercase;
   letter-spacing: 0.07em;
 }
@@ -161,7 +161,7 @@
 .product-price {
   font-size: 1.1rem;
   font-weight: 800;
-  color: #d6006e;
+  color: #1a1a1a;
 }
 
 /* Qty controls */
@@ -175,9 +175,9 @@
   width: 28px;
   height: 28px;
   border-radius: 50%;
-  border: 1.5px solid #d6006e;
+  border: 1.5px solid #9a5a6e;
   background: transparent;
-  color: #d6006e;
+  color: #9a5a6e;
   font-size: 1.1rem;
   cursor: pointer;
   display: flex;
@@ -187,7 +187,7 @@
 }
 
 .qty-controls button:hover:not(:disabled) {
-  background: #d6006e;
+  background: #9a5a6e;
   color: white;
 }
 
@@ -222,7 +222,7 @@
 .how-title {
   font-size: 0.85rem;
   font-weight: 700;
-  color: #d6006e;
+  color: #c4a46a;
   text-transform: uppercase;
   letter-spacing: 0.07em;
   margin-bottom: 0.75rem;
@@ -247,7 +247,7 @@
 /* Bank card */
 .bank-card {
   background: #fff;
-  border: 1.5px solid #d6006e;
+  border: 1.5px solid rgba(196, 164, 106, 0.45);
   border-radius: 12px;
   padding: 1.25rem;
 }
@@ -255,7 +255,7 @@
 .bank-card-title {
   font-size: 0.85rem;
   font-weight: 700;
-  color: #9e0050;
+  color: #7a5a3a;
   text-transform: uppercase;
   letter-spacing: 0.07em;
   margin-bottom: 0.85rem;
@@ -286,7 +286,7 @@
   font-family: 'Courier New', monospace;
   font-size: 0.78rem;
   letter-spacing: 0.05em;
-  color: #d6006e;
+  color: #c4a46a;
 }
 
 .bank-account-row {
@@ -295,7 +295,7 @@
   gap: 0.15rem;
   margin-bottom: 0.6rem;
   padding-bottom: 0.6rem;
-  border-bottom: 1px solid #f5f5f5;
+  border-bottom: 1px solid #f0ebe0;
 }
 
 .bank-account-row:last-of-type {
@@ -315,7 +315,7 @@
   font-family: 'Courier New', monospace;
   font-size: 0.8rem;
   letter-spacing: 0.04em;
-  color: #d6006e;
+  color: #c4a46a;
   font-weight: 700;
   word-break: break-all;
 }
@@ -337,11 +337,11 @@
 .bank-note {
   margin-top: 0.75rem;
   font-size: 0.77rem;
-  color: #d6006e;
+  color: #7a5a3a;
   font-weight: 600;
   text-align: center;
   padding-top: 0.6rem;
-  border-top: 1px solid #f9b3d9;
+  border-top: 1px solid #e8d8c0;
 }
 
 /* Contact box */
@@ -372,7 +372,7 @@
   display: block;
   font-size: 0.88rem;
   font-weight: 600;
-  color: #d6006e;
+  color: #9a5a6e;
   text-decoration: none;
   margin-bottom: 0.25rem;
 }
@@ -433,7 +433,7 @@
 
 .cart-subtotal {
   font-weight: 700;
-  color: #d6006e;
+  color: #9a5a6e;
   min-width: 56px;
   text-align: right;
 }
@@ -448,7 +448,7 @@
 
 .cart-total-amount {
   font-size: 1.15rem;
-  color: #d6006e;
+  color: #9a5a6e;
 }
 
 /* Order Form */
@@ -484,7 +484,7 @@
 .order-form input:focus,
 .order-form textarea:focus {
   outline: none;
-  border-color: #d6006e;
+  border-color: #9a5a6e;
 }
 
 .order-form textarea {
@@ -506,7 +506,7 @@
   display: block;
   width: 100%;
   padding: 0.78rem;
-  background: #d6006e;
+  background: #9a5a6e;
   color: white;
   border: none;
   border-radius: 8px;
@@ -519,7 +519,7 @@
 }
 
 .shop-btn-primary:hover:not(:disabled) {
-  background: #b0005a;
+  background: #7a3a5a;
 }
 
 .shop-btn-primary:disabled {
@@ -570,7 +570,7 @@
 
 .success-email-link {
   display: inline-block;
-  color: #d6006e;
+  color: #9a5a6e;
   font-weight: 700;
   text-decoration: none;
   font-size: 0.95rem;
@@ -580,8 +580,8 @@
 .success-total-box {
   font-size: 1.3rem;
   font-weight: 700;
-  background: #fff0f7;
-  border: 2px solid #d6006e;
+  background: #faf6f0;
+  border: 2px solid #9a5a6e;
   border-radius: 10px;
   padding: 0.75rem 1.5rem;
   margin: 0 auto 1.25rem;
@@ -590,7 +590,7 @@
 }
 
 .success-total-box strong {
-  color: #d6006e;
+  color: #9a5a6e;
 }
 
 .success-bank {
@@ -618,12 +618,12 @@
     left: 0;
     right: 0;
     z-index: 999;
-    background: #d6006e;
+    background: #9a5a6e;
     color: #fff;
     padding: 1rem 1.25rem;
     gap: 0.75rem;
     cursor: pointer;
-    box-shadow: 0 -4px 20px rgba(214, 0, 110, 0.35);
+    box-shadow: 0 -4px 20px rgba(154, 90, 110, 0.3);
   }
 
   .mobile-cart-bar-left {

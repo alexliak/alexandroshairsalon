@@ -3,9 +3,9 @@
     max-width: 860px;
     margin: 0;
     padding: 32px;
-    border: 1px solid rgba(237, 147, 237, 0.4);
+    border: 1px solid rgba(196, 164, 106, 0.25);
     border-radius: 16px;
-    box-shadow: 0 0 18px rgba(237, 147, 237, 0.35);
+    box-shadow: 0 8px 28px rgba(0, 0, 0, 0.35);
     background: rgba(18, 18, 30, 0.72);
     color: #ffffff;
     display: flex;
@@ -17,7 +17,7 @@
     margin: 0;
     font-size: 2.2rem;
     text-align: center;
-    text-shadow: 0 0 10px #ed93ed;
+    text-shadow: 0 0 10px rgba(196, 164, 106, 0.35);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -44,8 +44,8 @@
     justify-content: center;
     padding: 14px 20px;
     border-radius: 14px;
-    border: 1px solid rgba(237, 147, 237, 0.4);
-    background: rgba(237, 147, 237, 0.12);
+    border: 1px solid rgba(196, 164, 106, 0.25);
+    background: rgba(196, 164, 106, 0.07);
     color: #ffffff;
     text-decoration: none;
     font-weight: 600;
@@ -59,7 +59,7 @@
   }
 
   .contact-button.call {
-    background: rgba(237, 147, 237, 0.22);
+    background: rgba(196, 164, 106, 0.12);
   }
 
   .contact-button.social {
@@ -70,7 +70,7 @@
   .contact-button:hover,
   .contact-button:focus {
     transform: translateY(-2px);
-    background: rgba(237, 147, 237, 0.28);
+    background: rgba(196, 164, 106, 0.18);
   }
 
   .contact-button.social:hover,
@@ -92,7 +92,7 @@
     padding: 18px 20px;
     border-radius: 16px;
     background: rgba(255, 255, 255, 0.06);
-    border: 1px solid rgba(237, 147, 237, 0.2);
+    border: 1px solid rgba(196, 164, 106, 0.15);
     font-size: 1.15rem;
     min-height: 110px;
   }
@@ -105,7 +105,7 @@
 
   .hours-day {
     font-weight: 600;
-    color: #ed93ed;
+    color: #c4a46a;
     letter-spacing: 0.02em;
   }
 
@@ -140,24 +140,24 @@
     align-items: center;
     gap: 0.5rem;
     padding: 0.75rem 1.5rem;
-    background: linear-gradient(135deg, #ed93ed 0%, #c471c4 100%);
+    background: linear-gradient(135deg, #9a5a6e 0%, #7a3a5a 100%);
     color: #fff;
     text-decoration: none;
     border-radius: 8px;
     font-weight: 500;
     transition: all 0.3s ease;
-    box-shadow: 0 2px 8px rgba(237, 147, 237, 0.3);
+    box-shadow: 0 2px 8px rgba(154, 90, 110, 0.3);
   }
 
   .contact-cta-link:hover {
-    background: linear-gradient(135deg, #c471c4 0%, #ed93ed 100%);
+    background: linear-gradient(135deg, #7a3a5a 0%, #9a5a6e 100%);
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(237, 147, 237, 0.4);
+    box-shadow: 0 4px 12px rgba(154, 90, 110, 0.4);
     color: #fff;
   }
 
   .contact-cta-link:focus {
-    outline: 2px solid #ed93ed;
+    outline: 2px solid #c4a46a;
     outline-offset: 2px;
   }
 

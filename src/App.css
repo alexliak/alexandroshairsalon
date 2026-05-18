@@ -15,7 +15,7 @@ body {
   min-height: 100vh;
   width: 100vw;
   background-color: #120f18;
-  background-image: radial-gradient(circle at top, rgba(237, 147, 237, 0.18), rgba(18, 18, 28, 0.95));
+  background-image: radial-gradient(circle at top, rgba(196, 164, 106, 0.08), rgba(18, 18, 28, 0.95));
   background-size: cover;
   background-attachment: fixed;
   overflow-x: hidden;
@@ -41,12 +41,12 @@ a:focus-visible,
 
 .sidebar-robot {
   background-color: #1a1a1a;
-  border-right: 2px solid #ed93ed;
+  border-right: 1px solid rgba(196, 164, 106, 0.25);
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 20px;
-  box-shadow: 0 0 15px #ed93ed;
+  box-shadow: 2px 0 24px rgba(0, 0, 0, 0.5);
   height: 100vh;
   position: sticky;
   top: 0;
@@ -73,17 +73,17 @@ a:focus-visible,
   object-fit: contain;
   object-position: center;
   border-radius: 50%;
-  box-shadow: 0 0 12px rgba(185, 75, 247, 0.8);
-  border: 2px solid rgba(237, 147, 237, 0.6);
+  box-shadow: 0 0 10px rgba(196, 164, 106, 0.35);
+  border: 2px solid rgba(196, 164, 106, 0.35);
   background: #0d0c12;
   padding: 6px;
 }
 
 .logo-text {
   font-size: 18px;
-  color: #b94bf7;
+  color: #c4a46a;
   text-align: center;
-  text-shadow: 0 0 5px #b94bf7, 0 0 10px #b94bf7, 0 0 15px #b94bf7, 0 0 20px #b94bf7;
+  text-shadow: 0 0 8px rgba(196, 164, 106, 0.3);
   line-height: 1.2;
 }
 
@@ -120,7 +120,7 @@ a:focus-visible,
   top: 0;
   left: 0;
   transform: translate(-140%, -140%);
-  background: #ed93ed;
+  background: #c4a46a;
   color: #1b1325;
   padding: 8px 12px;
   border-radius: 8px;
@@ -146,9 +146,9 @@ a:focus-visible,
 }
 
 .language-button {
-  border: 1px solid rgba(237, 147, 237, 0.55);
+  border: 1px solid rgba(196, 164, 106, 0.4);
   background: rgba(18, 18, 30, 0.55);
-  color: #f3d4ff;
+  color: #f0e8d8;
   font-weight: 600;
   padding: 4px 12px;
   border-radius: 999px;
@@ -161,15 +161,15 @@ a:focus-visible,
 
 .language-button:hover,
 .language-button:focus {
-  background: rgba(237, 147, 237, 0.2);
-  outline: 2px solid #f8e8ff;
+  background: rgba(196, 164, 106, 0.15);
+  outline: 2px solid #e8d8c0;
   outline-offset: 2px;
 }
 
 .language-button.active {
-  background: #ed93ed;
-  color: #1b1325;
-  box-shadow: 0 0 12px rgba(237, 147, 237, 0.35);
+  background: #c4a46a;
+  color: #1a1a1a;
+  box-shadow: 0 0 10px rgba(196, 164, 106, 0.3);
   transform: translateY(-1px);
 }
 
@@ -229,7 +229,7 @@ a:focus-visible,
 
 .sidebar-robot .menu-item:hover {
   transform: scale(1.1);
-  color: #e189e1;
+  color: #c4a46a;
 }
 
 .content-layout {
@@ -255,7 +255,7 @@ a:focus-visible,
   color: #ffffff;
   text-align: center;
   padding: 10px;
-  box-shadow: 0 -2px 10px #ed93ed;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.5);
   margin-top: auto;
 }
 
@@ -272,9 +272,9 @@ a:focus-visible,
 
 .carousel-container {
   flex: 1;
-  border: 2px solid #cc90cc;
+  border: 1px solid rgba(196, 164, 106, 0.25);
   border-radius: 10px;
-  box-shadow: 0 0 15px #cc90cc;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
   overflow: hidden;
   transition: transform 0.3s ease-in-out;
   position: relative;
@@ -287,10 +287,10 @@ a:focus-visible,
 .home-content-container {
   flex: 1;
   padding: 16px;
-  border: 1px solid #ed93ed; /* Adjusted to thin border */
+  border: 1px solid rgba(196, 164, 106, 0.18);
   border-radius: 10px;
-  box-shadow: 0 0 15px #ed93ed;
-  background-color: transparent; /* Fully transparent background */
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+  background-color: transparent;
 }
 
 .welcome-header {
@@ -298,9 +298,9 @@ a:focus-visible,
   text-align: center;
   font-size: 2em;
   margin-bottom: 20px;
-  text-shadow: 0 0 15px #e7a1ef;
+  text-shadow: 0 0 12px rgba(196, 164, 106, 0.35);
   padding: 10px;
-  border-bottom: 1px solid #e7a1ef; /* Thin line */
+  border-bottom: 1px solid rgba(196, 164, 106, 0.25);
 }
 
 .panel-header {
@@ -311,7 +311,7 @@ a:focus-visible,
 }
 
 .panel-header:hover {
-  color: #e189e1 !important;
+  color: #c4a46a !important;
 }
 
 .panel-content {
@@ -320,7 +320,7 @@ a:focus-visible,
 
 .ant-collapse-content-box {
   background-color: #333;
-  border-top: 1px solid #e189e1;
+  border-top: 1px solid rgba(196, 164, 106, 0.3);
 }
 
 .ant-collapse > .ant-collapse-item > .ant-collapse-header {
@@ -329,7 +329,7 @@ a:focus-visible,
 }
 
 .ant-collapse > .ant-collapse-item-active > .ant-collapse-header {
-  color: #e189e1 !important;
+  color: #c4a46a !important;
 }
 
 @media (max-width: 768px) {
@@ -459,13 +459,13 @@ html.accessibility-large-text .carousel-container {
   font-size: 1.05rem;
 }
 
-/* Shop menu item glow animation */
+/* Shop menu item glow animation — warm gold */
 @keyframes shop-neon-glow {
   from {
-    text-shadow: 0 0 4px rgba(214,0,110,0.7), 0 0 10px rgba(214,0,110,0.5);
+    text-shadow: 0 0 4px rgba(196, 164, 106, 0.6), 0 0 10px rgba(196, 164, 106, 0.4);
   }
   to {
-    text-shadow: 0 0 10px rgba(214,0,110,1), 0 0 22px rgba(214,0,110,0.8), 0 0 40px rgba(214,0,110,0.4);
+    text-shadow: 0 0 10px rgba(196, 164, 106, 0.9), 0 0 22px rgba(196, 164, 106, 0.6), 0 0 40px rgba(196, 164, 106, 0.3);
   }
 }
 
@@ -522,25 +522,25 @@ body.accessibility-reduced-motion .carousel-container:hover {
   top: 16px;
   left: 16px;
   z-index: 1001;
-  background: rgba(237, 147, 237, 0.9);
-  border: 2px solid #ed93ed;
+  background: rgba(26, 22, 18, 0.95);
+  border: 1.5px solid rgba(196, 164, 106, 0.6);
   border-radius: 8px;
-  color: #1b1325;
+  color: #c4a46a;
   font-size: 24px;
   width: 48px;
   height: 48px;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  box-shadow: 0 4px 12px rgba(237, 147, 237, 0.4);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
   transition: all 0.3s ease;
 }
 
 .mobile-menu-toggle:hover,
 .mobile-menu-toggle:focus {
-  background: #ed93ed;
-  box-shadow: 0 6px 16px rgba(237, 147, 237, 0.6);
-  outline: 2px solid #fff;
+  background: rgba(196, 164, 106, 0.15);
+  box-shadow: 0 6px 16px rgba(196, 164, 106, 0.25);
+  outline: 2px solid #c4a46a;
   outline-offset: 2px;
 }
 
@@ -568,10 +568,10 @@ body.accessibility-reduced-motion .carousel-container:hover {
   position: absolute;
   top: 16px;
   right: 16px;
-  background: rgba(237, 147, 237, 0.2);
-  border: 2px solid rgba(237, 147, 237, 0.5);
+  background: rgba(196, 164, 106, 0.12);
+  border: 1.5px solid rgba(196, 164, 106, 0.4);
   border-radius: 8px;
-  color: #ed93ed;
+  color: #c4a46a;
   font-size: 20px;
   width: 40px;
   height: 40px;
@@ -585,8 +585,8 @@ body.accessibility-reduced-motion .carousel-container:hover {
 
 .mobile-sidebar-close:hover,
 .mobile-sidebar-close:focus {
-  background: rgba(237, 147, 237, 0.4);
-  border-color: #ed93ed;
+  background: rgba(196, 164, 106, 0.22);
+  border-color: #c4a46a;
   outline: 2px solid #fff;
   outline-offset: 2px;
 }
