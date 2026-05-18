@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import {
   CrownOutlined,
@@ -23,6 +23,48 @@ const carouselImages = [
   '/images/portfolio/hairdresser-grooming-their-client.jpg'
 ];
 
+/* Animated counter that runs once when visible */
+const AnimatedStat = ({ target, decimals = 0, suffix = '', label }) => {
+  const [count, setCount] = useState(0);
+  const ref = useRef(null);
+  const started = useRef(false);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting && !started.current) {
+          started.current = true;
+          const duration = 1800;
+          const steps = 60;
+          const increment = target / steps;
+          let current = 0;
+          let step = 0;
+          const timer = setInterval(() => {
+            step++;
+            current = Math.min(increment * step, target);
+            setCount(parseFloat(current.toFixed(decimals)));
+            if (step >= steps) clearInterval(timer);
+          }, duration / steps);
+        }
+      },
+      { threshold: 0.4 }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, [target, decimals]);
+
+  return (
+    <div ref={ref} className="stat-item">
+      <span className="stat-num">
+        {decimals > 0 ? count.toFixed(decimals) : count}{suffix}
+      </span>
+      <span className="stat-label">{label}</span>
+    </div>
+  );
+};
+
 const homeContent = {
   en: {
     hero: {
@@ -31,9 +73,9 @@ const homeContent = {
       cta: 'Book Appointment'
     },
     stats: [
-      { num: '30+', label: 'Years of excellence' },
-      { num: '4.5★', label: 'Google Reviews' },
-      { num: '1000+', label: 'Happy clients' }
+      { target: 30, suffix: '+', label: 'Years of excellence' },
+      { target: 4.5, decimals: 1, suffix: '★', label: 'Google Reviews' },
+      { target: 1000, suffix: '+', label: 'Happy clients' }
     ],
     shopBanner: {
       label: 'NEW',
@@ -80,9 +122,9 @@ const homeContent = {
       cta: 'Κλείσε Ραντεβού'
     },
     stats: [
-      { num: '30+', label: 'Χρόνια εμπειρίας' },
-      { num: '4.5★', label: 'στο Google' },
-      { num: '1000+', label: 'Ευχαριστημένοι πελάτες' }
+      { target: 30, suffix: '+', label: 'Χρόνια εμπειρίας' },
+      { target: 4.5, decimals: 1, suffix: '★', label: 'στο Google' },
+      { target: 1000, suffix: '+', label: 'Ευχαριστημένοι πελάτες' }
     ],
     shopBanner: {
       label: 'ΝΕΟ',
@@ -146,13 +188,16 @@ const Home = ({ language, setLanguage }) => {
 
       <main className="homeA-content">
 
-        {/* Stats strip */}
+        {/* Stats strip — animated counters */}
         <div className="stats-strip">
           {content.stats.map((s) => (
-            <div key={s.label} className="stat-item">
-              <span className="stat-num">{s.num}</span>
-              <span className="stat-label">{s.label}</span>
-            </div>
+            <AnimatedStat
+              key={s.label}
+              target={s.target}
+              decimals={s.decimals || 0}
+              suffix={s.suffix}
+              label={s.label}
+            />
           ))}
         </div>
 
