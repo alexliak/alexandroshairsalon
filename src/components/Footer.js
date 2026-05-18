@@ -7,7 +7,7 @@ const Footer = () => {
   return (
     <footer className="footer">
       <img src={logoSrc} alt="Alexandros Hair Salon - Κομμωτήριο κέντρο Αθήνας, Θησείο" className="footer-logo" />
-      <span>© 2025 alexandroshairsalon.gr</span>
+      <span>© 2026 Alexandros Hair Salon · alexandroshairsalon.gr</span>
     </footer>
   );
 };
