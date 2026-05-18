@@ -81,14 +81,14 @@ const AppContent = () => {
 
     Object.entries(classMap).forEach(([key, className]) => {
       if (accessibility[key]) {
-        document.body.classList.add(className);
+        document.documentElement.classList.add(className);
       } else {
-        document.body.classList.remove(className);
+        document.documentElement.classList.remove(className);
       }
     });
 
     return () => {
-      Object.values(classMap).forEach((className) => document.body.classList.remove(className));
+      Object.values(classMap).forEach((className) => document.documentElement.classList.remove(className));
     };
   }, [accessibility]);
 
@@ -114,14 +114,16 @@ const AppContent = () => {
       '/': 'Alexandros Hair Salon | Κομμωτήριο Κέντρο Αθήνας - Θησείο | Από το 1992',
       '/services': 'Υπηρεσίες & Τιμές | Alexandros Hair Salon | Κομμωτήριο Θησείο',
       '/hours': 'Ωράριο Λειτουργίας | Alexandros Hair Salon | Κομμωτήριο Θησείο',
-      '/prosfora50': 'Προσφορά 50% Καλωσορίσματος - Alexandros Hair Salon'
+      '/prosfora50': 'Προσφορά 50% Καλωσορίσματος - Alexandros Hair Salon',
+      '/shop': 'Επαγγελματικά Προϊόντα Μαλλιών EVOQUE | Κερατίνη, Frizz Control | Alexandros Hair Salon'
     };
 
     const descriptionMap = {
       '/': 'Alexandros Hair Salon – Κομμωτήριο στο κέντρο της Αθήνας, Θησείο. Επαγγελματική κομμωτική από το 1992.',
       '/services': 'Υπηρεσίες & Τιμές | Alexandros Hair Salon | Κομμωτήριο Θησείο',
       '/hours': 'Ωράριο Λειτουργίας | Alexandros Hair Salon | Κομμωτήριο Θησείο',
-      '/prosfora50': 'Κλείσε ραντεβού για κούρεμα, βαφή, ανταύγειες με 50% έκπτωση στην πρώτη σου επίσκεψη. Θησείο, Αθήνα.'
+      '/prosfora50': 'Κλείσε ραντεβού για κούρεμα, βαφή, ανταύγειες με 50% έκπτωση στην πρώτη σου επίσκεψη. Θησείο, Αθήνα.',
+      '/shop': 'Επαγγελματικά προϊόντα μαλλιών EVOQUE για χρήση στο σπίτι. Σαμπουάν κερατίνης, μάσκες για φριζαρισμένα & σγουρά μαλλιά, styling. Αποστολή πανελλαδικά.'
     };
 
     const canonicalUrl = canonicalMap[location.pathname] || `${baseUrl}${location.pathname}`;
@@ -268,29 +270,21 @@ const AppContent = () => {
               </button>
             ))}
           </div>
-          <Menu 
-            theme="dark" 
-            mode="inline" 
-            selectedKeys={[location.pathname]} 
+          <Menu
+            theme="dark"
+            mode="inline"
+            selectedKeys={[location.pathname]}
             onClick={handleMenuClick}
             items={[
               {
-                key: '/find-us',
-                icon: <EnvironmentOutlined />,
+                key: '/shop',
+                icon: <ShoppingOutlined style={{ color: '#d6006e', fontSize: '1.1rem' }} />,
                 label: (
-                  <a
-                    href="https://www.google.com/maps/place/alexandroshairsalon/@37.976933,23.7162736,17z/data=!3m1!4b1!4m6!3m5!1s0x14a1bd200f79f18d:0x3024d28633f32b4!8m2!3d37.976933!4d23.7162736!16s%2Fg%2F11cm0h21cx?entry=ttu"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    {labels.findUs}
-                  </a>
-                )
-              },
-              {
-                key: '/call',
-                icon: <PhoneOutlined />,
-                label: <a href="tel:+302103465554">{labels.callUs}</a>
+                  <Link to="/shop" style={{ fontWeight: 800, color: '#d6006e', fontSize: '1rem', letterSpacing: '0.02em' }}>
+                    {labels.shop}
+                  </Link>
+                ),
+                className: 'menu-shop-highlight'
               },
               {
                 key: '/',
@@ -308,9 +302,22 @@ const AppContent = () => {
                 label: <Link to="/hours">{labels.hours}</Link>
               },
               {
-                key: '/shop',
-                icon: <ShoppingOutlined />,
-                label: <Link to="/shop">{labels.shop}</Link>
+                key: '/find-us',
+                icon: <EnvironmentOutlined />,
+                label: (
+                  <a
+                    href="https://www.google.com/maps/place/alexandroshairsalon/@37.976933,23.7162736,17z/data=!3m1!4b1!4m6!3m5!1s0x14a1bd200f79f18d:0x3024d28633f32b4!8m2!3d37.976933!4d23.7162736!16s%2Fg%2F11cm0h21cx?entry=ttu"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {labels.findUs}
+                  </a>
+                )
+              },
+              {
+                key: '/call',
+                icon: <PhoneOutlined />,
+                label: <a href="tel:+302103465554">{labels.callUs}</a>
               },
               {
                 key: '/social',

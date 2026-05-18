@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import emailjs from 'emailjs-com';
 import products from '../data/products';
 import './Shop.css';
@@ -47,6 +47,7 @@ const labels = {
     step2: 'Λαμβάνετε email επιβεβαίωσης με το σύνολο',
     step3: 'Καταθέστε το ποσό & στείλτε την απόδειξη στο email επικοινωνίας',
     step4: 'Αποστολή εντός 1–3 εργάσιμων ημερών',
+    seoIntro: 'Επαγγελματικά προϊόντα κερατίνης, frizz control και styling για χρήση στο σπίτι. Ιδανικά για φριζαρισμένα, σγουρά ή βαμμένα μαλλιά. Αποστολή πανελλαδικά.',
     bankTitle: 'Στοιχεία Κατάθεσης',
     bankHolder: 'Δικαιούχος',
     bankBank: 'Τράπεζα',
@@ -84,6 +85,7 @@ const labels = {
     step2: 'Receive a confirmation email with the total',
     step3: 'Transfer the amount & send proof of payment to the contact email below',
     step4: 'Shipped within 1–3 business days',
+    seoIntro: 'Professional keratin, frizz control and styling products for home use. Ideal for curly, frizzy or colour-treated hair. Nationwide delivery.',
     bankTitle: 'Bank Transfer Details',
     bankHolder: 'Account Holder',
     bankBank: 'Bank',
@@ -96,6 +98,47 @@ const labels = {
 
 const Shop = ({ language = 'el' }) => {
   const t = labels[language] || labels.el;
+
+  useEffect(() => {
+    const schema = {
+      '@context': 'https://schema.org',
+      '@type': 'ItemList',
+      name: 'EVOQUE Επαγγελματικά Προϊόντα Μαλλιών — Alexandros Hair Salon',
+      url: 'https://alexandroshairsalon.gr/shop',
+      itemListElement: products.map((p, i) => ({
+        '@type': 'ListItem',
+        position: i + 1,
+        item: {
+          '@type': 'Product',
+          name: p.name,
+          description: p.description,
+          brand: { '@type': 'Brand', name: p.category === 'Παιδικά' ? 'Gotstyle' : 'EVOQUE' },
+          offers: {
+            '@type': 'Offer',
+            price: p.price.toFixed(2),
+            priceCurrency: 'EUR',
+            availability: p.inStock
+              ? 'https://schema.org/InStock'
+              : 'https://schema.org/OutOfStock',
+            url: 'https://alexandroshairsalon.gr/shop',
+            seller: { '@type': 'Organization', name: 'Alexandros Hair Salon' }
+          }
+        }
+      }))
+    };
+
+    const script = document.createElement('script');
+    script.type = 'application/ld+json';
+    script.id = 'shop-product-schema';
+    script.textContent = JSON.stringify(schema);
+    document.head.appendChild(script);
+
+    return () => {
+      const el = document.getElementById('shop-product-schema');
+      if (el) el.remove();
+    };
+  }, []);
+
   const [cart, setCart] = useState({});
   const [form, setForm] = useState({ name: '', phone: '', email: '', address: '', city: '', notes: '' });
   const [sending, setSending] = useState(false);
@@ -103,13 +146,14 @@ const Shop = ({ language = 'el' }) => {
   const [sentTotal, setSentTotal] = useState(0);
   const [error, setError] = useState('');
   const [formError, setFormError] = useState('');
+  const cartRef = useRef(null);
 
   const cartItems = products.filter(p => cart[p.id] > 0);
   const total = cartItems.reduce((sum, p) => sum + p.price * (cart[p.id] || 0), 0);
 
   const changeQty = (id, delta) => {
     setCart(prev => {
-      const next = Math.max(0, (prev[id] || 0) + delta);
+      const next = Math.min(3, Math.max(0, (prev[id] || 0) + delta));
       return { ...prev, [id]: next };
     });
   };
@@ -133,6 +177,10 @@ const Shop = ({ language = 'el' }) => {
     setSending(true);
     setError('');
 
+    const bankAccountsText = BANK.accounts
+      .map(a => `${a.bank}: ${a.iban}`)
+      .join('\n');
+
     const templateParams = {
       customer_name: form.name,
       customer_phone: form.phone,
@@ -142,7 +190,12 @@ const Shop = ({ language = 'el' }) => {
       customer_notes: form.notes || '-',
       order_items: buildOrderText(),
       order_total: `${total.toFixed(2)}€`,
-      reply_to: form.email
+      reply_to: form.email,
+      bank_holder: BANK.holder,
+      bank_accounts: bankAccountsText,
+      iris_afm: BANK.irisAfm,
+      iris_phone: BANK.irisPhone,
+      contact_email: BANK.email,
     };
 
     try {
@@ -202,6 +255,7 @@ const Shop = ({ language = 'el' }) => {
       <div className="shop-header">
         <h1>{t.title}</h1>
         <p className="shop-subtitle">{t.subtitle}</p>
+        <p className="shop-seo-intro">{t.seoIntro}</p>
       </div>
 
       <div className="shop-layout">
@@ -234,7 +288,7 @@ const Shop = ({ language = 'el' }) => {
                       <div className="qty-controls">
                         <button onClick={() => changeQty(product.id, -1)} disabled={qty === 0}>−</button>
                         <span>{qty}</span>
-                        <button onClick={() => changeQty(product.id, 1)}>+</button>
+                        <button onClick={() => changeQty(product.id, 1)} disabled={qty >= 3}>+</button>
                       </div>
                     )}
                   </div>
@@ -270,7 +324,7 @@ const Shop = ({ language = 'el' }) => {
           </div>
 
           {/* Καλάθι + Φόρμα */}
-          <div className="cart-box">
+          <div className="cart-box" ref={cartRef}>
             <h2>{t.cart}</h2>
             {cartItems.length === 0 ? (
               <p className="empty-cart">{t.emptyCart}</p>
@@ -309,6 +363,20 @@ const Shop = ({ language = 'el' }) => {
           </div>
         </div>
       </div>
+
+      {/* Floating cart bar — mobile only */}
+      {cartItems.length > 0 && (
+        <div
+          className="mobile-cart-bar"
+          onClick={() => cartRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' })}
+        >
+          <span className="mobile-cart-bar-left">
+            🛒 <strong>{cartItems.reduce((s, p) => s + (cart[p.id] || 0), 0)}</strong> προϊόν{cartItems.reduce((s, p) => s + (cart[p.id] || 0), 0) !== 1 ? 'τα' : ''}
+          </span>
+          <span className="mobile-cart-bar-total">{total.toFixed(2)}€</span>
+          <span className="mobile-cart-bar-action">Ολοκλήρωση →</span>
+        </div>
+      )}
     </div>
   );
 };

@@ -61,6 +61,12 @@ const homeContent = {
       ],
       ctaServices: 'View our services',
       ctaContact: 'Contact us',
+      shopBanner: {
+        label: 'NEW',
+        title: 'Online Shop',
+        body: 'EVOQUE professional hair care products — delivered to your door.',
+        cta: 'Shop now'
+      },
     philosophy: {
       title: 'Our Philosophy',
       cards: [
@@ -104,6 +110,12 @@ const homeContent = {
       ],
       ctaServices: 'Δείτε τις υπηρεσίες μας',
       ctaContact: 'Επικοινωνήστε μαζί μας',
+      shopBanner: {
+        label: 'ΝΕΟ',
+        title: 'Online Shop',
+        body: 'Επαγγελματικά προϊόντα μαλλιών EVOQUE — απευθείας στο σπίτι σας.',
+        cta: 'Μπείτε στο Shop'
+      },
     philosophy: {
       title: 'Η Φιλοσοφία μας',
       cards: [
@@ -192,6 +204,15 @@ const Home = ({ language, setLanguage }) => {
             </Link>
           </div>
         </section>
+
+        <Link to="/shop" className="shop-home-banner">
+          <span className="shop-home-badge">{content.shopBanner.label}</span>
+          <div className="shop-home-text">
+            <span className="shop-home-title">🛍️ {content.shopBanner.title}</span>
+            <span className="shop-home-body">{content.shopBanner.body}</span>
+          </div>
+          <span className="shop-home-cta">{content.shopBanner.cta} →</span>
+        </Link>
 
         <section className="cardA-section">
           <h2 className="section-title">{content.philosophy.title}</h2>

@@ -350,65 +350,82 @@ a:focus-visible,
   }
 }
 
-body.accessibility-large-text {
-  font-size: 112%;
-  line-height: 1.75;
+html.accessibility-large-text {
+  font-size: 122%;
 }
 
-body.accessibility-large-text .services-title {
+html.accessibility-large-text body {
+  line-height: 1.8;
+}
+
+html.accessibility-large-text .content {
+  font-size: 1.1em;
+}
+
+html.accessibility-large-text p,
+html.accessibility-large-text li,
+html.accessibility-large-text span,
+html.accessibility-large-text td,
+html.accessibility-large-text th,
+html.accessibility-large-text label,
+html.accessibility-large-text a {
+  font-size: 1rem;
+}
+
+html.accessibility-large-text .services-title {
   font-size: 3.2rem;
 }
 
-body.accessibility-large-text .language-button,
-body.accessibility-large-text .accessibility-control {
+html.accessibility-large-text .language-button,
+html.accessibility-large-text .accessibility-control {
   font-size: 0.9rem;
 }
 
-body.accessibility-high-contrast {
+html.accessibility-high-contrast {
   background: #000000;
   color: #ffffff;
 }
 
-body.accessibility-high-contrast #root {
+html.accessibility-high-contrast #root {
   background: #000000 !important;
   background-image: none !important;
 }
 
-body.accessibility-high-contrast .sidebar-robot,
-body.accessibility-high-contrast .home-content-container,
-body.accessibility-high-contrast .service-section,
-body.accessibility-high-contrast .footer {
+html.accessibility-high-contrast .sidebar-robot,
+html.accessibility-high-contrast .home-content-container,
+html.accessibility-high-contrast .service-section,
+html.accessibility-high-contrast .footer {
   background-color: #000000 !important;
   border-color: #ffffff !important;
   box-shadow: 0 0 12px rgba(255, 255, 255, 0.4) !important;
 }
 
-body.accessibility-high-contrast .language-button {
+html.accessibility-high-contrast .language-button {
   border-color: #ffffff;
   color: #ffffff;
   background: transparent;
 }
 
-body.accessibility-high-contrast .language-button.active {
+html.accessibility-high-contrast .language-button.active {
   background: #ffffff;
   color: #000000;
 }
 
-body.accessibility-high-contrast a,
-body.accessibility-high-contrast .services-phone,
-body.accessibility-high-contrast .accessibility-control.active {
+html.accessibility-high-contrast a,
+html.accessibility-high-contrast .services-phone,
+html.accessibility-high-contrast .accessibility-control.active {
   color: #00ffff !important;
 }
 
-body.accessibility-high-contrast .service-table td,
-body.accessibility-high-contrast .service-table th {
+html.accessibility-high-contrast .service-table td,
+html.accessibility-high-contrast .service-table th {
   color: #ffffff !important;
   border-color: rgba(255, 255, 255, 0.5) !important;
 }
 
-body.accessibility-high-contrast .chatbot-toggle,
-body.accessibility-high-contrast .chatbot-window,
-body.accessibility-high-contrast .accessibility-control {
+html.accessibility-high-contrast .chatbot-toggle,
+html.accessibility-high-contrast .chatbot-window,
+html.accessibility-high-contrast .accessibility-control {
   background: #000000 !important;
   color: #ffffff !important;
   border-color: #ffffff !important;
@@ -433,23 +450,38 @@ body.accessibility-reduced-motion *::after {
   }
 }
 
-body.accessibility-large-text .sidebar-robot .menu-item {
+html.accessibility-large-text .sidebar-robot .menu-item {
   font-size: 1.15rem;
 }
 
-body.accessibility-large-text .home-content-container,
-body.accessibility-large-text .carousel-container {
+html.accessibility-large-text .home-content-container,
+html.accessibility-large-text .carousel-container {
   font-size: 1.05rem;
 }
 
-body.accessibility-high-contrast .ant-menu-dark,
-body.accessibility-high-contrast .ant-menu-dark .ant-menu-sub,
-body.accessibility-high-contrast .ant-menu-dark .ant-menu-inline {
+/* Shop menu item glow animation */
+@keyframes shop-neon-glow {
+  from {
+    text-shadow: 0 0 4px rgba(214,0,110,0.7), 0 0 10px rgba(214,0,110,0.5);
+  }
+  to {
+    text-shadow: 0 0 10px rgba(214,0,110,1), 0 0 22px rgba(214,0,110,0.8), 0 0 40px rgba(214,0,110,0.4);
+  }
+}
+
+.menu-shop-highlight .ant-menu-title-content a,
+.menu-shop-highlight a {
+  animation: shop-neon-glow 1.6s ease-in-out infinite alternate;
+}
+
+html.accessibility-high-contrast .ant-menu-dark,
+html.accessibility-high-contrast .ant-menu-dark .ant-menu-sub,
+html.accessibility-high-contrast .ant-menu-dark .ant-menu-inline {
   background: #000000 !important;
 }
 
-body.accessibility-high-contrast .ant-menu-dark .ant-menu-item-selected,
-body.accessibility-high-contrast .ant-menu-dark .ant-menu-item:hover {
+html.accessibility-high-contrast .ant-menu-dark .ant-menu-item-selected,
+html.accessibility-high-contrast .ant-menu-dark .ant-menu-item:hover {
   background-color: rgba(255, 255, 255, 0.18) !important;
 }
 

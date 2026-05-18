@@ -184,3 +184,93 @@
     justify-content: center;
   }
 }
+
+/* Shop banner on home page */
+.shop-home-banner {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: linear-gradient(135deg, #1a1a1a 0%, #2d0020 100%);
+  border: 2px solid #d6006e;
+  border-radius: 14px;
+  padding: 1.25rem 1.5rem;
+  text-decoration: none;
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 4px 20px rgba(214,0,110,0.25);
+}
+
+.shop-home-banner::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(214,0,110,0.08), transparent);
+  pointer-events: none;
+}
+
+.shop-home-banner:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 30px rgba(214,0,110,0.4);
+  color: #fff;
+}
+
+.shop-home-badge {
+  background: #d6006e;
+  color: #fff;
+  font-size: 0.7rem;
+  font-weight: 800;
+  padding: 0.25rem 0.6rem;
+  border-radius: 20px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  flex-shrink: 0;
+}
+
+.shop-home-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  flex: 1;
+}
+
+.shop-home-title {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: #fff;
+  letter-spacing: 0.02em;
+}
+
+.shop-home-body {
+  font-size: 0.85rem;
+  color: #ccc;
+  line-height: 1.4;
+}
+
+.shop-home-cta {
+  background: #d6006e;
+  color: #fff;
+  font-size: 0.85rem;
+  font-weight: 700;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  white-space: nowrap;
+  flex-shrink: 0;
+  transition: background 0.2s;
+}
+
+.shop-home-banner:hover .shop-home-cta {
+  background: #b0005a;
+}
+
+@media (max-width: 600px) {
+  .shop-home-banner {
+    flex-wrap: wrap;
+  }
+
+  .shop-home-cta {
+    width: 100%;
+    text-align: center;
+  }
+}
