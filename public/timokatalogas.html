@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Τιμοκατάλογος – Alexandros Hair Salon</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Lato:wght@300;400;700&display=swap');
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      font-family: 'Lato', sans-serif;
+    }
+
+    .card {
+      width: 320px;
+      padding: 40px 32px 36px;
+      text-align: center;
+      border: 2px solid #1a1a1a;
+      border-radius: 4px;
+    }
+
+    .salon-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.05rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #1a1a1a;
+      margin-bottom: 4px;
+    }
+
+    .divider-top {
+      width: 48px;
+      height: 2px;
+      background: #c4a46a;
+      margin: 12px auto 20px;
+    }
+
+    .heading {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.1rem;
+      font-weight: 900;
+      letter-spacing: 0.06em;
+      color: #1a1a1a;
+      text-transform: uppercase;
+      line-height: 1.1;
+      margin-bottom: 6px;
+    }
+
+    .subheading {
+      font-size: 0.72rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: #888;
+      margin-bottom: 28px;
+    }
+
+    .qr-wrap {
+      display: inline-block;
+      padding: 12px;
+      border: 1.5px solid #e0d5c0;
+      border-radius: 4px;
+      background: #faf8f5;
+      margin-bottom: 20px;
+    }
+
+    .qr-wrap img {
+      display: block;
+      width: 200px;
+      height: 200px;
+    }
+
+    .divider-bottom {
+      width: 48px;
+      height: 1px;
+      background: #c4a46a;
+      margin: 0 auto 16px;
+    }
+
+    .instruction {
+      font-size: 0.78rem;
+      color: #555;
+      letter-spacing: 0.04em;
+      line-height: 1.6;
+      margin-bottom: 10px;
+    }
+
+    .url {
+      font-size: 0.72rem;
+      color: #c4a46a;
+      letter-spacing: 0.08em;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    /* Print styles */
+    @media print {
+      body { background: #fff; }
+      .card { border: 2px solid #1a1a1a; }
+      @page { margin: 1.5cm; }
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="salon-name">Alexandros Hair Salon</div>
+    <div class="divider-top"></div>
+    <div class="heading">Τιμο&shy;κατάλογος</div>
+    <div class="subheading">Κομμωτήριο · Θησείο · Αθήνα</div>
+
+    <div class="qr-wrap">
+      <img
+        src="https://api.qrserver.com/v1/create-qr-code/?size=400x400&margin=0&color=1a1a1a&bgcolor=faf8f5&data=https%3A%2F%2Falexandroshairsalon.gr%2Fservices"
+        alt="QR Code για τον τιμοκατάλογο"
+        width="200"
+        height="200"
+      />
+    </div>
+
+    <div class="divider-bottom"></div>
+    <p class="instruction">
+      Σκανάρετε με την κάμερα<br>του κινητού σας
+    </p>
+    <div class="url">alexandroshairsalon.gr/services</div>
+  </div>
+</body>
+</html>
