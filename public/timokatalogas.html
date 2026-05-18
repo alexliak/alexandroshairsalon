@@ -10,20 +10,59 @@
     * { box-sizing: border-box; margin: 0; padding: 0; }
 
     body {
-      background: #fff;
+      background: #f5f5f5;
       display: flex;
+      flex-direction: column;
       align-items: center;
       justify-content: center;
       min-height: 100vh;
       font-family: 'Lato', sans-serif;
+      gap: 20px;
+      padding: 24px;
     }
 
+    /* Print/Download buttons — hidden when printing */
+    .actions {
+      display: flex;
+      gap: 12px;
+    }
+
+    .btn {
+      padding: 10px 22px;
+      border-radius: 6px;
+      font-size: 0.88rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      cursor: pointer;
+      border: none;
+      transition: background 0.2s;
+    }
+
+    .btn-print {
+      background: #1a1a1a;
+      color: #fff;
+    }
+
+    .btn-print:hover { background: #333; }
+
+    .btn-download {
+      background: #c4a46a;
+      color: #fff;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+    }
+
+    .btn-download:hover { background: #a8883a; }
+
+    /* The printable card */
     .card {
       width: 320px;
       padding: 40px 32px 36px;
       text-align: center;
       border: 2px solid #1a1a1a;
       border-radius: 4px;
+      background: #fff;
     }
 
     .salon-name {
@@ -100,15 +139,27 @@
       text-transform: uppercase;
     }
 
-    /* Print styles */
+    /* Print: hide buttons, white background */
     @media print {
-      body { background: #fff; }
+      body { background: #fff; padding: 0; justify-content: flex-start; }
+      .actions { display: none; }
       .card { border: 2px solid #1a1a1a; }
-      @page { margin: 1.5cm; }
+      @page { margin: 1.5cm; size: A4; }
     }
   </style>
 </head>
 <body>
+
+  <div class="actions">
+    <button class="btn btn-print" onclick="window.print()">🖨️ Εκτύπωση</button>
+    <a
+      class="btn btn-download"
+      href="https://api.qrserver.com/v1/create-qr-code/?size=600x600&margin=10&color=1a1a1a&bgcolor=ffffff&data=https%3A%2F%2Falexandroshairsalon.gr%2Fservices"
+      download="timokatalogas-qr.png"
+      target="_blank"
+    >⬇️ Κατέβασε QR (PNG)</a>
+  </div>
+
   <div class="card">
     <div class="salon-name">Alexandros Hair Salon</div>
     <div class="divider-top"></div>
@@ -118,7 +169,7 @@
     <div class="qr-wrap">
       <img
         src="https://api.qrserver.com/v1/create-qr-code/?size=400x400&margin=0&color=1a1a1a&bgcolor=faf8f5&data=https%3A%2F%2Falexandroshairsalon.gr%2Fservices"
-        alt="QR Code για τον τιμοκατάλογο"
+        alt="QR Code τιμοκατάλογος"
         width="200"
         height="200"
       />
@@ -130,5 +181,6 @@
     </p>
     <div class="url">alexandroshairsalon.gr/services</div>
   </div>
+
 </body>
 </html>
