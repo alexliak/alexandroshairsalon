@@ -277,16 +277,6 @@ const AppContent = () => {
             onClick={handleMenuClick}
             items={[
               {
-                key: '/shop',
-                icon: <ShoppingOutlined style={{ color: '#c4a46a', fontSize: '1.1rem' }} />,
-                label: (
-                  <Link to="/shop" style={{ fontWeight: 800, color: '#c4a46a', fontSize: '1rem', letterSpacing: '0.02em' }}>
-                    {labels.shop}
-                  </Link>
-                ),
-                className: 'menu-shop-highlight'
-              },
-              {
                 key: '/',
                 icon: <HomeOutlined />,
                 label: <Link to="/">{labels.home}</Link>
@@ -300,6 +290,16 @@ const AppContent = () => {
                 key: '/hours',
                 icon: <ClockCircleOutlined />,
                 label: <Link to="/hours">{labels.hours}</Link>
+              },
+              {
+                key: '/shop',
+                icon: <ShoppingOutlined style={{ color: '#c4a46a', fontSize: '1.1rem' }} />,
+                label: (
+                  <Link to="/shop" style={{ fontWeight: 800, color: '#c4a46a', fontSize: '1rem', letterSpacing: '0.02em' }}>
+                    {labels.shop}
+                  </Link>
+                ),
+                className: 'menu-shop-highlight'
               },
               {
                 key: '/find-us',
