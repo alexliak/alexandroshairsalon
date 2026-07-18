@@ -247,38 +247,11 @@ const serviceContent = {
   }
 };
 
-const languageOptions = [
-  { value: 'en', label: 'EN' },
-  { value: 'el', label: 'EL' }
-];
-
-const Services = ({ language, setLanguage }) => {
+const Services = ({ language }) => {
   const content = serviceContent[language];
-  const isGreek = language === 'el';
-  const languageToggleLabel = isGreek ? 'Επιλογή γλώσσας' : 'Language selection';
-  const getAria = (value) => {
-    if (value === 'en') {
-      return isGreek ? 'Αλλαγή γλώσσας στα Αγγλικά' : 'Switch language to English';
-    }
-    return isGreek ? 'Αλλαγή γλώσσας στα Ελληνικά' : 'Switch language to Greek';
-  };
 
   return (
     <div className="services-container">
-      <div className="language-toggle" role="group" aria-label={languageToggleLabel}>
-        {languageOptions.map((option) => (
-          <button
-            key={option.value}
-            type="button"
-            className={`language-button ${language === option.value ? 'active' : ''}`}
-            onClick={() => setLanguage(option.value)}
-            aria-pressed={language === option.value}
-            aria-label={getAria(option.value)}
-          >
-            {option.label}
-          </button>
-        ))}
-      </div>
       <h1 className="services-title">{content.title}</h1>
       {content.intro ? <p className="services-intro">{content.intro}</p> : null}
       {content.categories.map((category) => {

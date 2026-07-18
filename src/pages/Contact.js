@@ -3,11 +3,6 @@ import { Link } from 'react-router-dom';
 import { PhoneOutlined, FacebookOutlined, EnvironmentOutlined, ClockCircleOutlined, ArrowRightOutlined } from '@ant-design/icons';
 import './Contact.css';
 
-const languageOptions = [
-  { value: 'en', label: 'EN' },
-  { value: 'el', label: 'EL' }
-];
-
 const hoursContent = {
   en: {
     title: 'Opening Hours',
@@ -55,35 +50,11 @@ const hoursContent = {
   }
 };
 
-const ContactForm = ({ language, setLanguage }) => {
+const ContactForm = ({ language }) => {
   const content = hoursContent[language];
-  const isGreek = language === 'el';
-  const languageToggleLabel = isGreek ? 'Επιλογή γλώσσας' : 'Language selection';
-  const getToggleAria = (value) => {
-    if (value === 'en') {
-      return isGreek ? 'Αλλαγή γλώσσας στα Αγγλικά' : 'Switch language to English';
-    }
-    return isGreek ? 'Αλλαγή γλώσσας στα Ελληνικά' : 'Switch language to Greek';
-  };
 
   return (
     <div className="contact-card">
-      <div className="language-toggle-wrapper">
-        <div className="language-toggle" role="group" aria-label={languageToggleLabel}>
-          {languageOptions.map((opt) => (
-            <button
-              key={opt.value}
-              type="button"
-              className={`language-button ${language === opt.value ? 'active' : ''}`}
-              onClick={() => setLanguage(opt.value)}
-              aria-pressed={language === opt.value}
-              aria-label={getToggleAria(opt.value)}
-            >
-              {opt.label}
-            </button>
-          ))}
-        </div>
-      </div>
       <h1 className="contact-title">
         <ClockCircleOutlined aria-hidden="true" /> {content.title}
       </h1>

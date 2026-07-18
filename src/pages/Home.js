@@ -5,22 +5,27 @@ import {
   TeamOutlined,
   ExperimentOutlined,
   SafetyCertificateOutlined,
-  HistoryOutlined,
   BulbOutlined,
   SmileOutlined,
   CheckCircleOutlined,
   ArrowRightOutlined,
+  PhoneOutlined,
+  ShoppingOutlined,
   StarFilled
 } from '@ant-design/icons';
-import CustomCarousel from '../components/Carousel';
 import './Home.css';
 
-const carouselImages = [
-  '/images/portfolio/01.jpg',
-  '/images/portfolio/02.jpg',
-  '/images/portfolio/03.jpg',
-  '/images/portfolio/04.jpg',
-  '/images/portfolio/hairdresser-grooming-their-client.jpg'
+const heroImage = '/images/portfolio/hairdresser-grooming-their-client.jpg';
+
+const galleryImages = [
+  { src: '/images/portfolio/01.jpg', alt: 'Δουλειά του κομμωτηρίου Alexandros Hair Salon 1' },
+  { src: '/images/portfolio/02.jpg', alt: 'Δουλειά του κομμωτηρίου Alexandros Hair Salon 2' },
+  { src: '/images/portfolio/03.jpg', alt: 'Δουλειά του κομμωτηρίου Alexandros Hair Salon 3' },
+  { src: '/images/portfolio/04.jpg', alt: 'Δουλειά του κομμωτηρίου Alexandros Hair Salon 4' },
+  {
+    src: '/images/portfolio/beauty-fashion-portrait-young-blond-woman-model-with-natural-makeup-perfect-skin-posing.jpg',
+    alt: 'Styling μαλλιών από το Alexandros Hair Salon'
+  }
 ];
 
 /* Animated counter that runs once when visible */
@@ -68,15 +73,26 @@ const AnimatedStat = ({ target, decimals = 0, suffix = '', label }) => {
 const homeContent = {
   en: {
     hero: {
-      title: 'Excellence in Hairdressing Since 1992',
+      eyebrow: 'Since 1992 · Thiseio, Athens',
+      title: 'Excellence in Hairdressing',
       lead: 'Professional hair care & styling in the heart of Thiseio, Athens.',
-      cta: 'Book Appointment'
+      cta: 'Book Appointment',
+      ctaSecondary: 'Services & prices'
     },
     stats: [
       { target: 30, suffix: '+', label: 'Years of excellence' },
       { target: 4.5, decimals: 1, suffix: '★', label: 'Google Reviews' },
       { target: 1000, suffix: '+', label: 'Happy clients' }
     ],
+    gallery: {
+      title: 'Our Work',
+      lead: 'A glimpse of what leaves our salon every day.'
+    },
+    reviews: {
+      title: 'What our clients say',
+      body: '4.5 out of 5 stars across 22 Google reviews.',
+      cta: 'Read the reviews on Google'
+    },
     shopBanner: {
       label: 'NEW',
       title: 'Online Shop',
@@ -117,15 +133,26 @@ const homeContent = {
   },
   el: {
     hero: {
-      title: 'Υπεροχή στην κομμωτική από το 1992',
+      eyebrow: 'Από το 1992 · Θησείο, Αθήνα',
+      title: 'Υπεροχή στην κομμωτική',
       lead: 'Επαγγελματική περιποίηση & styling στο Θησείο, κέντρο Αθήνας.',
-      cta: 'Κλείσε Ραντεβού'
+      cta: 'Κλείσε Ραντεβού',
+      ctaSecondary: 'Υπηρεσίες & τιμές'
     },
     stats: [
       { target: 30, suffix: '+', label: 'Χρόνια εμπειρίας' },
       { target: 4.5, decimals: 1, suffix: '★', label: 'στο Google' },
       { target: 1000, suffix: '+', label: 'Ευχαριστημένοι πελάτες' }
     ],
+    gallery: {
+      title: 'Η Δουλειά μας',
+      lead: 'Μια ματιά σε όσα φεύγουν καθημερινά από το σαλόνι μας.'
+    },
+    reviews: {
+      title: 'Τι λένε οι πελάτες μας',
+      body: '4.5 στα 5 αστέρια σε 22 κριτικές στο Google.',
+      cta: 'Διαβάστε τις κριτικές στο Google'
+    },
     shopBanner: {
       label: 'ΝΕΟ',
       title: 'Online Shop',
@@ -166,27 +193,35 @@ const homeContent = {
   }
 };
 
-const Home = ({ language, setLanguage }) => {
+const Home = ({ language }) => {
   const content = homeContent[language];
 
   return (
     <div className="homeA-container">
 
-      {/* Hero carousel with booking CTA */}
-      <section className="heroA-banner" aria-label="Salon gallery">
-        <CustomCarousel images={carouselImages} />
+      {/* Static hero with booking CTA */}
+      <section
+        className="heroA-banner"
+        style={{ backgroundImage: `url(${process.env.PUBLIC_URL}${heroImage})` }}
+      >
         <div className="heroA-overlay">
           <div className="heroA-text">
+            <span className="heroA-eyebrow">{content.hero.eyebrow}</span>
             <h1 className="heroA-title">{content.hero.title}</h1>
             <p className="heroA-lead">{content.hero.lead}</p>
-            <a href="tel:+302103465554" className="hero-cta-btn">
-              📞 {content.hero.cta}
-            </a>
+            <div className="heroA-actions">
+              <a href="tel:+302103465554" className="hero-cta-btn">
+                <PhoneOutlined aria-hidden="true" /> {content.hero.cta}
+              </a>
+              <Link to="/services" className="hero-cta-ghost">
+                {content.hero.ctaSecondary} <ArrowRightOutlined aria-hidden="true" />
+              </Link>
+            </div>
           </div>
         </div>
       </section>
 
-      <main className="homeA-content">
+      <div className="homeA-content">
 
         {/* Stats strip — animated counters */}
         <div className="stats-strip">
@@ -201,15 +236,35 @@ const Home = ({ language, setLanguage }) => {
           ))}
         </div>
 
-        {/* Shop banner */}
-        <Link to="/shop" className="shop-home-banner">
-          <span className="shop-home-badge">{content.shopBanner.label}</span>
-          <div className="shop-home-text">
-            <span className="shop-home-title">🛍️ {content.shopBanner.title}</span>
-            <span className="shop-home-body">{content.shopBanner.body}</span>
+        {/* Portfolio gallery */}
+        <section className="gallery-section">
+          <h2 className="section-title centered">{content.gallery.title}</h2>
+          <p className="section-lead">{content.gallery.lead}</p>
+          <div className="gallery-grid">
+            {galleryImages.map((img) => (
+              <figure key={img.src} className="gallery-item">
+                <img src={`${process.env.PUBLIC_URL}${img.src}`} alt={img.alt} loading="lazy" />
+              </figure>
+            ))}
           </div>
-          <span className="shop-home-cta">{content.shopBanner.cta} →</span>
-        </Link>
+        </section>
+
+        {/* Google reviews */}
+        <section className="reviews-section">
+          <span className="reviews-stars" aria-hidden="true">
+            <StarFilled /><StarFilled /><StarFilled /><StarFilled /><StarFilled />
+          </span>
+          <h2 className="reviews-title">{content.reviews.title}</h2>
+          <p className="reviews-body">{content.reviews.body}</p>
+          <a
+            href="https://www.google.com/maps/place/alexandroshairsalon/@37.976933,23.7162736,17z"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="reviews-cta-btn"
+          >
+            {content.reviews.cta} <ArrowRightOutlined aria-hidden="true" />
+          </a>
+        </section>
 
         {/* Why choose us */}
         <section className="cardA-section">
@@ -232,25 +287,21 @@ const Home = ({ language, setLanguage }) => {
           </div>
         </section>
 
-        {/* Google reviews nudge */}
-        <a
-          href="https://www.google.com/maps/place/alexandroshairsalon/@37.976933,23.7162736,17z"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="reviews-bar"
-        >
-          <span className="reviews-stars">
-            <StarFilled /><StarFilled /><StarFilled /><StarFilled /><StarFilled />
-          </span>
-          <span className="reviews-text">4.5 — 22 κριτικές στο Google</span>
-          <span className="reviews-cta">Δείτε τις κριτικές →</span>
-        </a>
+        {/* Shop banner */}
+        <Link to="/shop" className="shop-home-banner">
+          <span className="shop-home-badge">{content.shopBanner.label}</span>
+          <div className="shop-home-text">
+            <span className="shop-home-title">
+              <ShoppingOutlined aria-hidden="true" /> {content.shopBanner.title}
+            </span>
+            <span className="shop-home-body">{content.shopBanner.body}</span>
+          </div>
+          <span className="shop-home-cta">{content.shopBanner.cta} →</span>
+        </Link>
 
         {/* Our story */}
         <section className="cardA-section">
-          <h2 className="section-title">
-            <HistoryOutlined /> {content.story.title}
-          </h2>
+          <h2 className="section-title">{content.story.title}</h2>
           {content.story.paragraphs.map((p, idx) => (
             <p key={`story-${idx}`} className="section-paragraph">{p}</p>
           ))}
@@ -278,7 +329,7 @@ const Home = ({ language, setLanguage }) => {
           </div>
         </section>
 
-      </main>
+      </div>
     </div>
   );
 };
