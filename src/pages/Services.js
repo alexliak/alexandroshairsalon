@@ -9,7 +9,9 @@ import {
   StarOutlined,
   HighlightOutlined,
   InfoCircleOutlined,
-  ArrowRightOutlined
+  ArrowRightOutlined,
+  SyncOutlined,
+  GiftOutlined
 } from '@ant-design/icons';
 import './Services.css';
 
@@ -35,9 +37,9 @@ const serviceContent = {
         heading: 'Wash Station',
         subtitle: 'Wash & treatment',
         services: [
-          { name: 'Wash (short)', price: '€4' },
-          { name: 'Wash (medium)', price: '€5' },
-          { name: 'Wash (long)', price: '€6' },
+          { name: "Wash with L'Oréal shampoo (short)", price: '€5' },
+          { name: "Wash with L'Oréal shampoo (medium)", price: '€6' },
+          { name: "Wash with L'Oréal shampoo (long)", price: '€7' },
           { name: "L'Oréal Mask (short)", price: '€5' },
           { name: "L'Oréal Mask (medium)", price: '€6' },
           { name: "L'Oréal Mask (long)", price: '€7' }
@@ -49,11 +51,16 @@ const serviceContent = {
         heading: 'Haircuts',
         subtitle: 'Cuts & trims',
         services: [
-          { name: "Haircut (women's)", price: '€21' },
-          { name: "Haircut (women's, very thick or long hair)", price: '€23' },
-          { name: "Haircut (men's)", price: '€14' },
-          { name: "Hair Trimming (men's)", price: '€9' },
-          { name: 'Haircut (kids)', price: '€15' },
+          { name: "Wash & Haircut (women's)", price: '€25' },
+          { name: "Haircut only (women's)", price: '€21' },
+          { name: "Wash & Haircut (women's, very thick or long hair)", price: '€30' },
+          { name: "Haircut only (women's, very thick or long hair)", price: '€26' },
+          { name: "Wash & Haircut (men's)", price: '€18' },
+          { name: "Haircut only (men's)", price: '€16' },
+          { name: 'Wash & Haircut (kids)', price: '€15' },
+          { name: 'Haircut only (kids)', price: '€14' },
+          { name: "Wash & Hair Trimming (men's)", price: '€13' },
+          { name: "Hair Trimming only (men's)", price: '€11' },
           { name: 'Beard trim', price: '€6' }
         ]
       },
@@ -63,13 +70,18 @@ const serviceContent = {
         heading: 'Styling',
         subtitle: 'Blow-dry & styling',
         services: [
-          { name: 'Blow-dry (short)', price: '€14' },
-          { name: 'Blow-dry (medium)', price: '€15' },
-          { name: 'Blow-dry (long)', price: '€16' },
-          { name: 'Blow-dry (curls)', price: '€21' },
-          { name: 'Styling (short)', price: '€10' },
+          { name: 'Wash & Blow-dry (short)', price: '€18' },
+          { name: 'Wash & Blow-dry (medium)', price: '€20' },
+          { name: 'Wash & Blow-dry (long)', price: '€22' },
+          { name: 'Wash & Blow-dry (very long & thick)', price: '€25' },
+          { name: 'Curls with hot tool or straightener (medium)', price: '€19' },
+          { name: 'Curls with hot tool or straightener (long)', price: '€23' },
+          { name: 'Curls with Steampod (medium)', price: '€20' },
+          { name: 'Curls with Steampod (long)', price: '€25' },
+          { name: 'Wash & Styling (short)', price: '€14' },
+          { name: 'Braids (without straightening)', price: '€15' },
           { name: 'Updo (evening)', price: 'from €39' },
-          { name: 'Braids', price: '€13' }
+          { name: 'Bridal styling (trials included)', price: 'from €120' }
         ]
       },
       {
@@ -91,15 +103,16 @@ const serviceContent = {
         heading: 'Colour Services',
         subtitle: 'Colour & lightening',
         services: [
+          { name: 'Roots colour (monthly)', price: '€35' },
           { name: "Roots colour (L'Oréal Majirel)", price: '€39' },
           { name: 'Roots colour without ammonia (INOA)', price: '€40' },
-          { name: 'Roots to ends colour (short)', price: '€50' },
-          { name: 'Roots to ends colour (medium)', price: '€55' },
-          { name: 'Roots to ends colour (long)', price: 'from €60' },
-          { name: 'Roots lightening (with toner)', price: '€65' },
-          { name: 'Roots to ends lightening (short)', price: '€75' },
-          { name: 'Roots to ends lightening (medium)', price: '€90' },
-          { name: 'Roots to ends lightening (long)', price: '€110' },
+          { name: 'Roots to ends, up to 50g extra colour (short)', price: '+€15' },
+          { name: 'Roots to ends, up to 75g extra colour (medium)', price: '+€20' },
+          { name: 'Roots to ends, up to 100g extra colour (long)', price: '+€30' },
+          { name: 'Roots lightening (with Dia Light toner)', price: '€65' },
+          { name: 'Roots to ends lightening with Dia Light toner (short)', price: '€75' },
+          { name: 'Roots to ends lightening with Dia Light toner (medium)', price: '€90' },
+          { name: 'Roots to ends lightening with Dia Light toner (long)', price: '€110' },
           { name: 'Colour gloss Dia Color (short)', price: '€45' },
           { name: 'Colour gloss Dia Color (medium)', price: '€55' },
           { name: 'Colour gloss Dia Color (long)', price: '€65' },
@@ -123,15 +136,41 @@ const serviceContent = {
         ]
       },
       {
+        key: 'perm',
+        icon: SyncOutlined,
+        heading: 'Perm',
+        subtitle: 'Permanent waves',
+        services: [
+          { name: 'Perm (short)', price: '€50' },
+          { name: 'Perm (medium)', price: '€65' },
+          { name: 'Perm (long)', price: '€75' }
+        ]
+      },
+      {
+        key: 'packages',
+        icon: GiftOutlined,
+        heading: 'Packages',
+        subtitle: 'Better together',
+        services: [
+          { name: 'Colour + Haircut + Blow-dry (short)', price: '€69 instead of €78' },
+          { name: 'Colour + Haircut + Blow-dry (medium)', price: '€72 instead of €80' },
+          { name: 'Colour + Haircut + Blow-dry (long)', price: '€75 instead of €82' },
+          { name: 'Colour + Haircut + Styling', price: '€65 instead of €74' },
+          { name: 'Colour + Haircut + Nourishment treatment + Blow-dry or Styling (short)', price: '€89 instead of €99' },
+          { name: 'Colour + Haircut + Nourishment treatment + Blow-dry or Styling (medium)', price: '€92 instead of €101' },
+          { name: 'Colour + Haircut + Nourishment treatment + Blow-dry or Styling (long)', price: '€95 instead of €103' },
+          {
+            name: 'Highlights / Balayage / Foilyage / Baby lights + Haircut + Blow-dry or Styling',
+            price: '+€29'
+          }
+        ]
+      },
+      {
         key: 'other',
         icon: StarOutlined,
         heading: 'Additional Services',
         subtitle: 'Special treatments',
         services: [
-          { name: 'Perm (short)', price: '€50' },
-          { name: 'Perm (medium)', price: '€65' },
-          { name: 'Perm (long)', price: '€75' },
-          { name: 'Bridal package (trials included)', price: 'from €120' },
           { name: 'Brow grooming', price: '€7' }
         ]
       }
@@ -175,9 +214,9 @@ const serviceContent = {
         heading: 'Λουτήρας',
         subtitle: 'Wash station',
         services: [
-          { name: 'Λούσιμο (κοντά)', price: '4 €' },
-          { name: 'Λούσιμο (μεσαία)', price: '5 €' },
-          { name: 'Λούσιμο (μακριά)', price: '6 €' },
+          { name: "Λούσιμο με σαμπουάν L'Oréal (κοντά)", price: '5 €' },
+          { name: "Λούσιμο με σαμπουάν L'Oréal (μεσαία)", price: '6 €' },
+          { name: "Λούσιμο με σαμπουάν L'Oréal (μακριά)", price: '7 €' },
           { name: "Μάσκα L'Oréal (κοντά)", price: '5 €' },
           { name: "Μάσκα L'Oréal (μεσαία)", price: '6 €' },
           { name: "Μάσκα L'Oréal (μακριά)", price: '7 €' }
@@ -189,14 +228,22 @@ const serviceContent = {
         heading: 'Κούρεμα',
         subtitle: 'Haircuts',
         services: [
-          { name: 'Κούρεμα (γυναικείο)', price: '21 €' },
+          { name: 'Λούσιμο & Κούρεμα (γυναικείο)', price: '25 €' },
+          { name: 'Κούρεμα σκέτο (γυναικείο)', price: '21 €' },
           {
-            name: 'Κούρεμα (γυναικείο πυκνά, πολύ μακριά ή δύσκολα μαλλιά)',
-            price: '23 €'
+            name: 'Λούσιμο & Κούρεμα (γυναικείο πυκνά, πολύ μακριά ή δύσκολα μαλλιά)',
+            price: '30 €'
           },
-          { name: 'Κούρεμα (ανδρικό)', price: '14 €' },
-          { name: 'Τριμάρισμα μαλλιών (ανδρικό)', price: '9 €' },
-          { name: 'Κούρεμα (παιδικό)', price: '15 €' },
+          {
+            name: 'Κούρεμα σκέτο (γυναικείο πυκνά, πολύ μακριά ή δύσκολα μαλλιά)',
+            price: '26 €'
+          },
+          { name: 'Λούσιμο & Κούρεμα (ανδρικό)', price: '18 €' },
+          { name: 'Κούρεμα σκέτο (ανδρικό)', price: '16 €' },
+          { name: 'Λούσιμο & Κούρεμα (παιδικό)', price: '15 €' },
+          { name: 'Κούρεμα σκέτο (παιδικό)', price: '14 €' },
+          { name: 'Λούσιμο & Τριμάρισμα μαλλιών (ανδρικό)', price: '13 €' },
+          { name: 'Τριμάρισμα μαλλιών σκέτο (ανδρικό)', price: '11 €' },
           { name: 'Τριμάρισμα μούσι - γενειάδα', price: '6 €' }
         ]
       },
@@ -206,13 +253,18 @@ const serviceContent = {
         heading: 'Χτένισμα',
         subtitle: 'Styling',
         services: [
-          { name: 'Χτένισμα (κοντά)', price: '14 €' },
-          { name: 'Χτένισμα (μεσαία)', price: '15 €' },
-          { name: 'Χτένισμα (μακριά)', price: '16 €' },
-          { name: 'Χτένισμα (μπούκλες)', price: '21 €' },
-          { name: 'Φόρμαρισμα (κοντά)', price: '10 €' },
+          { name: 'Λούσιμο & Χτένισμα (κοντά)', price: '18 €' },
+          { name: 'Λούσιμο & Χτένισμα (μεσαία)', price: '20 €' },
+          { name: 'Λούσιμο & Χτένισμα (μακριά)', price: '22 €' },
+          { name: 'Λούσιμο & Χτένισμα (πάρα πολύ μακριά και πυκνά)', price: '25 €' },
+          { name: 'Μπούκλες με θερμικό εργαλείο ή πρέσα (μεσαία)', price: '19 €' },
+          { name: 'Μπούκλες με θερμικό εργαλείο ή πρέσα (μακριά)', price: '23 €' },
+          { name: 'Μπούκλες με Steampod (μεσαία)', price: '20 €' },
+          { name: 'Μπούκλες με Steampod (μακριά)', price: '25 €' },
+          { name: 'Λούσιμο & Φορμάρισμα (κοντά)', price: '14 €' },
+          { name: 'Πλεξούδες (χωρίς ίσιωμα)', price: '15 €' },
           { name: 'Χτένισμα (βραδινό)', price: 'από 39 €' },
-          { name: 'Πλεξούδες', price: '13 €' }
+          { name: 'Νυφικό χτένισμα (με τα δοκιμαστικά)', price: 'από 120 €' }
         ]
       },
       {
@@ -234,15 +286,16 @@ const serviceContent = {
         heading: 'Χρώμα',
         subtitle: 'Colour services',
         services: [
+          { name: 'Βαφή / Ρίζες στον μήνα', price: '35 €' },
           { name: "Βαφή / Ρίζες (L'Oréal Majirel)", price: '39 €' },
           { name: 'Βαφή / Ρίζες χωρίς αμμωνία (INOA)', price: '40 €' },
-          { name: 'Βαφή / Ρίζες - Άκρες (κοντά)', price: '50 €' },
-          { name: 'Βαφή / Ρίζες - Άκρες (μεσαία)', price: '55 €' },
-          { name: 'Βαφή / Ρίζες - Άκρες (μακριά)', price: 'από 60 €' },
-          { name: 'Αποχρωματισμός / Ρίζες (με ρεφλέ)', price: '65 €' },
-          { name: 'Αποχρωματισμός / Ρίζες - Άκρες (κοντά)', price: '75 €' },
-          { name: 'Αποχρωματισμός / Ρίζες - Άκρες (μεσαία)', price: '90 €' },
-          { name: 'Αποχρωματισμός / Ρίζες - Άκρες (μακριά)', price: '110 €' },
+          { name: 'Βαφή / Ρίζες - Άκρες, έως 50 γρ. υλικό (κοντά)', price: '+15 €' },
+          { name: 'Βαφή / Ρίζες - Άκρες, έως 75 γρ. υλικό (μεσαία)', price: '+20 €' },
+          { name: 'Βαφή / Ρίζες - Άκρες, έως 100 γρ. υλικό (μακριά)', price: '+30 €' },
+          { name: 'Αποχρωματισμός / Ρίζες (με ρεφλέ Dia Light)', price: '65 €' },
+          { name: 'Αποχρωματισμός / Ρίζες - Άκρες με ρεφλέ Dia Light (κοντά)', price: '75 €' },
+          { name: 'Αποχρωματισμός / Ρίζες - Άκρες με ρεφλέ Dia Light (μεσαία)', price: '90 €' },
+          { name: 'Αποχρωματισμός / Ρίζες - Άκρες με ρεφλέ Dia Light (μακριά)', price: '110 €' },
           { name: 'Χρωμογαλάκτωμα Dia Color (κοντά)', price: '45 €' },
           { name: 'Χρωμογαλάκτωμα Dia Color (μεσαία)', price: '55 €' },
           { name: 'Χρωμογαλάκτωμα Dia Color (μακριά)', price: '65 €' },
@@ -266,15 +319,41 @@ const serviceContent = {
         ]
       },
       {
+        key: 'perm',
+        icon: SyncOutlined,
+        heading: 'Περμανάντ',
+        subtitle: 'Perm',
+        services: [
+          { name: 'Περμανάντ (κοντά)', price: '50 €' },
+          { name: 'Περμανάντ (μεσαία)', price: '65 €' },
+          { name: 'Περμανάντ (μακριά)', price: '75 €' }
+        ]
+      },
+      {
+        key: 'packages',
+        icon: GiftOutlined,
+        heading: 'Πακέτα',
+        subtitle: 'Συνδυασμοί που συμφέρουν',
+        services: [
+          { name: 'Βαφή + Κούρεμα + Χτένισμα (κοντά)', price: '69 € αντί 78 €' },
+          { name: 'Βαφή + Κούρεμα + Χτένισμα (μεσαία)', price: '72 € αντί 80 €' },
+          { name: 'Βαφή + Κούρεμα + Χτένισμα (μακριά)', price: '75 € αντί 82 €' },
+          { name: 'Βαφή + Κούρεμα + Φορμάρισμα', price: '65 € αντί 74 €' },
+          { name: 'Βαφή + Κούρεμα + Θεραπεία θρέψης + Χτένισμα ή Φορμάρισμα (κοντά)', price: '89 € αντί 99 €' },
+          { name: 'Βαφή + Κούρεμα + Θεραπεία θρέψης + Χτένισμα ή Φορμάρισμα (μεσαία)', price: '92 € αντί 101 €' },
+          { name: 'Βαφή + Κούρεμα + Θεραπεία θρέψης + Χτένισμα ή Φορμάρισμα (μακριά)', price: '95 € αντί 103 €' },
+          {
+            name: 'Ανταύγειες / Balayage / Foilyage / Baby lights + Κούρεμα + Χτένισμα ή Φορμάρισμα',
+            price: '+29 €'
+          }
+        ]
+      },
+      {
         key: 'other',
         icon: StarOutlined,
         heading: 'Άλλες Υπηρεσίες',
         subtitle: 'Additional services',
         services: [
-          { name: 'Περμανάντ (κοντά)', price: '50 €' },
-          { name: 'Περμανάντ (μεσαία)', price: '65 €' },
-          { name: 'Περμανάντ (μακριά)', price: '75 €' },
-          { name: 'Νυφικό πακέτο (με τα δοκιμαστικά)', price: 'από 120 €' },
           { name: 'Περιποίηση φρυδιών', price: '7 €' }
         ]
       }
