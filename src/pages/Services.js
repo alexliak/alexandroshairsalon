@@ -35,7 +35,9 @@ const serviceContent = {
         heading: 'Wash Station',
         subtitle: 'Wash & treatment',
         services: [
-          { name: "Wash (with L'Oréal products)", price: '€6' },
+          { name: 'Wash (short)', price: '€4' },
+          { name: 'Wash (medium)', price: '€5' },
+          { name: 'Wash (long)', price: '€6' },
           { name: "L'Oréal Mask (short)", price: '€5' },
           { name: "L'Oréal Mask (medium)", price: '€6' },
           { name: "L'Oréal Mask (long)", price: '€7' }
@@ -47,11 +49,11 @@ const serviceContent = {
         heading: 'Haircuts',
         subtitle: 'Cuts & trims',
         services: [
-          { name: "Wash & Haircut (women's)", price: '€25' },
-          { name: "Wash & Haircut (women's, very thick or long hair)", price: '€27' },
-          { name: "Wash & Haircut (men's)", price: '€18' },
-          { name: "Wash & Hair Trimming (men's)", price: '€13' },
-          { name: 'Wash & Haircut (kids)', price: '€15' },
+          { name: "Haircut (women's)", price: '€21' },
+          { name: "Haircut (women's, very thick or long hair)", price: '€23' },
+          { name: "Haircut (men's)", price: '€14' },
+          { name: "Hair Trimming (men's)", price: '€9' },
+          { name: 'Haircut (kids)', price: '€15' },
           { name: 'Beard trim', price: '€6' }
         ]
       },
@@ -61,12 +63,12 @@ const serviceContent = {
         heading: 'Styling',
         subtitle: 'Blow-dry & styling',
         services: [
-          { name: 'Wash & Blow-dry (short)', price: '€18' },
-          { name: 'Wash & Blow-dry (medium)', price: '€19' },
-          { name: 'Wash & Blow-dry (long)', price: '€20' },
-          { name: 'Wash & Blow-dry (curls)', price: '€25' },
-          { name: 'Wash & Styling (short)', price: '€14' },
-          { name: 'Wash & Updo (evening)', price: 'Upon consultation' },
+          { name: 'Blow-dry (short)', price: '€14' },
+          { name: 'Blow-dry (medium)', price: '€15' },
+          { name: 'Blow-dry (long)', price: '€16' },
+          { name: 'Blow-dry (curls)', price: '€21' },
+          { name: 'Styling (short)', price: '€10' },
+          { name: 'Updo (evening)', price: 'from €39' },
           { name: 'Braids', price: '€13' }
         ]
       },
@@ -91,7 +93,9 @@ const serviceContent = {
         services: [
           { name: "Roots colour (L'Oréal Majirel)", price: '€39' },
           { name: 'Roots colour without ammonia (INOA)', price: '€40' },
-          { name: 'Roots to ends colour', price: '€38-€45' },
+          { name: 'Roots to ends colour (short)', price: '€50' },
+          { name: 'Roots to ends colour (medium)', price: '€55' },
+          { name: 'Roots to ends colour (long)', price: 'from €60' },
           { name: 'Roots lightening (with toner)', price: '€65' },
           { name: 'Roots to ends lightening (short)', price: '€75' },
           { name: 'Roots to ends lightening (medium)', price: '€90' },
@@ -99,17 +103,23 @@ const serviceContent = {
           { name: 'Colour gloss Dia Color (short)', price: '€45' },
           { name: 'Colour gloss Dia Color (medium)', price: '€55' },
           { name: 'Colour gloss Dia Color (long)', price: '€65' },
-          { name: 'Wash & Toner Dia Light (short)', price: '€19' },
-          { name: 'Wash & Toner Dia Light (medium)', price: '€25' },
-          { name: 'Wash & Toner Dia Light (long)', price: 'Upon consultation' },
-          { name: 'Wash & Highlights (crown)', price: '€35' },
-          { name: 'Wash & Highlights half head (short)', price: '€55' },
-          { name: 'Wash & Highlights half head (medium or long)', price: 'Upon consultation' },
-          { name: 'Wash & Highlights full head (short)', price: '€60' },
-          { name: 'Wash & Highlights full head (medium or long)', price: 'Upon consultation' },
-          { name: 'Wash & Baby lights half head (short)', price: '€75' },
-          { name: 'Wash & Baby lights (medium or long)', price: 'Upon consultation' },
-          { name: 'Wash & Balayage', price: 'Upon consultation' }
+          { name: 'Toner Dia Light (short)', price: '€19' },
+          { name: 'Toner Dia Light (medium)', price: '€25' },
+          { name: 'Toner Dia Light (long)', price: '€31' },
+          { name: 'Highlights (crown)', price: '€35' },
+          { name: 'Highlights half head (short)', price: '€55' },
+          { name: 'Highlights half head (medium)', price: '€65' },
+          { name: 'Highlights half head (long)', price: '€75' },
+          { name: 'Highlights full head (short)', price: '€60' },
+          { name: 'Highlights full head (medium)', price: '€75' },
+          { name: 'Highlights full head (long)', price: '€85' },
+          { name: 'Baby lights half head (short)', price: '€75' },
+          { name: 'Baby lights half head (medium)', price: '€85' },
+          { name: 'Baby lights half head (long)', price: '€95' },
+          { name: 'Foilyage (medium)', price: '€90' },
+          { name: 'Foilyage (long)', price: '€100' },
+          { name: 'Balayage (medium)', price: '€79' },
+          { name: 'Balayage (long)', price: '€99' }
         ]
       },
       {
@@ -118,9 +128,11 @@ const serviceContent = {
         heading: 'Additional Services',
         subtitle: 'Special treatments',
         services: [
-          { name: 'Perm', price: '€50-€65' },
-          { name: 'Bridal package', price: 'Upon consultation' },
-          { name: 'Brow grooming', price: '€5' }
+          { name: 'Perm (short)', price: '€50' },
+          { name: 'Perm (medium)', price: '€65' },
+          { name: 'Perm (long)', price: '€75' },
+          { name: 'Bridal package (trials included)', price: 'from €120' },
+          { name: 'Brow grooming', price: '€7' }
         ]
       }
     ],
@@ -163,7 +175,9 @@ const serviceContent = {
         heading: 'Λουτήρας',
         subtitle: 'Wash station',
         services: [
-          { name: "Λούσιμο (με προϊόντα L'Oréal)", price: '6 €' },
+          { name: 'Λούσιμο (κοντά)', price: '4 €' },
+          { name: 'Λούσιμο (μεσαία)', price: '5 €' },
+          { name: 'Λούσιμο (μακριά)', price: '6 €' },
           { name: "Μάσκα L'Oréal (κοντά)", price: '5 €' },
           { name: "Μάσκα L'Oréal (μεσαία)", price: '6 €' },
           { name: "Μάσκα L'Oréal (μακριά)", price: '7 €' }
@@ -175,14 +189,14 @@ const serviceContent = {
         heading: 'Κούρεμα',
         subtitle: 'Haircuts',
         services: [
-          { name: 'Λούσιμο / Κούρεμα (γυναικείο)', price: '25 €' },
+          { name: 'Κούρεμα (γυναικείο)', price: '21 €' },
           {
-            name: 'Λούσιμο / Κούρεμα (γυναικείο πυκνά, πολύ μακριά ή δύσκολα μαλλιά)',
-            price: '27 €'
+            name: 'Κούρεμα (γυναικείο πυκνά, πολύ μακριά ή δύσκολα μαλλιά)',
+            price: '23 €'
           },
-          { name: 'Λούσιμο / Κούρεμα (ανδρικό)', price: '18 €' },
-          { name: 'Λούσιμο / Τριμάρισμα μαλλιών (ανδρικό)', price: '13 €' },
-          { name: 'Λούσιμο / Κούρεμα (παιδικό)', price: '15 €' },
+          { name: 'Κούρεμα (ανδρικό)', price: '14 €' },
+          { name: 'Τριμάρισμα μαλλιών (ανδρικό)', price: '9 €' },
+          { name: 'Κούρεμα (παιδικό)', price: '15 €' },
           { name: 'Τριμάρισμα μούσι - γενειάδα', price: '6 €' }
         ]
       },
@@ -192,12 +206,12 @@ const serviceContent = {
         heading: 'Χτένισμα',
         subtitle: 'Styling',
         services: [
-          { name: 'Λούσιμο / Χτένισμα (κοντά)', price: '18 €' },
-          { name: 'Λούσιμο / Χτένισμα (μεσαία)', price: '19 €' },
-          { name: 'Λούσιμο / Χτένισμα (μακριά)', price: '20 €' },
-          { name: 'Λούσιμο / Χτένισμα (μπούκλες)', price: '25 €' },
-          { name: 'Λούσιμο / Φόρμαρισμα (κοντά)', price: '14 €' },
-          { name: 'Λούσιμο / Χτένισμα (βραδινό)', price: 'Κατόπιν συνεννόησης' },
+          { name: 'Χτένισμα (κοντά)', price: '14 €' },
+          { name: 'Χτένισμα (μεσαία)', price: '15 €' },
+          { name: 'Χτένισμα (μακριά)', price: '16 €' },
+          { name: 'Χτένισμα (μπούκλες)', price: '21 €' },
+          { name: 'Φόρμαρισμα (κοντά)', price: '10 €' },
+          { name: 'Χτένισμα (βραδινό)', price: 'από 39 €' },
           { name: 'Πλεξούδες', price: '13 €' }
         ]
       },
@@ -222,7 +236,9 @@ const serviceContent = {
         services: [
           { name: "Βαφή / Ρίζες (L'Oréal Majirel)", price: '39 €' },
           { name: 'Βαφή / Ρίζες χωρίς αμμωνία (INOA)', price: '40 €' },
-          { name: 'Βαφή / Ρίζες - Άκρες', price: '38-45 €' },
+          { name: 'Βαφή / Ρίζες - Άκρες (κοντά)', price: '50 €' },
+          { name: 'Βαφή / Ρίζες - Άκρες (μεσαία)', price: '55 €' },
+          { name: 'Βαφή / Ρίζες - Άκρες (μακριά)', price: 'από 60 €' },
           { name: 'Αποχρωματισμός / Ρίζες (με ρεφλέ)', price: '65 €' },
           { name: 'Αποχρωματισμός / Ρίζες - Άκρες (κοντά)', price: '75 €' },
           { name: 'Αποχρωματισμός / Ρίζες - Άκρες (μεσαία)', price: '90 €' },
@@ -230,17 +246,23 @@ const serviceContent = {
           { name: 'Χρωμογαλάκτωμα Dia Color (κοντά)', price: '45 €' },
           { name: 'Χρωμογαλάκτωμα Dia Color (μεσαία)', price: '55 €' },
           { name: 'Χρωμογαλάκτωμα Dia Color (μακριά)', price: '65 €' },
-          { name: 'Λούσιμο / Ρεφλέ Dia Light (κοντά)', price: '19 €' },
-          { name: 'Λούσιμο / Ρεφλέ Dia Light (μεσαία)', price: '25 €' },
-          { name: 'Λούσιμο / Ρεφλέ Dia Light (μακριά)', price: 'Κατόπιν συνεννόησης' },
-          { name: 'Λούσιμο / Ανταύγειες (στεφάνι)', price: '35 €' },
-          { name: 'Λούσιμο / Ανταύγειες μισά 1/2 (κοντά)', price: '55 €' },
-          { name: 'Λούσιμο / Ανταύγειες μισά 1/2 (μεσαία ή μακριά)', price: 'Κατόπιν συνεννόησης' },
-          { name: 'Λούσιμο / Ανταύγειες όλα (κοντά)', price: '60 €' },
-          { name: 'Λούσιμο / Ανταύγειες όλα (μεσαία ή μακριά)', price: 'Κατόπιν συνεννόησης' },
-          { name: 'Λούσιμο / Baby lights μισά (κοντά)', price: '75 €' },
-          { name: 'Λούσιμο / Baby lights (μεσαία ή μακριά)', price: 'Κατόπιν συνεννόησης' },
-          { name: 'Λούσιμο / Balayage', price: 'Κατόπιν συνεννόησης' }
+          { name: 'Ρεφλέ Dia Light (κοντά)', price: '19 €' },
+          { name: 'Ρεφλέ Dia Light (μεσαία)', price: '25 €' },
+          { name: 'Ρεφλέ Dia Light (μακριά)', price: '31 €' },
+          { name: 'Ανταύγειες (στεφάνι)', price: '35 €' },
+          { name: 'Ανταύγειες μισά 1/2 (κοντά)', price: '55 €' },
+          { name: 'Ανταύγειες μισά 1/2 (μεσαία)', price: '65 €' },
+          { name: 'Ανταύγειες μισά 1/2 (μακριά)', price: '75 €' },
+          { name: 'Ανταύγειες όλα (κοντά)', price: '60 €' },
+          { name: 'Ανταύγειες όλα (μεσαία)', price: '75 €' },
+          { name: 'Ανταύγειες όλα (μακριά)', price: '85 €' },
+          { name: 'Baby lights μισά (κοντά)', price: '75 €' },
+          { name: 'Baby lights μισά (μεσαία)', price: '85 €' },
+          { name: 'Baby lights μισά (μακριά)', price: '95 €' },
+          { name: 'Foilyage (μεσαία)', price: '90 €' },
+          { name: 'Foilyage (μακριά)', price: '100 €' },
+          { name: 'Balayage (μεσαία)', price: '79 €' },
+          { name: 'Balayage (μακριά)', price: '99 €' }
         ]
       },
       {
@@ -249,9 +271,11 @@ const serviceContent = {
         heading: 'Άλλες Υπηρεσίες',
         subtitle: 'Additional services',
         services: [
-          { name: 'Περμανάντ', price: '50-65 €' },
-          { name: 'Νυφικό πακέτο', price: 'Κατόπιν συνεννόησης' },
-          { name: 'Περιποίηση φρυδιών', price: '5 €' }
+          { name: 'Περμανάντ (κοντά)', price: '50 €' },
+          { name: 'Περμανάντ (μεσαία)', price: '65 €' },
+          { name: 'Περμανάντ (μακριά)', price: '75 €' },
+          { name: 'Νυφικό πακέτο (με τα δοκιμαστικά)', price: 'από 120 €' },
+          { name: 'Περιποίηση φρυδιών', price: '7 €' }
         ]
       }
     ],
