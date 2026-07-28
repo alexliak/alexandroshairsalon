@@ -52,15 +52,15 @@ const serviceContent = {
         subtitle: 'Cuts & trims',
         services: [
           { name: "Wash & Haircut (women's)", price: '€25' },
-          { name: "Haircut only (women's)", price: '€21' },
+          { name: "Haircut (women's)", price: '€21' },
           { name: "Wash & Haircut (women's, very thick or long hair)", price: '€30' },
-          { name: "Haircut only (women's, very thick or long hair)", price: '€26' },
+          { name: "Haircut (women's, very thick or long hair)", price: '€26' },
           { name: "Wash & Haircut (men's)", price: '€18' },
-          { name: "Haircut only (men's)", price: '€16' },
+          { name: "Haircut (men's)", price: '€16' },
           { name: 'Wash & Haircut (kids)', price: '€15' },
-          { name: 'Haircut only (kids)', price: '€14' },
+          { name: 'Haircut (kids)', price: '€14' },
           { name: "Wash & Hair Trimming (men's)", price: '€13' },
-          { name: "Hair Trimming only (men's)", price: '€11' },
+          { name: "Hair Trimming (men's)", price: '€10' },
           { name: 'Beard trim', price: '€6' }
         ]
       },
@@ -74,12 +74,15 @@ const serviceContent = {
           { name: 'Wash & Blow-dry (medium)', price: '€20' },
           { name: 'Wash & Blow-dry (long)', price: '€22' },
           { name: 'Wash & Blow-dry (very long & thick)', price: '€25' },
+          { name: 'Blow-dry without wash (short)', price: '€16' },
+          { name: 'Blow-dry without wash (medium)', price: '€18' },
+          { name: 'Blow-dry without wash (long)', price: '€20' },
           { name: 'Curls with hot tool or straightener (medium)', price: '€19' },
           { name: 'Curls with hot tool or straightener (long)', price: '€23' },
-          { name: 'Curls with Steampod (medium)', price: '€20' },
-          { name: 'Curls with Steampod (long)', price: '€25' },
+          { name: 'With Steampod', price: '+€3' },
           { name: 'Wash & Styling (short)', price: '€14' },
           { name: 'Braids (without straightening)', price: '€15' },
+          { name: 'Weekly blow-dry plan', price: '-25%' },
           { name: 'Updo (evening)', price: 'from €39' },
           { name: 'Bridal styling (trials included)', price: 'from €120' }
         ]
@@ -130,7 +133,7 @@ const serviceContent = {
           { name: 'Baby lights half head (medium)', price: '€85' },
           { name: 'Baby lights half head (long)', price: '€95' },
           { name: 'Foilyage (medium)', price: '€90' },
-          { name: 'Foilyage (long)', price: '€100' },
+          { name: 'Foilyage (long)', price: '€99' },
           { name: 'Balayage (medium)', price: '€79' },
           { name: 'Balayage (long)', price: '€99' }
         ]
@@ -160,8 +163,12 @@ const serviceContent = {
           { name: 'Colour + Haircut + Nourishment treatment + Blow-dry or Styling (medium)', price: '€92 instead of €101' },
           { name: 'Colour + Haircut + Nourishment treatment + Blow-dry or Styling (long)', price: '€95 instead of €103' },
           {
-            name: 'Highlights / Balayage / Foilyage / Baby lights + Haircut + Blow-dry or Styling',
-            price: '+€29'
+            name: 'With any technical service (Highlights, Balayage, Foilyage, Baby lights): Haircut + Blow-dry or Styling',
+            price: 'only +€29 on the service price'
+          },
+          {
+            name: 'e.g. Balayage (long) + Haircut + Blow-dry',
+            price: '€128 instead of €142'
           }
         ]
       },
@@ -229,21 +236,21 @@ const serviceContent = {
         subtitle: 'Haircuts',
         services: [
           { name: 'Λούσιμο & Κούρεμα (γυναικείο)', price: '25 €' },
-          { name: 'Κούρεμα σκέτο (γυναικείο)', price: '21 €' },
+          { name: 'Κούρεμα (γυναικείο)', price: '21 €' },
           {
             name: 'Λούσιμο & Κούρεμα (γυναικείο πυκνά, πολύ μακριά ή δύσκολα μαλλιά)',
             price: '30 €'
           },
           {
-            name: 'Κούρεμα σκέτο (γυναικείο πυκνά, πολύ μακριά ή δύσκολα μαλλιά)',
+            name: 'Κούρεμα (γυναικείο πυκνά, πολύ μακριά ή δύσκολα μαλλιά)',
             price: '26 €'
           },
           { name: 'Λούσιμο & Κούρεμα (ανδρικό)', price: '18 €' },
-          { name: 'Κούρεμα σκέτο (ανδρικό)', price: '16 €' },
+          { name: 'Κούρεμα (ανδρικό)', price: '16 €' },
           { name: 'Λούσιμο & Κούρεμα (παιδικό)', price: '15 €' },
-          { name: 'Κούρεμα σκέτο (παιδικό)', price: '14 €' },
+          { name: 'Κούρεμα (παιδικό)', price: '14 €' },
           { name: 'Λούσιμο & Τριμάρισμα μαλλιών (ανδρικό)', price: '13 €' },
-          { name: 'Τριμάρισμα μαλλιών σκέτο (ανδρικό)', price: '11 €' },
+          { name: 'Τριμάρισμα μαλλιών (ανδρικό)', price: '10 €' },
           { name: 'Τριμάρισμα μούσι - γενειάδα', price: '6 €' }
         ]
       },
@@ -257,12 +264,15 @@ const serviceContent = {
           { name: 'Λούσιμο & Χτένισμα (μεσαία)', price: '20 €' },
           { name: 'Λούσιμο & Χτένισμα (μακριά)', price: '22 €' },
           { name: 'Λούσιμο & Χτένισμα (πάρα πολύ μακριά και πυκνά)', price: '25 €' },
+          { name: 'Χτένισμα χωρίς λούσιμο (κοντά)', price: '16 €' },
+          { name: 'Χτένισμα χωρίς λούσιμο (μεσαία)', price: '18 €' },
+          { name: 'Χτένισμα χωρίς λούσιμο (μακριά)', price: '20 €' },
           { name: 'Μπούκλες με θερμικό εργαλείο ή πρέσα (μεσαία)', price: '19 €' },
           { name: 'Μπούκλες με θερμικό εργαλείο ή πρέσα (μακριά)', price: '23 €' },
-          { name: 'Μπούκλες με Steampod (μεσαία)', price: '20 €' },
-          { name: 'Μπούκλες με Steampod (μακριά)', price: '25 €' },
+          { name: 'Με Steampod', price: '+3 €' },
           { name: 'Λούσιμο & Φορμάρισμα (κοντά)', price: '14 €' },
           { name: 'Πλεξούδες (χωρίς ίσιωμα)', price: '15 €' },
+          { name: 'Εβδομαδιαία χτενίσματα', price: '-25%' },
           { name: 'Χτένισμα (βραδινό)', price: 'από 39 €' },
           { name: 'Νυφικό χτένισμα (με τα δοκιμαστικά)', price: 'από 120 €' }
         ]
@@ -313,7 +323,7 @@ const serviceContent = {
           { name: 'Baby lights μισά (μεσαία)', price: '85 €' },
           { name: 'Baby lights μισά (μακριά)', price: '95 €' },
           { name: 'Foilyage (μεσαία)', price: '90 €' },
-          { name: 'Foilyage (μακριά)', price: '100 €' },
+          { name: 'Foilyage (μακριά)', price: '99 €' },
           { name: 'Balayage (μεσαία)', price: '79 €' },
           { name: 'Balayage (μακριά)', price: '99 €' }
         ]
@@ -343,8 +353,12 @@ const serviceContent = {
           { name: 'Βαφή + Κούρεμα + Θεραπεία θρέψης + Χτένισμα ή Φορμάρισμα (μεσαία)', price: '92 € αντί 101 €' },
           { name: 'Βαφή + Κούρεμα + Θεραπεία θρέψης + Χτένισμα ή Φορμάρισμα (μακριά)', price: '95 € αντί 103 €' },
           {
-            name: 'Ανταύγειες / Balayage / Foilyage / Baby lights + Κούρεμα + Χτένισμα ή Φορμάρισμα',
-            price: '+29 €'
+            name: 'Σε κάθε τεχνική εργασία (Ανταύγειες, Balayage, Foilyage, Baby lights): Κούρεμα + Χτένισμα ή Φορμάρισμα',
+            price: 'μόνο +29 € στην τιμή της εργασίας'
+          },
+          {
+            name: 'π.χ. Balayage (μακριά) + Κούρεμα + Χτένισμα',
+            price: '128 € αντί 142 €'
           }
         ]
       },
