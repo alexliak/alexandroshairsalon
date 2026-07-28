@@ -1,0 +1,168 @@
+{
+  "_ΟΔΗΓΙΕΣ": "Εδώ αλλάζεις υπηρεσίες και τιμές. Κάθε υπηρεσία έχει: name (el = ελληνικά, en = αγγλικά) και price (el, en). Άλλαξε τα κείμενα ή τις τιμές, αποθήκευσε (Commit), και το site ενημερώνεται αυτόματα σε ~2 λεπτά. Για να σβήσεις υπηρεσία διαγράφεις όλο το μπλοκ της από { έως }, μαζί με το κόμμα. Για νέα υπηρεσία αντιγράφεις ένα υπάρχον μπλοκ.",
+  "title": { "el": "Υπηρεσίες", "en": "Services" },
+  "intro": {
+    "el": "Ένας κατανοητός κατάλογος με τις βασικές υπηρεσίες και τις τιμές μας. Για εξατομικευμένες ανάγκες είμαστε πάντα διαθέσιμοι να συζητήσουμε.",
+    "en": "A clear list of our core services and prices. For bespoke requests we are happy to help."
+  },
+  "categories": [
+    {
+      "key": "wash",
+      "heading": { "el": "Λουτήρας", "en": "Wash Station" },
+      "subtitle": { "el": "Wash station", "en": "Wash & treatment" },
+      "services": [
+        { "name": { "el": "Λούσιμο με σαμπουάν L'Oréal (κοντά)", "en": "Wash with L'Oréal shampoo (short)" }, "price": { "el": "5 €", "en": "€5" } },
+        { "name": { "el": "Λούσιμο με σαμπουάν L'Oréal (μεσαία)", "en": "Wash with L'Oréal shampoo (medium)" }, "price": { "el": "6 €", "en": "€6" } },
+        { "name": { "el": "Λούσιμο με σαμπουάν L'Oréal (μακριά)", "en": "Wash with L'Oréal shampoo (long)" }, "price": { "el": "7 €", "en": "€7" } },
+        { "name": { "el": "Μάσκα L'Oréal (κοντά)", "en": "L'Oréal Mask (short)" }, "price": { "el": "5 €", "en": "€5" } },
+        { "name": { "el": "Μάσκα L'Oréal (μεσαία)", "en": "L'Oréal Mask (medium)" }, "price": { "el": "6 €", "en": "€6" } },
+        { "name": { "el": "Μάσκα L'Oréal (μακριά)", "en": "L'Oréal Mask (long)" }, "price": { "el": "7 €", "en": "€7" } }
+      ]
+    },
+    {
+      "key": "haircuts",
+      "heading": { "el": "Κούρεμα", "en": "Haircuts" },
+      "subtitle": { "el": "Haircuts", "en": "Cuts & trims" },
+      "services": [
+        { "name": { "el": "Λούσιμο & Κούρεμα (γυναικείο)", "en": "Wash & Haircut (women's)" }, "price": { "el": "25 €", "en": "€25" } },
+        { "name": { "el": "Κούρεμα (γυναικείο)", "en": "Haircut (women's)" }, "price": { "el": "21 €", "en": "€21" } },
+        { "name": { "el": "Λούσιμο & Κούρεμα (γυναικείο πυκνά, πολύ μακριά ή δύσκολα μαλλιά)", "en": "Wash & Haircut (women's, very thick or long hair)" }, "price": { "el": "30 €", "en": "€30" } },
+        { "name": { "el": "Κούρεμα (γυναικείο πυκνά, πολύ μακριά ή δύσκολα μαλλιά)", "en": "Haircut (women's, very thick or long hair)" }, "price": { "el": "26 €", "en": "€26" } },
+        { "name": { "el": "Λούσιμο & Κούρεμα (ανδρικό)", "en": "Wash & Haircut (men's)" }, "price": { "el": "18 €", "en": "€18" } },
+        { "name": { "el": "Κούρεμα (ανδρικό)", "en": "Haircut (men's)" }, "price": { "el": "16 €", "en": "€16" } },
+        { "name": { "el": "Λούσιμο & Κούρεμα (παιδικό)", "en": "Wash & Haircut (kids)" }, "price": { "el": "15 €", "en": "€15" } },
+        { "name": { "el": "Κούρεμα (παιδικό)", "en": "Haircut (kids)" }, "price": { "el": "14 €", "en": "€14" } },
+        { "name": { "el": "Λούσιμο & Τριμάρισμα μαλλιών (ανδρικό)", "en": "Wash & Hair Trimming (men's)" }, "price": { "el": "13 €", "en": "€13" } },
+        { "name": { "el": "Τριμάρισμα μαλλιών (ανδρικό)", "en": "Hair Trimming (men's)" }, "price": { "el": "10 €", "en": "€10" } },
+        { "name": { "el": "Τριμάρισμα μούσι - γενειάδα", "en": "Beard trim" }, "price": { "el": "6 €", "en": "€6" } }
+      ]
+    },
+    {
+      "key": "styling",
+      "heading": { "el": "Χτένισμα", "en": "Styling" },
+      "subtitle": { "el": "Styling", "en": "Blow-dry & styling" },
+      "services": [
+        { "name": { "el": "Λούσιμο & Χτένισμα (κοντά)", "en": "Wash & Blow-dry (short)" }, "price": { "el": "18 €", "en": "€18" } },
+        { "name": { "el": "Λούσιμο & Χτένισμα (μεσαία)", "en": "Wash & Blow-dry (medium)" }, "price": { "el": "20 €", "en": "€20" } },
+        { "name": { "el": "Λούσιμο & Χτένισμα (μακριά)", "en": "Wash & Blow-dry (long)" }, "price": { "el": "22 €", "en": "€22" } },
+        { "name": { "el": "Λούσιμο & Χτένισμα (πάρα πολύ μακριά και πυκνά)", "en": "Wash & Blow-dry (very long & thick)" }, "price": { "el": "25 €", "en": "€25" } },
+        { "name": { "el": "Χτένισμα χωρίς λούσιμο (κοντά)", "en": "Blow-dry without wash (short)" }, "price": { "el": "16 €", "en": "€16" } },
+        { "name": { "el": "Χτένισμα χωρίς λούσιμο (μεσαία)", "en": "Blow-dry without wash (medium)" }, "price": { "el": "18 €", "en": "€18" } },
+        { "name": { "el": "Χτένισμα χωρίς λούσιμο (μακριά)", "en": "Blow-dry without wash (long)" }, "price": { "el": "20 €", "en": "€20" } },
+        { "name": { "el": "Μπούκλες με θερμικό εργαλείο ή πρέσα (μεσαία)", "en": "Curls with hot tool or straightener (medium)" }, "price": { "el": "19 €", "en": "€19" } },
+        { "name": { "el": "Μπούκλες με θερμικό εργαλείο ή πρέσα (μακριά)", "en": "Curls with hot tool or straightener (long)" }, "price": { "el": "23 €", "en": "€23" } },
+        { "name": { "el": "Με Steampod", "en": "With Steampod" }, "price": { "el": "+3 €", "en": "+€3" } },
+        { "name": { "el": "Λούσιμο & Φορμάρισμα (κοντά)", "en": "Wash & Styling (short)" }, "price": { "el": "14 €", "en": "€14" } },
+        { "name": { "el": "Πλεξούδες (χωρίς ίσιωμα)", "en": "Braids (without straightening)" }, "price": { "el": "15 €", "en": "€15" } },
+        { "name": { "el": "Εβδομαδιαία χτενίσματα", "en": "Weekly blow-dry plan" }, "price": { "el": "-25%", "en": "-25%" } },
+        { "name": { "el": "Χτένισμα (βραδινό)", "en": "Updo (evening)" }, "price": { "el": "από 39 €", "en": "from €39" } },
+        { "name": { "el": "Νυφικό χτένισμα (με τα δοκιμαστικά)", "en": "Bridal styling (trials included)" }, "price": { "el": "από 120 €", "en": "from €120" } }
+      ]
+    },
+    {
+      "key": "therapies",
+      "heading": { "el": "Θεραπείες Μαλλιών", "en": "Hair Treatments" },
+      "subtitle": { "el": "Hair treatments", "en": "Care & repair" },
+      "services": [
+        { "name": { "el": "Θεραπεία εντατικής θρέψης", "en": "Intensive nourishment treatment" }, "price": { "el": "21 €", "en": "€21" } },
+        { "name": { "el": "Θεραπεία τριχόπτωσης", "en": "Hair-loss treatment" }, "price": { "el": "7 €", "en": "€7" } },
+        { "name": { "el": "Θεραπεία Anti-Frizz", "en": "Anti-frizz treatment" }, "price": { "el": "49 €", "en": "€49" } },
+        { "name": { "el": "Θεραπεία κερατίνης (κοντά/μεσαία)", "en": "Keratin treatment (short/medium)" }, "price": { "el": "120 €", "en": "€120" } },
+        { "name": { "el": "Θεραπεία κερατίνης (μακριά)", "en": "Keratin treatment (long)" }, "price": { "el": "150 €", "en": "€150" } }
+      ]
+    },
+    {
+      "key": "color",
+      "heading": { "el": "Χρώμα", "en": "Colour Services" },
+      "subtitle": { "el": "Colour services", "en": "Colour & lightening" },
+      "services": [
+        { "name": { "el": "Βαφή / Ρίζες στον μήνα", "en": "Roots colour (monthly)" }, "price": { "el": "35 €", "en": "€35" } },
+        { "name": { "el": "Βαφή / Ρίζες (L'Oréal Majirel)", "en": "Roots colour (L'Oréal Majirel)" }, "price": { "el": "39 €", "en": "€39" } },
+        { "name": { "el": "Βαφή / Ρίζες χωρίς αμμωνία (INOA)", "en": "Roots colour without ammonia (INOA)" }, "price": { "el": "40 €", "en": "€40" } },
+        { "name": { "el": "Βαφή / Ρίζες - Άκρες, έως 50 γρ. υλικό (κοντά)", "en": "Roots to ends, up to 50g extra colour (short)" }, "price": { "el": "+15 €", "en": "+€15" } },
+        { "name": { "el": "Βαφή / Ρίζες - Άκρες, έως 75 γρ. υλικό (μεσαία)", "en": "Roots to ends, up to 75g extra colour (medium)" }, "price": { "el": "+20 €", "en": "+€20" } },
+        { "name": { "el": "Βαφή / Ρίζες - Άκρες, έως 100 γρ. υλικό (μακριά)", "en": "Roots to ends, up to 100g extra colour (long)" }, "price": { "el": "+30 €", "en": "+€30" } },
+        { "name": { "el": "Αποχρωματισμός / Ρίζες (με ρεφλέ Dia Light)", "en": "Roots lightening (with Dia Light toner)" }, "price": { "el": "65 €", "en": "€65" } },
+        { "name": { "el": "Αποχρωματισμός / Ρίζες - Άκρες με ρεφλέ Dia Light (κοντά)", "en": "Roots to ends lightening with Dia Light toner (short)" }, "price": { "el": "75 €", "en": "€75" } },
+        { "name": { "el": "Αποχρωματισμός / Ρίζες - Άκρες με ρεφλέ Dia Light (μεσαία)", "en": "Roots to ends lightening with Dia Light toner (medium)" }, "price": { "el": "90 €", "en": "€90" } },
+        { "name": { "el": "Αποχρωματισμός / Ρίζες - Άκρες με ρεφλέ Dia Light (μακριά)", "en": "Roots to ends lightening with Dia Light toner (long)" }, "price": { "el": "110 €", "en": "€110" } },
+        { "name": { "el": "Χρωμογαλάκτωμα Dia Color (κοντά)", "en": "Colour gloss Dia Color (short)" }, "price": { "el": "45 €", "en": "€45" } },
+        { "name": { "el": "Χρωμογαλάκτωμα Dia Color (μεσαία)", "en": "Colour gloss Dia Color (medium)" }, "price": { "el": "55 €", "en": "€55" } },
+        { "name": { "el": "Χρωμογαλάκτωμα Dia Color (μακριά)", "en": "Colour gloss Dia Color (long)" }, "price": { "el": "65 €", "en": "€65" } },
+        { "name": { "el": "Ρεφλέ Dia Light (κοντά)", "en": "Toner Dia Light (short)" }, "price": { "el": "19 €", "en": "€19" } },
+        { "name": { "el": "Ρεφλέ Dia Light (μεσαία)", "en": "Toner Dia Light (medium)" }, "price": { "el": "25 €", "en": "€25" } },
+        { "name": { "el": "Ρεφλέ Dia Light (μακριά)", "en": "Toner Dia Light (long)" }, "price": { "el": "31 €", "en": "€31" } },
+        { "name": { "el": "Ανταύγειες (στεφάνι)", "en": "Highlights (crown)" }, "price": { "el": "35 €", "en": "€35" } },
+        { "name": { "el": "Ανταύγειες μισά 1/2 (κοντά)", "en": "Highlights half head (short)" }, "price": { "el": "55 €", "en": "€55" } },
+        { "name": { "el": "Ανταύγειες μισά 1/2 (μεσαία)", "en": "Highlights half head (medium)" }, "price": { "el": "65 €", "en": "€65" } },
+        { "name": { "el": "Ανταύγειες μισά 1/2 (μακριά)", "en": "Highlights half head (long)" }, "price": { "el": "75 €", "en": "€75" } },
+        { "name": { "el": "Ανταύγειες όλα (κοντά)", "en": "Highlights full head (short)" }, "price": { "el": "60 €", "en": "€60" } },
+        { "name": { "el": "Ανταύγειες όλα (μεσαία)", "en": "Highlights full head (medium)" }, "price": { "el": "75 €", "en": "€75" } },
+        { "name": { "el": "Ανταύγειες όλα (μακριά)", "en": "Highlights full head (long)" }, "price": { "el": "85 €", "en": "€85" } },
+        { "name": { "el": "Baby lights μισά (κοντά)", "en": "Baby lights half head (short)" }, "price": { "el": "75 €", "en": "€75" } },
+        { "name": { "el": "Baby lights μισά (μεσαία)", "en": "Baby lights half head (medium)" }, "price": { "el": "85 €", "en": "€85" } },
+        { "name": { "el": "Baby lights μισά (μακριά)", "en": "Baby lights half head (long)" }, "price": { "el": "95 €", "en": "€95" } },
+        { "name": { "el": "Foilyage (μεσαία)", "en": "Foilyage (medium)" }, "price": { "el": "90 €", "en": "€90" } },
+        { "name": { "el": "Foilyage (μακριά)", "en": "Foilyage (long)" }, "price": { "el": "99 €", "en": "€99" } },
+        { "name": { "el": "Balayage (μεσαία)", "en": "Balayage (medium)" }, "price": { "el": "79 €", "en": "€79" } },
+        { "name": { "el": "Balayage (μακριά)", "en": "Balayage (long)" }, "price": { "el": "99 €", "en": "€99" } }
+      ]
+    },
+    {
+      "key": "perm",
+      "heading": { "el": "Περμανάντ", "en": "Perm" },
+      "subtitle": { "el": "Perm", "en": "Permanent waves" },
+      "services": [
+        { "name": { "el": "Περμανάντ (κοντά)", "en": "Perm (short)" }, "price": { "el": "50 €", "en": "€50" } },
+        { "name": { "el": "Περμανάντ (μεσαία)", "en": "Perm (medium)" }, "price": { "el": "65 €", "en": "€65" } },
+        { "name": { "el": "Περμανάντ (μακριά)", "en": "Perm (long)" }, "price": { "el": "75 €", "en": "€75" } }
+      ]
+    },
+    {
+      "key": "packages",
+      "heading": { "el": "Πακέτα", "en": "Packages" },
+      "subtitle": { "el": "Συνδυασμοί που συμφέρουν", "en": "Better together" },
+      "services": [
+        { "name": { "el": "Βαφή + Κούρεμα + Χτένισμα (κοντά)", "en": "Colour + Haircut + Blow-dry (short)" }, "price": { "el": "69 € αντί 78 €", "en": "€69 instead of €78" } },
+        { "name": { "el": "Βαφή + Κούρεμα + Χτένισμα (μεσαία)", "en": "Colour + Haircut + Blow-dry (medium)" }, "price": { "el": "72 € αντί 80 €", "en": "€72 instead of €80" } },
+        { "name": { "el": "Βαφή + Κούρεμα + Χτένισμα (μακριά)", "en": "Colour + Haircut + Blow-dry (long)" }, "price": { "el": "75 € αντί 82 €", "en": "€75 instead of €82" } },
+        { "name": { "el": "Βαφή + Κούρεμα + Φορμάρισμα", "en": "Colour + Haircut + Styling" }, "price": { "el": "65 € αντί 74 €", "en": "€65 instead of €74" } },
+        { "name": { "el": "Βαφή + Κούρεμα + Θεραπεία θρέψης + Χτένισμα ή Φορμάρισμα (κοντά)", "en": "Colour + Haircut + Nourishment treatment + Blow-dry or Styling (short)" }, "price": { "el": "89 € αντί 99 €", "en": "€89 instead of €99" } },
+        { "name": { "el": "Βαφή + Κούρεμα + Θεραπεία θρέψης + Χτένισμα ή Φορμάρισμα (μεσαία)", "en": "Colour + Haircut + Nourishment treatment + Blow-dry or Styling (medium)" }, "price": { "el": "92 € αντί 101 €", "en": "€92 instead of €101" } },
+        { "name": { "el": "Βαφή + Κούρεμα + Θεραπεία θρέψης + Χτένισμα ή Φορμάρισμα (μακριά)", "en": "Colour + Haircut + Nourishment treatment + Blow-dry or Styling (long)" }, "price": { "el": "95 € αντί 103 €", "en": "€95 instead of €103" } },
+        { "name": { "el": "Σε κάθε τεχνική εργασία (Ανταύγειες, Balayage, Foilyage, Baby lights): Κούρεμα + Χτένισμα ή Φορμάρισμα", "en": "With any technical service (Highlights, Balayage, Foilyage, Baby lights): Haircut + Blow-dry or Styling" }, "price": { "el": "μόνο +29 € στην τιμή της εργασίας", "en": "only +€29 on the service price" } },
+        { "name": { "el": "π.χ. Balayage (μακριά) + Κούρεμα + Χτένισμα", "en": "e.g. Balayage (long) + Haircut + Blow-dry" }, "price": { "el": "128 € αντί 142 €", "en": "€128 instead of €142" } }
+      ]
+    },
+    {
+      "key": "other",
+      "heading": { "el": "Άλλες Υπηρεσίες", "en": "Additional Services" },
+      "subtitle": { "el": "Additional services", "en": "Special treatments" },
+      "services": [
+        { "name": { "el": "Περιποίηση φρυδιών", "en": "Brow grooming" }, "price": { "el": "7 €", "en": "€7" } }
+      ]
+    }
+  ],
+  "notes": {
+    "sections": [
+      {
+        "title": { "el": "Επιπλέον χρέωση σε μακριά μαλλιά", "en": "Additional charge for long hair" },
+        "body": {
+          "el": "Το χρώμα και γενικά οι εργασίες, ιδιαίτερα αυτές που περιλαμβάνουν προϊόντα σε μακριά ή/και πυκνά μαλλιά, απαιτούν περισσότερο προϊόν και χρόνο, επομένως πιθανόν να υπάρχει πρόσθετη χρέωση. Το ίδιο συμβαίνει και στο χρώμα από σκούρο σε ξανθό ή σε εντατικές θεραπείες.",
+          "en": "Colour services and treatments on long or very dense hair require more product and time, so an extra charge may apply. The same goes for lightening dark hair to blonde or for intensive treatments."
+        }
+      },
+      {
+        "title": { "el": "Συμβουλές (υποχρεωτικές & δωρεάν)", "en": "Consultations (complimentary & required)" },
+        "body": {
+          "el": "Για προσωπικές συμβουλές μπορείτε να συζητήσετε μαζί μας. Θα συνεργαστούμε για να βρούμε το καλύτερο δυνατόν.",
+          "en": "Speak with us for personalised recommendations. We will work together to find the best possible result."
+        }
+      }
+    ],
+    "disclaimer": {
+      "el": "Οι τιμές δύναται να αναπροσαρμοσθούν χωρίς προηγουμένη ενημέρωση.",
+      "en": "Prices may change without prior notice."
+    }
+  }
+}

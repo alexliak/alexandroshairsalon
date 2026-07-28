@@ -142,6 +142,15 @@ const TopNav = ({ language, setLanguage, accessibility, onToggleAccessibility })
 
         <div className="topnav-actions">
           {languageToggle}
+          <div className="topnav-a11y">
+            <AccessibilityControls
+              language={language}
+              settings={accessibility}
+              onToggle={onToggleAccessibility}
+              inline
+              collapsed
+            />
+          </div>
           <a href="tel:+302103465554" className="topnav-cta">
             <PhoneOutlined aria-hidden="true" />
             <span>{labels.book}</span>

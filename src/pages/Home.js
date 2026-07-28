@@ -13,20 +13,21 @@ import {
   ShoppingOutlined,
   StarFilled
 } from '@ant-design/icons';
+import galleryContent from '../content/gallery.json';
 import './Home.css';
 
 const heroImage = '/images/portfolio/hairdresser-grooming-their-client.jpg';
 
-const galleryImages = [
-  { src: '/images/portfolio/01.jpg', alt: 'Δουλειά του κομμωτηρίου Alexandros Hair Salon 1' },
-  { src: '/images/portfolio/02.jpg', alt: 'Δουλειά του κομμωτηρίου Alexandros Hair Salon 2' },
-  { src: '/images/portfolio/03.jpg', alt: 'Δουλειά του κομμωτηρίου Alexandros Hair Salon 3' },
-  { src: '/images/portfolio/04.jpg', alt: 'Δουλειά του κομμωτηρίου Alexandros Hair Salon 4' },
-  {
-    src: '/images/portfolio/beauty-fashion-portrait-young-blond-woman-model-with-natural-makeup-perfect-skin-posing.jpg',
-    alt: 'Styling μαλλιών από το Alexandros Hair Salon'
-  }
-];
+// Gallery images auto-load from src/content/gallery — drop a jpg/png/webp in
+// that folder and it appears on the page (alphabetical order); delete to remove.
+const galleryContext = require.context('../content/gallery', false, /\.(jpe?g|png|webp)$/i);
+const galleryImages = galleryContext
+  .keys()
+  .sort()
+  .map((key) => {
+    const mod = galleryContext(key);
+    return mod && mod.default ? mod.default : mod;
+  });
 
 /* Animated counter that runs once when visible */
 const AnimatedStat = ({ target, decimals = 0, suffix = '', label }) => {
@@ -84,10 +85,6 @@ const homeContent = {
       { target: 4.5, decimals: 1, suffix: '★', label: 'Google Reviews' },
       { target: 1000, suffix: '+', label: 'Happy clients' }
     ],
-    gallery: {
-      title: 'Our Work',
-      lead: 'A glimpse of what leaves our salon every day.'
-    },
     reviews: {
       title: 'What our clients say',
       body: '4.5 out of 5 stars across 22 Google reviews.',
@@ -144,10 +141,6 @@ const homeContent = {
       { target: 4.5, decimals: 1, suffix: '★', label: 'στο Google' },
       { target: 1000, suffix: '+', label: 'Ευχαριστημένοι πελάτες' }
     ],
-    gallery: {
-      title: 'Η Δουλειά μας',
-      lead: 'Μια ματιά σε όσα φεύγουν καθημερινά από το σαλόνι μας.'
-    },
     reviews: {
       title: 'Τι λένε οι πελάτες μας',
       body: '4.5 στα 5 αστέρια σε 22 κριτικές στο Google.',
@@ -236,14 +229,14 @@ const Home = ({ language }) => {
           ))}
         </div>
 
-        {/* Portfolio gallery */}
+        {/* Photo gallery — images and titles come from src/content */}
         <section className="gallery-section">
-          <h2 className="section-title centered">{content.gallery.title}</h2>
-          <p className="section-lead">{content.gallery.lead}</p>
+          <h2 className="section-title centered">{galleryContent.title[language]}</h2>
+          <p className="section-lead">{galleryContent.lead[language]}</p>
           <div className="gallery-grid">
-            {galleryImages.map((img) => (
-              <figure key={img.src} className="gallery-item">
-                <img src={`${process.env.PUBLIC_URL}${img.src}`} alt={img.alt} loading="lazy" />
+            {galleryImages.map((src, idx) => (
+              <figure key={src} className="gallery-item">
+                <img src={src} alt={`${galleryContent.title[language]} ${idx + 1}`} loading="lazy" />
               </figure>
             ))}
           </div>

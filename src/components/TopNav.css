@@ -113,6 +113,18 @@
   flex-shrink: 0;
 }
 
+/* Compact accessibility buttons in the bar (desktop only — the drawer has them on mobile) */
+.topnav-a11y .accessibility-controls.inline.collapsed {
+  flex-direction: row;
+  gap: 6px;
+}
+
+.topnav-a11y .accessibility-controls.inline.collapsed .accessibility-control {
+  width: 36px;
+  height: 36px;
+  box-shadow: none;
+}
+
 .topnav-cta {
   display: inline-flex;
   align-items: center;
@@ -181,12 +193,15 @@
   display: flex;
   flex-direction: column;
   gap: 24px;
-  transition: right 0.3s ease;
+  transition: right 0.3s ease, visibility 0.3s;
   overflow-y: auto;
+  /* Keep the closed drawer out of the tab order and invisible to screen readers */
+  visibility: hidden;
 }
 
 .topnav-drawer.open {
   right: 0;
+  visibility: visible;
 }
 
 .topnav-drawer-links {
@@ -223,6 +238,10 @@
   }
 
   .topnav-actions .topnav-language-toggle {
+    display: none;
+  }
+
+  .topnav-a11y {
     display: none;
   }
 
