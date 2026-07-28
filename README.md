@@ -8,14 +8,23 @@ Static React site (Create React App 5) για το https://alexandroshairsalon.g
 
 ---
 
-## Πού φιλοξενείται (τρέχουσα κατάσταση)
+## Χάρτης υποδομής (επιβεβαιωμένος Ιούλιος 2026)
 
-- **Hosting: Netlify** (πίσω από Cloudflare). Επιβεβαιωμένο από τα response headers του
-  live site (`cache-status: "Netlify Edge"`, `x-nf-request-id`).
+| Υπηρεσία | Ρόλος | Απόδειξη |
+| -------- | ----- | -------- |
+| **Cloudflare** | DNS του domain (nameservers `kenneth`/`priscilla.ns.cloudflare.com`), proxy/CDN μπροστά από το site, **Email Routing** για τα emails του domain (MX `_dc-mx.*`), DMARC reports | `Resolve-DnsName` NS/MX/TXT |
+| **Netlify** | Χτίζει και σερβίρει το React site (πίσω από το Cloudflare) | Headers: `cache-status: "Netlify Edge"`, `x-nf-request-id` |
+| **GitHub** | Ο κώδικας (repo `alexliak/alexandroshairsalon`) | — |
+| **EmailJS** | Στέλνει τις παραγγελίες του Shop με email (χωρίς αποθήκευση) | `Shop.js` → `emailjs.send(...)` |
+| **Google Analytics** | Επισκεψιμότητα (gtag `G-S7ZQL4YMJ7`) | `public/index.html` |
+
+- **Δεν υπάρχει βάση δεδομένων και δεν υπάρχει Supabase** — το site είναι 100% στατικό.
+  Οι παραγγελίες του Shop φεύγουν ως email μέσω EmailJS, δεν αποθηκεύονται πουθενά.
 - Το Netlify χτίζει αυτόματα από το branch **`main`** σε κάθε push — **push στο main = live σε ~2 λεπτά**.
-- Το custom domain (`alexandroshairsalon.gr`) και το SSL διαχειρίζονται από Netlify/Cloudflare.
 - ⚠️ Το branch `gh-pages`, το `CNAME`, το script `npm run deploy` και ο φάκελος `docs/`
   είναι απομεινάρια παλαιότερων deployments (GitHub Pages / Plesk). Δεν χρησιμοποιούνται.
+- Το SPF record αναφέρει ακόμα `_spf.fastmail.gr` (απομεινάρι από την εποχή Top.Host) —
+  αν δεν στέλνετε email μέσω fastmail.gr, μπορεί κάποια στιγμή να καθαριστεί στο Cloudflare DNS.
 
 ## Branches
 
