@@ -46,6 +46,11 @@ web UI — πλήρεις οδηγίες στα ελληνικά στο **[ΟΔ�
 | Φωτογραφίες αρχικής (gallery) | `src/content/gallery/` — ό,τι jpg/png/webp μπει εκεί εμφανίζεται αυτόματα |
 | Τίτλος/υπότιτλος gallery | `src/content/gallery.json` |
 
+Υπάρχει και **σελίδα διαχείρισης** (Decap CMS) στο `/admin` με φόρμες και media library
+πάνω στα ίδια αρχεία — ρυθμίσεις στο `public/admin/config.yml`. Για να δουλέψει στο
+live site χρειάζεται εφάπαξ σύνδεση GitHub OAuth ↔ Netlify (βλ. ΟΔΗΓΙΕΣ-ΑΛΛΑΓΩΝ.md).
+Τοπικά δουλεύει χωρίς login με `npx decap-server` + `npm start`.
+
 ---
 
 ## Τοπική ανάπτυξη
