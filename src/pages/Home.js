@@ -229,18 +229,21 @@ const Home = ({ language }) => {
           ))}
         </div>
 
-        {/* Photo gallery — images and titles come from src/content */}
-        <section className="gallery-section">
-          <h2 className="section-title centered">{galleryContent.title[language]}</h2>
-          <p className="section-lead">{galleryContent.lead[language]}</p>
-          <div className="gallery-grid">
-            {galleryImages.map((src, idx) => (
-              <figure key={src} className="gallery-item">
-                <img src={src} alt={`${galleryContent.title[language]} ${idx + 1}`} loading="lazy" />
-              </figure>
-            ))}
-          </div>
-        </section>
+        {/* Photo gallery — hidden while src/content/gallery is empty, appears
+            automatically as soon as photos are added there */}
+        {galleryImages.length > 0 && (
+          <section className="gallery-section">
+            <h2 className="section-title centered">{galleryContent.title[language]}</h2>
+            <p className="section-lead">{galleryContent.lead[language]}</p>
+            <div className="gallery-grid">
+              {galleryImages.map((src, idx) => (
+                <figure key={src} className="gallery-item">
+                  <img src={src} alt={`${galleryContent.title[language]} ${idx + 1}`} loading="lazy" />
+                </figure>
+              ))}
+            </div>
+          </section>
+        )}
 
         {/* Google reviews */}
         <section className="reviews-section">
