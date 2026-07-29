@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
+import { ShoppingOutlined } from '@ant-design/icons';
 import emailjs from 'emailjs-com';
 import products from '../data/products';
 import './Shop.css';
@@ -218,7 +219,7 @@ const Shop = ({ language = 'el' }) => {
 
   const BankCard = ({ className = '' }) => (
     <div className={`bank-card ${className}`}>
-      <div className="bank-card-title">🏦 {t.bankTitle}</div>
+      <div className="bank-card-title">{t.bankTitle}</div>
       <div className="bank-row"><span>{t.bankHolder}</span><strong>{BANK.holder}</strong></div>
       {BANK.accounts.map((acc, i) => (
         <div key={i} className="bank-account-row">
@@ -272,7 +273,7 @@ const Shop = ({ language = 'el' }) => {
                     <img src={product.image} alt={name} />
                   ) : (
                     <div className="product-image-placeholder">
-                      <span className="placeholder-icon">📷</span>
+                      <span className="placeholder-icon" aria-hidden="true"><ShoppingOutlined /></span>
                       <small>{t.photoSoon}</small>
                     </div>
                   )}
@@ -317,7 +318,7 @@ const Shop = ({ language = 'el' }) => {
 
           {/* Επικοινωνία */}
           <div className="contact-box">
-            <div className="contact-title">✉️ {t.contactTitle}</div>
+            <div className="shop-contact-title">{t.contactTitle}</div>
             <p className="contact-note">{t.contactNote}</p>
             <a className="contact-email" href={`mailto:${BANK.email}`}>{BANK.email}</a>
             <a className="contact-phone" href="tel:+302103465554">210 346 5554</a>
@@ -371,7 +372,7 @@ const Shop = ({ language = 'el' }) => {
           onClick={() => cartRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' })}
         >
           <span className="mobile-cart-bar-left">
-            🛒 <strong>{cartItems.reduce((s, p) => s + (cart[p.id] || 0), 0)}</strong> προϊόν{cartItems.reduce((s, p) => s + (cart[p.id] || 0), 0) !== 1 ? 'τα' : ''}
+            <ShoppingOutlined aria-hidden="true" /> <strong>{cartItems.reduce((s, p) => s + (cart[p.id] || 0), 0)}</strong> προϊόν{cartItems.reduce((s, p) => s + (cart[p.id] || 0), 0) !== 1 ? 'τα' : ''}
           </span>
           <span className="mobile-cart-bar-total">{total.toFixed(2)}€</span>
           <span className="mobile-cart-bar-action">Ολοκλήρωση →</span>

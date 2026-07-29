@@ -13,7 +13,7 @@
   width: 52px;
   height: 52px;
   border-radius: 50%;
-  background: rgba(237, 147, 237, 0.85);
+  background: rgba(196, 164, 106, 0.85);
   border: none;
   color: #120f18;
   font-size: 22px;
@@ -27,7 +27,7 @@
 .chatbot-toggle:hover,
 .chatbot-toggle:focus {
   transform: translateY(-2px);
-  background: rgba(237, 147, 237, 1);
+  background: rgba(196, 164, 106, 1);
   outline: none;
 }
 
@@ -36,7 +36,7 @@
   max-height: 420px;
   background: rgba(18, 18, 30, 0.95);
   border-radius: 16px;
-  border: 1px solid rgba(237, 147, 237, 0.4);
+  border: 1px solid rgba(196, 164, 106, 0.4);
   box-shadow: 0 16px 35px rgba(0, 0, 0, 0.45);
   display: flex;
   flex-direction: column;
@@ -50,7 +50,7 @@
   align-items: center;
   justify-content: space-between;
   padding: 12px 16px;
-  background: rgba(237, 147, 237, 0.18);
+  background: rgba(196, 164, 106, 0.18);
   font-weight: 600;
   letter-spacing: 0.05em;
 }
@@ -84,12 +84,12 @@
 
 .chatbot-lang-btn:hover,
 .chatbot-lang-btn:focus {
-  background: rgba(237, 147, 237, 0.35);
+  background: rgba(196, 164, 106, 0.35);
   outline: none;
 }
 
 .chatbot-lang-btn.active {
-  background: rgba(237, 147, 237, 0.8);
+  background: rgba(196, 164, 106, 0.8);
   color: #120f18;
 }
 
@@ -105,7 +105,7 @@
 
 .chatbot-close:hover,
 .chatbot-close:focus {
-  color: #ffdeff;
+  color: #efe3cd;
   outline: none;
 }
 
@@ -136,7 +136,7 @@
   font-size: 0.72rem;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  color: rgba(237, 147, 237, 0.65);
+  color: rgba(196, 164, 106, 0.65);
 }
 
 .chatbot-message.user p,
@@ -151,8 +151,8 @@
 }
 
 .chatbot-message.user p {
-  background: rgba(237, 147, 237, 0.25);
-  color: #ffe6ff;
+  background: rgba(196, 164, 106, 0.25);
+  color: #f3e9d5;
 }
 
 .chatbot-input {
@@ -165,14 +165,14 @@
 .chatbot-input input {
   flex: 1;
   background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(237, 147, 237, 0.25);
+  border: 1px solid rgba(196, 164, 106, 0.25);
   border-radius: 999px;
   padding: 8px 14px;
   color: #fef7ff;
 }
 
 .chatbot-input input:focus {
-  outline: 2px solid rgba(237, 147, 237, 0.5);
+  outline: 2px solid rgba(196, 164, 106, 0.5);
   outline-offset: 1px;
 }
 
@@ -180,7 +180,7 @@
   width: 42px;
   border-radius: 50%;
   border: none;
-  background: rgba(237, 147, 237, 0.8);
+  background: rgba(196, 164, 106, 0.8);
   color: #120f18;
   font-size: 16px;
   display: grid;
@@ -190,7 +190,7 @@
 
 .chatbot-input button:hover,
 .chatbot-input button:focus {
-  background: rgba(237, 147, 237, 1);
+  background: rgba(196, 164, 106, 1);
   outline: none;
 }
 

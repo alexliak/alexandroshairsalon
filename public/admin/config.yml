@@ -1,0 +1,131 @@
+# Decap CMS — ρυθμίσεις της σελίδας διαχείρισης /admin
+# Το CMS γράφει στο branch main (το live site). Λειτουργεί μετά το merge του
+# redesign-2026 και τη σύνδεση GitHub OAuth ↔ Netlify (βλ. ΟΔΗΓΙΕΣ-ΑΛΛΑΓΩΝ.md).
+
+backend:
+  name: github
+  repo: alexliak/alexandroshairsalon
+  branch: main
+  base_url: https://api.netlify.com
+  commit_messages:
+    update: 'CMS: ενημέρωση {{path}}'
+    uploadMedia: 'CMS: νέα φωτογραφία {{path}}'
+    deleteMedia: 'CMS: διαγραφή φωτογραφίας {{path}}'
+
+# Επιτρέπει δοκιμή τοπικά (npx decap-server + npm start) χωρίς login.
+# Στο live site αγνοείται.
+local_backend: true
+
+locale: el
+
+# Οι φωτογραφίες ανεβαίνουν κατευθείαν στον φάκελο του gallery —
+# ό,τι υπάρχει εκεί εμφανίζεται αυτόματα στην αρχική σελίδα.
+media_folder: src/content/gallery
+public_folder: /content/gallery
+
+collections:
+  - name: content
+    label: 'Περιεχόμενο'
+    files:
+      - name: services
+        label: 'Υπηρεσίες & Τιμές'
+        file: src/content/services.json
+        format: json
+        fields:
+          - { label: 'Οδηγίες (μην το αλλάζεις)', name: '_ΟΔΗΓΙΕΣ', widget: hidden, required: false }
+          - label: 'Τίτλος σελίδας'
+            name: title
+            widget: object
+            fields:
+              - { label: 'Ελληνικά', name: el, widget: string }
+              - { label: 'Αγγλικά', name: en, widget: string }
+          - label: 'Εισαγωγικό κείμενο'
+            name: intro
+            widget: object
+            collapsed: true
+            fields:
+              - { label: 'Ελληνικά', name: el, widget: text }
+              - { label: 'Αγγλικά', name: en, widget: text }
+          - label: 'Κατηγορίες υπηρεσιών'
+            name: categories
+            widget: list
+            collapsed: true
+            summary: '{{fields.heading.el}}'
+            fields:
+              - { label: 'Κωδικός (μην τον αλλάζεις — ορίζει το εικονίδιο)', name: key, widget: string }
+              - label: 'Τίτλος κατηγορίας'
+                name: heading
+                widget: object
+                fields:
+                  - { label: 'Ελληνικά', name: el, widget: string }
+                  - { label: 'Αγγλικά', name: en, widget: string }
+              - label: 'Υπότιτλος'
+                name: subtitle
+                widget: object
+                collapsed: true
+                fields:
+                  - { label: 'Ελληνικά', name: el, widget: string }
+                  - { label: 'Αγγλικά', name: en, widget: string }
+              - label: 'Υπηρεσίες'
+                name: services
+                widget: list
+                summary: '{{fields.name.el}} — {{fields.price.el}}'
+                fields:
+                  - label: 'Όνομα υπηρεσίας'
+                    name: name
+                    widget: object
+                    fields:
+                      - { label: 'Ελληνικά', name: el, widget: string }
+                      - { label: 'Αγγλικά', name: en, widget: string }
+                  - label: 'Τιμή'
+                    name: price
+                    widget: object
+                    fields:
+                      - { label: 'Ελληνικά (π.χ. 25 €, από 39 €)', name: el, widget: string }
+                      - { label: 'Αγγλικά (π.χ. €25, from €39)', name: en, widget: string }
+          - label: 'Σημειώσεις (κάτω από τον τιμοκατάλογο)'
+            name: notes
+            widget: object
+            collapsed: true
+            fields:
+              - label: 'Ενότητες'
+                name: sections
+                widget: list
+                summary: '{{fields.title.el}}'
+                fields:
+                  - label: 'Τίτλος'
+                    name: title
+                    widget: object
+                    fields:
+                      - { label: 'Ελληνικά', name: el, widget: string }
+                      - { label: 'Αγγλικά', name: en, widget: string }
+                  - label: 'Κείμενο'
+                    name: body
+                    widget: object
+                    fields:
+                      - { label: 'Ελληνικά', name: el, widget: text }
+                      - { label: 'Αγγλικά', name: en, widget: text }
+              - label: 'Υποσημείωση τιμών'
+                name: disclaimer
+                widget: object
+                fields:
+                  - { label: 'Ελληνικά', name: el, widget: string }
+                  - { label: 'Αγγλικά', name: en, widget: string }
+      - name: gallery
+        label: 'Ενότητα φωτογραφιών (αρχική)'
+        file: src/content/gallery.json
+        format: json
+        fields:
+          - { label: 'Οδηγίες (μην το αλλάζεις)', name: '_ΟΔΗΓΙΕΣ', widget: hidden, required: false }
+          - label: 'Τίτλος ενότητας'
+            name: title
+            widget: object
+            fields:
+              - { label: 'Ελληνικά', name: el, widget: string }
+              - { label: 'Αγγλικά', name: en, widget: string }
+          - label: 'Υπότιτλος'
+            name: lead
+            widget: object
+            fields:
+              - { label: 'Ελληνικά', name: el, widget: string }
+              - { label: 'Αγγλικά', name: en, widget: string }

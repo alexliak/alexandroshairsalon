@@ -175,9 +175,9 @@
   width: 28px;
   height: 28px;
   border-radius: 50%;
-  border: 1.5px solid #9a5a6e;
+  border: 1.5px solid #a8894f;
   background: transparent;
-  color: #9a5a6e;
+  color: #a8894f;
   font-size: 1.1rem;
   cursor: pointer;
   display: flex;
@@ -187,7 +187,7 @@
 }
 
 .qty-controls button:hover:not(:disabled) {
-  background: #9a5a6e;
+  background: #a8894f;
   color: white;
 }
 
@@ -351,7 +351,7 @@
   padding: 1.1rem 1.25rem;
 }
 
-.contact-title {
+.shop-contact-title {
   font-size: 0.82rem;
   font-weight: 700;
   color: #555;
@@ -372,7 +372,7 @@
   display: block;
   font-size: 0.88rem;
   font-weight: 600;
-  color: #9a5a6e;
+  color: #a8894f;
   text-decoration: none;
   margin-bottom: 0.25rem;
 }
@@ -433,7 +433,7 @@
 
 .cart-subtotal {
   font-weight: 700;
-  color: #9a5a6e;
+  color: #a8894f;
   min-width: 56px;
   text-align: right;
 }
@@ -448,7 +448,7 @@
 
 .cart-total-amount {
   font-size: 1.15rem;
-  color: #9a5a6e;
+  color: #a8894f;
 }
 
 /* Order Form */
@@ -484,7 +484,7 @@
 .order-form input:focus,
 .order-form textarea:focus {
   outline: none;
-  border-color: #9a5a6e;
+  border-color: #c4a46a;
 }
 
 .order-form textarea {
@@ -506,8 +506,8 @@
   display: block;
   width: 100%;
   padding: 0.78rem;
-  background: #9a5a6e;
-  color: white;
+  background: #c4a46a;
+  color: #1a1510;
   border: none;
   border-radius: 8px;
   font-size: 0.97rem;
@@ -519,7 +519,7 @@
 }
 
 .shop-btn-primary:hover:not(:disabled) {
-  background: #7a3a5a;
+  background: #b3945a;
 }
 
 .shop-btn-primary:disabled {
@@ -570,7 +570,7 @@
 
 .success-email-link {
   display: inline-block;
-  color: #9a5a6e;
+  color: #a8894f;
   font-weight: 700;
   text-decoration: none;
   font-size: 0.95rem;
@@ -581,7 +581,7 @@
   font-size: 1.3rem;
   font-weight: 700;
   background: #faf6f0;
-  border: 2px solid #9a5a6e;
+  border: 2px solid #c4a46a;
   border-radius: 10px;
   padding: 0.75rem 1.5rem;
   margin: 0 auto 1.25rem;
@@ -590,7 +590,7 @@
 }
 
 .success-total-box strong {
-  color: #9a5a6e;
+  color: #a8894f;
 }
 
 .success-bank {
@@ -618,12 +618,12 @@
     left: 0;
     right: 0;
     z-index: 999;
-    background: #9a5a6e;
-    color: #fff;
+    background: #c4a46a;
+    color: #1a1510;
     padding: 1rem 1.25rem;
     gap: 0.75rem;
     cursor: pointer;
-    box-shadow: 0 -4px 20px rgba(154, 90, 110, 0.3);
+    box-shadow: 0 -4px 20px rgba(196, 164, 106, 0.35);
   }
 
   .mobile-cart-bar-left {
