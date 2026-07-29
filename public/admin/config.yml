@@ -1,10 +1,11 @@
 # Decap CMS — ρυθμίσεις της σελίδας διαχείρισης /admin
-# ΠΡΟΣΟΧΗ: μετά το merge του redesign στο main, άλλαξε το branch παρακάτω σε: main
+# Το CMS γράφει στο branch main (το live site). Λειτουργεί μετά το merge του
+# redesign-2026 και τη σύνδεση GitHub OAuth ↔ Netlify (βλ. ΟΔΗΓΙΕΣ-ΑΛΛΑΓΩΝ.md).
 
 backend:
   name: github
   repo: alexliak/alexandroshairsalon
-  branch: redesign-2026
+  branch: main
   base_url: https://api.netlify.com
   commit_messages:
     update: 'CMS: ενημέρωση {{path}}'
