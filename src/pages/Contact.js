@@ -1,133 +1,91 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import { PhoneOutlined, FacebookOutlined, EnvironmentOutlined, ClockCircleOutlined, ArrowRightOutlined } from '@ant-design/icons';
-import './Contact.css';
+import NhLayout, { BOOK, PHONE, PHONE_DISPLAY, GOOGLE_PROFILE_URL, MAP_EMBED_URL } from '../components/NhLayout';
 
-const languageOptions = [
-  { value: 'en', label: 'EN' },
-  { value: 'el', label: 'EL' }
-];
-
-const hoursContent = {
-  en: {
-    title: 'Opening Hours',
-    subtitle: 'We look forward to welcoming you to the salon.',
-    scheduleHeading: 'Opening hours',
-    schedule: [
-      { day: 'Monday', closed: true },
-      { day: 'Tuesday', hours: '08:30 – 13:30 / 17:30 – 20:00' },
-      { day: 'Wednesday', hours: '08:30 – 14:00' },
-      { day: 'Thursday', hours: '08:30 – 13:30 / 17:30 – 20:00' },
-      { day: 'Friday', hours: '08:30 – 18:00' },
-      { day: 'Saturday', hours: '08:30 – 15:00' }
-    ],
-    contactHeading: 'Contact',
-    addressLabel: 'Address',
-    address: 'Erysichthonos 3-5, Thiseio 11851',
-    phoneLabel: 'Phone',
-    phoneDisplay: '210 3465 554',
-    callCta: 'Call us',
-    facebookCta: 'Facebook Page',
-    closedLabel: 'Closed',
-    ctaServices: 'View our services'
-  },
+// Hours & contact (2026 design). The opening hours are NOT written here on purpose:
+// the owner keeps them up to date on the Google Business Profile, so we link there.
+const text = {
   el: {
-    title: 'Ωράριο Λειτουργίας',
-    subtitle: 'Σας περιμένουμε στο σαλόνι μας.',
-    scheduleHeading: 'Ωράριο',
-    schedule: [
-      { day: 'Δευτέρα', closed: true },
-      { day: 'Τρίτη', hours: '08:30 - 13:30 / 17:30 - 20:00' },
-      { day: 'Τετάρτη', hours: '08:30 - 14:00' },
-      { day: 'Πέμπτη', hours: '08:30 - 13:30 / 17:30 - 20:00' },
-      { day: 'Παρασκευή', hours: '08:30 - 18:00' },
-      { day: 'Σάββατο', hours: '08:30 - 15:00' }
-    ],
-    contactHeading: 'Επικοινωνία',
-    addressLabel: 'Διεύθυνση',
-    address: 'Ερυσίχθονος 3 - 5, Θησείο 11851',
-    phoneLabel: 'Τηλέφωνο',
-    phoneDisplay: '210 34 65 554',
-    callCta: 'Κάλεσέ μας',
-    facebookCta: 'Σελίδα στο Facebook',
-    closedLabel: 'Κλειστά',
-    ctaServices: 'Δείτε τις υπηρεσίες μας'
+    eyebrow: 'Ωράριο & επικοινωνία',
+    title: 'Σε περιμένουμε',
+    titleEm: 'στο Θησείο.',
+    hoursTitle: 'Ωράριο λειτουργίας',
+    hoursText: 'Το ωράριό μας ενημερώνεται πάντα στο Google, μαζί με αργίες και αλλαγές της εβδομάδας.',
+    hoursCta: 'Δες το ωράριο στο Google',
+    bookTitle: 'Κλείσε ραντεβού online',
+    bookText: 'Δες ελεύθερες ώρες, τιμές και χρόνους και κλείσε σε ένα λεπτό. Πληρώνεις στο κομμωτήριο.',
+    bookCta: 'Κλείσε online',
+    addressTitle: 'Διεύθυνση',
+    address: 'Ερυσίχθονος 3-5, Θησείο, Αθήνα 118 51',
+    directions: 'Οδηγίες στον χάρτη',
+    phoneTitle: 'Τηλέφωνο',
+    call: 'Κάλεσε',
+    mapTitle: 'Χάρτης: Alexandros Hair Salon'
+  },
+  en: {
+    eyebrow: 'Hours & contact',
+    title: 'See you',
+    titleEm: 'in Thiseio.',
+    hoursTitle: 'Opening hours',
+    hoursText: 'Our opening hours are always up to date on Google, including holidays and changes during the week.',
+    hoursCta: 'See opening hours on Google',
+    bookTitle: 'Book online',
+    bookText: 'See free times, prices and durations and book in a minute. You pay at the salon.',
+    bookCta: 'Book online',
+    addressTitle: 'Address',
+    address: 'Erysichthonos 3-5, Thiseio, Athens 118 51',
+    directions: 'Directions on the map',
+    phoneTitle: 'Phone',
+    call: 'Call',
+    mapTitle: 'Map: Alexandros Hair Salon'
   }
 };
 
-const ContactForm = ({ language, setLanguage }) => {
-  const content = hoursContent[language];
-  const isGreek = language === 'el';
-  const languageToggleLabel = isGreek ? 'Επιλογή γλώσσας' : 'Language selection';
-  const getToggleAria = (value) => {
-    if (value === 'en') {
-      return isGreek ? 'Αλλαγή γλώσσας στα Αγγλικά' : 'Switch language to English';
-    }
-    return isGreek ? 'Αλλαγή γλώσσας στα Ελληνικά' : 'Switch language to Greek';
-  };
+const Contact = ({ language, setLanguage }) => {
+  const t = text[language] || text.el;
 
   return (
-    <div className="contact-card">
-      <div className="language-toggle-wrapper">
-        <div className="language-toggle" role="group" aria-label={languageToggleLabel}>
-          {languageOptions.map((opt) => (
-            <button
-              key={opt.value}
-              type="button"
-              className={`language-button ${language === opt.value ? 'active' : ''}`}
-              onClick={() => setLanguage(opt.value)}
-              aria-pressed={language === opt.value}
-              aria-label={getToggleAria(opt.value)}
-            >
-              {opt.label}
-            </button>
-          ))}
-        </div>
-      </div>
-      <h1 className="contact-title">
-        <ClockCircleOutlined aria-hidden="true" /> {content.title}
-      </h1>
-      <p className="contact-description">{content.subtitle}</p>
-      <div className="hours-table" role="list" aria-label={content.scheduleHeading}>
-        {content.schedule.map((entry) => (
-          <div
-            key={`${entry.day}-${entry.hours || 'closed'}`}
-            className={`hours-row${entry.closed ? ' closed' : ''}`}
-            role="listitem"
-          >
-            <span className="hours-day">{entry.day}</span>
-            <span className="hours-time">{entry.closed ? content.closedLabel : entry.hours}</span>
-          </div>
-        ))}
-      </div>
-      <div className="contact-details">
-        <p>
-          <EnvironmentOutlined aria-hidden="true" /> <strong>{content.addressLabel}:</strong> {content.address}
-        </p>
-        <p>
-          <PhoneOutlined aria-hidden="true" /> <strong>{content.phoneLabel}:</strong> {content.phoneDisplay}
-        </p>
-      </div>
-      <div className="contact-actions">
-        <a href="tel:+302103465554" className="contact-button call">
-          <PhoneOutlined aria-hidden="true" /> <span>{content.callCta}</span>
-        </a>
-        <a
-          href="https://www.facebook.com/alexandros.hairsalon"
-          className="contact-button social"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <FacebookOutlined aria-hidden="true" /> <span>{content.facebookCta}</span>
-        </a>
-      </div>
-      <div className="contact-cta-links">
-        <Link to="/services" className="contact-cta-link">
-          {content.ctaServices} <ArrowRightOutlined />
-        </Link>
-      </div>
-    </div>
+    <NhLayout language={language} setLanguage={setLanguage}>
+      <main className="nh-page">
+        <section className="nh-page-hero">
+          <span className="nh-eyebrow">{t.eyebrow}</span>
+          <h1 className="nh-h1 nh-h1-page">
+            {t.title} <em>{t.titleEm}</em>
+          </h1>
+        </section>
+
+        <section className="nh-info-grid">
+          <article className="nh-info-card nh-info-card-gold">
+            <h2 className="nh-info-title">{t.hoursTitle}</h2>
+            <p>{t.hoursText}</p>
+            <a href={GOOGLE_PROFILE_URL} target="_blank" rel="noopener noreferrer" className="nh-btn nh-btn-dark">
+              {t.hoursCta}
+            </a>
+          </article>
+          <article className="nh-info-card">
+            <h2 className="nh-info-title">{t.bookTitle}</h2>
+            <p>{t.bookText}</p>
+            <a href={BOOK} className="nh-btn nh-btn-gold">{t.bookCta}</a>
+          </article>
+          <article className="nh-info-card">
+            <h2 className="nh-info-title">{t.addressTitle}</h2>
+            <p>{t.address}</p>
+            <a href={GOOGLE_PROFILE_URL} target="_blank" rel="noopener noreferrer" className="nh-underline">
+              {t.directions}
+            </a>
+          </article>
+          <article className="nh-info-card">
+            <h2 className="nh-info-title">{t.phoneTitle}</h2>
+            <p>{PHONE_DISPLAY}</p>
+            <a href={`tel:${PHONE}`} className="nh-btn nh-btn-ghost">{t.call}</a>
+          </article>
+        </section>
+
+        <section className="nh-map nh-map-wide">
+          <iframe title={t.mapTitle} src={MAP_EMBED_URL} loading="lazy" referrerPolicy="no-referrer-when-downgrade" />
+        </section>
+      </main>
+    </NhLayout>
   );
 };
 
-export default ContactForm;
+export default Contact;

@@ -1,23 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import './Home.css';
+import NhLayout, { BOOK, PHONE, GOOGLE_PROFILE_URL, MAP_EMBED_URL } from '../components/NhLayout';
 
-// New homepage (2026): standalone layout with its own header and footer.
-// Every booking button goes to /kratisi/ (Treatwell widget, no first-visit commission).
-const BOOK = '/kratisi/';
-const PHONE = '+302103465554';
-const MAP_URL =
-  'https://www.google.com/maps/place/alexandroshairsalon/@37.976933,23.7162736,17z/data=!3m1!4b1!4m6!3m5!1s0x14a1bd200f79f18d:0x3024d28633f32b4!8m2!3d37.976933!4d23.7162736!16s%2Fg%2F11cm0h21cx';
+// New homepage (2026). Header, footer and mobile booking bar come from NhLayout.
 
 const content = {
   el: {
-    nav: [
-      { label: 'Υπηρεσίες', to: '/services' },
-      { label: 'L’Oréal & Redken', href: '#brands' },
-      { label: 'Ωράριο', to: '/hours' },
-      { label: 'Shop', to: '/shop' }
-    ],
-    book: 'Κλείσε ραντεβού',
     eyebrow: 'Κομμωτήριο στο Θησείο · από το 1992',
     titleA: 'Κούρεμα που σου ',
     titleEm: 'μοιάζει.',
@@ -60,24 +48,11 @@ const content = {
     visitTitleA: 'Σε περιμένουμε',
     visitTitleEm: 'στο Θησείο.',
     address: 'Ερυσίχθονος 3-5, Θησείο, Αθήνα 118 51',
-    hours: 'Δες το ωράριο λειτουργίας',
+    hours: 'Δες το ωράριο στο Google',
     call: 'Κάλεσε 210 346 5554',
     directions: 'Οδηγίες στον χάρτη',
-    mobileBarTop: 'Online κράτηση',
-    mobileBarBottom: 'Κούρεμα από €28',
-    mobileBarCta: 'Κλείσε',
-    footerShop: 'Online Shop',
-    langSwitch: 'EN',
-    langAria: 'Switch to English'
   },
   en: {
-    nav: [
-      { label: 'Services', to: '/services' },
-      { label: 'L’Oréal & Redken', href: '#brands' },
-      { label: 'Hours', to: '/hours' },
-      { label: 'Shop', to: '/shop' }
-    ],
-    book: 'Book now',
     eyebrow: 'Hair salon in Thiseio · since 1992',
     titleA: 'A cut that feels ',
     titleEm: 'like you.',
@@ -120,15 +95,9 @@ const content = {
     visitTitleA: 'See you',
     visitTitleEm: 'in Thiseio.',
     address: 'Erysichthonos 3-5, Thiseio, Athens 118 51',
-    hours: 'See opening hours',
+    hours: 'See opening hours on Google',
     call: 'Call 210 346 5554',
     directions: 'Directions on the map',
-    mobileBarTop: 'Online booking',
-    mobileBarBottom: 'Haircut from €28',
-    mobileBarCta: 'Book',
-    footerShop: 'Online Shop',
-    langSwitch: 'EL',
-    langAria: 'Αλλαγή στα Ελληνικά'
   }
 };
 
@@ -142,37 +111,11 @@ const Strands = ({ className }) => (
   </svg>
 );
 
-const NavItem = ({ item, className }) =>
-  item.to ? (
-    <Link to={item.to} className={className}>{item.label}</Link>
-  ) : (
-    <a href={item.href} className={className}>{item.label}</a>
-  );
-
 const Home = ({ language, setLanguage }) => {
   const t = content[language] || content.el;
-  const other = language === 'el' ? 'en' : 'el';
 
   return (
-    <div className="nh" lang={language}>
-      <header className="nh-header">
-        <Link to="/" className="nh-logo" aria-label="Alexandros Hair Salon">
-          <span className="nh-logo-name">Alexandros</span>
-          <span className="nh-logo-sub">Hair Salon · {language === 'el' ? 'Θησείο' : 'Thiseio'}</span>
-        </Link>
-        <nav className="nh-nav" aria-label={language === 'el' ? 'Κύριο μενού' : 'Main menu'}>
-          {t.nav.map((item) => (
-            <NavItem key={item.label} item={item} className="nh-nav-link" />
-          ))}
-        </nav>
-        <div className="nh-header-actions">
-          <button type="button" className="nh-lang" onClick={() => setLanguage(other)} aria-label={t.langAria}>
-            {t.langSwitch}
-          </button>
-          <a href={`tel:${PHONE}`} className="nh-phone">210 346 5554</a>
-          <a href={BOOK} className="nh-btn nh-btn-gold nh-btn-sm">{t.book}</a>
-        </div>
-      </header>
+    <NhLayout language={language} setLanguage={setLanguage}>
 
       <main id="top">
         <section className="nh-hero">
@@ -266,18 +209,18 @@ const Home = ({ language, setLanguage }) => {
             <p className="nh-visit-info">
               {t.address}
               <br />
-              <Link to="/hours">{t.hours}</Link>
+              <a href={GOOGLE_PROFILE_URL} target="_blank" rel="noopener noreferrer">{t.hours}</a>
             </p>
             <div className="nh-cta-row">
               <a href={BOOK} className="nh-btn nh-btn-gold">{t.bookOnline}</a>
               <a href={`tel:${PHONE}`} className="nh-btn nh-btn-ghost">{t.call}</a>
             </div>
-            <a href={MAP_URL} className="nh-underline" target="_blank" rel="noopener noreferrer">{t.directions}</a>
+            <a href={GOOGLE_PROFILE_URL} className="nh-underline" target="_blank" rel="noopener noreferrer">{t.directions}</a>
           </div>
           <div className="nh-map">
             <iframe
               title={language === 'el' ? 'Χάρτης: Alexandros Hair Salon' : 'Map: Alexandros Hair Salon'}
-              src="https://www.google.com/maps?q=Alexandros%20Hair%20Salon%20%CE%95%CF%81%CF%85%CF%83%CE%AF%CF%87%CE%B8%CE%BF%CE%BD%CE%BF%CF%82%203%20%CE%91%CE%B8%CE%AE%CE%BD%CE%B1&output=embed"
+              src={MAP_EMBED_URL}
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
             />
@@ -285,23 +228,7 @@ const Home = ({ language, setLanguage }) => {
         </section>
       </main>
 
-      <footer className="nh-footer">
-        <span>© {new Date().getFullYear()} Alexandros Hair Salon · {language === 'el' ? 'Θησείο' : 'Thiseio'}</span>
-        <span className="nh-footer-links">
-          <Link to="/shop">{t.footerShop}</Link>
-          <a href="https://www.facebook.com/alexandros.hairsalon" target="_blank" rel="noopener noreferrer">Facebook</a>
-          <a href={`tel:${PHONE}`}>210 346 5554</a>
-        </span>
-      </footer>
-
-      <div className="nh-mobile-bar">
-        <span className="nh-mobile-bar-text">
-          <span>{t.mobileBarTop}</span>
-          <strong>{t.mobileBarBottom}</strong>
-        </span>
-        <a href={BOOK} className="nh-btn nh-btn-gold nh-btn-sm">{t.mobileBarCta}</a>
-      </div>
-    </div>
+    </NhLayout>
   );
 };
 

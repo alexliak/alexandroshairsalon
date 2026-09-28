@@ -186,16 +186,64 @@
 .nh .nh-footer-links a { color: var(--nh-muted); text-decoration: none; }
 .nh .nh-footer-links a:hover { color: var(--nh-gold); }
 
+/* Active nav + mobile sub-navigation */
+.nh .nh-nav-link.is-active { color: var(--nh-gold); }
+.nh-subnav { display: none; }
+
+/* Inner pages (services, hours) */
+.nh-page { padding: 0 var(--nh-pad); }
+.nh-page-hero { padding: clamp(40px, 6vw, 88px) 0 clamp(28px, 4vw, 48px); display: flex; flex-direction: column; gap: 22px; max-width: 900px; }
+.nh-h1-page { font-size: clamp(42px, 5.6vw, 80px); }
+.nh-chips { display: flex; flex-wrap: wrap; gap: 10px; padding-bottom: 12px; border-bottom: 1px solid var(--nh-line); }
+.nh .nh-chip { display: inline-flex; align-items: center; min-height: 44px; padding: 0 18px; border-radius: 999px; border: 1px solid var(--nh-line-strong); color: var(--nh-text); text-decoration: none; font-size: 15px; }
+.nh .nh-chip:hover { border-color: var(--nh-gold); color: var(--nh-gold); }
+.nh-menu-section { padding-top: clamp(48px, 6vw, 80px); scroll-margin-top: 96px; }
+.nh-menu-title { margin-bottom: 24px; font-size: clamp(32px, 3.6vw, 48px); }
+.nh-menu-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+.nh-menu-item { display: flex; flex-direction: column; gap: 12px; padding: 26px 28px; border-radius: 18px; background: var(--nh-surface); border: 1px solid var(--nh-line); }
+.nh-menu-head { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; }
+.nh-menu-name { margin: 0; font-family: var(--nh-serif); font-weight: 400; font-size: 24px; line-height: 1.2; }
+.nh-menu-from { font-weight: 800; font-size: 18px; color: var(--nh-gold); white-space: nowrap; }
+.nh-menu-desc { margin: 0; font-size: 15px; color: var(--nh-soft); line-height: 1.5; }
+.nh-menu-options { list-style: none; margin: 0; padding: 0; flex-grow: 1; }
+.nh-menu-options li { display: flex; justify-content: space-between; gap: 16px; padding: 10px 0; border-top: 1px dashed var(--nh-line); font-size: 15px; }
+.nh-menu-options li:first-child { border-top: 0; }
+.nh-menu-time { color: var(--nh-muted); }
+.nh .nh-menu-book { align-self: flex-start; padding: 10px 0; font-weight: 700; text-decoration: none; }
+.nh-notes { margin-top: clamp(56px, 7vw, 96px); padding: clamp(28px, 4vw, 48px); border-radius: 22px; border: 1px solid var(--nh-line); display: flex; flex-direction: column; gap: 18px; align-items: flex-start; }
+.nh-notes .nh-menu-title { margin-bottom: 0; }
+.nh-notes ul { margin: 0; padding-left: 20px; color: var(--nh-soft); line-height: 1.7; }
+
+.nh-info-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+.nh-info-card { display: flex; flex-direction: column; gap: 14px; align-items: flex-start; padding: 32px; border-radius: 20px; background: var(--nh-surface); border: 1px solid var(--nh-line); }
+.nh-info-card p { margin: 0; font-size: 17px; line-height: 1.6; color: var(--nh-soft); }
+.nh-info-card-gold { background: var(--nh-cream); border-color: var(--nh-cream); color: var(--nh-ink); }
+.nh-info-card-gold p { color: #3d362c; }
+.nh-info-title { margin: 0; font-family: var(--nh-serif); font-weight: 400; font-size: 30px; }
+.nh-map-wide { margin-top: 18px; height: 420px; }
+
 /* Mobile booking bar (hidden on desktop) */
 .nh-mobile-bar { display: none; }
 
 @media (max-width: 1100px) {
   .nh-nav { display: none; }
+  .nh-subnav {
+    position: sticky; top: 84px; z-index: 19; display: flex; gap: 8px; overflow-x: auto;
+    padding: 10px var(--nh-pad); background: rgba(18, 16, 14, 0.94); border-bottom: 1px solid var(--nh-line);
+    scrollbar-width: none;
+  }
+  .nh-subnav::-webkit-scrollbar { display: none; }
+  .nh .nh-subnav-link { flex: 0 0 auto; display: inline-flex; align-items: center; min-height: 40px; padding: 0 16px; border-radius: 999px; border: 1px solid var(--nh-line); color: var(--nh-text); text-decoration: none; font-size: 14px; }
+  .nh .nh-subnav-link.is-active { border-color: var(--nh-gold); color: var(--nh-gold); }
   .nh-cards { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 
 @media (max-width: 820px) {
   .nh-header { height: 68px; }
+  .nh-subnav { top: 68px; }
+  .nh-menu-list, .nh-info-grid { grid-template-columns: 1fr; }
+  .nh-menu-item, .nh-info-card { padding: 22px; }
+  .nh-map-wide { height: 300px; }
   .nh-logo-name { font-size: 20px; }
   .nh-logo-sub { font-size: 10px; }
   .nh .nh-phone { display: none; }

@@ -213,9 +213,15 @@ const AppContent = () => {
     return <Landing50 />;
   }
 
-  // New homepage (2026) renders standalone with its own header and footer
+  // New 2026 pages render standalone with their own header and footer (NhLayout)
   if (location.pathname === '/') {
     return <Home language={language} setLanguage={setLanguage} />;
+  }
+  if (location.pathname === '/services') {
+    return <Services language={language} setLanguage={setLanguage} />;
+  }
+  if (location.pathname === '/hours') {
+    return <Contact language={language} setLanguage={setLanguage} />;
   }
 
   return (

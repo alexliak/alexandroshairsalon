@@ -20,7 +20,7 @@ const responseData = {
       {
         keywords: ['hour', 'open', 'close', 'schedule', 'opening', 'time'],
         answer:
-          'We are open Tuesday & Thursday 08:30–13:30 / 17:30–20:00, Wednesday 08:30–14:00, Friday 08:30–18:00, Saturday 08:30–15:00. Monday is closed.'
+          'Our up-to-date opening hours are always on our Google profile (search “Alexandros Hair Salon”). You can also book online at alexandroshairsalon.gr/kratisi.'
       },
       {
         keywords: ['price', 'cost', 'services', 'menu'],
@@ -62,7 +62,7 @@ const responseData = {
       {
         keywords: ['ωραριο', 'δουλευετε', 'ανοιχτα', 'κλειστα', 'ωρες', 'ωρα'],
         answer:
-          'Είμαστε ανοιχτά Τρίτη & Πέμπτη 08:30–13:30 / 17:30–20:00, Τετάρτη 08:30–14:00, Παρασκευή 08:30–18:00, Σάββατο 08:30–15:00. Τη Δευτέρα παραμένουμε κλειστά.'
+          'Το ενημερωμένο ωράριο είναι πάντα στο προφίλ μας στο Google (αναζήτησε «Alexandros Hair Salon»). Μπορείς και να κλείσεις online στο alexandroshairsalon.gr/kratisi.'
       },
       {
         keywords: ['τιμες', 'κοστος', 'υπηρεσιες', 'τιμοκαταλογος'],
