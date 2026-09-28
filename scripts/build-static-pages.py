@@ -283,6 +283,10 @@ kratisi_head = f"""<script src="{TW_JS}"></script>
 #wahanda-online-booking-widget-iframe{{min-height:720px;background:#fff;border-radius:16px;overflow:hidden}}
 #wahanda-online-booking-widget-iframe iframe{{display:block;width:100%!important;min-height:720px;border:0}}
 .tw-fallback{{font-size:14px;color:var(--muted);margin-top:12px}}
+/* Treatwell button: keep the site's gold style instead of Treatwell's green */
+a#wahanda-online-booking-widget.btn{{background:var(--gold)!important;color:var(--ink)!important;border:1px solid var(--gold)!important;border-radius:999px!important;font:800 16px/1 var(--sans)!important;text-transform:none!important;letter-spacing:0!important;padding:0 24px!important;height:auto!important;min-height:48px!important;width:auto!important;box-shadow:none!important;background-image:none!important}}
+a#wahanda-online-booking-widget.btn span{{background:none!important;padding:0!important;font:inherit!important;color:inherit!important;text-transform:none!important;line-height:1.2!important;height:auto!important}}
+a#wahanda-online-booking-widget.btn:hover{{filter:brightness(1.08)}}
 </style>"""
 kratisi_body = f"""
 <section class="hero" style="padding-bottom:20px">
