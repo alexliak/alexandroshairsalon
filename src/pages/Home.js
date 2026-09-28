@@ -1,284 +1,306 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
-import {
-  CrownOutlined,
-  TeamOutlined,
-  ExperimentOutlined,
-  SafetyCertificateOutlined,
-  HistoryOutlined,
-  BulbOutlined,
-  SmileOutlined,
-  CheckCircleOutlined,
-  ArrowRightOutlined,
-  StarFilled
-} from '@ant-design/icons';
-import CustomCarousel from '../components/Carousel';
 import './Home.css';
 
-const carouselImages = [
-  '/images/portfolio/01.jpg',
-  '/images/portfolio/02.jpg',
-  '/images/portfolio/03.jpg',
-  '/images/portfolio/04.jpg',
-  '/images/portfolio/hairdresser-grooming-their-client.jpg'
-];
+// New homepage (2026): standalone layout with its own header and footer.
+// Every booking button goes to /kratisi/ (Treatwell widget, no first-visit commission).
+const BOOK = '/kratisi/';
+const PHONE = '+302103465554';
+const MAP_URL =
+  'https://www.google.com/maps/place/alexandroshairsalon/@37.976933,23.7162736,17z/data=!3m1!4b1!4m6!3m5!1s0x14a1bd200f79f18d:0x3024d28633f32b4!8m2!3d37.976933!4d23.7162736!16s%2Fg%2F11cm0h21cx';
 
-/* Animated counter that runs once when visible */
-const AnimatedStat = ({ target, decimals = 0, suffix = '', label }) => {
-  const [count, setCount] = useState(0);
-  const ref = useRef(null);
-  const started = useRef(false);
-
-  useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting && !started.current) {
-          started.current = true;
-          const duration = 1800;
-          const steps = 60;
-          const increment = target / steps;
-          let current = 0;
-          let step = 0;
-          const timer = setInterval(() => {
-            step++;
-            current = Math.min(increment * step, target);
-            setCount(parseFloat(current.toFixed(decimals)));
-            if (step >= steps) clearInterval(timer);
-          }, duration / steps);
-        }
-      },
-      { threshold: 0.4 }
-    );
-    observer.observe(el);
-    return () => observer.disconnect();
-  }, [target, decimals]);
-
-  return (
-    <div ref={ref} className="stat-item">
-      <span className="stat-num">
-        {decimals > 0 ? count.toFixed(decimals) : count}{suffix}
-      </span>
-      <span className="stat-label">{label}</span>
-    </div>
-  );
-};
-
-const homeContent = {
-  en: {
-    hero: {
-      title: 'Excellence in Hairdressing Since 1992',
-      lead: 'Professional hair care & styling in the heart of Thiseio, Athens.',
-      cta: 'Book Appointment'
-    },
-    stats: [
-      { target: 30, suffix: '+', label: 'Years of excellence' },
-      { target: 4.5, decimals: 1, suffix: '★', label: 'Google Reviews' },
-      { target: 1000, suffix: '+', label: 'Happy clients' }
-    ],
-    shopBanner: {
-      label: 'NEW',
-      title: 'Online Shop',
-      body: 'EVOQUE professional hair care products — delivered to your door.',
-      cta: 'Shop now'
-    },
-    highlightsTitle: 'Why Choose Us?',
-    highlights: [
-      { icon: CrownOutlined, text: '32 years of excellence in professional hairdressing' },
-      { icon: TeamOutlined, text: 'Family-owned salon with personal attention to every client' },
-      { icon: ExperimentOutlined, text: 'Modern facilities in a relaxing, welcoming atmosphere' },
-      { icon: SafetyCertificateOutlined, text: 'Experts continuously trained in the latest techniques' },
-      { icon: BulbOutlined, text: 'Personalised consultations to achieve your perfect look' }
-    ],
-    ctaServices: 'View services & prices',
-    ctaContact: 'Opening hours',
-    story: {
-      title: 'Our Story',
-      paragraphs: [
-        'Founded in 1992 by master stylist Giota Liakopoulou, our salon began as a vision to bring professional, personalised hair care to the Thiseio community.',
-        'In 2004, Alexandros Liakopoulou joined the family tradition, bringing fresh perspectives and advanced training from prestigious academies.'
-      ],
-      milestones: [
-        { year: '1992', description: 'Salon founded by master stylist Giota Liakopoulou' },
-        { year: '2004', description: 'Alexandros joins after extensive training' },
-        { year: 'Today', description: 'Serving thousands of satisfied clients with consistent excellence' }
-      ]
-    },
-    philosophy: {
-      title: 'Our Philosophy',
-      cards: [
-        { title: 'Technical Excellence', body: 'Classic cutting with modern geometric precision.', icon: CheckCircleOutlined },
-        { title: 'Health First', body: 'Premium products and treatments that nourish while styling.', icon: SafetyCertificateOutlined },
-        { title: 'Personal Connection', body: 'We listen, understand, and deliver with care.', icon: SmileOutlined },
-        { title: 'Continuous Innovation', body: 'We keep our techniques fresh with ongoing training.', icon: BulbOutlined }
-      ]
-    }
-  },
+const content = {
   el: {
-    hero: {
-      title: 'Υπεροχή στην κομμωτική από το 1992',
-      lead: 'Επαγγελματική περιποίηση & styling στο Θησείο, κέντρο Αθήνας.',
-      cta: 'Κλείσε Ραντεβού'
-    },
+    nav: [
+      { label: 'Υπηρεσίες', to: '/services' },
+      { label: 'L’Oréal & Redken', href: '#brands' },
+      { label: 'Ωράριο', to: '/hours' },
+      { label: 'Shop', to: '/shop' }
+    ],
+    book: 'Κλείσε ραντεβού',
+    eyebrow: 'Κομμωτήριο στο Θησείο · από το 1992',
+    titleA: 'Κούρεμα που σου ',
+    titleEm: 'μοιάζει.',
+    titleB: ' Χρώμα που λάμπει.',
+    lead:
+      'Τρεις δεκαετίες στο ψαλίδι, χρώμα με L’Oréal Professionnel και Redken. Διάλεξε υπηρεσία, δες τιμή και ώρα, κλείσε σε ένα λεπτό.',
+    bookOnline: 'Κλείσε online',
+    seePrices: 'Δες τιμές',
+    reassure: ['Πληρώνεις στο κομμωτήριο', 'Κενές ώρες έως −15%', 'Δωρεάν τεστ ευαισθησίας'],
+    artCaption: 'Θησείο · Αθήνα',
     stats: [
-      { target: 30, suffix: '+', label: 'Χρόνια εμπειρίας' },
-      { target: 4.5, decimals: 1, suffix: '★', label: 'στο Google' },
-      { target: 1000, suffix: '+', label: 'Ευχαριστημένοι πελάτες' }
+      { big: '1992', small: 'οικογενειακό κομμωτήριο' },
+      { big: '4,5 ★', small: 'βαθμολογία στο Google' },
+      { big: 'L’Oréal · Redken', small: 'επαγγελματικά προϊόντα & εκπαίδευση', brand: true },
+      { big: 'από €24', small: 'Blowout · κούρεμα από €28' }
     ],
-    shopBanner: {
-      label: 'ΝΕΟ',
-      title: 'Online Shop',
-      body: 'Επαγγελματικά προϊόντα μαλλιών EVOQUE — απευθείας στο σπίτι σας.',
-      cta: 'Μπείτε στο Shop'
-    },
-    highlightsTitle: 'Γιατί να μας επιλέξετε;',
-    highlights: [
-      { icon: CrownOutlined, text: '32 χρόνια υπεροχής στην επαγγελματική κομμωτική στο κέντρο Αθήνας' },
-      { icon: TeamOutlined, text: 'Οικογενειακό κομμωτήριο στο Θησείο με προσωπική φροντίδα' },
-      { icon: ExperimentOutlined, text: 'Σύγχρονες εγκαταστάσεις, χαλαρωτική ατμόσφαιρα' },
-      { icon: SafetyCertificateOutlined, text: 'Εξειδικευμένοι κομμωτές με συνεχή εκπαίδευση' },
-      { icon: BulbOutlined, text: 'Εξατομικευμένες συμβουλές για το ιδανικό look σας' }
+    popularEyebrow: 'Οι πιο δημοφιλείς',
+    popularTitle: 'Διάλεξε & κλείσε',
+    allServices: 'Όλες οι υπηρεσίες →',
+    services: [
+      { cat: 'Κουρέματα', name: 'Γυναικείο κούρεμα', desc: 'Butterfly, curtain bangs, φιλάρισμα ή κλασικό, με εμπειρία τριών δεκαετιών.', time: '30–45′', price: 'από €28' },
+      { cat: 'Χτένισμα', name: 'Blowout', desc: 'Όγκος και λάμψη με πιστολάκι ή πρέσα. Πρόσθεσε SteamPod για διάρκεια.', time: '25–40′', price: 'από €24' },
+      { cat: 'Χρώμα', name: 'Βαφή ρίζας + ρεφλέ', desc: 'Κάλυψη λευκών στη ρίζα και ξεχωριστό gloss για λάμψη σε όλο το μαλλί.', time: '1 ώρα', price: 'από €52' },
+      { cat: 'Ανταύγειες', name: 'Balayage', desc: 'Φυσικό, φωτεινό αποτέλεσμα με εύκολη συντήρηση.', time: '1:35–2:45', price: 'από €55' },
+      { cat: 'Ανταύγειες', name: 'No-Bleach ανταύγειες', desc: 'Απαλό φως χωρίς ντεκαπάζ, ιδανικό για πρώτη φορά.', time: '1:20–1:50', price: 'από €51' },
+      { cat: 'Πακέτα', name: 'Κούρεμα & Blowout', desc: 'Κούρεμα και χτένισμα σε ένα ραντεβού.', time: '45–55′', price: 'από €38' }
     ],
-    ctaServices: 'Υπηρεσίες & τιμές',
-    ctaContact: 'Ωράριο λειτουργίας',
-    story: {
-      title: 'Η Ιστορία μας',
-      paragraphs: [
-        'Το 1992 η Γιώτα Λιακοπούλου δημιούργησε ένα χώρο επαγγελματικής, προσωπικής περιποίησης στο Θησείο. Ένα κομμωτήριο που συνδυάζει την παράδοση με τη σύγχρονη τεχνολογία.',
-        'Το 2004 ο Αλέξανδρος συνέχισε την παράδοση με νέες ιδέες και εκπαίδευση από καταξιωμένες ακαδημίες. Σήμερα, ένα από τα πιο αξιόπιστα κομμωτήρια στο κέντρο της Αθήνας.'
-      ],
-      milestones: [
-        { year: '1992', description: 'Ίδρυση από τη Γιώτα Λιακοπούλου' },
-        { year: '2004', description: 'Ο Αλέξανδρος εντάσσεται μετά από εκπαίδευση' },
-        { year: 'Σήμερα', description: 'Χιλιάδες ευχαριστημένοι πελάτες με συνέπεια' }
-      ]
-    },
-    philosophy: {
-      title: 'Η Φιλοσοφία μας',
-      cards: [
-        { title: 'Τεχνική Υπεροχή', body: 'Κλασικό κούρεμα με σύγχρονη γεωμετρική ακρίβεια.', icon: CheckCircleOutlined },
-        { title: 'Προτεραιότητα στην Υγεία', body: 'Προϊόντα και θεραπείες που θρέφουν ενώ διαμορφώνουν.', icon: SafetyCertificateOutlined },
-        { title: 'Προσωπική Σχέση', body: 'Ακούμε, κατανοούμε και παραδίδουμε με φροντίδα.', icon: SmileOutlined },
-        { title: 'Συνεχής Καινοτομία', body: 'Συνεχής εκπαίδευση και ανανέωση τεχνικών.', icon: BulbOutlined }
-      ]
-    }
+    brandsEyebrow: 'Χρώμα με υπογραφή',
+    brandsTitleA: 'Δουλεύουμε με ',
+    brandsTitleB: ' και ',
+    brandsText:
+      'Βαφή ρίζας με Majirel, INOA χωρίς αμμωνία ή Redken, ρεφλέ για λάμψη και balayage με φυσικό αποτέλεσμα. Εκπαιδευόμαστε συνεχώς στις νέες τεχνικές τους.',
+    brandsCta: 'Κλείσε χρώμα · από €35',
+    colorList: [
+      ['Βαφή ρίζας – κάλυψη λευκών', 'από €35'],
+      ['Βαφή ρίζας + ρεφλέ (gloss)', 'από €52'],
+      ['Face framing', '€46'],
+      ['Balayage – μερικές', 'από €55']
+    ],
+    visitTitleA: 'Σε περιμένουμε',
+    visitTitleEm: 'στο Θησείο.',
+    address: 'Ερυσίχθονος 3-5, Θησείο, Αθήνα 118 51',
+    hours: 'Δες το ωράριο λειτουργίας',
+    call: 'Κάλεσε 210 346 5554',
+    directions: 'Οδηγίες στον χάρτη',
+    mobileBarTop: 'Online κράτηση',
+    mobileBarBottom: 'Κούρεμα από €28',
+    mobileBarCta: 'Κλείσε',
+    footerShop: 'Online Shop',
+    langSwitch: 'EN',
+    langAria: 'Switch to English'
+  },
+  en: {
+    nav: [
+      { label: 'Services', to: '/services' },
+      { label: 'L’Oréal & Redken', href: '#brands' },
+      { label: 'Hours', to: '/hours' },
+      { label: 'Shop', to: '/shop' }
+    ],
+    book: 'Book now',
+    eyebrow: 'Hair salon in Thiseio · since 1992',
+    titleA: 'A cut that feels ',
+    titleEm: 'like you.',
+    titleB: ' Colour that shines.',
+    lead:
+      'Three decades of cutting, colour with L’Oréal Professionnel and Redken. Pick a service, see price and time, book in a minute.',
+    bookOnline: 'Book online',
+    seePrices: 'See prices',
+    reassure: ['Pay at the salon', 'Off-peak up to −15%', 'Free sensitivity test'],
+    artCaption: 'Thiseio · Athens',
+    stats: [
+      { big: '1992', small: 'family-run salon' },
+      { big: '4.5 ★', small: 'rating on Google' },
+      { big: 'L’Oréal · Redken', small: 'professional products & training', brand: true },
+      { big: 'from €24', small: 'Blowout · haircut from €28' }
+    ],
+    popularEyebrow: 'Most popular',
+    popularTitle: 'Pick & book',
+    allServices: 'All services →',
+    services: [
+      { cat: 'Haircuts', name: 'Women’s haircut', desc: 'Butterfly, curtain bangs, texturising or classic, with thirty years of experience.', time: '30–45′', price: 'from €28' },
+      { cat: 'Styling', name: 'Blowout', desc: 'Volume and shine with brush or iron. Add SteamPod for long-lasting results.', time: '25–40′', price: 'from €24' },
+      { cat: 'Colour', name: 'Root colour + gloss', desc: 'Grey coverage at the root plus a separate gloss for shine throughout.', time: '1 h', price: 'from €52' },
+      { cat: 'Highlights', name: 'Balayage', desc: 'Natural, luminous result that is easy to maintain.', time: '1:35–2:45', price: 'from €55' },
+      { cat: 'Highlights', name: 'No-bleach highlights', desc: 'Soft brightness without bleach, ideal for a first time.', time: '1:20–1:50', price: 'from €51' },
+      { cat: 'Packages', name: 'Cut & blowout', desc: 'Haircut and styling in one appointment.', time: '45–55′', price: 'from €38' }
+    ],
+    brandsEyebrow: 'Signature colour',
+    brandsTitleA: 'We work with ',
+    brandsTitleB: ' and ',
+    brandsText:
+      'Root colour with Majirel, ammonia-free INOA or Redken, gloss for shine and balayage with a natural finish. We train continuously in their latest techniques.',
+    brandsCta: 'Book colour · from €35',
+    colorList: [
+      ['Root colour & grey coverage', 'from €35'],
+      ['Root colour + gloss', 'from €52'],
+      ['Face-frame highlights', '€46'],
+      ['Partial balayage', 'from €55']
+    ],
+    visitTitleA: 'See you',
+    visitTitleEm: 'in Thiseio.',
+    address: 'Erysichthonos 3-5, Thiseio, Athens 118 51',
+    hours: 'See opening hours',
+    call: 'Call 210 346 5554',
+    directions: 'Directions on the map',
+    mobileBarTop: 'Online booking',
+    mobileBarBottom: 'Haircut from €28',
+    mobileBarCta: 'Book',
+    footerShop: 'Online Shop',
+    langSwitch: 'EL',
+    langAria: 'Αλλαγή στα Ελληνικά'
   }
 };
 
+const Strands = ({ className }) => (
+  <svg className={className} viewBox="0 0 760 760" fill="none" aria-hidden="true">
+    <path d="M120 740 C 180 520, 420 560, 380 360 S 560 80, 700 20" stroke="currentColor" strokeWidth="1.2" opacity="0.9" />
+    <path d="M150 760 C 210 540, 450 580, 410 380 S 590 100, 730 40" stroke="currentColor" strokeWidth="1" opacity="0.6" />
+    <path d="M180 780 C 240 560, 480 600, 440 400 S 620 120, 760 60" stroke="currentColor" strokeWidth="0.8" opacity="0.4" />
+    <path d="M90 720 C 150 500, 390 540, 350 340 S 530 60, 670 0" stroke="#f3eee6" strokeWidth="0.6" opacity="0.25" />
+    <path d="M210 800 C 270 580, 510 620, 470 420 S 650 140, 790 80" stroke="#f3eee6" strokeWidth="0.6" opacity="0.18" />
+  </svg>
+);
+
+const NavItem = ({ item, className }) =>
+  item.to ? (
+    <Link to={item.to} className={className}>{item.label}</Link>
+  ) : (
+    <a href={item.href} className={className}>{item.label}</a>
+  );
+
 const Home = ({ language, setLanguage }) => {
-  const content = homeContent[language];
+  const t = content[language] || content.el;
+  const other = language === 'el' ? 'en' : 'el';
 
   return (
-    <div className="homeA-container">
-
-      {/* Hero carousel with booking CTA */}
-      <section className="heroA-banner" aria-label="Salon gallery">
-        <CustomCarousel images={carouselImages} />
-        <div className="heroA-overlay">
-          <div className="heroA-text">
-            <h1 className="heroA-title">{content.hero.title}</h1>
-            <p className="heroA-lead">{content.hero.lead}</p>
-            <a href="tel:+302103465554" className="hero-cta-btn">
-              📞 {content.hero.cta}
-            </a>
-          </div>
-        </div>
-      </section>
-
-      <main className="homeA-content">
-
-        {/* Stats strip — animated counters */}
-        <div className="stats-strip">
-          {content.stats.map((s) => (
-            <AnimatedStat
-              key={s.label}
-              target={s.target}
-              decimals={s.decimals || 0}
-              suffix={s.suffix}
-              label={s.label}
-            />
-          ))}
-        </div>
-
-        {/* Shop banner */}
-        <Link to="/shop" className="shop-home-banner">
-          <span className="shop-home-badge">{content.shopBanner.label}</span>
-          <div className="shop-home-text">
-            <span className="shop-home-title">🛍️ {content.shopBanner.title}</span>
-            <span className="shop-home-body">{content.shopBanner.body}</span>
-          </div>
-          <span className="shop-home-cta">{content.shopBanner.cta} →</span>
+    <div className="nh" lang={language}>
+      <header className="nh-header">
+        <Link to="/" className="nh-logo" aria-label="Alexandros Hair Salon">
+          <span className="nh-logo-name">Alexandros</span>
+          <span className="nh-logo-sub">Hair Salon · {language === 'el' ? 'Θησείο' : 'Thiseio'}</span>
         </Link>
+        <nav className="nh-nav" aria-label={language === 'el' ? 'Κύριο μενού' : 'Main menu'}>
+          {t.nav.map((item) => (
+            <NavItem key={item.label} item={item} className="nh-nav-link" />
+          ))}
+        </nav>
+        <div className="nh-header-actions">
+          <button type="button" className="nh-lang" onClick={() => setLanguage(other)} aria-label={t.langAria}>
+            {t.langSwitch}
+          </button>
+          <a href={`tel:${PHONE}`} className="nh-phone">210 346 5554</a>
+          <a href={BOOK} className="nh-btn nh-btn-gold nh-btn-sm">{t.book}</a>
+        </div>
+      </header>
 
-        {/* Why choose us */}
-        <section className="cardA-section">
-          <h2 className="section-title">{content.highlightsTitle}</h2>
-          <div className="highlights-grid">
-            {content.highlights.map(({ icon: Icon, text }) => (
-              <div key={text} className="highlight-card">
-                <span className="highlight-icon" aria-hidden="true"><Icon /></span>
-                <p>{text}</p>
-              </div>
-            ))}
+      <main id="top">
+        <section className="nh-hero">
+          <Strands className="nh-strands" />
+          <div className="nh-hero-text">
+            <span className="nh-eyebrow">{t.eyebrow}</span>
+            <h1 className="nh-h1">
+              {t.titleA}
+              <em>{t.titleEm}</em>
+              {t.titleB}
+            </h1>
+            <p className="nh-lead">{t.lead}</p>
+            <div className="nh-cta-row">
+              <a href={BOOK} className="nh-btn nh-btn-gold">{t.bookOnline}</a>
+              <Link to="/services" className="nh-btn nh-btn-ghost">{t.seePrices}</Link>
+            </div>
+            <ul className="nh-reassure">
+              {t.reassure.map((r) => (
+                <li key={r}>{r}</li>
+              ))}
+            </ul>
           </div>
-          <div className="home-cta-links">
-            <Link to="/services" className="home-cta-link">
-              {content.ctaServices} <ArrowRightOutlined />
-            </Link>
-            <Link to="/hours" className="home-cta-link">
-              {content.ctaContact} <ArrowRightOutlined />
-            </Link>
+          <div className="nh-hero-art" aria-hidden="true">
+            <Strands className="nh-hero-art-strands" />
+            <span className="nh-hero-art-year">1992</span>
+            <span className="nh-hero-art-caption">{t.artCaption}</span>
           </div>
         </section>
 
-        {/* Google reviews nudge */}
-        <a
-          href="https://www.google.com/maps/place/alexandroshairsalon/@37.976933,23.7162736,17z"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="reviews-bar"
-        >
-          <span className="reviews-stars">
-            <StarFilled /><StarFilled /><StarFilled /><StarFilled /><StarFilled />
-          </span>
-          <span className="reviews-text">4.5 — 22 κριτικές στο Google</span>
-          <span className="reviews-cta">Δείτε τις κριτικές →</span>
-        </a>
-
-        {/* Our story */}
-        <section className="cardA-section">
-          <h2 className="section-title">
-            <HistoryOutlined /> {content.story.title}
-          </h2>
-          {content.story.paragraphs.map((p, idx) => (
-            <p key={`story-${idx}`} className="section-paragraph">{p}</p>
+        <section className="nh-stats" aria-label={language === 'el' ? 'Γιατί εμάς' : 'Why us'}>
+          {t.stats.map((s) => (
+            <div key={s.small} className="nh-stat">
+              <span className={`nh-stat-big${s.brand ? ' nh-stat-brand' : ''}`}>{s.big}</span>
+              <span className="nh-stat-small">{s.small}</span>
+            </div>
           ))}
-          <ul className="timeline">
-            {content.story.milestones.map((m) => (
-              <li key={`${m.year}-${m.description}`}>
-                <span className="timeline-year">{m.year}</span>
-                <span className="timeline-desc">{m.description}</span>
+        </section>
+
+        <section className="nh-section" id="services">
+          <div className="nh-section-head">
+            <div>
+              <span className="nh-eyebrow">{t.popularEyebrow}</span>
+              <h2 className="nh-h2">{t.popularTitle}</h2>
+            </div>
+            <a href={BOOK} className="nh-underline">{t.allServices}</a>
+          </div>
+          <div className="nh-cards">
+            {t.services.map((s) => (
+              <a key={s.name} href={BOOK} className="nh-card">
+                <span className="nh-card-cat">{s.cat}</span>
+                <span className="nh-card-name">{s.name}</span>
+                <span className="nh-card-desc">{s.desc}</span>
+                <span className="nh-card-foot">
+                  <span className="nh-card-time">{s.time}</span>
+                  <span className="nh-card-price">{s.price}</span>
+                </span>
+              </a>
+            ))}
+          </div>
+        </section>
+
+        <section className="nh-brands" id="brands">
+          <div className="nh-brands-text">
+            <span className="nh-eyebrow nh-eyebrow-dark">{t.brandsEyebrow}</span>
+            <h2 className="nh-h2 nh-h2-dark">
+              {t.brandsTitleA}
+              <em>L’Oréal Professionnel</em>
+              {t.brandsTitleB}
+              <em>Redken</em>.
+            </h2>
+            <p>{t.brandsText}</p>
+            <a href={BOOK} className="nh-btn nh-btn-dark">{t.brandsCta}</a>
+          </div>
+          <ul className="nh-brands-list">
+            {t.colorList.map(([name, price]) => (
+              <li key={name}>
+                <span>{name}</span>
+                <strong>{price}</strong>
               </li>
             ))}
           </ul>
         </section>
 
-        {/* Philosophy */}
-        <section className="cardA-section">
-          <h2 className="section-title">{content.philosophy.title}</h2>
-          <div className="philosophy-grid">
-            {content.philosophy.cards.map(({ title, body, icon: Icon }) => (
-              <div key={title} className="philosophy-card">
-                <span className="philosophy-icon" aria-hidden="true"><Icon /></span>
-                <h3>{title}</h3>
-                <p>{body}</p>
-              </div>
-            ))}
+        <section className="nh-section nh-visit" id="visit">
+          <div className="nh-visit-text">
+            <h2 className="nh-h2 nh-h2-xl">
+              {t.visitTitleA}
+              <br />
+              <em>{t.visitTitleEm}</em>
+            </h2>
+            <p className="nh-visit-info">
+              {t.address}
+              <br />
+              <Link to="/hours">{t.hours}</Link>
+            </p>
+            <div className="nh-cta-row">
+              <a href={BOOK} className="nh-btn nh-btn-gold">{t.bookOnline}</a>
+              <a href={`tel:${PHONE}`} className="nh-btn nh-btn-ghost">{t.call}</a>
+            </div>
+            <a href={MAP_URL} className="nh-underline" target="_blank" rel="noopener noreferrer">{t.directions}</a>
+          </div>
+          <div className="nh-map">
+            <iframe
+              title={language === 'el' ? 'Χάρτης: Alexandros Hair Salon' : 'Map: Alexandros Hair Salon'}
+              src="https://www.google.com/maps?q=Alexandros%20Hair%20Salon%20%CE%95%CF%81%CF%85%CF%83%CE%AF%CF%87%CE%B8%CE%BF%CE%BD%CE%BF%CF%82%203%20%CE%91%CE%B8%CE%AE%CE%BD%CE%B1&output=embed"
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            />
           </div>
         </section>
-
       </main>
+
+      <footer className="nh-footer">
+        <span>© {new Date().getFullYear()} Alexandros Hair Salon · {language === 'el' ? 'Θησείο' : 'Thiseio'}</span>
+        <span className="nh-footer-links">
+          <Link to="/shop">{t.footerShop}</Link>
+          <a href="https://www.facebook.com/alexandros.hairsalon" target="_blank" rel="noopener noreferrer">Facebook</a>
+          <a href={`tel:${PHONE}`}>210 346 5554</a>
+        </span>
+      </footer>
+
+      <div className="nh-mobile-bar">
+        <span className="nh-mobile-bar-text">
+          <span>{t.mobileBarTop}</span>
+          <strong>{t.mobileBarBottom}</strong>
+        </span>
+        <a href={BOOK} className="nh-btn nh-btn-gold nh-btn-sm">{t.mobileBarCta}</a>
+      </div>
     </div>
   );
 };
