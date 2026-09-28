@@ -285,3 +285,12 @@
   .nh .nh-btn, .nh .nh-card { transition: none; }
   .nh .nh-btn:hover, .nh .nh-card:hover { transform: none; }
 }
+
+/* SEO line inside the H1, styled like the eyebrow */
+.nh-h1 .nh-h1-kicker { display: block; margin-bottom: 26px; font-family: var(--nh-sans, Manrope, system-ui, sans-serif); line-height: 1.4; letter-spacing: 0.28em; }
+.nh-footer-seo { flex-basis: 100%; display: flex; flex-wrap: wrap; gap: 8px 24px; font-size: 13px; }
+.nh .nh-footer-seo a { color: var(--nh-muted); text-decoration: none; }
+.nh .nh-footer-seo a:hover { color: var(--nh-gold); }
+/* Shop inside the 2026 layout */
+.nh-shop .shop-page { padding-left: 0; padding-right: 0; }
+.nh-shop .shop-header h1 { font-family: var(--nh-serif); font-weight: 300; font-size: clamp(38px, 5vw, 64px); text-shadow: none; }

@@ -19,6 +19,7 @@ import Contact from './pages/Contact';
 import Landing50 from './pages/Landing50';
 import Shop from './pages/Shop';
 import Chatbot from './components/Chatbot';
+import NhLayout from './components/NhLayout';
 import AccessibilityControls from './components/AccessibilityControls';
 import { trackPageView } from './utils/analytics';
 import './App.css';
@@ -111,17 +112,17 @@ const AppContent = () => {
     };
 
     const titleMap = {
-      '/': 'Alexandros Hair Salon | Κομμωτήριο Κέντρο Αθήνας - Θησείο | Από το 1992',
-      '/services': 'Υπηρεσίες & Τιμές | Alexandros Hair Salon | Κομμωτήριο Θησείο',
-      '/hours': 'Ωράριο Λειτουργίας | Alexandros Hair Salon | Κομμωτήριο Θησείο',
+      '/': 'Κομμωτήριο Αθήνα, Θησείο | Κούρεμα, Βαφή, Balayage | Alexandros Hair Salon',
+      '/services': 'Τιμές Κομμωτηρίου Αθήνα | Κούρεμα, Βαφή, Balayage | Alexandros Hair Salon',
+      '/hours': 'Ωράριο & Επικοινωνία | Κομμωτήριο Θησείο, Αθήνα | Alexandros Hair Salon',
       '/prosfora50': 'Προσφορά 50% Καλωσορίσματος - Alexandros Hair Salon',
       '/shop': 'Επαγγελματικά Προϊόντα Μαλλιών EVOQUE | Κερατίνη, Frizz Control | Alexandros Hair Salon'
     };
 
     const descriptionMap = {
-      '/': 'Alexandros Hair Salon – Κομμωτήριο στο κέντρο της Αθήνας, Θησείο. Επαγγελματική κομμωτική από το 1992.',
-      '/services': 'Υπηρεσίες & Τιμές | Alexandros Hair Salon | Κομμωτήριο Θησείο',
-      '/hours': 'Ωράριο Λειτουργίας | Alexandros Hair Salon | Κομμωτήριο Θησείο',
+      '/': 'Κομμωτήριο στο κέντρο της Αθήνας, Θησείο, από το 1992. Γυναικείο κούρεμα από €28, βαφή L’Oréal & Redken από €35, balayage από €55. 4,6★ στο Google. Κλείσε online.',
+      '/services': 'Όλες οι τιμές του κομμωτηρίου στο Θησείο: κουρέματα, Blowout, βαφή ρίζας, ρεφλέ, balayage, κερατίνη και πακέτα, με χρόνους. Online κράτηση, πληρωμή στο κομμωτήριο.',
+      '/hours': 'Ωράριο, διεύθυνση και τηλέφωνο του Alexandros Hair Salon, Ερυσίχθονος 3-5, Θησείο, Αθήνα. Κλείσε ραντεβού online.',
       '/prosfora50': 'Κλείσε ραντεβού για κούρεμα, βαφή, ανταύγειες με 50% έκπτωση στην πρώτη σου επίσκεψη. Θησείο, Αθήνα.',
       '/shop': 'Επαγγελματικά προϊόντα μαλλιών EVOQUE για χρήση στο σπίτι. Σαμπουάν κερατίνης, μάσκες για φριζαρισμένα & σγουρά μαλλιά, styling. Αποστολή πανελλαδικά.'
     };
@@ -222,6 +223,15 @@ const AppContent = () => {
   }
   if (location.pathname === '/hours') {
     return <Contact language={language} setLanguage={setLanguage} />;
+  }
+  if (location.pathname === '/shop') {
+    return (
+      <NhLayout language={language} setLanguage={setLanguage}>
+        <main className="nh-page nh-shop">
+          <Shop language={language} />
+        </main>
+      </NhLayout>
+    );
   }
 
   return (

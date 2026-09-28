@@ -30,7 +30,14 @@ const layoutText = {
     footerShop: 'Online Shop',
     footerHours: 'Ωράριο στο Google',
     langSwitch: 'EN',
-    langAria: 'Switch to English'
+    langAria: 'Switch to English',
+    seoNav: 'Υπηρεσίες κομμωτηρίου',
+    seoLinks: [
+      ['Κούρεμα στην Αθήνα', '/kourema-athina/'],
+      ['Βαφή μαλλιών στην Αθήνα', '/vafi-mallion-athina/'],
+      ['Balayage στην Αθήνα', '/balayage-athina/'],
+      ['Κράτηση online', '/kratisi/']
+    ]
   },
   en: {
     nav: [
@@ -48,7 +55,14 @@ const layoutText = {
     footerShop: 'Online Shop',
     footerHours: 'Hours on Google',
     langSwitch: 'EL',
-    langAria: 'Αλλαγή στα Ελληνικά'
+    langAria: 'Αλλαγή στα Ελληνικά',
+    seoNav: 'Salon services',
+    seoLinks: [
+      ['Haircut in Athens', '/kourema-athina/'],
+      ['Hair colour in Athens', '/vafi-mallion-athina/'],
+      ['Balayage in Athens', '/balayage-athina/'],
+      ['Book online', '/kratisi/']
+    ]
   }
 };
 
@@ -123,6 +137,11 @@ const NhLayout = ({ language, setLanguage, children }) => {
           <a href="https://www.facebook.com/alexandros.hairsalon" target="_blank" rel="noopener noreferrer">Facebook</a>
           <a href={`tel:${PHONE}`}>{PHONE_DISPLAY}</a>
         </span>
+        <nav className="nh-footer-seo" aria-label={t.seoNav}>
+          {t.seoLinks.map(([label, href]) => (
+            <a key={href} href={href}>{label}</a>
+          ))}
+        </nav>
       </footer>
 
       <div className="nh-mobile-bar">

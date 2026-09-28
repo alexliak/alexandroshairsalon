@@ -6,7 +6,7 @@ import NhLayout, { BOOK, PHONE, GOOGLE_PROFILE_URL, MAP_EMBED_URL } from '../com
 
 const content = {
   el: {
-    eyebrow: 'Κομμωτήριο στο Θησείο · από το 1992',
+    eyebrow: 'Κομμωτήριο στο Θησείο, κέντρο Αθήνας · από το 1992',
     titleA: 'Κούρεμα που σου ',
     titleEm: 'μοιάζει.',
     titleB: ' Χρώμα που λάμπει.',
@@ -18,7 +18,7 @@ const content = {
     artCaption: 'Θησείο · Αθήνα',
     stats: [
       { big: '1992', small: 'οικογενειακό κομμωτήριο' },
-      { big: '4,5 ★', small: 'βαθμολογία στο Google' },
+      { big: '4,6 ★', small: 'βαθμολογία στο Google' },
       { big: 'L’Oréal · Redken', small: 'επαγγελματικά προϊόντα & εκπαίδευση', brand: true },
       { big: 'από €24', small: 'Blowout · κούρεμα από €28' }
     ],
@@ -53,7 +53,7 @@ const content = {
     directions: 'Οδηγίες στον χάρτη',
   },
   en: {
-    eyebrow: 'Hair salon in Thiseio · since 1992',
+    eyebrow: 'Hair salon in Thiseio, central Athens · since 1992',
     titleA: 'A cut that feels ',
     titleEm: 'like you.',
     titleB: ' Colour that shines.',
@@ -65,7 +65,7 @@ const content = {
     artCaption: 'Thiseio · Athens',
     stats: [
       { big: '1992', small: 'family-run salon' },
-      { big: '4.5 ★', small: 'rating on Google' },
+      { big: '4.6 ★', small: 'rating on Google' },
       { big: 'L’Oréal · Redken', small: 'professional products & training', brand: true },
       { big: 'from €24', small: 'Blowout · haircut from €28' }
     ],
@@ -121,8 +121,8 @@ const Home = ({ language, setLanguage }) => {
         <section className="nh-hero">
           <Strands className="nh-strands" />
           <div className="nh-hero-text">
-            <span className="nh-eyebrow">{t.eyebrow}</span>
             <h1 className="nh-h1">
+              <span className="nh-eyebrow nh-h1-kicker">{t.eyebrow}</span>
               {t.titleA}
               <em>{t.titleEm}</em>
               {t.titleB}
