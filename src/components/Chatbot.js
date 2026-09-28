@@ -105,22 +105,22 @@ const greekServiceMap = {
 
 const serviceDetails = {
   en: {
-    haircut: 'Haircuts start at €20 for women, €15 for men, €15 for kids, beard trim €5.',
-    blowdry: 'Blow-dry styling starts at €14 for short hair, €15 for medium/long, €20 for curls.',
-    color: 'Colour services: roots €30, ammonia-free roots €33, roots-to-ends €38-45, highlights from €20.',
-    treatment: 'Treatments range from €5 (mask) to €49 (anti-frizz) and keratin €120-€180.',
-    styling: 'Styling options include updos and braids from €10. For more, check the Services page.',
+    haircut: 'Haircuts: women’s from €28, men’s €24, kids’ €20, beard trim €9. Book online at alexandroshairsalon.gr/kratisi.',
+    blowdry: 'Blowout: short €24, medium/long €28, long & thick €35. Event hair & waves from €38.',
+    color: 'Root colour from €35, root colour + gloss from €52, gloss from €31, face framing €46, balayage from €55.',
+    treatment: 'Hair treatment €10, ampoule €17, keratin smoothing €120–€170.',
+    styling: 'Event hair & waves from €38, bridal trial €59. See the Services page for everything.',
     default:
-      'Cuts from €20, blow-dry from €14, colour services from €30, treatments from €5. Visit the Services page for full details.'
+      'Cuts from €20 (kids) / €28 (women), blowout from €24, root colour from €35, treatments from €10. Book online at alexandroshairsalon.gr/kratisi.'
   },
   el: {
-    haircut: 'Τα κουρέματα ξεκινούν από €20 (γυναικείο), €15 (ανδρικό), €15 (παιδικό), περιποίηση γενειάδας €5.',
-    blowdry: 'Τα χτενίσματα ξεκινούν από €14 (κοντά), €15 (μεσαία/μακριά), €20 για μπούκλες.',
-    color: 'Οι βαφές: ρίζες από €30, ρίζες χωρίς αμμωνία €33, ρίζες-άκρες €38-45, ανταύγειες από €20.',
-    treatment: 'Θεραπείες από €5 (μάσκα) έως €49 (anti-frizz) και κερατίνη €120-180.',
-    styling: 'Για styling/βραδινό/πλεξίδες ξεκινάμε από €10. Δείτε αναλυτικά στη σελίδα Υπηρεσίες.',
+    haircut: 'Κουρέματα: γυναικείο από €28, ανδρικό €24, παιδικό €20, γενειάδα €9. Κλείσε online στο alexandroshairsalon.gr/kratisi.',
+    blowdry: 'Blowout: κοντά €24, μεσαία/μακριά €28, μακριά & πυκνά €35. Βραδινό χτένισμα & μπούκλες από €38.',
+    color: 'Βαφή ρίζας από €35, βαφή ρίζας + ρεφλέ από €52, ρεφλέ από €31, face framing €46, balayage από €55.',
+    treatment: 'Θεραπεία €10, αμπούλα €17, κερατίνη €120–170.',
+    styling: 'Βραδινό χτένισμα & μπούκλες από €38, νυφικό δοκιμαστικό €59. Δείτε αναλυτικά στη σελίδα Υπηρεσίες.',
     default:
-      'Ενδεικτικά: κούρεμα από €20, χτένισμα από €14, βαφή ρίζες από €30, θεραπείες από €5. Δείτε όλες τις τιμές στη σελίδα Υπηρεσίες.'
+      'Ενδεικτικά: γυναικείο κούρεμα από €28, Blowout από €24, βαφή ρίζας από €35, θεραπείες από €10. Κλείσε online στο alexandroshairsalon.gr/kratisi.'
   }
 };
 

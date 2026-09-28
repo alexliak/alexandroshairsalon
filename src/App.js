@@ -213,6 +213,11 @@ const AppContent = () => {
     return <Landing50 />;
   }
 
+  // New homepage (2026) renders standalone with its own header and footer
+  if (location.pathname === '/') {
+    return <Home language={language} setLanguage={setLanguage} />;
+  }
+
   return (
     <>
       <a className="skip-link" href="#main-content" onClick={handleSkipToMain}>

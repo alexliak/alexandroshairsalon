@@ -4,12 +4,13 @@ import {
   ScissorOutlined,
   BgColorsOutlined,
   MedicineBoxOutlined,
-  HeartOutlined,
   PhoneOutlined,
   StarOutlined,
   HighlightOutlined,
   InfoCircleOutlined,
-  ArrowRightOutlined
+  ArrowRightOutlined,
+  GiftOutlined,
+  CalendarOutlined
 } from '@ant-design/icons';
 import './Services.css';
 
@@ -28,85 +29,105 @@ const serviceContent = {
     phoneDisplay: '210 3465 554',
     phoneAriaLabel: 'Call Alexandros Hair Salon',
     ctaContact: 'View opening hours',
+    bookCta: 'Book online',
+    bookNote: 'Pick a service and time in a minute and pay at the salon. Off-peak and last-minute: up to −15% online.',
     categories: [
       {
-        key: 'wash',
-        icon: HeartOutlined,
-        heading: 'Wash Station',
-        subtitle: 'Wash & treatment',
-        services: [
-          { name: 'Wash', price: '€5' },
-          { name: 'Mask', price: '€5' }
-        ]
-      },
-      {
-        key: 'haircuts',
+        key: "haircuts",
         icon: ScissorOutlined,
-        heading: 'Haircuts',
-        subtitle: 'Cuts & trims',
+        heading: "Haircuts",
+        subtitle: "",
         services: [
-          { name: "Wash & Haircut (women's)", price: '€20' },
-          { name: "Wash & Haircut (women's, very thick or long hair)", price: '€23' },
-          { name: "Wash & Haircut (men's)", price: '€15' },
-          { name: 'Wash & Hair Trimming', price: '€10' },
-          { name: 'Wash & Haircut (kids)', price: '€15' },
-          { name: 'Beard trim', price: '€5' }
+          { name: "Women’s haircut · up to shoulders (30′)", price: "€28" },
+          { name: "Women’s haircut · below shoulders or thick (35′)", price: "€31" },
+          { name: "Women’s haircut · long & thick or extensions (45′)", price: "€38" },
+          { name: "Men’s haircut (30′)", price: "€24" },
+          { name: "Kids’ haircut (30′)", price: "€20" },
+          { name: "Beard trim (10′)", price: "€9" }
         ]
       },
       {
-        key: 'styling',
+        key: "styling",
         icon: HighlightOutlined,
-        heading: 'Styling',
-        subtitle: 'Blow-dry & styling',
+        heading: "Blowout & Styling",
+        subtitle: "",
         services: [
-          { name: 'Wash & Blow-dry (short)', price: '€14' },
-          { name: 'Wash & Blow-dry (medium or long)', price: '€15' },
-          { name: 'Wash & Blow-dry (long with curls)', price: '€20' },
-          { name: 'Wash & Styling (short)', price: '€10' },
-          { name: 'Wash & Updo (evening)', price: 'Upon consultation' },
-          { name: 'Braids', price: '€10' }
+          { name: "Wash & quick style (20′)", price: "€20" },
+          { name: "Blowout · short (25′)", price: "€24" },
+          { name: "Blowout · medium or long, or thick short (30′)", price: "€28" },
+          { name: "Blowout · long & thick or extensions (40′)", price: "€35" },
+          { name: "+ SteamPod flat iron (10′)", price: "€9" },
+          { name: "Event hair & waves · up to shoulders (45′)", price: "€38" },
+          { name: "Event hair & waves · below shoulders (1 h)", price: "€49" },
+          { name: "Bridal trial (1 h 15′)", price: "€59" }
         ]
       },
       {
-        key: 'therapies',
-        icon: MedicineBoxOutlined,
-        heading: 'Hair Treatments',
-        subtitle: 'Care & repair',
-        services: [
-          { name: 'Intensive nourishment treatment', price: '€19' },
-          { name: 'Mask treatment', price: '€5' },
-          { name: 'Hair-loss treatment', price: '€5' },
-          { name: 'Anti-frizz treatment', price: '€49' },
-          { name: 'Keratin treatment', price: '€120-€180' }
-        ]
-      },
-      {
-        key: 'color',
+        key: "color",
         icon: BgColorsOutlined,
-        heading: 'Colour Services',
-        subtitle: 'Colour & lightening',
+        heading: "Hair Colour",
+        subtitle: "",
         services: [
-          { name: 'Roots colour', price: '€30' },
-          { name: 'Roots colour without ammonia (INOA)', price: '€33' },
-          { name: 'Roots to ends colour', price: '€38-€45' },
-          { name: 'Roots lightening (with toner)', price: '€50' },
-          { name: 'Roots lightening to ends', price: 'Upon consultation' },
-          { name: 'Highlights (partial)', price: '€20-€35' },
-          { name: 'Highlights (half head)', price: '€35-€55' },
-          { name: 'Highlights (full head)', price: '€55-€80' },
-          { name: 'Balayage', price: '€35-€90' },
-          { name: 'Toner', price: '€20-€30' }
+          { name: "Root colour & grey coverage · up to 6 weeks · Farcom (40′)", price: "€35" },
+          { name: "Root colour & grey coverage · Express 10′ · Redken (40′)", price: "€39" },
+          { name: "Root colour & grey coverage · up to 6 weeks · Majirel (40′)", price: "€42" },
+          { name: "Root colour & grey coverage · ammonia-free · INOA / Redken (50′)", price: "€44" },
+          { name: "Root colour & grey coverage · long regrowth 6+ weeks · Majirel (50′)", price: "€59" },
+          { name: "Root colour & grey coverage · ammonia-free · long regrowth (50′)", price: "€65" },
+          { name: "+ Extra long / thick hair (15′)", price: "€19" },
+          { name: "Root colour + gloss · short (1 h)", price: "€52" },
+          { name: "Root colour + gloss · up to shoulders (1 h)", price: "€64" },
+          { name: "Root colour + gloss · below shoulders (1 h 05′)", price: "€79" },
+          { name: "Hair gloss & toner · short (45′)", price: "€31" },
+          { name: "Hair gloss & toner · up to shoulders (50′)", price: "€43" },
+          { name: "Hair gloss & toner · below shoulders (1 h)", price: "€53" },
+          { name: "Colour correction consultation (1 h 20′)", price: "€40" }
         ]
       },
       {
-        key: 'other',
+        key: "highlights",
         icon: StarOutlined,
-        heading: 'Additional Services',
-        subtitle: 'Special treatments',
+        heading: "Highlights & Balayage",
+        subtitle: "",
         services: [
-          { name: 'Perm', price: '€50-€65' },
-          { name: 'Bridal package', price: 'Upon consultation' },
-          { name: 'Brow grooming', price: '€5' }
+          { name: "Face-frame highlights (1 h 15′)", price: "€46" },
+          { name: "Partial balayage & highlights · short (1 h 35′)", price: "€55" },
+          { name: "Partial balayage & highlights · up to shoulders (1 h 50′)", price: "€79" },
+          { name: "Partial balayage & highlights · below shoulders (2 h)", price: "€104" },
+          { name: "Full balayage & highlights · short (2 h 10′)", price: "€76" },
+          { name: "Full balayage & highlights · up to shoulders (2 h 25′)", price: "€100" },
+          { name: "Full balayage & highlights · below shoulders (2 h 45′)", price: "€126" },
+          { name: "No-bleach highlights · face frame · 9–15 foils (1 h 20′)", price: "€51" },
+          { name: "No-bleach highlights · partial · 15–25 foils · up to shoulders (1 h 50′)", price: "€85" }
+        ]
+      },
+      {
+        key: "therapies",
+        icon: MedicineBoxOutlined,
+        heading: "Hair Treatments",
+        subtitle: "",
+        services: [
+          { name: "Shampoo & scalp massage (10′)", price: "€11" },
+          { name: "+ Hair treatment (10′)", price: "€10" },
+          { name: "Intensive ampoule treatment (30′)", price: "€17" },
+          { name: "Keratin smoothing · short to medium (1 h 45′)", price: "€120" },
+          { name: "Keratin smoothing · medium to long (2 h)", price: "€150" },
+          { name: "Keratin smoothing · long (3 h)", price: "€170" }
+        ]
+      },
+      {
+        key: "packages",
+        icon: GiftOutlined,
+        heading: "Hair Packages",
+        subtitle: "",
+        services: [
+          { name: "Cut & blowout · up to shoulders (45′)", price: "€38" },
+          { name: "Cut & blowout · below shoulders or thick (55′)", price: "€45" },
+          { name: "Colour, cut & blowout · up to shoulders (1 h 30′)", price: "€63" },
+          { name: "Colour, cut & blowout · below shoulders or thick (1 h 40′)", price: "€70" },
+          { name: "Root colour & blowout (1 h 15′)", price: "€52" },
+          { name: "Balayage, cut & blowout · partial · up to shoulders (2 h 40′)", price: "€100" },
+          { name: "Balayage, cut & blowout · partial · below shoulders (3 h 10′)", price: "€133" }
         ]
       }
     ],
@@ -115,14 +136,14 @@ const serviceContent = {
       subtitle: 'Helpful information',
       sections: [
         {
-          title: 'Additional charge for long hair',
+          title: 'Long or thick hair',
           body:
-            'Colour services and treatments on long or very dense hair require more product and time, so an extra charge may apply. The same goes for lightening dark hair to blonde or for intensive treatments.'
+            'Prices are shown by hair length. For colour on very thick or very long hair there is a +€19 add-on for the extra product and time. Tell us about extensions when you book.'
         },
         {
-          title: 'Consultations (complimentary & required)',
+          title: 'Free consultation & sensitivity test',
           body:
-            'Speak with us for personalised recommendations. We will work together to find the best possible result.'
+            'Ask us for personal advice. Before your first colour we do a free sensitivity test.'
         }
       ],
       disclaimer: 'Prices may change without prior notice.'
@@ -142,88 +163,105 @@ const serviceContent = {
       phoneDisplay: '210 3465 554',
       phoneAriaLabel: 'Επικοινωνία με το Alexandros Hair Salon',
       ctaContact: 'Δείτε το ωράριο λειτουργίας',
+    bookCta: 'Κλείσε online',
+    bookNote: 'Διάλεξε υπηρεσία και ώρα σε 1 λεπτό και πλήρωσε στο κομμωτήριο. Κενές ώρες και τελευταία στιγμή: έως −15% online.',
     categories: [
       {
-        key: 'wash',
-        icon: HeartOutlined,
-        heading: 'Λουτήρας',
-        subtitle: 'Wash station',
-        services: [
-          { name: 'Λούσιμο', price: '5 €' },
-          { name: 'Μάσκα', price: '5 €' }
-        ]
-      },
-      {
-        key: 'haircuts',
+        key: "haircuts",
         icon: ScissorOutlined,
-        heading: 'Κούρεμα',
-        subtitle: 'Haircuts',
+        heading: "Κουρέματα",
+        subtitle: "Haircuts",
         services: [
-          { name: 'Λούσιμο / Κούρεμα (γυναικείο)', price: '20 €' },
-          {
-            name: 'Λούσιμο / Κούρεμα (γυναικείο πυκνά, πολύ μακριά ή δύσκολα μαλλιά)',
-            price: '23 €'
-          },
-          { name: 'Λούσιμο / Κούρεμα (ανδρικό)', price: '15 €' },
-          { name: 'Λούσιμο / Τριμάρισμα μαλλιών (ανδρικό)', price: '10 €' },
-          { name: 'Λούσιμο / Κούρεμα (παιδικό)', price: '15 €' },
-          { name: 'Τριμάρισμα μούσι - γενειάδα', price: '5 €' }
+          { name: "Γυναικείο κούρεμα · έως τους ώμους (30′)", price: "28 €" },
+          { name: "Γυναικείο κούρεμα · κάτω από τους ώμους ή πυκνά έως τους ώμους (35′)", price: "31 €" },
+          { name: "Γυναικείο κούρεμα · μακριά & πυκνά ή extensions (45′)", price: "38 €" },
+          { name: "Ανδρικό κούρεμα (30′)", price: "24 €" },
+          { name: "Παιδικό κούρεμα (30′)", price: "20 €" },
+          { name: "Γενειάδα (10′)", price: "9 €" }
         ]
       },
       {
-        key: 'styling',
+        key: "styling",
         icon: HighlightOutlined,
-        heading: 'Χτένισμα',
-        subtitle: 'Styling',
+        heading: "Χτένισμα",
+        subtitle: "Blowout & Styling",
         services: [
-          { name: 'Λούσιμο / Χτένισμα (κοντά)', price: '14 €' },
-          { name: 'Λούσιμο / Χτένισμα (μεσαία ή μακριά)', price: '15 €' },
-          { name: 'Λούσιμο / Χτένισμα (μακριά με μπούκλες)', price: '20 €' },
-          { name: 'Λούσιμο / Φόρμαρισμα (κοντά)', price: '10 €' },
-          { name: 'Λούσιμο / Χτένισμα (βραδινό)', price: 'Κατόπιν συνεννόησης' },
-          { name: 'Πλεξούδες', price: '10 €' }
+          { name: "Λούσιμο & γρήγορο φορμάρισμα (20′)", price: "20 €" },
+          { name: "Blowout · χτένισμα με πιστολάκι ή πρέσα · κοντά (25′)", price: "24 €" },
+          { name: "Blowout · χτένισμα με πιστολάκι ή πρέσα · μεσαία ή μακριά, ή πυκνά κοντά (30′)", price: "28 €" },
+          { name: "Blowout · χτένισμα με πιστολάκι ή πρέσα · μακριά & πυκνά ή extensions (40′)", price: "35 €" },
+          { name: "+ Πρέσα SteamPod (10′)", price: "9 €" },
+          { name: "Βραδινό χτένισμα & μπούκλες · έως τους ώμους (45′)", price: "38 €" },
+          { name: "Βραδινό χτένισμα & μπούκλες · κάτω από τους ώμους (1 ώρα)", price: "49 €" },
+          { name: "Νυφικό δοκιμαστικό (1 ώρα 15′)", price: "59 €" }
         ]
       },
       {
-        key: 'therapies',
-        icon: MedicineBoxOutlined,
-        heading: 'Θεραπείες Μαλλιών',
-        subtitle: 'Hair treatments',
-        services: [
-          { name: 'Θεραπεία εντατικής θρέψης', price: '19 €' },
-          { name: 'Θεραπεία μάσκας', price: '5 €' },
-          { name: 'Θεραπεία τριχόπτωσης', price: '5 €' },
-          { name: 'Θεραπεία Anti-Frizz', price: '49 €' },
-          { name: 'Θεραπεία κερατίνης', price: '120-180 €' }
-        ]
-      },
-      {
-        key: 'color',
+        key: "color",
         icon: BgColorsOutlined,
-        heading: 'Χρώμα',
-        subtitle: 'Colour services',
+        heading: "Χρώμα & Gloss",
+        subtitle: "Hair Colour",
         services: [
-          { name: 'Βαφή / Ρίζες', price: '30 €' },
-          { name: 'Βαφή / Ρίζες χωρίς αμμωνία (INOA)', price: '33 €' },
-          { name: 'Βαφή / Ρίζες - Άκρες', price: '38-45 €' },
-          { name: 'Αποχρωματισμός / Ρίζες (με ρεφλέ)', price: '50 €' },
-          { name: 'Αποχρωματισμός / Ρίζες - Άκρες', price: 'Κατόπιν συνεννόησης' },
-          { name: 'Ανταύγειες οπτικές', price: '20-35 €' },
-          { name: 'Ανταύγειες μισά (1/2)', price: '35-55 €' },
-          { name: 'Ανταύγειες όλα', price: '55-80 €' },
-          { name: 'Balayage', price: '35-90 €' },
-          { name: 'Ρεφλέ', price: '20-30 €' }
+          { name: "Βαφή ρίζας – κάλυψη λευκών · έως 6 εβδομάδες · Farcom (40′)", price: "35 €" },
+          { name: "Βαφή ρίζας – κάλυψη λευκών · Express 10′ · Redken (40′)", price: "39 €" },
+          { name: "Βαφή ρίζας – κάλυψη λευκών · έως 6 εβδομάδες · Majirel (40′)", price: "42 €" },
+          { name: "Βαφή ρίζας – κάλυψη λευκών · χωρίς αμμωνία · INOA / Redken (50′)", price: "44 €" },
+          { name: "Βαφή ρίζας – κάλυψη λευκών · μεγάλη ρίζα 6+ εβδομάδες · Majirel (50′)", price: "59 €" },
+          { name: "Βαφή ρίζας – κάλυψη λευκών · χωρίς αμμωνία · μεγάλη ρίζα (50′)", price: "65 €" },
+          { name: "+ Πολύ πυκνά ή πολύ μακριά μαλλιά (15′)", price: "19 €" },
+          { name: "Βαφή ρίζας + ρεφλέ (gloss) · κοντά (1 ώρα)", price: "52 €" },
+          { name: "Βαφή ρίζας + ρεφλέ (gloss) · έως τους ώμους (1 ώρα)", price: "64 €" },
+          { name: "Βαφή ρίζας + ρεφλέ (gloss) · κάτω από τους ώμους (1 ώρα 05′)", price: "79 €" },
+          { name: "Ρεφλέ / Gloss – λάμψη & τόνος · κοντά (45′)", price: "31 €" },
+          { name: "Ρεφλέ / Gloss – λάμψη & τόνος · έως τους ώμους (50′)", price: "43 €" },
+          { name: "Ρεφλέ / Gloss – λάμψη & τόνος · κάτω από τους ώμους (1 ώρα)", price: "53 €" },
+          { name: "Διόρθωση χρώματος – διάγνωση (1 ώρα 20′)", price: "40 €" }
         ]
       },
       {
-        key: 'other',
+        key: "highlights",
         icon: StarOutlined,
-        heading: 'Άλλες Υπηρεσίες',
-        subtitle: 'Additional services',
+        heading: "Ανταύγειες & Balayage",
+        subtitle: "Highlights & Balayage",
         services: [
-          { name: 'Περμανάντ', price: '50-65 €' },
-          { name: 'Νυφικό πακέτο', price: 'Κατόπιν συνεννόησης' },
-          { name: 'Περιποίηση φρυδιών', price: '5 €' }
+          { name: "Face framing – φως στο πρόσωπο (1 ώρα 15′)", price: "46 €" },
+          { name: "Balayage ή ανταύγειες – μερικές · κοντά (1 ώρα 35′)", price: "55 €" },
+          { name: "Balayage ή ανταύγειες – μερικές · έως τους ώμους (1 ώρα 50′)", price: "79 €" },
+          { name: "Balayage ή ανταύγειες – μερικές · κάτω από τους ώμους (2 ώρες)", price: "104 €" },
+          { name: "Balayage ή ανταύγειες – ολόκληρες · κοντά (2 ώρες 10′)", price: "76 €" },
+          { name: "Balayage ή ανταύγειες – ολόκληρες · έως τους ώμους (2 ώρες 25′)", price: "100 €" },
+          { name: "Balayage ή ανταύγειες – ολόκληρες · κάτω από τους ώμους (2 ώρες 45′)", price: "126 €" },
+          { name: "No-Bleach ανταύγειες – χωρίς ντεκαπάζ · φωτισμός προσώπου · 9–15 τούφες (1 ώρα 20′)", price: "51 €" },
+          { name: "No-Bleach ανταύγειες – χωρίς ντεκαπάζ · μερικές · 15–25 τούφες · έως τους ώμους (1 ώρα 50′)", price: "85 €" }
+        ]
+      },
+      {
+        key: "therapies",
+        icon: MedicineBoxOutlined,
+        heading: "Θεραπείες",
+        subtitle: "Hair Treatments",
+        services: [
+          { name: "Λούσιμο με μασάζ (10′)", price: "11 €" },
+          { name: "+ Θεραπεία ενυδάτωσης ή αναδόμησης (10′)", price: "10 €" },
+          { name: "Εντατική θεραπεία με αμπούλα (30′)", price: "17 €" },
+          { name: "Κερατίνη – ίσιωμα · κοντό έως μεσαίο μήκος (1 ώρα 45′)", price: "120 €" },
+          { name: "Κερατίνη – ίσιωμα · μεσαίο έως μακρύ μήκος (2 ώρες)", price: "150 €" },
+          { name: "Κερατίνη – ίσιωμα · μακρύ μήκος (3 ώρες)", price: "170 €" }
+        ]
+      },
+      {
+        key: "packages",
+        icon: GiftOutlined,
+        heading: "Πακέτα",
+        subtitle: "Hair Packages",
+        services: [
+          { name: "Κούρεμα & Blowout · έως τους ώμους (45′)", price: "38 €" },
+          { name: "Κούρεμα & Blowout · κάτω από τους ώμους ή πυκνά (55′)", price: "45 €" },
+          { name: "Βαφή ρίζας, κούρεμα & Blowout · έως τους ώμους (1 ώρα 30′)", price: "63 €" },
+          { name: "Βαφή ρίζας, κούρεμα & Blowout · κάτω από τους ώμους ή πυκνά (1 ώρα 40′)", price: "70 €" },
+          { name: "Βαφή ρίζας & Blowout (1 ώρα 15′)", price: "52 €" },
+          { name: "Balayage, κούρεμα & Blowout · μερικές · έως τους ώμους (2 ώρες 40′)", price: "100 €" },
+          { name: "Balayage, κούρεμα & Blowout · μερικές · κάτω από τους ώμους (3 ώρες 10′)", price: "133 €" }
         ]
       }
     ],
@@ -232,14 +270,14 @@ const serviceContent = {
       subtitle: 'Χρήσιμες πληροφορίες',
       sections: [
         {
-          title: 'Επιπλέον χρέωση σε μακριά μαλλιά',
+          title: 'Μακριά ή πυκνά μαλλιά',
           body:
-            'Το χρώμα και γενικά οι εργασίες, ιδιαίτερα αυτές που περιλαμβάνουν προϊόντα σε μακριά ή/και πυκνά μαλλιά, απαιτούν περισσότερο προϊόν και χρόνο, επομένως πιθανόν να υπάρχει πρόσθετη χρέωση. Το ίδιο συμβαίνει και στο χρώμα από σκούρο σε ξανθό ή σε εντατικές θεραπείες.'
+            'Οι τιμές δίνονται ανάλογα με το μήκος. Στη βαφή για πολύ πυκνά ή πολύ μακριά μαλλιά υπάρχει η προσθήκη +19 € για την επιπλέον ποσότητα και τον χρόνο. Αν έχεις extensions, γράψ\' το στην κράτηση.'
         },
         {
-          title: 'Συμβουλές (υποχρεωτικές & δωρεάν)',
+          title: 'Δωρεάν συμβουλή & τεστ ευαισθησίας',
           body:
-            'Για προσωπικές συμβουλές μπορείτε να συζητήσετε μαζί μας. Θα συνεργαστούμε για να βρούμε το καλύτερο δυνατόν.'
+            'Ρώτησέ μας για προσωπική συμβουλή. Πριν από την πρώτη σου βαφή κάνουμε δωρεάν τεστ ευαισθησίας.'
         }
       ],
       disclaimer: 'Οι τιμές δύναται να αναπροσαρμοσθούν χωρίς προηγουμένη ενημέρωση.'
@@ -281,6 +319,12 @@ const Services = ({ language, setLanguage }) => {
       </div>
       <h1 className="services-title">{content.title}</h1>
       {content.intro ? <p className="services-intro">{content.intro}</p> : null}
+      <div className="services-book">
+        <a href="/kratisi/" className="services-book-btn">
+          <CalendarOutlined aria-hidden="true" /> {content.bookCta}
+        </a>
+        <p className="services-book-note">{content.bookNote}</p>
+      </div>
       {content.categories.map((category) => {
         const Icon = category.icon;
         return (
@@ -350,6 +394,9 @@ const Services = ({ language, setLanguage }) => {
         .
       </p>
       <div className="services-cta-links">
+        <a href="/kratisi/" className="services-book-btn">
+          <CalendarOutlined aria-hidden="true" /> {content.bookCta}
+        </a>
         <Link to="/hours" className="services-cta-link">
           {content.ctaContact} <ArrowRightOutlined />
         </Link>
