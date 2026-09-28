@@ -298,3 +298,16 @@
   outline: 2px solid #c4a46a;
   outline-offset: 2px;
 }
+
+/* Online booking CTA */
+.services-book { text-align: center; margin: 1rem 0 1.5rem; }
+.services-book-btn {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  padding: 0.8rem 1.6rem; background: #c4a46a; color: #1a1a1a;
+  font-weight: 800; border-radius: 8px; text-decoration: none;
+  transition: transform 0.2s, background 0.2s;
+}
+.services-book-btn:hover { background: #d4b47a; color: #1a1a1a; transform: translateY(-2px); }
+.services-book-btn:focus { outline: 2px solid #c4a46a; outline-offset: 2px; }
+.services-book-note { margin: 0.6rem auto 0; max-width: 560px; font-size: 0.9rem; opacity: 0.8; }
+.services-cta-links { gap: 0.75rem; flex-wrap: wrap; }
