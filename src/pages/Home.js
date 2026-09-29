@@ -20,7 +20,7 @@ const content = {
       { big: '1992', small: 'οικογενειακό κομμωτήριο' },
       { big: '4,6 ★', small: 'βαθμολογία στο Google' },
       { big: 'L’Oréal · Redken', small: 'επαγγελματικά προϊόντα & εκπαίδευση', brand: true },
-      { big: 'από €24', small: 'Blowout · κούρεμα από €28' }
+      { big: 'Σχήμα & χρώμα', small: 'κούρεμα, χρώμα και styling σχεδιασμένα μαζί', brand: true }
     ],
     popularEyebrow: 'Οι πιο δημοφιλείς',
     popularTitle: 'Διάλεξε & κλείσε',
@@ -76,7 +76,7 @@ const content = {
       { big: '1992', small: 'family-run salon' },
       { big: '4.6 ★', small: 'rating on Google' },
       { big: 'L’Oréal · Redken', small: 'professional products & training', brand: true },
-      { big: 'from €24', small: 'Blowout · haircut from €28' }
+      { big: 'Shape & colour', small: 'cut, colour and styling designed together', brand: true }
     ],
     popularEyebrow: 'Most popular',
     popularTitle: 'Pick & book',
