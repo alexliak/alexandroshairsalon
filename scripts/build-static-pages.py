@@ -8,6 +8,8 @@ import json
 import html
 import pathlib
 
+ICONS = json.loads((pathlib.Path(__file__).parent / 'icons.json').read_text(encoding='utf-8'))  # from export-icons.js
+
 SITE = "https://alexandroshairsalon.gr"
 WIDGET = "https://widget.treatwell.gr/place/523778/menu/"
 TW_JS = "https://widget.treatwell.gr/common/venue-menu/javascript/widget-button.js?v1"
@@ -46,7 +48,7 @@ CSS = """
 body{background:var(--bg);color:var(--text);font-family:var(--sans);line-height:1.6;-webkit-font-smoothing:antialiased}
 a{color:var(--gold)}
 .wrap{max-width:980px;margin:0 auto;padding:0 16px}
-header.top{border-bottom:1px solid var(--line)}
+header.top{position:sticky;top:0;z-index:20;background:rgba(18,16,14,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
 header.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:72px}
 .logo{display:flex;flex-direction:column;text-decoration:none;color:var(--text)}
 .logo b{font-family:var(--serif);font-weight:500;font-size:22px;line-height:1.1}
@@ -83,8 +85,23 @@ footer.bottom a{color:var(--muted)}
  .top nav{gap:12px}
  .cta .btn{flex:1 1 100%}
  .mbar{display:flex;position:fixed;left:12px;right:12px;bottom:14px;z-index:20;align-items:center;justify-content:space-between;padding:8px 8px 8px 18px;border-radius:999px;background:var(--panel);border:1px solid #3a342c;box-shadow:0 10px 30px rgba(0,0,0,.5)}
- .mbar span{font-size:14px;font-weight:700}.mbar .btn{min-height:44px}
+ .mbar span{font-size:14px;font-weight:700}
+ main:focus{outline:none}.mbar .btn{min-height:44px}
 }
+.skip{position:absolute;left:12px;top:-60px;z-index:100;padding:12px 18px;border-radius:999px;background:var(--gold);color:var(--ink);font-weight:800;text-decoration:none}
+.skip:focus{top:12px}
+a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+.icons{display:flex;gap:8px;align-items:center}
+.icons a{width:40px;height:40px;border-radius:999px;display:inline-flex;align-items:center;justify-content:center;border:1px solid #5a5247;color:var(--text)}
+.icons a svg{width:18px;height:18px}
+.icons a.wa:hover,.icons a.wa:focus-visible{background:#25d366;border-color:#25d366;color:#0b1f12}
+.icons a.vb:hover,.icons a.vb:focus-visible{background:#7360f2;border-color:#7360f2;color:#fff}
+.icons a.ph:hover,.icons a.ph:focus-visible,.icons a.ft:hover,.icons a.ft:focus-visible{background:var(--gold);border-color:var(--gold);color:var(--ink)}
+.totop{position:fixed;right:20px;bottom:24px;z-index:31;width:48px;height:48px;border-radius:999px;border:1px solid var(--gold);background:rgba(18,16,14,.92);color:var(--gold);display:inline-flex;align-items:center;justify-content:center;cursor:pointer;opacity:0;visibility:hidden;transition:opacity .2s,visibility .2s}
+.totop svg{width:18px;height:18px}.totop.on{opacity:1;visibility:visible}.totop:hover{background:var(--gold);color:var(--ink)}
+@media (max-width:760px){.top .btn.gold{display:none}.icons a{width:34px;height:34px}.icons a svg{width:16px;height:16px}.icons{gap:5px}.logo b{font-size:19px}.logo span{letter-spacing:.1em;font-size:9px}.totop{bottom:96px;right:14px;width:44px;height:44px}}
+@media (prefers-reduced-motion:reduce){.totop{transition:none}}
+.mbar{gap:10px}.mbar span{white-space:nowrap;font-size:12.5px}.mbar .btn{white-space:nowrap;padding:0 16px}
 """
 
 
@@ -135,22 +152,35 @@ def page(path, title, desc, body, ld, extra_head="", mbar=True):
 {ld_tags}
 </head>
 <body>
+<a class="skip" href="#main">Μετάβαση στο περιεχόμενο</a>
 <header class="top"><div class="wrap">
   <a class="logo" href="/"><b>Alexandros</b><span>Hair Salon · Θησείο</span></a>
   <nav aria-label="Κύριο μενού">
     <a class="hide-m" href="/services">Υπηρεσίες &amp; τιμές</a>
     <a class="hide-m" href="/hours">Ωράριο</a>
+    <span class="icons" role="group" aria-label="Επικοινωνία στο κινητό">
+      <a class="ph" href="tel:+306981319000" aria-label="Κλήση στο κινητό 698 131 9000" title="Κλήση στο κινητό">{ICONS['FaPhoneAlt']}</a>
+      <a class="wa" href="https://wa.me/306981319000" target="_blank" rel="noopener" aria-label="Μήνυμα στο WhatsApp" title="WhatsApp">{ICONS['FaWhatsapp']}</a>
+      <a class="vb" href="viber://chat?number=%2B306981319000" aria-label="Μήνυμα στο Viber" title="Viber">{ICONS['FaViber']}</a>
+      <a class="ft" href="facetime:+306981319000" aria-label="Κλήση FaceTime" title="FaceTime">{ICONS['FaVideo']}</a>
+    </span>
     <a class="btn gold" href="/kratisi/">Κλείσε ραντεβού</a>
   </nav>
 </div></header>
-<main class="wrap">
+<main class="wrap" id="main" tabindex="-1">
 {body}
 </main>
 <footer class="bottom"><div class="wrap">
   <p><strong>Alexandros Hair Salon</strong> · {ADDRESS} · <a href="tel:{PHONE}">{PHONE_TXT}</a> · Κινητό <a href="tel:+306981319000">698 131 9000</a> · <a href="https://wa.me/306981319000" target="_blank" rel="noopener">WhatsApp</a> · <a href="viber://chat?number=%2B306981319000">Viber</a> · <a href="{GOOGLE}" target="_blank" rel="noopener">Ωράριο &amp; οδηγίες στο Google</a></p>
   <p class="links"><a href="/">Αρχική</a><a href="/services">Όλες οι τιμές</a><a href="/kourema-athina/">Κούρεμα στην Αθήνα</a><a href="/vafi-mallion-athina/">Βαφή μαλλιών στην Αθήνα</a><a href="/balayage-athina/">Balayage στην Αθήνα</a><a href="/kratisi/">Κράτηση online</a><a href="/shop">Shop</a></p>
 </div></footer>
-{'<div class="mbar"><span>Online κράτηση · πληρωμή στο κομμωτήριο</span><a class="btn gold" href="/kratisi/">Κλείσε</a></div>' if mbar else ''}
+{'<div class="mbar"><span>Θησείο · από το 1992</span><a class="btn gold" href="/kratisi/">Κλείσε ραντεβού</a></div>' if mbar else ''}
+<button type="button" class="totop" aria-label="Επιστροφή στην κορυφή" title="Επιστροφή στην κορυφή" tabindex="-1">{ICONS['FaArrowUp']}</button>
+<script>
+(function(){{var b=document.querySelector('.totop');function f(){{var on=window.scrollY>600;b.classList.toggle('on',on);b.tabIndex=on?0:-1;}}
+window.addEventListener('scroll',f,{{passive:true}});f();
+b.addEventListener('click',function(){{var r=window.matchMedia('(prefers-reduced-motion: reduce)').matches;window.scrollTo({{top:0,behavior:r?'auto':'smooth'}});document.getElementById('main').focus({{preventScroll:true}});}});}})();
+</script>
 </body>
 </html>
 """

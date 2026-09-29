@@ -19,7 +19,7 @@
   background: var(--nh-bg);
   color: var(--nh-text);
   font-family: var(--nh-sans);
-  overflow-x: hidden;
+  overflow-x: clip; /* not 'hidden': hidden would stop the header from staying fixed */
 }
 
 .nh *,
@@ -307,3 +307,57 @@
 
 .nh-contact-row { display: flex; flex-wrap: wrap; gap: 8px; }
 .nh-muted { color: var(--nh-muted); font-size: 14px; }
+
+/* Skip link (keyboard users) */
+.nh .nh-skip { position: absolute; left: 12px; top: -60px; z-index: 100; padding: 12px 18px; border-radius: 999px; background: var(--nh-gold); color: #17140f; font-weight: 800; text-decoration: none; }
+.nh .nh-skip:focus { top: 12px; }
+.nh-main:focus { outline: none; }
+
+/* Contact icons in the sticky header: always visible, never over the text */
+.nh-icons { display: flex; align-items: center; gap: 8px; }
+.nh .nh-icon {
+  width: 40px; height: 40px; border-radius: 999px; display: inline-flex; align-items: center; justify-content: center;
+  border: 1px solid var(--nh-line-strong, #5a5247); color: var(--nh-text); font-size: 18px; text-decoration: none;
+  transition: background .15s, color .15s, border-color .15s;
+}
+.nh .nh-icon svg { width: 18px; height: 18px; }
+.nh .nh-icon.is-wa:hover, .nh .nh-icon.is-wa:focus-visible { background: #25d366; border-color: #25d366; color: #0b1f12; }
+.nh .nh-icon.is-viber:hover, .nh .nh-icon.is-viber:focus-visible { background: #7360f2; border-color: #7360f2; color: #fff; }
+.nh .nh-icon.is-call:hover, .nh .nh-icon.is-call:focus-visible,
+.nh .nh-icon.is-ft:hover, .nh .nh-icon.is-ft:focus-visible { background: var(--nh-gold); border-color: var(--nh-gold); color: #17140f; }
+
+/* Back to top */
+.nh-top {
+  position: fixed; right: 20px; bottom: 24px; z-index: 31;
+  width: 48px; height: 48px; border-radius: 999px; border: 1px solid var(--nh-gold);
+  background: rgba(18, 16, 14, 0.92); color: var(--nh-gold); display: inline-flex; align-items: center; justify-content: center;
+  cursor: pointer; opacity: 0; visibility: hidden; transform: translateY(8px); transition: opacity .2s, transform .2s, visibility .2s;
+  box-shadow: 0 8px 24px rgba(0,0,0,.45);
+}
+.nh-top svg { width: 18px; height: 18px; }
+.nh-top.is-visible { opacity: 1; visibility: visible; transform: none; }
+.nh-top:hover { background: var(--nh-gold); color: #17140f; }
+.nh-top:focus-visible { outline: 2px solid var(--nh-gold); outline-offset: 3px; }
+
+@media (max-width: 820px) {
+  .nh-top { bottom: 96px; right: 14px; width: 44px; height: 44px; }
+  .nh .nh-icon { width: 36px; height: 36px; }
+  .nh .nh-icon svg { width: 16px; height: 16px; }
+  .nh-icons { gap: 6px; }
+}
+@media (max-width: 420px) {
+  .nh-logo-sub { letter-spacing: 0.1em; font-size: 9px; }
+  .nh-logo-name { font-size: 19px; }
+  .nh-lang { min-width: 36px; height: 36px; }
+  .nh .nh-icon { width: 34px; height: 34px; }
+  .nh-icons { gap: 5px; }
+  .nh-header-actions { gap: 6px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .nh-top, .nh .nh-icon { transition: none; }
+}
+
+/* Header: keep everything on one line */
+.nh .nh-nav-link, .nh-logo-sub, .nh .nh-phone { white-space: nowrap; }
+.nh-nav { gap: clamp(16px, 2vw, 32px); }
+@media (max-width: 1360px) { .nh .nh-phone { display: none; } }

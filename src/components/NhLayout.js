@@ -1,4 +1,5 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
+import { FaWhatsapp, FaViber, FaPhoneAlt, FaVideo, FaArrowUp } from 'react-icons/fa';
 import { Link, NavLink, useLocation } from 'react-router-dom';
 import '../pages/Home.css';
 
@@ -37,6 +38,13 @@ const layoutText = {
     footerHours: 'Ωράριο στο Google',
     langSwitch: 'EN',
     langAria: 'Switch to English',
+    skip: 'Μετάβαση στο περιεχόμενο',
+    contactNav: 'Επικοινωνία στο κινητό',
+    callMobile: 'Κλήση στο κινητό 698 131 9000',
+    whatsapp: 'Μήνυμα στο WhatsApp',
+    viber: 'Μήνυμα στο Viber',
+    facetime: 'Κλήση FaceTime',
+    toTop: 'Επιστροφή στην κορυφή',
     seoNav: 'Υπηρεσίες κομμωτηρίου',
     seoLinks: [
       ['Κούρεμα στην Αθήνα', '/kourema-athina/'],
@@ -62,6 +70,13 @@ const layoutText = {
     footerHours: 'Hours on Google',
     langSwitch: 'EL',
     langAria: 'Αλλαγή στα Ελληνικά',
+    skip: 'Skip to content',
+    contactNav: 'Contact on mobile',
+    callMobile: 'Call mobile 698 131 9000',
+    whatsapp: 'Message on WhatsApp',
+    viber: 'Message on Viber',
+    facetime: 'FaceTime call',
+    toTop: 'Back to top',
     seoNav: 'Salon services',
     seoLinks: [
       ['Haircut in Athens', '/kourema-athina/'],
@@ -82,8 +97,32 @@ const NhLayout = ({ language, setLanguage, children }) => {
     if (!hash) window.scrollTo(0, 0);
   }, [pathname, hash]);
 
+  // Show the back-to-top button after the visitor has scrolled down
+  const [showTop, setShowTop] = useState(false);
+  useEffect(() => {
+    const onScroll = () => setShowTop(window.scrollY > 600);
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
+
+  const toTop = () => {
+    const reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    window.scrollTo({ top: 0, behavior: reduce ? 'auto' : 'smooth' });
+    const target = document.getElementById('nh-main');
+    if (target) target.focus({ preventScroll: true });
+  };
+
+  const icons = [
+    { href: `tel:${MOBILE}`, label: t.callMobile, Icon: FaPhoneAlt, cls: 'is-call' },
+    { href: WHATSAPP_URL, label: t.whatsapp, Icon: FaWhatsapp, cls: 'is-wa', external: true },
+    { href: VIBER_URL, label: t.viber, Icon: FaViber, cls: 'is-viber' },
+    { href: FACETIME_URL, label: t.facetime, Icon: FaVideo, cls: 'is-ft' }
+  ];
+
   return (
     <div className="nh" lang={language}>
+      <a href="#nh-main" className="nh-skip">{t.skip}</a>
       <header className="nh-header">
         <Link to="/" className="nh-logo" aria-label="Alexandros Hair Salon">
           <span className="nh-logo-name">Alexandros</span>
@@ -107,6 +146,20 @@ const NhLayout = ({ language, setLanguage, children }) => {
           )}
         </nav>
         <div className="nh-header-actions">
+          <nav className="nh-icons" aria-label={t.contactNav}>
+            {icons.map(({ href, label, Icon, cls, external }) => (
+              <a
+                key={cls}
+                href={href}
+                className={`nh-icon ${cls}`}
+                aria-label={label}
+                title={label}
+                {...(external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+              >
+                <Icon aria-hidden="true" focusable="false" />
+              </a>
+            ))}
+          </nav>
           <button type="button" className="nh-lang" onClick={() => setLanguage(other)} aria-label={t.langAria}>
             {t.langSwitch}
           </button>
@@ -133,7 +186,7 @@ const NhLayout = ({ language, setLanguage, children }) => {
         )}
       </nav>
 
-      {children}
+      <div id="nh-main" tabIndex="-1" className="nh-main">{children}</div>
 
       <footer className="nh-footer">
         <span>© {new Date().getFullYear()} Alexandros Hair Salon · {t.city}</span>
@@ -151,6 +204,18 @@ const NhLayout = ({ language, setLanguage, children }) => {
           ))}
         </nav>
       </footer>
+
+      <button
+        type="button"
+        className={`nh-top${showTop ? ' is-visible' : ''}`}
+        onClick={toTop}
+        aria-label={t.toTop}
+        title={t.toTop}
+        tabIndex={showTop ? 0 : -1}
+        aria-hidden={!showTop}
+      >
+        <FaArrowUp aria-hidden="true" focusable="false" />
+      </button>
 
       <div className="nh-mobile-bar">
         <span className="nh-mobile-bar-text">
