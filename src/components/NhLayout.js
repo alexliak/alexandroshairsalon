@@ -7,6 +7,12 @@ import '../pages/Home.css';
 export const BOOK = '/kratisi/';
 export const PHONE = '+302103465554';
 export const PHONE_DISPLAY = '210 346 5554';
+// Mobile: call, WhatsApp, Viber, FaceTime
+export const MOBILE = '+306981319000';
+export const MOBILE_DISPLAY = '698 131 9000';
+export const WHATSAPP_URL = 'https://wa.me/306981319000';
+export const VIBER_URL = 'viber://chat?number=%2B306981319000';
+export const FACETIME_URL = 'facetime:+306981319000';
 // Google Business Profile: the owner keeps the real opening hours here.
 export const GOOGLE_PROFILE_URL =
   'https://www.google.com/maps/place/alexandroshairsalon/@37.976933,23.7162736,17z/data=!3m1!4b1!4m6!3m5!1s0x14a1bd200f79f18d:0x3024d28633f32b4!8m2!3d37.976933!4d23.7162736!16s%2Fg%2F11cm0h21cx';
@@ -136,6 +142,8 @@ const NhLayout = ({ language, setLanguage, children }) => {
           <a href={GOOGLE_PROFILE_URL} target="_blank" rel="noopener noreferrer">{t.footerHours}</a>
           <a href="https://www.facebook.com/alexandros.hairsalon" target="_blank" rel="noopener noreferrer">Facebook</a>
           <a href={`tel:${PHONE}`}>{PHONE_DISPLAY}</a>
+          <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">WhatsApp</a>
+          <a href={VIBER_URL}>Viber</a>
         </span>
         <nav className="nh-footer-seo" aria-label={t.seoNav}>
           {t.seoLinks.map(([label, href]) => (

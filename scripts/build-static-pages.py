@@ -147,7 +147,7 @@ def page(path, title, desc, body, ld, extra_head="", mbar=True):
 {body}
 </main>
 <footer class="bottom"><div class="wrap">
-  <p><strong>Alexandros Hair Salon</strong> · {ADDRESS} · <a href="tel:{PHONE}">{PHONE_TXT}</a> · <a href="{GOOGLE}" target="_blank" rel="noopener">Ωράριο &amp; οδηγίες στο Google</a></p>
+  <p><strong>Alexandros Hair Salon</strong> · {ADDRESS} · <a href="tel:{PHONE}">{PHONE_TXT}</a> · Κινητό <a href="tel:+306981319000">698 131 9000</a> · <a href="https://wa.me/306981319000" target="_blank" rel="noopener">WhatsApp</a> · <a href="viber://chat?number=%2B306981319000">Viber</a> · <a href="{GOOGLE}" target="_blank" rel="noopener">Ωράριο &amp; οδηγίες στο Google</a></p>
   <p class="links"><a href="/">Αρχική</a><a href="/services">Όλες οι τιμές</a><a href="/kourema-athina/">Κούρεμα στην Αθήνα</a><a href="/vafi-mallion-athina/">Βαφή μαλλιών στην Αθήνα</a><a href="/balayage-athina/">Balayage στην Αθήνα</a><a href="/kratisi/">Κράτηση online</a><a href="/shop">Shop</a></p>
 </div></footer>
 {'<div class="mbar"><span>Online κράτηση · πληρωμή στο κομμωτήριο</span><a class="btn gold" href="/kratisi/">Κλείσε</a></div>' if mbar else ''}

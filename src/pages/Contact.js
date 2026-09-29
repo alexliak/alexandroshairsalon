@@ -1,5 +1,5 @@
 import React from 'react';
-import NhLayout, { BOOK, PHONE, PHONE_DISPLAY, GOOGLE_PROFILE_URL, MAP_EMBED_URL } from '../components/NhLayout';
+import NhLayout, { BOOK, PHONE, PHONE_DISPLAY, GOOGLE_PROFILE_URL, MAP_EMBED_URL, MOBILE, MOBILE_DISPLAY, WHATSAPP_URL, VIBER_URL, FACETIME_URL } from '../components/NhLayout';
 
 // Hours & contact (2026 design). The opening hours are NOT written here on purpose:
 // the owner keeps them up to date on the Google Business Profile, so we link there.
@@ -17,8 +17,11 @@ const text = {
     addressTitle: 'Διεύθυνση',
     address: 'Ερυσίχθονος 3-5, Θησείο, Αθήνα 118 51',
     directions: 'Οδηγίες στον χάρτη',
-    phoneTitle: 'Τηλέφωνο',
-    call: 'Κάλεσε',
+    phoneTitle: 'Τηλέφωνα',
+    salonLabel: 'Κομμωτήριο',
+    call: 'Κλήση κομμωτηρίου',
+    mobileTitle: 'Κινητό',
+    mobileCall: 'Κλήση κινητού',
     mapTitle: 'Χάρτης: Alexandros Hair Salon'
   },
   en: {
@@ -35,7 +38,10 @@ const text = {
     address: 'Erysichthonos 3-5, Thiseio, Athens 118 51',
     directions: 'Directions on the map',
     phoneTitle: 'Phone',
-    call: 'Call',
+    salonLabel: 'Salon',
+    call: 'Call salon',
+    mobileTitle: 'Mobile',
+    mobileCall: 'Call mobile',
     mapTitle: 'Map: Alexandros Hair Salon'
   }
 };
@@ -75,8 +81,17 @@ const Contact = ({ language, setLanguage }) => {
           </article>
           <article className="nh-info-card">
             <h2 className="nh-info-title">{t.phoneTitle}</h2>
-            <p>{PHONE_DISPLAY}</p>
-            <a href={`tel:${PHONE}`} className="nh-btn nh-btn-ghost">{t.call}</a>
+            <p>{t.salonLabel}: {PHONE_DISPLAY}</p>
+            <div className="nh-contact-row">
+              <a href={`tel:${PHONE}`} className="nh-btn nh-btn-ghost nh-btn-sm">{t.call}</a>
+            </div>
+            <p>{t.mobileTitle}: {MOBILE_DISPLAY}</p>
+            <div className="nh-contact-row">
+              <a href={`tel:${MOBILE}`} className="nh-btn nh-btn-ghost nh-btn-sm">{t.mobileCall}</a>
+              <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="nh-btn nh-btn-ghost nh-btn-sm">WhatsApp</a>
+              <a href={VIBER_URL} className="nh-btn nh-btn-ghost nh-btn-sm">Viber</a>
+              <a href={FACETIME_URL} className="nh-btn nh-btn-ghost nh-btn-sm">FaceTime</a>
+            </div>
           </article>
         </section>
 
