@@ -26,7 +26,7 @@ const content = {
     popularTitle: 'Διάλεξε & κλείσε',
     allServices: 'Όλες οι υπηρεσίες →',
     services: [
-      { cat: 'Κουρέματα', name: 'Γυναικείο κούρεμα', desc: 'Butterfly, curtain bangs, φιλάρισμα ή κλασικό, με εμπειρία τριών δεκαετιών.', time: '30–45′', price: 'από €28' },
+      { cat: 'Κουρέματα', name: 'Γυναικείο κούρεμα', desc: 'Pixie, mullet, butterfly, curtain bangs, φιλάρισμα ή κλασικό, με εμπειρία τριών δεκαετιών.', time: '30–45′', price: 'από €28' },
       { cat: 'Χτένισμα', name: 'Blowout', desc: 'Όγκος και λάμψη με πιστολάκι ή πρέσα. Πρόσθεσε SteamPod για διάρκεια.', time: '25–40′', price: 'από €24' },
       { cat: 'Χρώμα', name: 'Βαφή ρίζας + ρεφλέ', desc: 'Κάλυψη λευκών στη ρίζα και ξεχωριστό gloss για λάμψη σε όλο το μαλλί.', time: '1 ώρα', price: 'από €52' },
       { cat: 'Ανταύγειες', name: 'Balayage', desc: 'Φυσικό, φωτεινό αποτέλεσμα με εύκολη συντήρηση.', time: '1:35–2:45', price: 'από €55' },
@@ -82,7 +82,7 @@ const content = {
     popularTitle: 'Pick & book',
     allServices: 'All services →',
     services: [
-      { cat: 'Haircuts', name: 'Women’s haircut', desc: 'Butterfly, curtain bangs, texturising or classic, with thirty years of experience.', time: '30–45′', price: 'from €28' },
+      { cat: 'Haircuts', name: 'Women’s haircut', desc: 'Pixie, mullet, butterfly, curtain bangs, texturising or classic, with thirty years of experience.', time: '30–45′', price: 'from €28' },
       { cat: 'Styling', name: 'Blowout', desc: 'Volume and shine with brush or iron. Add SteamPod for long-lasting results.', time: '25–40′', price: 'from €24' },
       { cat: 'Colour', name: 'Root colour + gloss', desc: 'Grey coverage at the root plus a separate gloss for shine throughout.', time: '1 h', price: 'from €52' },
       { cat: 'Highlights', name: 'Balayage', desc: 'Natural, luminous result that is easy to maintain.', time: '1:35–2:45', price: 'from €55' },

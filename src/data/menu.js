@@ -14,8 +14,8 @@ const menu = [
           "en": "Women’s haircut"
         },
         "desc": {
-          "el": "Butterfly, curtain bangs, φιλάρισμα ή κλασικό.",
-          "en": "Butterfly, curtain bangs, texturising or classic."
+          "el": "Pixie, mullet, butterfly, curtain bangs, φιλάρισμα ή κλασικό.",
+          "en": "Pixie, mullet, butterfly, curtain bangs, texturising or classic."
         },
         "options": [
           {
@@ -78,23 +78,6 @@ const menu = [
               "en": "30′"
             },
             "price": 20
-          }
-        ]
-      },
-      {
-        "name": {
-          "el": "Γενειάδα",
-          "en": "Beard trim"
-        },
-        "options": [
-          {
-            "el": "",
-            "en": "",
-            "time": {
-              "el": "10′",
-              "en": "10′"
-            },
-            "price": 9
           }
         ]
       }

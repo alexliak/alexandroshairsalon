@@ -105,7 +105,7 @@ const greekServiceMap = {
 
 const serviceDetails = {
   en: {
-    haircut: 'Haircuts: women’s from €28, men’s €24, kids’ €20, beard trim €9. Book online at alexandroshairsalon.gr/kratisi.',
+    haircut: 'Haircuts: women’s from €28, men’s €24, kids’ €20. Book online at alexandroshairsalon.gr/kratisi.',
     blowdry: 'Blowout: short €24, medium/long €28, long & thick €35. Event hair & waves from €38.',
     color: 'Root colour from €35, root colour + gloss from €52, gloss from €31, face framing €46, balayage from €55.',
     treatment: 'Hair treatment €10, ampoule €17, keratin smoothing €120–€170.',
@@ -114,7 +114,7 @@ const serviceDetails = {
       'Cuts from €20 (kids) / €28 (women), blowout from €24, root colour from €35, treatments from €10. Book online at alexandroshairsalon.gr/kratisi.'
   },
   el: {
-    haircut: 'Κουρέματα: γυναικείο από €28, ανδρικό €24, παιδικό €20, γενειάδα €9. Κλείσε online στο alexandroshairsalon.gr/kratisi.',
+    haircut: 'Κουρέματα: γυναικείο από €28, ανδρικό €24, παιδικό €20. Κλείσε online στο alexandroshairsalon.gr/kratisi.',
     blowdry: 'Blowout: κοντά €24, μεσαία/μακριά €28, μακριά & πυκνά €35. Βραδινό χτένισμα & μπούκλες από €38.',
     color: 'Βαφή ρίζας από €35, βαφή ρίζας + ρεφλέ από €52, ρεφλέ από €31, face framing €46, balayage από €55.',
     treatment: 'Θεραπεία €10, αμπούλα €17, κερατίνη €120–170.',
