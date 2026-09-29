@@ -15,7 +15,7 @@ const text = {
     bookThis: 'Κράτηση',
     notesTitle: 'Καλό να ξέρεις',
     notes: [
-      'Οι τιμές ισχύουν για online κράτηση. Κενές ώρες και τελευταία στιγμή: έως −15% στην online κράτηση.',
+      'Η τιμή εξαρτάται από το μήκος και την πυκνότητα και την επιβεβαιώνουμε μαζί σου πριν ξεκινήσουμε.',
       'Στη βαφή για πολύ πυκνά ή πολύ μακριά μαλλιά υπάρχει η προσθήκη +€19 για την επιπλέον ποσότητα και τον χρόνο.',
       'Δωρεάν τεστ ευαισθησίας πριν από την πρώτη σου βαφή.',
       'Έχεις extensions; Γράψ’ το στην κράτηση για να κρατήσουμε τον σωστό χρόνο.'
@@ -33,7 +33,7 @@ const text = {
     bookThis: 'Book',
     notesTitle: 'Good to know',
     notes: [
-      'Prices are for online booking. Off-peak and last-minute: up to −15% when you book online.',
+      'Price depends on length and thickness, and we confirm it with you before we start.',
       'For colour on very thick or very long hair there is a +€19 add-on for the extra product and time.',
       'Free sensitivity test before your first colour.',
       'Wearing extensions? Mention it when you book so we reserve the right time.'

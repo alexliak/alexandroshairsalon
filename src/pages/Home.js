@@ -11,10 +11,10 @@ const content = {
     titleEm: 'μοιάζει.',
     titleB: ' Χρώμα που λάμπει.',
     lead:
-      'Τρεις δεκαετίες στο ψαλίδι, χρώμα με L’Oréal Professionnel και Redken. Διάλεξε υπηρεσία, δες τιμή και ώρα, κλείσε σε ένα λεπτό.',
+      'Τρεις δεκαετίες σε κούρεμα, χρώμα και χτένισμα, με L’Oréal Professionnel και Redken. Διάλεξε υπηρεσία, δες τιμή και ώρα, κλείσε σε ένα λεπτό.',
     bookOnline: 'Κλείσε online',
     seePrices: 'Δες τιμές',
-    reassure: ['Πληρώνεις στο κομμωτήριο', 'Κενές ώρες έως −15%', 'Δωρεάν τεστ ευαισθησίας'],
+    reassure: ['Πληρώνεις στο κομμωτήριο', 'Τιμή γνωστή από πριν', 'Δωρεάν τεστ ευαισθησίας'],
     artCaption: 'Θησείο · Αθήνα',
     stats: [
       { big: '1992', small: 'οικογενειακό κομμωτήριο' },
@@ -45,6 +45,15 @@ const content = {
       ['Face framing', '€46'],
       ['Balayage – μερικές', 'από €55']
     ],
+    promiseEyebrow: 'Η ματιά μας',
+    promiseTitleA: 'Κάθε πρόσωπο έχει όμορφα χαρακτηριστικά. ',
+    promiseTitleEm: 'Αρκεί να τα βρεις.',
+    promiseText: [
+      'Το κούρεμα είναι σχήμα πάνω στο πρόσωπο: μπορεί να το αναδείξει ή να το κρύψει. Γι’ αυτό πρώτα κοιτάμε το πρόσωπο, τα χαρακτηριστικά, την υφή και τη δομή των μαλλιών σου.',
+      'Μετά σχεδιάζουμε κούρεμα, χρώμα και χτένισμα μαζί, ως ένα ολοκληρωμένο αποτέλεσμα που σου ταιριάζει και στέκεται στην καθημερινότητά σου.'
+    ],
+    promiseSign: 'Αλέξανδρος',
+    promises: ['Πρώτα ακούμε.', 'Η τιμή συμφωνείται πριν ξεκινήσουμε.', 'Ό,τι δεν σου ταιριάζει, θα σου το πούμε.'],
     visitTitleA: 'Σε περιμένουμε',
     visitTitleEm: 'στο Θησείο.',
     address: 'Ερυσίχθονος 3-5, Θησείο, Αθήνα 118 51',
@@ -58,10 +67,10 @@ const content = {
     titleEm: 'like you.',
     titleB: ' Colour that shines.',
     lead:
-      'Three decades of cutting, colour with L’Oréal Professionnel and Redken. Pick a service, see price and time, book in a minute.',
+      'Three decades of cutting, colour and styling, with L’Oréal Professionnel and Redken. Pick a service, see price and time, book in a minute.',
     bookOnline: 'Book online',
     seePrices: 'See prices',
-    reassure: ['Pay at the salon', 'Off-peak up to −15%', 'Free sensitivity test'],
+    reassure: ['Pay at the salon', 'Price known in advance', 'Free sensitivity test'],
     artCaption: 'Thiseio · Athens',
     stats: [
       { big: '1992', small: 'family-run salon' },
@@ -92,6 +101,15 @@ const content = {
       ['Face-frame highlights', '€46'],
       ['Partial balayage', 'from €55']
     ],
+    promiseEyebrow: 'Our approach',
+    promiseTitleA: 'Every face has beautiful features. ',
+    promiseTitleEm: 'You just have to find them.',
+    promiseText: [
+      'A haircut is a shape around the face: it can bring it out or hide it. So we start by looking at your face, your features and the texture and structure of your hair.',
+      'Then we design cut, colour and styling together, as one complete result that suits you and works in your everyday life.'
+    ],
+    promiseSign: 'Alexandros',
+    promises: ['We listen first.', 'The price is agreed before we start.', 'If something doesn’t suit you, we’ll tell you.'],
     visitTitleA: 'See you',
     visitTitleEm: 'in Thiseio.',
     address: 'Erysichthonos 3-5, Thiseio, Athens 118 51',
@@ -197,6 +215,22 @@ const Home = ({ language, setLanguage }) => {
               </li>
             ))}
           </ul>
+        </section>
+
+        <section className="nh-section nh-promise" aria-labelledby="promise-title">
+          <span className="nh-eyebrow">{t.promiseEyebrow}</span>
+          <h2 id="promise-title" className="nh-h2 nh-promise-title">
+            {t.promiseTitleA}<em>{t.promiseTitleEm}</em>
+          </h2>
+          <div className="nh-promise-body">
+            <div className="nh-promise-text">
+              {t.promiseText.map((p) => <p key={p}>{p}</p>)}
+              <span className="nh-promise-sign">— {t.promiseSign}</span>
+            </div>
+            <ul className="nh-promise-lines">
+              {t.promises.map((line) => <li key={line}>{line}</li>)}
+            </ul>
+          </div>
         </section>
 
         <section className="nh-section nh-visit" id="visit">
