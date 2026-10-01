@@ -1,0 +1,31 @@
+.circle {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.7;
+  animation: colorChange 10s infinite, circleMovement 5s infinite alternate, fadeInOut 5s infinite;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+}
+
+@keyframes colorChange {
+  0% { background-color: #ff9a9e; }   /* Pink */
+  10% { background-color: #fad0c4; }  /* Light Pink */
+  20% { background-color: #fbc2eb; }  /* Light Purple */
+  30% { background-color: #a18cd1; }  /* Purple */
+  40% { background-color: #84fab0; }  /* Light Green */
+  50% { background-color: #8fd3f4; }  /* Light Blue */
+  60% { background-color: #a6c1ee; }  /* Light Blue-Purple */
+  70% { background-color: #ffc3a0; }  /* Light Orange */
+  80% { background-color: #ff9a9e; }  /* Pink */
+  90% { background-color: #ffecd2; }  /* Light Yellow */
+  100% { background-color: #ff9a9e; } /* Pink */
+}
+
+@keyframes circleMovement {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
+
+@keyframes fadeInOut {
+  0%, 100% { opacity: 0; }
+  50% { opacity: 0.7; }
+}

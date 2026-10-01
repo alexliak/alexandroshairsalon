@@ -1,0 +1,111 @@
+.accessibility-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.accessibility-control {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  border-radius: 16px;
+  border: 1px solid rgba(237, 147, 237, 0.45);
+  background: rgba(18, 18, 25, 0.78);
+  color: #fef6ff;
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+}
+
+.accessibility-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  color: #ed93ed;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.accessibility-icon svg {
+  font-size: 1.2rem;
+}
+
+.accessibility-control:hover,
+.accessibility-control:focus-visible {
+  transform: translateY(-1px);
+  background: rgba(237, 147, 237, 0.2);
+  border-color: rgba(237, 147, 237, 0.75);
+  outline: 2px solid rgba(255, 236, 255, 0.75);
+  outline-offset: 2px;
+}
+
+.accessibility-control.active {
+  background: rgba(237, 147, 237, 0.9);
+  color: #1b1325;
+  border-color: rgba(237, 147, 237, 0.9);
+}
+
+.accessibility-control.active .accessibility-icon {
+  color: #1b1325;
+}
+
+.accessibility-controls.inline {
+  position: static;
+  gap: 10px;
+}
+
+.accessibility-controls.inline .accessibility-control {
+  width: 100%;
+  justify-content: flex-start;
+  border-radius: 12px;
+  font-size: 0.78rem;
+}
+
+.accessibility-controls.inline.collapsed {
+  align-items: center;
+}
+
+.accessibility-controls.inline.collapsed .accessibility-control {
+  width: 44px;
+  height: 44px;
+  justify-content: center;
+  padding: 0;
+  border-radius: 12px;
+  background: rgba(14, 12, 20, 0.92);
+  border: 1px solid rgba(237, 147, 237, 0.65);
+  box-shadow:
+    0 0 0 1px rgba(15, 12, 22, 0.8),
+    inset 0 0 12px rgba(237, 147, 237, 0.35);
+  position: relative;
+}
+
+.accessibility-controls.inline.collapsed .accessibility-icon {
+  opacity: 0;
+}
+
+.accessibility-controls.inline.collapsed .accessibility-control::after {
+  content: attr(data-glyph);
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #ffd9ff;
+  letter-spacing: 0;
+}
+
+.accessibility-controls.inline.collapsed .accessibility-icon svg {
+  display: none;
+}
+
+.accessibility-controls.inline.collapsed .accessibility-control span {
+  display: none;
+}
