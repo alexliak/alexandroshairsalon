@@ -14,7 +14,7 @@ const content = {
       'Τρεις δεκαετίες σε κούρεμα, χρώμα και χτένισμα, με L’Oréal Professionnel και Redken. Διάλεξε υπηρεσία, δες τιμή και ώρα, κλείσε σε ένα λεπτό.',
     bookOnline: 'Κλείσε online',
     seePrices: 'Δες τιμές',
-    reassure: ['Πληρώνεις στο κομμωτήριο', 'Τιμή γνωστή από πριν', 'Δωρεάν τεστ ευαισθησίας'],
+    reassure: ['Πληρωμή online ή στο κομμωτήριο', 'Δωρεάν τεστ ευαισθησίας'],
     artCaption: 'Θησείο · Αθήνα',
     stats: [
       { big: '1992', small: 'οικογενειακό κομμωτήριο' },
@@ -53,7 +53,9 @@ const content = {
       'Μετά σχεδιάζουμε κούρεμα, χρώμα και χτένισμα μαζί, ως ένα ολοκληρωμένο αποτέλεσμα που σου ταιριάζει και στέκεται στην καθημερινότητά σου.'
     ],
     promiseSign: 'Αλέξανδρος',
-    promises: ['Πρώτα ακούμε.', 'Η τιμή συμφωνείται πριν ξεκινήσουμε.', 'Ό,τι δεν σου ταιριάζει, θα σου το πούμε.'],
+    promises: ['Πρώτα ακούμε.', 'Ό,τι δεν σου ταιριάζει, θα σου το πούμε.'],
+    jobsText: 'We are hiring: ψάχνουμε βοηθό κομμωτηρίου με όρεξη για δουλειά και εκπαίδευση. Σταθερή εργασία.',
+    jobsCta: 'Δες τη θέση →',
     visitTitleA: 'Σε περιμένουμε',
     visitTitleEm: 'στο Θησείο.',
     address: 'Ερυσίχθονος 3-5, Θησείο, Αθήνα 118 51',
@@ -70,7 +72,7 @@ const content = {
       'Three decades of cutting, colour and styling, with L’Oréal Professionnel and Redken. Pick a service, see price and time, book in a minute.',
     bookOnline: 'Book online',
     seePrices: 'See prices',
-    reassure: ['Pay at the salon', 'Price known in advance', 'Free sensitivity test'],
+    reassure: ['Pay online or at the salon', 'Free sensitivity test'],
     artCaption: 'Thiseio · Athens',
     stats: [
       { big: '1992', small: 'family-run salon' },
@@ -109,7 +111,9 @@ const content = {
       'Then we design cut, colour and styling together, as one complete result that suits you and works in your everyday life.'
     ],
     promiseSign: 'Alexandros',
-    promises: ['We listen first.', 'The price is agreed before we start.', 'If something doesn’t suit you, we’ll tell you.'],
+    promises: ['We listen first.', 'If something doesn’t suit you, we’ll tell you.'],
+    jobsText: 'We are hiring: a salon assistant eager to work and learn. Stable, long-term position.',
+    jobsCta: 'See the job →',
     visitTitleA: 'See you',
     visitTitleEm: 'in Thiseio.',
     address: 'Erysichthonos 3-5, Thiseio, Athens 118 51',
@@ -231,6 +235,11 @@ const Home = ({ language, setLanguage }) => {
               {t.promises.map((line) => <li key={line}>{line}</li>)}
             </ul>
           </div>
+        </section>
+
+        <section className="nh-jobs-strip" aria-label={language === 'el' ? 'Θέση εργασίας' : 'Job opening'}>
+          <p>{t.jobsText}</p>
+          <Link to="/douleia" className="nh-underline">{t.jobsCta}</Link>
         </section>
 
         <section className="nh-section nh-visit" id="visit">

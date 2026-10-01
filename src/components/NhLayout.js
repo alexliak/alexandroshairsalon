@@ -36,11 +36,12 @@ const layoutText = {
     mobileBarCta: 'Κλείσε ραντεβού',
     footerShop: 'Online Shop',
     footerHours: 'Ωράριο στο Google',
+    footerJobs: 'Δουλειά μαζί μας',
     langSwitch: 'EN',
     langAria: 'Switch to English',
     skip: 'Μετάβαση στο περιεχόμενο',
     contactNav: 'Επικοινωνία στο κινητό',
-    callMobile: 'Κλήση στο κινητό 698 131 9000',
+    callMobile: 'Κλήση στο κινητό',
     whatsapp: 'Μήνυμα στο WhatsApp',
     viber: 'Μήνυμα στο Viber',
     facetime: 'Κλήση FaceTime',
@@ -68,11 +69,12 @@ const layoutText = {
     mobileBarCta: 'Book now',
     footerShop: 'Online Shop',
     footerHours: 'Hours on Google',
+    footerJobs: 'We are hiring',
     langSwitch: 'EL',
     langAria: 'Αλλαγή στα Ελληνικά',
     skip: 'Skip to content',
     contactNav: 'Contact on mobile',
-    callMobile: 'Call mobile 698 131 9000',
+    callMobile: 'Call mobile',
     whatsapp: 'Message on WhatsApp',
     viber: 'Message on Viber',
     facetime: 'FaceTime call',
@@ -192,6 +194,7 @@ const NhLayout = ({ language, setLanguage, children }) => {
         <span>© {new Date().getFullYear()} Alexandros Hair Salon · {t.city}</span>
         <span className="nh-footer-links">
           <Link to="/shop">{t.footerShop}</Link>
+          <Link to="/douleia">{t.footerJobs}</Link>
           <a href={GOOGLE_PROFILE_URL} target="_blank" rel="noopener noreferrer">{t.footerHours}</a>
           <a href="https://www.facebook.com/alexandros.hairsalon" target="_blank" rel="noopener noreferrer">Facebook</a>
           <a href={`tel:${PHONE}`}>{PHONE_DISPLAY}</a>

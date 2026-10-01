@@ -159,7 +159,7 @@ def page(path, title, desc, body, ld, extra_head="", mbar=True):
     <a class="hide-m" href="/services">Υπηρεσίες &amp; τιμές</a>
     <a class="hide-m" href="/hours">Ωράριο</a>
     <span class="icons" role="group" aria-label="Επικοινωνία στο κινητό">
-      <a class="ph" href="tel:+306981319000" aria-label="Κλήση στο κινητό 698 131 9000" title="Κλήση στο κινητό">{ICONS['FaPhoneAlt']}</a>
+      <a class="ph" href="tel:+306981319000" aria-label="Κλήση στο κινητό" title="Κλήση στο κινητό">{ICONS['FaPhoneAlt']}</a>
       <a class="wa" href="https://wa.me/306981319000" target="_blank" rel="noopener" aria-label="Μήνυμα στο WhatsApp" title="WhatsApp">{ICONS['FaWhatsapp']}</a>
       <a class="vb" href="viber://chat?number=%2B306981319000" aria-label="Μήνυμα στο Viber" title="Viber">{ICONS['FaViber']}</a>
       <a class="ft" href="facetime:+306981319000" aria-label="Κλήση FaceTime" title="FaceTime">{ICONS['FaVideo']}</a>
@@ -171,7 +171,7 @@ def page(path, title, desc, body, ld, extra_head="", mbar=True):
 {body}
 </main>
 <footer class="bottom"><div class="wrap">
-  <p><strong>Alexandros Hair Salon</strong> · {ADDRESS} · <a href="tel:{PHONE}">{PHONE_TXT}</a> · Κινητό <a href="tel:+306981319000">698 131 9000</a> · <a href="https://wa.me/306981319000" target="_blank" rel="noopener">WhatsApp</a> · <a href="viber://chat?number=%2B306981319000">Viber</a> · <a href="{GOOGLE}" target="_blank" rel="noopener">Ωράριο &amp; οδηγίες στο Google</a></p>
+  <p><strong>Alexandros Hair Salon</strong> · {ADDRESS} · <a href="tel:{PHONE}">{PHONE_TXT}</a> · <a href="tel:+306981319000">Κλήση κινητού</a> · <a href="https://wa.me/306981319000" target="_blank" rel="noopener">WhatsApp</a> · <a href="viber://chat?number=%2B306981319000">Viber</a> · <a href="{GOOGLE}" target="_blank" rel="noopener">Ωράριο &amp; οδηγίες στο Google</a></p>
   <p class="links"><a href="/">Αρχική</a><a href="/services">Όλες οι τιμές</a><a href="/kourema-athina/">Κούρεμα στην Αθήνα</a><a href="/vafi-mallion-athina/">Βαφή μαλλιών στην Αθήνα</a><a href="/balayage-athina/">Balayage στην Αθήνα</a><a href="/kratisi/">Κράτηση online</a><a href="/shop">Shop</a></p>
 </div></footer>
 {'<div class="mbar"><span>Θησείο · από το 1992</span><a class="btn gold" href="/kratisi/">Κλείσε ραντεβού</a></div>' if mbar else ''}
@@ -253,7 +253,7 @@ service_page(
      ("Κάνετε και ανδρικά ή παιδικά κουρέματα;", "Ναι. Ανδρικό κούρεμα €24 και παιδικό €20."),
      ("Πρέπει να κλείσω ραντεβού;", "Προτείνουμε ραντεβού για να σε περιμένουμε στην ώρα σου. Κλείνεις online στο alexandroshairsalon.gr/kratisi ή τηλεφωνικά στο 210 346 5554."),
      ("Πού βρίσκεστε;", "Ερυσίχθονος 3-5 στο Θησείο, περίπου 5 λεπτά με τα πόδια από τον σταθμό Θησείο, στο κέντρο της Αθήνας."),
-     ("Πώς πληρώνω;", "Στο κομμωτήριο, μετά την υπηρεσία. Η online κράτηση δεν χρειάζεται προπληρωμή.")],
+     ("Πώς πληρώνω;", "Όπως προτιμάς: online κατά την κράτηση ή στο κομμωτήριο, μετά την υπηρεσία.")],
     "Κούρεμα μαλλιών",
     [("Βαφή μαλλιών στην Αθήνα", "/vafi-mallion-athina/"), ("Balayage στην Αθήνα", "/balayage-athina/"), ("Όλες οι τιμές", "/services")],
 )
@@ -321,7 +321,7 @@ kratisi_body = f"""
 <section class="hero" style="padding-bottom:20px">
   <span class="eyebrow">Online κράτηση · Book online</span>
   <h1>Κλείσε ραντεβού <em>σε ένα λεπτό.</em></h1>
-  <p class="lead">Διάλεξε υπηρεσία και ώρα παρακάτω. Βλέπεις από πριν τιμή και διάρκεια και πληρώνεις στο κομμωτήριο. <span lang="en">Choose a service and time below, pay at the salon.</span></p>
+  <p class="lead">Διάλεξε υπηρεσία και ώρα παρακάτω. Βλέπεις τιμή και διάρκεια και πληρώνεις online ή στο κομμωτήριο. <span lang="en">Choose a service and time below, pay online or at the salon.</span></p>
   <div class="cta">
     <a class="btn gold" href="{WIDGET}" id="wahanda-online-booking-widget" onclick='wahanda.openOnlineBookingWidget("{WIDGET}"); return false;' target="_blank"><span>Άνοιγμα σε πλήρη οθόνη · Book now</span></a>
     <a class="btn ghost" href="tel:{PHONE}">Κάλεσε {PHONE_TXT}</a>

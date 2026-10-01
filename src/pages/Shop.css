@@ -197,6 +197,7 @@
 }
 
 .qty-controls span {
+  color: #000;
   font-weight: 700;
   min-width: 20px;
   text-align: center;

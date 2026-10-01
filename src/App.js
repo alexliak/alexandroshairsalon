@@ -18,6 +18,7 @@ import Services from './pages/Services';
 import Contact from './pages/Contact';
 import Landing50 from './pages/Landing50';
 import Shop from './pages/Shop';
+import Careers from './pages/Careers';
 import Chatbot from './components/Chatbot';
 import NhLayout from './components/NhLayout';
 import AccessibilityControls from './components/AccessibilityControls';
@@ -108,7 +109,8 @@ const AppContent = () => {
       '/': `${baseUrl}/`,
       '/services': `${baseUrl}/services`,
       '/hours': `${baseUrl}/hours`,
-      '/prosfora50': `${baseUrl}/prosfora50`
+      '/prosfora50': `${baseUrl}/prosfora50`,
+      '/douleia': `${baseUrl}/douleia`
     };
 
     const titleMap = {
@@ -116,15 +118,17 @@ const AppContent = () => {
       '/services': 'Τιμές Κομμωτηρίου Αθήνα | Κούρεμα, Βαφή, Balayage | Alexandros Hair Salon',
       '/hours': 'Ωράριο & Επικοινωνία | Κομμωτήριο Θησείο, Αθήνα | Alexandros Hair Salon',
       '/prosfora50': 'Προσφορά 50% Καλωσορίσματος - Alexandros Hair Salon',
-      '/shop': 'Επαγγελματικά Προϊόντα Μαλλιών EVOQUE | Κερατίνη, Frizz Control | Alexandros Hair Salon'
+      '/shop': 'Επαγγελματικά Προϊόντα Μαλλιών EVOQUE | Κερατίνη, Frizz Control | Alexandros Hair Salon',
+      '/douleia': 'Θέση εργασίας: Βοηθός κομμωτηρίου στο Θησείο | Alexandros Hair Salon'
     };
 
     const descriptionMap = {
       '/': 'Κομμωτήριο στο κέντρο της Αθήνας, Θησείο, από το 1992. Γυναικείο κούρεμα από €28, βαφή L’Oréal & Redken από €35, balayage από €55. 4,6★ στο Google. Κλείσε online.',
-      '/services': 'Όλες οι τιμές του κομμωτηρίου στο Θησείο: κουρέματα, Blowout, βαφή ρίζας, ρεφλέ, balayage, κερατίνη και πακέτα, με χρόνους. Online κράτηση, πληρωμή στο κομμωτήριο.',
+      '/services': 'Όλες οι τιμές του κομμωτηρίου στο Θησείο: κουρέματα, Blowout, βαφή ρίζας, ρεφλέ, balayage, κερατίνη και πακέτα, με χρόνους. Online κράτηση, πληρωμή online ή στο κομμωτήριο.',
       '/hours': 'Ωράριο, διεύθυνση και τηλέφωνο του Alexandros Hair Salon, Ερυσίχθονος 3-5, Θησείο, Αθήνα. Κλείσε ραντεβού online.',
       '/prosfora50': 'Κλείσε ραντεβού για κούρεμα, βαφή, ανταύγειες με 50% έκπτωση στην πρώτη σου επίσκεψη. Θησείο, Αθήνα.',
-      '/shop': 'Επαγγελματικά προϊόντα μαλλιών EVOQUE για χρήση στο σπίτι. Σαμπουάν κερατίνης, μάσκες για φριζαρισμένα & σγουρά μαλλιά, styling. Αποστολή πανελλαδικά.'
+      '/shop': 'Επαγγελματικά προϊόντα μαλλιών EVOQUE για χρήση στο σπίτι. Σαμπουάν κερατίνης, μάσκες για φριζαρισμένα & σγουρά μαλλιά, styling. Αποστολή πανελλαδικά.',
+      '/douleia': 'Ψάχνουμε βοηθό κομμωτηρίου με όρεξη για δουλειά και εκπαίδευση. Σταθερή εργασία στο Θησείο. Στείλε αίτηση και βιογραφικό online.'
     };
 
     const canonicalUrl = canonicalMap[location.pathname] || `${baseUrl}${location.pathname}`;
@@ -223,6 +227,9 @@ const AppContent = () => {
   }
   if (location.pathname === '/hours') {
     return <Contact language={language} setLanguage={setLanguage} />;
+  }
+  if (location.pathname === '/douleia') {
+    return <Careers language={language} setLanguage={setLanguage} />;
   }
   if (location.pathname === '/shop') {
     return (

@@ -6,16 +6,16 @@ import menu from '../data/menu';
 const text = {
   el: {
     eyebrow: 'Υπηρεσίες & τιμές',
-    title: 'Καθαρές τιμές,',
-    titleEm: 'χωρίς εκπλήξεις.',
-    lead: 'Η τιμή εξαρτάται από το μήκος των μαλλιών. Στην online κράτηση βλέπεις ακριβώς τι πληρώνεις και πόσο διαρκεί, και πληρώνεις στο κομμωτήριο.',
+    title: 'Τιμές',
+    titleEm: 'και χρόνοι.',
+    lead: 'Η τιμή εξαρτάται από το μήκος των μαλλιών. Στην online κράτηση βλέπεις τιμή και διάρκεια, και διαλέγεις αν θα πληρώσεις online ή στο κομμωτήριο.',
     book: 'Κλείσε online',
     call: 'Κάλεσε',
     from: 'από',
     bookThis: 'Κράτηση',
     notesTitle: 'Καλό να ξέρεις',
     notes: [
-      'Η τιμή εξαρτάται από το μήκος και την πυκνότητα και την επιβεβαιώνουμε μαζί σου πριν ξεκινήσουμε.',
+      'Η τιμή εξαρτάται από το μήκος και την πυκνότητα των μαλλιών.',
       'Στη βαφή για πολύ πυκνά ή πολύ μακριά μαλλιά υπάρχει η προσθήκη +€19 για την επιπλέον ποσότητα και τον χρόνο.',
       'Δωρεάν τεστ ευαισθησίας πριν από την πρώτη σου βαφή.',
       'Έχεις extensions; Γράψ’ το στην κράτηση για να κρατήσουμε τον σωστό χρόνο.'
@@ -24,16 +24,16 @@ const text = {
   },
   en: {
     eyebrow: 'Services & prices',
-    title: 'Clear prices,',
-    titleEm: 'no surprises.',
-    lead: 'Prices depend on hair length. Online booking shows exactly what you pay and how long it takes, and you pay at the salon.',
+    title: 'Prices',
+    titleEm: 'and times.',
+    lead: 'Prices depend on hair length. Online booking shows price and duration, and you choose to pay online or at the salon.',
     book: 'Book online',
     call: 'Call',
     from: 'from',
     bookThis: 'Book',
     notesTitle: 'Good to know',
     notes: [
-      'Price depends on length and thickness, and we confirm it with you before we start.',
+      'Price depends on hair length and thickness.',
       'For colour on very thick or very long hair there is a +€19 add-on for the extra product and time.',
       'Free sensitivity test before your first colour.',
       'Wearing extensions? Mention it when you book so we reserve the right time.'

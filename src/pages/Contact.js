@@ -1,5 +1,5 @@
 import React from 'react';
-import NhLayout, { BOOK, PHONE, PHONE_DISPLAY, GOOGLE_PROFILE_URL, MAP_EMBED_URL, MOBILE, MOBILE_DISPLAY, WHATSAPP_URL, VIBER_URL, FACETIME_URL } from '../components/NhLayout';
+import NhLayout, { BOOK, PHONE, PHONE_DISPLAY, GOOGLE_PROFILE_URL, MAP_EMBED_URL, MOBILE, WHATSAPP_URL, VIBER_URL, FACETIME_URL } from '../components/NhLayout';
 
 // Hours & contact (2026 design). The opening hours are NOT written here on purpose:
 // the owner keeps them up to date on the Google Business Profile, so we link there.
@@ -12,7 +12,7 @@ const text = {
     hoursText: 'Το ωράριό μας ενημερώνεται πάντα στο Google, μαζί με αργίες και αλλαγές της εβδομάδας.',
     hoursCta: 'Δες το ωράριο στο Google',
     bookTitle: 'Κλείσε ραντεβού online',
-    bookText: 'Δες ελεύθερες ώρες, τιμές και χρόνους και κλείσε σε ένα λεπτό. Πληρώνεις στο κομμωτήριο.',
+    bookText: 'Δες ελεύθερες ώρες, τιμές και χρόνους και κλείσε σε ένα λεπτό. Πληρώνεις online ή στο κομμωτήριο.',
     bookCta: 'Κλείσε online',
     addressTitle: 'Διεύθυνση',
     address: 'Ερυσίχθονος 3-5, Θησείο, Αθήνα 118 51',
@@ -32,7 +32,7 @@ const text = {
     hoursText: 'Our opening hours are always up to date on Google, including holidays and changes during the week.',
     hoursCta: 'See opening hours on Google',
     bookTitle: 'Book online',
-    bookText: 'See free times, prices and durations and book in a minute. You pay at the salon.',
+    bookText: 'See free times, prices and durations and book in a minute. Pay online or at the salon.',
     bookCta: 'Book online',
     addressTitle: 'Address',
     address: 'Erysichthonos 3-5, Thiseio, Athens 118 51',
@@ -85,7 +85,7 @@ const Contact = ({ language, setLanguage }) => {
             <div className="nh-contact-row">
               <a href={`tel:${PHONE}`} className="nh-btn nh-btn-ghost nh-btn-sm">{t.call}</a>
             </div>
-            <p>{t.mobileTitle}: {MOBILE_DISPLAY}</p>
+            <p>{t.mobileTitle}</p>
             <div className="nh-contact-row">
               <a href={`tel:${MOBILE}`} className="nh-btn nh-btn-ghost nh-btn-sm">{t.mobileCall}</a>
               <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="nh-btn nh-btn-ghost nh-btn-sm">WhatsApp</a>
