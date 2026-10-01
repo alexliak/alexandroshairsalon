@@ -26,7 +26,8 @@ const layoutText = {
       { label: 'Υπηρεσίες & τιμές', to: '/services' },
       { label: 'L’Oréal & Redken', href: '/#brands' },
       { label: 'Ωράριο', to: '/hours' },
-      { label: 'Shop', to: '/shop' }
+      { label: 'Shop', to: '/shop' },
+      { label: 'We are hiring', to: '/douleia', hiring: true }
     ],
     menu: 'Κύριο μενού',
     city: 'Θησείο',
@@ -59,7 +60,8 @@ const layoutText = {
       { label: 'Services & prices', to: '/services' },
       { label: 'L’Oréal & Redken', href: '/#brands' },
       { label: 'Hours', to: '/hours' },
-      { label: 'Shop', to: '/shop' }
+      { label: 'Shop', to: '/shop' },
+      { label: 'We are hiring', to: '/douleia', hiring: true }
     ],
     menu: 'Main menu',
     city: 'Thiseio',
@@ -136,7 +138,7 @@ const NhLayout = ({ language, setLanguage, children }) => {
               <NavLink
                 key={item.label}
                 to={item.to}
-                className={({ isActive }) => `nh-nav-link${isActive ? ' is-active' : ''}`}
+                className={({ isActive }) => `nh-nav-link${item.hiring ? ' nh-nav-hiring' : ''}${isActive ? ' is-active' : ''}`}
               >
                 {item.label}
               </NavLink>
@@ -171,12 +173,12 @@ const NhLayout = ({ language, setLanguage, children }) => {
       </header>
 
       <nav className="nh-subnav" aria-label={t.menu}>
-        {t.nav.map((item) =>
+        {[...t.nav.filter((i) => i.hiring), ...t.nav.filter((i) => !i.hiring)].map((item) =>
           item.to ? (
             <NavLink
               key={item.label}
               to={item.to}
-              className={({ isActive }) => `nh-subnav-link${isActive ? ' is-active' : ''}`}
+              className={({ isActive }) => `nh-subnav-link${item.hiring ? ' nh-nav-hiring' : ''}${isActive ? ' is-active' : ''}`}
             >
               {item.label}
             </NavLink>

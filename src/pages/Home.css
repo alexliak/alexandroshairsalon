@@ -385,3 +385,11 @@
   .nh-job-form { grid-template-columns: 1fr; }
   .nh-job-form button { justify-self: stretch; }
 }
+
+/* "We are hiring" in the top bar: gold pill so job seekers spot it */
+.nh .nh-nav-link.nh-nav-hiring,
+.nh .nh-subnav-link.nh-nav-hiring { border: 1px solid var(--nh-gold); color: var(--nh-gold); border-radius: 999px; padding: 8px 14px; white-space: nowrap; }
+.nh .nh-nav-link.nh-nav-hiring:hover,
+.nh .nh-subnav-link.nh-nav-hiring:hover,
+.nh .nh-nav-hiring.is-active { background: var(--nh-gold); color: var(--nh-ink); }
+@media (max-width: 1320px) { .nh-nav { gap: 20px; font-size: 14px; } }

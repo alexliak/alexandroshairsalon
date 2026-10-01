@@ -158,6 +158,7 @@ def page(path, title, desc, body, ld, extra_head="", mbar=True):
   <nav aria-label="Κύριο μενού">
     <a class="hide-m" href="/services">Υπηρεσίες &amp; τιμές</a>
     <a class="hide-m" href="/hours">Ωράριο</a>
+    <a class="hide-m" href="/douleia" style="color:var(--gold)">We are hiring</a>
     <span class="icons" role="group" aria-label="Επικοινωνία στο κινητό">
       <a class="ph" href="tel:+306981319000" aria-label="Κλήση στο κινητό" title="Κλήση στο κινητό">{ICONS['FaPhoneAlt']}</a>
       <a class="wa" href="https://wa.me/306981319000" target="_blank" rel="noopener" aria-label="Μήνυμα στο WhatsApp" title="WhatsApp">{ICONS['FaWhatsapp']}</a>
