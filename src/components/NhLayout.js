@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { FaWhatsapp, FaViber, FaPhoneAlt, FaVideo, FaArrowUp, FaMapMarkerAlt } from 'react-icons/fa';
+import { FaWhatsapp, FaViber, FaPhoneAlt, FaArrowUp, FaMapMarkerAlt } from 'react-icons/fa';
 import { Link, NavLink, useLocation } from 'react-router-dom';
 import '../pages/Home.css';
 
@@ -123,8 +123,7 @@ const NhLayout = ({ language, setLanguage, children }) => {
     { href: GOOGLE_PROFILE_URL, label: t.findUs, Icon: FaMapMarkerAlt, cls: 'is-map', external: true },
     { href: `tel:${MOBILE}`, label: t.callMobile, Icon: FaPhoneAlt, cls: 'is-call' },
     { href: WHATSAPP_URL, label: t.whatsapp, Icon: FaWhatsapp, cls: 'is-wa', external: true },
-    { href: VIBER_URL, label: t.viber, Icon: FaViber, cls: 'is-viber' },
-    { href: FACETIME_URL, label: t.facetime, Icon: FaVideo, cls: 'is-ft' }
+    { href: VIBER_URL, label: t.viber, Icon: FaViber, cls: 'is-viber' }
   ];
 
   return (

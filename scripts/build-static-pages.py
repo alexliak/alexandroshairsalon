@@ -165,7 +165,6 @@ def page(path, title, desc, body, ld, extra_head="", mbar=True):
       <a class="ph" href="tel:+306981319000" aria-label="Κλήση στο κινητό" title="Κλήση στο κινητό">{ICONS['FaPhoneAlt']}</a>
       <a class="wa" href="https://wa.me/306981319000" target="_blank" rel="noopener" aria-label="Μήνυμα στο WhatsApp" title="WhatsApp">{ICONS['FaWhatsapp']}</a>
       <a class="vb" href="viber://chat?number=%2B306981319000" aria-label="Μήνυμα στο Viber" title="Viber">{ICONS['FaViber']}</a>
-      <a class="ft" href="facetime:+306981319000" aria-label="Κλήση FaceTime" title="FaceTime">{ICONS['FaVideo']}</a>
     </span>
     <a class="btn gold" href="/kratisi/">Κλείσε ραντεβού</a>
   </nav>

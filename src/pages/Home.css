@@ -394,3 +394,13 @@
 .nh .nh-nav-hiring.is-active { background: var(--nh-gold); color: var(--nh-ink); }
 @media (max-width: 1320px) { .nh-nav { gap: 20px; font-size: 14px; } }
 .nh .nh-icon.is-map:hover, .nh .nh-icon.is-map:focus-visible { background: #ea4335; border-color: #ea4335; color: #fff; }
+
+/* Mobile header: logo may shrink, actions and the EN/EL button never get pushed off-screen */
+.nh-header .nh-logo { min-width: 0; flex: 0 1 auto; overflow: hidden; }
+.nh-header-actions { flex: 0 0 auto; }
+.nh-lang { flex: 0 0 auto; }
+@media (max-width: 380px) {
+  .nh-logo-sub { display: none; }
+  .nh .nh-icon { width: 32px; height: 32px; }
+  .nh-icons { gap: 4px; }
+}
