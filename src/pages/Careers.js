@@ -34,7 +34,7 @@ const text = {
     expOptions: ['Καμία', 'Έως 1 χρόνο', '1–3 χρόνια', 'Πάνω από 3 χρόνια'],
     availability: 'Από πότε μπορείς να ξεκινήσεις;',
     message: 'Πες μας λίγα λόγια για σένα',
-    cv: 'Βιογραφικό (PDF, Word ή φωτογραφία)',
+    cv: 'Βιογραφικό (PDF, Word ή φωτογραφία, έως 10MB)',
     consent: 'Συμφωνώ να χρησιμοποιηθούν τα στοιχεία μου μόνο για αυτή την αίτηση εργασίας.',
     submit: 'Αποστολή αίτησης',
     subject: 'Νέα αίτηση εργασίας: Βοηθός κομμωτηρίου',
@@ -67,7 +67,7 @@ const text = {
     expOptions: ['None', 'Up to 1 year', '1–3 years', 'More than 3 years'],
     availability: 'When can you start?',
     message: 'Tell us a little about yourself',
-    cv: 'CV (PDF, Word or photo)',
+    cv: 'CV (PDF, Word or photo, up to 10MB)',
     consent: 'I agree that my details are used only for this job application.',
     submit: 'Send application',
     subject: 'New job application: Salon assistant',
@@ -124,6 +124,8 @@ const Careers = ({ language, setLanguage }) => {
                 <input type="hidden" name="_subject" value={t.subject} />
                 <input type="hidden" name="_next" value={THANKS_URL} />
                 <input type="hidden" name="_template" value="table" />
+                {/* No FormSubmit captcha step: that extra page re-posts the form without the file, so the CV was lost. The _honey field still blocks spam bots. */}
+                <input type="hidden" name="_captcha" value="false" />
                 <input type="text" name="_honey" className="nh-hp" tabIndex="-1" autoComplete="off" aria-hidden="true" />
 
                 <label>
