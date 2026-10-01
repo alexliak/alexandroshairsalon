@@ -4,7 +4,7 @@ import NhLayout from '../components/NhLayout';
 // "We are hiring" page. The form posts to FormSubmit (formsubmit.co), which emails
 // every application, CV attached, to the salon inbox. No backend needed on GitHub Pages.
 // The first application triggers a one-time activation email to the inbox: click it.
-const FORM_ACTION = 'https://formsubmit.co/info@alexandroshairsalon.gr';
+const FORM_ACTION = 'https://formsubmit.co/liakopoulosalex@gmail.com';
 const THANKS_URL = 'https://alexandroshairsalon.gr/douleia#sent';
 
 const text = {
