@@ -39,6 +39,23 @@ MENU = {
     "balayage_pack": ("Balayage, κούρεμα & Blowout (πακέτο)", [("Μερικές · έως τους ώμους", "2 ώρες 40′", 100), ("Μερικές · κάτω από τους ώμους", "3 ώρες 10′", 133)]),
 }
 
+LANG_JS = """<script>
+(function(){
+  var KEY='ahs-lang', els=[].slice.call(document.querySelectorAll('[data-en]'));
+  els.forEach(function(e){e.setAttribute('data-el', e.innerHTML);});
+  var b=document.querySelector('[data-lang-toggle]');
+  function set(l){
+    els.forEach(function(e){e.innerHTML=e.getAttribute(l==='en'?'data-en':'data-el');});
+    document.documentElement.lang=l;
+    if(b){b.textContent=l==='en'?'EL':'EN';b.setAttribute('aria-label',l==='en'?'Αλλαγή στα Ελληνικά':'Switch to English');}
+    try{localStorage.setItem(KEY,l);}catch(e){}
+  }
+  var cur='el';try{cur=localStorage.getItem(KEY)||'el';}catch(e){}
+  if(cur==='en')set('en');
+  if(b)b.addEventListener('click',function(){cur=(cur==='en'?'el':'en');set(cur);});
+})();
+</script>"""
+
 GA = """<script async src="https://www.googletagmanager.com/gtag/js?id=G-S7ZQL4YMJ7"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-S7ZQL4YMJ7');</script>"""
 
@@ -102,6 +119,8 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
 .totop svg{width:18px;height:18px}.totop.on{opacity:1;visibility:visible}.totop:hover{background:var(--gold);color:var(--ink)}
 @media (max-width:760px){.top .btn.gold{display:none}.icons a{width:34px;height:34px}.icons a svg{width:16px;height:16px}.icons{gap:5px}.logo b{font-size:19px}.logo span{letter-spacing:.1em;font-size:9px}.totop{bottom:96px;right:14px;width:44px;height:44px}}
 @media (prefers-reduced-motion:reduce){.totop{transition:none}}
+.lang{flex:none;min-width:40px;height:40px;border-radius:999px;border:1px solid #5a5247;background:transparent;color:var(--text);font:700 13px var(--sans);cursor:pointer}.lang:hover{border-color:var(--gold);color:var(--gold)}
+@media (max-width:760px){.lang{min-width:34px;height:34px}}
 .mbar{gap:10px}.mbar span{white-space:nowrap;font-size:12.5px}.mbar .btn{white-space:nowrap;padding:0 16px}
 """
 
@@ -131,7 +150,7 @@ def offers(keys):
     return [{k: v for k, v in o.items() if v is not None} for o in out]
 
 
-def page(path, title, desc, body, ld, extra_head="", mbar=True):
+def page(path, title, desc, body, ld, extra_head="", mbar=True, bilingual=False):
     ld_tags = "\n".join(f'<script type="application/ld+json">{json.dumps(x, ensure_ascii=False)}</script>' for x in ld)
     doc = f"""<!doctype html>
 <html lang="el">
@@ -157,8 +176,8 @@ def page(path, title, desc, body, ld, extra_head="", mbar=True):
 <header class="top"><div class="wrap">
   <a class="logo" href="/"><b>Alexandros</b><span>Hair Salon · Θησείο</span></a>
   <nav aria-label="Κύριο μενού">
-    <a class="hide-m" href="/services">Υπηρεσίες &amp; τιμές</a>
-    <a class="hide-m" href="/hours">Ωράριο</a>
+    <a class="hide-m" href="/services" data-en="Services &amp; prices">Υπηρεσίες &amp; τιμές</a>
+    <a class="hide-m" href="/hours" data-en="Hours">Ωράριο</a>
     <a class="hide-m" href="/douleia" style="color:var(--gold)">We are hiring</a>
     <span class="icons" role="group" aria-label="Επικοινωνία στο κινητό">
       <a class="mp" href="https://www.google.com/maps/place/alexandroshairsalon/@37.976933,23.7162736,17z/data=!3m1!4b1!4m6!3m5!1s0x14a1bd200f79f18d:0x3024d28633f32b4!8m2!3d37.976933!4d23.7162736!16s%2Fg%2F11cm0h21cx" target="_blank" rel="noopener" aria-label="Πού θα μας βρεις: άνοιγμα στο Google Maps" title="Google Maps">{ICONS['FaMapMarkerAlt']}</a>
@@ -166,7 +185,8 @@ def page(path, title, desc, body, ld, extra_head="", mbar=True):
       <a class="wa" href="https://wa.me/306981319000" target="_blank" rel="noopener" aria-label="Μήνυμα στο WhatsApp" title="WhatsApp">{ICONS['FaWhatsapp']}</a>
       <a class="vb" href="viber://chat?number=%2B306981319000" aria-label="Μήνυμα στο Viber" title="Viber">{ICONS['FaViber']}</a>
     </span>
-    <a class="btn gold" href="/kratisi/">Κλείσε ραντεβού</a>
+    <a class="btn gold" href="/kratisi/" data-en="Book now">Κλείσε ραντεβού</a>
+    {'<button type="button" class="lang" data-lang-toggle aria-label="Switch to English">EN</button>' if bilingual else ''}
   </nav>
 </div></header>
 <main class="wrap" id="main" tabindex="-1">
@@ -183,6 +203,7 @@ def page(path, title, desc, body, ld, extra_head="", mbar=True):
 window.addEventListener('scroll',f,{{passive:true}});f();
 b.addEventListener('click',function(){{var r=window.matchMedia('(prefers-reduced-motion: reduce)').matches;window.scrollTo({{top:0,behavior:r?'auto':'smooth'}});document.getElementById('main').focus({{preventScroll:true}});}});}})();
 </script>
+{LANG_JS if bilingual else ''}
 </body>
 </html>
 """
@@ -321,26 +342,26 @@ a#wahanda-online-booking-widget.btn:hover{{filter:brightness(1.08)}}
 </style>"""
 kratisi_body = f"""
 <section class="hero" style="padding-bottom:20px">
-  <span class="eyebrow">Online κράτηση · Book online</span>
-  <h1>Κλείσε ραντεβού <em>σε ένα λεπτό.</em></h1>
-  <p class="lead">Διάλεξε υπηρεσία και ώρα παρακάτω. Βλέπεις τιμή και διάρκεια και πληρώνεις online ή στο κομμωτήριο. <span lang="en">Choose a service and time below, pay online or at the salon.</span></p>
+  <span class="eyebrow" data-en="Book online">Online κράτηση</span>
+  <h1 data-en="Book in <em>one minute.</em>">Κλείσε ραντεβού <em>σε ένα λεπτό.</em></h1>
+  <p class="lead" data-en="Choose a service and time below. You see the price and duration and pay online or at the salon.">Διάλεξε υπηρεσία και ώρα παρακάτω. Βλέπεις τιμή και διάρκεια και πληρώνεις online ή στο κομμωτήριο.</p>
   <div class="cta">
-    <a class="btn gold" href="{WIDGET}" id="wahanda-online-booking-widget" onclick='wahanda.openOnlineBookingWidget("{WIDGET}"); return false;' target="_blank"><span>Άνοιγμα σε πλήρη οθόνη · Book now</span></a>
-    <a class="btn ghost" href="tel:{PHONE}">Κάλεσε {PHONE_TXT}</a>
+    <a class="btn gold" href="{WIDGET}" id="wahanda-online-booking-widget" onclick='wahanda.openOnlineBookingWidget("{WIDGET}"); return false;' target="_blank"><span data-en="Open full screen">Άνοιγμα σε πλήρη οθόνη</span></a>
+    <a class="btn ghost" href="tel:{PHONE}" data-en="Call {PHONE_TXT}">Κάλεσε {PHONE_TXT}</a>
   </div>
 </section>
 <section style="padding-bottom:24px">
   <div id="wahanda-online-booking-widget-iframe" data-widget-url="{WIDGET}"></div>
-  <p class="tw-fallback">Δεν εμφανίζεται το ημερολόγιο; <a href="{WIDGET}" target="_blank" rel="noopener">Άνοιξε την κράτηση εδώ</a> ή κάλεσε στο <a href="tel:{PHONE}">{PHONE_TXT}</a>.</p>
+  <p class="tw-fallback" data-en='Calendar not showing? <a href="{WIDGET}" target="_blank" rel="noopener">Open the booking here</a> or call <a href="tel:{PHONE}">{PHONE_TXT}</a>.'>Δεν εμφανίζεται το ημερολόγιο; <a href="{WIDGET}" target="_blank" rel="noopener">Άνοιξε την κράτηση εδώ</a> ή κάλεσε στο <a href="tel:{PHONE}">{PHONE_TXT}</a>.</p>
 </section>
 <section class="block prose">
-  <h2>Καλό να ξέρεις</h2>
-  <p>Η τιμή εξαρτάται από το μήκος των μαλλιών. Στη βαφή για πολύ πυκνά ή πολύ μακριά μαλλιά υπάρχει η προσθήκη +€19. Δωρεάν τεστ ευαισθησίας πριν από την πρώτη σου βαφή. Έχεις extensions; Γράψ’ το στην κράτηση για να κρατήσουμε τον σωστό χρόνο.</p>
-  <p><a href="/services">Όλος ο τιμοκατάλογος με περιγραφές →</a></p>
+  <h2 data-en="Good to know">Καλό να ξέρεις</h2>
+  <p data-en="Prices and times are approximate. Long or thick hair often needs a little more product and time; for colour on very thick or very long hair there is a +€19 add-on. Free sensitivity test before your first colour. Wearing extensions? Mention it when you book so we reserve the right time.">Οι τιμές και οι χρόνοι είναι κατά προσέγγιση. Τα μακριά ή πυκνά μαλλιά θέλουν συχνά λίγο παραπάνω προϊόν και χρόνο· στη βαφή για πολύ πυκνά ή πολύ μακριά μαλλιά υπάρχει η προσθήκη +€19. Δωρεάν τεστ ευαισθησίας πριν από την πρώτη σου βαφή. Έχεις extensions; Γράψ’ το στην κράτηση για να κρατήσουμε τον σωστό χρόνο.</p>
+  <p><a href="/services" data-en="Full price list with descriptions →">Όλος ο τιμοκατάλογος με περιγραφές →</a></p>
 </section>
 """
 kratisi_ld = [{"@context": "https://schema.org", **{k: v for k, v in SALON_REF.items() if k != "@type"}, "@type": "HairSalon",
                "potentialAction": {"@type": "ReserveAction", "target": f"{SITE}/kratisi/"}}]
 page("/kratisi/", "Κράτηση ραντεβού online | Alexandros Hair Salon – Κομμωτήριο Θησείο",
-     "Κλείσε online ραντεβού στο Alexandros Hair Salon στο Θησείο, Αθήνα: κούρεμα, Blowout, βαφή, balayage, κερατίνη. Βλέπεις ελεύθερες ώρες, τιμή και διάρκεια. Πληρωμή στο κομμωτήριο.",
-     kratisi_body, kratisi_ld, extra_head=kratisi_head, mbar=False)
+     "Κλείσε online ραντεβού στο Alexandros Hair Salon στο Θησείο, Αθήνα: κούρεμα, Blowout, βαφή, balayage, κερατίνη. Βλέπεις ελεύθερες ώρες, τιμή και διάρκεια. Πληρωμή online ή στο κομμωτήριο.",
+     kratisi_body, kratisi_ld, extra_head=kratisi_head, mbar=False, bilingual=True)
