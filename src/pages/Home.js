@@ -56,6 +56,8 @@ const content = {
     promises: ['Πρώτα ακούμε.', 'Ό,τι δεν σου ταιριάζει, θα σου το πούμε.'],
     jobsText: 'We are hiring: ψάχνουμε βοηθό κομμωτηρίου με όρεξη για δουλειά και εκπαίδευση. Σταθερή εργασία.',
     jobsCta: 'Δες τη θέση →',
+    modelsText: 'Ψάχνουμε μοντέλα μαλλιών, κυρίως γυναίκες κάθε ηλικίας, για κούρεμα, χρώμα και φωτογράφιση.',
+    modelsCta: 'Γίνε μοντέλο μας →',
     visitTitleA: 'Σε περιμένουμε',
     visitTitleEm: 'στο Θησείο.',
     address: 'Ερυσίχθονος 3-5, Θησείο, Αθήνα 118 51',
@@ -114,6 +116,8 @@ const content = {
     promises: ['We listen first.', 'If something doesn’t suit you, we’ll tell you.'],
     jobsText: 'We are hiring: a salon assistant eager to work and learn. Stable, long-term position.',
     jobsCta: 'See the job →',
+    modelsText: 'We are looking for hair models, mostly women of any age, for cuts, colour and photo shoots.',
+    modelsCta: 'Be our model →',
     visitTitleA: 'See you',
     visitTitleEm: 'in Thiseio.',
     address: 'Erysichthonos 3-5, Thiseio, Athens 118 51',
@@ -240,6 +244,10 @@ const Home = ({ language, setLanguage }) => {
         <section className="nh-jobs-strip" aria-label={language === 'el' ? 'Θέση εργασίας' : 'Job opening'}>
           <p>{t.jobsText}</p>
           <Link to="/douleia" className="nh-underline">{t.jobsCta}</Link>
+        </section>
+        <section className="nh-jobs-strip nh-jobs-strip-2" aria-label={language === 'el' ? 'Μοντέλα μαλλιών' : 'Hair models'}>
+          <p>{t.modelsText}</p>
+          <Link to="/montela" className="nh-underline">{t.modelsCta}</Link>
         </section>
 
         <section className="nh-section nh-visit" id="visit">

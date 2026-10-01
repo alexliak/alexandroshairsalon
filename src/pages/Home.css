@@ -404,3 +404,30 @@
   .nh .nh-icon { width: 32px; height: 32px; }
   .nh-icons { gap: 4px; }
 }
+
+/* Hair models page: checkbox groups + second home strip */
+.nh-jobs-strip-2 { margin-top: 12px; }
+.nh-job-checks { border: 0; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 10px 18px; }
+.nh-job-checks legend { font-size: 15px; color: var(--nh-soft); margin-bottom: 8px; padding: 0; width: 100%; }
+.nh-job-form .nh-job-checks label { flex-direction: row; align-items: center; gap: 8px; color: var(--nh-text); }
+.nh-job-checks input { width: 20px; height: 20px; accent-color: var(--nh-gold); }
+.nh-job-form select:invalid { color: var(--nh-muted); }
+
+/* "Γίνε μοντέλο" in the top bar: gold text so it stands out next to the hiring pill */
+.nh .nh-nav-link.nh-nav-promo { color: var(--nh-gold); }
+.nh .nh-subnav-link.nh-nav-promo { border-color: var(--nh-gold); color: var(--nh-gold); }
+@media (max-width: 1320px) { .nh-nav { gap: 16px; font-size: 14px; } }
+/* Six menu items no longer fit next to the icons on laptops: use the pill row under the header up to 1440px */
+@media (max-width: 1440px) {
+  .nh-nav { display: none; }
+  .nh-subnav {
+    position: sticky; top: 84px; z-index: 19; display: flex; gap: 8px; overflow-x: auto;
+    padding: 10px var(--nh-pad); background: rgba(18, 16, 14, 0.94); border-bottom: 1px solid var(--nh-line);
+    scrollbar-width: none;
+  }
+  .nh-subnav::-webkit-scrollbar { display: none; }
+  .nh .nh-subnav-link { flex: 0 0 auto; display: inline-flex; align-items: center; min-height: 40px; padding: 0 16px; border-radius: 999px; border: 1px solid var(--nh-line); color: var(--nh-text); text-decoration: none; font-size: 14px; }
+  .nh .nh-subnav-link.is-active { border-color: var(--nh-gold); color: var(--nh-gold); }
+  .nh .nh-subnav-link.nh-nav-hiring, .nh .nh-subnav-link.nh-nav-promo { border-color: var(--nh-gold); color: var(--nh-gold); }
+}
+@media (max-width: 820px) { .nh-subnav { top: 68px; } }

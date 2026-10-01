@@ -19,6 +19,7 @@ import Contact from './pages/Contact';
 import Landing50 from './pages/Landing50';
 import Shop from './pages/Shop';
 import Careers from './pages/Careers';
+import Models from './pages/Models';
 import Chatbot from './components/Chatbot';
 import NhLayout from './components/NhLayout';
 import AccessibilityControls from './components/AccessibilityControls';
@@ -110,7 +111,8 @@ const AppContent = () => {
       '/services': `${baseUrl}/services`,
       '/hours': `${baseUrl}/hours`,
       '/prosfora50': `${baseUrl}/prosfora50`,
-      '/douleia': `${baseUrl}/douleia`
+      '/douleia': `${baseUrl}/douleia`,
+      '/montela': `${baseUrl}/montela`
     };
 
     const titleMap = {
@@ -119,7 +121,8 @@ const AppContent = () => {
       '/hours': 'Ωράριο & Επικοινωνία | Κομμωτήριο Θησείο, Αθήνα | Alexandros Hair Salon',
       '/prosfora50': 'Προσφορά 50% Καλωσορίσματος - Alexandros Hair Salon',
       '/shop': 'Επαγγελματικά Προϊόντα Μαλλιών EVOQUE | Κερατίνη, Frizz Control | Alexandros Hair Salon',
-      '/douleia': 'Θέση εργασίας: Βοηθός κομμωτηρίου στο Θησείο | Alexandros Hair Salon'
+      '/douleia': 'Θέση εργασίας: Βοηθός κομμωτηρίου στο Θησείο | Alexandros Hair Salon',
+      '/montela': 'Ζητούνται μοντέλα μαλλιών για κούρεμα και χρώμα | Alexandros Hair Salon, Θησείο'
     };
 
     const descriptionMap = {
@@ -128,7 +131,8 @@ const AppContent = () => {
       '/hours': 'Ωράριο, διεύθυνση και τηλέφωνο του Alexandros Hair Salon, Ερυσίχθονος 3-5, Θησείο, Αθήνα. Κλείσε ραντεβού online.',
       '/prosfora50': 'Κλείσε ραντεβού για κούρεμα, βαφή, ανταύγειες με 50% έκπτωση στην πρώτη σου επίσκεψη. Θησείο, Αθήνα.',
       '/shop': 'Επαγγελματικά προϊόντα μαλλιών EVOQUE για χρήση στο σπίτι. Σαμπουάν κερατίνης, μάσκες για φριζαρισμένα & σγουρά μαλλιά, styling. Αποστολή πανελλαδικά.',
-      '/douleia': 'Ψάχνουμε βοηθό κομμωτηρίου με όρεξη για δουλειά και εκπαίδευση. Σταθερή εργασία στο Θησείο. Στείλε αίτηση και βιογραφικό online.'
+      '/douleia': 'Ψάχνουμε βοηθό κομμωτηρίου με όρεξη για δουλειά και εκπαίδευση. Σταθερή εργασία στο Θησείο. Στείλε αίτηση και βιογραφικό online.',
+      '/montela': 'Ψάχνουμε μοντέλα μαλλιών, κυρίως γυναίκες κάθε ηλικίας, για νέες τεχνικές χρώματος και κουρέματος και φωτογράφιση. Τίποτα ακραίο, το αποτέλεσμα το αποφασίζουμε μαζί.'
     };
 
     const canonicalUrl = canonicalMap[location.pathname] || `${baseUrl}${location.pathname}`;
@@ -227,6 +231,9 @@ const AppContent = () => {
   }
   if (location.pathname === '/hours') {
     return <Contact language={language} setLanguage={setLanguage} />;
+  }
+  if (location.pathname === '/montela') {
+    return <Models language={language} setLanguage={setLanguage} />;
   }
   if (location.pathname === '/douleia') {
     return <Careers language={language} setLanguage={setLanguage} />;

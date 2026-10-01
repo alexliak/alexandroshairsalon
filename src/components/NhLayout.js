@@ -27,6 +27,7 @@ const layoutText = {
       { label: 'L’Oréal & Redken', href: '/#brands' },
       { label: 'Ωράριο', to: '/hours' },
       { label: 'Shop', to: '/shop' },
+      { label: 'Γίνε μοντέλο', to: '/montela', promo: true },
       { label: 'We are hiring', to: '/douleia', hiring: true }
     ],
     menu: 'Κύριο μενού',
@@ -38,6 +39,7 @@ const layoutText = {
     footerShop: 'Online Shop',
     footerHours: 'Ωράριο στο Google',
     footerJobs: 'Δουλειά μαζί μας',
+    footerModels: 'Γίνε μοντέλο μας',
     langSwitch: 'EN',
     langAria: 'Switch to English',
     skip: 'Μετάβαση στο περιεχόμενο',
@@ -62,6 +64,7 @@ const layoutText = {
       { label: 'L’Oréal & Redken', href: '/#brands' },
       { label: 'Hours', to: '/hours' },
       { label: 'Shop', to: '/shop' },
+      { label: 'Be our model', to: '/montela', promo: true },
       { label: 'We are hiring', to: '/douleia', hiring: true }
     ],
     menu: 'Main menu',
@@ -73,6 +76,7 @@ const layoutText = {
     footerShop: 'Online Shop',
     footerHours: 'Hours on Google',
     footerJobs: 'We are hiring',
+    footerModels: 'Be our model',
     langSwitch: 'EL',
     langAria: 'Αλλαγή στα Ελληνικά',
     skip: 'Skip to content',
@@ -140,7 +144,7 @@ const NhLayout = ({ language, setLanguage, children }) => {
               <NavLink
                 key={item.label}
                 to={item.to}
-                className={({ isActive }) => `nh-nav-link${item.hiring ? ' nh-nav-hiring' : ''}${isActive ? ' is-active' : ''}`}
+                className={({ isActive }) => `nh-nav-link${item.hiring ? ' nh-nav-hiring' : ''}${item.promo ? ' nh-nav-promo' : ''}${isActive ? ' is-active' : ''}`}
               >
                 {item.label}
               </NavLink>
@@ -175,12 +179,12 @@ const NhLayout = ({ language, setLanguage, children }) => {
       </header>
 
       <nav className="nh-subnav" aria-label={t.menu}>
-        {[...t.nav.filter((i) => i.hiring), ...t.nav.filter((i) => !i.hiring)].map((item) =>
+        {[...t.nav.filter((i) => i.hiring || i.promo), ...t.nav.filter((i) => !i.hiring && !i.promo)].map((item) =>
           item.to ? (
             <NavLink
               key={item.label}
               to={item.to}
-              className={({ isActive }) => `nh-subnav-link${item.hiring ? ' nh-nav-hiring' : ''}${isActive ? ' is-active' : ''}`}
+              className={({ isActive }) => `nh-subnav-link${item.hiring ? ' nh-nav-hiring' : ''}${item.promo ? ' nh-nav-promo' : ''}${isActive ? ' is-active' : ''}`}
             >
               {item.label}
             </NavLink>
@@ -199,6 +203,7 @@ const NhLayout = ({ language, setLanguage, children }) => {
         <span className="nh-footer-links">
           <Link to="/shop">{t.footerShop}</Link>
           <Link to="/douleia">{t.footerJobs}</Link>
+          <Link to="/montela">{t.footerModels}</Link>
           <a href={GOOGLE_PROFILE_URL} target="_blank" rel="noopener noreferrer">{t.footerHours}</a>
           <a href="https://www.facebook.com/alexandros.hairsalon" target="_blank" rel="noopener noreferrer">Facebook</a>
           <a href={`tel:${PHONE}`}>{PHONE_DISPLAY}</a>
