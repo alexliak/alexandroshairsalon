@@ -44,7 +44,7 @@ const layoutText = {
     langAria: 'Switch to English',
     skip: 'Μετάβαση στο περιεχόμενο',
     contactNav: 'Επικοινωνία στο κινητό',
-    callMobile: 'Κλήση στο κινητό',
+    callSalon: 'Κλήση στο κομμωτήριο 210 346 5554',
     findUs: 'Πού θα μας βρεις: άνοιγμα στο Google Maps',
     whatsapp: 'Μήνυμα στο WhatsApp',
     viber: 'Μήνυμα στο Viber',
@@ -81,7 +81,7 @@ const layoutText = {
     langAria: 'Αλλαγή στα Ελληνικά',
     skip: 'Skip to content',
     contactNav: 'Contact on mobile',
-    callMobile: 'Call mobile',
+    callSalon: 'Call the salon 210 346 5554',
     findUs: 'Find us: open in Google Maps',
     whatsapp: 'Message on WhatsApp',
     viber: 'Message on Viber',
@@ -125,7 +125,7 @@ const NhLayout = ({ language, setLanguage, children }) => {
 
   const icons = [
     { href: GOOGLE_PROFILE_URL, label: t.findUs, Icon: FaMapMarkerAlt, cls: 'is-map', external: true },
-    { href: `tel:${MOBILE}`, label: t.callMobile, Icon: FaPhoneAlt, cls: 'is-call' },
+    { href: `tel:${PHONE}`, label: t.callSalon, Icon: FaPhoneAlt, cls: 'is-call' },
     { href: WHATSAPP_URL, label: t.whatsapp, Icon: FaWhatsapp, cls: 'is-wa', external: true },
     { href: VIBER_URL, label: t.viber, Icon: FaViber, cls: 'is-viber' }
   ];
@@ -173,7 +173,6 @@ const NhLayout = ({ language, setLanguage, children }) => {
           <button type="button" className="nh-lang" onClick={() => setLanguage(other)} aria-label={t.langAria}>
             {t.langSwitch}
           </button>
-          <a href={`tel:${PHONE}`} className="nh-phone">{PHONE_DISPLAY}</a>
           <a href={BOOK} className="nh-btn nh-btn-gold nh-btn-sm">{t.book}</a>
         </div>
       </header>
