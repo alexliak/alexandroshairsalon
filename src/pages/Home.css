@@ -393,3 +393,4 @@
 .nh .nh-subnav-link.nh-nav-hiring:hover,
 .nh .nh-nav-hiring.is-active { background: var(--nh-gold); color: var(--nh-ink); }
 @media (max-width: 1320px) { .nh-nav { gap: 20px; font-size: 14px; } }
+.nh .nh-icon.is-map:hover, .nh .nh-icon.is-map:focus-visible { background: #ea4335; border-color: #ea4335; color: #fff; }

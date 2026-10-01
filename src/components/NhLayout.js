@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { FaWhatsapp, FaViber, FaPhoneAlt, FaVideo, FaArrowUp } from 'react-icons/fa';
+import { FaWhatsapp, FaViber, FaPhoneAlt, FaVideo, FaArrowUp, FaMapMarkerAlt } from 'react-icons/fa';
 import { Link, NavLink, useLocation } from 'react-router-dom';
 import '../pages/Home.css';
 
@@ -43,6 +43,7 @@ const layoutText = {
     skip: 'Μετάβαση στο περιεχόμενο',
     contactNav: 'Επικοινωνία στο κινητό',
     callMobile: 'Κλήση στο κινητό',
+    findUs: 'Πού θα μας βρεις: άνοιγμα στο Google Maps',
     whatsapp: 'Μήνυμα στο WhatsApp',
     viber: 'Μήνυμα στο Viber',
     facetime: 'Κλήση FaceTime',
@@ -77,6 +78,7 @@ const layoutText = {
     skip: 'Skip to content',
     contactNav: 'Contact on mobile',
     callMobile: 'Call mobile',
+    findUs: 'Find us: open in Google Maps',
     whatsapp: 'Message on WhatsApp',
     viber: 'Message on Viber',
     facetime: 'FaceTime call',
@@ -118,6 +120,7 @@ const NhLayout = ({ language, setLanguage, children }) => {
   };
 
   const icons = [
+    { href: GOOGLE_PROFILE_URL, label: t.findUs, Icon: FaMapMarkerAlt, cls: 'is-map', external: true },
     { href: `tel:${MOBILE}`, label: t.callMobile, Icon: FaPhoneAlt, cls: 'is-call' },
     { href: WHATSAPP_URL, label: t.whatsapp, Icon: FaWhatsapp, cls: 'is-wa', external: true },
     { href: VIBER_URL, label: t.viber, Icon: FaViber, cls: 'is-viber' },

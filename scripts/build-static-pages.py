@@ -96,6 +96,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
 .icons a svg{width:18px;height:18px}
 .icons a.wa:hover,.icons a.wa:focus-visible{background:#25d366;border-color:#25d366;color:#0b1f12}
 .icons a.vb:hover,.icons a.vb:focus-visible{background:#7360f2;border-color:#7360f2;color:#fff}
+.icons a.mp:hover,.icons a.mp:focus-visible{background:#ea4335;border-color:#ea4335;color:#fff}
 .icons a.ph:hover,.icons a.ph:focus-visible,.icons a.ft:hover,.icons a.ft:focus-visible{background:var(--gold);border-color:var(--gold);color:var(--ink)}
 .totop{position:fixed;right:20px;bottom:24px;z-index:31;width:48px;height:48px;border-radius:999px;border:1px solid var(--gold);background:rgba(18,16,14,.92);color:var(--gold);display:inline-flex;align-items:center;justify-content:center;cursor:pointer;opacity:0;visibility:hidden;transition:opacity .2s,visibility .2s}
 .totop svg{width:18px;height:18px}.totop.on{opacity:1;visibility:visible}.totop:hover{background:var(--gold);color:var(--ink)}
@@ -160,6 +161,7 @@ def page(path, title, desc, body, ld, extra_head="", mbar=True):
     <a class="hide-m" href="/hours">Ωράριο</a>
     <a class="hide-m" href="/douleia" style="color:var(--gold)">We are hiring</a>
     <span class="icons" role="group" aria-label="Επικοινωνία στο κινητό">
+      <a class="mp" href="https://www.google.com/maps/place/alexandroshairsalon/@37.976933,23.7162736,17z/data=!3m1!4b1!4m6!3m5!1s0x14a1bd200f79f18d:0x3024d28633f32b4!8m2!3d37.976933!4d23.7162736!16s%2Fg%2F11cm0h21cx" target="_blank" rel="noopener" aria-label="Πού θα μας βρεις: άνοιγμα στο Google Maps" title="Google Maps">{ICONS['FaMapMarkerAlt']}</a>
       <a class="ph" href="tel:+306981319000" aria-label="Κλήση στο κινητό" title="Κλήση στο κινητό">{ICONS['FaPhoneAlt']}</a>
       <a class="wa" href="https://wa.me/306981319000" target="_blank" rel="noopener" aria-label="Μήνυμα στο WhatsApp" title="WhatsApp">{ICONS['FaWhatsapp']}</a>
       <a class="vb" href="viber://chat?number=%2B306981319000" aria-label="Μήνυμα στο Viber" title="Viber">{ICONS['FaViber']}</a>
