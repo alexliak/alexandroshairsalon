@@ -1,12 +1,12 @@
 {
  "_help": "Εικόνες στο public/images/shop/<όνομα>-400.webp και -800.webp. 'products': EAN -> φωτογραφία ΤΟΥ ΣΥΓΚΕΚΡΙΜΕΝΟΥ προϊόντος (packshot). 'rules': αν το όνομα περιέχει το κείμενο (μόνο όταν η φωτογραφία δείχνει ακριβώς αυτό το προϊόν). 'lines': φωτογραφία της σειράς, εμφανίζεται ΜΟΝΟ στις κάρτες «Σειρές», όχι στα προϊόντα. 'lineInfo.color': χρώμα της σειράς για το σχέδιο των προϊόντων χωρίς φωτογραφία.",
- "products": {},
- "rules": [
-  {
-   "contains": "Bi-Phase Oil",
-   "image": "arm-bi-phase-oil"
-  }
- ],
+ "products": {
+  "3474637090609": "md-oil",
+  "3474636976102": "pl-conditioner",
+  "3474636977307": "pl-leave-in",
+  "3474637292447": "arm-bi-phase-oil"
+ },
+ "rules": [],
  "lines": {
   "Absolut Repair Molecular": "absolut-repair-molecular",
   "Absolut Repair": "absolut-repair",

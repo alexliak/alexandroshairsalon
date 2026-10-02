@@ -408,7 +408,8 @@
      "compareAt": null,
      "stock": null,
      "active": true,
-     "pro": false
+     "pro": false,
+     "image": null
     }
    ],
    "image": null,
@@ -466,7 +467,8 @@
      "compareAt": null,
      "stock": null,
      "active": true,
-     "pro": false
+     "pro": false,
+     "image": null
     }
    ],
    "image": null,
@@ -520,7 +522,8 @@
      "compareAt": null,
      "stock": null,
      "active": true,
-     "pro": false
+     "pro": false,
+     "image": null
     },
     {
      "sku": "3474636975945",
@@ -531,7 +534,8 @@
      "compareAt": null,
      "stock": null,
      "active": true,
-     "pro": false
+     "pro": false,
+     "image": null
     },
     {
      "sku": "3474637242190",
@@ -542,7 +546,8 @@
      "compareAt": null,
      "stock": null,
      "active": true,
-     "pro": false
+     "pro": false,
+     "image": null
     },
     {
      "sku": "3474637275396",
@@ -553,7 +558,8 @@
      "compareAt": null,
      "stock": null,
      "active": true,
-     "pro": true
+     "pro": true,
+     "image": null
     }
    ],
    "image": null,
@@ -609,7 +615,8 @@
      "compareAt": null,
      "stock": null,
      "active": true,
-     "pro": false
+     "pro": false,
+     "image": null
     },
     {
      "sku": "3474637090500",
@@ -620,7 +627,8 @@
      "compareAt": null,
      "stock": null,
      "active": true,
-     "pro": false
+     "pro": false,
+     "image": null
     }
    ],
    "image": null,
@@ -672,7 +680,8 @@
      "compareAt": null,
      "stock": null,
      "active": true,
-     "pro": false
+     "pro": false,
+     "image": null
     }
    ],
    "image": null,
@@ -730,7 +739,8 @@
      "compareAt": null,
      "stock": null,
      "active": true,
-     "pro": false
+     "pro": false,
+     "image": null
     }
    ],
    "image": null,
@@ -786,10 +796,11 @@
      "compareAt": null,
      "stock": null,
      "active": true,
-     "pro": false
+     "pro": false,
+     "image": "pl-leave-in"
     }
    ],
-   "image": null,
+   "image": "pl-leave-in",
    "related": [
     "loreal-pro-longer-sampoyan",
     "loreal-pro-longer-conditioner-kata-tis-palidas-gia",
@@ -843,7 +854,8 @@
      "compareAt": null,
      "stock": null,
      "active": true,
-     "pro": false
+     "pro": false,
+     "image": null
     }
    ],
    "image": null,
@@ -900,7 +912,8 @@
      "compareAt": null,
      "stock": null,
      "active": true,
-     "pro": false
+     "pro": false,
+     "image": null
     }
    ],
    "image": null,
@@ -956,7 +969,8 @@
      "compareAt": null,
      "stock": null,
      "active": true,
-     "pro": false
+     "pro": false,
+     "image": null
     },
     {
      "sku": "3474637268985",
@@ -967,7 +981,8 @@
      "compareAt": null,
      "stock": null,
      "active": true,
-     "pro": false
+     "pro": false,
+     "image": null
     }
    ],
    "image": null,
@@ -1019,7 +1034,8 @@
      "compareAt": null,
      "stock": null,
      "active": true,
-     "pro": false
+     "pro": false,
+     "image": null
     }
    ],
    "image": null,
@@ -1074,7 +1090,8 @@
      "compareAt": null,
      "stock": null,
      "active": true,
-     "pro": false
+     "pro": false,
+     "image": null
     },
     {
      "sku": "3474637335656",
@@ -1085,7 +1102,8 @@
      "compareAt": null,
      "stock": null,
      "active": true,
-     "pro": false
+     "pro": false,
+     "image": null
     }
    ],
    "image": null,
@@ -1137,7 +1155,8 @@
      "compareAt": null,
      "stock": null,
      "active": true,
-     "pro": false
+     "pro": false,
+     "image": null
     }
    ],
    "image": null,
@@ -1187,7 +1206,8 @@
      "compareAt": null,
      "stock": null,
      "active": true,
-     "pro": false
+     "pro": false,
+     "image": null
     }
    ],
    "image": null,
@@ -1241,7 +1261,8 @@
      "compareAt": null,
      "stock": null,
      "active": true,
-     "pro": false
+     "pro": false,
+     "image": null
     }
    ],
    "image": null,
@@ -1296,7 +1317,8 @@
      "compareAt": null,
      "stock": null,
      "active": true,
-     "pro": false
+     "pro": false,
+     "image": null
     },
     {
      "sku": "3474636471706",
@@ -1307,7 +1329,8 @@
      "compareAt": null,
      "stock": null,
      "active": true,
-     "pro": false
+     "pro": false,
+     "image": null
     },
     {
      "sku": "3474636476633",
@@ -1318,7 +1341,8 @@
      "compareAt": null,
      "stock": null,
      "active": true,
-     "pro": false
+     "pro": false,
+     "image": null
     }
    ],
    "image": null,
@@ -1372,7 +1396,8 @@
      "compareAt": null,
      "stock": null,
      "active": true,
-     "pro": false
+     "pro": false,
+     "image": null
     }
    ],
    "image": null,
@@ -1426,7 +1451,8 @@
      "compareAt": null,
      "stock": null,
      "active": true,
-     "pro": false
+     "pro": false,
+     "image": null
     },
     {
      "sku": "3474637217884",
@@ -1437,7 +1463,8 @@
      "compareAt": null,
      "stock": null,
      "active": true,
-     "pro": false
+     "pro": false,
+     "image": null
     }
    ],
    "image": null,
@@ -1493,7 +1520,8 @@
      "compareAt": null,
      "stock": null,
      "active": true,
-     "pro": false
+     "pro": false,
+     "image": null
     }
    ],
    "image": null,
@@ -1545,7 +1573,8 @@
      "compareAt": null,
      "stock": null,
      "active": true,
-     "pro": false
+     "pro": false,
+     "image": null
     }
    ],
    "image": null,
@@ -1603,7 +1632,8 @@
      "compareAt": null,
      "stock": null,
      "active": true,
-     "pro": false
+     "pro": false,
+     "image": null
     }
    ],
    "image": null,
@@ -1662,7 +1692,8 @@
      "compareAt": null,
      "stock": null,
      "active": true,
-     "pro": false
+     "pro": false,
+     "image": null
     }
    ],
    "image": null,
@@ -1718,7 +1749,8 @@
      "compareAt": null,
      "stock": null,
      "active": true,
-     "pro": false
+     "pro": false,
+     "image": null
     }
    ],
    "image": null,
@@ -1774,7 +1806,8 @@
      "compareAt": null,
      "stock": null,
      "active": true,
-     "pro": false
+     "pro": false,
+     "image": null
     },
     {
      "sku": "3474637268763",
@@ -1785,7 +1818,8 @@
      "compareAt": null,
      "stock": null,
      "active": true,
-     "pro": false
+     "pro": false,
+     "image": null
     },
     {
      "sku": "3474637268503",
@@ -1796,7 +1830,8 @@
      "compareAt": null,
      "stock": null,
      "active": true,
-     "pro": true
+     "pro": true,
+     "image": null
     },
     {
      "sku": "3474637270018",
@@ -1807,7 +1842,8 @@
      "compareAt": null,
      "stock": null,
      "active": true,
-     "pro": false
+     "pro": false,
+     "image": null
     },
     {
      "sku": "3474637275518",
@@ -1818,7 +1854,8 @@
      "compareAt": null,
      "stock": null,
      "active": true,
-     "pro": true
+     "pro": true,
+     "image": null
     }
    ],
    "image": null,
@@ -1872,7 +1909,8 @@
      "compareAt": null,
      "stock": null,
      "active": true,
-     "pro": false
+     "pro": false,
+     "image": null
     },
     {
      "sku": "3474637292447",
@@ -1883,7 +1921,8 @@
      "compareAt": null,
      "stock": null,
      "active": true,
-     "pro": false
+     "pro": false,
+     "image": "arm-bi-phase-oil"
     }
    ],
    "image": "arm-bi-phase-oil",
@@ -1938,7 +1977,8 @@
      "compareAt": null,
      "stock": null,
      "active": true,
-     "pro": false
+     "pro": false,
+     "image": null
     }
    ],
    "image": null,
@@ -1994,10 +2034,11 @@
      "compareAt": null,
      "stock": null,
      "active": true,
-     "pro": false
+     "pro": false,
+     "image": "pl-conditioner"
     }
    ],
-   "image": null,
+   "image": "pl-conditioner",
    "related": [
     "loreal-pro-longer-sampoyan",
     "loreal-pro-longer-maska-kata-tis-palidas-gia",
@@ -2048,7 +2089,8 @@
      "compareAt": null,
      "stock": null,
      "active": true,
-     "pro": false
+     "pro": false,
+     "image": null
     }
    ],
    "image": null,
@@ -2105,7 +2147,8 @@
      "compareAt": null,
      "stock": null,
      "active": true,
-     "pro": false
+     "pro": false,
+     "image": null
     }
    ],
    "image": null,
@@ -2162,7 +2205,8 @@
      "compareAt": null,
      "stock": null,
      "active": true,
-     "pro": false
+     "pro": false,
+     "image": null
     }
    ],
    "image": null,
@@ -2219,7 +2263,8 @@
      "compareAt": null,
      "stock": null,
      "active": true,
-     "pro": false
+     "pro": false,
+     "image": null
     }
    ],
    "image": null,
@@ -2274,7 +2319,8 @@
      "compareAt": null,
      "stock": null,
      "active": true,
-     "pro": false
+     "pro": false,
+     "image": null
     },
     {
      "sku": "3474637153489",
@@ -2285,7 +2331,8 @@
      "compareAt": null,
      "stock": null,
      "active": true,
-     "pro": false
+     "pro": false,
+     "image": null
     }
    ],
    "image": null,
@@ -2339,7 +2386,8 @@
      "compareAt": null,
      "stock": null,
      "active": true,
-     "pro": false
+     "pro": false,
+     "image": null
     },
     {
      "sku": "3474637265014",
@@ -2350,7 +2398,8 @@
      "compareAt": null,
      "stock": null,
      "active": true,
-     "pro": false
+     "pro": false,
+     "image": null
     }
    ],
    "image": null,
@@ -2402,7 +2451,8 @@
      "compareAt": null,
      "stock": null,
      "active": true,
-     "pro": false
+     "pro": false,
+     "image": null
     },
     {
      "sku": "3474630698000",
@@ -2413,7 +2463,8 @@
      "compareAt": null,
      "stock": null,
      "active": true,
-     "pro": false
+     "pro": false,
+     "image": null
     },
     {
      "sku": "3474630698505",
@@ -2424,7 +2475,8 @@
      "compareAt": null,
      "stock": null,
      "active": true,
-     "pro": false
+     "pro": false,
+     "image": null
     },
     {
      "sku": "3474636434145",
@@ -2435,7 +2487,8 @@
      "compareAt": null,
      "stock": null,
      "active": true,
-     "pro": false
+     "pro": false,
+     "image": null
     },
     {
      "sku": "3474636434091",
@@ -2446,7 +2499,8 @@
      "compareAt": null,
      "stock": null,
      "active": true,
-     "pro": false
+     "pro": false,
+     "image": null
     },
     {
      "sku": "3474630698185",
@@ -2457,7 +2511,8 @@
      "compareAt": null,
      "stock": null,
      "active": true,
-     "pro": false
+     "pro": false,
+     "image": null
     }
    ],
    "image": null,
@@ -2515,7 +2570,8 @@
      "compareAt": null,
      "stock": null,
      "active": true,
-     "pro": false
+     "pro": false,
+     "image": null
     }
    ],
    "image": null,
@@ -2571,7 +2627,8 @@
      "compareAt": null,
      "stock": null,
      "active": true,
-     "pro": false
+     "pro": false,
+     "image": null
     },
     {
      "sku": "3474637069100",
@@ -2582,7 +2639,8 @@
      "compareAt": null,
      "stock": null,
      "active": true,
-     "pro": false
+     "pro": false,
+     "image": null
     }
    ],
    "image": null,
@@ -2639,7 +2697,8 @@
      "compareAt": null,
      "stock": null,
      "active": true,
-     "pro": false
+     "pro": false,
+     "image": null
     },
     {
      "sku": "3474636975174",
@@ -2650,7 +2709,8 @@
      "compareAt": null,
      "stock": null,
      "active": true,
-     "pro": false
+     "pro": false,
+     "image": null
     }
    ],
    "image": null,
@@ -2707,7 +2767,8 @@
      "compareAt": null,
      "stock": null,
      "active": true,
-     "pro": false
+     "pro": false,
+     "image": null
     },
     {
      "sku": "3474636975433",
@@ -2718,7 +2779,8 @@
      "compareAt": null,
      "stock": null,
      "active": true,
-     "pro": false
+     "pro": false,
+     "image": null
     }
    ],
    "image": null,
@@ -2775,7 +2837,8 @@
      "compareAt": null,
      "stock": null,
      "active": true,
-     "pro": false
+     "pro": false,
+     "image": null
     },
     {
      "sku": "3474636975914",
@@ -2786,7 +2849,8 @@
      "compareAt": null,
      "stock": null,
      "active": true,
-     "pro": false
+     "pro": false,
+     "image": null
     },
     {
      "sku": "3474636975938",
@@ -2797,7 +2861,8 @@
      "compareAt": null,
      "stock": null,
      "active": true,
-     "pro": true
+     "pro": true,
+     "image": null
     },
     {
      "sku": "3474637242206",
@@ -2808,7 +2873,8 @@
      "compareAt": null,
      "stock": null,
      "active": true,
-     "pro": false
+     "pro": false,
+     "image": null
     },
     {
      "sku": "3474637275402",
@@ -2819,7 +2885,8 @@
      "compareAt": null,
      "stock": null,
      "active": true,
-     "pro": true
+     "pro": true,
+     "image": null
     }
    ],
    "image": null,
@@ -2876,7 +2943,8 @@
      "compareAt": null,
      "stock": null,
      "active": true,
-     "pro": false
+     "pro": false,
+     "image": null
     }
    ],
    "image": null,
@@ -2932,7 +3000,8 @@
      "compareAt": null,
      "stock": null,
      "active": true,
-     "pro": false
+     "pro": false,
+     "image": null
     }
    ],
    "image": null,
@@ -2989,7 +3058,8 @@
      "compareAt": null,
      "stock": null,
      "active": true,
-     "pro": false
+     "pro": false,
+     "image": null
     },
     {
      "sku": "3474637242213",
@@ -3000,7 +3070,8 @@
      "compareAt": null,
      "stock": null,
      "active": true,
-     "pro": false
+     "pro": false,
+     "image": null
     },
     {
      "sku": "3474637275419",
@@ -3011,7 +3082,8 @@
      "compareAt": null,
      "stock": null,
      "active": true,
-     "pro": true
+     "pro": true,
+     "image": null
     }
    ],
    "image": null,
@@ -3069,10 +3141,11 @@
      "compareAt": null,
      "stock": null,
      "active": true,
-     "pro": false
+     "pro": false,
+     "image": "md-oil"
     }
    ],
-   "image": null,
+   "image": "md-oil",
    "related": [
     "loreal-metal-detox-pre-shampoo-peripoiisi-apomakrynsis-kai",
     "loreal-metal-detox-maska-gia-apolyti-epanortosi-mallion",
@@ -3125,7 +3198,8 @@
      "compareAt": null,
      "stock": null,
      "active": true,
-     "pro": false
+     "pro": false,
+     "image": null
     },
     {
      "sku": "3474637335731",
@@ -3136,7 +3210,8 @@
      "compareAt": null,
      "stock": null,
      "active": true,
-     "pro": false
+     "pro": false,
+     "image": null
     },
     {
      "sku": "3474637335717",
@@ -3147,7 +3222,8 @@
      "compareAt": null,
      "stock": null,
      "active": true,
-     "pro": true
+     "pro": true,
+     "image": null
     },
     {
      "sku": "3474637335786",
@@ -3158,7 +3234,8 @@
      "compareAt": null,
      "stock": null,
      "active": true,
-     "pro": false
+     "pro": false,
+     "image": null
     },
     {
      "sku": "3474637335489",
@@ -3169,7 +3246,8 @@
      "compareAt": null,
      "stock": null,
      "active": true,
-     "pro": true
+     "pro": true,
+     "image": null
     }
    ],
    "image": null,
@@ -3226,7 +3304,8 @@
      "compareAt": null,
      "stock": null,
      "active": true,
-     "pro": false
+     "pro": false,
+     "image": null
     }
    ],
    "image": null,
@@ -3281,7 +3360,8 @@
      "compareAt": null,
      "stock": null,
      "active": true,
-     "pro": false
+     "pro": false,
+     "image": null
     },
     {
      "sku": "3474637076504",
@@ -3292,7 +3372,8 @@
      "compareAt": null,
      "stock": null,
      "active": true,
-     "pro": false
+     "pro": false,
+     "image": null
     }
    ],
    "image": null,
@@ -3347,7 +3428,8 @@
      "compareAt": null,
      "stock": null,
      "active": true,
-     "pro": false
+     "pro": false,
+     "image": null
     },
     {
      "sku": "3474637153526",
@@ -3358,7 +3440,8 @@
      "compareAt": null,
      "stock": null,
      "active": true,
-     "pro": false
+     "pro": false,
+     "image": null
     },
     {
      "sku": "3474637153557",
@@ -3369,7 +3452,8 @@
      "compareAt": null,
      "stock": null,
      "active": true,
-     "pro": false
+     "pro": false,
+     "image": null
     },
     {
      "sku": "3474637242220",
@@ -3380,7 +3464,8 @@
      "compareAt": null,
      "stock": null,
      "active": true,
-     "pro": false
+     "pro": false,
+     "image": null
     },
     {
      "sku": "3474637275341",
@@ -3391,7 +3476,8 @@
      "compareAt": null,
      "stock": null,
      "active": true,
-     "pro": true
+     "pro": true,
+     "image": null
     }
    ],
    "image": null,
@@ -3447,7 +3533,8 @@
      "compareAt": null,
      "stock": null,
      "active": true,
-     "pro": false
+     "pro": false,
+     "image": null
     }
    ],
    "image": null,
@@ -3504,7 +3591,8 @@
      "compareAt": null,
      "stock": null,
      "active": true,
-     "pro": false
+     "pro": false,
+     "image": null
     }
    ],
    "image": null,
@@ -3560,7 +3648,8 @@
      "compareAt": null,
      "stock": null,
      "active": true,
-     "pro": false
+     "pro": false,
+     "image": null
     },
     {
      "sku": "3474637268183",
@@ -3571,7 +3660,8 @@
      "compareAt": null,
      "stock": null,
      "active": true,
-     "pro": false
+     "pro": false,
+     "image": null
     }
    ],
    "image": null,
@@ -3627,7 +3717,8 @@
      "compareAt": null,
      "stock": null,
      "active": true,
-     "pro": false
+     "pro": false,
+     "image": null
     }
    ],
    "image": null,
@@ -3682,7 +3773,8 @@
      "compareAt": null,
      "stock": null,
      "active": true,
-     "pro": false
+     "pro": false,
+     "image": null
     }
    ],
    "image": null,
@@ -3737,7 +3829,8 @@
      "compareAt": null,
      "stock": null,
      "active": true,
-     "pro": false
+     "pro": false,
+     "image": null
     }
    ],
    "image": null,
@@ -3791,7 +3884,8 @@
      "compareAt": null,
      "stock": null,
      "active": true,
-     "pro": false
+     "pro": false,
+     "image": null
     }
    ],
    "image": null,
@@ -3847,7 +3941,8 @@
      "compareAt": null,
      "stock": null,
      "active": true,
-     "pro": false
+     "pro": false,
+     "image": null
     },
     {
      "sku": "3474637106416",
@@ -3858,7 +3953,8 @@
      "compareAt": null,
      "stock": null,
      "active": true,
-     "pro": true
+     "pro": true,
+     "image": null
     }
    ],
    "image": null,
@@ -3915,7 +4011,8 @@
      "compareAt": null,
      "stock": null,
      "active": true,
-     "pro": false
+     "pro": false,
+     "image": null
     }
    ],
    "image": null,
@@ -3974,7 +4071,8 @@
      "compareAt": null,
      "stock": null,
      "active": true,
-     "pro": false
+     "pro": false,
+     "image": null
     }
    ],
    "image": null,
@@ -4029,7 +4127,8 @@
      "compareAt": null,
      "stock": null,
      "active": true,
-     "pro": false
+     "pro": false,
+     "image": null
     }
    ],
    "image": null,
@@ -4086,7 +4185,8 @@
      "compareAt": null,
      "stock": null,
      "active": true,
-     "pro": false
+     "pro": false,
+     "image": null
     }
    ],
    "image": null,
@@ -4141,7 +4241,8 @@
      "compareAt": null,
      "stock": null,
      "active": true,
-     "pro": false
+     "pro": false,
+     "image": null
     },
     {
      "sku": "3474636975846",
@@ -4152,7 +4253,8 @@
      "compareAt": null,
      "stock": null,
      "active": true,
-     "pro": false
+     "pro": false,
+     "image": null
     },
     {
      "sku": "3474637275471",
@@ -4163,7 +4265,8 @@
      "compareAt": null,
      "stock": null,
      "active": true,
-     "pro": true
+     "pro": true,
+     "image": null
     }
    ],
    "image": null,
@@ -4219,7 +4322,8 @@
      "compareAt": null,
      "stock": null,
      "active": true,
-     "pro": false
+     "pro": false,
+     "image": null
     },
     {
      "sku": "3474637069162",
@@ -4230,7 +4334,8 @@
      "compareAt": null,
      "stock": null,
      "active": true,
-     "pro": false
+     "pro": false,
+     "image": null
     }
    ],
    "image": null,
@@ -4288,7 +4393,8 @@
      "compareAt": null,
      "stock": null,
      "active": true,
-     "pro": false
+     "pro": false,
+     "image": null
     }
    ],
    "image": null,
@@ -4342,7 +4448,8 @@
      "compareAt": null,
      "stock": null,
      "active": true,
-     "pro": false
+     "pro": false,
+     "image": null
     },
     {
      "sku": "3474637268442",
@@ -4353,7 +4460,8 @@
      "compareAt": null,
      "stock": null,
      "active": true,
-     "pro": false
+     "pro": false,
+     "image": null
     }
    ],
    "image": null,
@@ -4409,7 +4517,8 @@
      "compareAt": null,
      "stock": null,
      "active": true,
-     "pro": false
+     "pro": false,
+     "image": null
     }
    ],
    "image": null,
@@ -4466,7 +4575,8 @@
      "compareAt": null,
      "stock": null,
      "active": true,
-     "pro": false
+     "pro": false,
+     "image": null
     },
     {
      "sku": "3474636975471",
@@ -4477,7 +4587,8 @@
      "compareAt": null,
      "stock": null,
      "active": true,
-     "pro": false
+     "pro": false,
+     "image": null
     }
    ],
    "image": null,
@@ -4533,7 +4644,8 @@
      "compareAt": null,
      "stock": null,
      "active": true,
-     "pro": false
+     "pro": false,
+     "image": null
     }
    ],
    "image": null,
@@ -4589,7 +4701,8 @@
      "compareAt": null,
      "stock": null,
      "active": true,
-     "pro": false
+     "pro": false,
+     "image": null
     }
    ],
    "image": null,

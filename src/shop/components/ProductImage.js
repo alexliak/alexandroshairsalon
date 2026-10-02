@@ -64,7 +64,9 @@ const shapeFor = (type) =>
   }[type] || 'bottle');
 
 const ProductImage = ({ product, size = 400, className = '', eager = false, label, variant }) => {
-  const src = imageSrc(product.image, size);
+  // Επιλεγμένο μέγεθος: μόνο η δική του φωτογραφία (αλλιώς σχέδιο). Κάρτα: η πρώτη διαθέσιμη.
+  const img = variant ? variant.image : product.image;
+  const src = imageSrc(img, size);
   const v = variant || (product.variants.length === 1 ? product.variants[0] : null);
   const size_ = v?.size || '';
   if (src) {
@@ -72,7 +74,7 @@ const ProductImage = ({ product, size = 400, className = '', eager = false, labe
       <div className={`sh-img ${className}`}>
         <img
           src={src}
-          srcSet={`${imageSrc(product.image, 400)} 400w, ${imageSrc(product.image, 800)} 800w`}
+          srcSet={`${imageSrc(img, 400)} 400w, ${imageSrc(img, 800)} 800w`}
           sizes={size > 400 ? '(max-width: 820px) 100vw, 50vw' : '(max-width: 600px) 50vw, 300px'}
           alt={label}
           loading={eager ? 'eager' : 'lazy'}
