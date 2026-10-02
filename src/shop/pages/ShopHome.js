@@ -4,7 +4,7 @@ import {
   BRANDS, CATEGORIES, HAIR_TYPES, LINE_INFO, NEEDS, PRODUCTS, TYPES, imageSrc, t as tr
 } from '../catalog';
 import { useShop } from '../ShopContext';
-import { SITE, WHATSAPP } from '../config';
+import { CATALOG_MODE, SITE, WHATSAPP } from '../config';
 import useFilters from '../useFilters';
 import FilterPanel from '../components/FilterPanel';
 import ProductCard from '../components/ProductCard';
@@ -99,6 +99,7 @@ const ShopHome = ({ lang, t }) => {
             <img src="/images/shop/hero-steampod-1600.webp" alt="L’Oréal Professionnel Steampod" width="1600" height="622" />
           </picture>
         </figure>
+        {CATALOG_MODE && <p className="sh-catalog-banner" role="note">{t.catalogBanner}</p>}
         <ul className="sh-trust">
           <li>{t.trust1}</li>
           <li>{t.trust2}</li>
@@ -163,8 +164,8 @@ const ShopHome = ({ lang, t }) => {
               <span className="sh-visually-hidden">{t.sort}</span>
               <select value={state.sort} onChange={(e) => update({ sort: e.target.value === 'featured' ? null : e.target.value })}>
                 <option value="featured">{t.sortFeatured}</option>
-                <option value="price-asc">{t.sortPriceAsc}</option>
-                <option value="price-desc">{t.sortPriceDesc}</option>
+                {!CATALOG_MODE && <option value="price-asc">{t.sortPriceAsc}</option>}
+                {!CATALOG_MODE && <option value="price-desc">{t.sortPriceDesc}</option>}
                 <option value="name">{t.sortName}</option>
                 {hasRatings && <option value="rating">{t.sortRating}</option>}
               </select>

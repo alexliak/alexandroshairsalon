@@ -1,0 +1,4 @@
+{
+  "_help": "catalogMode: true = το shop φαίνεται ως κατάλογος χωρίς τιμές και καλάθι (ερώτηση μέσω WhatsApp). false = κανονικές αγορές.",
+  "catalogMode": true
+}

@@ -3,15 +3,15 @@ import { Link } from 'react-router-dom';
 import { FaHeart, FaRegHeart } from 'react-icons/fa';
 import { money, productUrl, t as tr, typeByKey } from '../catalog';
 import { useShop } from '../ShopContext';
-import { WHATSAPP } from '../config';
+import { CATALOG_MODE, WHATSAPP } from '../config';
 import ProductImage from './ProductImage';
 import Stars from './Stars';
 
 export const askPriceUrl = (p, lang) =>
   `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(
     lang === 'en'
-      ? `Hello, I would like the price of: ${p.name.en} (${p.brand})`
-      : `Γεια σας, θα ήθελα την τιμή για: ${p.name.el} (${p.brand})`
+      ? `Hello, I would like the price and availability of: ${p.name.en} (${p.brand})`
+      : `Γεια σας, θα ήθελα τιμή και διαθεσιμότητα για: ${p.name.el} (${p.brand})`
   )}`;
 
 const ProductCard = ({ product: p, lang, t }) => {
@@ -59,6 +59,8 @@ const ProductCard = ({ product: p, lang, t }) => {
               {p.variants.length > 1 && p.minPrice !== p.maxPrice && <small>{t.from} </small>}
               {money(p.minPrice, lang)}
             </span>
+          ) : CATALOG_MODE ? (
+            <span />
           ) : (
             <span className="sh-price sh-price-ask">{t.priceSoon}</span>
           )}

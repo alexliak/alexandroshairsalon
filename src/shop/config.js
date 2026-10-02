@@ -1,8 +1,13 @@
+import settings from './settings.json';
+
 // Ρυθμίσεις e-shop. Ό,τι αλλάζει συχνά (τιμές, απόθεμα) ζει στο shop-data/prices.csv.
 
 // Διεύθυνση του Cloudflare Worker (κριτικές τώρα, πληρωμές αργότερα).
 // Μπαίνει στο build: REACT_APP_SHOP_API=https://shop-api.alexandroshairsalon.gr npm run build
 export const SHOP_API = (process.env.REACT_APP_SHOP_API || '').replace(/\/$/, '');
+
+// Κατάλογος χωρίς τιμές/καλάθι μέχρι να ανοίξουν οι online αγορές (ρυθμίζεται στο settings.json)
+export const CATALOG_MODE = !!settings.catalogMode;
 
 // Προϊόντα χωρίς τιμή: true = φαίνονται με «Ρώτα τιμή», false = κρύβονται εντελώς.
 export const SHOW_UNPRICED = true;
