@@ -435,6 +435,8 @@ def main():
                 'stock': int(p['stock']) if p.get('stock', '').strip().isdigit() else None,
                 'active': (p.get('active', '1' if (row['size'] or ptype in ('hair-tool', 'accessory', 'set', 'root-spray')) else '0').strip() or '1') not in ('0', 'no', 'όχι', 'false'),
                 'pro': size_ml(row['size']) >= 1000,
+                # Φωτογραφία μόνο αν δείχνει ΑΚΡΙΒΩΣ αυτό το προϊόν και μέγεθος (images.json -> products)
+                'image': images.get('products', {}).get(row['ean']),
             })
         for v in variants:
             csv_rows.append((v, "L'Oréal Professionnel", name_el))
@@ -463,7 +465,7 @@ def main():
         safety_el = clean(r['Safety_Information_use (el-GR)'])
         if safety_el and safety_el in how_el:
             how_el = how_el.replace(safety_el, '').strip(' .\n') + '.'
-        img = images.get('products', {}).get(main['ean'])
+        img = next((images.get('products', {}).get(r_['ean']) for r_ in rows if images.get('products', {}).get(r_['ean'])), None)
         for rule in images.get('rules', []):
             if not img and (rule['contains'].lower() in f'{name_el} {name_en}'.lower()):
                 img = rule['image']
