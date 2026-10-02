@@ -24,7 +24,8 @@
         "eject": "react-scripts eject",
         "convert-logo": "node scripts/convert-logo.js",
         "predeploy": "npm run build",
-        "deploy": "gh-pages -d build"
+        "deploy": "gh-pages -d build",
+        "shop:catalog": "python3 scripts/shop/build_catalog.py"
     },
     "eslintConfig": {
         "extends": [

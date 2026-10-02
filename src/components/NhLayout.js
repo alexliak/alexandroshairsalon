@@ -97,7 +97,7 @@ const layoutText = {
   }
 };
 
-const NhLayout = ({ language, setLanguage, children }) => {
+const NhLayout = ({ language, setLanguage, children, headerExtra, mobileBar }) => {
   const t = layoutText[language] || layoutText.el;
   const other = language === 'el' ? 'en' : 'el';
   const { pathname, hash } = useLocation();
@@ -170,6 +170,7 @@ const NhLayout = ({ language, setLanguage, children }) => {
               </a>
             ))}
           </nav>
+          {headerExtra}
           <button type="button" className="nh-lang" onClick={() => setLanguage(other)} aria-label={t.langAria}>
             {t.langSwitch}
           </button>
@@ -228,13 +229,15 @@ const NhLayout = ({ language, setLanguage, children }) => {
         <FaArrowUp aria-hidden="true" focusable="false" />
       </button>
 
-      <div className="nh-mobile-bar">
-        <span className="nh-mobile-bar-text">
-          <span>{t.mobileBarTop}</span>
-          <strong>{t.mobileBarBottom}</strong>
-        </span>
-        <a href={BOOK} className="nh-btn nh-btn-gold nh-btn-sm">{t.mobileBarCta}</a>
-      </div>
+      {mobileBar || (
+        <div className="nh-mobile-bar">
+          <span className="nh-mobile-bar-text">
+            <span>{t.mobileBarTop}</span>
+            <strong>{t.mobileBarBottom}</strong>
+          </span>
+          <a href={BOOK} className="nh-btn nh-btn-gold nh-btn-sm">{t.mobileBarCta}</a>
+        </div>
+      )}
     </div>
   );
 };
