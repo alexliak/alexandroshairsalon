@@ -37,7 +37,7 @@ const content = {
     brandsTitleA: 'Δουλεύουμε με ',
     brandsTitleB: ' και ',
     brandsText:
-      'Βαφή ρίζας με Majirel, INOA χωρίς αμμωνία ή Redken, ρεφλέ για λάμψη και balayage με φυσικό αποτέλεσμα. Εκπαιδευόμαστε συνεχώς στις νέες τεχνικές τους.',
+      'Βαφή ρίζας με Majirel, INOA χωρίς αμμωνία ή Redken. Για μήκη και άκρες, ρεφλέ χωρίς αμμωνία: Dia Color στον τόνο της ρίζας και τα όξινα Dia Light και Shades EQ, για λάμψη και απαλότητα. Στα ξανοίγματα χρησιμοποιούμε ντεκαπάζ L’Oréal και Redken με ενσωματωμένο bonder, και όπου γίνεται ξάνοιγμα χωρίς ντεκαπάζ με βαφές L’Oréal. Εκπαιδευόμαστε συνεχώς στις νέες τεχνικές τους.',
     brandsCta: 'Κλείσε χρώμα · από €35',
     colorList: [
       ['Βαφή ρίζας – κάλυψη λευκών', 'από €35'],
@@ -97,7 +97,7 @@ const content = {
     brandsTitleA: 'We work with ',
     brandsTitleB: ' and ',
     brandsText:
-      'Root colour with Majirel, ammonia-free INOA or Redken, gloss for shine and balayage with a natural finish. We train continuously in their latest techniques.',
+      'Root colour with Majirel, ammonia-free INOA or Redken. For lengths and ends, ammonia-free gloss: Dia Color matched to the root and the acidic Dia Light and Shades EQ, for shine and softness. For lightening we use L’Oréal and Redken lighteners with built-in bonder and, where possible, lift without bleach using L’Oréal colour. We train continuously in their latest techniques.',
     brandsCta: 'Book colour · from €35',
     colorList: [
       ['Root colour & grey coverage', 'from €35'],

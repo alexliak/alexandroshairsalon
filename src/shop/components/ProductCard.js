@@ -66,11 +66,11 @@ const ProductCard = ({ product: p, lang, t }) => {
           )}
           {soldOut ? (
             <span className="sh-badge-out">{t.outOfStock}</span>
-          ) : single && p.priced ? (
+          ) : single && (p.priced || CATALOG_MODE) ? (
             <button type="button" className="sh-btn-add" onClick={() => add(p.id, single.sku)} aria-label={`${t.add}: ${name}`}>
               {t.add}
             </button>
-          ) : p.priced ? (
+          ) : p.priced || CATALOG_MODE ? (
             <Link to={productUrl(p)} className="sh-btn-add sh-btn-ghost">{t.chooseOption}</Link>
           ) : (
             <a href={askPriceUrl(p, lang)} target="_blank" rel="noopener noreferrer" className="sh-btn-add sh-btn-ghost">

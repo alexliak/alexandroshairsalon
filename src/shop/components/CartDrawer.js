@@ -4,6 +4,7 @@ import { FaTimes } from 'react-icons/fa';
 import { money, productUrl, t as tr } from '../catalog';
 import { useShop } from '../ShopContext';
 import ProductImage from './ProductImage';
+import { CATALOG_MODE } from '../config';
 
 export const QtyStepper = ({ qty, onChange, label, max = 10 }) => (
   <div className="sh-qty" role="group" aria-label={label}>
@@ -33,7 +34,7 @@ export const CartLines = ({ lang, t, compact }) => {
               </div>
             </div>
             <span className="sh-line-total">
-              {typeof l.variant.price === 'number' ? money(l.total, lang) : <small>{t.priceSoon}</small>}
+              {typeof l.variant.price === 'number' ? money(l.total, lang) : CATALOG_MODE ? null : <small>{t.priceSoon}</small>}
             </span>
           </li>
         );
@@ -82,10 +83,14 @@ const CartDrawer = ({ lang, t }) => {
               <CartLines lang={lang} t={t} compact />
             </div>
             <footer className="sh-drawer-foot">
-              <div className="sh-subtotal">
-                <span>{t.subtotal}</span>
-                <strong>{money(subtotal, lang)}</strong>
-              </div>
+              {CATALOG_MODE ? (
+                <p className="sh-muted sh-small">{t.requestNote}</p>
+              ) : (
+                <div className="sh-subtotal">
+                  <span>{t.subtotal}</span>
+                  <strong>{money(subtotal, lang)}</strong>
+                </div>
+              )}
               <button
                 type="button"
                 className="nh-btn nh-btn-gold sh-w100"
@@ -94,7 +99,7 @@ const CartDrawer = ({ lang, t }) => {
                   navigate('/shop/cart');
                 }}
               >
-                {t.checkout}
+                {CATALOG_MODE ? t.sendRequest : t.checkout}
               </button>
               <button type="button" className="sh-link sh-center" onClick={() => setDrawer(false)}>{t.continueShopping}</button>
             </footer>
