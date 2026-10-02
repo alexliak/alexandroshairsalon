@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, lazy, Suspense } from 'react';
 import { Layout, Menu } from 'antd';
 import {
   HomeOutlined,
@@ -17,14 +17,16 @@ import Home from './pages/Home';
 import Services from './pages/Services';
 import Contact from './pages/Contact';
 import Landing50 from './pages/Landing50';
-import Shop from './pages/Shop';
+
 import Careers from './pages/Careers';
 import Models from './pages/Models';
 import Chatbot from './components/Chatbot';
-import NhLayout from './components/NhLayout';
 import AccessibilityControls from './components/AccessibilityControls';
 import { trackPageView } from './utils/analytics';
 import './App.css';
+
+// The shop (catalogue + images) loads only when someone opens /shop
+const ShopApp = lazy(() => import('./shop/ShopApp'));
 
 const { Sider, Content } = Layout;
 
@@ -120,7 +122,7 @@ const AppContent = () => {
       '/services': 'Τιμές Κομμωτηρίου Αθήνα | Κούρεμα, Βαφή, Balayage | Alexandros Hair Salon',
       '/hours': 'Ωράριο & Επικοινωνία | Κομμωτήριο Θησείο, Αθήνα | Alexandros Hair Salon',
       '/prosfora50': 'Προσφορά 50% Καλωσορίσματος - Alexandros Hair Salon',
-      '/shop': 'Επαγγελματικά Προϊόντα Μαλλιών EVOQUE | Κερατίνη, Frizz Control | Alexandros Hair Salon',
+      '/shop': 'Shop Επαγγελματικών Προϊόντων Μαλλιών | L’Oréal Professionnel, EVOQUE | Alexandros Hair Salon',
       '/douleia': 'Θέση εργασίας: Βοηθός κομμωτηρίου στο Θησείο | Alexandros Hair Salon',
       '/montela': 'Ζητούνται μοντέλα μαλλιών για κούρεμα και χρώμα | Alexandros Hair Salon, Θησείο'
     };
@@ -130,14 +132,21 @@ const AppContent = () => {
       '/services': 'Όλες οι τιμές του κομμωτηρίου στο Θησείο: κουρέματα, Blowout, βαφή ρίζας, ρεφλέ, balayage, κερατίνη και πακέτα, με χρόνους. Online κράτηση, πληρωμή online ή στο κομμωτήριο.',
       '/hours': 'Ωράριο, διεύθυνση και τηλέφωνο του Alexandros Hair Salon, Ερυσίχθονος 3-5, Θησείο, Αθήνα. Κλείσε ραντεβού online.',
       '/prosfora50': 'Κλείσε ραντεβού για κούρεμα, βαφή, ανταύγειες με 50% έκπτωση στην πρώτη σου επίσκεψη. Θησείο, Αθήνα.',
-      '/shop': 'Επαγγελματικά προϊόντα μαλλιών EVOQUE για χρήση στο σπίτι. Σαμπουάν κερατίνης, μάσκες για φριζαρισμένα & σγουρά μαλλιά, styling. Αποστολή πανελλαδικά.',
+      '/shop': 'Επαγγελματικά προϊόντα μαλλιών L’Oréal Professionnel, EVOQUE και άλλων εταιρειών: σαμπουάν, μάσκες, styling, Steampod. Φίλτρα ανά ανάγκη, κριτικές, παραλαβή στο Θησείο ή αποστολή.',
       '/douleia': 'Ψάχνουμε βοηθό κομμωτηρίου με όρεξη για δουλειά και εκπαίδευση. Σταθερή εργασία στο Θησείο. Στείλε αίτηση και βιογραφικό online.',
       '/montela': 'Ψάχνουμε μοντέλα μαλλιών, κυρίως γυναίκες κάθε ηλικίας, για νέες τεχνικές χρώματος και κουρέματος και φωτογράφιση. Τίποτα ακραίο, το αποτέλεσμα το αποφασίζουμε μαζί.'
     };
 
-    const canonicalUrl = canonicalMap[location.pathname] || `${baseUrl}${location.pathname}`;
-    const pageTitle = titleMap[location.pathname] || 'Alexandros Hair Salon';
-    const pageDescription = descriptionMap[location.pathname] || 'Alexandros Hair Salon – Κομμωτήριο στο κέντρο της Αθήνας, Θησείο.';
+    // Product, cart and admin pages of the shop set their own title, description and canonical
+    if (/^\/shop\/.+/.test(location.pathname)) {
+      trackPageView(location.pathname);
+      return;
+    }
+
+    const path = location.pathname.length > 1 ? location.pathname.replace(/\/$/, '') : location.pathname;
+    const canonicalUrl = canonicalMap[path] || `${baseUrl}${path}`;
+    const pageTitle = titleMap[path] || 'Alexandros Hair Salon';
+    const pageDescription = descriptionMap[path] || 'Alexandros Hair Salon – Κομμωτήριο στο κέντρο της Αθήνας, Θησείο.';
 
     // Update canonical link
     let canonicalLink = document.querySelector('link[rel="canonical"]');
@@ -238,13 +247,11 @@ const AppContent = () => {
   if (location.pathname === '/douleia') {
     return <Careers language={language} setLanguage={setLanguage} />;
   }
-  if (location.pathname === '/shop') {
+  if (location.pathname === '/shop' || location.pathname.startsWith('/shop/')) {
     return (
-      <NhLayout language={language} setLanguage={setLanguage}>
-        <main className="nh-page nh-shop">
-          <Shop language={language} />
-        </main>
-      </NhLayout>
+      <Suspense fallback={<div style={{ minHeight: '100vh', background: '#12100e' }} />}>
+        <ShopApp language={language} setLanguage={setLanguage} />
+      </Suspense>
     );
   }
 
@@ -405,10 +412,6 @@ const AppContent = () => {
                 <Route
                   path="/prosfora50"
                   element={<Landing50 />}
-                />
-                <Route
-                  path="/shop"
-                  element={<Shop language={language} />}
                 />
               </Routes>
             </main>

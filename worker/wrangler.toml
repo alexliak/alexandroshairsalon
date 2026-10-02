@@ -1,0 +1,20 @@
+# Cloudflare Worker για το shop: κριτικές τώρα, πληρωμές (Stripe) στο επόμενο βήμα.
+name = "ahs-shop-api"
+main = "src/index.js"
+compatibility_date = "2026-09-01"
+
+# Μετά το `wrangler d1 create ahs-shop` βάλε εδώ το database_id που θα σου δώσει
+[[d1_databases]]
+binding = "DB"
+database_name = "ahs-shop"
+database_id = "ΒΑΛΕ-ΕΔΩ-ΤΟ-ID"
+
+[vars]
+ALLOWED_ORIGINS = "https://alexandroshairsalon.gr,https://www.alexandroshairsalon.gr,http://localhost:3000"
+
+# Μυστικά (δεν μπαίνουν σε αρχείο):
+#   wrangler secret put ADMIN_TOKEN     -> κωδικός για τη σελίδα /shop/admin
+#   wrangler secret put IP_SALT         -> τυχαίο κείμενο για ανωνυμοποίηση IP
+
+# Προαιρετικά δικό σου subdomain (χρειάζεται το domain στο Cloudflare, που ήδη ισχύει):
+# routes = [{ pattern = "shop-api.alexandroshairsalon.gr", custom_domain = true }]

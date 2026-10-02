@@ -1,0 +1,1049 @@
+[
+ {
+  "id": "evoque-smart-keratin-shampoo",
+  "brand": "EVOQUE",
+  "brandKey": "evoque",
+  "line": "Smart Keratin",
+  "category": "care",
+  "type": "shampoo",
+  "name": {
+   "el": "EVOQUE Smart Keratin Σαμπουάν",
+   "en": "EVOQUE Smart Keratin Shampoo"
+  },
+  "short": {
+   "el": "Επαγγελματικό σαμπουάν κερατίνης για φριζαρισμένα και σγουρά μαλλιά. Λειαίνει, αναδομεί και μειώνει το φριζάρισμα από την πρώτη χρήση. Ιδανικό για γυναίκες με δύσκολα, αφύσικα ή χημικά επεξεργασμένα μαλλιά.",
+   "en": "Professional keratin shampoo for frizzy and curly hair. Smooths, restructures and reduces frizz from the first use. Ideal for unruly, chemically treated or damaged hair."
+  },
+  "description": {
+   "el": "Επαγγελματικό σαμπουάν κερατίνης για φριζαρισμένα και σγουρά μαλλιά. Λειαίνει, αναδομεί και μειώνει το φριζάρισμα από την πρώτη χρήση. Ιδανικό για γυναίκες με δύσκολα, αφύσικα ή χημικά επεξεργασμένα μαλλιά.",
+   "en": "Professional keratin shampoo for frizzy and curly hair. Smooths, restructures and reduces frizz from the first use. Ideal for unruly, chemically treated or damaged hair."
+  },
+  "howTo": {
+   "el": "",
+   "en": ""
+  },
+  "safety": {
+   "el": "",
+   "en": ""
+  },
+  "hairTypes": [
+   "frizzy",
+   "curly"
+  ],
+  "needs": [
+   "smooth",
+   "curls"
+  ],
+  "variants": [
+   {
+    "sku": "EVQ-1",
+    "ean": "",
+    "label": "380ml",
+    "size": "380ml",
+    "price": 22,
+    "stock": null,
+    "active": true
+   }
+  ],
+  "image": null
+ },
+ {
+  "id": "evoque-smart-keratin-conditioner",
+  "brand": "EVOQUE",
+  "brandKey": "evoque",
+  "line": "Smart Keratin",
+  "category": "care",
+  "type": "conditioner",
+  "name": {
+   "el": "EVOQUE Smart Keratin Conditioner",
+   "en": "EVOQUE Smart Keratin Conditioner"
+  },
+  "short": {
+   "el": "Conditioner κερατίνης για βαθιά ενυδάτωση φριζαρισμένων και ταλαιπωρημένων μαλλιών. Ξεμπλέκει εύκολα, χαρίζει απαλότητα και διαχειρισιμότητα. Κατάλληλο για σγουρά, βαμμένα και αφυδατωμένα μαλλιά.",
+   "en": "Keratin conditioner for deep hydration of frizzy and damaged hair. Detangles easily, giving softness and manageability. Suitable for curly, coloured and dehydrated hair."
+  },
+  "description": {
+   "el": "Conditioner κερατίνης για βαθιά ενυδάτωση φριζαρισμένων και ταλαιπωρημένων μαλλιών. Ξεμπλέκει εύκολα, χαρίζει απαλότητα και διαχειρισιμότητα. Κατάλληλο για σγουρά, βαμμένα και αφυδατωμένα μαλλιά.",
+   "en": "Keratin conditioner for deep hydration of frizzy and damaged hair. Detangles easily, giving softness and manageability. Suitable for curly, coloured and dehydrated hair."
+  },
+  "howTo": {
+   "el": "",
+   "en": ""
+  },
+  "safety": {
+   "el": "",
+   "en": ""
+  },
+  "hairTypes": [
+   "frizzy",
+   "curly",
+   "colored",
+   "damaged"
+  ],
+  "needs": [
+   "smooth",
+   "hydration",
+   "repair",
+   "color",
+   "curls"
+  ],
+  "variants": [
+   {
+    "sku": "EVQ-2",
+    "ean": "",
+    "label": "380ml",
+    "size": "380ml",
+    "price": 17.5,
+    "stock": null,
+    "active": true
+   }
+  ],
+  "image": null
+ },
+ {
+  "id": "evoque-smart-keratin-mask",
+  "brand": "EVOQUE",
+  "brandKey": "evoque",
+  "line": "Smart Keratin",
+  "category": "care",
+  "type": "mask",
+  "name": {
+   "el": "EVOQUE Smart Keratin Μάσκα",
+   "en": "EVOQUE Smart Keratin Mask"
+  },
+  "short": {
+   "el": "Εντατική μάσκα μαλλιών με κερατίνη για φριζαρισμένα, σγουρά και ταλαιπωρημένα μαλλιά. Βαθιά αναδόμηση, μέγιστη ενυδάτωση και αντι-φριζ αποτέλεσμα που διαρκεί. Επαγγελματική φόρμουλα για χρήση στο σπίτι.",
+   "en": "Intensive keratin hair mask for frizzy, curly and damaged hair. Deep restructuring, maximum hydration and long-lasting anti-frizz result. Professional formula for home use."
+  },
+  "description": {
+   "el": "Εντατική μάσκα μαλλιών με κερατίνη για φριζαρισμένα, σγουρά και ταλαιπωρημένα μαλλιά. Βαθιά αναδόμηση, μέγιστη ενυδάτωση και αντι-φριζ αποτέλεσμα που διαρκεί. Επαγγελματική φόρμουλα για χρήση στο σπίτι.",
+   "en": "Intensive keratin hair mask for frizzy, curly and damaged hair. Deep restructuring, maximum hydration and long-lasting anti-frizz result. Professional formula for home use."
+  },
+  "howTo": {
+   "el": "",
+   "en": ""
+  },
+  "safety": {
+   "el": "",
+   "en": ""
+  },
+  "hairTypes": [
+   "frizzy",
+   "curly",
+   "damaged"
+  ],
+  "needs": [
+   "smooth",
+   "hydration",
+   "repair",
+   "curls"
+  ],
+  "variants": [
+   {
+    "sku": "EVQ-3",
+    "ean": "",
+    "label": "500ml",
+    "size": "500ml",
+    "price": 40,
+    "stock": null,
+    "active": true
+   }
+  ],
+  "image": null
+ },
+ {
+  "id": "evoque-smart-keratin-hair-care-oil",
+  "brand": "EVOQUE",
+  "brandKey": "evoque",
+  "line": "Smart Keratin",
+  "category": "care",
+  "type": "oil",
+  "name": {
+   "el": "EVOQUE Smart Keratin Λάδι Περιποίησης",
+   "en": "EVOQUE Smart Keratin Hair Care Oil"
+  },
+  "short": {
+   "el": "Λάδι μαλλιών με κερατίνη για λάμψη και προστασία από τη θερμότητα (πιστολάκι, ισιωτική, μπούκλες). Δαμάζει το φριζάρισμα σε σγουρά και αφύσικα μαλλιά. Ελαφριά υφή που δεν λιπαίνει.",
+   "en": "Keratin hair oil for shine and heat protection (blow dryer, straightener, curler). Tames frizz in curly and unruly hair. Lightweight texture that does not grease."
+  },
+  "description": {
+   "el": "Λάδι μαλλιών με κερατίνη για λάμψη και προστασία από τη θερμότητα (πιστολάκι, ισιωτική, μπούκλες). Δαμάζει το φριζάρισμα σε σγουρά και αφύσικα μαλλιά. Ελαφριά υφή που δεν λιπαίνει.",
+   "en": "Keratin hair oil for shine and heat protection (blow dryer, straightener, curler). Tames frizz in curly and unruly hair. Lightweight texture that does not grease."
+  },
+  "howTo": {
+   "el": "",
+   "en": ""
+  },
+  "safety": {
+   "el": "",
+   "en": ""
+  },
+  "hairTypes": [
+   "curly"
+  ],
+  "needs": [
+   "smooth",
+   "shine",
+   "heat",
+   "curls"
+  ],
+  "variants": [
+   {
+    "sku": "EVQ-4",
+    "ean": "",
+    "label": "90ml",
+    "size": "90ml",
+    "price": 24,
+    "stock": null,
+    "active": true
+   }
+  ],
+  "image": null
+ },
+ {
+  "id": "evoque-smart-keratin-frizz-control",
+  "brand": "EVOQUE",
+  "brandKey": "evoque",
+  "line": "Smart Keratin",
+  "category": "care",
+  "type": "leave-in",
+  "name": {
+   "el": "EVOQUE Smart Keratin Frizz Control",
+   "en": "EVOQUE Smart Keratin Frizz Control"
+  },
+  "short": {
+   "el": "Αντι-φριζ λοσιόν κερατίνης για φριζαρισμένα μαλλιά. Διατηρεί τα μαλλιά λεία, υπάκουα και χωρίς φριζάρισμα όλη μέρα ακόμα και σε υγρασία. Ιδανικό για καθημερινή χρήση σε σγουρά γυναικεία μαλλιά.",
+   "en": "Anti-frizz keratin lotion for frizzy hair. Keeps hair smooth, manageable and frizz-free all day even in humidity. Ideal for daily use on curly women's hair."
+  },
+  "description": {
+   "el": "Αντι-φριζ λοσιόν κερατίνης για φριζαρισμένα μαλλιά. Διατηρεί τα μαλλιά λεία, υπάκουα και χωρίς φριζάρισμα όλη μέρα ακόμα και σε υγρασία. Ιδανικό για καθημερινή χρήση σε σγουρά γυναικεία μαλλιά.",
+   "en": "Anti-frizz keratin lotion for frizzy hair. Keeps hair smooth, manageable and frizz-free all day even in humidity. Ideal for daily use on curly women's hair."
+  },
+  "howTo": {
+   "el": "",
+   "en": ""
+  },
+  "safety": {
+   "el": "",
+   "en": ""
+  },
+  "hairTypes": [
+   "frizzy",
+   "curly"
+  ],
+  "needs": [
+   "smooth",
+   "curls"
+  ],
+  "variants": [
+   {
+    "sku": "EVQ-5",
+    "ean": "",
+    "label": "235ml",
+    "size": "235ml",
+    "price": 24.5,
+    "stock": null,
+    "active": true
+   }
+  ],
+  "image": null
+ },
+ {
+  "id": "evoque-mini-smart-keratin-shampoo",
+  "brand": "EVOQUE",
+  "brandKey": "evoque",
+  "line": "Mini",
+  "category": "care",
+  "type": "shampoo",
+  "name": {
+   "el": "EVOQUE Mini Smart Keratin Σαμπουάν",
+   "en": "EVOQUE Mini Smart Keratin Shampoo"
+  },
+  "short": {
+   "el": "Ταξιδιωτικό σαμπουάν κερατίνης 100ml — ιδανικό για ταξίδια και αποσκευές καμπίνας. Όλη η δύναμη της κερατίνης κατά του φριζαρίσματος σε μικρό, πρακτικό μέγεθος.",
+   "en": "Travel keratin shampoo 100ml — ideal for travel and cabin luggage. Full anti-frizz keratin power in a compact, practical size."
+  },
+  "description": {
+   "el": "Ταξιδιωτικό σαμπουάν κερατίνης 100ml — ιδανικό για ταξίδια και αποσκευές καμπίνας. Όλη η δύναμη της κερατίνης κατά του φριζαρίσματος σε μικρό, πρακτικό μέγεθος.",
+   "en": "Travel keratin shampoo 100ml — ideal for travel and cabin luggage. Full anti-frizz keratin power in a compact, practical size."
+  },
+  "howTo": {
+   "el": "",
+   "en": ""
+  },
+  "safety": {
+   "el": "",
+   "en": ""
+  },
+  "hairTypes": [
+   "all"
+  ],
+  "needs": [
+   "smooth"
+  ],
+  "variants": [
+   {
+    "sku": "EVQ-6",
+    "ean": "",
+    "label": "100ml",
+    "size": "100ml",
+    "price": 5.5,
+    "stock": null,
+    "active": true
+   }
+  ],
+  "image": null
+ },
+ {
+  "id": "evoque-mini-smart-keratin-conditioner",
+  "brand": "EVOQUE",
+  "brandKey": "evoque",
+  "line": "Mini",
+  "category": "care",
+  "type": "conditioner",
+  "name": {
+   "el": "EVOQUE Mini Smart Keratin Conditioner",
+   "en": "EVOQUE Mini Smart Keratin Conditioner"
+  },
+  "short": {
+   "el": "Ταξιδιωτικό conditioner κερατίνης 100ml για ενυδάτωση και ξεμπλέκει σγουρών και φριζαρισμένων μαλλιών. Πρακτικό μέγεθος για αποσκευές καμπίνας.",
+   "en": "Travel keratin conditioner 100ml for hydration and detangling of curly and frizzy hair. Practical size for cabin luggage."
+  },
+  "description": {
+   "el": "Ταξιδιωτικό conditioner κερατίνης 100ml για ενυδάτωση και ξεμπλέκει σγουρών και φριζαρισμένων μαλλιών. Πρακτικό μέγεθος για αποσκευές καμπίνας.",
+   "en": "Travel keratin conditioner 100ml for hydration and detangling of curly and frizzy hair. Practical size for cabin luggage."
+  },
+  "howTo": {
+   "el": "",
+   "en": ""
+  },
+  "safety": {
+   "el": "",
+   "en": ""
+  },
+  "hairTypes": [
+   "frizzy",
+   "curly"
+  ],
+  "needs": [
+   "smooth",
+   "hydration",
+   "curls"
+  ],
+  "variants": [
+   {
+    "sku": "EVQ-7",
+    "ean": "",
+    "label": "100ml",
+    "size": "100ml",
+    "price": 5.5,
+    "stock": null,
+    "active": true
+   }
+  ],
+  "image": null
+ },
+ {
+  "id": "evoque-mini-smart-keratin-2-phase",
+  "brand": "EVOQUE",
+  "brandKey": "evoque",
+  "line": "Mini",
+  "category": "care",
+  "type": "leave-in",
+  "name": {
+   "el": "EVOQUE Mini Smart Keratin 2-Phase",
+   "en": "EVOQUE Mini Smart Keratin 2-Phase"
+  },
+  "short": {
+   "el": "Ταξιδιωτικό 2-φάσεων leave-in κερατίνης 100ml. Ξεμπλέκει, ενυδατώνει και προστατεύει από το φριζάρισμα χωρίς ξέπλυμα. Ιδανικό για γυναίκες με σγουρά μαλλιά που ταξιδεύουν.",
+   "en": "Travel 2-phase leave-in keratin 100ml. Detangles, hydrates and protects against frizz without rinsing. Ideal for women with curly hair who travel."
+  },
+  "description": {
+   "el": "Ταξιδιωτικό 2-φάσεων leave-in κερατίνης 100ml. Ξεμπλέκει, ενυδατώνει και προστατεύει από το φριζάρισμα χωρίς ξέπλυμα. Ιδανικό για γυναίκες με σγουρά μαλλιά που ταξιδεύουν.",
+   "en": "Travel 2-phase leave-in keratin 100ml. Detangles, hydrates and protects against frizz without rinsing. Ideal for women with curly hair who travel."
+  },
+  "howTo": {
+   "el": "",
+   "en": ""
+  },
+  "safety": {
+   "el": "",
+   "en": ""
+  },
+  "hairTypes": [
+   "curly"
+  ],
+  "needs": [
+   "smooth",
+   "curls"
+  ],
+  "variants": [
+   {
+    "sku": "EVQ-8",
+    "ean": "",
+    "label": "100ml",
+    "size": "100ml",
+    "price": 5.5,
+    "stock": null,
+    "active": true
+   }
+  ],
+  "image": null
+ },
+ {
+  "id": "evoque-blonde-purple-mask",
+  "brand": "EVOQUE",
+  "brandKey": "evoque",
+  "line": "Blonde & Purple",
+  "category": "care",
+  "type": "mask",
+  "name": {
+   "el": "EVOQUE Blonde Purple Μάσκα",
+   "en": "EVOQUE Blonde Purple Mask"
+  },
+  "short": {
+   "el": "Μάσκα με μωβ χρωστικές για ξανθά, γκρίζα και αποχρωματισμένα μαλλιά. Εξουδετερώνει τους κίτρινους και χρυσαφί τόνους, χαρίζει κρύο, λαμπερό αποτέλεσμα. Η πιο αποτελεσματική μάσκα για ξανθιές.",
+   "en": "Purple pigment mask for blonde, grey and bleached hair. Neutralizes yellow and golden tones for a cool, bright result. The most effective mask for blondes."
+  },
+  "description": {
+   "el": "Μάσκα με μωβ χρωστικές για ξανθά, γκρίζα και αποχρωματισμένα μαλλιά. Εξουδετερώνει τους κίτρινους και χρυσαφί τόνους, χαρίζει κρύο, λαμπερό αποτέλεσμα. Η πιο αποτελεσματική μάσκα για ξανθιές.",
+   "en": "Purple pigment mask for blonde, grey and bleached hair. Neutralizes yellow and golden tones for a cool, bright result. The most effective mask for blondes."
+  },
+  "howTo": {
+   "el": "",
+   "en": ""
+  },
+  "safety": {
+   "el": "",
+   "en": ""
+  },
+  "hairTypes": [
+   "blonde"
+  ],
+  "needs": [
+   "blonde"
+  ],
+  "variants": [
+   {
+    "sku": "EVQ-9",
+    "ean": "",
+    "label": "250ml",
+    "size": "250ml",
+    "price": 19,
+    "stock": null,
+    "active": true
+   }
+  ],
+  "image": null
+ },
+ {
+  "id": "evoque-blonde-purple-2-phase",
+  "brand": "EVOQUE",
+  "brandKey": "evoque",
+  "line": "Blonde & Purple",
+  "category": "care",
+  "type": "leave-in",
+  "name": {
+   "el": "EVOQUE Blonde Purple 2-Phase",
+   "en": "EVOQUE Blonde Purple 2-Phase"
+  },
+  "short": {
+   "el": "Leave-in 2 φάσεων για ξανθά και αποχρωματισμένα μαλλιά. Ξεμπλέκει, ενυδατώνει και διατηρεί ζωντανό και φρέσκο το χρώμα χωρίς ξέπλυμα. Ιδανικό για γυναίκες που κάνουν ανταύγειες ή balayage.",
+   "en": "Leave-in 2-phase for blonde and bleached hair. Detangles, hydrates and keeps colour vibrant without rinsing. Ideal for women with highlights or balayage."
+  },
+  "description": {
+   "el": "Leave-in 2 φάσεων για ξανθά και αποχρωματισμένα μαλλιά. Ξεμπλέκει, ενυδατώνει και διατηρεί ζωντανό και φρέσκο το χρώμα χωρίς ξέπλυμα. Ιδανικό για γυναίκες που κάνουν ανταύγειες ή balayage.",
+   "en": "Leave-in 2-phase for blonde and bleached hair. Detangles, hydrates and keeps colour vibrant without rinsing. Ideal for women with highlights or balayage."
+  },
+  "howTo": {
+   "el": "",
+   "en": ""
+  },
+  "safety": {
+   "el": "",
+   "en": ""
+  },
+  "hairTypes": [
+   "blonde"
+  ],
+  "needs": [
+   "blonde",
+   "color"
+  ],
+  "variants": [
+   {
+    "sku": "EVQ-10",
+    "ean": "",
+    "label": "400ml",
+    "size": "400ml",
+    "price": 20,
+    "stock": null,
+    "active": true
+   }
+  ],
+  "image": null
+ },
+ {
+  "id": "evoque-pomade-matte-look-no4",
+  "brand": "EVOQUE",
+  "brandKey": "evoque",
+  "line": "Styling",
+  "category": "styling",
+  "type": "pomade",
+  "name": {
+   "el": "EVOQUE Pomade Matte Look No4",
+   "en": "EVOQUE Pomade Matte Look No4"
+  },
+  "short": {
+   "el": "Επαγγελματική πομάδα μαλλιών με ματ αποτέλεσμα και δυνατό κράτημα. Για σύγχρονα ανδρικά χτενίσματα — undercut, quiff, slick back — με φυσικό, μη λιπαρό φινίρισμα.",
+   "en": "Professional hair pomade with matte finish and strong hold. For modern men's hairstyles — undercut, quiff, slick back — with a natural, non-greasy finish."
+  },
+  "description": {
+   "el": "Επαγγελματική πομάδα μαλλιών με ματ αποτέλεσμα και δυνατό κράτημα. Για σύγχρονα ανδρικά χτενίσματα — undercut, quiff, slick back — με φυσικό, μη λιπαρό φινίρισμα.",
+   "en": "Professional hair pomade with matte finish and strong hold. For modern men's hairstyles — undercut, quiff, slick back — with a natural, non-greasy finish."
+  },
+  "howTo": {
+   "el": "",
+   "en": ""
+  },
+  "safety": {
+   "el": "",
+   "en": ""
+  },
+  "hairTypes": [
+   "all"
+  ],
+  "needs": [
+   "hold"
+  ],
+  "variants": [
+   {
+    "sku": "EVQ-11",
+    "ean": "",
+    "label": "100ml",
+    "size": "100ml",
+    "price": 8,
+    "stock": null,
+    "active": true
+   }
+  ],
+  "image": null
+ },
+ {
+  "id": "evoque-pomade-shine-no5",
+  "brand": "EVOQUE",
+  "brandKey": "evoque",
+  "line": "Styling",
+  "category": "styling",
+  "type": "pomade",
+  "name": {
+   "el": "EVOQUE Pomade Shine No5",
+   "en": "EVOQUE Pomade Shine No5"
+  },
+  "short": {
+   "el": "Πομάδα μαλλιών με γυαλιστερό αποτέλεσμα και μέτριο-δυνατό κράτημα. Χαρίζει λάμψη, ορισμό και στυλ για classic και retro χτενίσματα. Ιδανική για ανδρικά μαλλιά που θέλουν λάμψη.",
+   "en": "Hair pomade with shine finish and medium-strong hold. Gives gloss, definition and style for classic and retro hairstyles. Ideal for men's hair that needs shine."
+  },
+  "description": {
+   "el": "Πομάδα μαλλιών με γυαλιστερό αποτέλεσμα και μέτριο-δυνατό κράτημα. Χαρίζει λάμψη, ορισμό και στυλ για classic και retro χτενίσματα. Ιδανική για ανδρικά μαλλιά που θέλουν λάμψη.",
+   "en": "Hair pomade with shine finish and medium-strong hold. Gives gloss, definition and style for classic and retro hairstyles. Ideal for men's hair that needs shine."
+  },
+  "howTo": {
+   "el": "",
+   "en": ""
+  },
+  "safety": {
+   "el": "",
+   "en": ""
+  },
+  "hairTypes": [
+   "all"
+  ],
+  "needs": [
+   "shine",
+   "hold"
+  ],
+  "variants": [
+   {
+    "sku": "EVQ-12",
+    "ean": "",
+    "label": "100ml",
+    "size": "100ml",
+    "price": 8,
+    "stock": null,
+    "active": true
+   }
+  ],
+  "image": null
+ },
+ {
+  "id": "evoque-creamy-matte-strong-hold-no3",
+  "brand": "EVOQUE",
+  "brandKey": "evoque",
+  "line": "Styling",
+  "category": "styling",
+  "type": "pomade",
+  "name": {
+   "el": "EVOQUE Creamy Matte Strong Hold No3",
+   "en": "EVOQUE Creamy Matte Strong Hold No3"
+  },
+  "short": {
+   "el": "Κρεμώδης πομάδα μαλλιών με ματ φινίρισμα και πολύ δυνατό κράτημα όλη μέρα. Ιδανική για δύσκολα χτενίσματα και πυκνά ανδρικά μαλλιά που χρειάζονται έλεγχο.",
+   "en": "Creamy hair pomade with matte finish and very strong all-day hold. Ideal for challenging hairstyles and thick men's hair that needs control."
+  },
+  "description": {
+   "el": "Κρεμώδης πομάδα μαλλιών με ματ φινίρισμα και πολύ δυνατό κράτημα όλη μέρα. Ιδανική για δύσκολα χτενίσματα και πυκνά ανδρικά μαλλιά που χρειάζονται έλεγχο.",
+   "en": "Creamy hair pomade with matte finish and very strong all-day hold. Ideal for challenging hairstyles and thick men's hair that needs control."
+  },
+  "howTo": {
+   "el": "",
+   "en": ""
+  },
+  "safety": {
+   "el": "",
+   "en": ""
+  },
+  "hairTypes": [
+   "all"
+  ],
+  "needs": [
+   "hold"
+  ],
+  "variants": [
+   {
+    "sku": "EVQ-13",
+    "ean": "",
+    "label": "100ml",
+    "size": "100ml",
+    "price": 8,
+    "stock": null,
+    "active": true
+   }
+  ],
+  "image": null
+ },
+ {
+  "id": "evoque-hair-butter",
+  "brand": "EVOQUE",
+  "brandKey": "evoque",
+  "line": "Styling",
+  "category": "styling",
+  "type": "styling",
+  "name": {
+   "el": "EVOQUE Hair Butter",
+   "en": "EVOQUE Hair Butter"
+  },
+  "short": {
+   "el": "Βούτυρο μαλλιών με φυσικά θρεπτικά έλαια για βαθιά ενυδάτωση και μαλακό κράτημα. Ιδανικό για ξηρά, σγουρά και αφυδατωμένα γυναικεία μαλλιά που χρειάζονται θρέψη και φροντίδα.",
+   "en": "Hair butter with natural nourishing oils for deep hydration and soft hold. Ideal for dry, curly and dehydrated women's hair that needs nourishment and care."
+  },
+  "description": {
+   "el": "Βούτυρο μαλλιών με φυσικά θρεπτικά έλαια για βαθιά ενυδάτωση και μαλακό κράτημα. Ιδανικό για ξηρά, σγουρά και αφυδατωμένα γυναικεία μαλλιά που χρειάζονται θρέψη και φροντίδα.",
+   "en": "Hair butter with natural nourishing oils for deep hydration and soft hold. Ideal for dry, curly and dehydrated women's hair that needs nourishment and care."
+  },
+  "howTo": {
+   "el": "",
+   "en": ""
+  },
+  "safety": {
+   "el": "",
+   "en": ""
+  },
+  "hairTypes": [
+   "curly"
+  ],
+  "needs": [
+   "hydration",
+   "hold",
+   "curls"
+  ],
+  "variants": [
+   {
+    "sku": "EVQ-14",
+    "ean": "",
+    "label": "150ml",
+    "size": "150ml",
+    "price": 14.5,
+    "stock": null,
+    "active": true
+   }
+  ],
+  "image": null
+ },
+ {
+  "id": "evoque-forming-cream",
+  "brand": "EVOQUE",
+  "brandKey": "evoque",
+  "line": "Styling",
+  "category": "styling",
+  "type": "styling",
+  "name": {
+   "el": "EVOQUE Forming Cream",
+   "en": "EVOQUE Forming Cream"
+  },
+  "short": {
+   "el": "Κρέμα φορμαρίσματος για φυσικό κράτημα, ορισμό και ενυδάτωση. Κατάλληλη για όλους τους τύπους μαλλιών — ιδανική για γυναίκες που θέλουν φυσικό αποτέλεσμα χωρίς βάρος.",
+   "en": "Forming cream for natural hold, definition and hydration. Suitable for all hair types — ideal for women who want a natural result without weight."
+  },
+  "description": {
+   "el": "Κρέμα φορμαρίσματος για φυσικό κράτημα, ορισμό και ενυδάτωση. Κατάλληλη για όλους τους τύπους μαλλιών — ιδανική για γυναίκες που θέλουν φυσικό αποτέλεσμα χωρίς βάρος.",
+   "en": "Forming cream for natural hold, definition and hydration. Suitable for all hair types — ideal for women who want a natural result without weight."
+  },
+  "howTo": {
+   "el": "",
+   "en": ""
+  },
+  "safety": {
+   "el": "",
+   "en": ""
+  },
+  "hairTypes": [
+   "all"
+  ],
+  "needs": [
+   "hydration",
+   "hold"
+  ],
+  "variants": [
+   {
+    "sku": "EVQ-15",
+    "ean": "",
+    "label": "150ml",
+    "size": "150ml",
+    "price": 15,
+    "stock": null,
+    "active": true
+   }
+  ],
+  "image": null
+ },
+ {
+  "id": "evoque-milk-therapy-silky-serum",
+  "brand": "EVOQUE",
+  "brandKey": "evoque",
+  "line": "Milk Therapy",
+  "category": "care",
+  "type": "serum",
+  "name": {
+   "el": "EVOQUE Milk Therapy Silky Serum",
+   "en": "EVOQUE Milk Therapy Silky Serum"
+  },
+  "short": {
+   "el": "Ορός μαλλιών με γαλακτοπρωτεΐνες για εντυπωσιακή λάμψη και μεταξένιο αποτέλεσμα. Καταπολεμά το φριζάρισμα, ενυδατώνει βαθιά και προστατεύει από τη θερμότητα. Για γυναικεία μαλλιά που θέλουν λάμψη σαν κινηματογράφο.",
+   "en": "Hair serum with milk proteins for impressive shine and silky result. Fights frizz, deeply hydrates and protects from heat. For women's hair that wants cinema-worthy shine."
+  },
+  "description": {
+   "el": "Ορός μαλλιών με γαλακτοπρωτεΐνες για εντυπωσιακή λάμψη και μεταξένιο αποτέλεσμα. Καταπολεμά το φριζάρισμα, ενυδατώνει βαθιά και προστατεύει από τη θερμότητα. Για γυναικεία μαλλιά που θέλουν λάμψη σαν κινηματογράφο.",
+   "en": "Hair serum with milk proteins for impressive shine and silky result. Fights frizz, deeply hydrates and protects from heat. For women's hair that wants cinema-worthy shine."
+  },
+  "howTo": {
+   "el": "",
+   "en": ""
+  },
+  "safety": {
+   "el": "",
+   "en": ""
+  },
+  "hairTypes": [
+   "all"
+  ],
+  "needs": [
+   "smooth",
+   "shine",
+   "heat"
+  ],
+  "variants": [
+   {
+    "sku": "EVQ-16",
+    "ean": "",
+    "label": "90ml",
+    "size": "90ml",
+    "price": 24,
+    "stock": null,
+    "active": true
+   }
+  ],
+  "image": null
+ },
+ {
+  "id": "evoque-milk-therapy-creamy-mousse",
+  "brand": "EVOQUE",
+  "brandKey": "evoque",
+  "line": "Milk Therapy",
+  "category": "styling",
+  "type": "styling",
+  "name": {
+   "el": "EVOQUE Milk Therapy Creamy Mousse",
+   "en": "EVOQUE Milk Therapy Creamy Mousse"
+  },
+  "short": {
+   "el": "Κρεμώδης αφρός μαλλιών με γαλακτοπρωτεΐνες για κράτημα, ενυδάτωση και ορισμό μπούκλας. Ιδανικός για σγουρά και κυματιστά γυναικεία μαλλιά — ορίζει τη μπούκλα χωρίς να σκληραίνει.",
+   "en": "Creamy hair mousse with milk proteins for hold, hydration and curl definition. Ideal for curly and wavy women's hair — defines curls without hardening."
+  },
+  "description": {
+   "el": "Κρεμώδης αφρός μαλλιών με γαλακτοπρωτεΐνες για κράτημα, ενυδάτωση και ορισμό μπούκλας. Ιδανικός για σγουρά και κυματιστά γυναικεία μαλλιά — ορίζει τη μπούκλα χωρίς να σκληραίνει.",
+   "en": "Creamy hair mousse with milk proteins for hold, hydration and curl definition. Ideal for curly and wavy women's hair — defines curls without hardening."
+  },
+  "howTo": {
+   "el": "",
+   "en": ""
+  },
+  "safety": {
+   "el": "",
+   "en": ""
+  },
+  "hairTypes": [
+   "curly"
+  ],
+  "needs": [
+   "hydration",
+   "hold",
+   "curls"
+  ],
+  "variants": [
+   {
+    "sku": "EVQ-17",
+    "ean": "",
+    "label": "200ml",
+    "size": "200ml",
+    "price": 14,
+    "stock": null,
+    "active": true
+   }
+  ],
+  "image": null
+ },
+ {
+  "id": "evoque-creamy-milk-mask",
+  "brand": "EVOQUE",
+  "brandKey": "evoque",
+  "line": "Milk Therapy",
+  "category": "care",
+  "type": "mask",
+  "name": {
+   "el": "EVOQUE Creamy Milk Μάσκα",
+   "en": "EVOQUE Creamy Milk Mask"
+  },
+  "short": {
+   "el": "Κρεμώδης μάσκα μαλλιών με γαλακτοπρωτεΐνες για βαθιά αναδόμηση και εντατική ενυδάτωση. Ιδανική για ξηρά, ταλαιπωρημένα και βαμμένα γυναικεία μαλλιά. Αποτέλεσμα απαλό σαν μετάξι.",
+   "en": "Creamy hair mask with milk proteins for deep restructuring and intensive hydration. Ideal for dry, damaged and coloured women's hair. Silky smooth result."
+  },
+  "description": {
+   "el": "Κρεμώδης μάσκα μαλλιών με γαλακτοπρωτεΐνες για βαθιά αναδόμηση και εντατική ενυδάτωση. Ιδανική για ξηρά, ταλαιπωρημένα και βαμμένα γυναικεία μαλλιά. Αποτέλεσμα απαλό σαν μετάξι.",
+   "en": "Creamy hair mask with milk proteins for deep restructuring and intensive hydration. Ideal for dry, damaged and coloured women's hair. Silky smooth result."
+  },
+  "howTo": {
+   "el": "",
+   "en": ""
+  },
+  "safety": {
+   "el": "",
+   "en": ""
+  },
+  "hairTypes": [
+   "colored",
+   "damaged"
+  ],
+  "needs": [
+   "hydration",
+   "repair",
+   "color"
+  ],
+  "variants": [
+   {
+    "sku": "EVQ-18",
+    "ean": "",
+    "label": "500ml",
+    "size": "500ml",
+    "price": 39,
+    "stock": null,
+    "active": true
+   }
+  ],
+  "image": null
+ },
+ {
+  "id": "evoque-mini-creamy-milk-mask",
+  "brand": "EVOQUE",
+  "brandKey": "evoque",
+  "line": "Mini",
+  "category": "care",
+  "type": "mask",
+  "name": {
+   "el": "EVOQUE Mini Creamy Milk Μάσκα",
+   "en": "EVOQUE Mini Creamy Milk Mask"
+  },
+  "short": {
+   "el": "Ταξιδιωτικό μέγεθος 50ml της αγαπημένης μάσκας Creamy Milk. Βαθιά αναδόμηση και ενυδάτωση για ταλαιπωρημένα μαλλιά σε πρακτικό μέγεθος για αποσκευές καμπίνας.",
+   "en": "Travel size 50ml of the beloved Creamy Milk Mask. Deep restructuring and hydration for damaged hair in a practical carry-on size."
+  },
+  "description": {
+   "el": "Ταξιδιωτικό μέγεθος 50ml της αγαπημένης μάσκας Creamy Milk. Βαθιά αναδόμηση και ενυδάτωση για ταλαιπωρημένα μαλλιά σε πρακτικό μέγεθος για αποσκευές καμπίνας.",
+   "en": "Travel size 50ml of the beloved Creamy Milk Mask. Deep restructuring and hydration for damaged hair in a practical carry-on size."
+  },
+  "howTo": {
+   "el": "",
+   "en": ""
+  },
+  "safety": {
+   "el": "",
+   "en": ""
+  },
+  "hairTypes": [
+   "damaged"
+  ],
+  "needs": [
+   "hydration",
+   "repair"
+  ],
+  "variants": [
+   {
+    "sku": "EVQ-19",
+    "ean": "",
+    "label": "50ml",
+    "size": "50ml",
+    "price": 5.5,
+    "stock": null,
+    "active": true
+   }
+  ],
+  "image": null
+ },
+ {
+  "id": "evoque-healthy-care-color-lock-mousse",
+  "brand": "EVOQUE",
+  "brandKey": "evoque",
+  "line": "Health Care",
+  "category": "care",
+  "type": "leave-in",
+  "name": {
+   "el": "EVOQUE Healthy Care Color Lock Mousse",
+   "en": "EVOQUE Healthy Care Color Lock Mousse"
+  },
+  "short": {
+   "el": "Αφρός κλειδώματος χρώματος για βαμμένα μαλλιά. Προστατεύει τη βαφή από ξεθώριασμα, διατηρεί ζωντανά τα χρώματα και ενισχύει τη λάμψη. Ιδανικός για γυναίκες που βάφουν τα μαλλιά τους τακτικά.",
+   "en": "Color lock mousse for coloured hair. Protects dye from fading, keeps colours vibrant and enhances shine. Ideal for women who regularly colour their hair."
+  },
+  "description": {
+   "el": "Αφρός κλειδώματος χρώματος για βαμμένα μαλλιά. Προστατεύει τη βαφή από ξεθώριασμα, διατηρεί ζωντανά τα χρώματα και ενισχύει τη λάμψη. Ιδανικός για γυναίκες που βάφουν τα μαλλιά τους τακτικά.",
+   "en": "Color lock mousse for coloured hair. Protects dye from fading, keeps colours vibrant and enhances shine. Ideal for women who regularly colour their hair."
+  },
+  "howTo": {
+   "el": "",
+   "en": ""
+  },
+  "safety": {
+   "el": "",
+   "en": ""
+  },
+  "hairTypes": [
+   "colored"
+  ],
+  "needs": [
+   "color",
+   "shine"
+  ],
+  "variants": [
+   {
+    "sku": "EVQ-20",
+    "ean": "",
+    "label": "200ml",
+    "size": "200ml",
+    "price": 16,
+    "stock": null,
+    "active": true
+   }
+  ],
+  "image": null
+ },
+ {
+  "id": "evoque-healthy-care-color-lock",
+  "brand": "EVOQUE",
+  "brandKey": "evoque",
+  "line": "Health Care",
+  "category": "care",
+  "type": "leave-in",
+  "name": {
+   "el": "EVOQUE Healthy Care Color Lock",
+   "en": "EVOQUE Healthy Care Color Lock"
+  },
+  "short": {
+   "el": "Επαγγελματική μεγάλη συσκευασία 2850ml για κομμωτήρια και επαγγελματίες. Κλειδώνει το χρώμα βαφής, διατηρεί ζωντανές τις ανταύγειες και το balayage. Εξαιρετική τιμή για επαγγελματική χρήση.",
+   "en": "Professional 2850ml bulk size for salons and professionals. Locks in hair colour, keeps highlights and balayage vibrant. Excellent value for professional use."
+  },
+  "description": {
+   "el": "Επαγγελματική μεγάλη συσκευασία 2850ml για κομμωτήρια και επαγγελματίες. Κλειδώνει το χρώμα βαφής, διατηρεί ζωντανές τις ανταύγειες και το balayage. Εξαιρετική τιμή για επαγγελματική χρήση.",
+   "en": "Professional 2850ml bulk size for salons and professionals. Locks in hair colour, keeps highlights and balayage vibrant. Excellent value for professional use."
+  },
+  "howTo": {
+   "el": "",
+   "en": ""
+  },
+  "safety": {
+   "el": "",
+   "en": ""
+  },
+  "hairTypes": [
+   "all"
+  ],
+  "needs": [
+   "color"
+  ],
+  "variants": [
+   {
+    "sku": "EVQ-21",
+    "ean": "",
+    "label": "2850ml",
+    "size": "2850ml",
+    "price": 58,
+    "stock": null,
+    "active": true
+   }
+  ],
+  "image": null
+ },
+ {
+  "id": "gotstyle-for-kids-hair-gel",
+  "brand": "Gotstyle",
+  "brandKey": "gotstyle",
+  "line": "For Kids",
+  "category": "styling",
+  "type": "styling",
+  "name": {
+   "el": "Gotstyle Παιδικό Τζελ Μαλλιών",
+   "en": "Gotstyle For Kids Hair Gel"
+  },
+  "short": {
+   "el": "Παιδικό τζελ μαλλιών με ήπια, ασφαλή σύνθεση χωρίς σκληρά χημικά. Κρατάει το παιδικό χτένισμα όλη μέρα, ξεπλένεται εύκολα. Κατάλληλο για αγόρια και κορίτσια — ιδανικό για σχολείο.",
+   "en": "Kids hair gel with mild, safe formula free from harsh chemicals. Holds the children's hairstyle all day, rinses out easily. Suitable for boys and girls — ideal for school."
+  },
+  "description": {
+   "el": "Παιδικό τζελ μαλλιών με ήπια, ασφαλή σύνθεση χωρίς σκληρά χημικά. Κρατάει το παιδικό χτένισμα όλη μέρα, ξεπλένεται εύκολα. Κατάλληλο για αγόρια και κορίτσια — ιδανικό για σχολείο.",
+   "en": "Kids hair gel with mild, safe formula free from harsh chemicals. Holds the children's hairstyle all day, rinses out easily. Suitable for boys and girls — ideal for school."
+  },
+  "howTo": {
+   "el": "",
+   "en": ""
+  },
+  "safety": {
+   "el": "",
+   "en": ""
+  },
+  "hairTypes": [
+   "all"
+  ],
+  "needs": [],
+  "variants": [
+   {
+    "sku": "EVQ-22",
+    "ean": "",
+    "label": "250ml",
+    "size": "250ml",
+    "price": 7.5,
+    "stock": null,
+    "active": true
+   }
+  ],
+  "image": null
+ }
+]
