@@ -457,3 +457,4 @@
 .nh .sh-card-media, .nh .sh-card-media:hover { text-decoration: none; color: inherit; }
 .sh-finder .sh-need-row { flex-wrap: wrap; overflow: visible; margin: 0; padding: 0; }
 @media (max-width: 420px) { .sh-finder .nh .sh-need, .nh .sh-finder .sh-need { min-height: 42px; padding: 0 16px; font-size: 14px; } }
+.nh .sh button.nh-btn-ghost, .nh .sh-drawer button.nh-btn-ghost { background: transparent; color: var(--nh-text); }

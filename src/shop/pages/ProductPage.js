@@ -193,7 +193,7 @@ const ProductPage = ({ lang, t }) => {
           )}
 
           <div className="sh-buy">
-            {priced && !soldOut ? (
+            {(priced || CATALOG_MODE) && !soldOut ? (
               <>
                 <QtyStepper qty={qty} onChange={(q) => setQty(Math.max(1, Math.min(MAX_QTY, q)))} label={t.qty} max={MAX_QTY} />
                 <button
