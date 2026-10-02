@@ -1,5 +1,5 @@
 import React from 'react';
-import { imageSrc } from '../catalog';
+import { LINE_INFO, imageSrc } from '../catalog';
 
 // Line drawings used when a product has no photo yet: the tile still looks intentional.
 const SHAPES = {
@@ -63,8 +63,10 @@ const shapeFor = (type) =>
     hairspray: 'spray', 'root-spray': 'spray', 'hair-tool': 'tool', accessory: 'tool', set: 'set'
   }[type] || 'bottle');
 
-const ProductImage = ({ product, size = 400, className = '', eager = false, label }) => {
+const ProductImage = ({ product, size = 400, className = '', eager = false, label, variant }) => {
   const src = imageSrc(product.image, size);
+  const v = variant || (product.variants.length === 1 ? product.variants[0] : null);
+  const size_ = v?.size || '';
   if (src) {
     return (
       <div className={`sh-img ${className}`}>
@@ -82,11 +84,17 @@ const ProductImage = ({ product, size = 400, className = '', eager = false, labe
     );
   }
   return (
-    <div className={`sh-img sh-img-art ${className}`} role="img" aria-label={label}>
+    <div
+      className={`sh-img sh-img-art ${className}`}
+      role="img"
+      aria-label={label}
+      style={LINE_INFO[product.line]?.color ? { '--sh-line-color': LINE_INFO[product.line].color } : undefined}
+    >
       <svg viewBox="0 0 100 120" aria-hidden="true" focusable="false">
         {SHAPES[shapeFor(product.type)]}
       </svg>
       <span className="sh-img-line">{product.line}</span>
+      {size_ && <span className="sh-img-size">{size_}</span>}
       <span className="sh-img-brand">{product.brand}</span>
     </div>
   );

@@ -467,7 +467,7 @@ def main():
         for rule in images.get('rules', []):
             if not img and (rule['contains'].lower() in f'{name_el} {name_en}'.lower()):
                 img = rule['image']
-        img = img or images.get('lines', {}).get(line)
+        # Η φωτογραφία της σειράς ΔΕΝ μπαίνει στο προϊόν: δείχνει άλλα/περισσότερα προϊόντα
 
         prod = {
             'id': slug,
@@ -553,6 +553,7 @@ def main():
         'needs': [{'key': k, 'el': v[0], 'en': v[1]} for k, v in NEEDS.items()],
         'hairTypes': [{'key': k, 'el': v[0], 'en': v[1]} for k, v in HAIR_TYPES.items()],
         'lines': images.get('lineInfo', {}),
+        'lineImages': {k: v for k, v in images.get('lines', {}).items()},
         'products': products,
     }
     OUT.parent.mkdir(parents=True, exist_ok=True)

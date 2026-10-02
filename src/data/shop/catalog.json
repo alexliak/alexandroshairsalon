@@ -267,68 +267,99 @@
  "lines": {
   "Absolut Repair Molecular": {
    "el": "Μοριακή επανόρθωση για πολύ ταλαιπωρημένα μαλλιά",
-   "en": "Molecular repair for very damaged hair"
+   "en": "Molecular repair for very damaged hair",
+   "color": "#8a7560"
   },
   "Absolut Repair": {
    "el": "Θρέψη και αναδόμηση για ξηρά, ταλαιπωρημένα μαλλιά",
-   "en": "Nourishing repair for dry, damaged hair"
+   "en": "Nourishing repair for dry, damaged hair",
+   "color": "#d59a3c"
   },
   "Metal Detox": {
    "el": "Προστατεύει χρώμα και ίνα από τα μέταλλα του νερού",
-   "en": "Protects colour and fibre from metals in water"
+   "en": "Protects colour and fibre from metals in water",
+   "color": "#7d8287"
   },
   "Pro Longer": {
    "el": "Για μακριά μαλλιά με λεπτές άκρες",
-   "en": "For long hair with thin ends"
+   "en": "For long hair with thin ends",
+   "color": "#d94f6e"
   },
   "Vitamino Color": {
    "el": "Λάμψη και διάρκεια για βαμμένα μαλλιά",
-   "en": "Shine and lasting colour"
+   "en": "Shine and lasting colour",
+   "color": "#e88aa0"
   },
   "Vitamino Color Spectrum": {
    "el": "Η νέα γενιά Vitamino για βαμμένα μαλλιά",
-   "en": "The new Vitamino for colour-treated hair"
+   "en": "The new Vitamino for colour-treated hair",
+   "color": "#c2407a"
   },
   "Curl Expression": {
    "el": "Ενυδάτωση και ορισμός για μπούκλες",
-   "en": "Hydration and definition for curls"
+   "en": "Hydration and definition for curls",
+   "color": "#8e2a5c"
   },
   "Scalp Advanced": {
    "el": "Φροντίδα τριχωτού και πυκνότητας",
-   "en": "Scalp and density care"
+   "en": "Scalp and density care",
+   "color": "#1f8a86"
   },
   "Keratin Alpha Sleek": {
    "el": "Λείανση έως 2 εβδομάδες",
-   "en": "Smoothness for up to 2 weeks"
+   "en": "Smoothness for up to 2 weeks",
+   "color": "#6b3fb0"
   },
   "Steampod": {
    "el": "Ίσιωμα και μπούκλες με ατμό",
-   "en": "Steam straightening and curls"
+   "en": "Steam straightening and curls",
+   "color": "#6f7378"
   },
   "Blondifier": {
    "el": "Λάμψη για ξανθά μαλλιά",
-   "en": "Shine for blonde hair"
+   "en": "Shine for blonde hair",
+   "color": "#c9a24a"
   },
   "Silver": {
    "el": "Για λευκά και γκρι μαλλιά",
-   "en": "For white and grey hair"
+   "en": "For white and grey hair",
+   "color": "#8c84b0"
   },
   "Tecni.Art": {
    "el": "Επαγγελματικό styling",
-   "en": "Professional styling"
+   "en": "Professional styling",
+   "color": "#3b3b3b"
   },
   "Infinium": {
    "el": "Λακ με κράτημα χωρίς βάρος",
-   "en": "Hairspray with weightless hold"
+   "en": "Hairspray with weightless hold",
+   "color": "#b08a3c"
   },
   "Hair Touch Up": {
    "el": "Κάλυψη ρίζας σε δευτερόλεπτα",
-   "en": "Instant root cover-up"
+   "en": "Instant root cover-up",
+   "color": "#6b4a3a"
   },
   "AirLight Pro": {
    "el": "Σεσουάρ υπέρυθρης τεχνολογίας",
-   "en": "Infrared hair dryer"
+   "en": "Infrared hair dryer",
+   "color": "#4a4a4a"
+  },
+  "Serioxyl": {
+   "el": "Πυκνότητα για λεπτά μαλλιά",
+   "en": "Density for thinning hair"
   }
+ },
+ "lineImages": {
+  "Absolut Repair Molecular": "absolut-repair-molecular",
+  "Absolut Repair": "absolut-repair",
+  "Metal Detox": "metal-detox",
+  "Pro Longer": "pro-longer",
+  "Vitamino Color": "vitamino-color",
+  "Curl Expression": "curl-expression",
+  "Scalp Advanced": "scalp-advanced",
+  "Keratin Alpha Sleek": "keratin-alpha-sleek",
+  "Steampod": "steampod"
  },
  "products": [
   {
@@ -380,7 +411,7 @@
      "pro": false
     }
    ],
-   "image": "keratin-alpha-sleek",
+   "image": null,
    "related": [
     "loreal-keratin-alpha-sleek-professional-sulfate-free-shampoo",
     "loreal-keratin-alpha-sleek-professional-hair-mask",
@@ -438,7 +469,7 @@
      "pro": false
     }
    ],
-   "image": "metal-detox",
+   "image": null,
    "related": [
     "loreal-metal-detox-pre-shampoo-peripoiisi-apomakrynsis-kai",
     "loreal-metal-detox-elaio-apomakrynsis-kai-prostasias-apo",
@@ -525,7 +556,7 @@
      "pro": true
     }
    ],
-   "image": "vitamino-color",
+   "image": null,
    "related": [
     "loreal-vitamino-color-maska-gia-bammena-mallia",
     "loreal-vitamino-color-conditioner-gia-bammena-mallia",
@@ -592,7 +623,7 @@
      "pro": false
     }
    ],
-   "image": "scalp-advanced",
+   "image": null,
    "related": [
     "loreal-scalp-advanced-a-discomfort-peripoiisi-gia-to",
     "loreal-absolut-repair-molecular-bi-phase-oil-gia"
@@ -644,7 +675,7 @@
      "pro": false
     }
    ],
-   "image": "scalp-advanced",
+   "image": null,
    "related": [
     "loreal-aminexil-advanced-full-strong-oros-kata-tis",
     "loreal-aminexil-advanced-anti-hairloss-programme-against-hair",
@@ -702,7 +733,7 @@
      "pro": false
     }
    ],
-   "image": "metal-detox",
+   "image": null,
    "related": [
     "loreal-metal-detox-pre-shampoo-peripoiisi-apomakrynsis-kai",
     "loreal-metal-detox-maska-gia-apolyti-epanortosi-mallion",
@@ -758,7 +789,7 @@
      "pro": false
     }
    ],
-   "image": "pro-longer",
+   "image": null,
    "related": [
     "loreal-pro-longer-sampoyan",
     "loreal-pro-longer-conditioner-kata-tis-palidas-gia",
@@ -872,7 +903,7 @@
      "pro": false
     }
    ],
-   "image": "curl-expression",
+   "image": null,
    "related": [
     "loreal-curl-expression-intense-moisturizing-cleansing-cream-for",
     "loreal-curl-expression-intensive-moisturizer-mask-for-each",
@@ -1057,7 +1088,7 @@
      "pro": false
     }
    ],
-   "image": "keratin-alpha-sleek",
+   "image": null,
    "related": [
     "loreal-keratin-alpha-sleek-professional-sulfate-free-shampoo",
     "loreal-keratin-alpha-sleek-smooth-transformer-progressive-smoothing",
@@ -1213,7 +1244,7 @@
      "pro": false
     }
    ],
-   "image": "pro-longer",
+   "image": null,
    "related": [
     "loreal-pro-longer-sampoyan",
     "loreal-pro-longer-conditioner-kata-tis-palidas-gia",
@@ -1344,7 +1375,7 @@
      "pro": false
     }
    ],
-   "image": "vitamino-color",
+   "image": null,
    "related": [
     "loreal-vitamino-color-sampoyan",
     "loreal-vitamino-color-conditioner-gia-bammena-mallia",
@@ -1409,7 +1440,7 @@
      "pro": false
     }
    ],
-   "image": "absolut-repair-molecular",
+   "image": null,
    "related": [
     "loreal-absolut-repair-molecular-sampoyan-moriakis-epanortosis-gia",
     "loreal-absolut-repair-molecular-serum-moriakis-epanortosis-poy",
@@ -1465,7 +1496,7 @@
      "pro": false
     }
    ],
-   "image": "scalp-advanced",
+   "image": null,
    "related": [
     "loreal-scalp-advanced-anti-discomfort-sampoyan-gia-to",
     "loreal-absolut-repair-molecular-bi-phase-oil-gia"
@@ -1517,7 +1548,7 @@
      "pro": false
     }
    ],
-   "image": "scalp-advanced",
+   "image": null,
    "related": [
     "loreal-scalp-advanced-anti-oiliness-dermo-purifier-shampoo",
     "loreal-absolut-repair-molecular-sampoyan-moriakis-epanortosis-gia",
@@ -1634,7 +1665,7 @@
      "pro": false
     }
    ],
-   "image": "absolut-repair",
+   "image": null,
    "related": [
     "loreal-absolut-repair-sampoyan",
     "loreal-absolut-repair-golden-mask-with-protein-and",
@@ -1690,7 +1721,7 @@
      "pro": false
     }
    ],
-   "image": "vitamino-color",
+   "image": null,
    "related": [
     "loreal-vitamino-color-sampoyan",
     "loreal-vitamino-color-maska-gia-bammena-mallia",
@@ -1910,7 +1941,7 @@
      "pro": false
     }
    ],
-   "image": "serioxyl",
+   "image": null,
    "related": [
     "loreal-scalp-advanced-anti-dandruff-sampoyan-kata-tis",
     "loreal-aminexil-advanced-anti-hairloss-programme-against-hair",
@@ -1966,7 +1997,7 @@
      "pro": false
     }
    ],
-   "image": "pro-longer",
+   "image": null,
    "related": [
     "loreal-pro-longer-sampoyan",
     "loreal-pro-longer-maska-kata-tis-palidas-gia",
@@ -2020,7 +2051,7 @@
      "pro": false
     }
    ],
-   "image": "serioxyl",
+   "image": null,
    "related": [
     "loreal-serioxyl-advanced-density-oros-gia-pyknosi",
     "loreal-absolut-repair-molecular-sampoyan-moriakis-epanortosis-gia",
@@ -2077,7 +2108,7 @@
      "pro": false
     }
    ],
-   "image": "absolut-repair-molecular",
+   "image": null,
    "related": [
     "loreal-absolut-repair-molecular-sampoyan-moriakis-epanortosis-gia",
     "loreal-absolut-repair-molecular-serum-moriakis-epanortosis-poy",
@@ -2134,7 +2165,7 @@
      "pro": false
     }
    ],
-   "image": "absolut-repair-molecular",
+   "image": null,
    "related": [
     "loreal-absolut-repair-molecular-sampoyan-moriakis-epanortosis-gia",
     "loreal-absolut-repair-molecular-serum-moriakis-epanortosis-poy",
@@ -2257,7 +2288,7 @@
      "pro": false
     }
    ],
-   "image": "absolut-repair-molecular",
+   "image": null,
    "related": [
     "loreal-absolut-repair-molecular-sampoyan-moriakis-epanortosis-gia",
     "loreal-absolut-repair-molecular-serum-moriakis-epanortosis-poy",
@@ -2322,7 +2353,7 @@
      "pro": false
     }
    ],
-   "image": "serioxyl",
+   "image": null,
    "related": [
     "loreal-aminexil-advanced-full-strong-oros-kata-tis",
     "loreal-scalp-advanced-anti-dandruff-sampoyan-kata-tis",
@@ -2487,7 +2518,7 @@
      "pro": false
     }
    ],
-   "image": "vitamino-color",
+   "image": null,
    "related": [
     "loreal-vitamino-color-sampoyan",
     "loreal-vitamino-color-maska-gia-bammena-mallia",
@@ -2554,7 +2585,7 @@
      "pro": false
     }
    ],
-   "image": "curl-expression",
+   "image": null,
    "related": [
     "loreal-curl-expression-intense-moisturizing-cleansing-cream-for",
     "loreal-curl-expression-intensive-moisturizer-mask-for-each",
@@ -2622,7 +2653,7 @@
      "pro": false
     }
    ],
-   "image": "absolut-repair",
+   "image": null,
    "related": [
     "loreal-absolut-repair-sampoyan",
     "loreal-absolut-repair-oil-multi-benefit-leave-in",
@@ -2690,7 +2721,7 @@
      "pro": false
     }
    ],
-   "image": "absolut-repair",
+   "image": null,
    "related": [
     "loreal-absolut-repair-sampoyan",
     "loreal-absolut-repair-golden-mask-with-protein-and",
@@ -2791,7 +2822,7 @@
      "pro": true
     }
    ],
-   "image": "absolut-repair",
+   "image": null,
    "related": [
     "loreal-absolut-repair-golden-mask-with-protein-and",
     "loreal-absolut-repair-oil-multi-benefit-leave-in",
@@ -2904,7 +2935,7 @@
      "pro": false
     }
    ],
-   "image": "steampod",
+   "image": null,
    "related": [
     "loreal-steampod-4-all-in-one-professional-steam",
     "loreal-steampod-professional-smoothing-treatment",
@@ -2983,7 +3014,7 @@
      "pro": true
     }
    ],
-   "image": "metal-detox",
+   "image": null,
    "related": [
     "loreal-metal-detox-pre-shampoo-peripoiisi-apomakrynsis-kai",
     "loreal-metal-detox-maska-gia-apolyti-epanortosi-mallion",
@@ -3041,7 +3072,7 @@
      "pro": false
     }
    ],
-   "image": "metal-detox",
+   "image": null,
    "related": [
     "loreal-metal-detox-pre-shampoo-peripoiisi-apomakrynsis-kai",
     "loreal-metal-detox-maska-gia-apolyti-epanortosi-mallion",
@@ -3141,7 +3172,7 @@
      "pro": true
     }
    ],
-   "image": "keratin-alpha-sleek",
+   "image": null,
    "related": [
     "loreal-keratin-alpha-sleek-professional-hair-mask",
     "loreal-keratin-alpha-sleek-smooth-transformer-progressive-smoothing",
@@ -3264,7 +3295,7 @@
      "pro": false
     }
    ],
-   "image": "curl-expression",
+   "image": null,
    "related": [
     "loreal-curl-expression-intensive-moisturizer-mask-for-each",
     "loreal-curl-expression-intensive-moisturizer-rich-mask-for",
@@ -3363,7 +3394,7 @@
      "pro": true
     }
    ],
-   "image": "absolut-repair-molecular",
+   "image": null,
    "related": [
     "loreal-absolut-repair-molecular-maska-moriakis-epanortosis-gia",
     "loreal-absolut-repair-molecular-serum-moriakis-epanortosis-poy",
@@ -3419,7 +3450,7 @@
      "pro": false
     }
    ],
-   "image": "curl-expression",
+   "image": null,
    "related": [
     "loreal-curl-expression-intense-moisturizing-cleansing-cream-for",
     "loreal-curl-expression-intensive-moisturizer-mask-for-each",
@@ -3476,7 +3507,7 @@
      "pro": false
     }
    ],
-   "image": "curl-expression",
+   "image": null,
    "related": [
     "loreal-curl-expression-intense-moisturizing-cleansing-cream-for",
     "loreal-curl-expression-intensive-moisturizer-mask-for-each",
@@ -3599,7 +3630,7 @@
      "pro": false
     }
    ],
-   "image": "curl-expression",
+   "image": null,
    "related": [
     "loreal-curl-expression-intense-moisturizing-cleansing-cream-for",
     "loreal-curl-expression-intensive-moisturizer-mask-for-each",
@@ -3654,7 +3685,7 @@
      "pro": false
     }
    ],
-   "image": "absolut-repair-molecular",
+   "image": null,
    "related": [
     "loreal-absolut-repair-molecular-sampoyan-moriakis-epanortosis-gia",
     "loreal-absolut-repair-molecular-serum-moriakis-epanortosis-poy",
@@ -3709,7 +3740,7 @@
      "pro": false
     }
    ],
-   "image": "absolut-repair-molecular",
+   "image": null,
    "related": [
     "loreal-absolut-repair-molecular-sampoyan-moriakis-epanortosis-gia",
     "loreal-absolut-repair-molecular-maska-moriakis-epanortosis-gia",
@@ -3763,7 +3794,7 @@
      "pro": false
     }
    ],
-   "image": "serioxyl",
+   "image": null,
    "related": [
     "loreal-serioxyl-advanced-density-sampoyan-gia-pyknosi",
     "loreal-absolut-repair-molecular-sampoyan-moriakis-epanortosis-gia",
@@ -3830,7 +3861,7 @@
      "pro": true
     }
    ],
-   "image": "scalp-advanced",
+   "image": null,
    "related": [
     "loreal-scalp-advanced-anti-oily-argilos-kata-tis",
     "loreal-absolut-repair-molecular-sampoyan-moriakis-epanortosis-gia",
@@ -3946,7 +3977,7 @@
      "pro": false
     }
    ],
-   "image": "metal-detox",
+   "image": null,
    "related": [
     "loreal-metal-detox-maska-gia-apolyti-epanortosi-mallion",
     "loreal-metal-detox-elaio-apomakrynsis-kai-prostasias-apo",
@@ -4001,7 +4032,7 @@
      "pro": false
     }
    ],
-   "image": "absolut-repair",
+   "image": null,
    "related": [
     "loreal-absolut-repair-sampoyan",
     "loreal-absolut-repair-golden-mask-with-protein-and",
@@ -4058,7 +4089,7 @@
      "pro": false
     }
    ],
-   "image": "steampod",
+   "image": null,
    "related": [
     "loreal-steampod-3-professional-steam-styler",
     "loreal-steampod-4-all-in-one-professional-steam",
@@ -4135,7 +4166,7 @@
      "pro": true
     }
    ],
-   "image": "pro-longer",
+   "image": null,
    "related": [
     "loreal-pro-longer-maska-kata-tis-palidas-gia",
     "loreal-pro-longer-conditioner-kata-tis-palidas-gia",
@@ -4202,7 +4233,7 @@
      "pro": false
     }
    ],
-   "image": "curl-expression",
+   "image": null,
    "related": [
     "loreal-curl-expression-intense-moisturizing-cleansing-cream-for",
     "loreal-curl-expression-intensive-moisturizer-rich-mask-for",
@@ -4260,7 +4291,7 @@
      "pro": false
     }
    ],
-   "image": "steampod",
+   "image": null,
    "related": [
     "loreal-steampod-3-professional-steam-styler",
     "loreal-steampod-professional-smoothing-treatment",
@@ -4449,7 +4480,7 @@
      "pro": false
     }
    ],
-   "image": "absolut-repair",
+   "image": null,
    "related": [
     "loreal-absolut-repair-sampoyan",
     "loreal-absolut-repair-golden-mask-with-protein-and",
@@ -4561,7 +4592,7 @@
      "pro": false
     }
    ],
-   "image": "keratin-alpha-sleek",
+   "image": null,
    "related": [
     "loreal-keratin-alpha-sleek-professional-sulfate-free-shampoo",
     "loreal-keratin-alpha-sleek-professional-hair-mask",
