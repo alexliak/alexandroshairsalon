@@ -155,6 +155,7 @@ const ShopHome = ({ lang, t }) => {
         <div className="sh-need-row">
           {KINDS.map((k) => {
             const on = sameSet(state.type, k.types);
+            if (!PRODUCTS.some((p) => k.types.includes(p.type))) return null;
             return (
               <button
                 key={k.key}

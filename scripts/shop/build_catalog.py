@@ -543,6 +543,24 @@ def main():
         for row in all_rows.values():
             w.writerow({k: row.get(k, '') for k in w.fieldnames})
 
+    # Τι εμφανίζεται στο shop (src/shop/settings.json): εταιρείες και «μόνο με φωτογραφία»
+    settings_path = ROOT / 'src' / 'shop' / 'settings.json'
+    settings = json.loads(settings_path.read_text(encoding='utf-8')) if settings_path.exists() else {}
+    allowed = settings.get('brands')
+    if allowed:
+        products = [p for p in products if p['brandKey'] in allowed]
+    if settings.get('onlyWithPhoto'):
+        kept = []
+        for p in products:
+            p['variants'] = [v for v in p['variants'] if v.get('image')]
+            if p['variants']:
+                p['image'] = p['variants'][0]['image']
+                kept.append(p)
+        products = kept
+    ids = {p['id'] for p in products}
+    for p in products:
+        p['related'] = [r for r in p.get('related', []) if r in ids]
+
     brands = OrderedDict()
     for p in products:
         brands.setdefault(p['brandKey'], p['brand'])
