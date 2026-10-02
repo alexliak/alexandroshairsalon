@@ -46,6 +46,9 @@ const withMeta = (html, { title, description, url, image, jsonld, noindex }) => 
 const catalogPath = path.join(__dirname, '..', 'src', 'data', 'shop', 'catalog.json');
 if (fs.existsSync(catalogPath)) {
   const { products } = JSON.parse(fs.readFileSync(catalogPath, 'utf8'));
+  // Catalog mode (no prices on the site): no prices in the schema either
+  const settingsPath = path.join(__dirname, '..', 'src', 'shop', 'settings.json');
+  const catalogMode = fs.existsSync(settingsPath) && !!JSON.parse(fs.readFileSync(settingsPath, 'utf8')).catalogMode;
   const dir = path.join(build, 'shop', 'p');
   fs.mkdirSync(dir, { recursive: true });
   // /shop/ as a folder too, in case GitHub Pages prefers the folder over shop.html
@@ -57,7 +60,7 @@ if (fs.existsSync(catalogPath)) {
     const description = (p.short.el || p.description.el || p.name.el).slice(0, 155);
     const image = p.image ? `${SITE}/images/shop/${p.image}-800.webp` : null;
     const offers = p.variants
-      .filter((v) => typeof v.price === 'number')
+      .filter((v) => !catalogMode && typeof v.price === 'number')
       .map((v) => ({
         '@type': 'Offer', sku: v.sku, ...(v.ean ? { gtin13: v.ean } : {}), price: v.price.toFixed(2), priceCurrency: 'EUR',
         availability: v.stock === 0 ? 'https://schema.org/OutOfStock' : 'https://schema.org/InStock',

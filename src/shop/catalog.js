@@ -1,5 +1,5 @@
 import data from '../data/shop/catalog.json';
-import { SHOW_UNPRICED } from './config';
+import { CATALOG_MODE, SHOW_UNPRICED } from './config';
 
 const byKey = (list) => Object.fromEntries(list.map((x) => [x.key, x]));
 
@@ -25,7 +25,10 @@ export const norm = (s) =>
     .toLowerCase()
     .replace(/ς/g, 'σ');
 
-const enrich = (p) => {
+const enrich = (raw) => {
+  const p = CATALOG_MODE
+    ? { ...raw, variants: raw.variants.map((v) => ({ ...v, price: null, compareAt: null })) }
+    : raw;
   const prices = p.variants.map((v) => v.price).filter((x) => typeof x === 'number');
   const minPrice = prices.length ? Math.min(...prices) : null;
   const maxPrice = prices.length ? Math.max(...prices) : null;
@@ -38,7 +41,7 @@ const enrich = (p) => {
   return { ...p, minPrice, maxPrice, priced: minPrice !== null, inStock, haystack };
 };
 
-export const PRODUCTS = data.products.map(enrich).filter((p) => SHOW_UNPRICED || p.priced);
+export const PRODUCTS = data.products.map(enrich).filter((p) => CATALOG_MODE || SHOW_UNPRICED || p.priced);
 export const productById = Object.fromEntries(PRODUCTS.map((p) => [p.id, p]));
 export const LINES = [...new Set(PRODUCTS.map((p) => p.line))].sort((a, b) => a.localeCompare(b));
 

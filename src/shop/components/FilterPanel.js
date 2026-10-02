@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { BRANDS, CATEGORIES, HAIR_TYPES, LINES, NEEDS, TYPES, t as tr } from '../catalog';
 import Stars from './Stars';
+import { CATALOG_MODE } from '../config';
 
 const Group = ({ title, children, open = true, count = 0 }) => (
   <details className="sh-fgroup" open={open}>
@@ -94,9 +95,11 @@ const FilterPanel = ({ lang, t, f, hasRatings }) => {
       <Group title={t.line} count={state.line.length} open={false}>
         <Options name="line" t={t} items={LINES.map((l) => ({ key: l, label: l }))} selected={state.line} counts={counts.line} onToggle={toggle} />
       </Group>
-      <Group title={t.price} count={(state.pmin !== null ? 1 : 0) + (state.pmax !== null ? 1 : 0)} open={false}>
-        <PriceRange state={state} update={update} t={t} />
-      </Group>
+      {!CATALOG_MODE && (
+        <Group title={t.price} count={(state.pmin !== null ? 1 : 0) + (state.pmax !== null ? 1 : 0)} open={false}>
+          <PriceRange state={state} update={update} t={t} />
+        </Group>
+      )}
       {hasRatings && (
         <Group title={t.rating} count={state.rating ? 1 : 0} open={false}>
           <ul className="sh-opts">
@@ -115,7 +118,7 @@ const FilterPanel = ({ lang, t, f, hasRatings }) => {
         <ul className="sh-opts">
           {[
             ['stock', t.inStockOnly],
-            ['priced', t.pricedOnly],
+            ...(CATALOG_MODE ? [] : [['priced', t.pricedOnly]]),
             ['wish', t.onlyWishlist]
           ].map(([k, label]) => (
             <li key={k}>

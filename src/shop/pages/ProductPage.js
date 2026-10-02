@@ -5,7 +5,7 @@ import {
   PRODUCTS, hairByKey, imageSrc, money, needByKey, productById, t as tr, typeByKey
 } from '../catalog';
 import { useShop } from '../ShopContext';
-import { MAX_QTY, SITE } from '../config';
+import { CATALOG_MODE, MAX_QTY, SITE } from '../config';
 import ProductImage from '../components/ProductImage';
 import ProductCard, { askPriceUrl } from '../components/ProductCard';
 import Reviews from '../components/Reviews';
@@ -171,7 +171,7 @@ const ProductPage = ({ lang, t }) => {
                 )}
               </>
             ) : (
-              <span className="sh-price-ask">{t.priceSoon}</span>
+              <span className="sh-price-ask">{CATALOG_MODE ? t.catalogNote : t.priceSoon}</span>
             )}
           </div>
 

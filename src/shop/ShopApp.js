@@ -1,5 +1,6 @@
 import React from 'react';
-import { Route, Routes, useLocation } from 'react-router-dom';
+import { Navigate, Route, Routes, useLocation } from 'react-router-dom';
+import { CATALOG_MODE } from './config';
 import { FaShoppingBag } from 'react-icons/fa';
 import NhLayout from '../components/NhLayout';
 import { ShopProvider, useShop } from './ShopContext';
@@ -40,24 +41,24 @@ const Inner = ({ language, setLanguage }) => {
   const t = useT(language);
   const { count } = useShop();
   const { pathname } = useLocation();
-  const showBar = count > 0 && !pathname.startsWith('/shop/cart');
+  const showBar = !CATALOG_MODE && count > 0 && !pathname.startsWith('/shop/cart');
   return (
     <NhLayout
       language={language}
       setLanguage={setLanguage}
-      headerExtra={<CartButton t={t} />}
+      headerExtra={CATALOG_MODE ? undefined : <CartButton t={t} />}
       mobileBar={showBar ? <MobileCartBar t={t} lang={language} /> : undefined}
     >
       <main className="nh-page nh-shop-v2">
         <Routes>
           <Route path="/shop" element={<ShopHome lang={language} t={t} />} />
           <Route path="/shop/p/:id" element={<ProductPage lang={language} t={t} />} />
-          <Route path="/shop/cart" element={<CartPage lang={language} t={t} />} />
+          <Route path="/shop/cart" element={CATALOG_MODE ? <Navigate to="/shop" replace /> : <CartPage lang={language} t={t} />} />
           <Route path="/shop/admin" element={<ReviewsAdmin />} />
           <Route path="*" element={<ShopHome lang={language} t={t} />} />
         </Routes>
       </main>
-      <CartDrawer lang={language} t={t} />
+      {!CATALOG_MODE && <CartDrawer lang={language} t={t} />}
     </NhLayout>
   );
 };
