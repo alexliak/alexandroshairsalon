@@ -1,4 +1,8 @@
 {
-  "_help": "catalogMode: true = το shop φαίνεται ως κατάλογος χωρίς τιμές και καλάθι (ερώτηση μέσω WhatsApp). false = κανονικές αγορές.",
-  "catalogMode": true
+  "_help": "catalogMode: true = κατάλογος χωρίς τιμές και καλάθι. brands: ποιες εταιρείες εμφανίζονται (loreal, evoque, gotstyle). onlyWithPhoto: true = εμφανίζονται μόνο τα μεγέθη που έχουν δική τους φωτογραφία.",
+  "catalogMode": true,
+  "brands": [
+    "loreal"
+  ],
+  "onlyWithPhoto": true
 }
