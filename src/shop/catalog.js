@@ -9,6 +9,7 @@ export const TYPES = data.types;
 export const NEEDS = data.needs;
 export const HAIR_TYPES = data.hairTypes;
 export const LINE_INFO = data.lines || {};
+export const LINE_IMAGES = data.lineImages || {};
 
 export const typeByKey = byKey(TYPES);
 export const needByKey = byKey(NEEDS);

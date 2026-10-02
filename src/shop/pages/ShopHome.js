@@ -1,7 +1,7 @@
 import React, { useEffect, useMemo, useRef, useState } from 'react';
 import { FaSearch, FaSlidersH, FaTimes, FaWhatsapp } from 'react-icons/fa';
 import {
-  BRANDS, CATEGORIES, HAIR_TYPES, LINE_INFO, NEEDS, PRODUCTS, TYPES, imageSrc, t as tr
+  BRANDS, CATEGORIES, HAIR_TYPES, LINE_IMAGES, LINE_INFO, NEEDS, PRODUCTS, TYPES, imageSrc, t as tr
 } from '../catalog';
 import { useShop } from '../ShopContext';
 import { CATALOG_MODE, SITE, WHATSAPP } from '../config';
@@ -11,7 +11,28 @@ import ProductCard from '../components/ProductCard';
 
 const PAGE = 24;
 
-const FEATURED_NEEDS = ['repair', 'color', 'blonde', 'smooth', 'curls', 'hydration', 'volume', 'scalp'];
+// «Βρες αυτό που χρειάζεσαι»: το πρόβλημα με λόγια πελάτη, μετά το είδος προϊόντος
+const CONCERNS = [
+  { key: 'damaged', needs: ['repair'], el: 'Ταλαιπωρημένα ή σπασμένα', en: 'Damaged or breaking' },
+  { key: 'colored', needs: ['color'], el: 'Βαμμένα μαλλιά', en: 'Colour-treated' },
+  { key: 'blonde', needs: ['blonde'], el: 'Ξανθά ή γκρι', en: 'Blonde or grey' },
+  { key: 'frizz', needs: ['smooth'], el: 'Φριζάρισμα', en: 'Frizz' },
+  { key: 'curly', needs: ['curls'], el: 'Σγουρά, μπούκλες', en: 'Curly hair' },
+  { key: 'dry', needs: ['hydration'], el: 'Ξηρά, αφυδατωμένα', en: 'Dry hair' },
+  { key: 'fine', needs: ['volume', 'hairloss'], el: 'Λεπτά, αραιά, τριχόπτωση', en: 'Fine, thinning, hair loss' },
+  { key: 'scalp', needs: ['scalp'], el: 'Τριχωτό: πιτυρίδα, λιπαρότητα', en: 'Scalp: dandruff, oiliness' },
+  { key: 'long', needs: ['length'], el: 'Μακριά μαλλιά, ψαλίδα', en: 'Long hair, split ends' },
+  { key: 'styling', needs: ['hold', 'heat'], el: 'Styling & θερμοπροστασία', en: 'Styling & heat protection' }
+];
+const KINDS = [
+  { key: 'shampoo', types: ['shampoo', 'pre-shampoo'], el: 'Σαμπουάν', en: 'Shampoo' },
+  { key: 'conditioner', types: ['conditioner'], el: 'Conditioner', en: 'Conditioner' },
+  { key: 'mask', types: ['mask'], el: 'Μάσκα', en: 'Mask' },
+  { key: 'leave', types: ['leave-in', 'serum', 'oil', 'treatment', 'ampoules'], el: 'Leave-in, ορός, λάδι', en: 'Leave-in, serum, oil' },
+  { key: 'styling', types: ['styling', 'hairspray', 'pomade'], el: 'Styling & λακ', en: 'Styling & hairspray' },
+  { key: 'tools', types: ['hair-tool', 'accessory'], el: 'Εργαλεία', en: 'Tools' }
+];
+const sameSet = (a, b) => a.length === b.length && a.every((x) => b.includes(x));
 
 const ShopHome = ({ lang, t }) => {
   const { ratings, wish } = useShop();
@@ -56,13 +77,14 @@ const ShopHome = ({ lang, t }) => {
     return () => el.remove();
   }, []);
 
-  const lines = useMemo(() => {
-    const seen = new Map();
-    PRODUCTS.forEach((p) => {
-      if (p.image && LINE_INFO[p.line] && !seen.has(p.line)) seen.set(p.line, p);
-    });
-    return [...seen.values()];
-  }, []);
+  // Οι φωτογραφίες σειρών μπαίνουν μόνο εδώ (δείχνουν όλη τη σειρά, όχι ένα προϊόν)
+  const lines = useMemo(
+    () =>
+      Object.entries(LINE_IMAGES)
+        .filter(([line]) => PRODUCTS.some((p) => p.line === line))
+        .map(([line, image]) => ({ line, image })),
+    []
+  );
 
   const chips = [];
   const label = (list, key) => tr(list.find((x) => x.key === key), lang) || key;
@@ -107,23 +129,52 @@ const ShopHome = ({ lang, t }) => {
         </ul>
       </section>
 
-      <section className="sh-needs" aria-labelledby="sh-needs-title">
-        <h2 id="sh-needs-title" className="sh-h2">{t.shopByNeed}</h2>
+      <section className="sh-finder" aria-labelledby="sh-finder-title">
+        <h2 id="sh-finder-title" className="sh-h2">{t.finderTitle}</h2>
+        <p className="sh-finder-step"><span>1</span>{t.finderStep1}</p>
+        <div className="sh-concerns">
+          {CONCERNS.map((c) => {
+            const on = sameSet(state.need, c.needs);
+            const n = PRODUCTS.filter((p) => c.needs.some((x) => p.needs.includes(x))).length;
+            if (!n) return null;
+            return (
+              <button
+                key={c.key}
+                type="button"
+                className={`sh-concern${on ? ' is-on' : ''}`}
+                aria-pressed={on}
+                onClick={() => update({ need: on ? [] : c.needs })}
+              >
+                <span className="sh-concern-name">{c[lang] || c.el}</span>
+                <span className="sh-concern-count">{t.results(n)}</span>
+              </button>
+            );
+          })}
+        </div>
+        <p className="sh-finder-step"><span>2</span>{t.finderStep2}</p>
         <div className="sh-need-row">
-          {FEATURED_NEEDS.map((k) => (
-            <button
-              key={k}
-              type="button"
-              className={`sh-need${state.need.includes(k) ? ' is-on' : ''}`}
-              aria-pressed={state.need.includes(k)}
-              onClick={() => {
-                toggle('need', k);
-                goToGrid();
-              }}
-            >
-              {label(NEEDS, k)}
-            </button>
-          ))}
+          {KINDS.map((k) => {
+            const on = sameSet(state.type, k.types);
+            return (
+              <button
+                key={k.key}
+                type="button"
+                className={`sh-need${on ? ' is-on' : ''}`}
+                aria-pressed={on}
+                onClick={() => update({ type: on ? [] : k.types })}
+              >
+                {k[lang] || k.el}
+              </button>
+            );
+          })}
+        </div>
+        <div className="sh-finder-foot">
+          <button type="button" className="nh-btn nh-btn-gold" onClick={goToGrid}>
+            {t.showResults(results.length)}
+          </button>
+          {(state.need.length > 0 || state.type.length > 0) && (
+            <button type="button" className="sh-link" onClick={() => update({ need: [], type: [] })}>{t.clearAll}</button>
+          )}
         </div>
       </section>
 

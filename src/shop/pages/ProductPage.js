@@ -146,8 +146,7 @@ const ProductPage = ({ lang, t }) => {
 
       <div className="sh-pdp">
         <div className="sh-pdp-media">
-          <ProductImage product={p} size={800} eager label={name} className="sh-pdp-img" />
-          {p.image && <p className="sh-pdp-caption">{lang === 'en' ? `The ${p.line} range` : `Η σειρά ${p.line}`}</p>}
+          <ProductImage product={p} variant={variant} size={800} eager label={name} className="sh-pdp-img" />
         </div>
 
         <div className="sh-pdp-info">

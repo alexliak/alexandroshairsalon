@@ -1,10 +1,11 @@
 {
- "_help": "Εικόνες στο public/images/shop/<όνομα>-400.webp και -800.webp. 'products': EAN -> εικόνα, 'rules': αν το όνομα περιέχει το κείμενο, 'lines': εικόνα για όλη τη σειρά.",
+ "_help": "Εικόνες στο public/images/shop/<όνομα>-400.webp και -800.webp. 'products': EAN -> φωτογραφία ΤΟΥ ΣΥΓΚΕΚΡΙΜΕΝΟΥ προϊόντος (packshot). 'rules': αν το όνομα περιέχει το κείμενο (μόνο όταν η φωτογραφία δείχνει ακριβώς αυτό το προϊόν). 'lines': φωτογραφία της σειράς, εμφανίζεται ΜΟΝΟ στις κάρτες «Σειρές», όχι στα προϊόντα. 'lineInfo.color': χρώμα της σειράς για το σχέδιο των προϊόντων χωρίς φωτογραφία.",
  "products": {},
  "rules": [
-  {"contains": "Bi-Phase Oil", "image": "arm-bi-phase-oil"},
-  {"contains": "Serioxyl", "image": "serioxyl"},
-  {"contains": "Aminexil", "image": "serioxyl"}
+  {
+   "contains": "Bi-Phase Oil",
+   "image": "arm-bi-phase-oil"
+  }
  ],
  "lines": {
   "Absolut Repair Molecular": "absolut-repair-molecular",
@@ -18,21 +19,89 @@
   "Steampod": "steampod"
  },
  "lineInfo": {
-  "Absolut Repair Molecular": {"el": "Μοριακή επανόρθωση για πολύ ταλαιπωρημένα μαλλιά", "en": "Molecular repair for very damaged hair"},
-  "Absolut Repair": {"el": "Θρέψη και αναδόμηση για ξηρά, ταλαιπωρημένα μαλλιά", "en": "Nourishing repair for dry, damaged hair"},
-  "Metal Detox": {"el": "Προστατεύει χρώμα και ίνα από τα μέταλλα του νερού", "en": "Protects colour and fibre from metals in water"},
-  "Pro Longer": {"el": "Για μακριά μαλλιά με λεπτές άκρες", "en": "For long hair with thin ends"},
-  "Vitamino Color": {"el": "Λάμψη και διάρκεια για βαμμένα μαλλιά", "en": "Shine and lasting colour"},
-  "Vitamino Color Spectrum": {"el": "Η νέα γενιά Vitamino για βαμμένα μαλλιά", "en": "The new Vitamino for colour-treated hair"},
-  "Curl Expression": {"el": "Ενυδάτωση και ορισμός για μπούκλες", "en": "Hydration and definition for curls"},
-  "Scalp Advanced": {"el": "Φροντίδα τριχωτού και πυκνότητας", "en": "Scalp and density care"},
-  "Keratin Alpha Sleek": {"el": "Λείανση έως 2 εβδομάδες", "en": "Smoothness for up to 2 weeks"},
-  "Steampod": {"el": "Ίσιωμα και μπούκλες με ατμό", "en": "Steam straightening and curls"},
-  "Blondifier": {"el": "Λάμψη για ξανθά μαλλιά", "en": "Shine for blonde hair"},
-  "Silver": {"el": "Για λευκά και γκρι μαλλιά", "en": "For white and grey hair"},
-  "Tecni.Art": {"el": "Επαγγελματικό styling", "en": "Professional styling"},
-  "Infinium": {"el": "Λακ με κράτημα χωρίς βάρος", "en": "Hairspray with weightless hold"},
-  "Hair Touch Up": {"el": "Κάλυψη ρίζας σε δευτερόλεπτα", "en": "Instant root cover-up"},
-  "AirLight Pro": {"el": "Σεσουάρ υπέρυθρης τεχνολογίας", "en": "Infrared hair dryer"}
+  "Absolut Repair Molecular": {
+   "el": "Μοριακή επανόρθωση για πολύ ταλαιπωρημένα μαλλιά",
+   "en": "Molecular repair for very damaged hair",
+   "color": "#8a7560"
+  },
+  "Absolut Repair": {
+   "el": "Θρέψη και αναδόμηση για ξηρά, ταλαιπωρημένα μαλλιά",
+   "en": "Nourishing repair for dry, damaged hair",
+   "color": "#d59a3c"
+  },
+  "Metal Detox": {
+   "el": "Προστατεύει χρώμα και ίνα από τα μέταλλα του νερού",
+   "en": "Protects colour and fibre from metals in water",
+   "color": "#7d8287"
+  },
+  "Pro Longer": {
+   "el": "Για μακριά μαλλιά με λεπτές άκρες",
+   "en": "For long hair with thin ends",
+   "color": "#d94f6e"
+  },
+  "Vitamino Color": {
+   "el": "Λάμψη και διάρκεια για βαμμένα μαλλιά",
+   "en": "Shine and lasting colour",
+   "color": "#e88aa0"
+  },
+  "Vitamino Color Spectrum": {
+   "el": "Η νέα γενιά Vitamino για βαμμένα μαλλιά",
+   "en": "The new Vitamino for colour-treated hair",
+   "color": "#c2407a"
+  },
+  "Curl Expression": {
+   "el": "Ενυδάτωση και ορισμός για μπούκλες",
+   "en": "Hydration and definition for curls",
+   "color": "#8e2a5c"
+  },
+  "Scalp Advanced": {
+   "el": "Φροντίδα τριχωτού και πυκνότητας",
+   "en": "Scalp and density care",
+   "color": "#1f8a86"
+  },
+  "Keratin Alpha Sleek": {
+   "el": "Λείανση έως 2 εβδομάδες",
+   "en": "Smoothness for up to 2 weeks",
+   "color": "#6b3fb0"
+  },
+  "Steampod": {
+   "el": "Ίσιωμα και μπούκλες με ατμό",
+   "en": "Steam straightening and curls",
+   "color": "#6f7378"
+  },
+  "Blondifier": {
+   "el": "Λάμψη για ξανθά μαλλιά",
+   "en": "Shine for blonde hair",
+   "color": "#c9a24a"
+  },
+  "Silver": {
+   "el": "Για λευκά και γκρι μαλλιά",
+   "en": "For white and grey hair",
+   "color": "#8c84b0"
+  },
+  "Tecni.Art": {
+   "el": "Επαγγελματικό styling",
+   "en": "Professional styling",
+   "color": "#3b3b3b"
+  },
+  "Infinium": {
+   "el": "Λακ με κράτημα χωρίς βάρος",
+   "en": "Hairspray with weightless hold",
+   "color": "#b08a3c"
+  },
+  "Hair Touch Up": {
+   "el": "Κάλυψη ρίζας σε δευτερόλεπτα",
+   "en": "Instant root cover-up",
+   "color": "#6b4a3a"
+  },
+  "AirLight Pro": {
+   "el": "Σεσουάρ υπέρυθρης τεχνολογίας",
+   "en": "Infrared hair dryer",
+   "color": "#4a4a4a"
+  },
+  "Serioxyl": {
+   "el": "Πυκνότητα για λεπτά μαλλιά",
+   "en": "Density for thinning hair"
+  }
  }
 }

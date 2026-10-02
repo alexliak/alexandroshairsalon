@@ -96,6 +96,9 @@ const L = {
     adviceTitle: 'Δεν ξέρεις τι να διαλέξεις;',
     adviceText: 'Στείλε μας φωτογραφία των μαλλιών σου και θα σου προτείνουμε τι χρειάζεσαι. Χωρίς χρέωση.',
     shopByNeed: 'Αγόρασε ανά ανάγκη',
+    finderTitle: 'Βρες αυτό που χρειάζεσαι',
+    finderStep1: 'Τι θέλεις να φροντίσεις;',
+    finderStep2: 'Τι είδος προϊόντος; (προαιρετικά)',
     shopByLine: 'Σειρές',
     allProducts: 'Όλα τα προϊόντα',
     photoSoon: 'Φωτογραφία σύντομα'
@@ -197,6 +200,9 @@ const L = {
     adviceTitle: 'Not sure what to choose?',
     adviceText: 'Send us a photo of your hair and we will suggest what you need. Free of charge.',
     shopByNeed: 'Shop by need',
+    finderTitle: 'Find what you need',
+    finderStep1: 'What would you like to care for?',
+    finderStep2: 'What kind of product? (optional)',
     shopByLine: 'Ranges',
     allProducts: 'All products',
     photoSoon: 'Photo coming soon'
