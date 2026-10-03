@@ -86,6 +86,17 @@ if (fs.existsSync(catalogPath)) {
     urls.push(url);
   }
 
+  // Διάγνωση μαλλιών: κανονική σελίδα με δικό της τίτλο, μέσα στο sitemap
+  fs.writeFileSync(
+    path.join(build, 'shop', 'diagnosi.html'),
+    withMeta(index, {
+      title: 'Διάγνωση μαλλιών: η ρουτίνα L’Oréal Professionnel που σου ταιριάζει | Alexandros Hair Salon',
+      description: 'Τρεις ερωτήσεις για τα μαλλιά σου και βλέπεις τη ρουτίνα της L’Oréal Professionnel βήμα προς βήμα. Alexandros Hair Salon, Θησείο.',
+      url: `${SITE}/shop/diagnosi`
+    })
+  );
+  urls.push(`${SITE}/shop/diagnosi`);
+
   for (const [file, title] of [['cart', 'Καλάθι'], ['admin', 'Διαχείριση']]) {
     fs.writeFileSync(
       path.join(build, 'shop', `${file}.html`),
