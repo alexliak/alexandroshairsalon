@@ -33,8 +33,8 @@ const layoutText = {
     menu: 'Κύριο μενού',
     city: 'Θησείο',
     book: 'Κλείσε ραντεβού',
-    mobileBarTop: 'Θησείο',
-    mobileBarBottom: 'από το 1992',
+    mobileBarTop: 'Online κράτηση',
+    mobileBarBottom: 'σε 1 λεπτό',
     mobileBarCta: 'Κλείσε ραντεβού',
     footerShop: 'Online Shop',
     footerHours: 'Ωράριο στο Google',
@@ -70,8 +70,8 @@ const layoutText = {
     menu: 'Main menu',
     city: 'Thiseio',
     book: 'Book now',
-    mobileBarTop: 'Thiseio',
-    mobileBarBottom: 'since 1992',
+    mobileBarTop: 'Book online',
+    mobileBarBottom: 'in 1 minute',
     mobileBarCta: 'Book now',
     footerShop: 'Online Shop',
     footerHours: 'Hours on Google',
@@ -145,6 +145,28 @@ const NhLayout = ({ language, setLanguage, children, headerExtra, mobileBar }) =
     if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
   };
 
+  // Κινητό/tablet: η μπάρα με τις επιλογές κρύβεται όταν κατεβαίνεις και ξαναβγαίνει μόλις ανέβεις,
+  // ώστε να μένει περισσότερη οθόνη για το περιεχόμενο (η κεφαλίδα και το «Κλείσε ραντεβού» μένουν πάντα).
+  const [subTucked, setSubTucked] = useState(false);
+  useEffect(() => {
+    let last = window.scrollY;
+    let ticking = false;
+    const onScroll = () => {
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(() => {
+        const y = window.scrollY;
+        if (y < 140 || y < last - 6) setSubTucked(false);
+        else if (y > last + 6) setSubTucked(true);
+        last = y;
+        ticking = false;
+      });
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
+  useEffect(() => { setSubTucked(false); }, [pathname]);
+
   // Show the back-to-top button after the visitor has scrolled down
   const [showTop, setShowTop] = useState(false);
   useEffect(() => {
@@ -216,7 +238,7 @@ const NhLayout = ({ language, setLanguage, children, headerExtra, mobileBar }) =
         </div>
       </header>
 
-      <nav className="nh-subnav" aria-label={t.menu} ref={subnavRef} onScroll={onSubnavScroll}>
+      <nav className={`nh-subnav${subTucked ? ' is-tucked' : ''}`} aria-label={t.menu} ref={subnavRef} onScroll={onSubnavScroll}>
         {[...t.nav.filter((i) => i.hiring || i.promo), ...t.nav.filter((i) => !i.hiring && !i.promo)].map((item) =>
           item.to ? (
             <NavLink
