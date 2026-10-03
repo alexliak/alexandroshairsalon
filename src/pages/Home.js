@@ -1,6 +1,14 @@
-import React from 'react';
+import React, { lazy, Suspense } from 'react';
 import { Link } from 'react-router-dom';
 import NhLayout, { BOOK, PHONE, GOOGLE_PROFILE_URL, MAP_EMBED_URL } from '../components/NhLayout';
+
+// Μαθηματικά animation «Κομμωτική 2050»: φορτώνονται σε ξεχωριστό, μικρό αρχείο μετά την αρχική σελίδα.
+const MathArt = lazy(() => import('../components/MathArt'));
+const Art = (props) => (
+  <Suspense fallback={null}>
+    <MathArt {...props} />
+  </Suspense>
+);
 
 // New homepage (2026). Header, footer and mobile booking bar come from NhLayout.
 
@@ -165,8 +173,8 @@ const Home = ({ language, setLanguage }) => {
             </ul>
           </div>
           <div className="nh-hero-art" aria-hidden="true">
-            <Strands className="nh-hero-art-strands" />
-            <span className="nh-hero-art-year">1992</span>
+            <Art scene="origin" lang={language} className="nh-art-fill" />
+            <span className="nh-hero-art-year">1992<small> → 2050</small></span>
             <span className="nh-hero-art-caption">{t.artCaption}</span>
           </div>
         </section>
@@ -182,9 +190,14 @@ const Home = ({ language, setLanguage }) => {
 
         <section className="nh-section" id="services">
           <div className="nh-section-head">
-            <div>
-              <span className="nh-eyebrow">{t.popularEyebrow}</span>
-              <h2 className="nh-h2">{t.popularTitle}</h2>
+            <div className="nh-head-with-mark">
+              <div className="nh-art-mark" aria-hidden="true">
+                <Art scene="harmony" lang={language} className="nh-art-fill" />
+              </div>
+              <div>
+                <span className="nh-eyebrow">{t.popularEyebrow}</span>
+                <h2 className="nh-h2">{t.popularTitle}</h2>
+              </div>
             </div>
             <a href={BOOK} className="nh-underline">{t.allServices}</a>
           </div>
@@ -215,14 +228,19 @@ const Home = ({ language, setLanguage }) => {
             <p>{t.brandsText}</p>
             <a href={BOOK} className="nh-btn nh-btn-dark">{t.brandsCta}</a>
           </div>
-          <ul className="nh-brands-list">
-            {t.colorList.map(([name, price]) => (
-              <li key={name}>
-                <span>{name}</span>
-                <strong>{price}</strong>
-              </li>
-            ))}
-          </ul>
+          <div className="nh-brands-side">
+            <div className="nh-art-porthole" aria-hidden="true">
+              <Art scene="colour" lang={language} className="nh-art-fill" />
+            </div>
+            <ul className="nh-brands-list">
+              {t.colorList.map(([name, price]) => (
+                <li key={name}>
+                  <span>{name}</span>
+                  <strong>{price}</strong>
+                </li>
+              ))}
+            </ul>
+          </div>
         </section>
 
         <section className="nh-section nh-promise" aria-labelledby="promise-title">
@@ -235,9 +253,14 @@ const Home = ({ language, setLanguage }) => {
               {t.promiseText.map((p) => <p key={p}>{p}</p>)}
               <span className="nh-promise-sign">— {t.promiseSign}</span>
             </div>
-            <ul className="nh-promise-lines">
-              {t.promises.map((line) => <li key={line}>{line}</li>)}
-            </ul>
+            <div className="nh-promise-side">
+              <div className="nh-art-chaos" aria-hidden="true">
+                <Art scene="chaos" lang={language} className="nh-art-fill" />
+              </div>
+              <ul className="nh-promise-lines">
+                {t.promises.map((line) => <li key={line}>{line}</li>)}
+              </ul>
+            </div>
           </div>
         </section>
 
