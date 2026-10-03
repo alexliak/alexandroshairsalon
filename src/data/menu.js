@@ -330,8 +330,8 @@ const menu = [
             "el": "κάτω από τους ώμους",
             "en": "below shoulders",
             "time": {
-              "el": "1 ώρα 05′",
-              "en": "1 h 05′"
+              "el": "1 ώρα 5′",
+              "en": "1 h 5′"
             },
             "price": 79
           }
