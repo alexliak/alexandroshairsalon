@@ -174,8 +174,6 @@ const Home = ({ language, setLanguage }) => {
           </div>
           <div className="nh-hero-art" aria-hidden="true">
             <Art scene="origin" lang={language} className="nh-art-fill" />
-            <span className="nh-hero-art-year">1992<small> → 2050</small></span>
-            <span className="nh-hero-art-caption">{t.artCaption}</span>
           </div>
         </section>
 
@@ -229,8 +227,8 @@ const Home = ({ language, setLanguage }) => {
             <a href={BOOK} className="nh-btn nh-btn-dark">{t.brandsCta}</a>
           </div>
           <div className="nh-brands-side">
-            <div className="nh-art-porthole" aria-hidden="true">
-              <Art scene="colour" lang={language} className="nh-art-fill" />
+            <div className="nh-art-planet" aria-hidden="true">
+              <Art scene="colour" lang={language} surface="light" legend className="nh-art-fill" />
             </div>
             <ul className="nh-brands-list">
               {t.colorList.map(([name, price]) => (

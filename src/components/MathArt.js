@@ -44,10 +44,11 @@ function glow(ctx, x, y, r, alpha) {
 function drawGalaxy(ctx, w, h, t, o, appear = 1, cx = w / 2, cy = h / 2, radius = Math.min(w, h) * 0.46) {
   const N = o.lite ? 850 : 1500;
   const n = Math.min(N, t * (o.lite ? 150 : 240));
-  const R = radius;
+  const breath = 0.8 + 0.2 * Math.sin(t * 0.9); // αργή «αναπνοή», σαν ζωντανό φως
+  const R = radius * (1 + 0.015 * Math.sin(t * 0.7));
   const c = R / Math.sqrt(N);
   const halo = ctx.createRadialGradient(cx, cy, 0, cx, cy, R);
-  halo.addColorStop(0, `rgba(201,169,110,${0.12 * appear})`);
+  halo.addColorStop(0, `rgba(201,169,110,${0.09 * appear * breath})`);
   halo.addColorStop(1, 'rgba(201,169,110,0)');
   ctx.fillStyle = halo;
   ctx.fillRect(0, 0, w, h);
@@ -62,7 +63,7 @@ function drawGalaxy(ctx, w, h, t, o, appear = 1, cx = w / 2, cy = h / 2, radius 
     const wave = 0.5 + 0.5 * Math.sin(t * 1.6 - r * (45 / R));
     const age = Math.min(1, (n - i) / 50);
     const size = (0.45 + k * 1.5 + wave * 0.55) * (R / 170);
-    const alpha = (0.22 + 0.62 * wave) * age * appear;
+    const alpha = (0.14 + 0.56 * wave) * age * appear * breath;
     ctx.fillStyle = `rgba(${goldMix(k)},${alpha.toFixed(3)})`;
     ctx.beginPath();
     ctx.arc(Math.cos(a) * r, Math.sin(a) * r, Math.max(0.5, size), 0, TAU);
@@ -77,10 +78,10 @@ function galaxy(ctx, w, h, t, o) {
 
 /* ---------- Blueprint χρυσής τομής → σπείρα ---------- */
 function blueprintGeom(w, h) {
-  const W = Math.min(w * 0.82, h * 0.62 * PHI);
+  const W = Math.min(w * 0.6, h * 0.42 * PHI);
   const H = W / PHI;
   let x = (w - W) / 2;
-  let y = (h - H) / 2 - h * 0.06;
+  let y = (h - H) / 2 - h * 0.02;
   let rw = W;
   let rh = H;
   const outer = { x, y, w: W, h: H };
@@ -167,7 +168,7 @@ function drawBlueprint(ctx, w, h, lt, G, o, alpha) {
     }
     ctx.globalCompositeOperation = 'source-over';
   }
-  ctx.fillStyle = `rgba(179,170,156,${clamp(lt / 1.5) * 0.85 * alpha})`;
+  ctx.fillStyle = `rgba(179,170,156,${clamp(lt / 1.5) * 0.5 * alpha})`;
   ctx.font = `10px ${FONT}`;
   ctx.textBaseline = 'top';
   ctx.fillText('a / b = φ = 1.6180339887', ob.x, ob.y + ob.h + 10);
@@ -182,7 +183,7 @@ function makeOrigin() {
     if (key !== geomKey) { G = blueprintGeom(w, h); geomKey = key; }
     // 0–8 δ.: σχέδιο χρυσής τομής · 8–10 δ.: μετάβαση · μετά: ο γαλαξίας γυρίζει συνεχώς
     if (t < 10) drawBlueprint(ctx, w, h, t, G, o, t < 8 ? 1 : 1 - ease((t - 8) / 2));
-    if (t > 8) drawGalaxy(ctx, w, h, t - 8, o, ease(clamp((t - 8) / 2)), w / 2, h * 0.4, Math.min(w * 0.42, h * 0.3));
+    if (t > 8) drawGalaxy(ctx, w, h, t - 8, o, ease(clamp((t - 8) / 2)), w / 2, h / 2, Math.min(w, h) * 0.34);
   };
 }
 
@@ -286,29 +287,37 @@ function tone(t, lang) {
 
 function colour(ctx, w, h, t, o) {
   const T = tone(t, o.lang);
+  if (o.onTone) o.onTone(T);
+  const light = o.surface === 'light'; // πάνω σε κρεμ φόντο, χωρίς σκούρο πλαίσιο
   const cx = w / 2;
-  const cy = h / 2 + h * 0.03;
-  const R = Math.min(w * 0.17, h * 0.22);
+  const cy = h / 2;
+  const R = Math.min(w * 0.17, h * 0.26);
   const rot = -0.32;
   const tilt = 0.26;
   const rings = [];
-  for (let i = 0; i < 10; i += 1) rings.push({ rx: R * 1.32 + i * R * 0.105, L: 6 + i * 9.2 });
-  const col = (L, a) => `hsla(${T.h.toFixed(0)},${T.s.toFixed(0)}%,${L.toFixed(0)}%,${a})`;
+  for (let i = 0; i < 10; i += 1) {
+    // level 1 (μαύρο) → level 10 (πλατινέ)
+    rings.push({ rx: R * 1.32 + i * R * 0.105, L: light ? 10 + i * 7.6 : 6 + i * 9.2 });
+  }
+  const H = T.h.toFixed(0);
+  const S = (light ? T.s * 0.85 : T.s).toFixed(0);
+  const col = (L, a) => `hsla(${H},${S}%,${L.toFixed(0)}%,${a})`;
+  const ringAlpha = light ? 0.8 : 0.85;
   const dot = (rg, th, front) => {
     if ((Math.sin(th) > 0) !== front) return;
     const x = rg.rx * Math.cos(th);
     const y = rg.rx * tilt * Math.sin(th);
     const X = cx + x * Math.cos(rot) - y * Math.sin(rot);
     const Y = cy + x * Math.sin(rot) + y * Math.cos(rot);
-    ctx.fillStyle = col(Math.min(96, rg.L + 18), 0.95);
+    ctx.fillStyle = light ? col(Math.max(8, rg.L - 22), 0.9) : col(Math.min(96, rg.L + 18), 0.95);
     ctx.beginPath();
-    ctx.arc(X, Y, Math.max(1.2, R * 0.022), 0, TAU);
+    ctx.arc(X, Y, Math.max(1.1, R * 0.02), 0, TAU);
     ctx.fill();
   };
   const drawRings = (front) => {
     rings.forEach((rg, i) => {
-      ctx.strokeStyle = col(rg.L, 0.85);
-      ctx.lineWidth = Math.max(1.2, R * 0.05);
+      ctx.strokeStyle = col(rg.L, front ? ringAlpha : ringAlpha * 0.55);
+      ctx.lineWidth = Math.max(1, R * (light ? 0.03 : 0.045));
       ctx.beginPath();
       ctx.ellipse(cx, cy, rg.rx, rg.rx * tilt, rot, front ? 0 : Math.PI, front ? Math.PI : TAU);
       ctx.stroke();
@@ -318,36 +327,27 @@ function colour(ctx, w, h, t, o) {
     });
   };
   drawRings(false);
+  ctx.save();
+  if (light) {
+    ctx.shadowColor = 'rgba(23,20,15,0.22)';
+    ctx.shadowBlur = R * 0.6;
+    ctx.shadowOffsetY = R * 0.18;
+  }
   const g = ctx.createRadialGradient(cx - R * 0.35, cy - R * 0.4, R * 0.05, cx, cy, R);
-  g.addColorStop(0, `hsla(${T.h.toFixed(0)},${(T.s * 0.6).toFixed(0)}%,26%,1)`);
-  g.addColorStop(0.55, '#0d0b09');
-  g.addColorStop(1, '#030303');
+  g.addColorStop(0, `hsla(${H},${(T.s * 0.6).toFixed(0)}%,${light ? 40 : 26}%,1)`);
+  g.addColorStop(0.55, light ? '#1d1914' : '#0d0b09');
+  g.addColorStop(1, light ? '#0e0c0a' : '#030303');
   ctx.fillStyle = g;
   ctx.beginPath();
   ctx.arc(cx, cy, R, 0, TAU);
   ctx.fill();
-  ctx.strokeStyle = 'rgba(201,169,110,.35)';
+  ctx.restore();
+  ctx.strokeStyle = light ? 'rgba(255,250,240,.22)' : 'rgba(201,169,110,.35)';
   ctx.lineWidth = 1;
   ctx.beginPath();
-  ctx.arc(cx, cy, R, -2.4, 0.3);
+  ctx.arc(cx, cy, R * 0.985, -2.4, 0.3);
   ctx.stroke();
   drawRings(true);
-  if (o.labels !== false) {
-    const pad = Math.max(12, w * 0.06);
-    ctx.textBaseline = 'top';
-    ctx.textAlign = 'center';
-    ctx.fillStyle = 'rgba(179,170,156,.9)';
-    ctx.font = `600 10px ${FONT}`;
-    ctx.fillText(o.lang === 'en' ? 'TONE' : 'ΤΟΝΟΣ', w / 2, pad);
-    ctx.fillStyle = 'rgba(243,232,206,.95)';
-    ctx.font = `13px ${FONT}`;
-    ctx.fillText(T.name, w / 2, pad + 15);
-    ctx.textBaseline = 'bottom';
-    ctx.fillStyle = 'rgba(179,170,156,.9)';
-    ctx.font = `600 10px ${FONT}`;
-    ctx.fillText('LEVEL 1 → 10', w / 2, h - pad);
-    ctx.textAlign = 'left';
-  }
 }
 
 /* ---------- Harmonograph ---------- */
@@ -399,8 +399,16 @@ const SCENES = {
   harmony: { make: () => harmony, still: 8 }
 };
 
-export default function MathArt({ scene = 'galaxy', lang = 'el', labels = true, className = '' }) {
+const LEGEND = {
+  el: { tone: 'Τόνος', level: 'Level' },
+  en: { tone: 'Tone', level: 'Level' }
+};
+
+export default function MathArt({ scene = 'galaxy', lang = 'el', surface = 'dark', legend = false, className = '' }) {
   const ref = useRef(null);
+  const nameRef = useRef(null);
+  const swatchRef = useRef(null);
+  const showLegend = legend && scene === 'colour';
 
   useEffect(() => {
     const canvas = ref.current;
@@ -409,7 +417,25 @@ export default function MathArt({ scene = 'galaxy', lang = 'el', labels = true, 
     const def = SCENES[scene] || SCENES.galaxy;
     const draw = def.make();
     const reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    const opts = { lang, labels, lite: false };
+    let lastName = '';
+    const opts = {
+      lang,
+      surface,
+      lite: false,
+      // το υπόμνημα είναι HTML (καθαρά γράμματα), ενημερώνεται απευθείας χωρίς re-render
+      onTone: showLegend
+        ? (T) => {
+          if (nameRef.current && T.name !== lastName) { nameRef.current.textContent = T.name; lastName = T.name; }
+          const sw = swatchRef.current;
+          if (sw) {
+            for (let i = 0; i < sw.children.length; i += 1) {
+              const L = surface === 'light' ? 10 + i * 7.6 : 6 + i * 9.2;
+              sw.children[i].style.background = `hsl(${T.h.toFixed(0)},${T.s.toFixed(0)}%,${L.toFixed(0)}%)`;
+            }
+          }
+        }
+        : null
+    };
     let w = 0;
     let h = 0;
     let raf = 0;
@@ -476,7 +502,24 @@ export default function MathArt({ scene = 'galaxy', lang = 'el', labels = true, 
       if (ro) ro.disconnect();
       document.removeEventListener('visibilitychange', onVis);
     };
-  }, [scene, lang, labels]);
+  }, [scene, lang, surface, showLegend]);
 
-  return <canvas ref={ref} className={`math-art ${className}`.trim()} aria-hidden="true" />;
+  const L = LEGEND[lang] || LEGEND.el;
+  return (
+    <div className={`math-art math-art--${surface} ${className}`.trim()} aria-hidden="true">
+      <div className="math-art-stage">
+        <canvas ref={ref} />
+      </div>
+      {showLegend && (
+        <div className="math-art-legend">
+          <span className="math-art-legend-label">{L.tone}</span>
+          <span className="math-art-legend-name" ref={nameRef}>{(TONES[lang] || TONES.el)[0]}</span>
+          <span className="math-art-legend-scale" ref={swatchRef}>
+            {Array.from({ length: 10 }, (_, i) => <i key={i} />)}
+          </span>
+          <span className="math-art-legend-levels"><span>{L.level} 1</span><span>10</span></span>
+        </div>
+      )}
+    </div>
+  );
 }
