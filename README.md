@@ -46,28 +46,16 @@ npm start
 
 ---
 
-## Deploy σε Top.Host (Plesk)
+## Deploy (αυτόματο, GitHub Pages)
 
-1. Εκτέλεσε `npm run build`.
-2. Άνοιξε Plesk → Files → `httpdocs/`.
-3. Πάρε backup τον τρέχοντα φάκελο (π.χ. κατέβασε zip ή τον μετονόμασε).
-4. Άδειασέ τον και ανέβασε τα περιεχόμενα του `build/` (ή ένα zip και **Extract**).
-5. HTTPS & security headers υλοποιούνται μέσα από Plesk (Let’s Encrypt + Apache/nginx headers).
+Το site σερβίρεται από το **GitHub Pages** (branch `gh-pages`). Το DNS είναι στο Cloudflare: 4 × A στο `185.199.108–111.153`, `www` → CNAME `alexliak.github.io`.
 
-> Το production environment χρησιμοποιεί μόνο τα αρχεία του `build`. Τα dev dependencies (π.χ. webpack-dev-server) δεν ανεβαίνουν.
-
----
-
-## Πώς να κρατάω το live site online ενώ κάνω αλλαγές
-
-1. **Πάρε backup** από Plesk (`Files` → Archive) πριν ανέβει νέο build.
-2. Δούλεψε τοπικά σε νέο branch.
-3. Όταν οι αλλαγές είναι έτοιμες, τρέξε `npm run build`.
-4. Ανέβασε τα νέα αρχεία στον `httpdocs/` (όπως παραπάνω).  
-   - Option A: Μετονόμασε τον παλιό `httpdocs/` σε `httpdocs-old/`, ανέβασε νέο `httpdocs/`.  
-   - Option B: Πρώτα ανέβασε σε νέο φάκελο, μετά χρησιμοποίησε “Move” μέσα από Plesk ώστε να ελαχιστοποιηθεί ο χρόνος που είναι άδειος.
-
-5. Έλεγξε `https://alexandroshairsalon.gr` μετά το upload (Ctrl+Shift+R για hard refresh).
+- Κάθε push ή merged pull request στο `main` τρέχει το `.github/workflows/deploy.yml`: φτιάχνει τις στατικές σελίδες (`scripts/build-static-pages.py`), κάνει `npm run build` και ανεβάζει το `build/` στο `gh-pages`. Σε 2–3 λεπτά η αλλαγή είναι live.
+- Αλλαγές κατευθείαν στο github.com (μολύβι → Commit changes στο `main`) ανεβαίνουν κι αυτές μόνες τους.
+- Στα pull requests γίνεται μόνο το build, ως έλεγχος, χωρίς ανέβασμα.
+- Για ξανά-ανέβασμα με το χέρι: Actions → Deploy site → Run workflow.
+- **Μην τρέχεις `npm run deploy` τοπικά.** Ένα παλιό τοπικό αντίγραφο θα αντικαθιστούσε το live site.
+- Αν ένα deploy αποτύχει, το site μένει στην προηγούμενη έκδοση. Τη βλέπεις στο Actions με κόκκινο ✗.
 
 ---
 
