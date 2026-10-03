@@ -27,26 +27,30 @@ const content = {
     stats: [
       { big: '1992', small: 'οικογενειακό κομμωτήριο' },
       { big: '4,6 ★', small: 'βαθμολογία στο Google' },
-      { big: 'L’Oréal · Redken', small: 'επαγγελματικά προϊόντα & εκπαίδευση', brand: true },
-      { big: 'Σχήμα & χρώμα', small: 'κούρεμα, χρώμα και styling σχεδιασμένα μαζί', brand: true }
+      { big: '24/7', small: 'online κράτηση, χωρίς τηλέφωνο' },
+      { big: '5′', small: 'με τα πόδια από τον σταθμό Θησείο' }
     ],
     popularEyebrow: 'Οι πιο δημοφιλείς',
     popularTitle: 'Διάλεξε & κλείσε',
-    allServices: 'Όλες οι υπηρεσίες →',
+    allServices: 'Όλες οι τιμές →',
     services: [
-      { cat: 'Κουρέματα', name: 'Γυναικείο κούρεμα', desc: 'Pixie, mullet, butterfly, curtain bangs, φιλάρισμα ή κλασικό, με εμπειρία τριών δεκαετιών.', time: '30–45′', price: 'από €28' },
-      { cat: 'Χτένισμα', name: 'Blowout', desc: 'Όγκος και λάμψη με πιστολάκι ή πρέσα. Πρόσθεσε SteamPod για διάρκεια.', time: '25–40′', price: 'από €24' },
-      { cat: 'Χρώμα', name: 'Βαφή ρίζας + ρεφλέ', desc: 'Κάλυψη λευκών στη ρίζα και ξεχωριστό gloss για λάμψη σε όλο το μαλλί.', time: '1 ώρα', price: 'από €52' },
-      { cat: 'Ανταύγειες', name: 'Balayage', desc: 'Φυσικό, φωτεινό αποτέλεσμα με εύκολη συντήρηση.', time: '1:35–2:45', price: 'από €55' },
-      { cat: 'Ανταύγειες', name: 'No-Bleach ανταύγειες', desc: 'Απαλό φως χωρίς ντεκαπάζ, ιδανικό για πρώτη φορά.', time: '1:20–1:50', price: 'από €51' },
-      { cat: 'Πακέτα', name: 'Κούρεμα & Blowout', desc: 'Κούρεμα και χτένισμα σε ένα ραντεβού.', time: '45–55′', price: 'από €38' }
+      { tone: 'cut', cat: 'Κουρέματα', name: 'Γυναικείο κούρεμα', desc: 'Pixie, mullet, butterfly, curtain bangs, φιλάρισμα ή κλασικό, με εμπειρία τριών δεκαετιών.', time: '30–45′', price: 'από €28' },
+      { tone: 'style', cat: 'Χτένισμα', name: 'Blowout', desc: 'Όγκος και λάμψη με πιστολάκι ή πρέσα. Πρόσθεσε SteamPod για διάρκεια.', time: '25–40′', price: 'από €24' },
+      { tone: 'colour', cat: 'Χρώμα', name: 'Βαφή ρίζας + ρεφλέ', desc: 'Κάλυψη λευκών στη ρίζα και ξεχωριστό gloss για λάμψη σε όλο το μαλλί.', time: '1 ώρα', price: 'από €52' },
+      { tone: 'light', cat: 'Ανταύγειες', name: 'Balayage', desc: 'Φυσικό, φωτεινό αποτέλεσμα με εύκολη συντήρηση.', time: '1:35–2:45', price: 'από €55' },
+      { tone: 'light', cat: 'Ανταύγειες', name: 'No-Bleach ανταύγειες', desc: 'Απαλό φως χωρίς ντεκαπάζ, ιδανικό για πρώτη φορά.', time: '1:20–1:50', price: 'από €51' },
+      { tone: 'pack', cat: 'Πακέτα', name: 'Κούρεμα & Blowout', desc: 'Κούρεμα και χτένισμα σε ένα ραντεβού.', time: '45–55′', price: 'από €38' }
     ],
     brandsEyebrow: 'Χρώμα με υπογραφή',
     brandsTitleA: 'Δουλεύουμε με ',
     brandsTitleB: ' και ',
-    brandsText:
-      'Βαφή ρίζας με Majirel, INOA χωρίς αμμωνία ή Redken. Για μήκη και άκρες, ρεφλέ χωρίς αμμωνία: Dia Color στον τόνο της ρίζας και τα όξινα Dia Light και Shades EQ, για λάμψη και απαλότητα. Στα ξανοίγματα χρησιμοποιούμε ντεκαπάζ L’Oréal και Redken με ενσωματωμένο bonder, και όπου γίνεται ξάνοιγμα χωρίς ντεκαπάζ με βαφές L’Oréal. Εκπαιδευόμαστε συνεχώς στις νέες τεχνικές τους.',
-    brandsCta: 'Κλείσε χρώμα · από €35',
+    brandsRows: [
+      ['Ρίζα', 'Majirel, INOA χωρίς αμμωνία ή Redken'],
+      ['Μήκη', 'ρεφλέ χωρίς αμμωνία: Dia Color, Dia Light, Shades EQ'],
+      ['Ξάνοιγμα', 'ντεκαπάζ με ενσωματωμένο bonder ή, όπου γίνεται, χωρίς ντεκαπάζ']
+    ],
+    brandsText: 'Εκπαιδευόμαστε συνεχώς στις νέες τεχνικές τους.',
+    brandsCta: 'Κλείσε χρώμα',
     colorList: [
       ['Βαφή ρίζας – κάλυψη λευκών', 'από €35'],
       ['Βαφή ρίζας + ρεφλέ (gloss)', 'από €52'],
@@ -62,13 +66,16 @@ const content = {
     ],
     promiseSign: 'Αλέξανδρος',
     promises: ['Πρώτα ακούμε.', 'Ό,τι δεν σου ταιριάζει, θα σου το πούμε.'],
-    jobsText: 'We are hiring: ψάχνουμε βοηθό κομμωτηρίου με όρεξη για δουλειά και εκπαίδευση. Σταθερή εργασία.',
-    jobsCta: 'Δες τη θέση →',
-    modelsText: 'Ψάχνουμε μοντέλα μαλλιών, κυρίως γυναίκες κάθε ηλικίας, για κούρεμα, χρώμα και φωτογράφιση.',
-    modelsCta: 'Γίνε μοντέλο μας →',
+    joinTitle: 'Έλα στο κομμωτήριο',
+    modelsEyebrow: 'Γίνε μοντέλο',
+    modelsText: 'Κούρεμα ή χρώμα με νέες τεχνικές, δωρεάν ή σε χαμηλότερη τιμή. Κυρίως γυναίκες, κάθε ηλικίας.',
+    modelsCta: 'Δήλωσε συμμετοχή →',
+    jobsEyebrow: 'We are hiring',
+    jobsText: 'Βοηθός κομμωτηρίου: σταθερή θέση, με εκπαίδευση στη δουλειά.',
+    jobsCta: 'Κάνε αίτηση →',
     visitTitleA: 'Σε περιμένουμε',
     visitTitleEm: 'στο Θησείο.',
-    address: 'Ερυσίχθονος 3-5, Θησείο, Αθήνα 118 51',
+    address: 'Ερυσίχθονος 3-5, Θησείο, Αθήνα 118\u00a051',
     hours: 'Δες το ωράριο στο Google',
     call: 'Κάλεσε 210 346 5554',
     directions: 'Οδηγίες στον χάρτη',
@@ -87,26 +94,30 @@ const content = {
     stats: [
       { big: '1992', small: 'family-run salon' },
       { big: '4.6 ★', small: 'rating on Google' },
-      { big: 'L’Oréal · Redken', small: 'professional products & training', brand: true },
-      { big: 'Shape & colour', small: 'cut, colour and styling designed together', brand: true }
+      { big: '24/7', small: 'online booking, no phone call needed' },
+      { big: '5′', small: 'walk from Thiseio station' }
     ],
     popularEyebrow: 'Most popular',
     popularTitle: 'Pick & book',
-    allServices: 'All services →',
+    allServices: 'All prices →',
     services: [
-      { cat: 'Haircuts', name: 'Women’s haircut', desc: 'Pixie, mullet, butterfly, curtain bangs, texturising or classic, with thirty years of experience.', time: '30–45′', price: 'from €28' },
-      { cat: 'Styling', name: 'Blowout', desc: 'Volume and shine with brush or iron. Add SteamPod for long-lasting results.', time: '25–40′', price: 'from €24' },
-      { cat: 'Colour', name: 'Root colour + gloss', desc: 'Grey coverage at the root plus a separate gloss for shine throughout.', time: '1 h', price: 'from €52' },
-      { cat: 'Highlights', name: 'Balayage', desc: 'Natural, luminous result that is easy to maintain.', time: '1:35–2:45', price: 'from €55' },
-      { cat: 'Highlights', name: 'No-bleach highlights', desc: 'Soft brightness without bleach, ideal for a first time.', time: '1:20–1:50', price: 'from €51' },
-      { cat: 'Packages', name: 'Cut & blowout', desc: 'Haircut and styling in one appointment.', time: '45–55′', price: 'from €38' }
+      { tone: 'cut', cat: 'Haircuts', name: 'Women’s haircut', desc: 'Pixie, mullet, butterfly, curtain bangs, texturising or classic, with thirty years of experience.', time: '30–45′', price: 'from €28' },
+      { tone: 'style', cat: 'Styling', name: 'Blowout', desc: 'Volume and shine with brush or iron. Add SteamPod for long-lasting results.', time: '25–40′', price: 'from €24' },
+      { tone: 'colour', cat: 'Colour', name: 'Root colour + gloss', desc: 'Grey coverage at the root plus a separate gloss for shine throughout.', time: '1 h', price: 'from €52' },
+      { tone: 'light', cat: 'Highlights', name: 'Balayage', desc: 'Natural, luminous result that is easy to maintain.', time: '1:35–2:45', price: 'from €55' },
+      { tone: 'light', cat: 'Highlights', name: 'No-bleach highlights', desc: 'Soft brightness without bleach, ideal for a first time.', time: '1:20–1:50', price: 'from €51' },
+      { tone: 'pack', cat: 'Packages', name: 'Cut & blowout', desc: 'Haircut and styling in one appointment.', time: '45–55′', price: 'from €38' }
     ],
     brandsEyebrow: 'Signature colour',
     brandsTitleA: 'We work with ',
     brandsTitleB: ' and ',
-    brandsText:
-      'Root colour with Majirel, ammonia-free INOA or Redken. For lengths and ends, ammonia-free gloss: Dia Color matched to the root and the acidic Dia Light and Shades EQ, for shine and softness. For lightening we use L’Oréal and Redken lighteners with built-in bonder and, where possible, lift without bleach using L’Oréal colour. We train continuously in their latest techniques.',
-    brandsCta: 'Book colour · from €35',
+    brandsRows: [
+      ['Roots', 'Majirel, ammonia-free INOA or Redken'],
+      ['Lengths', 'ammonia-free gloss: Dia Color, Dia Light, Shades EQ'],
+      ['Lightening', 'lightener with built-in bonder or, where possible, no bleach at all']
+    ],
+    brandsText: 'We train continuously in their latest techniques.',
+    brandsCta: 'Book colour',
     colorList: [
       ['Root colour & grey coverage', 'from €35'],
       ['Root colour + gloss', 'from €52'],
@@ -122,13 +133,16 @@ const content = {
     ],
     promiseSign: 'Alexandros',
     promises: ['We listen first.', 'If something doesn’t suit you, we’ll tell you.'],
-    jobsText: 'We are hiring: a salon assistant eager to work and learn. Stable, long-term position.',
-    jobsCta: 'See the job →',
-    modelsText: 'We are looking for hair models, mostly women of any age, for cuts, colour and photo shoots.',
-    modelsCta: 'Be our model →',
+    joinTitle: 'Join us at the salon',
+    modelsEyebrow: 'Be our model',
+    modelsText: 'A cut or colour with new techniques, free or at a lower price. Mostly women, of any age.',
+    modelsCta: 'Sign up →',
+    jobsEyebrow: 'We are hiring',
+    jobsText: 'Salon assistant: a stable position with on-the-job training.',
+    jobsCta: 'Apply →',
     visitTitleA: 'See you',
     visitTitleEm: 'in Thiseio.',
-    address: 'Erysichthonos 3-5, Thiseio, Athens 118 51',
+    address: 'Erysichthonos 3-5, Thiseio, Athens 118\u00a051',
     hours: 'See opening hours on Google',
     call: 'Call 210 346 5554',
     directions: 'Directions on the map',
@@ -197,11 +211,11 @@ const Home = ({ language, setLanguage }) => {
                 <h2 className="nh-h2">{t.popularTitle}</h2>
               </div>
             </div>
-            <a href={BOOK} className="nh-underline">{t.allServices}</a>
+            <Link to="/services" className="nh-underline">{t.allServices}</Link>
           </div>
           <div className="nh-cards">
             {t.services.map((s) => (
-              <a key={s.name} href={BOOK} className="nh-card">
+              <a key={s.name} href={BOOK} className={`nh-card nh-card--${s.tone}`}>
                 <span className="nh-card-cat">{s.cat}</span>
                 <span className="nh-card-name">{s.name}</span>
                 <span className="nh-card-desc">{s.desc}</span>
@@ -214,21 +228,28 @@ const Home = ({ language, setLanguage }) => {
           </div>
         </section>
 
-        <section className="nh-brands" id="brands">
+        <section className="nh-brands" id="brands" data-tone-host>
           <div className="nh-brands-text">
-            <span className="nh-eyebrow nh-eyebrow-dark">{t.brandsEyebrow}</span>
-            <h2 className="nh-h2 nh-h2-dark">
+            <span className="nh-eyebrow">{t.brandsEyebrow}</span>
+            <h2 className="nh-h2">
               {t.brandsTitleA}
               <em>L’Oréal Professionnel</em>
               {t.brandsTitleB}
               <em>Redken</em>.
             </h2>
+            <dl className="nh-brands-rows">
+              {t.brandsRows.map(([k, v]) => (
+                <div key={k}>
+                  <dt>{k}</dt>
+                  <dd>{v}</dd>
+                </div>
+              ))}
+            </dl>
             <p>{t.brandsText}</p>
-            <a href={BOOK} className="nh-btn nh-btn-dark">{t.brandsCta}</a>
           </div>
           <div className="nh-brands-side">
             <div className="nh-art-planet" aria-hidden="true">
-              <Art scene="colour" lang={language} surface="light" legend className="nh-art-fill" />
+              <Art scene="colour" lang={language} legend className="nh-art-fill" />
             </div>
             <ul className="nh-brands-list">
               {t.colorList.map(([name, price]) => (
@@ -238,6 +259,7 @@ const Home = ({ language, setLanguage }) => {
                 </li>
               ))}
             </ul>
+            <a href={BOOK} className="nh-btn nh-btn-gold">{t.brandsCta}</a>
           </div>
         </section>
 
@@ -262,13 +284,18 @@ const Home = ({ language, setLanguage }) => {
           </div>
         </section>
 
-        <section className="nh-jobs-strip" aria-label={language === 'el' ? 'Θέση εργασίας' : 'Job opening'}>
-          <p>{t.jobsText}</p>
-          <Link to="/douleia" className="nh-underline">{t.jobsCta}</Link>
-        </section>
-        <section className="nh-jobs-strip nh-jobs-strip-2" aria-label={language === 'el' ? 'Μοντέλα μαλλιών' : 'Hair models'}>
-          <p>{t.modelsText}</p>
-          <Link to="/montela" className="nh-underline">{t.modelsCta}</Link>
+        <section className="nh-join" aria-labelledby="join-title">
+          <h2 id="join-title" className="nh-visually-hidden">{t.joinTitle}</h2>
+          <Link to="/montela" className="nh-join-tile nh-join-tile--model">
+            <span className="nh-join-eyebrow">{t.modelsEyebrow}</span>
+            <span className="nh-join-text">{t.modelsText}</span>
+            <span className="nh-join-cta">{t.modelsCta}</span>
+          </Link>
+          <Link to="/douleia" className="nh-join-tile nh-join-tile--job">
+            <span className="nh-join-eyebrow">{t.jobsEyebrow}</span>
+            <span className="nh-join-text">{t.jobsText}</span>
+            <span className="nh-join-cta">{t.jobsCta}</span>
+          </Link>
         </section>
 
         <section className="nh-section nh-visit" id="visit">

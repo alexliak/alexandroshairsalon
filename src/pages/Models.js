@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import NhLayout from '../components/NhLayout';
+import NhLayout, { BOOK } from '../components/NhLayout';
+import Pills from '../components/FormPills';
+import useInView from '../components/useInView';
 
 // "Hair models" page. Same delivery as the hiring form: FormSubmit emails each
 // application (photo attached, if given) to the salon owner. No phone field on purpose:
@@ -9,10 +11,15 @@ const THANKS_URL = 'https://alexandroshairsalon.gr/montela#sent';
 
 const text = {
   el: {
-    eyebrow: 'Γίνε μοντέλο μας',
+    eyebrow: 'Ζητούνται μοντέλα μαλλιών · Θησείο',
     title: 'Ψάχνουμε μοντέλα',
     titleEm: 'για κούρεμα και χρώμα.',
-    lead: 'Κυρίως γυναίκες, κάθε ηλικίας. Δεν χρειάζεται εμπειρία ως μοντέλο: ψάχνουμε αληθινά μαλλιά και αληθινούς ανθρώπους. Δουλεύουμε νέες τεχνικές χρώματος και κουρέματος και φωτογραφίζουμε το αποτέλεσμα για την εκπαίδευσή μας και για την παρουσίαση της δουλειάς μας.',
+    lead: 'Κυρίως γυναίκες, κάθε ηλικίας, χωρίς εμπειρία ως μοντέλο. Δουλεύουμε νέες τεχνικές κουρέματος και χρώματος και φωτογραφίζουμε το αποτέλεσμα για την εκπαίδευσή μας και για να δείξουμε τη δουλειά μας.',
+    facts: ['Δωρεάν ή σε χαμηλότερη τιμή', 'Τίποτα ακραίο', 'Φόρμα ενός λεπτού'],
+    cta: 'Δήλωσε συμμετοχή',
+    barTop: 'Μοντέλο μαλλιών',
+    barBottom: 'φόρμα 1 λεπτού',
+    more: 'Περισσότερα για σένα (προαιρετικά)',
     howTitle: 'Πώς γίνεται',
     how: [
       'Ξεκινάμε πάντα με συζήτηση: τι θέλεις, τι σου ταιριάζει, τι δεν θέλεις να αλλάξει.',
@@ -26,7 +33,7 @@ const text = {
       'Εσύ αποφασίζεις αν θα φαίνεται το πρόσωπό σου ή μόνο τα μαλλιά.'
     ],
     formTitle: 'Δήλωσε συμμετοχή',
-    formLead: 'Συμπλήρωσε τη φόρμα. Όταν προγραμματίσουμε τεχνική που ταιριάζει στα μαλλιά σου, θα σου στείλουμε μήνυμα.',
+    formLead: 'Όταν προγραμματίσουμε τεχνική που ταιριάζει στα μαλλιά σου, θα σου στείλουμε μήνυμα.',
     name: 'Όνομα',
     email: 'Email',
     instagram: 'Instagram (προαιρετικά)',
@@ -44,7 +51,7 @@ const text = {
     photos: 'Φωτογραφίες',
     photosOptions: ['Με το πρόσωπό μου', 'Μόνο τα μαλλιά, χωρίς πρόσωπο'],
     days: 'Ποιες μέρες σε βολεύουν;',
-    photo: 'Φωτογραφία των μαλλιών σου όπως είναι σήμερα (προαιρετικά, έως 10MB)',
+    photo: 'Φωτογραφία των μαλλιών σου σήμερα (προαιρετικά, βοηθά πολύ)',
     message: 'Κάτι άλλο που θέλεις να ξέρουμε;',
     adult: 'Είμαι 18 ετών και άνω.',
     consent: 'Συμφωνώ να χρησιμοποιηθούν τα στοιχεία μου μόνο για να επικοινωνήσετε μαζί μου γι’ αυτό. Για οποιαδήποτε φωτογράφιση θα υπογράψω ξεχωριστή συγκατάθεση στο κομμωτήριο.',
@@ -54,10 +61,15 @@ const text = {
     sentText: 'Λάβαμε τα στοιχεία σου. Θα σου γράψουμε όταν έχουμε ραντεβού που ταιριάζει στα μαλλιά σου.'
   },
   en: {
-    eyebrow: 'Be our model',
+    eyebrow: 'Hair models wanted · Thiseio',
     title: 'We are looking for models',
     titleEm: 'for cuts and colour.',
-    lead: 'Mostly women, of any age. No modelling experience needed: we are looking for real hair and real people. We work on new colour and cutting techniques and photograph the result for our training and to show our work.',
+    lead: 'Mostly women, of any age, no modelling experience needed. We work on new cutting and colour techniques and photograph the result for our training and to show our work.',
+    facts: ['Free or at a lower price', 'Nothing extreme', 'One-minute form'],
+    cta: 'Sign up',
+    barTop: 'Hair model',
+    barBottom: 'one-minute form',
+    more: 'More about you (optional)',
     howTitle: 'How it works',
     how: [
       'We always start with a chat: what you want, what suits you, what you don’t want to change.',
@@ -71,7 +83,7 @@ const text = {
       'You decide whether your face is shown or just your hair.'
     ],
     formTitle: 'Sign up',
-    formLead: 'Fill in the form. When we schedule a technique that suits your hair, we will message you.',
+    formLead: 'When we schedule a technique that suits your hair, we will message you.',
     name: 'Name',
     email: 'Email',
     instagram: 'Instagram (optional)',
@@ -89,7 +101,7 @@ const text = {
     photos: 'Photos',
     photosOptions: ['With my face', 'Hair only, no face'],
     days: 'Which days suit you?',
-    photo: 'A photo of your hair as it is today (optional, up to 10MB)',
+    photo: 'A photo of your hair today (optional, it helps a lot)',
     message: 'Anything else we should know?',
     adult: 'I am 18 or older.',
     consent: 'I agree that my details are used only to contact me about this. For any photo shoot I will sign a separate consent at the salon.',
@@ -100,31 +112,10 @@ const text = {
   }
 };
 
-const Select = ({ label, name, options, required }) => (
-  <label>
-    <span>{label}</span>
-    <select name={name} defaultValue="" required={required}>
-      <option value="" disabled>—</option>
-      {options.map((o) => <option key={o} value={o}>{o}</option>)}
-    </select>
-  </label>
-);
-
-const Checks = ({ label, name, options }) => (
-  <fieldset className="nh-job-full nh-job-checks">
-    <legend>{label}</legend>
-    {options.map((o, i) => (
-      <label key={o}>
-        <input type="checkbox" name={`${name}_${i + 1}`} value={o} />
-        <span>{o}</span>
-      </label>
-    ))}
-  </fieldset>
-);
-
 const Models = ({ language, setLanguage }) => {
   const t = text[language] || text.el;
   const [sent, setSent] = useState(false);
+  const formInView = useInView('dilosi');
   const dayNames = language === 'en'
     ? ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
     : ['Δευτέρα', 'Τρίτη', 'Τετάρτη', 'Πέμπτη', 'Παρασκευή', 'Σάββατο'];
@@ -134,28 +125,44 @@ const Models = ({ language, setLanguage }) => {
   }, []);
 
   return (
-    <NhLayout language={language} setLanguage={setLanguage}>
+    <NhLayout
+      language={language}
+      setLanguage={setLanguage}
+      mobileBar={formInView && !sent ? <></> : (
+        <div className="nh-mobile-bar">
+          <span className="nh-mobile-bar-text">
+            <span>{sent ? t.sentTitle : t.barTop}</span>
+            <strong>{sent ? '✓' : t.barBottom}</strong>
+          </span>
+          {sent
+            ? <a href={BOOK} className="nh-btn nh-btn-gold nh-btn-sm">{language === 'en' ? 'Book now' : 'Κλείσε ραντεβού'}</a>
+            : <a href="#dilosi" className="nh-btn nh-btn-gold nh-btn-sm">{t.cta}</a>}
+        </div>
+      )}
+    >
       <main className="nh-page">
         <section className="nh-page-hero">
-          <span className="nh-eyebrow">{t.eyebrow}</span>
           <h1 className="nh-h1 nh-h1-page">
+            <span className="nh-eyebrow nh-h1-kicker">{t.eyebrow}</span>
             {t.title} <em>{t.titleEm}</em>
           </h1>
           <p className="nh-lead">{t.lead}</p>
+          <ul className="nh-reassure">{t.facts.map((f) => <li key={f}>{f}</li>)}</ul>
+          {!sent && <a href="#dilosi" className="nh-btn nh-btn-gold nh-page-cta">{t.cta}</a>}
         </section>
 
         <section className="nh-info-grid">
+          <article className="nh-info-card nh-info-card--rose">
+            <h2 className="nh-info-title">{t.youTitle}</h2>
+            <ul className="nh-job-list">{t.you.map((o) => <li key={o}>{o}</li>)}</ul>
+          </article>
           <article className="nh-info-card">
             <h2 className="nh-info-title">{t.howTitle}</h2>
             <ul className="nh-job-list">{t.how.map((o) => <li key={o}>{o}</li>)}</ul>
           </article>
-          <article className="nh-info-card">
-            <h2 className="nh-info-title">{t.youTitle}</h2>
-            <ul className="nh-job-list">{t.you.map((o) => <li key={o}>{o}</li>)}</ul>
-          </article>
         </section>
 
-        <section className="nh-job-form-wrap" aria-labelledby="model-form-title">
+        <section className="nh-job-form-wrap" id="dilosi" aria-labelledby="model-form-title">
           {sent ? (
             <div className="nh-info-card nh-info-card-gold" role="status">
               <h2 id="model-form-title" className="nh-info-title">{t.sentTitle}</h2>
@@ -180,29 +187,34 @@ const Models = ({ language, setLanguage }) => {
                   <span>{t.email} *</span>
                   <input type="email" name="email" required autoComplete="email" />
                 </label>
-                <label>
-                  <span>{t.instagram}</span>
-                  <input type="text" name="instagram" placeholder="@" />
-                </label>
-                <Select label={t.ageGroup} name="age" options={t.ageOptions} />
-                <Select label={`${t.length} *`} name="length" options={t.lengthOptions} required />
-                <Select label={`${t.colour} *`} name="colour" options={t.colourOptions} required />
-                <label className="nh-job-full">
-                  <span>{t.lastColour}</span>
-                  <input type="text" name="last_colour" />
-                </label>
-                <Checks label={t.open} name="open_to" options={t.openOptions} />
-                <Select label={t.change} name="change" options={t.changeOptions} />
-                <Select label={t.photos} name="photos" options={t.photosOptions} />
-                <Checks label={t.days} name="day" options={dayNames} />
+                <Pills label={t.length} name="length" options={t.lengthOptions} required />
+                <Pills label={t.colour} name="colour" options={t.colourOptions} required />
+                <Pills label={t.open} name="open_to" options={t.openOptions} type="checkbox" />
                 <label className="nh-job-full">
                   <span>{t.photo}</span>
-                  <input type="file" name="attachment" accept=".jpg,.jpeg,.png,.heic,.webp" />
+                  <input type="file" name="attachment" accept="image/*,.heic" />
                 </label>
-                <label className="nh-job-full">
-                  <span>{t.message}</span>
-                  <textarea name="message" rows="3" />
-                </label>
+                <details className="nh-job-full nh-more">
+                  <summary>{t.more}</summary>
+                  <div className="nh-more-body">
+                    <label>
+                      <span>{t.instagram}</span>
+                      <input type="text" name="instagram" placeholder="@" autoCapitalize="none" />
+                    </label>
+                    <Pills label={t.ageGroup} name="age" options={t.ageOptions} />
+                    <label className="nh-job-full">
+                      <span>{t.lastColour}</span>
+                      <input type="text" name="last_colour" />
+                    </label>
+                    <Pills label={t.change} name="change" options={t.changeOptions} />
+                    <Pills label={t.photos} name="photos" options={t.photosOptions} />
+                    <Pills label={t.days} name="day" options={dayNames} type="checkbox" />
+                    <label className="nh-job-full">
+                      <span>{t.message}</span>
+                      <textarea name="message" rows="3" />
+                    </label>
+                  </div>
+                </details>
                 <label className="nh-job-full nh-job-consent">
                   <input type="checkbox" name="adult" value="yes" required />
                   <span>{t.adult}</span>

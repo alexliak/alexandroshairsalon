@@ -418,6 +418,9 @@ export default function MathArt({ scene = 'galaxy', lang = 'el', surface = 'dark
     const draw = def.make();
     const reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     let lastName = '';
+    // Η κάρτα γύρω από τον πλανήτη ([data-tone-host]) παίρνει τον τρέχοντα τόνο ως --tone-h / --tone-s
+    const host = showLegend ? canvas.closest('[data-tone-host]') : null;
+    let lastH = -99;
     const opts = {
       lang,
       surface,
@@ -426,6 +429,11 @@ export default function MathArt({ scene = 'galaxy', lang = 'el', surface = 'dark
       onTone: showLegend
         ? (T) => {
           if (nameRef.current && T.name !== lastName) { nameRef.current.textContent = T.name; lastName = T.name; }
+          if (host && Math.abs(T.h - lastH) > 2) {
+            lastH = T.h;
+            host.style.setProperty('--tone-h', T.h.toFixed(0));
+            host.style.setProperty('--tone-s', `${T.s.toFixed(0)}%`);
+          }
           const sw = swatchRef.current;
           if (sw) {
             for (let i = 0; i < sw.children.length; i += 1) {

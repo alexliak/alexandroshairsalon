@@ -191,7 +191,7 @@ const NhLayout = ({ language, setLanguage, children, headerExtra, mobileBar }) =
   ];
 
   return (
-    <div className="nh" lang={language}>
+    <div className={`nh${subTucked ? ' is-sub-tucked' : ''}`} lang={language}>
       <a href="#nh-main" className="nh-skip">{t.skip}</a>
       <header className="nh-header">
         <Link to="/" className="nh-logo" aria-label="Alexandros Hair Salon">
