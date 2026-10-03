@@ -1,1 +1,16 @@
-.math-art { display: block; width: 100%; height: 100%; }
+.math-art { position: relative; display: flex; flex-direction: column; width: 100%; height: 100%; }
+.math-art-stage { position: relative; flex: 1 1 auto; min-height: 0; }
+.math-art-stage canvas { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+
+/* Υπόμνημα πλανήτη χρώματος: καθαρή τυπογραφία, όχι γράμματα μέσα στον καμβά */
+.math-art-legend {
+  flex: 0 0 auto; align-self: center;
+  display: grid; justify-items: center; gap: 6px;
+  width: min(240px, 80%);
+  padding-top: 4px;
+}
+.math-art-legend-label { font-size: 11px; letter-spacing: 0.3em; text-transform: uppercase; opacity: 0.6; }
+.math-art-legend-name { font-family: 'Fraunces', Georgia, serif; font-style: italic; font-weight: 300; font-size: 22px; line-height: 1.1; }
+.math-art-legend-scale { display: grid; grid-template-columns: repeat(10, 1fr); width: 100%; height: 6px; margin-top: 6px; border-radius: 999px; overflow: hidden; }
+.math-art-legend-scale i { display: block; }
+.math-art-legend-levels { display: flex; justify-content: space-between; width: 100%; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; opacity: 0.55; font-variant-numeric: tabular-nums; }
