@@ -458,3 +458,21 @@
 .sh-finder .sh-need-row { flex-wrap: wrap; overflow: visible; margin: 0; padding: 0; }
 @media (max-width: 420px) { .sh-finder .nh .sh-need, .nh .sh-finder .sh-need { min-height: 42px; padding: 0 16px; font-size: 14px; } }
 .nh .sh button.nh-btn-ghost, .nh .sh-drawer button.nh-btn-ghost { background: transparent; color: var(--nh-text); }
+
+/* ---------- Αυστηρός έλεγχος κινητού (Οκτ. 2026) ---------- */
+/* «Δεν ξέρεις τι να διαλέξεις;»: σκούρα κάρτα με χρυσή λάμψη, όχι κρεμ μπλοκ μέσα στο σκούρο site */
+.sh-advice {
+  background: radial-gradient(70% 90% at 100% 0%, rgba(201, 169, 110, .16), transparent 70%), var(--nh-surface);
+  color: var(--nh-text); border: 1px solid rgba(201, 169, 110, .3);
+}
+.sh-advice .sh-h2 { color: var(--nh-text); }
+.sh-advice p { color: var(--nh-soft); }
+.nh .sh-advice .nh-btn-dark { background: var(--nh-gold); color: var(--nh-ink); }
+@media (max-width: 820px) {
+  /* Η διαφήμιση SteamPod έχει μικρά γράμματα που δεν διαβάζονται στο κινητό: εκεί κρύβεται, τα προϊόντα έρχονται πιο ψηλά */
+  .sh-hero-art { display: none; }
+  .sh-hero { padding-top: 28px; }
+  .sh-sort select { padding: 0 36px 0 16px; background-position: right 14px center; font-size: 14px; text-overflow: ellipsis; }
+  .nh .sh-filter-btn { padding: 0 14px; }
+  .sh-catalog-banner { font-size: 14px; padding: 12px 16px; }
+}

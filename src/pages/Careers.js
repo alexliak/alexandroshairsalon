@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import NhLayout from '../components/NhLayout';
+import Pills from '../components/FormPills';
+import useInView from '../components/useInView';
 
 // "We are hiring" page. The form posts to FormSubmit (formsubmit.co), which emails
 // every application, CV attached, to the salon inbox. No backend needed on GitHub Pages.
@@ -9,10 +11,14 @@ const THANKS_URL = 'https://alexandroshairsalon.gr/douleia#sent';
 
 const text = {
   el: {
-    eyebrow: 'We are hiring · Δουλειά μαζί μας',
+    eyebrow: 'We are hiring · Ζητείται βοηθός κομμωτηρίου',
     title: 'Ψάχνουμε νέο μέλος',
     titleEm: 'στην ομάδα μας.',
-    lead: 'Ψάχνουμε βοηθό κομμωτηρίου με όρεξη για δουλειά και εκπαίδευση. Η θέση είναι σταθερή, σε οικογενειακό κομμωτήριο στο Θησείο που λειτουργεί από το 1992.',
+    lead: 'Ψάχνουμε βοηθό κομμωτηρίου με όρεξη για δουλειά και εκπαίδευση, σε οικογενειακό κομμωτήριο στο Θησείο που λειτουργεί από το 1992.',
+    facts: ['Σταθερή θέση', 'Εκπαίδευση στη δουλειά', 'Και χωρίς εμπειρία'],
+    cta: 'Κάνε αίτηση',
+    barTop: 'Βοηθός κομμωτηρίου',
+    barBottom: 'αίτηση σε 2 λεπτά',
     offerTitle: 'Τι προσφέρουμε',
     offer: [
       'Σταθερή εργασία',
@@ -26,7 +32,7 @@ const text = {
       'Η εμπειρία είναι πλεονέκτημα αλλά όχι απαραίτητη'
     ],
     formTitle: 'Κάνε αίτηση',
-    formLead: 'Συμπλήρωσε τη φόρμα και επισύναψε το βιογραφικό σου. Θα σε καλέσουμε εμείς.',
+    formLead: 'Συμπλήρωσε τα στοιχεία σου και ανέβασε το βιογραφικό σου. Θα σε καλέσουμε εμείς.',
     name: 'Ονοματεπώνυμο',
     phone: 'Τηλέφωνο',
     email: 'Email',
@@ -34,7 +40,7 @@ const text = {
     expOptions: ['Καμία', 'Έως 1 χρόνο', '1–3 χρόνια', 'Πάνω από 3 χρόνια'],
     availability: 'Από πότε μπορείς να ξεκινήσεις;',
     message: 'Πες μας λίγα λόγια για σένα',
-    cv: 'Βιογραφικό (PDF, Word ή φωτογραφία, έως 10MB)',
+    cv: 'Βιογραφικό (PDF, Word ή φωτογραφία από το κινητό)',
     consent: 'Συμφωνώ να χρησιμοποιηθούν τα στοιχεία μου μόνο για αυτή την αίτηση εργασίας.',
     submit: 'Αποστολή αίτησης',
     subject: 'Νέα αίτηση εργασίας: Βοηθός κομμωτηρίου',
@@ -42,10 +48,14 @@ const text = {
     sentText: 'Λάβαμε την αίτησή σου. Θα επικοινωνήσουμε μαζί σου σύντομα.'
   },
   en: {
-    eyebrow: 'We are hiring',
+    eyebrow: 'We are hiring · Salon assistant',
     title: 'Join',
     titleEm: 'our team.',
-    lead: 'We are looking for a salon assistant who is eager to work and learn. A stable, long-term position in a family salon in Thiseio, open since 1992.',
+    lead: 'We are looking for a salon assistant who is eager to work and learn, in a family salon in Thiseio open since 1992.',
+    facts: ['Stable position', 'On-the-job training', 'No experience needed'],
+    cta: 'Apply',
+    barTop: 'Salon assistant',
+    barBottom: 'apply in 2 minutes',
     offerTitle: 'What we offer',
     offer: [
       'Stable employment',
@@ -67,7 +77,7 @@ const text = {
     expOptions: ['None', 'Up to 1 year', '1–3 years', 'More than 3 years'],
     availability: 'When can you start?',
     message: 'Tell us a little about yourself',
-    cv: 'CV (PDF, Word or photo, up to 10MB)',
+    cv: 'CV (PDF, Word or a photo from your phone)',
     consent: 'I agree that my details are used only for this job application.',
     submit: 'Send application',
     subject: 'New job application: Salon assistant',
@@ -79,20 +89,35 @@ const text = {
 const Careers = ({ language, setLanguage }) => {
   const t = text[language] || text.el;
   const [sent, setSent] = useState(false);
+  const formInView = useInView('aitisi');
 
   useEffect(() => {
     setSent(window.location.hash === '#sent');
   }, []);
 
   return (
-    <NhLayout language={language} setLanguage={setLanguage}>
+    <NhLayout
+      language={language}
+      setLanguage={setLanguage}
+      mobileBar={sent ? null : formInView ? <></> : (
+        <div className="nh-mobile-bar">
+          <span className="nh-mobile-bar-text">
+            <span>{t.barTop}</span>
+            <strong>{t.barBottom}</strong>
+          </span>
+          <a href="#aitisi" className="nh-btn nh-btn-gold nh-btn-sm">{t.cta}</a>
+        </div>
+      )}
+    >
       <main className="nh-page">
         <section className="nh-page-hero">
-          <span className="nh-eyebrow">{t.eyebrow}</span>
           <h1 className="nh-h1 nh-h1-page">
+            <span className="nh-eyebrow nh-h1-kicker">{t.eyebrow}</span>
             {t.title} <em>{t.titleEm}</em>
           </h1>
           <p className="nh-lead">{t.lead}</p>
+          <ul className="nh-reassure">{t.facts.map((f) => <li key={f}>{f}</li>)}</ul>
+          {!sent && <a href="#aitisi" className="nh-btn nh-btn-gold nh-page-cta">{t.cta}</a>}
         </section>
 
         <section className="nh-info-grid">
@@ -140,12 +165,7 @@ const Careers = ({ language, setLanguage }) => {
                   <span>{t.email} *</span>
                   <input type="email" name="email" required autoComplete="email" />
                 </label>
-                <label>
-                  <span>{t.experience}</span>
-                  <select name="experience" defaultValue={t.expOptions[0]}>
-                    {t.expOptions.map((o) => <option key={o} value={o}>{o}</option>)}
-                  </select>
-                </label>
+                <Pills label={t.experience} name="experience" options={t.expOptions} required />
                 <label>
                   <span>{t.availability}</span>
                   <input type="text" name="availability" />
@@ -156,7 +176,7 @@ const Careers = ({ language, setLanguage }) => {
                 </label>
                 <label className="nh-job-full">
                   <span>{t.cv} *</span>
-                  <input type="file" name="attachment" required accept=".pdf,.doc,.docx,.jpg,.jpeg,.png" />
+                  <input type="file" name="attachment" required accept=".pdf,.doc,.docx,image/*,.heic" />
                 </label>
                 <label className="nh-job-full nh-job-consent">
                   <input type="checkbox" name="consent" value="yes" required />

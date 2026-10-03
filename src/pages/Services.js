@@ -5,10 +5,10 @@ import menu from '../data/menu';
 // Services & prices (2026 design). The list itself lives in src/data/menu.js.
 const text = {
   el: {
-    eyebrow: 'Υπηρεσίες & τιμές',
+    eyebrow: 'Τιμές κομμωτηρίου · Θησείο, Αθήνα',
     title: 'Τιμές',
     titleEm: 'και χρόνοι.',
-    lead: 'Οι τιμές και οι χρόνοι που βλέπεις είναι κατά προσέγγιση. Τα μακριά ή πυκνά μαλλιά θέλουν συχνά λίγο παραπάνω προϊόν και χρόνο. Δουλεύουμε όσο πιο γρήγορα γίνεται, αλλά χωρίς ξεπέταγμα και χωρίς εκπτώσεις στην ποιότητα, για να μη χάνεις τον χρόνο σου. Στην online κράτηση βλέπεις τιμή και διάρκεια και διαλέγεις αν θα πληρώσεις online ή στο κομμωτήριο.',
+    lead: 'Τιμές και χρόνοι κατά προσέγγιση: τα μακριά ή πυκνά μαλλιά θέλουν λίγο παραπάνω προϊόν και χρόνο. Στην online κράτηση βλέπεις ελεύθερες ώρες και πληρώνεις online ή στο κομμωτήριο.',
     book: 'Κλείσε online',
     call: 'Κάλεσε',
     from: 'από',
@@ -23,10 +23,10 @@ const text = {
     jump: 'Κατηγορίες'
   },
   en: {
-    eyebrow: 'Services & prices',
+    eyebrow: 'Hair salon prices · Thiseio, Athens',
     title: 'Prices',
     titleEm: 'and times.',
-    lead: 'The prices and times you see are approximate. Long or thick hair often needs a little more product and time. We work as fast as we can, but without rushing and without cutting corners on quality, so you don’t waste your time. When you book online, you see the price and duration and choose whether to pay online or at the salon.',
+    lead: 'Prices and times are approximate: long or thick hair needs a little more product and time. When you book online you see free slots and pay online or at the salon.',
     book: 'Book online',
     call: 'Call',
     from: 'from',
@@ -56,8 +56,8 @@ const Services = ({ language, setLanguage }) => {
     <NhLayout language={language} setLanguage={setLanguage}>
       <main className="nh-page">
         <section className="nh-page-hero">
-          <span className="nh-eyebrow">{t.eyebrow}</span>
           <h1 className="nh-h1 nh-h1-page">
+            <span className="nh-eyebrow nh-h1-kicker">{t.eyebrow}</span>
             {t.title} <em>{t.titleEm}</em>
           </h1>
           <p className="nh-lead">{t.lead}</p>
@@ -84,6 +84,9 @@ const Services = ({ language, setLanguage }) => {
                     <span className="nh-menu-from">{priceLabel(s.options, t)}</span>
                   </div>
                   {s.desc ? <p className="nh-menu-desc">{s.desc[lang]}</p> : null}
+                  {s.options.length === 1 && !s.options[0][lang] ? (
+                    <p className="nh-menu-meta">{s.options[0].time[lang]}</p>
+                  ) : (
                   <ul className="nh-menu-options">
                     {s.options.map((o) => (
                       <li key={`${o.el}-${o.price}`}>
@@ -95,6 +98,7 @@ const Services = ({ language, setLanguage }) => {
                       </li>
                     ))}
                   </ul>
+                  )}
                   <a href={BOOK} className="nh-menu-book" aria-label={`${t.bookThis}: ${s.name[lang]}`}>
                     {t.bookThis} →
                   </a>
