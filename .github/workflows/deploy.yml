@@ -1,0 +1,59 @@
+# Automatic deploy of alexandroshairsalon.gr to GitHub Pages.
+#
+# - Every push or merged pull request on `main` builds the site and publishes it
+#   to the `gh-pages` branch, which GitHub Pages serves. No computer needed:
+#   a change made on github.com (or from any laptop) goes live in ~2–3 minutes.
+# - Pull requests only run the build, as a check, without publishing.
+# - "Run workflow" in the Actions tab redeploys `main` by hand.
+#
+# Do not also run `npm run deploy` locally: an older local copy would overwrite
+# the live site until the next push to main.
+name: Deploy site
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: deploy-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci --no-audit --no-fund
+
+      - name: Build static pages (/kratisi, /kourema-athina, /vafi-mallion-athina, /balayage-athina)
+        run: python3 scripts/build-static-pages.py
+
+      - name: Build site
+        run: npm run build
+        env:
+          # Create React App treats lint warnings as errors when CI=true;
+          # a harmless warning should not stop the site from updating.
+          CI: false
+
+      - name: Publish to gh-pages
+        if: github.event_name != 'pull_request'
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: gh-pages
+          publish_dir: ./build
+          cname: alexandroshairsalon.gr
+          commit_message: "Deploy ${{ github.sha }}"

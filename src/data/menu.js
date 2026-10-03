@@ -378,8 +378,8 @@ const menu = [
           "en": "Colour correction consultation"
         },
         "desc": {
-          "el": "Πλάνο και ακριβής τιμή πριν ξεκινήσουμε.",
-          "en": "A plan and an exact price before we start."
+          "el": "Πλάνο και συγκεκριμένη τιμή πριν ξεκινήσουμε.",
+          "en": "A plan and a set price before we start."
         },
         "options": [
           {
