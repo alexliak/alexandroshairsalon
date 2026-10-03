@@ -105,29 +105,45 @@ const NhLayout = ({ language, setLanguage, children, headerExtra, mobileBar }) =
   const other = language === 'el' ? 'en' : 'el';
   const { pathname, hash } = useLocation();
 
-  // Start each page at the top (keep #anchors working)
+  // Start each page at the top. With an #anchor (e.g. /#brands), glide to that section instead.
   useEffect(() => {
-    if (!hash) window.scrollTo(0, 0);
+    if (!hash) { window.scrollTo(0, 0); return undefined; }
+    const id = decodeURIComponent(hash.slice(1));
+    const reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const raf = requestAnimationFrame(() => {
+      const el = document.getElementById(id);
+      if (el) el.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'start' });
+    });
+    return () => cancelAnimationFrame(raf);
   }, [pathname, hash]);
 
-  // Κινητό: η μπάρα δεν γυρίζει στην αρχή όταν ανοίγει νέα σελίδα.
-  // Επαναφέρει τη θέση της και, αν η ενεργή επιλογή δεν φαίνεται, την φέρνει στο κέντρο.
+  // Κινητό: η μπάρα μένει ακριβώς εκεί που την άφησε ο επισκέπτης όταν αλλάζει σελίδα
+  // (επαναφορά πριν ζωγραφιστεί η οθόνη, χωρίς άλμα). Μόνο αν η ενεργή επιλογή είναι
+  // εκτός οθόνης, γλιστράει απαλά ώστε να φανεί.
   const subnavRef = useRef(null);
   useLayoutEffect(() => {
     const nav = subnavRef.current;
-    if (!nav) return;
+    if (!nav) return undefined;
     nav.scrollLeft = subnavScrollLeft;
     const active = nav.querySelector('.is-active');
-    if (active) {
-      const left = active.offsetLeft;
-      const right = left + active.offsetWidth;
-      if (left < nav.scrollLeft || right > nav.scrollLeft + nav.clientWidth) {
-        nav.scrollLeft = Math.max(0, left - (nav.clientWidth - active.offsetWidth) / 2);
-      }
-    }
-    subnavScrollLeft = nav.scrollLeft;
-  }, [pathname]);
+    if (!active) return undefined;
+    const left = active.offsetLeft;
+    const right = left + active.offsetWidth;
+    const pad = 16;
+    if (left >= nav.scrollLeft + pad && right <= nav.scrollLeft + nav.clientWidth - pad) return undefined;
+    const reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const target = Math.max(0, left - (nav.clientWidth - active.offsetWidth) / 2);
+    const raf = requestAnimationFrame(() => nav.scrollTo({ left: target, behavior: reduce ? 'auto' : 'smooth' }));
+    return () => cancelAnimationFrame(raf);
+  }, [pathname, hash]);
   const onSubnavScroll = (e) => { subnavScrollLeft = e.currentTarget.scrollLeft; };
+  // Πάτημα ξανά στην ίδια άγκυρα (π.χ. L’Oréal & Redken ενώ ήδη είσαι εκεί): ξαναπήγαινε στην ενότητα
+  const reTap = (href) => {
+    const i = href.indexOf('#');
+    if (i < 0 || pathname !== '/' || hash !== href.slice(i)) return;
+    const el = document.getElementById(href.slice(i + 1));
+    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  };
 
   // Show the back-to-top button after the visitor has scrolled down
   const [showTop, setShowTop] = useState(false);
@@ -171,9 +187,9 @@ const NhLayout = ({ language, setLanguage, children, headerExtra, mobileBar }) =
                 {item.label}
               </NavLink>
             ) : (
-              <a key={item.label} href={item.href} className="nh-nav-link">
+              <Link key={item.label} to={item.href} onClick={() => reTap(item.href)} className={`nh-nav-link${pathname === '/' && hash && item.href.endsWith(hash) ? ' is-active' : ''}`}>
                 {item.label}
-              </a>
+              </Link>
             )
           )}
         </nav>
@@ -211,9 +227,9 @@ const NhLayout = ({ language, setLanguage, children, headerExtra, mobileBar }) =
               {item.label}
             </NavLink>
           ) : (
-            <a key={item.label} href={item.href} className="nh-subnav-link">
+            <Link key={item.label} to={item.href} onClick={() => reTap(item.href)} className={`nh-subnav-link${pathname === '/' && hash && item.href.endsWith(hash) ? ' is-active' : ''}`}>
               {item.label}
-            </a>
+            </Link>
           )
         )}
       </nav>
