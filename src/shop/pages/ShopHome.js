@@ -4,7 +4,10 @@ import {
   BRANDS, CATEGORIES, HAIR_TYPES, LINE_IMAGES, LINE_INFO, NEEDS, PRODUCTS, TYPES, imageSrc, t as tr
 } from '../catalog';
 import { useShop } from '../ShopContext';
+import { Link } from 'react-router-dom';
 import { CATALOG_MODE, SITE, WHATSAPP } from '../config';
+import MathArt from '../../components/MathArt';
+import './Diagnosis.css';
 import useFilters from '../useFilters';
 import FilterPanel from '../components/FilterPanel';
 import ProductCard from '../components/ProductCard';
@@ -127,6 +130,17 @@ const ShopHome = ({ lang, t }) => {
           <li>{t.trust2}</li>
           <li>{t.trust3}</li>
         </ul>
+      </section>
+
+      <section className="sh-dx-band" aria-labelledby="sh-dx-title">
+        <div className="sh-dx-mark" aria-hidden="true">
+          <MathArt scene="galaxy" lang={lang} className="nh-art-fill" />
+        </div>
+        <div>
+          <h2 id="sh-dx-title" dangerouslySetInnerHTML={{ __html: t.dxTitle }} />
+          <p>{t.dxText}</p>
+        </div>
+        <Link to="/shop/diagnosi" className="nh-btn nh-btn-gold">{t.dxCta}</Link>
       </section>
 
       <section className="sh-finder" aria-labelledby="sh-finder-title">
