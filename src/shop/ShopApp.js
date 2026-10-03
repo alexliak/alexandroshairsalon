@@ -12,6 +12,7 @@ import ProductPage from './pages/ProductPage';
 import CartPage from './pages/CartPage';
 import RequestPage from './pages/RequestPage';
 import ReviewsAdmin from './pages/ReviewsAdmin';
+import Diagnosis from './pages/Diagnosis';
 import './shop.css';
 
 const CartButton = ({ t }) => {
@@ -56,6 +57,7 @@ const Inner = ({ language, setLanguage }) => {
           <Route path="/shop/p/:id" element={<ProductPage lang={language} t={t} />} />
           <Route path="/shop/cart" element={CATALOG_MODE ? <RequestPage lang={language} t={t} /> : <CartPage lang={language} t={t} />} />
           <Route path="/shop/admin" element={<ReviewsAdmin />} />
+          <Route path="/shop/diagnosi" element={<Diagnosis lang={language} />} />
           <Route path="*" element={<ShopHome lang={language} t={t} />} />
         </Routes>
       </main>
