@@ -7,15 +7,15 @@ body, html {
 }
 
 body {
-  background-color: #120f18;
+  background-color: #12100e;
   color: #fef6ff;
 }
 
 #root {
   min-height: 100vh;
   width: 100vw;
-  background-color: #120f18;
-  background-image: radial-gradient(circle at top, rgba(196, 164, 106, 0.08), rgba(18, 18, 28, 0.95));
+  background-color: #12100e;
+  background-image: radial-gradient(circle at top, rgba(196, 164, 106, 0.08), rgba(18, 16, 14, 0.95));
   background-size: cover;
   background-attachment: fixed;
   overflow-x: clip; /* 'hidden' here stopped the sticky header from staying on screen */

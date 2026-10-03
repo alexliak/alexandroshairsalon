@@ -13,11 +13,6 @@ const SITE = 'https://alexandroshairsalon.gr';
 const build = path.join(__dirname, '..', 'build');
 const index = fs.readFileSync(path.join(build, 'index.html'), 'utf8');
 
-for (const r of ROUTES) {
-  fs.writeFileSync(path.join(build, `${r}.html`), index);
-  console.log(`spa-routes: build/${r}.html`);
-}
-
 // ── Shop ────────────────────────────────────────────────────────────────────
 const esc = (s) => String(s || '').replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 
@@ -28,7 +23,10 @@ const withMeta = (html, { title, description, url, image, jsonld, noindex }) => 
     .replace(/<link rel="canonical" href="[^"]*"\s*\/?>/, `<link rel="canonical" href="${url}" />`)
     .replace(/<meta property="og:url" content="[^"]*"\s*\/?>/, `<meta property="og:url" content="${url}" />`)
     .replace(/<meta property="og:title" content="[^"]*"\s*\/?>/, `<meta property="og:title" content="${esc(title)}" />`)
-    .replace(/<meta property="og:description" content="[^"]*"\s*\/?>/, `<meta property="og:description" content="${esc(description)}" />`);
+    .replace(/<meta property="og:description" content="[^"]*"\s*\/?>/, `<meta property="og:description" content="${esc(description)}" />`)
+    .replace(/<meta name="twitter:url" content="[^"]*"\s*\/?>/, `<meta name="twitter:url" content="${url}" />`)
+    .replace(/<meta name="twitter:title" content="[^"]*"\s*\/?>/, `<meta name="twitter:title" content="${esc(title)}" />`)
+    .replace(/<meta name="twitter:description" content="[^"]*"\s*\/?>/, `<meta name="twitter:description" content="${esc(description)}" />`);
   if (image) {
     out = out
       .replace(/<meta property="og:image" content="[^"]*"\s*\/?>/, `<meta property="og:image" content="${image}" />`)
@@ -43,6 +41,38 @@ const withMeta = (html, { title, description, url, image, jsonld, noindex }) => 
   return out.replace('</head>', `${extra}</head>`);
 };
 
+// Κάθε σελίδα έχει από την αρχή τον δικό της τίτλο και περιγραφή (Google, WhatsApp, Facebook)
+const SEO = JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'src', 'data', 'seo.json'), 'utf8'));
+const ADDRESS = {
+  '@type': 'PostalAddress', streetAddress: 'Ερυσίχθονος 3-5', addressLocality: 'Αθήνα',
+  addressRegion: 'Αττική', postalCode: '11851', addressCountry: 'GR'
+};
+const ROUTE_JSONLD = {
+  // Google για Θέσεις Εργασίας: η αγγελία εμφανίζεται στις αναζητήσεις «ζητείται βοηθός κομμωτηρίου»
+  douleia: {
+    '@context': 'https://schema.org',
+    '@type': 'JobPosting',
+    title: 'Βοηθός κομμωτηρίου',
+    description: '<p>Ψάχνουμε βοηθό κομμωτηρίου με όρεξη για δουλειά και εκπαίδευση, σε οικογενειακό κομμωτήριο στο Θησείο που λειτουργεί από το 1992.</p><ul><li>Σταθερή εργασία</li><li>Εκπαίδευση στη δουλειά, με L’Oréal Professionnel και Redken</li><li>Η εμπειρία είναι πλεονέκτημα αλλά όχι απαραίτητη</li></ul>',
+    datePosted: '2026-10-03',
+    hiringOrganization: { '@type': 'Organization', name: 'Alexandros Hair Salon', sameAs: `${SITE}/`, logo: `${SITE}/logo512.png` },
+    jobLocation: { '@type': 'Place', address: ADDRESS },
+    industry: 'Κομμωτική',
+    occupationalCategory: '39-5012.00 Hairdressers, Hairstylists, and Cosmetologists',
+    experienceRequirements: { '@type': 'OccupationalExperienceRequirements', monthsOfExperience: 0 },
+    directApply: true,
+    url: `${SITE}/douleia`
+  }
+};
+for (const r of ROUTES) {
+  const meta = SEO[`/${r}`] || {};
+  fs.writeFileSync(
+    path.join(build, `${r}.html`),
+    withMeta(index, { title: meta.title, description: meta.description, url: `${SITE}/${r}`, jsonld: ROUTE_JSONLD[r] })
+  );
+  console.log(`spa-routes: build/${r}.html`);
+}
+
 const catalogPath = path.join(__dirname, '..', 'src', 'data', 'shop', 'catalog.json');
 if (fs.existsSync(catalogPath)) {
   const { products } = JSON.parse(fs.readFileSync(catalogPath, 'utf8'));
@@ -52,7 +82,7 @@ if (fs.existsSync(catalogPath)) {
   const dir = path.join(build, 'shop', 'p');
   fs.mkdirSync(dir, { recursive: true });
   // /shop/ as a folder too, in case GitHub Pages prefers the folder over shop.html
-  fs.writeFileSync(path.join(build, 'shop', 'index.html'), index);
+  fs.writeFileSync(path.join(build, 'shop', 'index.html'), fs.readFileSync(path.join(build, 'shop.html'), 'utf8'));
 
   const urls = [];
   for (const p of products) {

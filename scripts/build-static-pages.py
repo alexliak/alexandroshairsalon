@@ -27,7 +27,7 @@ MENU = {
     "cut_blowout": ("Κούρεμα & Blowout (πακέτο)", [("Έως τους ώμους", "45′", 38), ("Κάτω από τους ώμους ή πυκνά", "55′", 45)]),
     "root": ("Βαφή ρίζας – κάλυψη λευκών", [("Έως 6 εβδομάδες · Farcom", "40′", 35), ("Express 10′ · Redken", "40′", 39), ("Έως 6 εβδομάδες · Majirel", "40′", 42), ("Χωρίς αμμωνία · INOA / Redken", "50′", 44), ("Μεγάλη ρίζα 6+ εβδομάδες · Majirel", "50′", 49), ("Χωρίς αμμωνία · μεγάλη ρίζα", "50′", 55)]),
     "extra": ("+ Πολύ πυκνά ή πολύ μακριά μαλλιά", [("Προσθήκη στη βαφή", "15′", 19)]),
-    "root_gloss": ("Βαφή ρίζας + ρεφλέ (gloss)", [("Κοντά", "1 ώρα", 52), ("Έως τους ώμους", "1 ώρα", 64), ("Κάτω από τους ώμους", "1 ώρα 05′", 79)]),
+    "root_gloss": ("Βαφή ρίζας + ρεφλέ (gloss)", [("Κοντά", "1 ώρα", 52), ("Έως τους ώμους", "1 ώρα", 64), ("Κάτω από τους ώμους", "1 ώρα 5′", 79)]),
     "gloss": ("Ρεφλέ / Gloss – λάμψη & τόνος", [("Κοντά", "45′", 31), ("Έως τους ώμους", "50′", 43), ("Κάτω από τους ώμους", "1 ώρα", 53)]),
     "correction": ("Διόρθωση χρώματος – διάγνωση", [("Πλάνο και συγκεκριμένη τιμή πριν ξεκινήσουμε", "1 ώρα 20′", 40)]),
     "root_blowout": ("Βαφή ρίζας & Blowout (πακέτο)", [("", "1 ώρα 15′", 52)]),
@@ -257,7 +257,7 @@ def service_page(path, crumb, title, desc, eyebrow, h1, lead, facts, prose, keys
     page(path, title, desc, body, [service_ld, faq_ld, crumbs(crumb, path)])
 
 
-COMMON_FACTS = ["Θησείο, ~5′ με τα πόδια από τον σταθμό", "Πληρώνεις στο κομμωτήριο", "Online κράτηση 24/7"]
+COMMON_FACTS = ["Θησείο, ~5′ με τα πόδια από τον σταθμό", "Πληρωμή online ή στο κομμωτήριο", "Online κράτηση 24/7"]
 
 # ---------- /kourema-athina/ ----------
 service_page(
@@ -285,8 +285,8 @@ service_page(
 # ---------- /vafi-mallion-athina/ ----------
 service_page(
     "/vafi-mallion-athina/", "Βαφή μαλλιών στην Αθήνα",
-    "Βαφή Μαλλιών Αθήνα – Θησείο | Κάλυψη λευκών από €35 | L’Oréal & Redken",
-    "Βαφή ρίζας και κάλυψη λευκών από €35 με L’Oréal Professionnel (Majirel, INOA χωρίς αμμωνία) και Redken, ρεφλέ/gloss από €31. Κομμωτήριο στο Θησείο, Αθήνα. Κλείσε online.",
+    "Βαφή Μαλλιών Αθήνα – Θησείο | Κάλυψη λευκών από €35 | Majirel, INOA, Redken",
+    "Βαφή ρίζας και κάλυψη λευκών από €35, με Redken από €39, Majirel από €42 και INOA χωρίς αμμωνία από €44. Ρεφλέ/gloss από €31. Κομμωτήριο στο Θησείο, Αθήνα. Κλείσε online.",
     "Χρώμα · L’Oréal Professionnel & Redken",
     "Βαφή μαλλιών στην Αθήνα, <em>με L’Oréal &amp; Redken.</em>",
     "Κάλυψη λευκών στη ρίζα, βαφή χωρίς αμμωνία, ρεφλέ για λάμψη και τόνο. Διαλέγεις τη βαφή που σου ταιριάζει και βλέπεις από πριν την τιμή και τον χρόνο.",
@@ -301,7 +301,7 @@ service_page(
      ("Έχετε βαφή χωρίς αμμωνία;", "Ναι, INOA της L’Oréal Professionnel ή Redken χωρίς αμμωνία, από €44."),
      ("Κάνετε τεστ ευαισθησίας;", "Ναι, δωρεάν πριν από την πρώτη σου βαφή."),
      ("Πόση ώρα διαρκεί η βαφή ρίζας;", "Περίπου 40–50 λεπτά. Με ρεφλέ στα μήκη περίπου μία ώρα."),
-     ("Πώς κλείνω ραντεβού για βαφή;", "Online στο alexandroshairsalon.gr/kratisi, όπου βλέπεις ελεύθερες ώρες, ή στο 210 346 5554. Πληρώνεις στο κομμωτήριο.")],
+     ("Πώς κλείνω ραντεβού για βαφή;", "Online στο alexandroshairsalon.gr/kratisi, όπου βλέπεις ελεύθερες ώρες, ή στο 210 346 5554. Πληρώνεις online ή στο κομμωτήριο.")],
     "Βαφή μαλλιών",
     [("Balayage στην Αθήνα", "/balayage-athina/"), ("Κούρεμα στην Αθήνα", "/kourema-athina/"), ("Όλες οι τιμές", "/services")],
 )
@@ -347,7 +347,7 @@ kratisi_body = f"""
   <h1 data-en="Book in <em>one minute.</em>">Κλείσε ραντεβού <em>σε ένα λεπτό.</em></h1>
   <p class="lead" data-en="Choose a service and time below. You see the price and duration and pay online or at the salon.">Διάλεξε υπηρεσία και ώρα παρακάτω. Βλέπεις τιμή και διάρκεια και πληρώνεις online ή στο κομμωτήριο.</p>
   <div class="cta">
-    <a class="btn gold" href="{WIDGET}" id="wahanda-online-booking-widget" onclick='wahanda.openOnlineBookingWidget("{WIDGET}"); return false;' target="_blank"><span data-en="Open full screen">Άνοιγμα σε πλήρη οθόνη</span></a>
+    <a class="btn gold" href="{WIDGET}" id="wahanda-online-booking-widget" onclick='wahanda.openOnlineBookingWidget("{WIDGET}"); return false;' target="_blank"><span data-en="See times &amp; book">Δες ώρες &amp; κλείσε</span></a>
     <a class="btn ghost" href="tel:{PHONE}" data-en="Call {PHONE_TXT}">Κάλεσε {PHONE_TXT}</a>
   </div>
 </section>

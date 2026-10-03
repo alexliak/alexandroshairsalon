@@ -6,6 +6,7 @@ import Contact from './pages/Contact';
 import Careers from './pages/Careers';
 import Models from './pages/Models';
 import { trackPageView } from './utils/analytics';
+import SEO from './data/seo.json';
 import './App.css';
 
 // Φορτώνονται μόνο όταν χρειαστούν, ώστε το κινητό να κατεβάζει λιγότερα στην πρώτη επίσκεψη
@@ -39,26 +40,6 @@ const AppContent = () => {
       '/montela': `${baseUrl}/montela`
     };
 
-    const titleMap = {
-      '/': 'Κομμωτήριο Αθήνα, Θησείο | Κούρεμα, Βαφή, Balayage | Alexandros Hair Salon',
-      '/services': 'Τιμές Κομμωτηρίου Αθήνα | Κούρεμα, Βαφή, Balayage | Alexandros Hair Salon',
-      '/hours': 'Ωράριο & Επικοινωνία | Κομμωτήριο Θησείο, Αθήνα | Alexandros Hair Salon',
-      '/prosfora50': 'Προσφορά 50% Καλωσορίσματος - Alexandros Hair Salon',
-      '/shop': 'Shop Επαγγελματικών Προϊόντων Μαλλιών | L’Oréal Professionnel | Alexandros Hair Salon',
-      '/douleia': 'Θέση εργασίας: Βοηθός κομμωτηρίου στο Θησείο | Alexandros Hair Salon',
-      '/montela': 'Ζητούνται μοντέλα μαλλιών για κούρεμα και χρώμα | Alexandros Hair Salon, Θησείο'
-    };
-
-    const descriptionMap = {
-      '/': 'Κομμωτήριο στο κέντρο της Αθήνας, Θησείο, από το 1992. Γυναικείο κούρεμα από €28, βαφή L’Oréal & Redken από €35, balayage από €55. 4,6★ στο Google. Κλείσε online.',
-      '/services': 'Όλες οι τιμές του κομμωτηρίου στο Θησείο: κουρέματα, Blowout, βαφή ρίζας, ρεφλέ, balayage, κερατίνη και πακέτα, με χρόνους. Online κράτηση, πληρωμή online ή στο κομμωτήριο.',
-      '/hours': 'Ωράριο, διεύθυνση και τηλέφωνο του Alexandros Hair Salon, Ερυσίχθονος 3-5, Θησείο, Αθήνα. Κλείσε ραντεβού online.',
-      '/prosfora50': 'Κλείσε ραντεβού για κούρεμα, βαφή, ανταύγειες με 50% έκπτωση στην πρώτη σου επίσκεψη. Θησείο, Αθήνα.',
-      '/shop': 'Επαγγελματικά προϊόντα μαλλιών L’Oréal Professionnel. Για τιμή και διαθεσιμότητα ρώτα μας. Κομμωτήριο στο Θησείο, Αθήνα.',
-      '/douleia': 'Ψάχνουμε βοηθό κομμωτηρίου με όρεξη για δουλειά και εκπαίδευση. Σταθερή εργασία στο Θησείο. Στείλε αίτηση και βιογραφικό online.',
-      '/montela': 'Ψάχνουμε μοντέλα μαλλιών, κυρίως γυναίκες κάθε ηλικίας, για νέες τεχνικές χρώματος και κουρέματος και φωτογράφιση. Τίποτα ακραίο, το αποτέλεσμα το αποφασίζουμε μαζί.'
-    };
-
     // Product, cart and admin pages of the shop set their own title, description and canonical
     if (/^\/shop\/.+/.test(location.pathname)) {
       trackPageView(location.pathname);
@@ -67,8 +48,8 @@ const AppContent = () => {
 
     const path = location.pathname.length > 1 ? location.pathname.replace(/\/$/, '') : location.pathname;
     const canonicalUrl = canonicalMap[path] || `${baseUrl}${path}`;
-    const pageTitle = titleMap[path] || 'Alexandros Hair Salon';
-    const pageDescription = descriptionMap[path] || 'Alexandros Hair Salon – Κομμωτήριο στο κέντρο της Αθήνας, Θησείο.';
+    const pageTitle = (SEO[path] && SEO[path].title) || 'Alexandros Hair Salon';
+    const pageDescription = (SEO[path] && SEO[path].description) || 'Alexandros Hair Salon – Κομμωτήριο στο κέντρο της Αθήνας, Θησείο.';
 
     // Update canonical link
     let canonicalLink = document.querySelector('link[rel="canonical"]');
