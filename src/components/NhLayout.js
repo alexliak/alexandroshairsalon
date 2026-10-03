@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import { FaWhatsapp, FaViber, FaPhoneAlt, FaArrowUp, FaMapMarkerAlt } from 'react-icons/fa';
 import { Link, NavLink, useLocation } from 'react-router-dom';
 import '../pages/Home.css';
@@ -97,6 +97,9 @@ const layoutText = {
   }
 };
 
+// Η οριζόντια μπάρα του κινητού θυμάται πού την άφησε ο επισκέπτης ανάμεσα στις σελίδες
+let subnavScrollLeft = 0;
+
 const NhLayout = ({ language, setLanguage, children, headerExtra, mobileBar }) => {
   const t = layoutText[language] || layoutText.el;
   const other = language === 'el' ? 'en' : 'el';
@@ -106,6 +109,25 @@ const NhLayout = ({ language, setLanguage, children, headerExtra, mobileBar }) =
   useEffect(() => {
     if (!hash) window.scrollTo(0, 0);
   }, [pathname, hash]);
+
+  // Κινητό: η μπάρα δεν γυρίζει στην αρχή όταν ανοίγει νέα σελίδα.
+  // Επαναφέρει τη θέση της και, αν η ενεργή επιλογή δεν φαίνεται, την φέρνει στο κέντρο.
+  const subnavRef = useRef(null);
+  useLayoutEffect(() => {
+    const nav = subnavRef.current;
+    if (!nav) return;
+    nav.scrollLeft = subnavScrollLeft;
+    const active = nav.querySelector('.is-active');
+    if (active) {
+      const left = active.offsetLeft;
+      const right = left + active.offsetWidth;
+      if (left < nav.scrollLeft || right > nav.scrollLeft + nav.clientWidth) {
+        nav.scrollLeft = Math.max(0, left - (nav.clientWidth - active.offsetWidth) / 2);
+      }
+    }
+    subnavScrollLeft = nav.scrollLeft;
+  }, [pathname]);
+  const onSubnavScroll = (e) => { subnavScrollLeft = e.currentTarget.scrollLeft; };
 
   // Show the back-to-top button after the visitor has scrolled down
   const [showTop, setShowTop] = useState(false);
@@ -178,7 +200,7 @@ const NhLayout = ({ language, setLanguage, children, headerExtra, mobileBar }) =
         </div>
       </header>
 
-      <nav className="nh-subnav" aria-label={t.menu}>
+      <nav className="nh-subnav" aria-label={t.menu} ref={subnavRef} onScroll={onSubnavScroll}>
         {[...t.nav.filter((i) => i.hiring || i.promo), ...t.nav.filter((i) => !i.hiring && !i.promo)].map((item) =>
           item.to ? (
             <NavLink

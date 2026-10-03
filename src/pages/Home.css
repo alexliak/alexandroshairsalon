@@ -435,11 +435,11 @@
 /* ---------- «Κομμωτική 2050»: μαθηματικά animation (components/MathArt) ----------
    Χωρίς πλαίσια: τα animation αιωρούνται πάνω στο φόντο της σελίδας και σβήνουν
    στις άκρες, σαν φως. Μόνο το hero έχει πλήρη ένταση· τα υπόλοιπα είναι αχνά. */
-.nh-art-fill { position: absolute; inset: 0; }
+.math-art.nh-art-fill { position: absolute; inset: 0; width: auto; height: auto; }
 
 /* Hero: ο γαλαξίας χωρίς αψίδα, δένει με τις χρυσές γραμμές του φόντου (μεγάλο) */
 .nh-hero-art { background: none; border: 0; border-radius: 0; overflow: visible; padding: 0; }
-.nh-hero-art .nh-art-fill {
+.nh-hero-art .math-art.nh-art-fill {
   inset: -16% -22%;
   -webkit-mask-image: radial-gradient(closest-side, #000 72%, transparent 100%);
   mask-image: radial-gradient(closest-side, #000 72%, transparent 100%);
@@ -468,7 +468,7 @@
 
 @media (max-width: 820px) {
   /* Στο κινητό ο γαλαξίας εμφανίζεται κάτω από το κείμενο, πιο μικρός */
-  .nh-hero-art { display: flex; height: 300px; width: 100%; max-width: 380px; margin: 0 auto; }
+  .nh-hero-art { display: flex; height: 230px; width: 100%; max-width: 360px; margin: -12px auto -24px; }
   .nh-head-with-mark { align-items: flex-end; }
   .nh-art-planet { max-width: 360px; margin: 0 auto; }
   .nh-art-chaos { aspect-ratio: 4 / 3; }
