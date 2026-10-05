@@ -1,0 +1,500 @@
+{
+ "generated": "2026-10-05",
+ "currency": "EUR",
+ "brands": [
+  {
+   "key": "loreal",
+   "name": "L'Oréal Professionnel"
+  }
+ ],
+ "categories": [
+  {
+   "key": "care",
+   "el": "Περιποίηση",
+   "en": "Hair care"
+  },
+  {
+   "key": "styling",
+   "el": "Styling",
+   "en": "Styling"
+  },
+  {
+   "key": "tools",
+   "el": "Εργαλεία",
+   "en": "Tools"
+  },
+  {
+   "key": "color",
+   "el": "Χρώμα στο σπίτι",
+   "en": "Colour at home"
+  },
+  {
+   "key": "sets",
+   "el": "Σετ & δώρα",
+   "en": "Sets & gifts"
+  }
+ ],
+ "types": [
+  {
+   "key": "shampoo",
+   "el": "Σαμπουάν",
+   "en": "Shampoo",
+   "category": "care"
+  },
+  {
+   "key": "conditioner",
+   "el": "Conditioner",
+   "en": "Conditioner",
+   "category": "care"
+  },
+  {
+   "key": "mask",
+   "el": "Μάσκα",
+   "en": "Mask",
+   "category": "care"
+  },
+  {
+   "key": "leave-in",
+   "el": "Leave-in",
+   "en": "Leave-in",
+   "category": "care"
+  },
+  {
+   "key": "serum",
+   "el": "Ορός",
+   "en": "Serum",
+   "category": "care"
+  },
+  {
+   "key": "oil",
+   "el": "Λάδι μαλλιών",
+   "en": "Hair oil",
+   "category": "care"
+  },
+  {
+   "key": "treatment",
+   "el": "Θεραπεία",
+   "en": "Treatment",
+   "category": "care"
+  },
+  {
+   "key": "pre-shampoo",
+   "el": "Pre-shampoo",
+   "en": "Pre-shampoo",
+   "category": "care"
+  },
+  {
+   "key": "ampoules",
+   "el": "Αμπούλες",
+   "en": "Ampoules",
+   "category": "care"
+  },
+  {
+   "key": "styling",
+   "el": "Styling",
+   "en": "Styling",
+   "category": "styling"
+  },
+  {
+   "key": "hairspray",
+   "el": "Λακ & σπρέι",
+   "en": "Hairspray",
+   "category": "styling"
+  },
+  {
+   "key": "pomade",
+   "el": "Πομάδα & κερί",
+   "en": "Pomade & wax",
+   "category": "styling"
+  },
+  {
+   "key": "root-spray",
+   "el": "Κάλυψη ρίζας",
+   "en": "Root touch-up",
+   "category": "color"
+  },
+  {
+   "key": "hair-tool",
+   "el": "Πρέσες & σεσουάρ",
+   "en": "Stylers & dryers",
+   "category": "tools"
+  },
+  {
+   "key": "accessory",
+   "el": "Αξεσουάρ",
+   "en": "Accessories",
+   "category": "tools"
+  },
+  {
+   "key": "set",
+   "el": "Σετ & δώρα",
+   "en": "Sets & gifts",
+   "category": "sets"
+  }
+ ],
+ "needs": [
+  {
+   "key": "repair",
+   "el": "Επανόρθωση & ενδυνάμωση",
+   "en": "Repair & strength"
+  },
+  {
+   "key": "hydration",
+   "el": "Ενυδάτωση & θρέψη",
+   "en": "Hydration & nutrition"
+  },
+  {
+   "key": "color",
+   "el": "Προστασία χρώματος",
+   "en": "Colour protection"
+  },
+  {
+   "key": "blonde",
+   "el": "Ξανθά & γκρι, κατά του κιτρινίσματος",
+   "en": "Blonde & grey, anti-brass"
+  },
+  {
+   "key": "smooth",
+   "el": "Λείανση & anti-frizz",
+   "en": "Smoothing & anti-frizz"
+  },
+  {
+   "key": "curls",
+   "el": "Μπούκλες",
+   "en": "Curls"
+  },
+  {
+   "key": "volume",
+   "el": "Όγκος & πύκνωση",
+   "en": "Volume & density"
+  },
+  {
+   "key": "hairloss",
+   "el": "Κατά της τριχόπτωσης",
+   "en": "Hair loss"
+  },
+  {
+   "key": "scalp",
+   "el": "Τριχωτό κεφαλής",
+   "en": "Scalp care"
+  },
+  {
+   "key": "length",
+   "el": "Μακριά μαλλιά & ψαλίδα",
+   "en": "Long hair & split ends"
+  },
+  {
+   "key": "heat",
+   "el": "Θερμοπροστασία",
+   "en": "Heat protection"
+  },
+  {
+   "key": "shine",
+   "el": "Λάμψη",
+   "en": "Shine"
+  },
+  {
+   "key": "hold",
+   "el": "Κράτημα & styling",
+   "en": "Hold & styling"
+  },
+  {
+   "key": "metals",
+   "el": "Αποτοξίνωση από μέταλλα",
+   "en": "Metal detox"
+  }
+ ],
+ "hairTypes": [
+  {
+   "key": "all",
+   "el": "Όλοι οι τύποι",
+   "en": "All hair types"
+  },
+  {
+   "key": "damaged",
+   "el": "Ταλαιπωρημένα",
+   "en": "Damaged"
+  },
+  {
+   "key": "colored",
+   "el": "Βαμμένα",
+   "en": "Colour-treated"
+  },
+  {
+   "key": "blonde",
+   "el": "Ξανθά & γκρι",
+   "en": "Blonde & grey"
+  },
+  {
+   "key": "curly",
+   "el": "Σγουρά",
+   "en": "Curly"
+  },
+  {
+   "key": "frizzy",
+   "el": "Φριζαρισμένα",
+   "en": "Frizzy"
+  },
+  {
+   "key": "fine",
+   "el": "Λεπτά & αραιωμένα",
+   "en": "Fine & thinning"
+  },
+  {
+   "key": "oily",
+   "el": "Λιπαρά",
+   "en": "Oily"
+  },
+  {
+   "key": "sensitive",
+   "el": "Ευαίσθητο τριχωτό",
+   "en": "Sensitive scalp"
+  },
+  {
+   "key": "long",
+   "el": "Μακριά",
+   "en": "Long"
+  }
+ ],
+ "lines": {
+  "Absolut Repair Molecular": {
+   "el": "Μοριακή επανόρθωση για πολύ ταλαιπωρημένα μαλλιά",
+   "en": "Molecular repair for very damaged hair",
+   "color": "#8a7560"
+  },
+  "Absolut Repair": {
+   "el": "Θρέψη και αναδόμηση για ξηρά, ταλαιπωρημένα μαλλιά",
+   "en": "Nourishing repair for dry, damaged hair",
+   "color": "#d59a3c"
+  },
+  "Metal Detox": {
+   "el": "Προστατεύει χρώμα και ίνα από τα μέταλλα του νερού",
+   "en": "Protects colour and fibre from metals in water",
+   "color": "#7d8287"
+  },
+  "Pro Longer": {
+   "el": "Για μακριά μαλλιά με λεπτές άκρες",
+   "en": "For long hair with thin ends",
+   "color": "#d94f6e"
+  },
+  "Vitamino Color": {
+   "el": "Λάμψη και διάρκεια για βαμμένα μαλλιά",
+   "en": "Shine and lasting colour",
+   "color": "#e88aa0"
+  },
+  "Vitamino Color Spectrum": {
+   "el": "Η νέα γενιά Vitamino για βαμμένα μαλλιά",
+   "en": "The new Vitamino for colour-treated hair",
+   "color": "#c2407a"
+  },
+  "Curl Expression": {
+   "el": "Ενυδάτωση και ορισμός για μπούκλες",
+   "en": "Hydration and definition for curls",
+   "color": "#8e2a5c"
+  },
+  "Scalp Advanced": {
+   "el": "Φροντίδα τριχωτού και πυκνότητας",
+   "en": "Scalp and density care",
+   "color": "#1f8a86"
+  },
+  "Keratin Alpha Sleek": {
+   "el": "Λείανση έως 2 εβδομάδες",
+   "en": "Smoothness for up to 2 weeks",
+   "color": "#6b3fb0"
+  },
+  "Steampod": {
+   "el": "Ίσιωμα και μπούκλες με ατμό",
+   "en": "Steam straightening and curls",
+   "color": "#6f7378"
+  },
+  "Blondifier": {
+   "el": "Λάμψη για ξανθά μαλλιά",
+   "en": "Shine for blonde hair",
+   "color": "#c9a24a"
+  },
+  "Silver": {
+   "el": "Για λευκά και γκρι μαλλιά",
+   "en": "For white and grey hair",
+   "color": "#8c84b0"
+  },
+  "Tecni.Art": {
+   "el": "Επαγγελματικό styling",
+   "en": "Professional styling",
+   "color": "#3b3b3b"
+  },
+  "Infinium": {
+   "el": "Λακ με κράτημα χωρίς βάρος",
+   "en": "Hairspray with weightless hold",
+   "color": "#b08a3c"
+  },
+  "Hair Touch Up": {
+   "el": "Κάλυψη ρίζας σε δευτερόλεπτα",
+   "en": "Instant root cover-up",
+   "color": "#6b4a3a"
+  },
+  "AirLight Pro": {
+   "el": "Σεσουάρ υπέρυθρης τεχνολογίας",
+   "en": "Infrared hair dryer",
+   "color": "#4a4a4a"
+  },
+  "Serioxyl": {
+   "el": "Πυκνότητα για λεπτά μαλλιά",
+   "en": "Density for thinning hair"
+  }
+ },
+ "lineImages": {
+  "Absolut Repair Molecular": "absolut-repair-molecular",
+  "Absolut Repair": "absolut-repair",
+  "Metal Detox": "metal-detox",
+  "Pro Longer": "pro-longer",
+  "Vitamino Color": "vitamino-color",
+  "Curl Expression": "curl-expression",
+  "Scalp Advanced": "scalp-advanced",
+  "Keratin Alpha Sleek": "keratin-alpha-sleek",
+  "Steampod": "steampod"
+ },
+ "products": [
+  {
+   "id": "loreal-pro-longer-leave-in-krema-kata-tis",
+   "brand": "L'Oréal Professionnel",
+   "brandKey": "loreal",
+   "line": "Pro Longer",
+   "category": "care",
+   "type": "leave-in",
+   "name": {
+    "el": "Pro Longer Leave-in Κρέμα Κατά Της Ψαλίδας Για Πιο Μακριά Μαλλιά",
+    "en": "Pro Longer Leave-in Κρέμα Κατά Της Ψαλίδας Για Πιο Μακριά Μαλλιά"
+   },
+   "hairTypes": [
+    "long"
+   ],
+   "needs": [
+    "heat",
+    "shine",
+    "repair",
+    "length"
+   ],
+   "variants": [
+    {
+     "sku": "3474636977307",
+     "ean": "3474636977307",
+     "label": "150ml",
+     "size": "150ml",
+     "active": true,
+     "image": "pl-leave-in"
+    }
+   ],
+   "image": "pl-leave-in",
+   "related": [
+    "loreal-pro-longer-conditioner-kata-tis-palidas-gia",
+    "loreal-absolut-repair-molecular-bi-phase-oil-gia"
+   ],
+   "kw": "Επαγγελματική σύνθεση για την περιποίηση των μαλλιών 150ml με λεπτές άκρες που δεν μακραίνουν."
+  },
+  {
+   "id": "loreal-absolut-repair-molecular-bi-phase-oil-gia",
+   "brand": "L'Oréal Professionnel",
+   "brandKey": "loreal",
+   "line": "Absolut Repair Molecular",
+   "category": "care",
+   "type": "oil",
+   "name": {
+    "el": "Absolut Repair Molecular Bi-Phase Oil για Ταλαιπωρημένα Μαλλιά",
+    "en": "Absolut Repair Molecular Bi-Phase Oil για Ταλαιπωρημένα Μαλλιά"
+   },
+   "hairTypes": [
+    "damaged"
+   ],
+   "needs": [
+    "repair",
+    "smooth"
+   ],
+   "variants": [
+    {
+     "sku": "3474637292447",
+     "ean": "3474637292447",
+     "label": "90ml",
+     "size": "90ml",
+     "active": true,
+     "image": "arm-bi-phase-oil"
+    }
+   ],
+   "image": "arm-bi-phase-oil",
+   "related": [],
+   "kw": "Όταν τα μαλλιά υποστούν φθορά, η μοριακή τους δομή, που αποτελείται από πεπτίδια, διαταράσσεται."
+  },
+  {
+   "id": "loreal-pro-longer-conditioner-kata-tis-palidas-gia",
+   "brand": "L'Oréal Professionnel",
+   "brandKey": "loreal",
+   "line": "Pro Longer",
+   "category": "care",
+   "type": "conditioner",
+   "name": {
+    "el": "Pro Longer Conditioner Κατά Της Ψαλίδας Για Πιο Μακριά Μαλλιά",
+    "en": "Pro Longer Conditioner Κατά Της Ψαλίδας Για Πιο Μακριά Μαλλιά"
+   },
+   "hairTypes": [
+    "long"
+   ],
+   "needs": [
+    "repair",
+    "shine",
+    "length"
+   ],
+   "variants": [
+    {
+     "sku": "3474636976102",
+     "ean": "3474636976102",
+     "label": "200ml",
+     "size": "200ml",
+     "active": true,
+     "image": "pl-conditioner"
+    }
+   ],
+   "image": "pl-conditioner",
+   "related": [
+    "loreal-pro-longer-leave-in-krema-kata-tis",
+    "loreal-absolut-repair-molecular-bi-phase-oil-gia"
+   ],
+   "kw": "Επαγγελματική σύνθεση για την περιποίηση των μαλλιών με λεπτές άκρες που δεν μακραίνουν."
+  },
+  {
+   "id": "loreal-metal-detox-elaio-apomakrynsis-kai-prostasias-apo",
+   "brand": "L'Oréal Professionnel",
+   "brandKey": "loreal",
+   "line": "Metal Detox",
+   "category": "care",
+   "type": "oil",
+   "name": {
+    "el": "Metal Detox Έλαιο Απομάκρυνσης Και Προστασίας Από Τα Μεταλλικά Στοιχεία",
+    "en": "Metal Detox Έλαιο Απομάκρυνσης Και Προστασίας Από Τα Μεταλλικά Στοιχεία"
+   },
+   "hairTypes": [
+    "colored",
+    "damaged"
+   ],
+   "needs": [
+    "shine",
+    "color",
+    "repair",
+    "metals"
+   ],
+   "variants": [
+    {
+     "sku": "3474637090609",
+     "ean": "3474637090609",
+     "label": "50ml",
+     "size": "50ml",
+     "active": true,
+     "image": "md-oil"
+    }
+   ],
+   "image": "md-oil",
+   "related": [
+    "loreal-absolut-repair-molecular-bi-phase-oil-gia"
+   ],
+   "kw": "Το συμπυκνωμένο λάδι Metal Detox προστατεύει τους θύλακες της τρίχας από την προσκόλληση μεταλλικών στοιχείων μετά από τις υπηρεσίες βαφής, balayage ή"
+  }
+ ]
+}

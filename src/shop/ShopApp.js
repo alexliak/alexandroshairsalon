@@ -1,19 +1,16 @@
 import React from 'react';
-import { Route, Routes, useLocation } from 'react-router-dom';
-import { CATALOG_MODE } from './config';
 import { FaShoppingBag } from 'react-icons/fa';
+import { useLocation } from '../lib/router';
+import { CATALOG_MODE } from './config';
 import NhLayout from '../components/NhLayout';
 import { ShopProvider, useShop } from './ShopContext';
 import { money } from './catalog';
 import { useT } from './i18n';
 import CartDrawer from './components/CartDrawer';
-import ShopHome from './pages/ShopHome';
-import ProductPage from './pages/ProductPage';
-import CartPage from './pages/CartPage';
-import RequestPage from './pages/RequestPage';
-import ReviewsAdmin from './pages/ReviewsAdmin';
-import Diagnosis from './pages/Diagnosis';
-import './shop.css';
+
+// Frame of every /shop page: site header with the cart button, the cart drawer and the mobile cart bar.
+// The cart is saved in the browser (localStorage), so it stays while moving between pages.
+// The catalogue loads only on /shop pages, never on the rest of the site.
 
 const CartButton = ({ t }) => {
   const { count, setDrawer } = useShop();
@@ -39,7 +36,7 @@ const MobileCartBar = ({ t, lang }) => {
   );
 };
 
-const Inner = ({ language, setLanguage }) => {
+const Shell = ({ language, setLanguage, children }) => {
   const t = useT(language);
   const { count } = useShop();
   const { pathname } = useLocation();
@@ -51,25 +48,16 @@ const Inner = ({ language, setLanguage }) => {
       headerExtra={<CartButton t={t} />}
       mobileBar={showBar ? <MobileCartBar t={t} lang={language} /> : undefined}
     >
-      <main className="nh-page nh-shop-v2">
-        <Routes>
-          <Route path="/shop" element={<ShopHome lang={language} t={t} />} />
-          <Route path="/shop/p/:id" element={<ProductPage lang={language} t={t} />} />
-          <Route path="/shop/cart" element={CATALOG_MODE ? <RequestPage lang={language} t={t} /> : <CartPage lang={language} t={t} />} />
-          <Route path="/shop/admin" element={<ReviewsAdmin />} />
-          <Route path="/shop/diagnosi" element={<Diagnosis lang={language} />} />
-          <Route path="*" element={<ShopHome lang={language} t={t} />} />
-        </Routes>
-      </main>
+      <main className="nh-page nh-shop-v2">{children(t)}</main>
       <CartDrawer lang={language} t={t} />
     </NhLayout>
   );
 };
 
-const ShopApp = (props) => (
+const ShopShell = (props) => (
   <ShopProvider>
-    <Inner {...props} />
+    <Shell {...props} />
   </ShopProvider>
 );
 
-export default ShopApp;
+export default ShopShell;

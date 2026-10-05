@@ -5,29 +5,19 @@ import Stars from '../components/Stars';
 
 // /shop/admin — έγκριση κριτικών. Ο κωδικός είναι το ADMIN_TOKEN του Cloudflare Worker.
 const ReviewsAdmin = () => {
-  const [token, setToken] = useState(() => {
+  const [token, setToken] = useState('');
+  useEffect(() => {
     try {
-      return sessionStorage.getItem('ahs_admin') || '';
+      setToken(sessionStorage.getItem('ahs_admin') || '');
     } catch {
-      return '';
+      /* no storage: log in again */
     }
-  });
+  }, []);
   const [input, setInput] = useState('');
   const [status, setStatus] = useState('pending');
   const [items, setItems] = useState([]);
   const [msg, setMsg] = useState('');
   const [replies, setReplies] = useState({});
-
-  useEffect(() => {
-    let robots = document.querySelector('meta[name="robots"]');
-    if (!robots) {
-      robots = document.createElement('meta');
-      robots.name = 'robots';
-      document.head.appendChild(robots);
-    }
-    robots.content = 'noindex, nofollow';
-    document.title = 'Κριτικές · διαχείριση';
-  }, []);
 
   const call = useCallback(
     (path, opts = {}) =>
@@ -61,7 +51,7 @@ const ReviewsAdmin = () => {
       .catch((e) => setMsg(e.message));
 
   if (!SHOP_API) {
-    return <div className="sh sh-pad"><h1 className="sh-pdp-title">Κριτικές</h1><p>Δεν έχει ρυθμιστεί το REACT_APP_SHOP_API.</p></div>;
+    return <div className="sh sh-pad"><h1 className="sh-pdp-title">Κριτικές</h1><p>Δεν έχει ρυθμιστεί το NEXT_PUBLIC_SHOP_API.</p></div>;
   }
 
   if (!token) {

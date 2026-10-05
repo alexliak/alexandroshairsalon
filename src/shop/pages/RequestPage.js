@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState } from 'react';
+import { Link } from '../../lib/router';
 import { FaEnvelope, FaWhatsapp } from 'react-icons/fa';
 import { useShop } from '../ShopContext';
 import { BANK, WHATSAPP } from '../config';
@@ -58,10 +58,6 @@ const RequestPage = ({ lang, t }) => {
   const [delivery, setDelivery] = useState('pickup');
   const [form, setForm] = useState({ name: '', area: '', notes: '' });
   const [err, setErr] = useState('');
-
-  useEffect(() => {
-    document.title = `${x.title} | Alexandros Hair Salon`;
-  }, [x.title]);
 
   const message = () =>
     [
