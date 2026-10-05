@@ -1,0 +1,4 @@
+# Το site σερβίρεται από το GitHub Pages (βλ. README). Το Netlify δεν χρησιμοποιείται:
+# το "ignore" λέει στο Netlify να παραλείπει κάθε build/preview, ώστε να μη βγάζει αποτυχίες στα pull requests.
+[build]
+  ignore = "exit 0"
