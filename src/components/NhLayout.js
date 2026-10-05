@@ -1,7 +1,6 @@
 import React, { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import { FaWhatsapp, FaViber, FaPhoneAlt, FaArrowUp, FaMapMarkerAlt } from 'react-icons/fa';
-import { Link, NavLink, useLocation } from 'react-router-dom';
-import '../pages/Home.css';
+import { Link, NavLink, useLocation } from '../lib/router';
 
 // Shared 2026 layout: header, footer and mobile booking bar for the new pages.
 // Every booking button goes to /kratisi/ (Treatwell widget, no first-visit commission).

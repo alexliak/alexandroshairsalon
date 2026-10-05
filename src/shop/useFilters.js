@@ -1,5 +1,5 @@
 import { useCallback, useMemo } from 'react';
-import { useSearchParams } from 'react-router-dom';
+import { useSearchParams } from '../lib/router';
 import { norm, PRODUCTS } from './catalog';
 
 export const MULTI = ['brand', 'cat', 'type', 'line', 'need', 'hair'];

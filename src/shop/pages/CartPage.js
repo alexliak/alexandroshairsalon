@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState } from 'react';
+import { Link } from '../../lib/router';
 import emailjs from 'emailjs-com';
 import { money, t as tr } from '../catalog';
 import { useShop } from '../ShopContext';
@@ -91,21 +91,6 @@ const CartPage = ({ lang, t }) => {
   const [status, setStatus] = useState('idle');
   const [error, setError] = useState('');
   const [sent, setSent] = useState(null);
-
-  useEffect(() => {
-    document.title = `${x.title} | Alexandros Hair Salon`;
-    let robots = document.querySelector('meta[name="robots"]');
-    if (!robots) {
-      robots = document.createElement('meta');
-      robots.name = 'robots';
-      document.head.appendChild(robots);
-    }
-    const prev = robots.content;
-    robots.content = 'noindex';
-    return () => {
-      robots.content = prev || 'index, follow';
-    };
-  }, [x.title]);
 
   const set = (e) => {
     const { name, value, type, checked } = e.target;

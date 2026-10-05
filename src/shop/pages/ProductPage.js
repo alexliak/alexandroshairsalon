@@ -1,11 +1,11 @@
 import React, { useEffect, useMemo, useState } from 'react';
-import { Link, useParams } from 'react-router-dom';
+import { Link } from '../../lib/router';
 import { FaHeart, FaRegHeart, FaWhatsapp } from 'react-icons/fa';
 import {
-  PRODUCTS, hairByKey, imageSrc, money, needByKey, productById, t as tr, typeByKey
+  PRODUCTS, hairByKey, money, needByKey, productById, t as tr, typeByKey
 } from '../catalog';
 import { useShop } from '../ShopContext';
-import { CATALOG_MODE, MAX_QTY, SITE } from '../config';
+import { CATALOG_MODE, MAX_QTY } from '../config';
 import ProductImage from '../components/ProductImage';
 import ProductCard, { askPriceUrl } from '../components/ProductCard';
 import Reviews from '../components/Reviews';
@@ -35,19 +35,8 @@ const RichText = ({ text }) => {
   );
 };
 
-const setMeta = (name, content, attr = 'name') => {
-  let el = document.querySelector(`meta[${attr}="${name}"]`);
-  if (!el) {
-    el = document.createElement('meta');
-    el.setAttribute(attr, name);
-    document.head.appendChild(el);
-  }
-  el.setAttribute('content', content);
-};
-
-const ProductPage = ({ lang, t }) => {
-  const { id } = useParams();
-  const p = productById[id];
+// p: the product with its full texts, given by the page (src/pages/shop/p/[id].js)
+const ProductPage = ({ product: p, lang, t }) => {
   const { add, wish, toggleWish, ratings } = useShop();
   const [sku, setSku] = useState(null);
   const [qty, setQty] = useState(1);
@@ -63,54 +52,6 @@ const ProductPage = ({ lang, t }) => {
 
   const variant = p?.variants.find((v) => v.sku === sku) || p?.variants[0];
   const name = p ? tr(p.name, lang) : '';
-
-  // Title, description, canonical and Product schema
-  useEffect(() => {
-    if (!p) return undefined;
-    const url = `${SITE}/shop/p/${p.id}`;
-    document.title = `${p.name.el} | ${p.brand} | Alexandros Hair Salon`;
-    const desc = (p.short.el || p.description.el || '').slice(0, 155);
-    setMeta('description', desc);
-    setMeta('og:title', p.name.el, 'property');
-    setMeta('og:description', desc, 'property');
-    setMeta('og:url', url, 'property');
-    if (p.image) setMeta('og:image', `${SITE}${imageSrc(p.image, 800)}`, 'property');
-    let canon = document.querySelector('link[rel="canonical"]');
-    if (!canon) {
-      canon = document.createElement('link');
-      canon.rel = 'canonical';
-      document.head.appendChild(canon);
-    }
-    canon.href = url;
-
-    const offers = p.variants
-      .filter((v) => typeof v.price === 'number')
-      .map((v) => ({
-        '@type': 'Offer', sku: v.sku, gtin13: v.ean || undefined, price: v.price.toFixed(2), priceCurrency: 'EUR',
-        availability: v.stock === 0 ? 'https://schema.org/OutOfStock' : 'https://schema.org/InStock',
-        url, itemCondition: 'https://schema.org/NewCondition',
-        seller: { '@type': 'Organization', name: 'Alexandros Hair Salon' }
-      }));
-    const schema = {
-      '@context': 'https://schema.org',
-      '@type': 'Product',
-      name: p.name.el,
-      description: desc,
-      brand: { '@type': 'Brand', name: p.brand },
-      category: typeByKey[p.type]?.el,
-      sku: p.variants[0].sku,
-      gtin13: p.variants[0].ean || undefined,
-      image: p.image ? [`${SITE}${imageSrc(p.image, 800)}`] : undefined,
-      url,
-      ...(offers.length ? { offers: offers.length === 1 ? offers[0] : offers } : {})
-    };
-    const el = document.createElement('script');
-    el.type = 'application/ld+json';
-    el.id = 'product-schema';
-    el.textContent = JSON.stringify(schema);
-    document.head.appendChild(el);
-    return () => el.remove();
-  }, [p]);
 
   const related = useMemo(() => {
     if (!p) return [];

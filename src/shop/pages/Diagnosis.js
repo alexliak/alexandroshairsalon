@@ -1,8 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link } from '../../lib/router';
 import { PRODUCTS, imageSrc, productUrl } from '../catalog';
 import { WHATSAPP } from '../config';
-import './Diagnosis.css';
 
 /*
  * «Διάγνωση μαλλιών»: 3 ερωτήσεις → η ρουτίνα της L'Oréal Professionnel που αντιστοιχεί.
@@ -233,10 +232,6 @@ const Diagnosis = ({ lang = 'el' }) => {
   const [ans, setAns] = useState({});
   const [lit, setLit] = useState(0);
   const topRef = useRef(null);
-
-  useEffect(() => {
-    document.title = L === 'en' ? 'Hair diagnosis | Alexandros Hair Salon' : 'Διάγνωση μαλλιών | Alexandros Hair Salon';
-  }, [L]);
 
   // Κάθε νέα οθόνη ξεκινά από πάνω (σημαντικό στο κινητό)
   useEffect(() => {

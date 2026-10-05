@@ -3,6 +3,8 @@ import { productById } from './catalog';
 import { MAX_QTY, SHOP_API } from './config';
 
 const ShopContext = createContext(null);
+// Rating summary kept for the visit, so moving between shop pages does not ask again
+let ratingsCache = null;
 
 const load = (key, fallback) => {
   try {
@@ -22,18 +24,35 @@ const save = (key, value) => {
 
 export const ShopProvider = ({ children }) => {
   // cart: [{ id, sku, qty }]
-  const [cart, setCart] = useState(() => load('ahs_cart_v1', []).filter((l) => productById[l.id]));
-  const [wish, setWish] = useState(() => load('ahs_wish_v1', []).filter((id) => productById[id]));
+  // Pages are pre-built as HTML, so the saved cart is read after the page loads in the browser
+  const [cart, setCart] = useState([]);
+  const [wish, setWish] = useState([]);
+  const [loaded, setLoaded] = useState(false);
   const [drawer, setDrawer] = useState(false);
   const [lastAdded, setLastAdded] = useState(null);
-  const [ratings, setRatings] = useState({}); // { productId: { avg, count } }
+  const [ratings, setRatingsState] = useState(() => ratingsCache || {}); // { productId: { avg, count } }
+  const setRatings = useCallback((next) => {
+    setRatingsState((prev) => {
+      ratingsCache = typeof next === 'function' ? next(prev) : next;
+      return ratingsCache;
+    });
+  }, []);
 
-  useEffect(() => save('ahs_cart_v1', cart), [cart]);
-  useEffect(() => save('ahs_wish_v1', wish), [wish]);
+  useEffect(() => {
+    setCart(load('ahs_cart_v1', []).filter((l) => productById[l.id]));
+    setWish(load('ahs_wish_v1', []).filter((id) => productById[id]));
+    setLoaded(true);
+  }, []);
+  useEffect(() => {
+    if (loaded) save('ahs_cart_v1', cart);
+  }, [cart, loaded]);
+  useEffect(() => {
+    if (loaded) save('ahs_wish_v1', wish);
+  }, [wish, loaded]);
 
   // Rating summary for the listing (one request)
   useEffect(() => {
-    if (!SHOP_API) return;
+    if (!SHOP_API || ratingsCache) return undefined;
     let alive = true;
     fetch(`${SHOP_API}/reviews/summary`)
       .then((r) => (r.ok ? r.json() : {}))
