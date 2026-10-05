@@ -1,6 +1,10 @@
 #!/usr/bin/env python3
 """
-Χτίζει τον κατάλογο του e-shop: src/data/shop/catalog.json
+Χτίζει τον κατάλογο του e-shop, σε δύο κομμάτια ώστε να αντέχει χιλιάδες προϊόντα στο κινητό:
+  src/data/shop/index.json          -> ελαφριά λίστα (όνομα, σειρά, μεγέθη, EAN, φωτογραφία, φίλτρα).
+                                       Αυτή φορτώνει ο browser για λίστα, φίλτρα, αναζήτηση και καλάθι.
+  src/data/shop/products/<id>.json  -> πλήρη κείμενα (περιγραφή, χρήση, προφυλάξεις). Μπαίνουν μόνο
+                                       στη σελίδα του κάθε προϊόντος, κατά το build (Next.js).
 
 Πηγές (μία πηγή αλήθειας ανά πληροφορία):
   shop-data/loreal/LP_Assortment_Info.xlsx      -> περιγραφές L'Oréal (από τη L'Oréal)
@@ -23,7 +27,11 @@ import pandas as pd
 
 ROOT = Path(__file__).resolve().parents[2]
 DATA = ROOT / 'shop-data'
-OUT = ROOT / 'src' / 'data' / 'shop' / 'catalog.json'
+OUT = ROOT / 'src' / 'data' / 'shop' / 'index.json'
+OUT_PRODUCTS = ROOT / 'src' / 'data' / 'shop' / 'products'
+# Πεδία που ΔΕΝ μπαίνουν στη λίστα (βαριά κείμενα): μόνο στη σελίδα του προϊόντος
+DETAIL_FIELDS = ('short', 'description', 'howTo', 'safety')
+SEARCH_SNIPPET = 160  # χαρακτήρες από τη σύντομη περιγραφή, για την αναζήτηση
 
 # Επαγγελματικές σειρές (βαφές, οξυζενέ, ντεκαπάζ, περμανάντ): δεν πωλούνται στο κοινό.
 PRO_ONLY_BRANDS = {'Inoa', 'Maji', 'Dia', 'G.Oxydants Eaux Oxy Add', 'Dulcia', 'Blond Studio'}
@@ -574,13 +582,34 @@ def main():
         'hairTypes': [{'key': k, 'el': v[0], 'en': v[1]} for k, v in HAIR_TYPES.items()],
         'lines': images.get('lineInfo', {}),
         'lineImages': {k: v for k, v in images.get('lines', {}).items()},
-        'products': products,
+        'products': [light(p) for p in products],
     }
     OUT.parent.mkdir(parents=True, exist_ok=True)
     OUT.write_text(json.dumps(out, ensure_ascii=False, indent=1), encoding='utf-8')
+    # Ένα αρχείο ανά προϊόν με τα πλήρη κείμενα (σβήνονται όσα δεν υπάρχουν πια)
+    OUT_PRODUCTS.mkdir(parents=True, exist_ok=True)
+    for old in OUT_PRODUCTS.glob('*.json'):
+        old.unlink()
+    for p in products:
+        detail = {'id': p['id'], **{k: p.get(k) or {'el': '', 'en': ''} for k in DETAIL_FIELDS}}
+        (OUT_PRODUCTS / f"{p['id']}.json").write_text(json.dumps(detail, ensure_ascii=False, indent=1), encoding='utf-8')
+    old_single = OUT.parent / 'catalog.json'
+    if old_single.exists():
+        old_single.unlink()
     priced = sum(1 for p in products for v in p['variants'] if v['price'] is not None)
     total_v = sum(len(p['variants']) for p in products)
     print(f'catalog: {len(products)} προϊόντα, {total_v} παραλλαγές, {priced} με τιμή -> {OUT.relative_to(ROOT)}')
+    print(f'catalog: λίστα {OUT.stat().st_size // 1024} KB, {len(products)} αρχεία προϊόντων -> {OUT_PRODUCTS.relative_to(ROOT)}/')
+
+
+def light(p):
+    """Η ελαφριά εκδοχή του προϊόντος για τη λίστα: χωρίς τα βαριά κείμενα, με μικρό απόσπασμα για αναζήτηση."""
+    out = {k: v for k, v in p.items() if k not in DETAIL_FIELDS}
+    # Κενά πεδία (null/false) δεν χρειάζονται στη λίστα: λιγότερα KB στο κινητό
+    out['variants'] = [{k: v for k, v in var.items() if v is not None and v is not False} for var in p['variants']]
+    short = (p.get('short') or {}).get('el') or ''
+    out['kw'] = short[:SEARCH_SNIPPET].rsplit(' ', 1)[0] if len(short) > SEARCH_SNIPPET else short
+    return out
 
 
 if __name__ == '__main__':

@@ -1,5 +1,4 @@
 import React, { useEffect, useRef } from 'react';
-import './MathArt.css';
 
 /*
  * MathArt — μαθηματικά animation «Κομμωτική 2050».

@@ -28,7 +28,7 @@ export const initGA = (measurementId) => {
 // Track page views (for React Router)
 export const trackPageView = (path) => {
   if (window.gtag) {
-    const measurementId = process.env.REACT_APP_GA_MEASUREMENT_ID || 'G-S7ZQL4YMJ7';
+    const measurementId = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID || 'G-S7ZQL4YMJ7';
     window.gtag('config', measurementId, {
       page_path: path,
     });

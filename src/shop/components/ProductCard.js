@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link } from '../../lib/router';
 import { FaHeart, FaRegHeart } from 'react-icons/fa';
 import { money, productUrl, t as tr, typeByKey } from '../catalog';
 import { useShop } from '../ShopContext';

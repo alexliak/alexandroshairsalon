@@ -1,0 +1,39 @@
+/* Global base. Page styles: home.css (all NhLayout pages) and shop.css (/shop). */
+body, html {
+  height: 100%;
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  font-size: 100%;
+  line-height: 1.6;
+}
+
+body {
+  background-color: #12100e;
+  color: #fef6ff;
+}
+
+#__next {
+  min-height: 100vh;
+  width: 100vw;
+  background-color: #12100e;
+  background-image: radial-gradient(circle at top, rgba(196, 164, 106, 0.08), rgba(18, 16, 14, 0.95));
+  background-size: cover;
+  background-attachment: fixed;
+  overflow-x: clip; /* 'hidden' here stopped the sticky header from staying on screen */
+}
+
+button:focus-visible,
+a:focus-visible,
+[role='button']:focus-visible {
+  outline: 3px solid rgba(255, 236, 255, 0.85);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

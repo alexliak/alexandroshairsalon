@@ -41,12 +41,10 @@ jobs:
       - name: Build static pages (/kratisi, /kourema-athina, /vafi-mallion-athina, /balayage-athina)
         run: python3 scripts/build-static-pages.py
 
-      - name: Build site
+      - name: Build site (Next.js static export -> out/)
         run: npm run build
         env:
-          # Create React App treats lint warnings as errors when CI=true;
-          # a harmless warning should not stop the site from updating.
-          CI: false
+          NEXT_TELEMETRY_DISABLED: 1
 
       - name: Publish to gh-pages
         if: github.event_name != 'pull_request'
@@ -54,6 +52,6 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_branch: gh-pages
-          publish_dir: ./build
+          publish_dir: ./out
           cname: alexandroshairsalon.gr
           commit_message: "Deploy ${{ github.sha }}"

@@ -1,4 +1,6 @@
-import data from '../data/shop/catalog.json';
+// Light list of every product (names, sizes, EAN, photos, filters). The long texts of each
+// product are not here: they are built into that product's own page (src/pages/shop/p/[id].js).
+import data from '../data/shop/index.json';
 import { CATALOG_MODE, SHOW_UNPRICED } from './config';
 
 const byKey = (list) => Object.fromEntries(list.map((x) => [x.key, x]));
@@ -37,7 +39,7 @@ const enrich = (raw) => {
   const haystack = norm(
     [p.brand, p.line, p.name.el, p.name.en, typeByKey[p.type]?.el, typeByKey[p.type]?.en,
       ...p.needs.map((n) => needByKey[n]?.el), ...p.hairTypes.map((h) => hairByKey[h]?.el),
-      p.short.el, ...p.variants.map((v) => `${v.label} ${v.ean}`)].join(' ')
+      p.kw, ...p.variants.map((v) => `${v.label} ${v.ean}`)].join(' ')
   );
   return { ...p, minPrice, maxPrice, priced: minPrice !== null, inStock, haystack };
 };
@@ -56,3 +58,6 @@ export const money = (n, lang = 'el') =>
 export const imageSrc = (img, size = 400) => (img ? `/images/shop/${img}-${size}.webp` : null);
 
 export const productUrl = (p) => `/shop/p/${p.id}`;
+
+// Product page: the light entry plus its full texts (short, description, howTo, safety)
+export const withDetail = (id, detail) => (productById[id] ? { ...productById[id], ...detail } : null);
