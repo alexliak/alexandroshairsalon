@@ -4,10 +4,9 @@ import {
   BRANDS, CATEGORIES, HAIR_TYPES, LINE_IMAGES, LINE_INFO, NEEDS, PRODUCTS, TYPES, imageSrc, t as tr
 } from '../catalog';
 import { useShop } from '../ShopContext';
-import { Link } from 'react-router-dom';
-import { CATALOG_MODE, SITE, WHATSAPP } from '../config';
+import { Link } from '../../lib/router';
+import { CATALOG_MODE, WHATSAPP } from '../config';
 import MathArt from '../../components/MathArt';
-import './Diagnosis.css';
 import useFilters from '../useFilters';
 import FilterPanel from '../components/FilterPanel';
 import ProductCard from '../components/ProductCard';
@@ -62,23 +61,6 @@ const ShopHome = ({ lang, t }) => {
       document.body.style.overflow = '';
     };
   }, [sheet]);
-
-  // ItemList structured data for the shop page
-  useEffect(() => {
-    const el = document.createElement('script');
-    el.type = 'application/ld+json';
-    el.id = 'shop-list-schema';
-    el.textContent = JSON.stringify({
-      '@context': 'https://schema.org',
-      '@type': 'ItemList',
-      name: 'Alexandros Hair Salon Shop',
-      itemListElement: PRODUCTS.slice(0, 60).map((p, i) => ({
-        '@type': 'ListItem', position: i + 1, url: `${SITE}/shop/p/${p.id}`, name: p.name.el
-      }))
-    });
-    document.head.appendChild(el);
-    return () => el.remove();
-  }, []);
 
   // Οι φωτογραφίες σειρών μπαίνουν μόνο εδώ (δείχνουν όλη τη σειρά, όχι ένα προϊόν)
   const lines = useMemo(
