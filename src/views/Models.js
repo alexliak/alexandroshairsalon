@@ -14,8 +14,8 @@ const text = {
     eyebrow: 'Ζητούνται μοντέλα μαλλιών · Θησείο',
     title: 'Ψάχνουμε μοντέλα',
     titleEm: 'για κούρεμα και χρώμα.',
-    lead: 'Κυρίως γυναίκες, κάθε ηλικίας, χωρίς εμπειρία ως μοντέλο. Δουλεύουμε νέες τεχνικές κουρέματος και χρώματος και φωτογραφίζουμε το αποτέλεσμα για την εκπαίδευσή μας και για να δείξουμε τη δουλειά μας.',
-    facts: ['Δωρεάν ή σε χαμηλότερη τιμή', 'Τίποτα ακραίο', 'Φόρμα ενός λεπτού'],
+    lead: 'Κούρεμα, βαφή, balayage ή ανταύγειες δωρεάν ή σε πολύ χαμηλή τιμή, στο Θησείο. Κυρίως γυναίκες, κάθε ηλικίας, χωρίς εμπειρία ως μοντέλο. Δουλεύουμε νέες τεχνικές και φωτογραφίζουμε το αποτέλεσμα για την εκπαίδευσή μας και για να δείξουμε τη δουλειά μας.',
+    facts: ['Δωρεάν ή σε πολύ χαμηλή τιμή', 'Φυσικό, κλασικό ή ελαφρώς μοντέρνο αποτέλεσμα', 'Φόρμα ενός λεπτού', '5′ από το μετρό Θησείο'],
     cta: 'Δήλωσε συμμετοχή',
     barTop: 'Μοντέλο μαλλιών',
     barBottom: 'φόρμα 1 λεπτού',
@@ -23,17 +23,25 @@ const text = {
     howTitle: 'Πώς γίνεται',
     how: [
       'Ξεκινάμε πάντα με συζήτηση: τι θέλεις, τι σου ταιριάζει, τι δεν θέλεις να αλλάξει.',
-      'Τίποτα ακραίο. Το αποτέλεσμα το αποφασίζουμε μαζί και πρέπει να αρέσει πρώτα σε σένα.',
-      'Τη δουλειά την κάνουν έμπειροι κομμωτές του κομμωτηρίου, με L’Oréal Professionnel και Redken.'
+      'Φυσικά, κλασικά ή ελαφρώς μοντέρνα αποτελέσματα, που στέκονται στην καθημερινότητά σου. Το αποφασίζουμε μαζί πριν ξεκινήσουμε και πρέπει να αρέσει πρώτα σε σένα.',
+      'Δεν είσαι «μάθημα» για μαθητευόμενους: τη δουλειά την κάνουν οι έμπειροι κομμωτές του κομμωτηρίου, με L’Oréal Professionnel και Redken.'
     ],
     youTitle: 'Τι κερδίζεις',
     you: [
       'Κούρεμα ή χρώμα δωρεάν ή σε πολύ χαμηλότερη τιμή, ανάλογα με την τεχνική.',
       'Επαγγελματικές φωτογραφίες του νέου σου look.',
-      'Εσύ αποφασίζεις αν θα φαίνεται το πρόσωπό σου ή μόνο τα μαλλιά.'
+      'Φωτογραφίες με το πρόσωπό σου ή μόνο τα μαλλιά: το διαλέγεις εσύ. Με πρόσωπο έχεις προτεραιότητα στα ραντεβού, και τις φωτογραφίες τις βλέπεις πρώτη.'
     ],
     formTitle: 'Δήλωσε συμμετοχή',
     formLead: 'Όταν προγραμματίσουμε τεχνική που ταιριάζει στα μαλλιά σου, θα σου στείλουμε μήνυμα.',
+    faqTitle: 'Συχνές ερωτήσεις',
+    faq: [
+      ['Είναι πραγματικά δωρεάν;', 'Κούρεμα και χτένισμα για φωτογράφιση είναι συνήθως δωρεάν. Στο χρώμα, στις ανταύγειες και στο balayage πληρώνεις συνήθως μόνο ένα μικρό μέρος της κανονικής τιμής, για τα υλικά. Το ποσό το ξέρεις πάντα πριν ξεκινήσουμε.'],
+      ['Ποιος κάνει τη δουλειά;', 'Έμπειροι κομμωτές του κομμωτηρίου, που δουλεύουν από το 1992, με προϊόντα L’Oréal Professionnel και Redken.'],
+      ['Θα φαίνεται το πρόσωπό μου στις φωτογραφίες;', 'Το διαλέγεις εσύ: με το πρόσωπό σου ή μόνο τα μαλλιά. Με πρόσωπο έχεις προτεραιότητα στα ραντεβού, γιατί το κούρεμα και το χρώμα φαίνονται καλύτερα πάνω στο πρόσωπο. Σε κάθε περίπτωση βλέπεις πρώτη τις φωτογραφίες και υπογράφεις συγκατάθεση πριν από τη φωτογράφιση.'],
+      ['Πόση ώρα χρειάζεται;', 'Ένα κούρεμα με χτένισμα περίπου μία ώρα. Χρώμα ή balayage δύο έως τρεις ώρες, μαζί με τη φωτογράφιση.'],
+      ['Πού είναι το κομμωτήριο;', 'Ερυσίχθονος 3-5, Θησείο, Αθήνα, πέντε λεπτά με τα πόδια από τον σταθμό του μετρό Θησείο.']
+    ],
     name: 'Όνομα',
     email: 'Email',
     instagram: 'Instagram (προαιρετικά)',
@@ -49,7 +57,7 @@ const text = {
     change: 'Πόση αλλαγή θέλεις;',
     changeOptions: ['Μικρή, φρεσκάρισμα', 'Αισθητή αλλαγή', 'Είμαι ανοιχτή σε προτάσεις'],
     photos: 'Φωτογραφίες',
-    photosOptions: ['Με το πρόσωπό μου', 'Μόνο τα μαλλιά, χωρίς πρόσωπο'],
+    photosOptions: ['Με το πρόσωπό μου (προτεραιότητα)', 'Μόνο τα μαλλιά, χωρίς πρόσωπο'],
     days: 'Ποιες μέρες σε βολεύουν;',
     photo: 'Φωτογραφία των μαλλιών σου σήμερα (προαιρετικά, βοηθά πολύ)',
     message: 'Κάτι άλλο που θέλεις να ξέρουμε;',
@@ -64,8 +72,8 @@ const text = {
     eyebrow: 'Hair models wanted · Thiseio',
     title: 'We are looking for models',
     titleEm: 'for cuts and colour.',
-    lead: 'Mostly women, of any age, no modelling experience needed. We work on new cutting and colour techniques and photograph the result for our training and to show our work.',
-    facts: ['Free or at a lower price', 'Nothing extreme', 'One-minute form'],
+    lead: 'A haircut, colour, balayage or highlights for free or at a very low price, in Thiseio, Athens. Mostly women, of any age, no modelling experience needed. We work on new techniques and photograph the result for our training and to show our work.',
+    facts: ['Free or at a very low price', 'Natural, classic or softly modern results', 'One-minute form', '5′ from Thiseio metro'],
     cta: 'Sign up',
     barTop: 'Hair model',
     barBottom: 'one-minute form',
@@ -73,17 +81,25 @@ const text = {
     howTitle: 'How it works',
     how: [
       'We always start with a chat: what you want, what suits you, what you don’t want to change.',
-      'Nothing extreme. We decide the result together, and it has to please you first.',
-      'The work is done by the salon’s experienced stylists, with L’Oréal Professionnel and Redken.'
+      'Natural, classic or softly modern results that work in your everyday life. We agree on it before we start, and it has to please you first.',
+      'You are not practice for trainees: the work is done by the salon’s experienced stylists, with L’Oréal Professionnel and Redken.'
     ],
     youTitle: 'What you get',
     you: [
       'A cut or colour for free or at a much lower price, depending on the technique.',
       'Professional photos of your new look.',
-      'You decide whether your face is shown or just your hair.'
+      'Photos with your face or just your hair: you choose. With your face you get priority for appointments, and you see the photos first.'
     ],
     formTitle: 'Sign up',
     formLead: 'When we schedule a technique that suits your hair, we will message you.',
+    faqTitle: 'Questions',
+    faq: [
+      ['Is it really free?', 'Haircuts and styling for a photo shoot are usually free. For colour, highlights and balayage you usually pay only a small part of the normal price, to cover materials. You always know the amount before we start.'],
+      ['Who does the work?', 'The salon’s experienced stylists, working since 1992, with L’Oréal Professionnel and Redken products.'],
+      ['Will my face be in the photos?', 'You choose: with your face or just your hair. With your face you get priority for appointments, because a cut and colour show best on the face. Either way you see the photos first and sign a consent before the shoot.'],
+      ['How long does it take?', 'A haircut with styling takes about an hour. Colour or balayage takes two to three hours, photos included.'],
+      ['Where is the salon?', 'Erisichthonos 3-5, Thiseio, Athens, a five-minute walk from Thiseio metro station.']
+    ],
     name: 'Name',
     email: 'Email',
     instagram: 'Instagram (optional)',
@@ -99,7 +115,7 @@ const text = {
     change: 'How much change do you want?',
     changeOptions: ['Small, a refresh', 'A noticeable change', 'Open to suggestions'],
     photos: 'Photos',
-    photosOptions: ['With my face', 'Hair only, no face'],
+    photosOptions: ['With my face (priority)', 'Hair only, no face'],
     days: 'Which days suit you?',
     photo: 'A photo of your hair today (optional, it helps a lot)',
     message: 'Anything else we should know?',
@@ -110,6 +126,13 @@ const text = {
     sentTitle: 'Thank you!',
     sentText: 'We received your details. We will write to you when we have an appointment that suits your hair.'
   }
+};
+
+// Ερωτήσεις & απαντήσεις και ως δομημένα δεδομένα (FAQPage) για το Google και τους βοηθούς AI.
+export const MODELS_FAQ_LD = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: text.el.faq.map(([q, a]) => ({ '@type': 'Question', name: q, acceptedAnswer: { '@type': 'Answer', text: a } }))
 };
 
 const Models = ({ language, setLanguage }) => {
@@ -190,6 +213,7 @@ const Models = ({ language, setLanguage }) => {
                 <Pills label={t.length} name="length" options={t.lengthOptions} required />
                 <Pills label={t.colour} name="colour" options={t.colourOptions} required />
                 <Pills label={t.open} name="open_to" options={t.openOptions} type="checkbox" />
+                <Pills label={t.photos} name="photos" options={t.photosOptions} required />
                 <label className="nh-job-full">
                   <span>{t.photo}</span>
                   <input type="file" name="attachment" accept="image/*,.heic" />
@@ -207,7 +231,6 @@ const Models = ({ language, setLanguage }) => {
                       <input type="text" name="last_colour" />
                     </label>
                     <Pills label={t.change} name="change" options={t.changeOptions} />
-                    <Pills label={t.photos} name="photos" options={t.photosOptions} />
                     <Pills label={t.days} name="day" options={dayNames} type="checkbox" />
                     <label className="nh-job-full">
                       <span>{t.message}</span>
@@ -227,6 +250,18 @@ const Models = ({ language, setLanguage }) => {
               </form>
             </>
           )}
+        </section>
+
+        <section className="nh-menu-section" aria-labelledby="model-faq-title">
+          <h2 id="model-faq-title" className="nh-h2 nh-menu-title">{t.faqTitle}</h2>
+          <div className="nh-faq">
+            {t.faq.map(([q, a]) => (
+              <details key={q} className="nh-more">
+                <summary>{q}</summary>
+                <p className="nh-faq-a">{a}</p>
+              </details>
+            ))}
+          </div>
         </section>
       </main>
     </NhLayout>
