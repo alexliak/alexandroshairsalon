@@ -1,4 +1,5 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
+import { currentTheme } from '../lib/themeBoot';
 
 /*
  * MathArt — μαθηματικά animation «Κομμωτική 2050».
@@ -403,8 +404,18 @@ const LEGEND = {
   en: { tone: 'Tone', level: 'Level' }
 };
 
-export default function MathArt({ scene = 'galaxy', lang = 'el', surface = 'dark', legend = false, className = '' }) {
+export default function MathArt({ scene = 'galaxy', lang = 'el', surface: surfaceProp = 'dark', legend = false, className = '' }) {
   const ref = useRef(null);
+  // Λευκό θέμα ημέρας: ο πλανήτης χρώματος ζωγραφίζεται στη φωτεινή του εκδοχή.
+  // Οι άλλες σκηνές αναστρέφονται με CSS (theme-light.css), γι' αυτό δεν χρειάζονται αλλαγή εδώ.
+  const [theme, setTheme] = useState('dark');
+  useEffect(() => {
+    const sync = () => setTheme(currentTheme());
+    sync();
+    window.addEventListener('ahs-theme', sync);
+    return () => window.removeEventListener('ahs-theme', sync);
+  }, []);
+  const surface = scene === 'colour' && theme === 'light' ? 'light' : surfaceProp;
   const nameRef = useRef(null);
   const swatchRef = useRef(null);
   const showLegend = legend && scene === 'colour';
