@@ -1,6 +1,7 @@
 import React, { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import { FaWhatsapp, FaViber, FaPhoneAlt, FaArrowUp, FaMapMarkerAlt } from 'react-icons/fa';
 import { Link, NavLink, useLocation } from '../lib/router';
+import { themeMode, setThemeMode } from '../lib/themeBoot';
 
 // Shared 2026 layout: header, footer and mobile booking bar for the new pages.
 // Every booking button goes to /kratisi/ (Treatwell widget, no first-visit commission).
@@ -43,6 +44,36 @@ export function mapLinkProps(href) {
   };
 }
 
+
+// Διακόπτης εμφάνισης στο υποσέλιδο: Αυτόματο (ρύθμιση συσκευής) / Ανοιχτό / Σκούρο. Η επιλογή μένει στη συσκευή.
+function ThemeSwitch({ t }) {
+  const [mode, setMode] = useState('auto');
+  useEffect(() => {
+    const sync = () => setMode(themeMode());
+    sync();
+    window.addEventListener('ahs-theme', sync);
+    return () => window.removeEventListener('ahs-theme', sync);
+  }, []);
+  return (
+    <div className="nh-theme-switch" role="radiogroup" aria-label={t.theme}>
+      <span className="nh-theme-label" aria-hidden="true">{t.theme}</span>
+      {t.themeOpts.map(([value, label, hint]) => (
+        <button
+          key={value}
+          type="button"
+          role="radio"
+          aria-checked={mode === value}
+          className={`nh-theme-opt${mode === value ? ' is-on' : ''}`}
+          title={hint || label}
+          onClick={() => setThemeMode(value)}
+        >
+          {label}
+        </button>
+      ))}
+    </div>
+  );
+}
+
 const layoutText = {
   el: {
     nav: [
@@ -61,6 +92,8 @@ const layoutText = {
     mobileBarCta: 'Κλείσε ραντεβού',
     footerShop: 'Online Shop',
     footerHours: 'Ωράριο στο Google',
+    theme: 'Εμφάνιση',
+    themeOpts: [['auto', 'Αυτόματο', 'Όπως η συσκευή σου'], ['light', 'Ανοιχτό', ''], ['dark', 'Σκούρο', '']],
     footerJobs: 'Δουλειά μαζί μας',
     footerModels: 'Γίνε μοντέλο μας',
     langSwitch: 'EN',
@@ -98,6 +131,8 @@ const layoutText = {
     mobileBarCta: 'Book now',
     footerShop: 'Online Shop',
     footerHours: 'Hours on Google',
+    theme: 'Appearance',
+    themeOpts: [['auto', 'Auto', 'Same as your device'], ['light', 'Light', ''], ['dark', 'Dark', '']],
     footerJobs: 'We are hiring',
     footerModels: 'Be our model',
     langSwitch: 'EL',
@@ -294,6 +329,7 @@ const NhLayout = ({ language, setLanguage, children, headerExtra, mobileBar }) =
           <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">WhatsApp</a>
           <a href={VIBER_URL}>Viber</a>
         </span>
+        <ThemeSwitch t={t} />
         <nav className="nh-footer-seo" aria-label={t.seoNav}>
           {t.seoLinks.map(([label, href]) => (
             <a key={href} href={href}>{label}</a>

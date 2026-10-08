@@ -1,24 +1,34 @@
-// Ημέρα = λευκό θέμα, νύχτα = σκούρο θέμα, με βάση την ώρα και την ημερομηνία της συσκευής του επισκέπτη.
+// Θέμα του site: ανοιχτό ή σκούρο, όπως είναι ρυθμισμένη η συσκευή του επισκέπτη.
 //
-// Τρέχει μέσα στο <head> πριν ζωγραφιστεί η σελίδα (χωρίς «αναβόσβημα») και ξαναελέγχει
-// κάθε λεπτό, ώστε μια σελίδα που μένει ανοιχτή να αλλάξει μόνη της στο σούρουπο.
-// Η ανατολή/δύση υπολογίζεται κατά προσέγγιση: διάρκεια ημέρας από την ημερομηνία
-// (γεωγρ. πλάτος ~38°, ή νότιο ημισφαίριο αν η ζώνη ώρας έχει θερινή ώρα τον Ιανουάριο)
-// και ηλιακό μεσημέρι 12:25 (+1 ώρα με θερινή ώρα, διόρθωση «εξίσωσης του χρόνου»). Για την Αθήνα πέφτει μέσα σε ~5′.
+// Σειρά προτεραιότητας:
+//   1. Επιλογή του επισκέπτη από τον διακόπτη του site (Αυτόματο / Ανοιχτό / Σκούρο), κρατιέται στη συσκευή.
+//   2. Ρύθμιση της συσκευής (prefers-color-scheme). Όποιος έχει «Αυτόματο» στο iPhone/Android/Mac/Windows
+//      βλέπει λευκό την ημέρα και σκούρο τη νύχτα, αφού το αλλάζει το ίδιο το σύστημα στο σούρουπο.
+//   3. Αν ο browser δεν δίνει ρύθμιση (πολύ παλιός): λευκό από την ανατολή ως τη δύση, κατά προσέγγιση
+//      (πλάτος ~38°, ηλιακό μεσημέρι 12:25 + θερινή ώρα, με «εξίσωση του χρόνου»).
 //
-// Δοκιμή: ?theme=light ή ?theme=dark στη διεύθυνση (κρατιέται για την καρτέλα), ?theme=auto για επαναφορά.
+// Τρέχει μέσα στο <head> πριν ζωγραφιστεί η σελίδα (χωρίς «αναβόσβημα») και αλλάζει αμέσως
+// όταν αλλάξει η ρύθμιση της συσκευής, χωρίς ανανέωση της σελίδας.
+//
+// Δοκιμή: ?theme=light ή ?theme=dark στη διεύθυνση (μόνο για την καρτέλα), ?theme=auto για επαναφορά.
 //
 // Το ίδιο κείμενο μπαίνει και στις στατικές σελίδες (scripts/build-static-pages.py το διαβάζει από εδώ).
 export const THEME_BOOT = `(function(){
-var d=document.documentElement,K='ahs-theme';
+var d=document.documentElement,KS='ahs-theme',KL='ahs-theme-mode';
 var LIGHT='#f8f5ef',DARK='#12100e';
-function forced(){
+var mq=window.matchMedia?window.matchMedia('(prefers-color-scheme: dark)'):null;
+var mqOk=!!(window.matchMedia&&window.matchMedia('(prefers-color-scheme)').matches);
+function urlForced(){
   var m=/[?&]theme=(light|dark|auto)\\b/.exec(location.search),v=null;
   try{
-    if(m){if(m[1]==='auto'){sessionStorage.removeItem(K);}else{sessionStorage.setItem(K,m[1]);}}
-    v=sessionStorage.getItem(K);
+    if(m){if(m[1]==='auto'){sessionStorage.removeItem(KS);}else{sessionStorage.setItem(KS,m[1]);}}
+    v=sessionStorage.getItem(KS);
   }catch(e){v=m&&m[1]!=='auto'?m[1]:null;}
   return v;
+}
+function mode(){
+  var v=null;try{v=localStorage.getItem(KL);}catch(e){}
+  return v==='light'||v==='dark'?v:'auto';
 }
 function isDay(n){
   var y=n.getFullYear(),jan=new Date(y,0,1).getTimezoneOffset(),jul=new Date(y,6,1).getTimezoneOffset();
@@ -32,8 +42,15 @@ function isDay(n){
   var noon=12.42+dst-eot/60,h=n.getHours()+n.getMinutes()/60;
   return h>=noon-half&&h<noon+half;
 }
+function resolve(){
+  var f=urlForced();if(f)return f;
+  var m=mode();if(m!=='auto')return m;
+  if(mq&&mqOk)return mq.matches?'dark':'light';
+  return isDay(new Date())?'light':'dark';
+}
 function apply(){
-  var t=forced()||(isDay(new Date())?'light':'dark');
+  var t=resolve();
+  d.setAttribute('data-theme-mode',mode());
   if(d.getAttribute('data-theme')===t)return;
   d.setAttribute('data-theme',t);
   d.style.colorScheme=t;
@@ -41,8 +58,16 @@ function apply(){
   if(m)m.setAttribute('content',t==='light'?LIGHT:DARK);
   try{window.dispatchEvent(new Event('ahs-theme'));}catch(e){}
 }
+window.ahsTheme={
+  mode:mode,
+  set:function(v){
+    try{if(v==='light'||v==='dark'){localStorage.setItem(KL,v);}else{localStorage.removeItem(KL);}sessionStorage.removeItem(KS);}catch(e){}
+    apply();try{window.dispatchEvent(new Event('ahs-theme'));}catch(e){}
+  }
+};
 apply();
-setInterval(apply,60000);
+if(mq){if(mq.addEventListener){mq.addEventListener('change',apply);}else if(mq.addListener){mq.addListener(apply);}}
+if(!mqOk)setInterval(apply,60000);
 document.addEventListener('visibilitychange',function(){if(!document.hidden)apply();});
 })();`;
 
@@ -50,4 +75,14 @@ document.addEventListener('visibilitychange',function(){if(!document.hidden)appl
 export function currentTheme() {
   if (typeof document === 'undefined') return 'dark';
   return document.documentElement.getAttribute('data-theme') === 'light' ? 'light' : 'dark';
+}
+
+/** Επιλογή του επισκέπτη: 'auto' (ρύθμιση συσκευής), 'light' ή 'dark'. */
+export function themeMode() {
+  if (typeof window === 'undefined' || !window.ahsTheme) return 'auto';
+  return window.ahsTheme.mode();
+}
+
+export function setThemeMode(mode) {
+  if (typeof window !== 'undefined' && window.ahsTheme) window.ahsTheme.set(mode);
 }

@@ -26,7 +26,8 @@ DIRECTIONS = f"https://www.google.com/maps/dir/?api=1&destination={_PLACE_Q}&des
 import re as _re
 THEME_BOOT = _re.search(r"THEME_BOOT = `(.*?)`;", (pathlib.Path(__file__).parent.parent / "src/lib/themeBoot.js").read_text(encoding="utf-8"), _re.S).group(1).replace("\\\\", "\\")  # \\b στο JS template -> \b
 # Στο κινητό οι σύνδεσμοι χάρτη ανοίγουν στην ίδια καρτέλα, ώστε να πάνε κατευθείαν στην εφαρμογή Google Maps
-MAPS_JS = """<script>document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[data-maps]');if(!a||!window.matchMedia||!matchMedia('(hover: none) and (pointer: coarse)').matches)return;e.preventDefault();location.href=a.href;});</script>"""
+MAPS_JS = """<script>(function(){var bs=[].slice.call(document.querySelectorAll('.tsw button'));function s(){var m=window.ahsTheme?ahsTheme.mode():'auto';bs.forEach(function(b){var on=b.getAttribute('data-mode')===m;b.classList.toggle('on',on);b.setAttribute('aria-checked',on);});}bs.forEach(function(b){b.addEventListener('click',function(){if(window.ahsTheme)ahsTheme.set(b.getAttribute('data-mode'));});});window.addEventListener('ahs-theme',s);s();})();</script>
+<script>document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[data-maps]');if(!a||!window.matchMedia||!matchMedia('(hover: none) and (pointer: coarse)').matches)return;e.preventDefault();location.href=a.href;});</script>"""
 ADDRESS = "Ερυσίχθονος 3-5, Θησείο, Αθήνα 118 51"
 
 # (option, duration, price)
@@ -132,6 +133,10 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
 .lang{flex:none;min-width:40px;height:40px;border-radius:999px;border:1px solid #5a5247;background:transparent;color:var(--text);font:700 13px var(--sans);cursor:pointer}.lang:hover{border-color:var(--gold);color:var(--gold)}
 @media (max-width:760px){.lang{min-width:34px;height:34px}}
 .mbar{gap:10px}.mbar span{white-space:nowrap;font-size:12.5px}.mbar .btn{white-space:nowrap;padding:0 16px}
+.tsw{display:flex;flex-wrap:wrap;align-items:center;gap:6px}.tsw span{margin-right:6px;font-size:13px}
+.tsw button{min-height:36px;padding:0 14px;border-radius:999px;border:1px solid #5a5247;background:transparent;color:var(--soft);font:500 13px var(--sans);cursor:pointer}
+.tsw button:hover{border-color:var(--gold);color:var(--gold)}.tsw button.on{border-color:var(--gold);color:var(--text);font-weight:700}
+html[data-theme=light] .tsw button{border-color:#cdbfaa}
 
 /* Λευκό θέμα ημέρας (data-theme="light" από το THEME_BOOT) */
 html[data-theme=light]{color-scheme:light;--bg:#f8f5ef;--panel:#fffefb;--line:#e9e2d6;--text:#1c1915;--muted:#6b6253;--soft:#4a4339;--gold:#8a6a2e;--ink:#17140f;--fill:#c9a96e}
@@ -219,6 +224,7 @@ def page(path, title, desc, body, ld, extra_head="", mbar=True, bilingual=False)
 </main>
 <footer class="bottom"><div class="wrap">
   <p><strong>Alexandros Hair Salon</strong> · {ADDRESS} · <a href="tel:{PHONE}">{PHONE_TXT}</a> · <a href="tel:+306981319000">Κλήση κινητού</a> · <a href="https://wa.me/306981319000" target="_blank" rel="noopener">WhatsApp</a> · <a href="viber://chat?number=%2B306981319000">Viber</a> · <a href="{GOOGLE}" data-maps target="_blank" rel="noopener">Ωράριο στο Google</a> · <a href="{DIRECTIONS}" data-maps target="_blank" rel="noopener">Οδηγίες</a></p>
+  <p class="tsw" role="radiogroup" aria-label="Εμφάνιση"><span>Εμφάνιση</span><button type="button" role="radio" data-mode="auto" title="Όπως η συσκευή σου">Αυτόματο</button><button type="button" role="radio" data-mode="light">Ανοιχτό</button><button type="button" role="radio" data-mode="dark">Σκούρο</button></p>
   <p class="links"><a href="/">Αρχική</a><a href="/services">Όλες οι τιμές</a><a href="/kourema-athina/">Κούρεμα στην Αθήνα</a><a href="/vafi-mallion-athina/">Βαφή μαλλιών στην Αθήνα</a><a href="/balayage-athina/">Balayage στην Αθήνα</a><a href="/kratisi/">Κράτηση online</a><a href="/shop">Shop</a></p>
 </div></footer>
 {'<div class="mbar"><span>Θησείο · από το 1992</span><a class="btn gold" href="/kratisi/">Κλείσε ραντεβού</a></div>' if mbar else ''}
