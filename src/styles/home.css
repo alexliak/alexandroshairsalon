@@ -694,3 +694,7 @@
 .nh .nh-theme-opt:hover { border-color: var(--nh-gold); color: var(--nh-gold); }
 .nh .nh-theme-opt.is-on { border-color: var(--nh-gold); color: var(--nh-text); background: color-mix(in srgb, var(--nh-gold) 14%, transparent); font-weight: 700; }
 @media (hover: none) and (pointer: coarse) { .nh .nh-theme-opt { min-height: 44px; } }
+
+/* Συχνές ερωτήσεις (σελίδα μοντέλων) */
+.nh-faq { display: grid; gap: 10px; max-width: 860px; }
+.nh-faq-a { margin: 0; padding: 0 18px 18px; color: var(--nh-soft); line-height: 1.6; }
