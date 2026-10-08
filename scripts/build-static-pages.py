@@ -27,7 +27,7 @@ import re as _re
 THEME_BOOT = _re.search(r"THEME_BOOT = `(.*?)`;", (pathlib.Path(__file__).parent.parent / "src/lib/themeBoot.js").read_text(encoding="utf-8"), _re.S).group(1).replace("\\\\", "\\")  # \\b στο JS template -> \b
 # Στο κινητό οι σύνδεσμοι χάρτη ανοίγουν στην ίδια καρτέλα, ώστε να πάνε κατευθείαν στην εφαρμογή Google Maps
 MAPS_JS = """<script>(function(){var bs=[].slice.call(document.querySelectorAll('.tsw button'));function s(){var m=window.ahsTheme?ahsTheme.mode():'auto';bs.forEach(function(b){var on=b.getAttribute('data-mode')===m;b.classList.toggle('on',on);b.setAttribute('aria-checked',on);});}bs.forEach(function(b){b.addEventListener('click',function(){if(window.ahsTheme)ahsTheme.set(b.getAttribute('data-mode'));});});window.addEventListener('ahs-theme',s);s();})();</script>
-<script>document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[data-maps]');if(!a||!window.matchMedia||!matchMedia('(hover: none) and (pointer: coarse)').matches)return;e.preventDefault();location.href=a.href;});</script>"""
+<script>document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[data-maps]');if(!a||!window.matchMedia)return;if(matchMedia('(hover: none) and (pointer: coarse)').matches){e.preventDefault();location.href=a.href;}else if(a.href.indexOf('/maps/dir/')>-1){e.preventDefault();window.open('"""+GOOGLE+"""','_blank','noopener');}});</script>"""
 ADDRESS = "Ερυσίχθονος 3-5, Θησείο, Αθήνα 118 51"
 
 # (option, duration, price)

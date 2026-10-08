@@ -39,6 +39,11 @@ export function mapLinkProps(href) {
       if (window.matchMedia('(hover: none) and (pointer: coarse)').matches) {
         e.preventDefault();
         window.location.href = href;
+      } else if (href === DIRECTIONS_URL) {
+        // Υπολογιστής: δεν υπάρχει GPS, οπότε το «Your location» συχνά λείπει και το Maps δεν βγάζει διαδρομή.
+        // Ανοίγουμε την καρτέλα του κομμωτηρίου· εκεί το «Οδηγίες» ζητά από πού ξεκινάς.
+        e.preventDefault();
+        window.open(GOOGLE_PROFILE_URL, '_blank', 'noopener');
       }
     }
   };
