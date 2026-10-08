@@ -209,7 +209,7 @@ a#wahanda-online-booking-widget.btn:hover{filter:brightness(1.08)}
 <footer class="bottom"><div class="wrap">
   <p><strong>Alexandros Hair Salon</strong> · Ερυσίχθονος 3-5, Θησείο, Αθήνα 118 51 · <a href="tel:+302103465554">210 346 5554</a> · <a href="tel:+306981319000">Κλήση κινητού</a> · <a href="https://wa.me/306981319000" target="_blank" rel="noopener">WhatsApp</a> · <a href="viber://chat?number=%2B306981319000">Viber</a> · <a href="https://www.google.com/maps/search/?api=1&query=Alexandros%20Hair%20Salon%2C%20%CE%95%CF%81%CF%85%CF%83%CE%AF%CF%87%CE%B8%CE%BF%CE%BD%CE%BF%CF%82%203-5%2C%20%CE%91%CE%B8%CE%AE%CE%BD%CE%B1%20118%2051&query_place_id=ChIJjfF5DyC9oRQRtDI_YyhNAgM" data-maps target="_blank" rel="noopener">Ωράριο στο Google</a> · <a href="https://www.google.com/maps/dir/?api=1&destination=Alexandros%20Hair%20Salon%2C%20%CE%95%CF%81%CF%85%CF%83%CE%AF%CF%87%CE%B8%CE%BF%CE%BD%CE%BF%CF%82%203-5%2C%20%CE%91%CE%B8%CE%AE%CE%BD%CE%B1%20118%2051&destination_place_id=ChIJjfF5DyC9oRQRtDI_YyhNAgM" data-maps target="_blank" rel="noopener">Οδηγίες</a></p>
   <p class="tsw" role="radiogroup" aria-label="Εμφάνιση"><span>Εμφάνιση</span><button type="button" role="radio" data-mode="auto" title="Όπως η συσκευή σου">Αυτόματο</button><button type="button" role="radio" data-mode="light">Ανοιχτό</button><button type="button" role="radio" data-mode="dark">Σκούρο</button></p>
-  <p class="links"><a href="/">Αρχική</a><a href="/services">Όλες οι τιμές</a><a href="/kourema-athina/">Κούρεμα στην Αθήνα</a><a href="/vafi-mallion-athina/">Βαφή μαλλιών στην Αθήνα</a><a href="/balayage-athina/">Balayage στην Αθήνα</a><a href="/kratisi/">Κράτηση online</a><a href="/shop">Shop</a></p>
+  <p class="links"><a href="/">Αρχική</a><a href="/services">Όλες οι τιμές</a><a href="/kourema-athina/">Κούρεμα στην Αθήνα</a><a href="/vafi-mallion-athina/">Βαφή μαλλιών στην Αθήνα</a><a href="/balayage-athina/">Balayage στην Αθήνα</a><a href="/dorean-kourema-athina/">Δωρεάν κούρεμα (μοντέλο)</a><a href="/kratisi/">Κράτηση online</a><a href="/shop">Shop</a></p>
 </div></footer>
 
 <button type="button" class="totop" aria-label="Επιστροφή στην κορυφή" title="Επιστροφή στην κορυφή" tabindex="-1"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 448 512" aria-hidden="true" focusable="false" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M34.9 289.5l-22.2-22.2c-9.4-9.4-9.4-24.6 0-33.9L207 39c9.4-9.4 24.6-9.4 33.9 0l194.3 194.3c9.4 9.4 9.4 24.6 0 33.9L413 289.4c-9.5 9.5-25 9.3-34.3-.4L264 168.6V456c0 13.3-10.7 24-24 24h-32c-13.3 0-24-10.7-24-24V168.6L69.2 289.1c-9.3 9.8-24.8 10-34.3.4z"></path></svg></button>
@@ -229,7 +229,7 @@ b.addEventListener('click',function(){var r=window.matchMedia('(prefers-reduced-
     if(b){b.textContent=l==='en'?'EL':'EN';b.setAttribute('aria-label',l==='en'?'Αλλαγή στα Ελληνικά':'Switch to English');}
     try{localStorage.setItem(KEY,l);}catch(e){}
   }
-  var cur='el';try{cur=localStorage.getItem(KEY)||'el';}catch(e){}
+  var cur=document.documentElement.lang==='en'?'en':'el';try{cur=localStorage.getItem(KEY)||cur;}catch(e){}
   if(cur==='en')set('en');
   if(b)b.addEventListener('click',function(){cur=(cur==='en'?'el':'en');set(cur);});
 })();

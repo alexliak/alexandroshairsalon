@@ -116,6 +116,8 @@ const layoutText = {
       ['Κούρεμα στην Αθήνα', '/kourema-athina/'],
       ['Βαφή μαλλιών στην Αθήνα', '/vafi-mallion-athina/'],
       ['Balayage στην Αθήνα', '/balayage-athina/'],
+      ['Δωρεάν κούρεμα ως μοντέλο', '/dorean-kourema-athina/'],
+      ['Βαφή & balayage για μοντέλα', '/montelo-vafi-balayage-athina/'],
       ['Κράτηση online', '/kratisi/']
     ]
   },
@@ -155,6 +157,7 @@ const layoutText = {
       ['Haircut in Athens', '/kourema-athina/'],
       ['Hair colour in Athens', '/vafi-mallion-athina/'],
       ['Balayage in Athens', '/balayage-athina/'],
+      ['Free haircut as a hair model', '/hair-model-athens/'],
       ['Book online', '/kratisi/']
     ]
   }

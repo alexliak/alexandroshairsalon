@@ -61,7 +61,7 @@ LANG_JS = """<script>
     if(b){b.textContent=l==='en'?'EL':'EN';b.setAttribute('aria-label',l==='en'?'Αλλαγή στα Ελληνικά':'Switch to English');}
     try{localStorage.setItem(KEY,l);}catch(e){}
   }
-  var cur='el';try{cur=localStorage.getItem(KEY)||'el';}catch(e){}
+  var cur=document.documentElement.lang==='en'?'en':'el';try{cur=localStorage.getItem(KEY)||cur;}catch(e){}
   if(cur==='en')set('en');
   if(b)b.addEventListener('click',function(){cur=(cur==='en'?'el':'en');set(cur);});
 })();
@@ -177,10 +177,10 @@ def offers(keys):
     return [{k: v for k, v in o.items() if v is not None} for o in out]
 
 
-def page(path, title, desc, body, ld, extra_head="", mbar=True, bilingual=False):
+def page(path, title, desc, body, ld, extra_head="", mbar=True, bilingual=False, lang="el", image=None):
     ld_tags = "\n".join(f'<script type="application/ld+json">{json.dumps(x, ensure_ascii=False)}</script>' for x in ld)
     doc = f"""<!doctype html>
-<html lang="el">
+<html lang="{lang}">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -190,9 +190,9 @@ def page(path, title, desc, body, ld, extra_head="", mbar=True, bilingual=False)
 <title>{esc(title)}</title>
 <meta name="description" content="{esc(desc)}">
 <link rel="canonical" href="{SITE}{path}">
-<meta property="og:type" content="website"><meta property="og:locale" content="el_GR">
+<meta property="og:type" content="website"><meta property="og:locale" content="{"en_US" if lang == "en" else "el_GR"}">
 <meta property="og:url" content="{SITE}{path}"><meta property="og:title" content="{esc(title)}"><meta property="og:description" content="{esc(desc)}">
-<meta property="og:image" content="{SITE}/logo512.png">
+<meta property="og:image" content="{image or (SITE + "/logo512.png")}">
 <link rel="icon" href="/favicon.png" type="image/png">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;1,9..144,300&family=Manrope:wght@400;500;700;800&display=swap">
@@ -225,7 +225,7 @@ def page(path, title, desc, body, ld, extra_head="", mbar=True, bilingual=False)
 <footer class="bottom"><div class="wrap">
   <p><strong>Alexandros Hair Salon</strong> · {ADDRESS} · <a href="tel:{PHONE}">{PHONE_TXT}</a> · <a href="tel:+306981319000">Κλήση κινητού</a> · <a href="https://wa.me/306981319000" target="_blank" rel="noopener">WhatsApp</a> · <a href="viber://chat?number=%2B306981319000">Viber</a> · <a href="{GOOGLE}" data-maps target="_blank" rel="noopener">Ωράριο στο Google</a> · <a href="{DIRECTIONS}" data-maps target="_blank" rel="noopener">Οδηγίες</a></p>
   <p class="tsw" role="radiogroup" aria-label="Εμφάνιση"><span>Εμφάνιση</span><button type="button" role="radio" data-mode="auto" title="Όπως η συσκευή σου">Αυτόματο</button><button type="button" role="radio" data-mode="light">Ανοιχτό</button><button type="button" role="radio" data-mode="dark">Σκούρο</button></p>
-  <p class="links"><a href="/">Αρχική</a><a href="/services">Όλες οι τιμές</a><a href="/kourema-athina/">Κούρεμα στην Αθήνα</a><a href="/vafi-mallion-athina/">Βαφή μαλλιών στην Αθήνα</a><a href="/balayage-athina/">Balayage στην Αθήνα</a><a href="/kratisi/">Κράτηση online</a><a href="/shop">Shop</a></p>
+  <p class="links"><a href="/">Αρχική</a><a href="/services">Όλες οι τιμές</a><a href="/kourema-athina/">Κούρεμα στην Αθήνα</a><a href="/vafi-mallion-athina/">Βαφή μαλλιών στην Αθήνα</a><a href="/balayage-athina/">Balayage στην Αθήνα</a><a href="/dorean-kourema-athina/">Δωρεάν κούρεμα (μοντέλο)</a><a href="/kratisi/">Κράτηση online</a><a href="/shop">Shop</a></p>
 </div></footer>
 {'<div class="mbar"><span>Θησείο · από το 1992</span><a class="btn gold" href="/kratisi/">Κλείσε ραντεβού</a></div>' if mbar else ''}
 <button type="button" class="totop" aria-label="Επιστροφή στην κορυφή" title="Επιστροφή στην κορυφή" tabindex="-1">{ICONS['FaArrowUp']}</button>
@@ -394,6 +394,102 @@ kratisi_body = f"""
 """
 kratisi_ld = [{"@context": "https://schema.org", **{k: v for k, v in SALON_REF.items() if k != "@type"}, "@type": "HairSalon",
                "potentialAction": {"@type": "ReserveAction", "target": f"{SITE}/kratisi/"}}]
+# ---------- Σελίδες για μοντέλα μαλλιών: φέρνουν αναζητήσεις «δωρεάν κούρεμα / βαφή» στη φόρμα /montela ----------
+MODELS_FORM = "/montela#dilosi"
+MODEL_OG = f"{SITE}/images/og-montela.jpg"
+
+
+def model_page(path, crumb, title, desc, eyebrow, h1, lead, facts, prose, faqs, related, cta, lang="el", faq_title="Συχνές ερωτήσεις", related_title="Δες επίσης"):
+    items = "".join(f"<details><summary>{esc(q)}</summary><p>{esc(a)}</p></details>" for q, a in faqs)
+    faq_ld = {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
+        {"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": a}} for q, a in faqs]}
+    facts_html = "".join(f"<li>{esc(f)}</li>" for f in facts)
+    rel = "".join(f'<a href="{h}">{esc(t)}</a>' for t, h in related)
+    body = f"""
+<section class="hero">
+  <span class="eyebrow">{esc(eyebrow)}</span>
+  <h1>{h1}</h1>
+  <p class="lead">{esc(lead)}</p>
+  <div class="cta"><a class="btn gold" href="{MODELS_FORM}">{esc(cta)}</a></div>
+  <ul class="facts">{facts_html}</ul>
+</section>
+<section class="block prose">{prose}
+  <p class="cta" style="margin-top:20px"><a class="btn gold" href="{MODELS_FORM}">{esc(cta)}</a></p>
+</section>
+<section class="block"><h2>{esc(faq_title)}</h2>{items}</section>
+<section class="block"><h2>{esc(related_title)}</h2><p class="links">{rel}</p></section>
+"""
+    og = '<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta name="twitter:card" content="summary_large_image">'
+    page(path, title, desc, body, [faq_ld, crumbs(crumb, path)], extra_head=og,
+         mbar=False, lang=lang, bilingual=(lang == "en"), image=MODEL_OG)
+
+
+MODEL_FACTS = ["Κούρεμα & χτένισμα δωρεάν", "Χρώμα μόνο με το κόστος των υλικών", "Φυσικό, κλασικό ή ελαφρώς μοντέρνο", "Θησείο, 5′ από το μετρό"]
+MODEL_FAQ_COMMON = [
+    ("Θα φαίνεται το πρόσωπό μου στις φωτογραφίες;", "Το διαλέγεις εσύ: με το πρόσωπό σου ή μόνο τα μαλλιά. Με πρόσωπο έχεις προτεραιότητα στα ραντεβού. Βλέπεις πρώτη τις φωτογραφίες και υπογράφεις συγκατάθεση πριν από τη φωτογράφιση."),
+    ("Ποιος κάνει τη δουλειά;", "Οι έμπειροι κομμωτές του κομμωτηρίου, που δουλεύει στο Θησείο από το 1992, με L’Oréal Professionnel και Redken. Όχι μαθητευόμενοι."),
+    ("Πώς δηλώνω συμμετοχή;", "Συμπληρώνεις τη φόρμα ενός λεπτού στο alexandroshairsalon.gr/montela. Όταν προγραμματίσουμε τεχνική που ταιριάζει στα μαλλιά σου, σου στέλνουμε μήνυμα για ραντεβού."),
+    ("Υπάρχει όριο ηλικίας;", "Δεχόμαστε από 18 ετών και άνω, κυρίως γυναίκες κάθε ηλικίας. Τα λευκά μαλλιά, τα πολύ μακριά ή τα σγουρά είναι ευπρόσδεκτα: χρειαζόμαστε ποικιλία."),
+]
+
+model_page(
+    "/dorean-kourema-athina/", "Δωρεάν κούρεμα στην Αθήνα",
+    "Δωρεάν κούρεμα στην Αθήνα – Γίνε μοντέλο μαλλιών στο Θησείο | Alexandros Hair Salon",
+    "Δωρεάν γυναικείο κούρεμα και χτένισμα στην Αθήνα, ως μοντέλο μαλλιών στο Θησείο. Φυσικό, κλασικό ή ελαφρώς μοντέρνο αποτέλεσμα από έμπειρους κομμωτές. Φόρμα 1 λεπτού.",
+    "Μοντέλα μαλλιών · Θησείο, κέντρο Αθήνας",
+    "Δωρεάν κούρεμα στην Αθήνα, <em>ως μοντέλο μαλλιών.</em>",
+    "Ψάχνουμε γυναίκες κάθε ηλικίας για κούρεμα και χτένισμα δωρεάν, σε αντάλλαγμα για φωτογραφίες του νέου look. Δουλεύουν οι έμπειροι κομμωτές του κομμωτηρίου, με αποτέλεσμα που στέκεται στην καθημερινότητά σου.",
+    MODEL_FACTS,
+    """<h2>Τι περιλαμβάνει το δωρεάν κούρεμα</h2>
+<p>Συζήτηση για το πρόσωπο, τα χαρακτηριστικά και την υφή των μαλλιών σου, λούσιμο, κούρεμα και χτένισμα με πιστολάκι, και φωτογράφιση στο τέλος. Υπολόγισε περίπου μία ώρα.</p>
+<p>Κουρεύουμε pixie, bob και lob, butterfly, curtain bangs, φιλάρισμα για όγκο, καθαρό φρεσκάρισμα. Ό,τι κάνουμε το συμφωνούμε πριν ξεκινήσουμε· αν κάτι δεν σου ταιριάζει, θα σου το πούμε.</p>
+<h2>Γιατί δωρεάν;</h2>
+<p>Δοκιμάζουμε νέες τεχνικές και χρειαζόμαστε φωτογραφίες της δουλειάς μας για το site και τα social. Εσύ παίρνεις ένα επαγγελματικό κούρεμα, εμείς τις φωτογραφίες.</p>""",
+    MODEL_FAQ_COMMON,
+    [("Βαφή & balayage σε τιμή υλικών", "/montelo-vafi-balayage-athina/"), ("Free haircut in Athens (English)", "/hair-model-athens/"), ("Κούρεμα στην Αθήνα", "/kourema-athina/")],
+    "Δήλωσε συμμετοχή",
+)
+
+model_page(
+    "/montelo-vafi-balayage-athina/", "Βαφή & balayage για μοντέλα",
+    "Βαφή μαλλιών & balayage σε τιμή υλικών – Μοντέλο μαλλιών Αθήνα | Alexandros Hair Salon",
+    "Γίνε μοντέλο μαλλιών στο Θησείο: βαφή ρίζας, ρεφλέ, ανταύγειες χωρίς ντεκαπάζ ή balayage μόνο με το κόστος των υλικών, με L’Oréal Professionnel και Redken. Φόρμα 1 λεπτού.",
+    "Μοντέλα για χρώμα · Θησείο, κέντρο Αθήνας",
+    "Βαφή και balayage <em>σε τιμή υλικών.</em>",
+    "Για τις νέες τεχνικές χρώματος ψάχνουμε μοντέλα: βαφή ρίζας με ρεφλέ, ανταύγειες χωρίς ντεκαπάζ, balayage. Πληρώνεις μόνο ένα μικρό ποσό για τα υλικά, και το ξέρεις πριν ξεκινήσουμε.",
+    ["Χρώμα μόνο με το κόστος των υλικών", "L’Oréal Professionnel & Redken", "Τεστ ευαισθησίας 48 ώρες πριν", "Θησείο, 5′ από το μετρό"],
+    """<h2>Ποιες τεχνικές χρώματος</h2>
+<p><strong>Βαφή ρίζας με ρεφλέ:</strong> κάλυψη λευκών με Majirel, INOA χωρίς αμμωνία ή Redken, και ξεχωριστό gloss στα μήκη για λάμψη.</p>
+<p><strong>Ανταύγειες χωρίς ντεκαπάζ:</strong> απαλό φως γύρω από το πρόσωπο, ιδανικό αν δεν έχεις κάνει ποτέ ανταύγειες.</p>
+<p><strong>Balayage:</strong> φυσικό σβήσιμο από τη ρίζα στα άκρα, με ενσωματωμένο bonder για την προστασία της τρίχας.</p>
+<h2>Πόση ώρα και τι χρειάζεται</h2>
+<p>Η βαφή θέλει περίπου δύο ώρες, το balayage δύο με τρεις, μαζί με τη φωτογράφιση. Πριν από κάθε βαφή κάνουμε τεστ ευαισθησίας 48 ώρες νωρίτερα, όπως και σε κάθε πελάτισσα.</p>""",
+    [("Πόσο κοστίζει η βαφή ως μοντέλο;", "Μόνο ένα μικρό μέρος της κανονικής τιμής, για τα υλικά. Το ακριβές ποσό το ξέρεις πριν κλείσουμε ραντεβού.")] + MODEL_FAQ_COMMON,
+    [("Δωρεάν κούρεμα ως μοντέλο", "/dorean-kourema-athina/"), ("Βαφή μαλλιών στην Αθήνα", "/vafi-mallion-athina/"), ("Balayage στην Αθήνα", "/balayage-athina/")],
+    "Δήλωσε συμμετοχή",
+)
+
+model_page(
+    "/hair-model-athens/", "Hair model in Athens",
+    "Free Haircut in Athens – Become a Hair Model in Thiseio | Alexandros Hair Salon",
+    "Become a hair model in central Athens: free haircut and styling, colour and balayage at material cost, with L’Oréal Professionnel and Redken. Natural, classic or softly modern results. One-minute form.",
+    "Hair models wanted · Thiseio, central Athens",
+    "Free haircut in Athens, <em>as a hair model.</em>",
+    "We are looking for women of any age, including students and visitors living in Athens, for a free haircut and styling or colour at material cost, in exchange for photos of the result. The work is done by the salon’s experienced stylists, not trainees.",
+    ["Free cut & styling", "Colour at material cost", "Natural, classic or softly modern", "5′ from Thiseio metro"],
+    """<h2>What you get</h2>
+<p>A consultation, wash, haircut and blow-dry, about one hour, or a colour service such as root colour with gloss, no-bleach highlights or balayage, two to three hours. We agree on the result before we start, and it has to suit your everyday life.</p>
+<h2>Photos: you choose</h2>
+<p>Photos with your face or just your hair. With your face you get priority for appointments. You see the photos first and sign a consent before the shoot. We speak English.</p>""",
+    [("Is it really free?", "Haircuts and styling are free. For colour, highlights and balayage you pay only a small amount for materials, and you know it before booking."),
+     ("Who does the work?", "The salon’s experienced stylists, working in Thiseio since 1992, with L’Oréal Professionnel and Redken. Not trainees."),
+     ("How do I sign up?", "Fill in the one-minute form at alexandroshairsalon.gr/montela (switch the page to English with the EN button). We message you when we schedule a technique that suits your hair."),
+     ("Where is the salon?", "Erisichthonos 3-5, Thiseio, Athens, a five-minute walk from Thiseio metro station.")],
+    [("Δωρεάν κούρεμα (Ελληνικά)", "/dorean-kourema-athina/"), ("Colour & balayage for models (Greek)", "/montelo-vafi-balayage-athina/"), ("Prices", "/services")],
+    "Sign up as a model", lang="en", faq_title="Questions", related_title="See also",
+)
+
+
 page("/kratisi/", "Κράτηση ραντεβού online | Alexandros Hair Salon – Κομμωτήριο Θησείο",
      "Κλείσε online ραντεβού στο Alexandros Hair Salon στο Θησείο, Αθήνα: κούρεμα, Blowout, βαφή, balayage, κερατίνη. Βλέπεις ελεύθερες ώρες, τιμή και διάρκεια. Πληρωμή online ή στο κομμωτήριο.",
      kratisi_body, kratisi_ld, extra_head=kratisi_head, mbar=False, bilingual=True)
