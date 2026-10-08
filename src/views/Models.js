@@ -15,7 +15,7 @@ const text = {
     title: 'Ψάχνουμε μοντέλα',
     titleEm: 'για κούρεμα και χρώμα.',
     lead: 'Κούρεμα, βαφή, balayage ή ανταύγειες δωρεάν ή σε πολύ χαμηλή τιμή, στο Θησείο. Κυρίως γυναίκες, κάθε ηλικίας, χωρίς εμπειρία ως μοντέλο. Δουλεύουμε νέες τεχνικές και φωτογραφίζουμε το αποτέλεσμα για την εκπαίδευσή μας και για να δείξουμε τη δουλειά μας.',
-    facts: ['Δωρεάν ή σε πολύ χαμηλή τιμή', 'Τίποτα ακραίο', 'Φόρμα ενός λεπτού', '5′ από το μετρό Θησείο'],
+    facts: ['Δωρεάν ή σε πολύ χαμηλή τιμή', 'Φυσικό, κλασικό ή ελαφρώς μοντέρνο αποτέλεσμα', 'Φόρμα ενός λεπτού', '5′ από το μετρό Θησείο'],
     cta: 'Δήλωσε συμμετοχή',
     barTop: 'Μοντέλο μαλλιών',
     barBottom: 'φόρμα 1 λεπτού',
@@ -23,8 +23,8 @@ const text = {
     howTitle: 'Πώς γίνεται',
     how: [
       'Ξεκινάμε πάντα με συζήτηση: τι θέλεις, τι σου ταιριάζει, τι δεν θέλεις να αλλάξει.',
-      'Τίποτα ακραίο. Το αποτέλεσμα το αποφασίζουμε μαζί και πρέπει να αρέσει πρώτα σε σένα.',
-      'Τη δουλειά την κάνουν έμπειροι κομμωτές του κομμωτηρίου, με L’Oréal Professionnel και Redken.'
+      'Φυσικά, κλασικά ή ελαφρώς μοντέρνα αποτελέσματα, που στέκονται στην καθημερινότητά σου. Το αποφασίζουμε μαζί πριν ξεκινήσουμε και πρέπει να αρέσει πρώτα σε σένα.',
+      'Δεν είσαι «μάθημα» για μαθητευόμενους: τη δουλειά την κάνουν οι έμπειροι κομμωτές του κομμωτηρίου, με L’Oréal Professionnel και Redken.'
     ],
     youTitle: 'Τι κερδίζεις',
     you: [
@@ -72,7 +72,7 @@ const text = {
     title: 'We are looking for models',
     titleEm: 'for cuts and colour.',
     lead: 'A haircut, colour, balayage or highlights for free or at a very low price, in Thiseio, Athens. Mostly women, of any age, no modelling experience needed. We work on new techniques and photograph the result for our training and to show our work.',
-    facts: ['Free or at a very low price', 'Nothing extreme', 'One-minute form', '5′ from Thiseio metro'],
+    facts: ['Free or at a very low price', 'Natural, classic or softly modern results', 'One-minute form', '5′ from Thiseio metro'],
     cta: 'Sign up',
     barTop: 'Hair model',
     barBottom: 'one-minute form',
@@ -80,8 +80,8 @@ const text = {
     howTitle: 'How it works',
     how: [
       'We always start with a chat: what you want, what suits you, what you don’t want to change.',
-      'Nothing extreme. We decide the result together, and it has to please you first.',
-      'The work is done by the salon’s experienced stylists, with L’Oréal Professionnel and Redken.'
+      'Natural, classic or softly modern results that work in your everyday life. We agree on it before we start, and it has to please you first.',
+      'You are not practice for trainees: the work is done by the salon’s experienced stylists, with L’Oréal Professionnel and Redken.'
     ],
     youTitle: 'What you get',
     you: [
