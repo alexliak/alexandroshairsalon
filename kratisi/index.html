@@ -235,6 +235,6 @@ b.addEventListener('click',function(){var r=window.matchMedia('(prefers-reduced-
 })();
 </script>
 <script>(function(){var bs=[].slice.call(document.querySelectorAll('.tsw button'));function s(){var m=window.ahsTheme?ahsTheme.mode():'auto';bs.forEach(function(b){var on=b.getAttribute('data-mode')===m;b.classList.toggle('on',on);b.setAttribute('aria-checked',on);});}bs.forEach(function(b){b.addEventListener('click',function(){if(window.ahsTheme)ahsTheme.set(b.getAttribute('data-mode'));});});window.addEventListener('ahs-theme',s);s();})();</script>
-<script>document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[data-maps]');if(!a||!window.matchMedia||!matchMedia('(hover: none) and (pointer: coarse)').matches)return;e.preventDefault();location.href=a.href;});</script>
+<script>document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[data-maps]');if(!a||!window.matchMedia)return;if(matchMedia('(hover: none) and (pointer: coarse)').matches){e.preventDefault();location.href=a.href;}else if(a.href.indexOf('/maps/dir/')>-1){e.preventDefault();window.open('https://www.google.com/maps/search/?api=1&query=Alexandros%20Hair%20Salon%2C%20%CE%95%CF%81%CF%85%CF%83%CE%AF%CF%87%CE%B8%CE%BF%CE%BD%CE%BF%CF%82%203-5%2C%20%CE%91%CE%B8%CE%AE%CE%BD%CE%B1%20118%2051&query_place_id=ChIJjfF5DyC9oRQRtDI_YyhNAgM','_blank','noopener');}});</script>
 </body>
 </html>
