@@ -1,5 +1,6 @@
 import React from 'react';
-import NhLayout, { BOOK, PHONE, PHONE_DISPLAY, GOOGLE_PROFILE_URL, MAP_EMBED_URL, MOBILE, WHATSAPP_URL, VIBER_URL, FACETIME_URL } from '../components/NhLayout';
+import NhLayout, { BOOK, PHONE, PHONE_DISPLAY, GOOGLE_PROFILE_URL, DIRECTIONS_URL, mapLinkProps, MOBILE, WHATSAPP_URL, VIBER_URL, FACETIME_URL } from '../components/NhLayout';
+import MapEmbed from '../components/MapEmbed';
 
 // Hours & contact (2026 design). The opening hours are NOT written here on purpose:
 // the owner keeps them up to date on the Google Business Profile, so we link there.
@@ -63,7 +64,7 @@ const Contact = ({ language, setLanguage }) => {
           <article className="nh-info-card nh-info-card-gold">
             <h2 className="nh-info-title">{t.hoursTitle}</h2>
             <p>{t.hoursText}</p>
-            <a href={GOOGLE_PROFILE_URL} target="_blank" rel="noopener noreferrer" className="nh-btn nh-btn-dark">
+            <a className="nh-btn nh-btn-dark" {...mapLinkProps(GOOGLE_PROFILE_URL)}>
               {t.hoursCta}
             </a>
           </article>
@@ -75,7 +76,7 @@ const Contact = ({ language, setLanguage }) => {
           <article className="nh-info-card">
             <h2 className="nh-info-title">{t.addressTitle}</h2>
             <p>{t.address}</p>
-            <a href={GOOGLE_PROFILE_URL} target="_blank" rel="noopener noreferrer" className="nh-underline">
+            <a className="nh-underline" {...mapLinkProps(DIRECTIONS_URL)}>
               {t.directions}
             </a>
           </article>
@@ -95,8 +96,8 @@ const Contact = ({ language, setLanguage }) => {
           </article>
         </section>
 
-        <section className="nh-map nh-map-wide">
-          <iframe title={t.mapTitle} src={MAP_EMBED_URL} loading="lazy" referrerPolicy="no-referrer-when-downgrade" />
+        <section className="nh-map-section">
+          <MapEmbed language={language} className="nh-map-wide" />
         </section>
       </main>
     </NhLayout>

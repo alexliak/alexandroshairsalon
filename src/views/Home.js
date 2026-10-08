@@ -1,6 +1,7 @@
 import React, { lazy, Suspense } from 'react';
 import { Link } from '../lib/router';
-import NhLayout, { BOOK, PHONE, GOOGLE_PROFILE_URL, MAP_EMBED_URL } from '../components/NhLayout';
+import NhLayout, { BOOK, PHONE, GOOGLE_PROFILE_URL, DIRECTIONS_URL, mapLinkProps } from '../components/NhLayout';
+import MapEmbed from '../components/MapEmbed';
 
 // Μαθηματικά animation «Κομμωτική 2050»: φορτώνονται σε ξεχωριστό, μικρό αρχείο μετά την αρχική σελίδα.
 const MathArt = lazy(() => import('../components/MathArt'));
@@ -154,8 +155,8 @@ const Strands = ({ className }) => (
     <path d="M120 740 C 180 520, 420 560, 380 360 S 560 80, 700 20" stroke="currentColor" strokeWidth="1.2" opacity="0.9" />
     <path d="M150 760 C 210 540, 450 580, 410 380 S 590 100, 730 40" stroke="currentColor" strokeWidth="1" opacity="0.6" />
     <path d="M180 780 C 240 560, 480 600, 440 400 S 620 120, 760 60" stroke="currentColor" strokeWidth="0.8" opacity="0.4" />
-    <path d="M90 720 C 150 500, 390 540, 350 340 S 530 60, 670 0" stroke="#f3eee6" strokeWidth="0.6" opacity="0.25" />
-    <path d="M210 800 C 270 580, 510 620, 470 420 S 650 140, 790 80" stroke="#f3eee6" strokeWidth="0.6" opacity="0.18" />
+    <path d="M90 720 C 150 500, 390 540, 350 340 S 530 60, 670 0" style={{ stroke: 'var(--nh-text)' }} strokeWidth="0.6" opacity="0.25" />
+    <path d="M210 800 C 270 580, 510 620, 470 420 S 650 140, 790 80" style={{ stroke: 'var(--nh-text)' }} strokeWidth="0.6" opacity="0.18" />
   </svg>
 );
 
@@ -308,22 +309,15 @@ const Home = ({ language, setLanguage }) => {
             <p className="nh-visit-info">
               {t.address}
               <br />
-              <a href={GOOGLE_PROFILE_URL} target="_blank" rel="noopener noreferrer">{t.hours}</a>
+              <a {...mapLinkProps(GOOGLE_PROFILE_URL)}>{t.hours}</a>
             </p>
             <div className="nh-cta-row">
               <a href={BOOK} className="nh-btn nh-btn-gold">{t.bookOnline}</a>
               <a href={`tel:${PHONE}`} className="nh-btn nh-btn-ghost">{t.call}</a>
             </div>
-            <a href={GOOGLE_PROFILE_URL} className="nh-underline" target="_blank" rel="noopener noreferrer">{t.directions}</a>
+            <a className="nh-underline" {...mapLinkProps(DIRECTIONS_URL)}>{t.directions}</a>
           </div>
-          <div className="nh-map">
-            <iframe
-              title={language === 'el' ? 'Χάρτης: Alexandros Hair Salon' : 'Map: Alexandros Hair Salon'}
-              src={MAP_EMBED_URL}
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-            />
-          </div>
+          <MapEmbed language={language} />
         </section>
       </main>
 
