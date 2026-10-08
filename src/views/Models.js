@@ -30,7 +30,7 @@ const text = {
     you: [
       'Κούρεμα ή χρώμα δωρεάν ή σε πολύ χαμηλότερη τιμή, ανάλογα με την τεχνική.',
       'Επαγγελματικές φωτογραφίες του νέου σου look.',
-      'Εσύ αποφασίζεις αν θα φαίνεται το πρόσωπό σου ή μόνο τα μαλλιά.'
+      'Οι φωτογραφίες δείχνουν και το πρόσωπο, γιατί το κούρεμα και το χρώμα κρίνονται πάνω στο πρόσωπο. Τις βλέπεις πρώτη και διαλέγουμε μαζί ποιες θα δημοσιευτούν.'
     ],
     formTitle: 'Δήλωσε συμμετοχή',
     formLead: 'Όταν προγραμματίσουμε τεχνική που ταιριάζει στα μαλλιά σου, θα σου στείλουμε μήνυμα.',
@@ -38,7 +38,7 @@ const text = {
     faq: [
       ['Είναι πραγματικά δωρεάν;', 'Κούρεμα και χτένισμα για φωτογράφιση είναι συνήθως δωρεάν. Στο χρώμα, στις ανταύγειες και στο balayage πληρώνεις συνήθως μόνο ένα μικρό μέρος της κανονικής τιμής, για τα υλικά. Το ποσό το ξέρεις πάντα πριν ξεκινήσουμε.'],
       ['Ποιος κάνει τη δουλειά;', 'Έμπειροι κομμωτές του κομμωτηρίου, που δουλεύουν από το 1992, με προϊόντα L’Oréal Professionnel και Redken.'],
-      ['Πρέπει να φαίνεται το πρόσωπό μου στις φωτογραφίες;', 'Όχι. Διαλέγεις εσύ αν θα φαίνεται το πρόσωπό σου ή μόνο τα μαλλιά, και υπογράφεις τη συγκατάθεση στο κομμωτήριο πριν από τη φωτογράφιση.'],
+      ['Θα φαίνεται το πρόσωπό μου στις φωτογραφίες;', 'Ναι, αυτό είναι το αντάλλαγμα για τη δωρεάν ή σχεδόν δωρεάν δουλειά. Βλέπεις πρώτη τις φωτογραφίες, διαλέγουμε μαζί ποιες θα δημοσιευτούν, και υπογράφεις συγκατάθεση στο κομμωτήριο πριν από τη φωτογράφιση.'],
       ['Πόση ώρα χρειάζεται;', 'Ένα κούρεμα με χτένισμα περίπου μία ώρα. Χρώμα ή balayage δύο έως τρεις ώρες, μαζί με τη φωτογράφιση.'],
       ['Πού είναι το κομμωτήριο;', 'Ερυσίχθονος 3-5, Θησείο, Αθήνα, πέντε λεπτά με τα πόδια από τον σταθμό του μετρό Θησείο.']
     ],
@@ -56,8 +56,7 @@ const text = {
     openOptions: ['Κούρεμα', 'Χρώμα', 'Ανταύγειες / balayage', 'Χτένισμα'],
     change: 'Πόση αλλαγή θέλεις;',
     changeOptions: ['Μικρή, φρεσκάρισμα', 'Αισθητή αλλαγή', 'Είμαι ανοιχτή σε προτάσεις'],
-    photos: 'Φωτογραφίες',
-    photosOptions: ['Με το πρόσωπό μου', 'Μόνο τα μαλλιά, χωρίς πρόσωπο'],
+    faceOk: 'Συμφωνώ να φωτογραφηθώ με το πρόσωπό μου.',
     days: 'Ποιες μέρες σε βολεύουν;',
     photo: 'Φωτογραφία των μαλλιών σου σήμερα (προαιρετικά, βοηθά πολύ)',
     message: 'Κάτι άλλο που θέλεις να ξέρουμε;',
@@ -88,7 +87,7 @@ const text = {
     you: [
       'A cut or colour for free or at a much lower price, depending on the technique.',
       'Professional photos of your new look.',
-      'You decide whether your face is shown or just your hair.'
+      'The photos show your face too, because a cut and colour are judged on the face. You see them first and we choose together which ones are published.'
     ],
     formTitle: 'Sign up',
     formLead: 'When we schedule a technique that suits your hair, we will message you.',
@@ -96,7 +95,7 @@ const text = {
     faq: [
       ['Is it really free?', 'Haircuts and styling for a photo shoot are usually free. For colour, highlights and balayage you usually pay only a small part of the normal price, to cover materials. You always know the amount before we start.'],
       ['Who does the work?', 'The salon’s experienced stylists, working since 1992, with L’Oréal Professionnel and Redken products.'],
-      ['Does my face have to be in the photos?', 'No. You choose whether your face is shown or just your hair, and you sign the consent at the salon before any photos.'],
+      ['Will my face be in the photos?', 'Yes, that is the exchange for the free or almost free work. You see the photos first, we choose together which ones are published, and you sign a consent at the salon before the shoot.'],
       ['How long does it take?', 'A haircut with styling takes about an hour. Colour or balayage takes two to three hours, photos included.'],
       ['Where is the salon?', 'Erisichthonos 3-5, Thiseio, Athens, a five-minute walk from Thiseio metro station.']
     ],
@@ -114,8 +113,7 @@ const text = {
     openOptions: ['Haircut', 'Colour', 'Highlights / balayage', 'Styling'],
     change: 'How much change do you want?',
     changeOptions: ['Small, a refresh', 'A noticeable change', 'Open to suggestions'],
-    photos: 'Photos',
-    photosOptions: ['With my face', 'Hair only, no face'],
+    faceOk: 'I agree to be photographed with my face shown.',
     days: 'Which days suit you?',
     photo: 'A photo of your hair today (optional, it helps a lot)',
     message: 'Anything else we should know?',
@@ -230,7 +228,6 @@ const Models = ({ language, setLanguage }) => {
                       <input type="text" name="last_colour" />
                     </label>
                     <Pills label={t.change} name="change" options={t.changeOptions} />
-                    <Pills label={t.photos} name="photos" options={t.photosOptions} />
                     <Pills label={t.days} name="day" options={dayNames} type="checkbox" />
                     <label className="nh-job-full">
                       <span>{t.message}</span>
@@ -238,6 +235,10 @@ const Models = ({ language, setLanguage }) => {
                     </label>
                   </div>
                 </details>
+                <label className="nh-job-full nh-job-consent">
+                  <input type="checkbox" name="photos_with_face" value="yes" required />
+                  <span>{t.faceOk}</span>
+                </label>
                 <label className="nh-job-full nh-job-consent">
                   <input type="checkbox" name="adult" value="yes" required />
                   <span>{t.adult}</span>
