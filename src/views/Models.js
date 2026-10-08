@@ -14,8 +14,8 @@ const text = {
     eyebrow: 'Ζητούνται μοντέλα μαλλιών · Θησείο',
     title: 'Ψάχνουμε μοντέλα',
     titleEm: 'για κούρεμα και χρώμα.',
-    lead: 'Κυρίως γυναίκες, κάθε ηλικίας, χωρίς εμπειρία ως μοντέλο. Δουλεύουμε νέες τεχνικές κουρέματος και χρώματος και φωτογραφίζουμε το αποτέλεσμα για την εκπαίδευσή μας και για να δείξουμε τη δουλειά μας.',
-    facts: ['Δωρεάν ή σε χαμηλότερη τιμή', 'Τίποτα ακραίο', 'Φόρμα ενός λεπτού'],
+    lead: 'Κούρεμα, βαφή, balayage ή ανταύγειες δωρεάν ή σε πολύ χαμηλή τιμή, στο Θησείο. Κυρίως γυναίκες, κάθε ηλικίας, χωρίς εμπειρία ως μοντέλο. Δουλεύουμε νέες τεχνικές και φωτογραφίζουμε το αποτέλεσμα για την εκπαίδευσή μας και για να δείξουμε τη δουλειά μας.',
+    facts: ['Δωρεάν ή σε πολύ χαμηλή τιμή', 'Τίποτα ακραίο', 'Φόρμα ενός λεπτού', '5′ από το μετρό Θησείο'],
     cta: 'Δήλωσε συμμετοχή',
     barTop: 'Μοντέλο μαλλιών',
     barBottom: 'φόρμα 1 λεπτού',
@@ -34,6 +34,14 @@ const text = {
     ],
     formTitle: 'Δήλωσε συμμετοχή',
     formLead: 'Όταν προγραμματίσουμε τεχνική που ταιριάζει στα μαλλιά σου, θα σου στείλουμε μήνυμα.',
+    faqTitle: 'Συχνές ερωτήσεις',
+    faq: [
+      ['Είναι πραγματικά δωρεάν;', 'Κούρεμα και χτένισμα για φωτογράφιση είναι συνήθως δωρεάν. Στο χρώμα, στις ανταύγειες και στο balayage πληρώνεις συνήθως μόνο ένα μικρό μέρος της κανονικής τιμής, για τα υλικά. Το ποσό το ξέρεις πάντα πριν ξεκινήσουμε.'],
+      ['Ποιος κάνει τη δουλειά;', 'Έμπειροι κομμωτές του κομμωτηρίου, που δουλεύουν από το 1992, με προϊόντα L’Oréal Professionnel και Redken.'],
+      ['Πρέπει να φαίνεται το πρόσωπό μου στις φωτογραφίες;', 'Όχι. Διαλέγεις εσύ αν θα φαίνεται το πρόσωπό σου ή μόνο τα μαλλιά, και υπογράφεις τη συγκατάθεση στο κομμωτήριο πριν από τη φωτογράφιση.'],
+      ['Πόση ώρα χρειάζεται;', 'Ένα κούρεμα με χτένισμα περίπου μία ώρα. Χρώμα ή balayage δύο έως τρεις ώρες, μαζί με τη φωτογράφιση.'],
+      ['Πού είναι το κομμωτήριο;', 'Ερυσίχθονος 3-5, Θησείο, Αθήνα, πέντε λεπτά με τα πόδια από τον σταθμό του μετρό Θησείο.']
+    ],
     name: 'Όνομα',
     email: 'Email',
     instagram: 'Instagram (προαιρετικά)',
@@ -64,8 +72,8 @@ const text = {
     eyebrow: 'Hair models wanted · Thiseio',
     title: 'We are looking for models',
     titleEm: 'for cuts and colour.',
-    lead: 'Mostly women, of any age, no modelling experience needed. We work on new cutting and colour techniques and photograph the result for our training and to show our work.',
-    facts: ['Free or at a lower price', 'Nothing extreme', 'One-minute form'],
+    lead: 'A haircut, colour, balayage or highlights for free or at a very low price, in Thiseio, Athens. Mostly women, of any age, no modelling experience needed. We work on new techniques and photograph the result for our training and to show our work.',
+    facts: ['Free or at a very low price', 'Nothing extreme', 'One-minute form', '5′ from Thiseio metro'],
     cta: 'Sign up',
     barTop: 'Hair model',
     barBottom: 'one-minute form',
@@ -84,6 +92,14 @@ const text = {
     ],
     formTitle: 'Sign up',
     formLead: 'When we schedule a technique that suits your hair, we will message you.',
+    faqTitle: 'Questions',
+    faq: [
+      ['Is it really free?', 'Haircuts and styling for a photo shoot are usually free. For colour, highlights and balayage you usually pay only a small part of the normal price, to cover materials. You always know the amount before we start.'],
+      ['Who does the work?', 'The salon’s experienced stylists, working since 1992, with L’Oréal Professionnel and Redken products.'],
+      ['Does my face have to be in the photos?', 'No. You choose whether your face is shown or just your hair, and you sign the consent at the salon before any photos.'],
+      ['How long does it take?', 'A haircut with styling takes about an hour. Colour or balayage takes two to three hours, photos included.'],
+      ['Where is the salon?', 'Erisichthonos 3-5, Thiseio, Athens, a five-minute walk from Thiseio metro station.']
+    ],
     name: 'Name',
     email: 'Email',
     instagram: 'Instagram (optional)',
@@ -110,6 +126,13 @@ const text = {
     sentTitle: 'Thank you!',
     sentText: 'We received your details. We will write to you when we have an appointment that suits your hair.'
   }
+};
+
+// Ερωτήσεις & απαντήσεις και ως δομημένα δεδομένα (FAQPage) για το Google και τους βοηθούς AI.
+export const MODELS_FAQ_LD = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: text.el.faq.map(([q, a]) => ({ '@type': 'Question', name: q, acceptedAnswer: { '@type': 'Answer', text: a } }))
 };
 
 const Models = ({ language, setLanguage }) => {
@@ -227,6 +250,18 @@ const Models = ({ language, setLanguage }) => {
               </form>
             </>
           )}
+        </section>
+
+        <section className="nh-menu-section" aria-labelledby="model-faq-title">
+          <h2 id="model-faq-title" className="nh-h2 nh-menu-title">{t.faqTitle}</h2>
+          <div className="nh-faq">
+            {t.faq.map(([q, a]) => (
+              <details key={q} className="nh-more">
+                <summary>{q}</summary>
+                <p className="nh-faq-a">{a}</p>
+              </details>
+            ))}
+          </div>
         </section>
       </main>
     </NhLayout>

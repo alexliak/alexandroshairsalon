@@ -6,7 +6,7 @@ export const SITE = 'https://alexandroshairsalon.gr';
 const DEFAULT_IMAGE = { url: `${SITE}/logo512.png`, width: 512, height: 512, type: 'image/png' };
 
 // Title, description, canonical, Open Graph and Twitter tags, already in the HTML of every page.
-const Seo = ({ title, description, path, image, noindex, jsonld }) => {
+const Seo = ({ title, description, path, image, ogType, noindex, jsonld }) => {
   const url = `${SITE}${path === '/' ? '/' : path}`;
   const img = image || DEFAULT_IMAGE;
   const ld = jsonld ? (Array.isArray(jsonld) ? jsonld : [jsonld]) : [];
@@ -16,7 +16,7 @@ const Seo = ({ title, description, path, image, noindex, jsonld }) => {
       <meta key="description" name="description" content={description} />
       <link key="canonical" rel="canonical" href={url} />
       {noindex && <meta key="robots" name="robots" content="noindex" />}
-      <meta key="og:type" property="og:type" content={image ? 'product' : 'website'} />
+      <meta key="og:type" property="og:type" content={ogType || (image ? 'product' : 'website')} />
       <meta key="og:locale" property="og:locale" content="el_GR" />
       <meta key="og:url" property="og:url" content={url} />
       <meta key="og:title" property="og:title" content={title} />
@@ -46,6 +46,6 @@ const Seo = ({ title, description, path, image, noindex, jsonld }) => {
 // Τίτλος και περιγραφή κάθε σελίδας: μία πηγή, το src/data/seo.json
 export const PAGES = SEO_PAGES;
 
-export const PageSeo = ({ path, jsonld }) => <Seo path={path} {...PAGES[path]} jsonld={jsonld} />;
+export const PageSeo = ({ path, jsonld }) => <Seo path={path} ogType="website" {...PAGES[path]} jsonld={jsonld} />;
 
 export default Seo;
