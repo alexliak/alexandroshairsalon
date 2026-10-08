@@ -16,7 +16,17 @@ TW_JS = "https://widget.treatwell.gr/common/venue-menu/javascript/widget-button.
 TW_CSS = "https://widget.treatwell.gr/common/venue-menu/css/widget-button.css"
 PHONE = "+302103465554"
 PHONE_TXT = "210 346 5554"
-GOOGLE = "https://maps.google.com/?cid=216820567926321844"
+# Google Maps «Maps URLs» (api=1): στο κινητό ανοίγει κατευθείαν η εφαρμογή. Ίδια με src/components/NhLayout.js
+PLACE_ID = "ChIJjfF5DyC9oRQRtDI_YyhNAgM"
+_PLACE_Q = "Alexandros%20Hair%20Salon%2C%20%CE%95%CF%81%CF%85%CF%83%CE%AF%CF%87%CE%B8%CE%BF%CE%BD%CE%BF%CF%82%203-5%2C%20%CE%91%CE%B8%CE%AE%CE%BD%CE%B1%20118%2051"
+GOOGLE = f"https://www.google.com/maps/search/?api=1&query={_PLACE_Q}&query_place_id={PLACE_ID}"
+DIRECTIONS = f"https://www.google.com/maps/dir/?api=1&destination={_PLACE_Q}&destination_place_id={PLACE_ID}"
+
+# Λευκό θέμα την ημέρα, σκούρο τη νύχτα: το ίδιο script με το υπόλοιπο site (src/lib/themeBoot.js)
+import re as _re
+THEME_BOOT = _re.search(r"THEME_BOOT = `(.*?)`;", (pathlib.Path(__file__).parent.parent / "src/lib/themeBoot.js").read_text(encoding="utf-8"), _re.S).group(1).replace("\\\\", "\\")  # \\b στο JS template -> \b
+# Στο κινητό οι σύνδεσμοι χάρτη ανοίγουν στην ίδια καρτέλα, ώστε να πάνε κατευθείαν στην εφαρμογή Google Maps
+MAPS_JS = """<script>document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[data-maps]');if(!a||!window.matchMedia||!matchMedia('(hover: none) and (pointer: coarse)').matches)return;e.preventDefault();location.href=a.href;});</script>"""
 ADDRESS = "Ερυσίχθονος 3-5, Θησείο, Αθήνα 118 51"
 
 # (option, duration, price)
@@ -122,6 +132,18 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
 .lang{flex:none;min-width:40px;height:40px;border-radius:999px;border:1px solid #5a5247;background:transparent;color:var(--text);font:700 13px var(--sans);cursor:pointer}.lang:hover{border-color:var(--gold);color:var(--gold)}
 @media (max-width:760px){.lang{min-width:34px;height:34px}}
 .mbar{gap:10px}.mbar span{white-space:nowrap;font-size:12.5px}.mbar .btn{white-space:nowrap;padding:0 16px}
+
+/* Λευκό θέμα ημέρας (data-theme="light" από το THEME_BOOT) */
+html[data-theme=light]{color-scheme:light;--bg:#f8f5ef;--panel:#fffefb;--line:#e9e2d6;--text:#1c1915;--muted:#6b6253;--soft:#4a4339;--gold:#8a6a2e;--ink:#17140f;--fill:#c9a96e}
+html[data-theme=light] body{background:radial-gradient(110% 55% at 80% -8%,rgba(201,169,110,.16),transparent 62%) var(--bg)}
+html[data-theme=light] header.top{background:rgba(248,245,239,.9)}
+html[data-theme=light] .btn.gold{background:var(--fill);border-color:var(--fill);color:var(--ink);box-shadow:0 6px 18px rgba(138,106,46,.22)}
+html[data-theme=light] .btn.ghost,html[data-theme=light] .icons a,html[data-theme=light] .lang{border-color:#cdbfaa}
+html[data-theme=light] .svc{box-shadow:0 1px 2px rgba(70,52,20,.05),0 10px 30px rgba(70,52,20,.06)}
+html[data-theme=light] .mbar{background:rgba(255,254,251,.96);border-color:var(--line);box-shadow:0 10px 30px rgba(70,52,20,.16)}
+html[data-theme=light] .totop{background:rgba(255,254,251,.94)}
+html[data-theme=light] a#wahanda-online-booking-widget.btn{background:var(--fill)!important;border-color:var(--fill)!important;color:var(--ink)!important}
+html[data-theme=light] .skip,html[data-theme=light] .totop:hover,html[data-theme=light] .icons a.ph:hover,html[data-theme=light] .icons a.ft:hover{color:#fff}
 """
 
 
@@ -157,6 +179,8 @@ def page(path, title, desc, body, ld, extra_head="", mbar=True, bilingual=False)
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#12100e">
+<script>{THEME_BOOT}</script>
 {GA}
 <title>{esc(title)}</title>
 <meta name="description" content="{esc(desc)}">
@@ -181,7 +205,7 @@ def page(path, title, desc, body, ld, extra_head="", mbar=True, bilingual=False)
     <a class="hide-m" href="/montela" style="color:var(--gold)" data-en="Be our model">Γίνε μοντέλο</a>
     <a class="hide-m" href="/douleia" style="color:var(--gold)">We are hiring</a>
     <span class="icons" role="group" aria-label="Επικοινωνία στο κινητό">
-      <a class="mp" href="https://www.google.com/maps/place/alexandroshairsalon/@37.976933,23.7162736,17z/data=!3m1!4b1!4m6!3m5!1s0x14a1bd200f79f18d:0x3024d28633f32b4!8m2!3d37.976933!4d23.7162736!16s%2Fg%2F11cm0h21cx" target="_blank" rel="noopener" aria-label="Πού θα μας βρεις: άνοιγμα στο Google Maps" title="Google Maps">{ICONS['FaMapMarkerAlt']}</a>
+      <a class="mp" href="{DIRECTIONS}" data-maps target="_blank" rel="noopener" aria-label="Πού θα μας βρεις: άνοιγμα στο Google Maps" title="Google Maps">{ICONS['FaMapMarkerAlt']}</a>
       <a class="ph" href="tel:{PHONE}" aria-label="Κλήση στο κομμωτήριο {PHONE_TXT}" title="Κλήση στο κομμωτήριο {PHONE_TXT}">{ICONS['FaPhoneAlt']}</a>
       <a class="wa" href="https://wa.me/306981319000" target="_blank" rel="noopener" aria-label="Μήνυμα στο WhatsApp" title="WhatsApp">{ICONS['FaWhatsapp']}</a>
       <a class="vb" href="viber://chat?number=%2B306981319000" aria-label="Μήνυμα στο Viber" title="Viber">{ICONS['FaViber']}</a>
@@ -194,7 +218,7 @@ def page(path, title, desc, body, ld, extra_head="", mbar=True, bilingual=False)
 {body}
 </main>
 <footer class="bottom"><div class="wrap">
-  <p><strong>Alexandros Hair Salon</strong> · {ADDRESS} · <a href="tel:{PHONE}">{PHONE_TXT}</a> · <a href="tel:+306981319000">Κλήση κινητού</a> · <a href="https://wa.me/306981319000" target="_blank" rel="noopener">WhatsApp</a> · <a href="viber://chat?number=%2B306981319000">Viber</a> · <a href="{GOOGLE}" target="_blank" rel="noopener">Ωράριο &amp; οδηγίες στο Google</a></p>
+  <p><strong>Alexandros Hair Salon</strong> · {ADDRESS} · <a href="tel:{PHONE}">{PHONE_TXT}</a> · <a href="tel:+306981319000">Κλήση κινητού</a> · <a href="https://wa.me/306981319000" target="_blank" rel="noopener">WhatsApp</a> · <a href="viber://chat?number=%2B306981319000">Viber</a> · <a href="{GOOGLE}" data-maps target="_blank" rel="noopener">Ωράριο στο Google</a> · <a href="{DIRECTIONS}" data-maps target="_blank" rel="noopener">Οδηγίες</a></p>
   <p class="links"><a href="/">Αρχική</a><a href="/services">Όλες οι τιμές</a><a href="/kourema-athina/">Κούρεμα στην Αθήνα</a><a href="/vafi-mallion-athina/">Βαφή μαλλιών στην Αθήνα</a><a href="/balayage-athina/">Balayage στην Αθήνα</a><a href="/kratisi/">Κράτηση online</a><a href="/shop">Shop</a></p>
 </div></footer>
 {'<div class="mbar"><span>Θησείο · από το 1992</span><a class="btn gold" href="/kratisi/">Κλείσε ραντεβού</a></div>' if mbar else ''}
@@ -205,6 +229,7 @@ window.addEventListener('scroll',f,{{passive:true}});f();
 b.addEventListener('click',function(){{var r=window.matchMedia('(prefers-reduced-motion: reduce)').matches;window.scrollTo({{top:0,behavior:r?'auto':'smooth'}});document.getElementById('main').focus({{preventScroll:true}});}});}})();
 </script>
 {LANG_JS if bilingual else ''}
+{MAPS_JS}
 </body>
 </html>
 """
