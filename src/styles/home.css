@@ -682,3 +682,15 @@
   .nh-mapsketch-actions { flex: 1 1 100%; }
   .nh .nh-mapsketch-actions .nh-btn { flex: 1 1 0; }
 }
+
+/* Διακόπτης εμφάνισης (υποσέλιδο): Αυτόματο / Ανοιχτό / Σκούρο */
+.nh-theme-switch { flex-basis: 100%; display: flex; flex-wrap: wrap; align-items: center; gap: 6px; }
+.nh-theme-label { margin-right: 6px; font-size: 13px; color: var(--nh-muted); }
+.nh .nh-theme-opt {
+  min-height: 36px; padding: 0 14px; border-radius: 999px; cursor: pointer;
+  border: 1px solid var(--nh-line-strong); background: transparent; color: var(--nh-soft);
+  font: 500 13px var(--nh-sans);
+}
+.nh .nh-theme-opt:hover { border-color: var(--nh-gold); color: var(--nh-gold); }
+.nh .nh-theme-opt.is-on { border-color: var(--nh-gold); color: var(--nh-text); background: color-mix(in srgb, var(--nh-gold) 14%, transparent); font-weight: 700; }
+@media (hover: none) and (pointer: coarse) { .nh .nh-theme-opt { min-height: 44px; } }
