@@ -13,11 +13,35 @@ export const MOBILE_DISPLAY = '698 131 9000';
 export const WHATSAPP_URL = 'https://wa.me/306981319000';
 export const VIBER_URL = 'viber://chat?number=%2B306981319000';
 export const FACETIME_URL = 'facetime:+306981319000';
-// Google Business Profile: the owner keeps the real opening hours here.
-export const GOOGLE_PROFILE_URL =
-  'https://www.google.com/maps/place/alexandroshairsalon/@37.976933,23.7162736,17z/data=!3m1!4b1!4m6!3m5!1s0x14a1bd200f79f18d:0x3024d28633f32b4!8m2!3d37.976933!4d23.7162736!16s%2Fg%2F11cm0h21cx';
-export const MAP_EMBED_URL =
-  'https://www.google.com/maps?q=Alexandros%20Hair%20Salon%20%CE%95%CF%81%CF%85%CF%83%CE%AF%CF%87%CE%B8%CE%BF%CE%BD%CE%BF%CF%82%203%20%CE%91%CE%B8%CE%AE%CE%BD%CE%B1&output=embed';
+// Google: Place ID του κομμωτηρίου στο Google Maps (Business Profile).
+export const PLACE_ID = 'ChIJjfF5DyC9oRQRtDI_YyhNAgM';
+const PLACE_QUERY = encodeURIComponent('Alexandros Hair Salon, Ερυσίχθονος 3-5, Αθήνα 118 51');
+// Google Business Profile: ο ιδιοκτήτης κρατά εκεί το πραγματικό ωράριο.
+// Μορφή «Maps URLs» (api=1): στο κινητό ανοίγει κατευθείαν η εφαρμογή Google Maps, αλλιώς το Maps στον browser.
+export const GOOGLE_PROFILE_URL = `https://www.google.com/maps/search/?api=1&query=${PLACE_QUERY}&query_place_id=${PLACE_ID}`;
+// Οδηγίες μέχρι το κομμωτήριο από εκεί που βρίσκεται ο επισκέπτης (η εφαρμογή διαλέγει πόδια/μετρό/αυτοκίνητο).
+export const DIRECTIONS_URL = `https://www.google.com/maps/dir/?api=1&destination=${PLACE_QUERY}&destination_place_id=${PLACE_ID}`;
+export const MAP_EMBED_URL = `https://www.google.com/maps?q=${PLACE_QUERY}&z=16&output=embed`;
+
+/**
+ * Props για σύνδεσμο προς Google Maps.
+ * Υπολογιστής: νέα καρτέλα. Κινητό/tablet: ίδια καρτέλα, ώστε το σύστημα να δώσει τον σύνδεσμο
+ * κατευθείαν στην εφαρμογή Google Maps (με νέα καρτέλα άνοιγε πρώτα ο browser και μετά ρωτούσε για την εφαρμογή).
+ */
+export function mapLinkProps(href) {
+  return {
+    href,
+    target: '_blank',
+    rel: 'noopener noreferrer',
+    onClick: (e) => {
+      if (typeof window === 'undefined' || !window.matchMedia) return;
+      if (window.matchMedia('(hover: none) and (pointer: coarse)').matches) {
+        e.preventDefault();
+        window.location.href = href;
+      }
+    }
+  };
+}
 
 const layoutText = {
   el: {
@@ -183,7 +207,7 @@ const NhLayout = ({ language, setLanguage, children, headerExtra, mobileBar }) =
   };
 
   const icons = [
-    { href: GOOGLE_PROFILE_URL, label: t.findUs, Icon: FaMapMarkerAlt, cls: 'is-map', external: true },
+    { href: DIRECTIONS_URL, label: t.findUs, Icon: FaMapMarkerAlt, cls: 'is-map', map: true },
     { href: `tel:${PHONE}`, label: t.callSalon, Icon: FaPhoneAlt, cls: 'is-call' },
     { href: WHATSAPP_URL, label: t.whatsapp, Icon: FaWhatsapp, cls: 'is-wa', external: true },
     { href: VIBER_URL, label: t.viber, Icon: FaViber, cls: 'is-viber' }
@@ -216,7 +240,7 @@ const NhLayout = ({ language, setLanguage, children, headerExtra, mobileBar }) =
         </nav>
         <div className="nh-header-actions">
           <nav className="nh-icons" aria-label={t.contactNav}>
-            {icons.map(({ href, label, Icon, cls, external }) => (
+            {icons.map(({ href, label, Icon, cls, external, map }) => (
               <a
                 key={cls}
                 href={href}
@@ -224,6 +248,7 @@ const NhLayout = ({ language, setLanguage, children, headerExtra, mobileBar }) =
                 aria-label={label}
                 title={label}
                 {...(external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+                {...(map ? mapLinkProps(href) : {})}
               >
                 <Icon aria-hidden="true" focusable="false" />
               </a>
@@ -263,7 +288,7 @@ const NhLayout = ({ language, setLanguage, children, headerExtra, mobileBar }) =
           <Link to="/shop">{t.footerShop}</Link>
           <Link to="/douleia">{t.footerJobs}</Link>
           <Link to="/montela">{t.footerModels}</Link>
-          <a href={GOOGLE_PROFILE_URL} target="_blank" rel="noopener noreferrer">{t.footerHours}</a>
+          <a {...mapLinkProps(GOOGLE_PROFILE_URL)}>{t.footerHours}</a>
           <a href="https://www.facebook.com/alexandros.hairsalon" target="_blank" rel="noopener noreferrer">Facebook</a>
           <a href={`tel:${PHONE}`}>{PHONE_DISPLAY}</a>
           <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">WhatsApp</a>

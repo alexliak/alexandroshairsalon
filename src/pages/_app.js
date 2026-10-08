@@ -7,6 +7,7 @@ import '../styles/home.css';
 import '../styles/shop.css';
 import '../styles/diagnosis.css';
 import '../styles/mathart.css';
+import '../styles/theme-light.css';
 
 export default function App({ Component, pageProps }) {
   // One language for the whole visit (Greek by default, like before)
