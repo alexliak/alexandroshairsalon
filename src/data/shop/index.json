@@ -355,6 +355,271 @@
  },
  "products": [
   {
+   "id": "loreal-keratin-alpha-sleek-smooth-transformer-progressive-smoothing",
+   "brand": "L'Oréal Professionnel",
+   "brandKey": "loreal",
+   "line": "Keratin Alpha Sleek",
+   "category": "care",
+   "type": "treatment",
+   "name": {
+    "el": "Keratin Alpha Sleek Smooth Transformer για Λείανση",
+    "en": "Keratin Alpha Sleek Smooth Transformer Progressive Smoothing Treatment for all hair types. 2 weeks of smoothness"
+   },
+   "hairTypes": [
+    "frizzy",
+    "curly"
+   ],
+   "needs": [
+    "smooth",
+    "shine",
+    "curls"
+   ],
+   "variants": [
+    {
+     "sku": "3474637335533",
+     "ean": "3474637335533",
+     "label": "200ml",
+     "size": "200ml",
+     "active": true,
+     "image": "p/3474637335533"
+    }
+   ],
+   "image": "p/3474637335533",
+   "related": [
+    "loreal-keratin-alpha-sleek-professional-sulfate-free-shampoo",
+    "loreal-keratin-alpha-sleek-professional-hair-mask",
+    "loreal-keratin-alpha-sleek-professional-mirror-sleek-serum",
+    "loreal-metal-detox-maska-gia-apolyti-epanortosi-mallion",
+    "loreal-absolut-repair-molecular-bi-phase-oil-gia"
+   ],
+   "kw": "Keratin Alpha Sleek Smooth Transformer Επαγγελματική Περιποίηση Λείανσης από τη L'Oréal Professionnel, εμπλουτισμένη με Keratin-Alpha shaper και αλυσίδες"
+  },
+  {
+   "id": "loreal-metal-detox-maska-gia-apolyti-epanortosi-mallion",
+   "brand": "L'Oréal Professionnel",
+   "brandKey": "loreal",
+   "line": "Metal Detox",
+   "category": "care",
+   "type": "mask",
+   "name": {
+    "el": "Metal Detox Μάσκα για Απόλυτη Επανόρθωση Μαλλιών",
+    "en": "Metal Detox Μάσκα για Απόλυτη Επανόρθωση Μαλλιών"
+   },
+   "hairTypes": [
+    "colored",
+    "damaged"
+   ],
+   "needs": [
+    "metals",
+    "repair",
+    "color"
+   ],
+   "variants": [
+    {
+     "sku": "3474637257651",
+     "ean": "3474637257651",
+     "label": "150ml",
+     "size": "150ml",
+     "active": true,
+     "image": "p/3474637257651"
+    },
+    {
+     "sku": "0000030160606",
+     "ean": "0000030160606",
+     "label": "250ml",
+     "size": "250ml",
+     "active": true,
+     "image": "p/0000030160606"
+    }
+   ],
+   "image": "p/3474637257651",
+   "related": [
+    "loreal-metal-detox-pre-shampoo-peripoiisi-apomakrynsis-kai",
+    "loreal-metal-detox-sampoyan",
+    "loreal-metal-detox-leave-in-krema-apomakrynsis-kai",
+    "loreal-metal-detox-elaio-apomakrynsis-kai-prostasias-apo",
+    "loreal-absolut-repair-molecular-bi-phase-oil-gia"
+   ],
+   "kw": "Η συγκέντρωση των μεταλλικών στοιχείων στο εσωτερικό της τρίχας μπορεί να προκαλέσει σπάσιμο της τρίχας και να επηρεάσει αρνητικά το χρωματικό αποτέλεσμα."
+  },
+  {
+   "id": "loreal-vitamino-color-sampoyan",
+   "brand": "L'Oréal Professionnel",
+   "brandKey": "loreal",
+   "line": "Vitamino Color",
+   "category": "care",
+   "type": "shampoo",
+   "name": {
+    "el": "Vitamino Color Σαμπουάν",
+    "en": "Vitamino Color Σαμπουάν"
+   },
+   "hairTypes": [
+    "colored"
+   ],
+   "needs": [
+    "shine",
+    "color"
+   ],
+   "variants": [
+    {
+     "sku": "3474636975501",
+     "ean": "3474636975501",
+     "label": "300ml",
+     "size": "300ml",
+     "active": true,
+     "image": "p/3474636975501"
+    },
+    {
+     "sku": "3474636975945",
+     "ean": "3474636975945",
+     "label": "500ml",
+     "size": "500ml",
+     "active": true,
+     "image": "p/3474636975945"
+    },
+    {
+     "sku": "3474637242190",
+     "ean": "3474637242190",
+     "label": "500ml Refill",
+     "size": "500ml",
+     "active": true,
+     "image": "p/3474637242190"
+    }
+   ],
+   "image": "p/3474636975501",
+   "related": [
+    "loreal-vitamino-color-maska-gia-bammena-mallia",
+    "loreal-vitamino-color-conditioner-gia-bammena-mallia",
+    "loreal-vitamino-color-sprei-pollaplon-xriseon-gia-bammena",
+    "loreal-metal-detox-maska-gia-apolyti-epanortosi-mallion",
+    "loreal-absolut-repair-molecular-bi-phase-oil-gia"
+   ],
+   "kw": "Επαγγελματική σύνθεση για την περιποίηση των βαμμένων μαλλιών. Εμπλουτισμένη με ρεσβερατρόλη, το Serie Expert Vitamino Color Σαμπουάν προστατεύει τόσο το χρώμα"
+  },
+  {
+   "id": "loreal-scalp-advanced-anti-discomfort-sampoyan-gia-to",
+   "brand": "L'Oréal Professionnel",
+   "brandKey": "loreal",
+   "line": "Scalp Advanced",
+   "category": "care",
+   "type": "shampoo",
+   "name": {
+    "el": "Scalp Advanced Anti-Discomfort Σαμπουάν Για Το Ευαίσθητο Τριχωτό",
+    "en": "Scalp Advanced Anti-Discomfort Σαμπουάν Για Το Ευαίσθητο Τριχωτό"
+   },
+   "hairTypes": [
+    "sensitive"
+   ],
+   "needs": [
+    "hydration",
+    "scalp",
+    "shine"
+   ],
+   "variants": [
+    {
+     "sku": "3474637090487",
+     "ean": "3474637090487",
+     "label": "300ml",
+     "size": "300ml",
+     "active": true,
+     "image": "p/3474637090487"
+    },
+    {
+     "sku": "3474637090500",
+     "ean": "3474637090500",
+     "label": "500ml",
+     "size": "500ml",
+     "active": true,
+     "image": "p/3474637090500"
+    }
+   ],
+   "image": "p/3474637090487",
+   "related": [
+    "loreal-scalp-advanced-a-discomfort-peripoiisi-gia-to",
+    "loreal-metal-detox-maska-gia-apolyti-epanortosi-mallion",
+    "loreal-absolut-repair-molecular-bi-phase-oil-gia"
+   ],
+   "kw": "Το σαμπουάν Scalp Advanced Anti-discomfort είναι ιδανικό για το ευαίσθητο τριχωτό της κεφαλής."
+  },
+  {
+   "id": "loreal-scalp-advanced-anti-dandruff-sampoyan-kata-tis",
+   "brand": "L'Oréal Professionnel",
+   "brandKey": "loreal",
+   "line": "Scalp Advanced",
+   "category": "care",
+   "type": "shampoo",
+   "name": {
+    "el": "Scalp Advanced Anti-Dandruff Σαμπουάν Κατά της πιτυρίδας",
+    "en": "Scalp Advanced Anti-Dandruff Σαμπουάν Κατά της πιτυρίδας"
+   },
+   "hairTypes": [
+    "sensitive"
+   ],
+   "needs": [
+    "scalp"
+   ],
+   "variants": [
+    {
+     "sku": "3474637109370",
+     "ean": "3474637109370",
+     "label": "300ml",
+     "size": "300ml",
+     "active": true,
+     "image": "p/3474637109370"
+    }
+   ],
+   "image": "p/3474637109370",
+   "related": [
+    "loreal-aminexil-advanced-full-strong-oros-kata-tis",
+    "loreal-aminexil-advanced-anti-hairloss-programme-against-hair",
+    "loreal-absolut-repair-molecular-sampoyan-moriakis-epanortosis-gia",
+    "loreal-metal-detox-maska-gia-apolyti-epanortosi-mallion",
+    "loreal-absolut-repair-molecular-bi-phase-oil-gia"
+   ],
+   "kw": "Το σαμπουάν Scalp Advanced Anti-Dandruff Dermo-clarifier σχεδιάστηκε για την αντιμετώπιση της πιτυρίδας στο τριχωτό της κεφαλής."
+  },
+  {
+   "id": "loreal-metal-detox-mini-duo-kit-gia-prostasia",
+   "brand": "L'Oréal Professionnel",
+   "brandKey": "loreal",
+   "line": "Metal Detox",
+   "category": "sets",
+   "type": "set",
+   "name": {
+    "el": "Metal Detox Mini Duo Kit Για Προστασία Από Τα Μεταλλικά Στοιχεία",
+    "en": "Metal Detox Mini Duo Kit Για Προστασία Από Τα Μεταλλικά Στοιχεία"
+   },
+   "hairTypes": [
+    "colored",
+    "damaged"
+   ],
+   "needs": [
+    "hydration",
+    "metals",
+    "repair",
+    "color"
+   ],
+   "variants": [
+    {
+     "sku": "3474637374617",
+     "ean": "3474637374617",
+     "label": "Standard",
+     "size": "",
+     "active": true,
+     "image": "p/3474637374617"
+    }
+   ],
+   "image": "p/3474637374617",
+   "related": [
+    "loreal-metal-detox-pre-shampoo-peripoiisi-apomakrynsis-kai",
+    "loreal-metal-detox-sampoyan",
+    "loreal-metal-detox-maska-gia-apolyti-epanortosi-mallion",
+    "loreal-metal-detox-leave-in-krema-apomakrynsis-kai",
+    "loreal-absolut-repair-molecular-bi-phase-oil-gia"
+   ],
+   "kw": "Ανακαλύψτε το Metal Detox, το αποκλειστικό πρωτόκολλο περιποίησης μαλλιών εμπλουτισμένο με γλικοαμίνη, ένα μόριο αρκετά μικρό ώστε να εισχωρήσει στο εσωτερικό"
+  },
+  {
    "id": "loreal-pro-longer-leave-in-krema-kata-tis",
    "brand": "L'Oréal Professionnel",
    "brandKey": "loreal",
@@ -386,10 +651,557 @@
    ],
    "image": "pl-leave-in",
    "related": [
+    "loreal-pro-longer-sampoyan-kata-tis-palidas-gia",
     "loreal-pro-longer-conditioner-kata-tis-palidas-gia",
+    "loreal-pro-longer-maska-kata-tis-palidas-gia",
+    "loreal-metal-detox-maska-gia-apolyti-epanortosi-mallion",
     "loreal-absolut-repair-molecular-bi-phase-oil-gia"
    ],
    "kw": "Επαγγελματική σύνθεση για την περιποίηση των μαλλιών 150ml με λεπτές άκρες που δεν μακραίνουν."
+  },
+  {
+   "id": "loreal-silver-conditioner-gia-leyka-i-asimi-mallia",
+   "brand": "L'Oréal Professionnel",
+   "brandKey": "loreal",
+   "line": "Silver",
+   "category": "care",
+   "type": "conditioner",
+   "name": {
+    "el": "Silver Conditioner Για Λευκά ή Ασημί Μαλλιά",
+    "en": "Silver Conditioner Για Λευκά ή Ασημί Μαλλιά"
+   },
+   "hairTypes": [
+    "blonde"
+   ],
+   "needs": [
+    "color",
+    "smooth",
+    "shine",
+    "blonde"
+   ],
+   "variants": [
+    {
+     "sku": "3474636976133",
+     "ean": "3474636976133",
+     "label": "200ml",
+     "size": "200ml",
+     "active": true,
+     "image": "p/3474636976133"
+    }
+   ],
+   "image": "p/3474636976133",
+   "related": [
+    "loreal-silver-sampoyan-gia-leyka-i-asimi-mallia",
+    "loreal-absolut-repair-molecular-sampoyan-moriakis-epanortosis-gia",
+    "loreal-absolut-repair-molecular-serum-moriakis-epanortosis-poy",
+    "loreal-absolut-repair-molecular-leave-in-mask",
+    "loreal-metal-detox-maska-gia-apolyti-epanortosi-mallion",
+    "loreal-absolut-repair-molecular-bi-phase-oil-gia"
+   ],
+   "kw": "Επαγγελματική σύνθεση για την περιποίηση των γκρίζων μαλλιών. Εμπλουτισμένη με Ceramide, έλαιο Babassu και βιολέ μικρο- χρωστικές, το Serie Expert Silver"
+  },
+  {
+   "id": "loreal-curl-expression-caring-water-curls-reviver-for",
+   "brand": "L'Oréal Professionnel",
+   "brandKey": "loreal",
+   "line": "Curl Expression",
+   "category": "care",
+   "type": "leave-in",
+   "name": {
+    "el": "Curl Expression Σπρέι Αναζωογόνησης Για Σγουρά Μαλλιά",
+    "en": "Curl Expression Caring Water Curls reviver For each types of curls and coils SERIE EXPERT"
+   },
+   "hairTypes": [
+    "curly"
+   ],
+   "needs": [
+    "hydration",
+    "smooth",
+    "curls"
+   ],
+   "variants": [
+    {
+     "sku": "3474637076498",
+     "ean": "3474637076498",
+     "label": "190ml",
+     "size": "190ml",
+     "active": true,
+     "image": "p/3474637076498"
+    }
+   ],
+   "image": "p/3474637076498",
+   "related": [
+    "loreal-curl-expression-intense-moisturizing-cleansing-cream-for",
+    "loreal-curl-expression-intensive-moisturizer-mask-for-each",
+    "loreal-curl-expression-intensive-moisturizer-rich-mask-for",
+    "loreal-curl-expression-multi-benefits-10-in-1",
+    "loreal-metal-detox-maska-gia-apolyti-epanortosi-mallion",
+    "loreal-absolut-repair-molecular-bi-phase-oil-gia"
+   ],
+   "kw": "Επαγγελματική σύνθεση για την περιποίηση των σγουρών μαλλιών. Το Curl Expression Σπρέι για Αναζωογόνηση είναι σχεδιασμένο να προσφέρει επαγγελματική"
+  },
+  {
+   "id": "loreal-vitamino-color-spectrum-deep-conditioner-for-all",
+   "brand": "L'Oréal Professionnel",
+   "brandKey": "loreal",
+   "line": "Vitamino Color Spectrum",
+   "category": "care",
+   "type": "conditioner",
+   "name": {
+    "el": "Vitamino Color Spectrum Conditioner Για Όλους Τους Τύπους Βαμμένων Μαλλιών",
+    "en": "Vitamino Color Spectrum Deep Conditioner for all colored hair + vivid colors"
+   },
+   "hairTypes": [
+    "colored"
+   ],
+   "needs": [
+    "color",
+    "shine"
+   ],
+   "variants": [
+    {
+     "sku": "3474637269029",
+     "ean": "3474637269029",
+     "label": "200ml",
+     "size": "200ml",
+     "active": true,
+     "image": "p/3474637269029"
+    }
+   ],
+   "image": "p/3474637269029",
+   "related": [
+    "loreal-vitamino-color-spectrum-shampoo-refill-for-all",
+    "loreal-vitamino-color-spectrum-mask-for-all-colored",
+    "loreal-vitamino-color-spectrum-glass-shine-serum-for",
+    "loreal-metal-detox-maska-gia-apolyti-epanortosi-mallion",
+    "loreal-absolut-repair-molecular-bi-phase-oil-gia"
+   ],
+   "kw": "Vitamino Color Spectrum Επαγγελματικό Conditioner από τη L'Oréal Professionnel, εμπλουτισμένο με Φερουλικό Οξύ + Κιτρικό Οξύ 2.5%."
+  },
+  {
+   "id": "loreal-pro-longer-maska-kata-tis-palidas-gia",
+   "brand": "L'Oréal Professionnel",
+   "brandKey": "loreal",
+   "line": "Pro Longer",
+   "category": "care",
+   "type": "mask",
+   "name": {
+    "el": "Pro Longer Μάσκα Κατά Της Ψαλίδας Για Πιο Μακριά Μαλλιά",
+    "en": "Pro Longer Μάσκα Κατά Της Ψαλίδας Για Πιο Μακριά Μαλλιά"
+   },
+   "hairTypes": [
+    "long"
+   ],
+   "needs": [
+    "repair",
+    "shine",
+    "length"
+   ],
+   "variants": [
+    {
+     "sku": "3474636976065",
+     "ean": "3474636976065",
+     "label": "250ml",
+     "size": "250ml",
+     "active": true,
+     "image": "p/3474636976065"
+    }
+   ],
+   "image": "p/3474636976065",
+   "related": [
+    "loreal-pro-longer-sampoyan-kata-tis-palidas-gia",
+    "loreal-pro-longer-conditioner-kata-tis-palidas-gia",
+    "loreal-pro-longer-leave-in-krema-kata-tis",
+    "loreal-metal-detox-maska-gia-apolyti-epanortosi-mallion",
+    "loreal-absolut-repair-molecular-bi-phase-oil-gia"
+   ],
+   "kw": "Επαγγελματική σύνθεση για την περιποίηση των μαλλιών με λεπτές άκρες που δεν μακραίνουν."
+  },
+  {
+   "id": "loreal-infinium-pure-hairspray",
+   "brand": "L'Oréal Professionnel",
+   "brandKey": "loreal",
+   "line": "Infinium",
+   "category": "styling",
+   "type": "hairspray",
+   "name": {
+    "el": "Infinium Pure Λακ Μαλλιών",
+    "en": "Infinium Pure Hairspray"
+   },
+   "hairTypes": [
+    "all"
+   ],
+   "needs": [
+    "shine",
+    "hold"
+   ],
+   "variants": [
+    {
+     "sku": "3474636476602",
+     "ean": "3474636476602",
+     "label": "Δυνατό κράτημα · 300ml",
+     "size": "300ml",
+     "active": true,
+     "image": "p/3474636476602"
+    },
+    {
+     "sku": "3474636471706",
+     "ean": "3474636471706",
+     "label": "Απαλό κράτημα · 300ml",
+     "size": "300ml",
+     "active": true,
+     "image": "p/3474636471706"
+    },
+    {
+     "sku": "3474636476633",
+     "ean": "3474636476633",
+     "label": "Πολύ δυνατό κράτημα · 300ml",
+     "size": "300ml",
+     "active": true,
+     "image": "p/3474636476633"
+    }
+   ],
+   "image": "p/3474636476602",
+   "related": [
+    "loreal-absolut-repair-molecular-sampoyan-moriakis-epanortosis-gia",
+    "loreal-absolut-repair-molecular-serum-moriakis-epanortosis-poy",
+    "loreal-metal-detox-maska-gia-apolyti-epanortosi-mallion",
+    "loreal-absolut-repair-molecular-bi-phase-oil-gia"
+   ],
+   "kw": "Ανακαλύψτε την Infinium Pure Soft 300ml, την πρώτη επαγγελματική συμπυκνωμένη λακ χωρίς άρωμα."
+  },
+  {
+   "id": "loreal-vitamino-color-maska-gia-bammena-mallia",
+   "brand": "L'Oréal Professionnel",
+   "brandKey": "loreal",
+   "line": "Vitamino Color",
+   "category": "care",
+   "type": "mask",
+   "name": {
+    "el": "Vitamino Color Μάσκα Για Βαμμένα Μαλλιά",
+    "en": "Vitamino Color Μάσκα Για Βαμμένα Μαλλιά"
+   },
+   "hairTypes": [
+    "colored"
+   ],
+   "needs": [
+    "color",
+    "shine"
+   ],
+   "variants": [
+    {
+     "sku": "3474636976041",
+     "ean": "3474636976041",
+     "label": "250ml",
+     "size": "250ml",
+     "active": true,
+     "image": "p/3474636976041"
+    }
+   ],
+   "image": "p/3474636976041",
+   "related": [
+    "loreal-vitamino-color-sampoyan",
+    "loreal-vitamino-color-conditioner-gia-bammena-mallia",
+    "loreal-vitamino-color-sprei-pollaplon-xriseon-gia-bammena",
+    "loreal-metal-detox-maska-gia-apolyti-epanortosi-mallion",
+    "loreal-absolut-repair-molecular-bi-phase-oil-gia"
+   ],
+   "kw": "Επαγγελματική σύνθεση για την περιποίηση των βαμμένων μαλλιών. Εμπλουτισμένη με υψηλής περιεκτικότητας σε συστατικά περιποίησης, η Serie Expert Vitamino Color"
+  },
+  {
+   "id": "loreal-absolut-repair-molecular-maska-moriakis-epanortosis-gia",
+   "brand": "L'Oréal Professionnel",
+   "brandKey": "loreal",
+   "line": "Absolut Repair Molecular",
+   "category": "care",
+   "type": "mask",
+   "name": {
+    "el": "Absolut Repair Molecular Μάσκα Μοριακής Επανόρθωσης για Ταλαιπωρημένα Μαλλιά",
+    "en": "Absolut Repair Molecular Μάσκα Μοριακής Επανόρθωσης για Ταλαιπωρημένα Μαλλιά"
+   },
+   "hairTypes": [
+    "damaged"
+   ],
+   "needs": [
+    "repair"
+   ],
+   "variants": [
+    {
+     "sku": "3474637255657",
+     "ean": "3474637255657",
+     "label": "150ml",
+     "size": "150ml",
+     "active": true,
+     "image": "p/3474637255657"
+    },
+    {
+     "sku": "3474637217884",
+     "ean": "3474637217884",
+     "label": "250ml",
+     "size": "250ml",
+     "active": true,
+     "image": "p/3474637217884"
+    }
+   ],
+   "image": "p/3474637255657",
+   "related": [
+    "loreal-absolut-repair-molecular-sampoyan-moriakis-epanortosis-gia",
+    "loreal-absolut-repair-molecular-serum-moriakis-epanortosis-poy",
+    "loreal-absolut-repair-molecular-leave-in-mask",
+    "loreal-metal-detox-maska-gia-apolyti-epanortosi-mallion",
+    "loreal-absolut-repair-molecular-bi-phase-oil-gia"
+   ],
+   "kw": "Όταν τα μαλλιά έχουν υποστεί φθορά, η μοριακή δομή τους που αποτελείται από πεπτίδια διακυβεύεται. Τα μαλλιά γίνονται αδύναμα, με μεγάλη ελαστικότητα και με"
+  },
+  {
+   "id": "loreal-scalp-advanced-a-discomfort-peripoiisi-gia-to",
+   "brand": "L'Oréal Professionnel",
+   "brandKey": "loreal",
+   "line": "Scalp Advanced",
+   "category": "care",
+   "type": "treatment",
+   "name": {
+    "el": "Scalp Advanced A-Discomfort Περιποίηση Για Το Ευαίσθητο Τριχωτό",
+    "en": "Scalp Advanced A-Discomfort Περιποίηση Για Το Ευαίσθητο Τριχωτό"
+   },
+   "hairTypes": [
+    "sensitive"
+   ],
+   "needs": [
+    "hydration",
+    "scalp",
+    "smooth"
+   ],
+   "variants": [
+    {
+     "sku": "3474637090579",
+     "ean": "3474637090579",
+     "label": "200ml",
+     "size": "200ml",
+     "active": true,
+     "image": "p/3474637090579"
+    }
+   ],
+   "image": "p/3474637090579",
+   "related": [
+    "loreal-scalp-advanced-anti-discomfort-sampoyan-gia-to",
+    "loreal-metal-detox-maska-gia-apolyti-epanortosi-mallion",
+    "loreal-absolut-repair-molecular-bi-phase-oil-gia"
+   ],
+   "kw": "Η περιποίηση Scalp Advanced Anti-discomfort είναι ειδικά σχεδιασμένη για το ευαίσθητο τριχωτό της κεφαλής."
+  },
+  {
+   "id": "loreal-scalp-advanced-anti-oily-argilos-kata-tis",
+   "brand": "L'Oréal Professionnel",
+   "brandKey": "loreal",
+   "line": "Scalp Advanced",
+   "category": "care",
+   "type": "mask",
+   "name": {
+    "el": "Scalp Advanced Anti-Oily Άργιλος Κατά της λιπαρότητας",
+    "en": "Scalp Advanced Anti-Oily Άργιλος Κατά της λιπαρότητας"
+   },
+   "hairTypes": [
+    "oily"
+   ],
+   "needs": [
+    "scalp"
+   ],
+   "variants": [
+    {
+     "sku": "3474637090524",
+     "ean": "3474637090524",
+     "label": "250ml",
+     "size": "250ml",
+     "active": true,
+     "image": "p/3474637090524"
+    }
+   ],
+   "image": "p/3474637090524",
+   "related": [
+    "loreal-scalp-advanced-anti-oiliness-dermo-purifier-shampoo",
+    "loreal-absolut-repair-molecular-sampoyan-moriakis-epanortosis-gia",
+    "loreal-absolut-repair-molecular-serum-moriakis-epanortosis-poy",
+    "loreal-absolut-repair-molecular-leave-in-mask",
+    "loreal-metal-detox-maska-gia-apolyti-epanortosi-mallion",
+    "loreal-absolut-repair-molecular-bi-phase-oil-gia"
+   ],
+   "kw": "Ο άργιλος Scalp Advanced Anti-Liiness 2-σε-1 σχεδιάστηκε για το λιπαρό τριχωτό της κεφαλής."
+  },
+  {
+   "id": "loreal-silver-sampoyan-gia-leyka-i-asimi-mallia",
+   "brand": "L'Oréal Professionnel",
+   "brandKey": "loreal",
+   "line": "Silver",
+   "category": "care",
+   "type": "shampoo",
+   "name": {
+    "el": "Silver Σαμπουάν Για Λευκά ή Ασημί Μαλλιά",
+    "en": "Silver Σαμπουάν Για Λευκά ή Ασημί Μαλλιά"
+   },
+   "hairTypes": [
+    "blonde"
+   ],
+   "needs": [
+    "color",
+    "blonde",
+    "smooth",
+    "shine"
+   ],
+   "variants": [
+    {
+     "sku": "3474636974115",
+     "ean": "3474636974115",
+     "label": "300ml",
+     "size": "300ml",
+     "active": true,
+     "image": "p/3474636974115"
+    }
+   ],
+   "image": "p/3474636974115",
+   "related": [
+    "loreal-silver-conditioner-gia-leyka-i-asimi-mallia",
+    "loreal-absolut-repair-molecular-sampoyan-moriakis-epanortosis-gia",
+    "loreal-absolut-repair-molecular-serum-moriakis-epanortosis-poy",
+    "loreal-absolut-repair-molecular-leave-in-mask",
+    "loreal-metal-detox-maska-gia-apolyti-epanortosi-mallion",
+    "loreal-absolut-repair-molecular-bi-phase-oil-gia"
+   ],
+   "kw": "Επαγγελματική σύνθεση για την περιποίηση των γκρίζων μαλλιών. Εμπλουτισμένο με το σύστημα ‘Gloss Protect System’ που περιέχει αμινοξέα και αντιξανθιστικούς"
+  },
+  {
+   "id": "loreal-absolut-repair-oil-multi-benefit-leave-in",
+   "brand": "L'Oréal Professionnel",
+   "brandKey": "loreal",
+   "line": "Absolut Repair",
+   "category": "care",
+   "type": "oil",
+   "name": {
+    "el": "Absolut Repair Έλαιο Εντατικής Αναδόμησης Πολλαπλών Χρήσεων Για Ταλαιπωρημένα Μαλλιά",
+    "en": "Absolut Repair Oil multi-benefit leave in treatment With weat Germ Oil SERIE EXPERT"
+   },
+   "hairTypes": [
+    "damaged"
+   ],
+   "needs": [
+    "repair",
+    "hydration",
+    "shine",
+    "smooth",
+    "heat"
+   ],
+   "variants": [
+    {
+     "sku": "3474636977369",
+     "ean": "3474636977369",
+     "label": "90ml",
+     "size": "90ml",
+     "active": true,
+     "image": "p/3474636977369"
+    }
+   ],
+   "image": "p/3474636977369",
+   "related": [
+    "loreal-absolut-repair-sampoyan",
+    "loreal-absolut-repair-golden-mask-with-protein-and",
+    "loreal-absolut-repair-mask-with-protein-and-omega",
+    "loreal-absolut-repair-elaio-trepis-gia-oloys-toys",
+    "loreal-metal-detox-maska-gia-apolyti-epanortosi-mallion",
+    "loreal-absolut-repair-molecular-bi-phase-oil-gia"
+   ],
+   "kw": "Εμπλουτισμένη με GOLD QUInoA + ΠΡΩΤΕΪΝΗ, η επαγγελματική σύνθεση του Serie Expert Absolut Repair Oil προσφέρει εντατική περιποίηση, άμεση αναδόμηση, λάμψη και"
+  },
+  {
+   "id": "loreal-vitamino-color-conditioner-gia-bammena-mallia",
+   "brand": "L'Oréal Professionnel",
+   "brandKey": "loreal",
+   "line": "Vitamino Color",
+   "category": "care",
+   "type": "conditioner",
+   "name": {
+    "el": "Vitamino Color Conditioner Για Βαμμένα Μαλλιά",
+    "en": "Vitamino Color Conditioner Για Βαμμένα Μαλλιά"
+   },
+   "hairTypes": [
+    "colored"
+   ],
+   "needs": [
+    "color",
+    "shine"
+   ],
+   "variants": [
+    {
+     "sku": "3474636975693",
+     "ean": "3474636975693",
+     "label": "200ml",
+     "size": "200ml",
+     "active": true,
+     "image": "p/3474636975693"
+    }
+   ],
+   "image": "p/3474636975693",
+   "related": [
+    "loreal-vitamino-color-sampoyan",
+    "loreal-vitamino-color-maska-gia-bammena-mallia",
+    "loreal-vitamino-color-sprei-pollaplon-xriseon-gia-bammena",
+    "loreal-metal-detox-maska-gia-apolyti-epanortosi-mallion",
+    "loreal-absolut-repair-molecular-bi-phase-oil-gia"
+   ],
+   "kw": "Conditioner για βαμμένα μαλλιά. : Το επαγγελματικό conditioner διατηρηθεί το χρώμα περισσότερο, για έως και 8 εβδομάδες.* Το χρώμα των μαλλιών εμφανίζεται πιο"
+  },
+  {
+   "id": "loreal-vitamino-color-spectrum-shampoo-refill-for-all",
+   "brand": "L'Oréal Professionnel",
+   "brandKey": "loreal",
+   "line": "Vitamino Color Spectrum",
+   "category": "care",
+   "type": "shampoo",
+   "name": {
+    "el": "Vitamino Color Spectrum Σαμπουάν",
+    "en": "Vitamino Color Spectrum Shampoo refill for all colored hair & vivid colors"
+   },
+   "hairTypes": [
+    "colored"
+   ],
+   "needs": [
+    "color",
+    "hydration",
+    "shine"
+   ],
+   "variants": [
+    {
+     "sku": "3474637268527",
+     "ean": "3474637268527",
+     "label": "300ml",
+     "size": "300ml",
+     "active": true,
+     "image": "p/3474637268527"
+    },
+    {
+     "sku": "3474637268763",
+     "ean": "3474637268763",
+     "label": "500ml",
+     "size": "500ml",
+     "active": true,
+     "image": "p/3474637268763"
+    },
+    {
+     "sku": "3474637270018",
+     "ean": "3474637270018",
+     "label": "500ml Refill",
+     "size": "500ml",
+     "active": true,
+     "image": "p/3474637270018"
+    }
+   ],
+   "image": "p/3474637268527",
+   "related": [
+    "loreal-vitamino-color-spectrum-mask-for-all-colored",
+    "loreal-vitamino-color-spectrum-glass-shine-serum-for",
+    "loreal-metal-detox-maska-gia-apolyti-epanortosi-mallion",
+    "loreal-absolut-repair-molecular-bi-phase-oil-gia"
+   ],
+   "kw": "Vitamino Color Spectrum Επαγγελματικό Σαμπουάν από την L'Oréal Professionnel, εμπλουτισμένο με Φερουλικό Οξύ + Κιτρικό Οξύ. 100 ημέρες χρώμα τόσο λαμπερό, όσο"
   },
   {
    "id": "loreal-absolut-repair-molecular-bi-phase-oil-gia",
@@ -411,6 +1223,14 @@
    ],
    "variants": [
     {
+     "sku": "3474637292423",
+     "ean": "3474637292423",
+     "label": "30ml",
+     "size": "30ml",
+     "active": true,
+     "image": "p/3474637292423"
+    },
+    {
      "sku": "3474637292447",
      "ean": "3474637292447",
      "label": "90ml",
@@ -419,9 +1239,53 @@
      "image": "arm-bi-phase-oil"
     }
    ],
-   "image": "arm-bi-phase-oil",
-   "related": [],
+   "image": "p/3474637292423",
+   "related": [
+    "loreal-absolut-repair-molecular-sampoyan-moriakis-epanortosis-gia",
+    "loreal-absolut-repair-molecular-serum-moriakis-epanortosis-poy",
+    "loreal-absolut-repair-molecular-maska-moriakis-epanortosis-gia",
+    "loreal-absolut-repair-molecular-leave-in-mask",
+    "loreal-metal-detox-maska-gia-apolyti-epanortosi-mallion"
+   ],
    "kw": "Όταν τα μαλλιά υποστούν φθορά, η μοριακή τους δομή, που αποτελείται από πεπτίδια, διαταράσσεται."
+  },
+  {
+   "id": "loreal-aminexil-advanced-full-strong-oros-kata-tis",
+   "brand": "L'Oréal Professionnel",
+   "brandKey": "loreal",
+   "line": "Scalp Advanced",
+   "category": "care",
+   "type": "serum",
+   "name": {
+    "el": "Aminexil Advanced Full, Strong Ορός Κατά της τριχόπτωσης",
+    "en": "Aminexil Advanced Full, Strong Ορός Κατά της τριχόπτωσης"
+   },
+   "hairTypes": [
+    "fine"
+   ],
+   "needs": [
+    "volume",
+    "hairloss"
+   ],
+   "variants": [
+    {
+     "sku": "3474637106331",
+     "ean": "3474637106331",
+     "label": "90ml",
+     "size": "90ml",
+     "active": true,
+     "image": "p/3474637106331"
+    }
+   ],
+   "image": "p/3474637106331",
+   "related": [
+    "loreal-scalp-advanced-anti-dandruff-sampoyan-kata-tis",
+    "loreal-aminexil-advanced-anti-hairloss-programme-against-hair",
+    "loreal-absolut-repair-molecular-sampoyan-moriakis-epanortosis-gia",
+    "loreal-metal-detox-maska-gia-apolyti-epanortosi-mallion",
+    "loreal-absolut-repair-molecular-bi-phase-oil-gia"
+   ],
+   "kw": "Ο ενδυναμωτικός ορός Aminexil Advanced Fuller, Stronger έχει σχεδιαστεί για την αντιματώπιση της τριχόπτωσης."
   },
   {
    "id": "loreal-pro-longer-conditioner-kata-tis-palidas-gia",
@@ -454,10 +1318,582 @@
    ],
    "image": "pl-conditioner",
    "related": [
+    "loreal-pro-longer-sampoyan-kata-tis-palidas-gia",
+    "loreal-pro-longer-maska-kata-tis-palidas-gia",
     "loreal-pro-longer-leave-in-krema-kata-tis",
+    "loreal-metal-detox-maska-gia-apolyti-epanortosi-mallion",
     "loreal-absolut-repair-molecular-bi-phase-oil-gia"
    ],
    "kw": "Επαγγελματική σύνθεση για την περιποίηση των μαλλιών με λεπτές άκρες που δεν μακραίνουν."
+  },
+  {
+   "id": "loreal-serioxyl-advanced-density-sampoyan-gia-pyknosi",
+   "brand": "L'Oréal Professionnel",
+   "brandKey": "loreal",
+   "line": "Scalp Advanced",
+   "category": "care",
+   "type": "shampoo",
+   "name": {
+    "el": "Serioxyl Advanced Density Σαμπουάν Για Πύκνωση",
+    "en": "Serioxyl Advanced Density Σαμπουάν Για Πύκνωση"
+   },
+   "hairTypes": [
+    "fine"
+   ],
+   "needs": [
+    "volume"
+   ],
+   "variants": [
+    {
+     "sku": "3474637106393",
+     "ean": "3474637106393",
+     "label": "300ml",
+     "size": "300ml",
+     "active": true,
+     "image": "p/3474637106393"
+    }
+   ],
+   "image": "p/3474637106393",
+   "related": [
+    "loreal-serioxyl-advanced-density-oros-gia-pyknosi",
+    "loreal-absolut-repair-molecular-sampoyan-moriakis-epanortosis-gia",
+    "loreal-absolut-repair-molecular-serum-moriakis-epanortosis-poy",
+    "loreal-absolut-repair-molecular-leave-in-mask",
+    "loreal-metal-detox-maska-gia-apolyti-epanortosi-mallion",
+    "loreal-absolut-repair-molecular-bi-phase-oil-gia"
+   ],
+   "kw": "Το σαμπουάν Serioxyl Advanced Purifier, Bodifier είναι ιδανικό για την καταπολέμηση της αραίωσης."
+  },
+  {
+   "id": "loreal-absolut-repair-molecular-mini-duo-set-sampoyan",
+   "brand": "L'Oréal Professionnel",
+   "brandKey": "loreal",
+   "line": "Absolut Repair Molecular",
+   "category": "sets",
+   "type": "set",
+   "name": {
+    "el": "Absolut Repair Molecular Mini Duo Set Σαμπουάν & Έλαιο",
+    "en": "Absolut Repair Molecular Mini Duo Set Σαμπουάν & Έλαιο"
+   },
+   "hairTypes": [
+    "damaged"
+   ],
+   "needs": [
+    "repair",
+    "shine",
+    "smooth"
+   ],
+   "variants": [
+    {
+     "sku": "3474637363819",
+     "ean": "3474637363819",
+     "label": "Standard",
+     "size": "",
+     "active": true,
+     "image": "p/3474637363819"
+    }
+   ],
+   "image": "p/3474637363819",
+   "related": [
+    "loreal-absolut-repair-molecular-sampoyan-moriakis-epanortosis-gia",
+    "loreal-absolut-repair-molecular-serum-moriakis-epanortosis-poy",
+    "loreal-absolut-repair-molecular-maska-moriakis-epanortosis-gia",
+    "loreal-absolut-repair-molecular-leave-in-mask",
+    "loreal-metal-detox-maska-gia-apolyti-epanortosi-mallion",
+    "loreal-absolut-repair-molecular-bi-phase-oil-gia"
+   ],
+   "kw": "Όταν τα μαλλιά έχουν υποστεί φθορά, η μοριακή δομή τους που αποτελείται από πεπτίδια διακυβεύεται. Τα μαλλιά γίνονται αδύναμα, με μεγάλη ελαστικότητα και με"
+  },
+  {
+   "id": "loreal-absolut-repair-molecular-mini-duo-set-sampoyan-2",
+   "brand": "L'Oréal Professionnel",
+   "brandKey": "loreal",
+   "line": "Absolut Repair Molecular",
+   "category": "sets",
+   "type": "set",
+   "name": {
+    "el": "Absolut Repair Molecular Mini Duo Set Σαμπουάν & Leave-in Μάσκα",
+    "en": "Absolut Repair Molecular Mini Duo Set Σαμπουάν & Leave-in Μάσκα"
+   },
+   "hairTypes": [
+    "damaged"
+   ],
+   "needs": [
+    "repair",
+    "smooth",
+    "heat"
+   ],
+   "variants": [
+    {
+     "sku": "3474637363826",
+     "ean": "3474637363826",
+     "label": "Standard",
+     "size": "",
+     "active": true,
+     "image": "p/3474637363826"
+    }
+   ],
+   "image": "p/3474637363826",
+   "related": [
+    "loreal-absolut-repair-molecular-sampoyan-moriakis-epanortosis-gia",
+    "loreal-absolut-repair-molecular-serum-moriakis-epanortosis-poy",
+    "loreal-absolut-repair-molecular-maska-moriakis-epanortosis-gia",
+    "loreal-absolut-repair-molecular-leave-in-mask",
+    "loreal-metal-detox-maska-gia-apolyti-epanortosi-mallion",
+    "loreal-absolut-repair-molecular-bi-phase-oil-gia"
+   ],
+   "kw": "Σετ Μοριακής Επανόρθωσης & Προστασίας] Επανορθώστε τη φθορά 2 χρόνων σε μία μόνο χρήση* με το Absolut Repair Molecular Mini Duo Set."
+  },
+  {
+   "id": "loreal-tecni-art-flex-waves-professionnel-texturizing-salt",
+   "brand": "L'Oréal Professionnel",
+   "brandKey": "loreal",
+   "line": "Tecni.Art",
+   "category": "styling",
+   "type": "styling",
+   "name": {
+    "el": "Tecni.ART Flex Waves Σπρέι Υφής με Αλατόνερο",
+    "en": "Tecni.art Flex Waves. Professionnel texturizing salt spray for tousled beach waves style"
+   },
+   "hairTypes": [
+    "all"
+   ],
+   "needs": [
+    "curls",
+    "volume",
+    "hold"
+   ],
+   "variants": [
+    {
+     "sku": "3474637277765",
+     "ean": "3474637277765",
+     "label": "190ml",
+     "size": "190ml",
+     "active": true,
+     "image": "p/3474637277765"
+    }
+   ],
+   "image": "p/3474637277765",
+   "related": [
+    "loreal-tecni-art-all-in-1-performer-styling",
+    "loreal-steampod-professional-smoothing-treatment",
+    "loreal-metal-detox-maska-gia-apolyti-epanortosi-mallion",
+    "loreal-absolut-repair-molecular-bi-phase-oil-gia"
+   ],
+   "kw": "Το Tecni.ART Flex Waves από τη L’Oréal Professionnel είναι ένα επαγγελματικό σπρέι υφής με αλατόνερο για μοδάτο look παραλίας, χωρίς σκληρή υφή."
+  },
+  {
+   "id": "loreal-absolut-repair-molecular-leave-in-mask",
+   "brand": "L'Oréal Professionnel",
+   "brandKey": "loreal",
+   "line": "Absolut Repair Molecular",
+   "category": "care",
+   "type": "leave-in",
+   "name": {
+    "el": "Absolut Repair Molecular Leave-in Μάσκα Μοριακής Επανόρθωσης Για Ταλαιπωρημένα Μαλλιά",
+    "en": "Absolut Repair Molecular Leave-In-Mask"
+   },
+   "hairTypes": [
+    "damaged"
+   ],
+   "needs": [
+    "repair"
+   ],
+   "variants": [
+    {
+     "sku": "3474637220631",
+     "ean": "3474637220631",
+     "label": "50ml",
+     "size": "50ml",
+     "active": true,
+     "image": "p/3474637220631"
+    },
+    {
+     "sku": "3474637153489",
+     "ean": "3474637153489",
+     "label": "100ml",
+     "size": "100ml",
+     "active": true,
+     "image": "p/3474637153489"
+    }
+   ],
+   "image": "p/3474637220631",
+   "related": [
+    "loreal-absolut-repair-molecular-sampoyan-moriakis-epanortosis-gia",
+    "loreal-absolut-repair-molecular-serum-moriakis-epanortosis-poy",
+    "loreal-absolut-repair-molecular-maska-moriakis-epanortosis-gia",
+    "loreal-metal-detox-maska-gia-apolyti-epanortosi-mallion",
+    "loreal-absolut-repair-molecular-bi-phase-oil-gia"
+   ],
+   "kw": "Όταν τα μαλλιά έχουν υποστεί φθορά, η μοριακή δομή τους που αποτελείται από πεπτίδια διακυβεύεται. Τα μαλλιά γίνονται αδύναμα, με μεγάλη ελαστικότητα και με"
+  },
+  {
+   "id": "loreal-aminexil-advanced-anti-hairloss-programme-against-hair",
+   "brand": "L'Oréal Professionnel",
+   "brandKey": "loreal",
+   "line": "Scalp Advanced",
+   "category": "care",
+   "type": "ampoules",
+   "name": {
+    "el": "Aminexil Αμπούλες",
+    "en": "Aminexil Advanced Anti-Hairloss programme Against hair loss for thinning hair SERIE EXPERT"
+   },
+   "hairTypes": [
+    "fine"
+   ],
+   "needs": [
+    "volume"
+   ],
+   "variants": [
+    {
+     "sku": "3474637264994",
+     "ean": "3474637264994",
+     "label": "10x6ml",
+     "size": "10x6ml",
+     "active": true,
+     "image": "p/3474637264994"
+    },
+    {
+     "sku": "3474637265014",
+     "ean": "3474637265014",
+     "label": "42x6ml",
+     "size": "42x6ml",
+     "active": true,
+     "image": "p/3474637265014"
+    }
+   ],
+   "image": "p/3474637264994",
+   "related": [
+    "loreal-aminexil-advanced-full-strong-oros-kata-tis",
+    "loreal-scalp-advanced-anti-dandruff-sampoyan-kata-tis",
+    "loreal-absolut-repair-molecular-sampoyan-moriakis-epanortosis-gia",
+    "loreal-metal-detox-maska-gia-apolyti-epanortosi-mallion",
+    "loreal-absolut-repair-molecular-bi-phase-oil-gia"
+   ],
+   "kw": "Η εντατική υπηρεσία κατά της τριχόπτωσης L’Oréal Professionnel Aminexil Advanced για αραίωση μαλλιών είναι μια επαγγελματική υπηρεσία 6 εβδομάδων που παρέχει"
+  },
+  {
+   "id": "loreal-vitamino-color-sprei-pollaplon-xriseon-gia-bammena",
+   "brand": "L'Oréal Professionnel",
+   "brandKey": "loreal",
+   "line": "Vitamino Color",
+   "category": "care",
+   "type": "treatment",
+   "name": {
+    "el": "Vitamino Color Σπρέι Πολλαπλών Χρήσεων Για Βαμμένα Μαλλιά",
+    "en": "Vitamino Color Σπρέι Πολλαπλών Χρήσεων Για Βαμμένα Μαλλιά"
+   },
+   "hairTypes": [
+    "colored"
+   ],
+   "needs": [
+    "color",
+    "shine",
+    "hydration",
+    "smooth",
+    "heat",
+    "repair"
+   ],
+   "variants": [
+    {
+     "sku": "3474636974368",
+     "ean": "3474636974368",
+     "label": "190ml",
+     "size": "190ml",
+     "active": true,
+     "image": "p/3474636974368"
+    }
+   ],
+   "image": "p/3474636974368",
+   "related": [
+    "loreal-vitamino-color-sampoyan",
+    "loreal-vitamino-color-maska-gia-bammena-mallia",
+    "loreal-vitamino-color-conditioner-gia-bammena-mallia",
+    "loreal-metal-detox-maska-gia-apolyti-epanortosi-mallion",
+    "loreal-absolut-repair-molecular-bi-phase-oil-gia"
+   ],
+   "kw": "Επαγγελματική σύνθεση 190ml για την περιποίηση των βαμμένων μαλλιών. Εμπλουτισμένo με αντιοξειδωτικά, το Serie Expert Vitamino Color 10 σε 1 Σπρέι προσφέρει"
+  },
+  {
+   "id": "loreal-curl-expression-intensive-moisturizer-rich-mask-for",
+   "brand": "L'Oréal Professionnel",
+   "brandKey": "loreal",
+   "line": "Curl Expression",
+   "category": "care",
+   "type": "mask",
+   "name": {
+    "el": "Curl Expression Μάσκα Βαθιάς Ενυδάτωσης Για Σγουρά Μαλλιά",
+    "en": "Curl Expression Intensive moisturizer rich mask For each types of curls and coils SERIE EXPERT"
+   },
+   "hairTypes": [
+    "curly"
+   ],
+   "needs": [
+    "hydration",
+    "shine",
+    "curls"
+   ],
+   "variants": [
+    {
+     "sku": "3474637069216",
+     "ean": "3474637069216",
+     "label": "250ml",
+     "size": "250ml",
+     "active": true,
+     "image": "p/3474637069216"
+    }
+   ],
+   "image": "p/3474637069216",
+   "related": [
+    "loreal-curl-expression-intense-moisturizing-cleansing-cream-for",
+    "loreal-curl-expression-intensive-moisturizer-mask-for-each",
+    "loreal-curl-expression-long-lasting-intensive-moisturizer-for",
+    "loreal-curl-expression-multi-benefits-10-in-1",
+    "loreal-metal-detox-maska-gia-apolyti-epanortosi-mallion",
+    "loreal-absolut-repair-molecular-bi-phase-oil-gia"
+   ],
+   "kw": "Επαγγελματική σύνθεση για την περιποίηση των σγουρών μαλλιών. Η Curl Expression Μάσκα Περιποίησης για Βαθιά Ενυδάτωση​ είναι σχεδιασμένη να προσφέρει"
+  },
+  {
+   "id": "loreal-keratin-alpha-sleek-professional-hair-mask",
+   "brand": "L'Oréal Professionnel",
+   "brandKey": "loreal",
+   "line": "Keratin Alpha Sleek",
+   "category": "care",
+   "type": "mask",
+   "name": {
+    "el": "Keratin Alpha Sleek Professional Mask για Λείανση",
+    "en": "Keratin Alpha Sleek professional hair mask"
+   },
+   "hairTypes": [
+    "frizzy",
+    "curly"
+   ],
+   "needs": [
+    "smooth",
+    "shine",
+    "curls"
+   ],
+   "variants": [
+    {
+     "sku": "3474637335694",
+     "ean": "3474637335694",
+     "label": "250ml",
+     "size": "250ml",
+     "active": true,
+     "image": "p/3474637335694"
+    }
+   ],
+   "image": "p/3474637335694",
+   "related": [
+    "loreal-keratin-alpha-sleek-professional-sulfate-free-shampoo",
+    "loreal-keratin-alpha-sleek-smooth-transformer-progressive-smoothing",
+    "loreal-keratin-alpha-sleek-professional-mirror-sleek-serum",
+    "loreal-metal-detox-maska-gia-apolyti-epanortosi-mallion",
+    "loreal-absolut-repair-molecular-bi-phase-oil-gia"
+   ],
+   "kw": "Μεταμόρφωσε τα μαλλιά σου για 2 εβδομάδες.* Λεία μαλλιά, χωρίς φριζάρισμα.* Tο σαμπουάν αυτό αναδομεί την κερατίνη της τρίχας, μαλακώνει και ενυδατώνει τα"
+  },
+  {
+   "id": "loreal-absolut-repair-golden-mask-with-protein-and",
+   "brand": "L'Oréal Professionnel",
+   "brandKey": "loreal",
+   "line": "Absolut Repair",
+   "category": "care",
+   "type": "mask",
+   "name": {
+    "el": "Absolut Repair Χρυσή Μάσκα Εντατικής Αναδόμησης Για Ταλαιπωρημένα Μαλλιά",
+    "en": "Absolut Repair Golden mask With Protein and Omega-9 for dry and damaged hair"
+   },
+   "hairTypes": [
+    "damaged"
+   ],
+   "needs": [
+    "repair",
+    "shine",
+    "smooth"
+   ],
+   "variants": [
+    {
+     "sku": "3474636975310",
+     "ean": "3474636975310",
+     "label": "250ml",
+     "size": "250ml",
+     "active": true,
+     "image": "p/3474636975310"
+    }
+   ],
+   "image": "p/3474636975310",
+   "related": [
+    "loreal-absolut-repair-sampoyan",
+    "loreal-absolut-repair-oil-multi-benefit-leave-in",
+    "loreal-absolut-repair-conditioner-with-protein-and-omega",
+    "loreal-absolut-repair-mask-with-protein-and-omega",
+    "loreal-metal-detox-maska-gia-apolyti-epanortosi-mallion",
+    "loreal-absolut-repair-molecular-bi-phase-oil-gia"
+   ],
+   "kw": "Εμπλουτισμένη με GOLD QUInoA + ΠΡΩΤΕΪΝΗ, η επαγγελματική, ανατρεπτική χρυσαφένια σύνθεση της Serie Expert Resurfacing Golden Μάσκας επανορθώνει άμεσα κάθε τύπο"
+  },
+  {
+   "id": "loreal-absolut-repair-mask-with-protein-and-omega",
+   "brand": "L'Oréal Professionnel",
+   "brandKey": "loreal",
+   "line": "Absolut Repair",
+   "category": "care",
+   "type": "mask",
+   "name": {
+    "el": "Absolut Repair Μάσκα Εντατικής Αναδόμησης Για Ταλαιπωρημένα Μαλλιά",
+    "en": "Absolut Repair mask With Protein and Omega-9 for dry and damaged hair SERIE EXPERT"
+   },
+   "hairTypes": [
+    "damaged"
+   ],
+   "needs": [
+    "repair",
+    "shine",
+    "smooth"
+   ],
+   "variants": [
+    {
+     "sku": "3474636974252",
+     "ean": "3474636974252",
+     "label": "250ml",
+     "size": "250ml",
+     "active": true,
+     "image": "p/3474636974252"
+    }
+   ],
+   "image": "p/3474636974252",
+   "related": [
+    "loreal-absolut-repair-sampoyan",
+    "loreal-absolut-repair-golden-mask-with-protein-and",
+    "loreal-absolut-repair-oil-multi-benefit-leave-in",
+    "loreal-absolut-repair-conditioner-with-protein-and-omega",
+    "loreal-metal-detox-maska-gia-apolyti-epanortosi-mallion",
+    "loreal-absolut-repair-molecular-bi-phase-oil-gia"
+   ],
+   "kw": "Εμπλουτισμένη με GOLD QUInoA + ΠΡΩΤΕΪΝΗ, η επαγγελματική σύνθεση της Serie Expert Absolut Repair Μάσκας προσφέρει εντατική περιποίηση και άμεση αναδόμηση στα"
+  },
+  {
+   "id": "loreal-absolut-repair-sampoyan",
+   "brand": "L'Oréal Professionnel",
+   "brandKey": "loreal",
+   "line": "Absolut Repair",
+   "category": "care",
+   "type": "shampoo",
+   "name": {
+    "el": "Absolut Repair Σαμπουάν",
+    "en": "Absolut Repair Σαμπουάν"
+   },
+   "hairTypes": [
+    "damaged"
+   ],
+   "needs": [
+    "repair",
+    "shine",
+    "smooth"
+   ],
+   "variants": [
+    {
+     "sku": "3474636974214",
+     "ean": "3474636974214",
+     "label": "300ml",
+     "size": "300ml",
+     "active": true,
+     "image": "p/3474636974214"
+    },
+    {
+     "sku": "3474636975914",
+     "ean": "3474636975914",
+     "label": "500ml",
+     "size": "500ml",
+     "active": true,
+     "image": "p/3474636975914"
+    },
+    {
+     "sku": "3474637242206",
+     "ean": "3474637242206",
+     "label": "500ml Refill",
+     "size": "500ml",
+     "active": true,
+     "image": "p/3474637242206"
+    }
+   ],
+   "image": "p/3474636974214",
+   "related": [
+    "loreal-absolut-repair-golden-mask-with-protein-and",
+    "loreal-absolut-repair-oil-multi-benefit-leave-in",
+    "loreal-absolut-repair-molecular-sampoyan-moriakis-epanortosis-gia",
+    "loreal-absolut-repair-mask-with-protein-and-omega",
+    "loreal-metal-detox-maska-gia-apolyti-epanortosi-mallion",
+    "loreal-absolut-repair-molecular-bi-phase-oil-gia"
+   ],
+   "kw": "To Absolut Repair Σαμπουάν, εμπλουτισμένο με GOLD QUINOA + ΠΡΩΤΕΪΝΗ, είναι σχεδιασμένο για να στοχεύει σε κάθε σημείο των μαλλιών, ανάλογα με το επίπεδο"
+  },
+  {
+   "id": "loreal-metal-detox-sampoyan",
+   "brand": "L'Oréal Professionnel",
+   "brandKey": "loreal",
+   "line": "Metal Detox",
+   "category": "care",
+   "type": "shampoo",
+   "name": {
+    "el": "Metal Detox Σαμπουάν",
+    "en": "Metal Detox Σαμπουάν"
+   },
+   "hairTypes": [
+    "colored",
+    "damaged"
+   ],
+   "needs": [
+    "color",
+    "repair",
+    "shine",
+    "metals"
+   ],
+   "variants": [
+    {
+     "sku": "3474637328900",
+     "ean": "3474637328900",
+     "label": "100ml",
+     "size": "100ml",
+     "active": true,
+     "image": "p/3474637328900"
+    },
+    {
+     "sku": "0000030158078",
+     "ean": "0000030158078",
+     "label": "300ml",
+     "size": "300ml",
+     "active": true,
+     "image": "p/0000030158078"
+    },
+    {
+     "sku": "0000030163720",
+     "ean": "0000030163720",
+     "label": "500ml",
+     "size": "500ml",
+     "active": true,
+     "image": "p/0000030163720"
+    },
+    {
+     "sku": "3474637242213",
+     "ean": "3474637242213",
+     "label": "500ml Refill",
+     "size": "500ml",
+     "active": true,
+     "image": "p/3474637242213"
+    }
+   ],
+   "image": "p/3474637328900",
+   "related": [
+    "loreal-metal-detox-pre-shampoo-peripoiisi-apomakrynsis-kai",
+    "loreal-metal-detox-maska-gia-apolyti-epanortosi-mallion",
+    "loreal-metal-detox-leave-in-krema-apomakrynsis-kai",
+    "loreal-metal-detox-elaio-apomakrynsis-kai-prostasias-apo",
+    "loreal-absolut-repair-molecular-bi-phase-oil-gia"
+   ],
+   "kw": "Όταν το νερό διαβρώνει τις μεταλλικές σωληνώσεις, μπορεί να υπερφορτωθεί με μεταλλικά στοιχεία που μπορούν να εισχωρήσουν στο εσωτερικό της τρίχας."
   },
   {
    "id": "loreal-metal-detox-elaio-apomakrynsis-kai-prostasias-apo",
@@ -492,9 +1928,1443 @@
    ],
    "image": "md-oil",
    "related": [
+    "loreal-metal-detox-pre-shampoo-peripoiisi-apomakrynsis-kai",
+    "loreal-metal-detox-sampoyan",
+    "loreal-metal-detox-maska-gia-apolyti-epanortosi-mallion",
+    "loreal-metal-detox-leave-in-krema-apomakrynsis-kai",
     "loreal-absolut-repair-molecular-bi-phase-oil-gia"
    ],
    "kw": "Το συμπυκνωμένο λάδι Metal Detox προστατεύει τους θύλακες της τρίχας από την προσκόλληση μεταλλικών στοιχείων μετά από τις υπηρεσίες βαφής, balayage ή"
+  },
+  {
+   "id": "loreal-keratin-alpha-sleek-professional-sulfate-free-shampoo",
+   "brand": "L'Oréal Professionnel",
+   "brandKey": "loreal",
+   "line": "Keratin Alpha Sleek",
+   "category": "care",
+   "type": "shampoo",
+   "name": {
+    "el": "Keratin Alpha Sleek Professional Shampoo για Λείανση",
+    "en": "Keratin Alpha Sleek professional sulfate free* shampoo refill pouch"
+   },
+   "hairTypes": [
+    "frizzy",
+    "curly"
+   ],
+   "needs": [
+    "smooth",
+    "shine",
+    "curls"
+   ],
+   "variants": [
+    {
+     "sku": "3474637335755",
+     "ean": "3474637335755",
+     "label": "300ml",
+     "size": "300ml",
+     "active": true,
+     "image": "p/3474637335755"
+    },
+    {
+     "sku": "3474637335731",
+     "ean": "3474637335731",
+     "label": "500ml",
+     "size": "500ml",
+     "active": true,
+     "image": "p/3474637335731"
+    },
+    {
+     "sku": "3474637335786",
+     "ean": "3474637335786",
+     "label": "500ml Refill",
+     "size": "500ml",
+     "active": true,
+     "image": "p/3474637335786"
+    }
+   ],
+   "image": "p/3474637335755",
+   "related": [
+    "loreal-keratin-alpha-sleek-professional-hair-mask",
+    "loreal-keratin-alpha-sleek-smooth-transformer-progressive-smoothing",
+    "loreal-keratin-alpha-sleek-professional-mirror-sleek-serum",
+    "loreal-metal-detox-maska-gia-apolyti-epanortosi-mallion",
+    "loreal-absolut-repair-molecular-bi-phase-oil-gia"
+   ],
+   "kw": "Keratin Alpha Sleek Επαγγελματικό σαμπουάν χωρίς θειικά άλατα* από τη L'Oréal Professionnel, που δρα στα εξωτερικά στρώματα της φυσικής κερατίνης της τρίχας.**"
+  },
+  {
+   "id": "loreal-tecni-art-all-in-1-performer-styling",
+   "brand": "L'Oréal Professionnel",
+   "brandKey": "loreal",
+   "line": "Tecni.Art",
+   "category": "styling",
+   "type": "styling",
+   "name": {
+    "el": "Tecni Art All-in-1 Performer Περιποίηση με 30 Οφέλη",
+    "en": "Tecni.art All-in-1 Performer Styling Treatment for 30 benefits in 1 step including heat protection"
+   },
+   "hairTypes": [
+    "all"
+   ],
+   "needs": [
+    "shine",
+    "smooth",
+    "heat",
+    "hold"
+   ],
+   "variants": [
+    {
+     "sku": "3474637277772",
+     "ean": "3474637277772",
+     "label": "190ml",
+     "size": "190ml",
+     "active": true,
+     "image": "p/3474637277772"
+    }
+   ],
+   "image": "p/3474637277772",
+   "related": [
+    "loreal-tecni-art-liss-control-krema-gia-leiansi",
+    "loreal-steampod-professional-smoothing-treatment",
+    "loreal-metal-detox-maska-gia-apolyti-epanortosi-mallion",
+    "loreal-absolut-repair-molecular-bi-phase-oil-gia"
+   ],
+   "kw": "Η Tecni.ART All-in-1 Performer Περιποίηση της L'Oréal Professionnel είναι ένα επαγγελματικό spray περιποίησης χωρίς ξέβγαλμα για 30 οφέλη σε 1 βήμα: 1."
+  },
+  {
+   "id": "loreal-curl-expression-intense-moisturizing-cleansing-cream-for",
+   "brand": "L'Oréal Professionnel",
+   "brandKey": "loreal",
+   "line": "Curl Expression",
+   "category": "care",
+   "type": "shampoo",
+   "name": {
+    "el": "Curl Expression Κρεμώδες Σαμπουάν Πλούσιας Ενυδάτωσης Για Σγουρά Μαλλιά",
+    "en": "Curl Expression Intense moisturizing cleansing cream For each types of curls and coils SERIE EXPERT"
+   },
+   "hairTypes": [
+    "curly"
+   ],
+   "needs": [
+    "hydration",
+    "curls"
+   ],
+   "variants": [
+    {
+     "sku": "3474637069193",
+     "ean": "3474637069193",
+     "label": "300ml",
+     "size": "300ml",
+     "active": true,
+     "image": "p/3474637069193"
+    },
+    {
+     "sku": "3474637076504",
+     "ean": "3474637076504",
+     "label": "500ml",
+     "size": "500ml",
+     "active": true,
+     "image": "p/3474637076504"
+    }
+   ],
+   "image": "p/3474637069193",
+   "related": [
+    "loreal-curl-expression-intensive-moisturizer-mask-for-each",
+    "loreal-curl-expression-intensive-moisturizer-rich-mask-for",
+    "loreal-curl-expression-long-lasting-intensive-moisturizer-for",
+    "loreal-curl-expression-multi-benefits-10-in-1",
+    "loreal-metal-detox-maska-gia-apolyti-epanortosi-mallion",
+    "loreal-absolut-repair-molecular-bi-phase-oil-gia"
+   ],
+   "kw": "Επαγγελματική σύνθεση για την περιποίηση των σγουρών μαλλιών. Το Curl Expression Κρεμώδες Σαμπουάν για Πλούσια Ενυδάτωση είναι σχεδιασμένο να προσφέρει"
+  },
+  {
+   "id": "loreal-absolut-repair-molecular-sampoyan-moriakis-epanortosis-gia",
+   "brand": "L'Oréal Professionnel",
+   "brandKey": "loreal",
+   "line": "Absolut Repair Molecular",
+   "category": "care",
+   "type": "shampoo",
+   "name": {
+    "el": "Absolut Repair Molecular Σαμπουάν Μοριακής Επανόρθωσης Για Ταλαιπωρημένα Μαλλιά",
+    "en": "Absolut Repair Molecular Σαμπουάν Μοριακής Επανόρθωσης Για Ταλαιπωρημένα Μαλλιά"
+   },
+   "hairTypes": [
+    "damaged"
+   ],
+   "needs": [
+    "repair"
+   ],
+   "variants": [
+    {
+     "sku": "3474637361877",
+     "ean": "3474637361877",
+     "label": "100ml",
+     "size": "100ml",
+     "active": true,
+     "image": "p/3474637361877"
+    },
+    {
+     "sku": "3474637153526",
+     "ean": "3474637153526",
+     "label": "300ml",
+     "size": "300ml",
+     "active": true,
+     "image": "p/3474637153526"
+    },
+    {
+     "sku": "3474637153557",
+     "ean": "3474637153557",
+     "label": "500ml",
+     "size": "500ml",
+     "active": true,
+     "image": "p/3474637153557"
+    },
+    {
+     "sku": "3474637242220",
+     "ean": "3474637242220",
+     "label": "500ml Refill",
+     "size": "500ml",
+     "active": true,
+     "image": "p/3474637242220"
+    }
+   ],
+   "image": "p/3474637361877",
+   "related": [
+    "loreal-absolut-repair-molecular-maska-moriakis-epanortosis-gia",
+    "loreal-absolut-repair-molecular-serum-moriakis-epanortosis-poy",
+    "loreal-absolut-repair-molecular-leave-in-mask",
+    "loreal-metal-detox-maska-gia-apolyti-epanortosi-mallion",
+    "loreal-absolut-repair-molecular-bi-phase-oil-gia"
+   ],
+   "kw": "Όταν τα μαλλιά έχουν υποστεί φθορά, η μοριακή δομή τους που αποτελείται από πεπτίδια διακυβεύεται. Τα μαλλιά γίνονται αδύναμα, με μεγάλη ελαστικότητα και με"
+  },
+  {
+   "id": "loreal-curl-expression-long-lasting-intensive-moisturizer-for",
+   "brand": "L'Oréal Professionnel",
+   "brandKey": "loreal",
+   "line": "Curl Expression",
+   "category": "care",
+   "type": "leave-in",
+   "name": {
+    "el": "Curl Expression Leave-in Κρέμα Ενυδάτωσης Για Σγουρά Μαλλιά",
+    "en": "Curl Expression Long Lasting Intensive Moisturizer For each types of curls and coils SERIE EXPERT"
+   },
+   "hairTypes": [
+    "curly"
+   ],
+   "needs": [
+    "heat",
+    "hydration",
+    "curls"
+   ],
+   "variants": [
+    {
+     "sku": "3474637069124",
+     "ean": "3474637069124",
+     "label": "200ml",
+     "size": "200ml",
+     "active": true,
+     "image": "p/3474637069124"
+    }
+   ],
+   "image": "p/3474637069124",
+   "related": [
+    "loreal-curl-expression-intense-moisturizing-cleansing-cream-for",
+    "loreal-curl-expression-intensive-moisturizer-mask-for-each",
+    "loreal-curl-expression-intensive-moisturizer-rich-mask-for",
+    "loreal-curl-expression-multi-benefits-10-in-1",
+    "loreal-metal-detox-maska-gia-apolyti-epanortosi-mallion",
+    "loreal-absolut-repair-molecular-bi-phase-oil-gia"
+   ],
+   "kw": "Επαγγελματική σύνθεση για την περιποίηση των σγουρών μαλλιών. Η Curl Expression Leave- in Κρέμα για Πλούσια Ενυδάτωση με Διάρκεια είναι σχεδιασμένη να"
+  },
+  {
+   "id": "loreal-curl-expression-cream-in-jelly-definition-activator",
+   "brand": "L'Oréal Professionnel",
+   "brandKey": "loreal",
+   "line": "Curl Expression",
+   "category": "care",
+   "type": "treatment",
+   "name": {
+    "el": "Curl Expression Κρεμώδες Gel Για Σγουρά Μαλλιά",
+    "en": "Curl Expression Cream-in-jelly Definition activator For each types of curls and coils SERIE EXPERT"
+   },
+   "hairTypes": [
+    "curly"
+   ],
+   "needs": [
+    "heat",
+    "hydration",
+    "curls"
+   ],
+   "variants": [
+    {
+     "sku": "3474637069155",
+     "ean": "3474637069155",
+     "label": "250ml",
+     "size": "250ml",
+     "active": true,
+     "image": "p/3474637069155"
+    }
+   ],
+   "image": "p/3474637069155",
+   "related": [
+    "loreal-curl-expression-intense-moisturizing-cleansing-cream-for",
+    "loreal-curl-expression-intensive-moisturizer-mask-for-each",
+    "loreal-curl-expression-intensive-moisturizer-rich-mask-for",
+    "loreal-curl-expression-multi-benefits-10-in-1",
+    "loreal-metal-detox-maska-gia-apolyti-epanortosi-mallion",
+    "loreal-absolut-repair-molecular-bi-phase-oil-gia"
+   ],
+   "kw": "Επαγγελματική σύνθεση για την περιποίηση των σγουρών μαλλιών. Το Curl Expression Κρεμώδες Gel Ενεργοποίησης Σχήματος είναι σχεδιασμένο να προσφέρει"
+  },
+  {
+   "id": "loreal-vitamino-color-spectrum-mask-for-all-colored",
+   "brand": "L'Oréal Professionnel",
+   "brandKey": "loreal",
+   "line": "Vitamino Color Spectrum",
+   "category": "care",
+   "type": "mask",
+   "name": {
+    "el": "Vitamino Color Spectrum Μάσκα Για Όλους Τους Τύπους Βαμμένων Μαλλιών",
+    "en": "Vitamino Color Spectrum Mask for all colored hair & vivid colors"
+   },
+   "hairTypes": [
+    "colored"
+   ],
+   "needs": [
+    "color",
+    "shine"
+   ],
+   "variants": [
+    {
+     "sku": "3474637268466",
+     "ean": "3474637268466",
+     "label": "250ml",
+     "size": "250ml",
+     "active": true,
+     "image": "p/3474637268466"
+    }
+   ],
+   "image": "p/3474637268466",
+   "related": [
+    "loreal-vitamino-color-spectrum-shampoo-refill-for-all",
+    "loreal-vitamino-color-spectrum-deep-conditioner-for-all",
+    "loreal-vitamino-color-spectrum-glass-shine-serum-for",
+    "loreal-metal-detox-maska-gia-apolyti-epanortosi-mallion",
+    "loreal-absolut-repair-molecular-bi-phase-oil-gia"
+   ],
+   "kw": "Vitamino Color Spectrum Επαγγελματική Μάσκα από τη L'Oréal Professionnel, εμπλουτισμένη με Φερουλικό Οξύ + Κιτρικό Οξύ. 100 ημέρες χρώμα τόσο λαμπερό, όσο την"
+  },
+  {
+   "id": "loreal-curl-expression-multi-benefits-10-in-1",
+   "brand": "L'Oréal Professionnel",
+   "brandKey": "loreal",
+   "line": "Curl Expression",
+   "category": "styling",
+   "type": "styling",
+   "name": {
+    "el": "Curl Expression 10-Σε-1 ​Κρεμώδης Αφρός Για Σγουρά Μαλλιά",
+    "en": "Curl Expression Multi-benefits 10-in-1 cream-in-mousse For each types of curls and coils SERIE EXPERT"
+   },
+   "hairTypes": [
+    "curly"
+   ],
+   "needs": [
+    "hold",
+    "hydration",
+    "curls"
+   ],
+   "variants": [
+    {
+     "sku": "3474637109738",
+     "ean": "3474637109738",
+     "label": "250ml",
+     "size": "250ml",
+     "active": true,
+     "image": "p/3474637109738"
+    }
+   ],
+   "image": "p/3474637109738",
+   "related": [
+    "loreal-curl-expression-intense-moisturizing-cleansing-cream-for",
+    "loreal-curl-expression-intensive-moisturizer-mask-for-each",
+    "loreal-curl-expression-intensive-moisturizer-rich-mask-for",
+    "loreal-curl-expression-long-lasting-intensive-moisturizer-for",
+    "loreal-metal-detox-maska-gia-apolyti-epanortosi-mallion",
+    "loreal-absolut-repair-molecular-bi-phase-oil-gia"
+   ],
+   "kw": "Επαγγελματική σύνθεση για την περιποίηση των σγουρών μαλλιών. Ο Curl Expression 10- σε- 1 ​Κρεμώδης Αφρός​ είναι ένα προϊόν πολλαπλών οφελών, σχεδιασμένο να"
+  },
+  {
+   "id": "loreal-absolut-repair-molecular-mini-duo-kit-moriakis",
+   "brand": "L'Oréal Professionnel",
+   "brandKey": "loreal",
+   "line": "Absolut Repair Molecular",
+   "category": "sets",
+   "type": "set",
+   "name": {
+    "el": "Absolut Repair Molecular Mini Duo Kit Μοριακής Επανόρθωσης για Ταλαιπωρημένα Μαλλιά",
+    "en": "Absolut Repair Molecular Mini Duo Kit Μοριακής Επανόρθωσης για Ταλαιπωρημένα Μαλλιά"
+   },
+   "hairTypes": [
+    "damaged"
+   ],
+   "needs": [
+    "repair"
+   ],
+   "variants": [
+    {
+     "sku": "3474637285753",
+     "ean": "3474637285753",
+     "label": "Standard",
+     "size": "",
+     "active": true,
+     "image": "p/3474637285753"
+    }
+   ],
+   "image": "p/3474637285753",
+   "related": [
+    "loreal-absolut-repair-molecular-sampoyan-moriakis-epanortosis-gia",
+    "loreal-absolut-repair-molecular-serum-moriakis-epanortosis-poy",
+    "loreal-absolut-repair-molecular-maska-moriakis-epanortosis-gia",
+    "loreal-absolut-repair-molecular-leave-in-mask",
+    "loreal-metal-detox-maska-gia-apolyti-epanortosi-mallion",
+    "loreal-absolut-repair-molecular-bi-phase-oil-gia"
+   ],
+   "kw": "Ανακαλύψτε την Absolut Repair Molecular, το αποκλειστικό πρωτόκολλο περιποίησης εμπλουτισμένο με πεπτιδικούς δεσμούς + 5 αμινοξέα για την αναδόμηση της"
+  },
+  {
+   "id": "loreal-absolut-repair-molecular-serum-moriakis-epanortosis-poy",
+   "brand": "L'Oréal Professionnel",
+   "brandKey": "loreal",
+   "line": "Absolut Repair Molecular",
+   "category": "care",
+   "type": "serum",
+   "name": {
+    "el": "Absolut Repair Molecular Serum Μοριακής Επανόρθωσης Που Ξεβγάζεται Για Ταλαιπωρημένα Μαλλιά",
+    "en": "Absolut Repair Molecular Serum Μοριακής Επανόρθωσης Που Ξεβγάζεται Για Ταλαιπωρημένα Μαλλιά"
+   },
+   "hairTypes": [
+    "damaged"
+   ],
+   "needs": [
+    "repair"
+   ],
+   "variants": [
+    {
+     "sku": "3474637153502",
+     "ean": "3474637153502",
+     "label": "250ml",
+     "size": "250ml",
+     "active": true,
+     "image": "p/3474637153502"
+    }
+   ],
+   "image": "p/3474637153502",
+   "related": [
+    "loreal-absolut-repair-molecular-sampoyan-moriakis-epanortosis-gia",
+    "loreal-absolut-repair-molecular-maska-moriakis-epanortosis-gia",
+    "loreal-absolut-repair-molecular-leave-in-mask",
+    "loreal-metal-detox-maska-gia-apolyti-epanortosi-mallion",
+    "loreal-absolut-repair-molecular-bi-phase-oil-gia"
+   ],
+   "kw": "Όταν τα μαλλιά έχουν υποστεί φθορά, η μοριακή δομή τους που αποτελείται από πεπτίδια διακυβεύεται. Τα μαλλιά γίνονται αδύναμα, με μεγάλη ελαστικότητα και με"
+  },
+  {
+   "id": "loreal-serioxyl-advanced-density-oros-gia-pyknosi",
+   "brand": "L'Oréal Professionnel",
+   "brandKey": "loreal",
+   "line": "Scalp Advanced",
+   "category": "care",
+   "type": "serum",
+   "name": {
+    "el": "Serioxyl Advanced Density Ορός Για Πύκνωση",
+    "en": "Serioxyl Advanced Density Ορός Για Πύκνωση"
+   },
+   "hairTypes": [
+    "fine"
+   ],
+   "needs": [
+    "volume"
+   ],
+   "variants": [
+    {
+     "sku": "3474637106348",
+     "ean": "3474637106348",
+     "label": "90ml",
+     "size": "90ml",
+     "active": true,
+     "image": "p/3474637106348"
+    }
+   ],
+   "image": "p/3474637106348",
+   "related": [
+    "loreal-serioxyl-advanced-density-sampoyan-gia-pyknosi",
+    "loreal-absolut-repair-molecular-sampoyan-moriakis-epanortosis-gia",
+    "loreal-absolut-repair-molecular-serum-moriakis-epanortosis-poy",
+    "loreal-absolut-repair-molecular-leave-in-mask",
+    "loreal-metal-detox-maska-gia-apolyti-epanortosi-mallion",
+    "loreal-absolut-repair-molecular-bi-phase-oil-gia"
+   ],
+   "kw": "Ο ορός διπλής δράσης Serioxyl Advanced Denser έχει σχεδιαστεί για την καταπολέμηση της αραίωσης."
+  },
+  {
+   "id": "loreal-scalp-advanced-anti-oiliness-dermo-purifier-shampoo",
+   "brand": "L'Oréal Professionnel",
+   "brandKey": "loreal",
+   "line": "Scalp Advanced",
+   "category": "care",
+   "type": "shampoo",
+   "name": {
+    "el": "Scalp Advanced Anti-Oily Σαμπουάν Κατά της λιπαρότητας",
+    "en": "Scalp Advanced Anti-Oiliness Dermo-purifier shampoo for oil control and long lasting rootlift SERIE EXPERT"
+   },
+   "hairTypes": [
+    "oily"
+   ],
+   "needs": [
+    "scalp",
+    "hydration"
+   ],
+   "variants": [
+    {
+     "sku": "3474637106454",
+     "ean": "3474637106454",
+     "label": "300ml",
+     "size": "300ml",
+     "active": true,
+     "image": "p/3474637106454"
+    }
+   ],
+   "image": "p/3474637106454",
+   "related": [
+    "loreal-scalp-advanced-anti-oily-argilos-kata-tis",
+    "loreal-absolut-repair-molecular-sampoyan-moriakis-epanortosis-gia",
+    "loreal-absolut-repair-molecular-serum-moriakis-epanortosis-poy",
+    "loreal-absolut-repair-molecular-leave-in-mask",
+    "loreal-metal-detox-maska-gia-apolyti-epanortosi-mallion",
+    "loreal-absolut-repair-molecular-bi-phase-oil-gia"
+   ],
+   "kw": ": Το τριχωτό είναι δέρμα, αλλά πολύ πιο περίπλοκο. Η οξείδωση του σμήγματος και τα μικρο-ραγίσματα στην επιφάνεια του τριχωτού μπορούν να διαταράξουν την"
+  },
+  {
+   "id": "loreal-tecni-art-flex-curl-bounce-professional-styling",
+   "brand": "L'Oréal Professionnel",
+   "brandKey": "loreal",
+   "line": "Tecni.Art",
+   "category": "styling",
+   "type": "styling",
+   "name": {
+    "el": "Tecni.ART Flex Curl Definer Κρέμα Διπλής Δράσης για Τέλεια Διαμόρφωση & Ελαστικότητα στις Μπούκλες",
+    "en": "Tecni.art Flex Curl Bounce professional styling cream for curl definition"
+   },
+   "hairTypes": [
+    "all"
+   ],
+   "needs": [
+    "curls",
+    "hold",
+    "smooth"
+   ],
+   "variants": [
+    {
+     "sku": "3474637273941",
+     "ean": "3474637273941",
+     "label": "200ml",
+     "size": "200ml",
+     "active": true,
+     "image": "p/3474637273941"
+    }
+   ],
+   "image": "p/3474637273941",
+   "related": [
+    "loreal-tecni-art-all-in-1-performer-styling",
+    "loreal-steampod-professional-smoothing-treatment",
+    "loreal-metal-detox-maska-gia-apolyti-epanortosi-mallion",
+    "loreal-absolut-repair-molecular-bi-phase-oil-gia"
+   ],
+   "kw": "Μεταμορφώστε τα σγουρά και σπαστά μαλλιά σας με το ανανεωμένο L'Oréal Professionnel Tecni.Art Curl Definer, την εξέλιξη του εξαιρετικά δημοφιλούς Bouncy &"
+  },
+  {
+   "id": "loreal-metal-detox-pre-shampoo-peripoiisi-apomakrynsis-kai",
+   "brand": "L'Oréal Professionnel",
+   "brandKey": "loreal",
+   "line": "Metal Detox",
+   "category": "care",
+   "type": "pre-shampoo",
+   "name": {
+    "el": "Metal Detox Pre-Shampoo Περιποίηση Απομάκρυνσης Και Προστασίας Από Τα Μεταλλικά Στοιχεία",
+    "en": "Metal Detox Pre-Shampoo Περιποίηση Απομάκρυνσης Και Προστασίας Από Τα Μεταλλικά Στοιχεία"
+   },
+   "hairTypes": [
+    "colored",
+    "damaged"
+   ],
+   "needs": [
+    "repair",
+    "color",
+    "shine",
+    "metals"
+   ],
+   "variants": [
+    {
+     "sku": "3474637199708",
+     "ean": "3474637199708",
+     "label": "250ml",
+     "size": "250ml",
+     "active": true,
+     "image": "p/3474637199708"
+    }
+   ],
+   "image": "p/3474637199708",
+   "related": [
+    "loreal-metal-detox-sampoyan",
+    "loreal-metal-detox-maska-gia-apolyti-epanortosi-mallion",
+    "loreal-metal-detox-leave-in-krema-apomakrynsis-kai",
+    "loreal-metal-detox-elaio-apomakrynsis-kai-prostasias-apo",
+    "loreal-absolut-repair-molecular-bi-phase-oil-gia"
+   ],
+   "kw": "Όταν το νερό διαβρώνει τις μεταλλικές σωληνώσεις, μπορεί να υπερφορτωθεί με μεταλλικά στοιχεία που μπορούν να εισχωρήσουν στο εσωτερικό της τρίχας."
+  },
+  {
+   "id": "loreal-absolut-repair-elaio-trepis-gia-oloys-toys",
+   "brand": "L'Oréal Professionnel",
+   "brandKey": "loreal",
+   "line": "Absolut Repair",
+   "category": "care",
+   "type": "oil",
+   "name": {
+    "el": "Absolut Repair Έλαιο Θρέψης για Όλους τους Τύπους Μαλλιών",
+    "en": "Absolut Repair Έλαιο Θρέψης για Όλους τους Τύπους Μαλλιών"
+   },
+   "hairTypes": [
+    "damaged"
+   ],
+   "needs": [
+    "hydration",
+    "repair",
+    "shine"
+   ],
+   "variants": [
+    {
+     "sku": "3474637294397",
+     "ean": "3474637294397",
+     "label": "30ml",
+     "size": "30ml",
+     "active": true,
+     "image": "p/3474637294397"
+    }
+   ],
+   "image": "p/3474637294397",
+   "related": [
+    "loreal-absolut-repair-sampoyan",
+    "loreal-absolut-repair-golden-mask-with-protein-and",
+    "loreal-absolut-repair-oil-multi-benefit-leave-in",
+    "loreal-absolut-repair-mask-with-protein-and-omega",
+    "loreal-metal-detox-maska-gia-apolyti-epanortosi-mallion",
+    "loreal-absolut-repair-molecular-bi-phase-oil-gia"
+   ],
+   "kw": "Εμπλουτισμένη με GOLD QUIΝΟA + ΠΡΩΤΕΪΝΗ, η επαγγελματική σύνθεση του Absolut Repair Oil προσφέρει εντατική περιποίηση, άμεση αναδόμηση, λάμψη και ανάλαφρο"
+  },
+  {
+   "id": "loreal-steampod-professional-smoothing-treatment",
+   "brand": "L'Oréal Professionnel",
+   "brandKey": "loreal",
+   "line": "Steampod",
+   "category": "care",
+   "type": "treatment",
+   "name": {
+    "el": "SteamPod Περιποίηση Λείανσης",
+    "en": "Steampod Professional smoothing treatment"
+   },
+   "hairTypes": [
+    "all"
+   ],
+   "needs": [
+    "shine",
+    "smooth",
+    "heat"
+   ],
+   "variants": [
+    {
+     "sku": "3474637153434",
+     "ean": "3474637153434",
+     "label": "50ml",
+     "size": "50ml",
+     "active": true,
+     "image": "p/3474637153434"
+    }
+   ],
+   "image": "p/3474637153434",
+   "related": [
+    "loreal-tecni-art-fix-design-spray",
+    "loreal-tecni-art-fix-max-zele-diamorfosis",
+    "loreal-metal-detox-maska-gia-apolyti-epanortosi-mallion",
+    "loreal-absolut-repair-molecular-bi-phase-oil-gia"
+   ],
+   "kw": "Η επαγγελματική SteamPod Περιποίηση Λείανσης είναι σχεδιασμένη χωρίς νερό και εμπλουτισμένη με άλφα-σιλάνη, ένα ενεργό συστατικό περιποίησης που προστατεύει"
+  },
+  {
+   "id": "loreal-pro-longer-sampoyan-kata-tis-palidas-gia",
+   "brand": "L'Oréal Professionnel",
+   "brandKey": "loreal",
+   "line": "Pro Longer",
+   "category": "care",
+   "type": "shampoo",
+   "name": {
+    "el": "Pro Longer Σαμπουάν Κατά Της Ψαλίδας Για Πιο Μακριά Μαλλιά",
+    "en": "Pro Longer Σαμπουάν Κατά Της Ψαλίδας Για Πιο Μακριά Μαλλιά"
+   },
+   "hairTypes": [
+    "long"
+   ],
+   "needs": [
+    "repair",
+    "shine",
+    "length"
+   ],
+   "variants": [
+    {
+     "sku": "3474636974412",
+     "ean": "3474636974412",
+     "label": "300ml",
+     "size": "300ml",
+     "active": true,
+     "image": "p/3474636974412"
+    },
+    {
+     "sku": "3474636975846",
+     "ean": "3474636975846",
+     "label": "500ml",
+     "size": "500ml",
+     "active": true,
+     "image": "p/3474636975846"
+    }
+   ],
+   "image": "p/3474636974412",
+   "related": [
+    "loreal-pro-longer-maska-kata-tis-palidas-gia",
+    "loreal-pro-longer-conditioner-kata-tis-palidas-gia",
+    "loreal-pro-longer-leave-in-krema-kata-tis",
+    "loreal-metal-detox-maska-gia-apolyti-epanortosi-mallion",
+    "loreal-absolut-repair-molecular-bi-phase-oil-gia"
+   ],
+   "kw": "Επαγγελματική σύνθεση για την περιποίηση των μαλλιών με λεπτές άκρες που δεν μακραίνουν."
+  },
+  {
+   "id": "loreal-curl-expression-intensive-moisturizer-mask-for-each",
+   "brand": "L'Oréal Professionnel",
+   "brandKey": "loreal",
+   "line": "Curl Expression",
+   "category": "care",
+   "type": "mask",
+   "name": {
+    "el": "Curl Expression Μάσκα Πλούσιας Ενυδάτωσης Για Σγουρά Μαλλιά",
+    "en": "Curl Expression Intensive moisturizer mask For each types of curls and coils SERIE EXPERT"
+   },
+   "hairTypes": [
+    "curly"
+   ],
+   "needs": [
+    "hydration",
+    "smooth",
+    "curls"
+   ],
+   "variants": [
+    {
+     "sku": "3474637069230",
+     "ean": "3474637069230",
+     "label": "250ml",
+     "size": "250ml",
+     "active": true,
+     "image": "p/3474637069230"
+    }
+   ],
+   "image": "p/3474637069230",
+   "related": [
+    "loreal-curl-expression-intense-moisturizing-cleansing-cream-for",
+    "loreal-curl-expression-intensive-moisturizer-rich-mask-for",
+    "loreal-curl-expression-long-lasting-intensive-moisturizer-for",
+    "loreal-curl-expression-multi-benefits-10-in-1",
+    "loreal-metal-detox-maska-gia-apolyti-epanortosi-mallion",
+    "loreal-absolut-repair-molecular-bi-phase-oil-gia"
+   ],
+   "kw": "Επαγγελματική σύνθεση για την περιποίηση των σγουρών μαλλιών. Η Curl Expression Μάσκα Περιποίησης για Πλούσια Ενυδάτωση είναι σχεδιασμένη να προσφέρει"
+  },
+  {
+   "id": "loreal-vitamino-color-spectrum-glass-shine-serum-for",
+   "brand": "L'Oréal Professionnel",
+   "brandKey": "loreal",
+   "line": "Vitamino Color Spectrum",
+   "category": "care",
+   "type": "serum",
+   "name": {
+    "el": "Vitamino Color Spectrum Glass Shine Serum Για Όλους Τους Τύπους Βαμμένων Μαλλιών",
+    "en": "Vitamino Color Spectrum Glass Shine Serum for all colored hair & vivid colors"
+   },
+   "hairTypes": [
+    "colored"
+   ],
+   "needs": [
+    "color",
+    "shine"
+   ],
+   "variants": [
+    {
+     "sku": "3474637268428",
+     "ean": "3474637268428",
+     "label": "30ml",
+     "size": "30ml",
+     "active": true,
+     "image": "p/3474637268428"
+    },
+    {
+     "sku": "3474637268442",
+     "ean": "3474637268442",
+     "label": "50ml",
+     "size": "50ml",
+     "active": true,
+     "image": "p/3474637268442"
+    }
+   ],
+   "image": "p/3474637268428",
+   "related": [
+    "loreal-vitamino-color-spectrum-shampoo-refill-for-all",
+    "loreal-vitamino-color-spectrum-mask-for-all-colored",
+    "loreal-metal-detox-maska-gia-apolyti-epanortosi-mallion",
+    "loreal-absolut-repair-molecular-bi-phase-oil-gia"
+   ],
+   "kw": "Vitamino Color Spectrum Επαγγελματικό Glass Shine Serum από τη L'Oréal Professionnel, εμπλουτισμένο με 5% Άλφα-Σιλάνη. Μαλλιά με γυάλινη λάμψη*."
+  },
+  {
+   "id": "loreal-tecni-art-flex-blowdry-professional-pre-styling",
+   "brand": "L'Oréal Professionnel",
+   "brandKey": "loreal",
+   "line": "Tecni.Art",
+   "category": "styling",
+   "type": "styling",
+   "name": {
+    "el": "Tecni.ART Flex Blowdry Κρέμα με Θερμοπροστασία",
+    "en": "Tecni.art Flex Blowdry professional pre-styling blowdry cream with 10-in-1 benefits"
+   },
+   "hairTypes": [
+    "all"
+   ],
+   "needs": [
+    "repair",
+    "heat",
+    "smooth",
+    "hold"
+   ],
+   "variants": [
+    {
+     "sku": "3474637292461",
+     "ean": "3474637292461",
+     "label": "150ml",
+     "size": "150ml",
+     "active": true,
+     "image": "p/3474637292461"
+    }
+   ],
+   "image": "p/3474637292461",
+   "related": [
+    "loreal-tecni-art-all-in-1-performer-styling",
+    "loreal-steampod-professional-smoothing-treatment",
+    "loreal-metal-detox-maska-gia-apolyti-epanortosi-mallion",
+    "loreal-absolut-repair-molecular-bi-phase-oil-gia"
+   ],
+   "kw": "Επαγγελματική κρέμα pre-styling για το πιστολάκι με 10 σε 1 οφέλη. Με θερμο-δραστικούς παράγοντες."
+  },
+  {
+   "id": "loreal-absolut-repair-conditioner-with-protein-and-omega",
+   "brand": "L'Oréal Professionnel",
+   "brandKey": "loreal",
+   "line": "Absolut Repair",
+   "category": "care",
+   "type": "conditioner",
+   "name": {
+    "el": "Absolut Repair Conditioner Εντατικής Αναδόμησης Για Ταλαιπωρημένα Μαλλιά",
+    "en": "Absolut Repair conditioner With Protein and Omega-9 for dry and damaged hair SERIE EXPERT"
+   },
+   "hairTypes": [
+    "damaged"
+   ],
+   "needs": [
+    "repair",
+    "shine",
+    "smooth"
+   ],
+   "variants": [
+    {
+     "sku": "3474636976089",
+     "ean": "3474636976089",
+     "label": "200ml",
+     "size": "200ml",
+     "active": true,
+     "image": "p/3474636976089"
+    }
+   ],
+   "image": "p/3474636976089",
+   "related": [
+    "loreal-absolut-repair-sampoyan",
+    "loreal-absolut-repair-golden-mask-with-protein-and",
+    "loreal-absolut-repair-oil-multi-benefit-leave-in",
+    "loreal-absolut-repair-mask-with-protein-and-omega",
+    "loreal-metal-detox-maska-gia-apolyti-epanortosi-mallion",
+    "loreal-absolut-repair-molecular-bi-phase-oil-gia"
+   ],
+   "kw": "Εμπλουτισμένη με GOLD QUInoA + ΠΡΩΤΕΪΝΗ, η επαγγελματική σύνθεση του Instant Resurfacing Conditioner προσφέρει βαθιά περιποίηση και άμεση αναδόμηση στα"
+  },
+  {
+   "id": "loreal-vitamino-color-spectrum-professional-yellow-tones-neutralizing",
+   "brand": "L'Oréal Professionnel",
+   "brandKey": "loreal",
+   "line": "Vitamino Color Spectrum",
+   "category": "care",
+   "type": "shampoo",
+   "name": {
+    "el": "Vitamino Color Spectrum Σαμπουάν Με Μωβ Χρωστικές Για Ξανθά Μαλλιά",
+    "en": "Vitamino Color Spectrum Professional Yellow Tones Neutralizing Shampoo for Blonde hair"
+   },
+   "hairTypes": [
+    "colored"
+   ],
+   "needs": [
+    "color",
+    "shine"
+   ],
+   "variants": [
+    {
+     "sku": "3474637268398",
+     "ean": "3474637268398",
+     "label": "300ml",
+     "size": "300ml",
+     "active": true,
+     "image": "p/3474637268398"
+    }
+   ],
+   "image": "p/3474637268398",
+   "related": [
+    "loreal-vitamino-color-spectrum-mask-for-all-colored",
+    "loreal-vitamino-color-spectrum-glass-shine-serum-for",
+    "loreal-metal-detox-maska-gia-apolyti-epanortosi-mallion",
+    "loreal-absolut-repair-molecular-bi-phase-oil-gia"
+   ],
+   "kw": "Vitamino Color Spectrum Επαγγελματικό Σαμπουάν Για Ξανθά Μαλλιά από τη L'Oréal Professionnel, εμπλουτισμένο με μωβ χρωστικές & παράγοντες περιποίησης."
+  },
+  {
+   "id": "loreal-keratin-alpha-sleek-professional-mirror-sleek-serum",
+   "brand": "L'Oréal Professionnel",
+   "brandKey": "loreal",
+   "line": "Keratin Alpha Sleek",
+   "category": "care",
+   "type": "serum",
+   "name": {
+    "el": "Keratin Alpha Sleek Mirror Sleek Serum για Λείανση",
+    "en": "Keratin Alpha Sleek professional Mirror Sleek Serum"
+   },
+   "hairTypes": [
+    "frizzy",
+    "curly"
+   ],
+   "needs": [
+    "smooth",
+    "shine",
+    "curls"
+   ],
+   "variants": [
+    {
+     "sku": "3474637335618",
+     "ean": "3474637335618",
+     "label": "50ml",
+     "size": "50ml",
+     "active": true,
+     "image": "p/3474637335618"
+    }
+   ],
+   "image": "p/3474637335618",
+   "related": [
+    "loreal-keratin-alpha-sleek-professional-sulfate-free-shampoo",
+    "loreal-keratin-alpha-sleek-professional-hair-mask",
+    "loreal-keratin-alpha-sleek-smooth-transformer-progressive-smoothing",
+    "loreal-metal-detox-maska-gia-apolyti-epanortosi-mallion",
+    "loreal-absolut-repair-molecular-bi-phase-oil-gia"
+   ],
+   "kw": "Keratin Alpha Sleek Mirror Sleek Serum από τη L'Oréal Professionnel, εμπλουτισμένο με 5% Keratin Sealer."
+  },
+  {
+   "id": "loreal-tecni-art-liss-control-krema-gia-leiansi",
+   "brand": "L'Oréal Professionnel",
+   "brandKey": "loreal",
+   "line": "Tecni.Art",
+   "category": "styling",
+   "type": "styling",
+   "name": {
+    "el": "Tecni.ART Liss Control Κρέμα Για Λείανση Και Έλεγχο",
+    "en": "Tecni.ART Liss Control Κρέμα Για Λείανση Και Έλεγχο"
+   },
+   "hairTypes": [
+    "all"
+   ],
+   "needs": [
+    "hold"
+   ],
+   "variants": [
+    {
+     "sku": "0000030166189",
+     "ean": "0000030166189",
+     "label": "150ml",
+     "size": "150ml",
+     "active": true,
+     "image": "p/0000030166189"
+    }
+   ],
+   "image": "p/0000030166189",
+   "related": [
+    "loreal-tecni-art-all-in-1-performer-styling",
+    "loreal-steampod-professional-smoothing-treatment",
+    "loreal-metal-detox-maska-gia-apolyti-epanortosi-mallion",
+    "loreal-absolut-repair-molecular-bi-phase-oil-gia"
+   ],
+   "kw": "Η επαγγελματική κρέμα Tecni.ART προσφέρει λείανση και έλεγχο, ιδανική για λεπτά μαλλιά. Λειαίνει και ελέγχει αποτελεσματικά τα σπαστά, σγουρά μαλλιά."
+  },
+  {
+   "id": "loreal-tecni-art-volume-rootlift-afrodes-spray",
+   "brand": "L'Oréal Professionnel",
+   "brandKey": "loreal",
+   "line": "Tecni.Art",
+   "category": "styling",
+   "type": "styling",
+   "name": {
+    "el": "Tecni.ART Volume Rootlift ​Αφρώδες Spray",
+    "en": "Tecni.ART Volume Rootlift ​Αφρώδες Spray"
+   },
+   "hairTypes": [
+    "all"
+   ],
+   "needs": [
+    "hold"
+   ],
+   "variants": [
+    {
+     "sku": "0000030160262",
+     "ean": "0000030160262",
+     "label": "250ml",
+     "size": "250ml",
+     "active": true,
+     "image": "p/0000030160262"
+    }
+   ],
+   "image": "p/0000030160262",
+   "related": [
+    "loreal-tecni-art-volume-extra-full-afros",
+    "loreal-tecni-art-volume-panache-spray-me-poydra",
+    "loreal-metal-detox-maska-gia-apolyti-epanortosi-mallion",
+    "loreal-absolut-repair-molecular-bi-phase-oil-gia"
+   ],
+   "kw": "Το Tecni.ART Volume Lift είναι ένας επαγγελματικός αφρός- Σπρέι που προσφέρει όγκο στη ρίζα και φυσικό έλεγχο στα μαλλιά, για ένα μοντέρνο hairstyle με όγκο."
+  },
+  {
+   "id": "loreal-tecni-art-volume-extra-full-afros",
+   "brand": "L'Oréal Professionnel",
+   "brandKey": "loreal",
+   "line": "Tecni.Art",
+   "category": "styling",
+   "type": "styling",
+   "name": {
+    "el": "Tecni.ART Volume Extra Full Αφρός",
+    "en": "Tecni.ART Volume Extra Full Αφρός"
+   },
+   "hairTypes": [
+    "all"
+   ],
+   "needs": [
+    "hold"
+   ],
+   "variants": [
+    {
+     "sku": "0000030165120",
+     "ean": "0000030165120",
+     "label": "250ml",
+     "size": "250ml",
+     "active": true,
+     "image": "p/0000030165120"
+    }
+   ],
+   "image": "p/0000030165120",
+   "related": [
+    "loreal-tecni-art-volume-rootlift-afrodes-spray",
+    "loreal-tecni-art-volume-panache-spray-me-poydra",
+    "loreal-metal-detox-maska-gia-apolyti-epanortosi-mallion",
+    "loreal-absolut-repair-molecular-bi-phase-oil-gia"
+   ],
+   "kw": "Ο επαγγελματικός αφρός TECNI.ART Full Volume Extra δίνει extra όγκο στα μαλλιά σας και πολύ δυνατό κράτημα στο χτένισμά σας, χωρίς να τα βαραίνει."
+  },
+  {
+   "id": "loreal-metal-detox-leave-in-krema-apomakrynsis-kai",
+   "brand": "L'Oréal Professionnel",
+   "brandKey": "loreal",
+   "line": "Metal Detox",
+   "category": "care",
+   "type": "leave-in",
+   "name": {
+    "el": "Metal Detox Leave-in Κρέμα Απομάκρυνσης Και Προστασίας Από Τα Μεταλλικά Στοιχεία",
+    "en": "Metal Detox Leave-in Κρέμα Απομάκρυνσης Και Προστασίας Από Τα Μεταλλικά Στοιχεία"
+   },
+   "hairTypes": [
+    "colored",
+    "damaged"
+   ],
+   "needs": [
+    "metals",
+    "repair",
+    "color"
+   ],
+   "variants": [
+    {
+     "sku": "0000030161153",
+     "ean": "0000030161153",
+     "label": "100ml",
+     "size": "100ml",
+     "active": true,
+     "image": "p/0000030161153"
+    }
+   ],
+   "image": "p/0000030161153",
+   "related": [
+    "loreal-metal-detox-pre-shampoo-peripoiisi-apomakrynsis-kai",
+    "loreal-metal-detox-sampoyan",
+    "loreal-metal-detox-maska-gia-apolyti-epanortosi-mallion",
+    "loreal-metal-detox-elaio-apomakrynsis-kai-prostasias-apo",
+    "loreal-absolut-repair-molecular-bi-phase-oil-gia"
+   ],
+   "kw": "Σε κάθε λούσιμο, μεταλλικά στοιχεία, όπως ο χαλκός, διεισδύουν στο εσωτερικό της τρίχας, δημιουργώντας σπάσιμο της τρίχας και ξεθώριασμα χρώματος."
+  },
+  {
+   "id": "loreal-tecni-art-morning-after-dust-xiro-sampoyan",
+   "brand": "L'Oréal Professionnel",
+   "brandKey": "loreal",
+   "line": "Tecni.Art",
+   "category": "care",
+   "type": "shampoo",
+   "name": {
+    "el": "Tecni.ART Morning After Dust Ξηρό Σαμπουάν",
+    "en": "Tecni.ART Morning After Dust Ξηρό Σαμπουάν"
+   },
+   "hairTypes": [
+    "all"
+   ],
+   "needs": [
+    "hold"
+   ],
+   "variants": [
+    {
+     "sku": "0000030157743",
+     "ean": "0000030157743",
+     "label": "200ml",
+     "size": "200ml",
+     "active": true,
+     "image": "p/0000030157743"
+    }
+   ],
+   "image": "p/0000030157743",
+   "related": [
+    "loreal-tecni-art-volume-extra-full-afros",
+    "loreal-tecni-art-volume-rootlift-afrodes-spray",
+    "loreal-metal-detox-maska-gia-apolyti-epanortosi-mallion",
+    "loreal-absolut-repair-molecular-bi-phase-oil-gia"
+   ],
+   "kw": "Το L'Oréal Professionnel Tecni.ART Morning After Dust είναι ένα αόρατο* ξηρό σαμπουάν που απορροφά τα έλαια και προσφέρει υπέροχο άρωμα φρεσκάδας για 24"
+  },
+  {
+   "id": "loreal-tecni-art-fix-design-spray",
+   "brand": "L'Oréal Professionnel",
+   "brandKey": "loreal",
+   "line": "Tecni.Art",
+   "category": "styling",
+   "type": "styling",
+   "name": {
+    "el": "Tecni.ART Fix Design Spray",
+    "en": "Tecni.ART Fix Design Spray"
+   },
+   "hairTypes": [
+    "all"
+   ],
+   "needs": [
+    "hold"
+   ],
+   "variants": [
+    {
+     "sku": "0000030160002",
+     "ean": "0000030160002",
+     "label": "200ml",
+     "size": "200ml",
+     "active": true,
+     "image": "p/0000030160002"
+    }
+   ],
+   "image": "p/0000030160002",
+   "related": [
+    "loreal-tecni-art-all-in-1-performer-styling",
+    "loreal-steampod-professional-smoothing-treatment",
+    "loreal-metal-detox-maska-gia-apolyti-epanortosi-mallion",
+    "loreal-absolut-repair-molecular-bi-phase-oil-gia"
+   ],
+   "kw": "Το επαγγελματικό Tecni.ART Σπρέι προσφέρει στα μαλλιά δυνατό κράτημα με δράση Κατά του φριζαρίσματος."
+  },
+  {
+   "id": "loreal-tecni-art-web-krema-diamorfosis",
+   "brand": "L'Oréal Professionnel",
+   "brandKey": "loreal",
+   "line": "Tecni.Art",
+   "category": "styling",
+   "type": "styling",
+   "name": {
+    "el": "Tecni.ART Web Κρέμα Διαμόρφωσης",
+    "en": "Tecni.ART Web Κρέμα Διαμόρφωσης"
+   },
+   "hairTypes": [
+    "all"
+   ],
+   "needs": [
+    "hold"
+   ],
+   "variants": [
+    {
+     "sku": "0000030165366",
+     "ean": "0000030165366",
+     "label": "150ml",
+     "size": "150ml",
+     "active": true,
+     "image": "p/0000030165366"
+    }
+   ],
+   "image": "p/0000030165366",
+   "related": [
+    "loreal-tecni-art-all-in-1-performer-styling",
+    "loreal-steampod-professional-smoothing-treatment",
+    "loreal-metal-detox-maska-gia-apolyti-epanortosi-mallion",
+    "loreal-absolut-repair-molecular-bi-phase-oil-gia"
+   ],
+   "kw": "Το Tecni.ART Web είναι μία επαγγελματική πάστα διαμόρφωσης για σχεδίαση, διαμόρφωση και διόρθωση του styling των μαλλιών με ένα φυσικό και λαμπερό τελείωμα."
+  },
+  {
+   "id": "loreal-tecni-art-volume-panache-spray-me-poydra",
+   "brand": "L'Oréal Professionnel",
+   "brandKey": "loreal",
+   "line": "Tecni.Art",
+   "category": "styling",
+   "type": "styling",
+   "name": {
+    "el": "Tecni.ART Volume Panache Spray Με Πούδρα",
+    "en": "Tecni.ART Volume Panache Spray Με Πούδρα"
+   },
+   "hairTypes": [
+    "all"
+   ],
+   "needs": [
+    "hold"
+   ],
+   "variants": [
+    {
+     "sku": "0000030166899",
+     "ean": "0000030166899",
+     "label": "250ml",
+     "size": "250ml",
+     "active": true,
+     "image": "p/0000030166899"
+    }
+   ],
+   "image": "p/0000030166899",
+   "related": [
+    "loreal-tecni-art-volume-extra-full-afros",
+    "loreal-tecni-art-volume-rootlift-afrodes-spray",
+    "loreal-metal-detox-maska-gia-apolyti-epanortosi-mallion",
+    "loreal-absolut-repair-molecular-bi-phase-oil-gia"
+   ],
+   "kw": "Το Tecni.ART Volume Panache Spray Με Πούδρα από τη L’Oréal Professionnel είναι το απόλυτο προϊόν που προσθέτει όγκο, κράτημα και υφή για να ενισχύσει κάθε"
+  },
+  {
+   "id": "loreal-tecni-art-flex-depolish-pasta-diamorfosis",
+   "brand": "L'Oréal Professionnel",
+   "brandKey": "loreal",
+   "line": "Tecni.Art",
+   "category": "styling",
+   "type": "styling",
+   "name": {
+    "el": "Tecni.ART Flex Depolish Πάστα Διαμόρφωσης",
+    "en": "Tecni.ART Flex Depolish Πάστα Διαμόρφωσης"
+   },
+   "hairTypes": [
+    "all"
+   ],
+   "needs": [
+    "hold"
+   ],
+   "variants": [
+    {
+     "sku": "0000030159884",
+     "ean": "0000030159884",
+     "label": "100ml",
+     "size": "100ml",
+     "active": true,
+     "image": "p/0000030159884"
+    }
+   ],
+   "image": "p/0000030159884",
+   "related": [
+    "loreal-tecni-art-all-in-1-performer-styling",
+    "loreal-steampod-professional-smoothing-treatment",
+    "loreal-metal-detox-maska-gia-apolyti-epanortosi-mallion",
+    "loreal-absolut-repair-molecular-bi-phase-oil-gia"
+   ],
+   "kw": "Το Tecni.ART Depolish είναι μία επαγγελματική, εύπλαστη πάστα διαμόρφωσης για αποδομημένο, σκληρό και ατημέλητο look."
+  },
+  {
+   "id": "loreal-tecni-art-fix-max-zele-diamorfosis",
+   "brand": "L'Oréal Professionnel",
+   "brandKey": "loreal",
+   "line": "Tecni.Art",
+   "category": "styling",
+   "type": "styling",
+   "name": {
+    "el": "Tecni.ART Fix Max Ζελέ Διαμόρφωσης",
+    "en": "Tecni.ART Fix Max Ζελέ Διαμόρφωσης"
+   },
+   "hairTypes": [
+    "all"
+   ],
+   "needs": [
+    "hold"
+   ],
+   "variants": [
+    {
+     "sku": "0000030165519",
+     "ean": "0000030165519",
+     "label": "200ml",
+     "size": "200ml",
+     "active": true,
+     "image": "p/0000030165519"
+    }
+   ],
+   "image": "p/0000030165519",
+   "related": [
+    "loreal-tecni-art-all-in-1-performer-styling",
+    "loreal-steampod-professional-smoothing-treatment",
+    "loreal-metal-detox-maska-gia-apolyti-epanortosi-mallion",
+    "loreal-absolut-repair-molecular-bi-phase-oil-gia"
+   ],
+   "kw": "Το Tecni.ART Fix Max είναι ένα επαγγελματικό gel διαμόρφωσης για έξτρα κράτημα έρχεται με ένα ευχάριστο και αναζωογονητικό άρωμα."
+  },
+  {
+   "id": "loreal-tecni-art-fix-anti-frizz-spray",
+   "brand": "L'Oréal Professionnel",
+   "brandKey": "loreal",
+   "line": "Tecni.Art",
+   "category": "styling",
+   "type": "styling",
+   "name": {
+    "el": "Tecni.ART Fix Anti-Frizz Spray",
+    "en": "Tecni.ART Fix Anti-Frizz Spray"
+   },
+   "hairTypes": [
+    "all"
+   ],
+   "needs": [
+    "hold"
+   ],
+   "variants": [
+    {
+     "sku": "0000030162822",
+     "ean": "0000030162822",
+     "label": "250ml",
+     "size": "250ml",
+     "active": true,
+     "image": "p/0000030162822"
+    }
+   ],
+   "image": "p/0000030162822",
+   "related": [
+    "loreal-tecni-art-all-in-1-performer-styling",
+    "loreal-steampod-professional-smoothing-treatment",
+    "loreal-metal-detox-maska-gia-apolyti-epanortosi-mallion",
+    "loreal-absolut-repair-molecular-bi-phase-oil-gia"
+   ],
+   "kw": "To Tecni.ART Fix Anti-Frizz Σπρέι κατά του Φριζαρίσματος από τη L’Oréal Professionnel προσφέρει δυνατό κράτημα και διάρκεια έως και 24 ώρες."
+  },
+  {
+   "id": "loreal-tecni-art-flex-pli-spray",
+   "brand": "L'Oréal Professionnel",
+   "brandKey": "loreal",
+   "line": "Tecni.Art",
+   "category": "styling",
+   "type": "styling",
+   "name": {
+    "el": "Tecni.ART Flex Pli Spray",
+    "en": "Tecni.ART Flex Pli Spray"
+   },
+   "hairTypes": [
+    "all"
+   ],
+   "needs": [
+    "hold"
+   ],
+   "variants": [
+    {
+     "sku": "0000030160255",
+     "ean": "0000030160255",
+     "label": "190ml",
+     "size": "190ml",
+     "active": true,
+     "image": "p/0000030160255"
+    }
+   ],
+   "image": "p/0000030160255",
+   "related": [
+    "loreal-tecni-art-all-in-1-performer-styling",
+    "loreal-steampod-professional-smoothing-treatment",
+    "loreal-metal-detox-maska-gia-apolyti-epanortosi-mallion",
+    "loreal-absolut-repair-molecular-bi-phase-oil-gia"
+   ],
+   "kw": "Το Tecni.ART Pli Shaper είναι ένα επαγγελματικό θερμοδραστικό Σπρέι. Προσφέρει σώμα και πειθαρχεία στην τρίχα, ενώ παράλληλα δίνει απαλή υφή και φυσική αίσθηση."
+  },
+  {
+   "id": "loreal-tecni-art-super-dust-poydra-gia-kratima",
+   "brand": "L'Oréal Professionnel",
+   "brandKey": "loreal",
+   "line": "Tecni.Art",
+   "category": "styling",
+   "type": "styling",
+   "name": {
+    "el": "Tecni.ART Super Dust Πούδρα Για Κράτημα",
+    "en": "Tecni.ART Super Dust Πούδρα Για Κράτημα"
+   },
+   "hairTypes": [
+    "all"
+   ],
+   "needs": [
+    "hold"
+   ],
+   "variants": [
+    {
+     "sku": "0000030162853",
+     "ean": "0000030162853",
+     "label": "7g",
+     "size": "7g",
+     "active": true,
+     "image": "p/0000030162853"
+    }
+   ],
+   "image": "p/0000030162853",
+   "related": [
+    "loreal-tecni-art-volume-extra-full-afros",
+    "loreal-tecni-art-volume-rootlift-afrodes-spray",
+    "loreal-metal-detox-maska-gia-apolyti-epanortosi-mallion",
+    "loreal-absolut-repair-molecular-bi-phase-oil-gia"
+   ],
+   "kw": "Το Tecni.ART Super Dust είναι μία επαγγελματική πούδρα μαλλιών για όγκο και υφή με ματ τελείωμα."
   }
  ]
 }
