@@ -1,0 +1,50 @@
+# Κατεβάζει τα packshots της L'Oréal (shop-data/packshots.json), φτιάχνει τις εικόνες του shop,
+# ξαναφτιάχνει τον κατάλογο και τα κάνει commit στο ίδιο branch.
+# Τρέχει μόνο του όταν αλλάζει το packshots.json, ή με το χέρι: Actions → Packshots → Run workflow.
+name: Packshots
+
+on:
+  push:
+    paths:
+      - shop-data/packshots.json
+      - scripts/shop/fetch_packshots.py
+      - .github/workflows/packshots.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: packshots-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install tools
+        run: pip install pillow requests pandas openpyxl
+
+      - name: Download packshots
+        run: python3 scripts/shop/fetch_packshots.py
+
+      - name: Rebuild catalogue
+        run: python3 scripts/shop/build_catalog.py
+
+      - name: Commit images and catalogue
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add public/images/shop/p shop-data src/data/shop
+          if git diff --cached --quiet; then
+            echo "Τίποτα νέο."
+          else
+            git commit -m "Shop: packshots L'Oréal και κατάλογος (αυτόματα)"
+            git push
+          fi
