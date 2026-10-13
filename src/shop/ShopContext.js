@@ -5,6 +5,8 @@ import { MAX_QTY, SHOP_API } from './config';
 const ShopContext = createContext(null);
 // Rating summary kept for the visit, so moving between shop pages does not ask again
 let ratingsCache = null;
+// true once the first shop page has hydrated in this visit
+let pageHydrated = false;
 
 const load = (key, fallback) => {
   try {
@@ -25,9 +27,10 @@ const save = (key, value) => {
 export const ShopProvider = ({ children }) => {
   // cart: [{ id, sku, qty }]
   // Pages are pre-built as HTML, so the saved cart is read after the page loads in the browser
-  const [cart, setCart] = useState([]);
-  const [wish, setWish] = useState([]);
-  const [loaded, setLoaded] = useState(false);
+  // After the first page has loaded, moving between shop pages reads the cart at once (no empty flash)
+  const [cart, setCart] = useState(() => (pageHydrated ? load('ahs_cart_v1', []).filter((l) => productById[l.id]) : []));
+  const [wish, setWish] = useState(() => (pageHydrated ? load('ahs_wish_v1', []).filter((id) => productById[id]) : []));
+  const [loaded, setLoaded] = useState(pageHydrated);
   const [drawer, setDrawer] = useState(false);
   const [lastAdded, setLastAdded] = useState(null);
   const [ratings, setRatingsState] = useState(() => ratingsCache || {}); // { productId: { avg, count } }
@@ -42,6 +45,7 @@ export const ShopProvider = ({ children }) => {
     setCart(load('ahs_cart_v1', []).filter((l) => productById[l.id]));
     setWish(load('ahs_wish_v1', []).filter((id) => productById[id]));
     setLoaded(true);
+    pageHydrated = true;
   }, []);
   useEffect(() => {
     if (loaded) save('ahs_cart_v1', cart);
