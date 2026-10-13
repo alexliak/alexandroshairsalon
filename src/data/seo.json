@@ -17,7 +17,7 @@
   },
   "/shop": {
     "title": "Shop Επαγγελματικών Προϊόντων Μαλλιών | L’Oréal Professionnel | Alexandros Hair Salon",
-    "description": "Επαγγελματικά προϊόντα μαλλιών L’Oréal Professionnel και διάγνωση μαλλιών σε τρεις ερωτήσεις. Ρώτα τιμή και διαθεσιμότητα. Κομμωτήριο στο Θησείο, Αθήνα."
+    "description": "Επαγγελματικά προϊόντα μαλλιών L’Oréal Professionnel με τιμές, διάγνωση μαλλιών σε τρεις ερωτήσεις, παραλαβή από το Θησείο ή αποστολή σε όλη την Ελλάδα."
   },
   "/douleia": {
     "title": "Ζητείται βοηθός κομμωτηρίου – Θησείο, Αθήνα | Alexandros Hair Salon",
@@ -32,5 +32,13 @@
       "height": 630,
       "type": "image/jpeg"
     }
+  },
+  "/oroi": {
+    "title": "Όροι πώλησης & επιστροφές | Shop | Alexandros Hair Salon",
+    "description": "Όροι αγοράς από το shop του Alexandros Hair Salon: τιμές με ΦΠΑ, πληρωμή, αποστολή, δικαίωμα υπαναχώρησης 14 ημερών και επιστροφές."
+  },
+  "/aporrito": {
+    "title": "Πολιτική απορρήτου | Alexandros Hair Salon",
+    "description": "Πώς το Alexandros Hair Salon χρησιμοποιεί και προστατεύει τα προσωπικά σου δεδομένα: παραγγελίες, κριτικές, φόρμες και cookies."
   }
 }

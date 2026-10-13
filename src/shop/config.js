@@ -22,6 +22,22 @@ export const SHIPPING = {
   freeOver: null
 };
 
+// Στοιχεία πωλητή για Όρους, Επιστροφές, Απόρρητο και footer.
+// gemi: συμπλήρωσε τον αριθμό ΓΕΜΗ (αν υπάρχει) για να εμφανίζεται. Κενό = δεν εμφανίζεται.
+// dispatchDays: χρόνος από την πληρωμή ως την αποστολή. Παραγγέλνουμε από τη L'Oréal μόνο ό,τι πουληθεί.
+export const SELLER = {
+  name: 'ΛΙΑΚΟΠΟΥΛΟΣ ΑΛΕΞΑΝΔΡΟΣ ΤΟΥ ΝΙΚΟΛΑΟΥ',
+  trade: 'Alexandros Hair Salon',
+  address: 'Ερυσίχθονος 3-5, Θησείο, 118 51 Αθήνα',
+  afm: '070233060',
+  doy: 'ΚΕΦΟΔΕ Αττικής',
+  gemi: '',
+  phone: '210 346 5554',
+  email: 'liakopoulosalex@gmail.com',
+  dispatchDays: '3-7 εργάσιμες ημέρες',
+  updated: '14/10/2026'
+};
+
 // Προσωρινός τρόπος πληρωμής μέχρι να ενεργοποιηθούν κάρτες/PayPal/Klarna (Stripe).
 export const BANK = {
   holder: 'ΛΙΑΚΟΠΟΥΛΟΣ ΑΛΕΞΑΝΔΡΟΣ',

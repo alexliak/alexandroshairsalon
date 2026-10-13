@@ -1,5 +1,6 @@
 import React, { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import { FaWhatsapp, FaViber, FaPhoneAlt, FaArrowUp, FaMapMarkerAlt } from 'react-icons/fa';
+import { openConsent } from '../lib/consent';
 import { Link, NavLink, useLocation } from '../lib/router';
 import { themeMode, setThemeMode } from '../lib/themeBoot';
 
@@ -97,6 +98,9 @@ const layoutText = {
     mobileBarCta: 'Κλείσε ραντεβού',
     footerShop: 'Online Shop',
     footerHours: 'Ωράριο στο Google',
+    footerTerms: 'Όροι & επιστροφές',
+    footerPrivacy: 'Απόρρητο',
+    footerCookies: 'Ρυθμίσεις cookies',
     theme: 'Εμφάνιση',
     themeOpts: [['auto', 'Αυτόματο', 'Όπως η συσκευή σου'], ['light', 'Ανοιχτό', ''], ['dark', 'Σκούρο', '']],
     footerJobs: 'Δουλειά μαζί μας',
@@ -138,6 +142,9 @@ const layoutText = {
     mobileBarCta: 'Book now',
     footerShop: 'Online Shop',
     footerHours: 'Hours on Google',
+    footerTerms: 'Terms & returns',
+    footerPrivacy: 'Privacy',
+    footerCookies: 'Cookie settings',
     theme: 'Appearance',
     themeOpts: [['auto', 'Auto', 'Same as your device'], ['light', 'Light', ''], ['dark', 'Dark', '']],
     footerJobs: 'We are hiring',
@@ -332,6 +339,9 @@ const NhLayout = ({ language, setLanguage, children, headerExtra, mobileBar }) =
           <Link to="/douleia">{t.footerJobs}</Link>
           <Link to="/montela">{t.footerModels}</Link>
           <a {...mapLinkProps(GOOGLE_PROFILE_URL)}>{t.footerHours}</a>
+          <Link to="/oroi">{t.footerTerms}</Link>
+          <Link to="/aporrito">{t.footerPrivacy}</Link>
+          <button type="button" className="nh-footer-linkbtn" onClick={openConsent}>{t.footerCookies}</button>
           <a href="https://www.facebook.com/alexandros.hairsalon" target="_blank" rel="noopener noreferrer">Facebook</a>
           <a href={`tel:${PHONE}`}>{PHONE_DISPLAY}</a>
           <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">WhatsApp</a>

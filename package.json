@@ -15,7 +15,8 @@
         "build": "next build && node scripts/postbuild.js",
         "start": "npx serve out",
         "shop:catalog": "python3 scripts/shop/build_catalog.py",
-        "convert-logo": "node scripts/convert-logo.js"
+        "convert-logo": "node scripts/convert-logo.js",
+        "shop:reprice": "python3 scripts/shop/reprice.py"
     },
     "devDependencies": {
         "sharp": "^0.34.5"
