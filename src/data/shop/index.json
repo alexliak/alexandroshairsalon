@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-13",
+ "generated": "2026-10-14",
  "currency": "EUR",
  "brands": [
   {
@@ -3463,6 +3463,166 @@
     "loreal-absolut-repair-molecular-bi-phase-oil-gia"
    ],
    "kw": "Το Tecni.ART Super Dust είναι μία επαγγελματική πούδρα μαλλιών για όγκο και υφή με ματ τελείωμα."
+  },
+  {
+   "id": "loreal-steampod-4-presa-atmou",
+   "brand": "L'Oréal Professionnel",
+   "brandKey": "loreal",
+   "line": "Steampod",
+   "category": "tools",
+   "type": "hair-tool",
+   "name": {
+    "el": "SteamPod 4.0 Πρέσα Ατμού",
+    "en": "SteamPod 4.0 Steam Styler"
+   },
+   "hairTypes": [
+    "all"
+   ],
+   "needs": [
+    "smooth",
+    "heat"
+   ],
+   "allowNoPhoto": true,
+   "variants": [
+    {
+     "sku": "3474637116415",
+     "ean": "3474637116415",
+     "label": "SteamPod 4.0",
+     "size": "",
+     "price": 292.99,
+     "active": true
+    }
+   ],
+   "image": null,
+   "related": [],
+   "kw": "Πρέσα ατμού για ίσιωμα, κυματισμούς και μπούκλες, για όλους τους τύπους μαλλιών. Σύμφωνα με τον κατασκευαστή: συνεχής ροή ξηρού ατμού, φαρδύτερες κεραμικές"
+  },
+  {
+   "id": "loreal-steampod-3-presa-atmou",
+   "brand": "L'Oréal Professionnel",
+   "brandKey": "loreal",
+   "line": "Steampod",
+   "category": "tools",
+   "type": "hair-tool",
+   "name": {
+    "el": "SteamPod 3.0 Πρέσα Ατμού",
+    "en": "SteamPod 3.0 Steam Styler"
+   },
+   "hairTypes": [
+    "all"
+   ],
+   "needs": [
+    "smooth",
+    "heat"
+   ],
+   "allowNoPhoto": true,
+   "variants": [
+    {
+     "sku": "3474636819713",
+     "ean": "3474636819713",
+     "label": "SteamPod 3.0",
+     "size": "",
+     "price": 211.99,
+     "active": true
+    }
+   ],
+   "image": null,
+   "related": [],
+   "kw": "Ισιωτική πρέσα ατμού της L'Oréal Professionnel. Λειτουργεί με νερό στο ενσωματωμένο δοχείο."
+  },
+  {
+   "id": "loreal-airlight-pro-sesouar",
+   "brand": "L'Oréal Professionnel",
+   "brandKey": "loreal",
+   "line": "AirLight Pro",
+   "category": "tools",
+   "type": "hair-tool",
+   "name": {
+    "el": "AirLight Pro Σεσουάρ",
+    "en": "AirLight Pro Hair Dryer"
+   },
+   "hairTypes": [
+    "all"
+   ],
+   "needs": [
+    "heat"
+   ],
+   "allowNoPhoto": true,
+   "variants": [
+    {
+     "sku": "3474637202866",
+     "ean": "3474637202866",
+     "label": "AirLight Pro",
+     "size": "",
+     "price": 395.49,
+     "active": true
+    }
+   ],
+   "image": null,
+   "related": [],
+   "kw": "Επαγγελματικό σεσουάρ με υπέρυθρο φως και μοτέρ υψηλής ταχύτητας. Σύμφωνα με τον κατασκευαστή: γρηγορότερο στέγνωμα χωρίς υπερβολική θερμότητα και έως 31%"
+  },
+  {
+   "id": "loreal-airlight-pro-xtena-akrofysio",
+   "brand": "L'Oréal Professionnel",
+   "brandKey": "loreal",
+   "line": "AirLight Pro",
+   "category": "tools",
+   "type": "accessory",
+   "name": {
+    "el": "AirLight Pro Ακροφύσιο-χτένα",
+    "en": "AirLight Pro Comb Nozzle"
+   },
+   "hairTypes": [
+    "curly"
+   ],
+   "needs": [
+    "curls"
+   ],
+   "allowNoPhoto": true,
+   "variants": [
+    {
+     "sku": "3474637324728",
+     "ean": "3474637324728",
+     "label": "Ακροφύσιο-χτένα",
+     "size": "",
+     "price": 30.49,
+     "active": true
+    }
+   ],
+   "image": null,
+   "related": [],
+   "kw": "Ακροφύσιο-χτένα για το σεσουάρ AirLight Pro, για σγουρά και κυματιστά μαλλιά. Ξεμπλέκει και λειαίνει κατά το στέγνωμα."
+  },
+  {
+   "id": "loreal-airlight-pro-filtra",
+   "brand": "L'Oréal Professionnel",
+   "brandKey": "loreal",
+   "line": "AirLight Pro",
+   "category": "tools",
+   "type": "accessory",
+   "name": {
+    "el": "AirLight Pro Σετ φίλτρων",
+    "en": "AirLight Pro Filter Pack"
+   },
+   "hairTypes": [
+    "all"
+   ],
+   "needs": [],
+   "allowNoPhoto": true,
+   "variants": [
+    {
+     "sku": "3474637324766",
+     "ean": "3474637324766",
+     "label": "2 + 2 φίλτρα",
+     "size": "",
+     "price": 30.49,
+     "active": true
+    }
+   ],
+   "image": null,
+   "related": [],
+   "kw": "Ανταλλακτικά φίλτρα για το σεσουάρ AirLight Pro: 2 κύρια φίλτρα και 2 φίλτρα χειρολαβής."
   }
  ]
 }

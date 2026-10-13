@@ -1,0 +1,237 @@
+[
+ {
+  "id": "loreal-steampod-4-presa-atmou",
+  "brand": "L'Oréal Professionnel",
+  "brandKey": "loreal",
+  "line": "Steampod",
+  "category": "tools",
+  "type": "hair-tool",
+  "name": {
+   "el": "SteamPod 4.0 Πρέσα Ατμού",
+   "en": "SteamPod 4.0 Steam Styler"
+  },
+  "short": {
+   "el": "Πρέσα ατμού για ίσιωμα, κυματισμούς και μπούκλες, για όλους τους τύπους μαλλιών. Σύμφωνα με τον κατασκευαστή: συνεχής ροή ξηρού ατμού, φαρδύτερες κεραμικές πλάκες, 3 αποσπώμενες χτένες ανάλογα με το πάχος των μαλλιών. Δοχείο νερού για απιονισμένο νερό.",
+   "en": "Steam styler for straightening, waves and curls, for all hair types. According to the manufacturer: continuous dry steam, wider ceramic plates, 3 detachable combs for different hair thickness. Water tank for deionised water."
+  },
+  "description": {
+   "el": "Πρέσα ατμού για ίσιωμα, κυματισμούς και μπούκλες, για όλους τους τύπους μαλλιών. Σύμφωνα με τον κατασκευαστή: συνεχής ροή ξηρού ατμού, φαρδύτερες κεραμικές πλάκες, 3 αποσπώμενες χτένες ανάλογα με το πάχος των μαλλιών. Δοχείο νερού για απιονισμένο νερό.",
+   "en": "Steam styler for straightening, waves and curls, for all hair types. According to the manufacturer: continuous dry steam, wider ceramic plates, 3 detachable combs for different hair thickness. Water tank for deionised water."
+  },
+  "howTo": {
+   "el": "",
+   "en": ""
+  },
+  "safety": {
+   "el": "",
+   "en": ""
+  },
+  "hairTypes": [
+   "all"
+  ],
+  "needs": [
+   "smooth",
+   "heat"
+  ],
+  "allowNoPhoto": true,
+  "variants": [
+   {
+    "sku": "3474637116415",
+    "ean": "3474637116415",
+    "label": "SteamPod 4.0",
+    "size": "",
+    "price": null,
+    "stock": null,
+    "active": true
+   }
+  ],
+  "image": null
+ },
+ {
+  "id": "loreal-steampod-3-presa-atmou",
+  "brand": "L'Oréal Professionnel",
+  "brandKey": "loreal",
+  "line": "Steampod",
+  "category": "tools",
+  "type": "hair-tool",
+  "name": {
+   "el": "SteamPod 3.0 Πρέσα Ατμού",
+   "en": "SteamPod 3.0 Steam Styler"
+  },
+  "short": {
+   "el": "Ισιωτική πρέσα ατμού της L'Oréal Professionnel. Λειτουργεί με νερό στο ενσωματωμένο δοχείο.",
+   "en": "L'Oréal Professionnel steam straightener. Works with water in the built-in tank."
+  },
+  "description": {
+   "el": "Ισιωτική πρέσα ατμού της L'Oréal Professionnel. Λειτουργεί με νερό στο ενσωματωμένο δοχείο.",
+   "en": "L'Oréal Professionnel steam straightener. Works with water in the built-in tank."
+  },
+  "howTo": {
+   "el": "",
+   "en": ""
+  },
+  "safety": {
+   "el": "",
+   "en": ""
+  },
+  "hairTypes": [
+   "all"
+  ],
+  "needs": [
+   "smooth",
+   "heat"
+  ],
+  "allowNoPhoto": true,
+  "variants": [
+   {
+    "sku": "3474636819713",
+    "ean": "3474636819713",
+    "label": "SteamPod 3.0",
+    "size": "",
+    "price": null,
+    "stock": null,
+    "active": true
+   }
+  ],
+  "image": null
+ },
+ {
+  "id": "loreal-airlight-pro-sesouar",
+  "brand": "L'Oréal Professionnel",
+  "brandKey": "loreal",
+  "line": "AirLight Pro",
+  "category": "tools",
+  "type": "hair-tool",
+  "name": {
+   "el": "AirLight Pro Σεσουάρ",
+   "en": "AirLight Pro Hair Dryer"
+  },
+  "short": {
+   "el": "Επαγγελματικό σεσουάρ με υπέρυθρο φως και μοτέρ υψηλής ταχύτητας. Σύμφωνα με τον κατασκευαστή: γρηγορότερο στέγνωμα χωρίς υπερβολική θερμότητα και έως 31% λιγότερη κατανάλωση ενέργειας από κορυφαία premium σεσουάρ.",
+   "en": "Professional hair dryer with infrared light and a high-speed motor. According to the manufacturer: faster drying without excessive heat and up to 31% less energy than leading premium dryers."
+  },
+  "description": {
+   "el": "Επαγγελματικό σεσουάρ με υπέρυθρο φως και μοτέρ υψηλής ταχύτητας. Σύμφωνα με τον κατασκευαστή: γρηγορότερο στέγνωμα χωρίς υπερβολική θερμότητα και έως 31% λιγότερη κατανάλωση ενέργειας από κορυφαία premium σεσουάρ.",
+   "en": "Professional hair dryer with infrared light and a high-speed motor. According to the manufacturer: faster drying without excessive heat and up to 31% less energy than leading premium dryers."
+  },
+  "howTo": {
+   "el": "",
+   "en": ""
+  },
+  "safety": {
+   "el": "",
+   "en": ""
+  },
+  "hairTypes": [
+   "all"
+  ],
+  "needs": [
+   "heat"
+  ],
+  "allowNoPhoto": true,
+  "variants": [
+   {
+    "sku": "3474637202866",
+    "ean": "3474637202866",
+    "label": "AirLight Pro",
+    "size": "",
+    "price": null,
+    "stock": null,
+    "active": true
+   }
+  ],
+  "image": null
+ },
+ {
+  "id": "loreal-airlight-pro-xtena-akrofysio",
+  "brand": "L'Oréal Professionnel",
+  "brandKey": "loreal",
+  "line": "AirLight Pro",
+  "category": "tools",
+  "type": "accessory",
+  "name": {
+   "el": "AirLight Pro Ακροφύσιο-χτένα",
+   "en": "AirLight Pro Comb Nozzle"
+  },
+  "short": {
+   "el": "Ακροφύσιο-χτένα για το σεσουάρ AirLight Pro, για σγουρά και κυματιστά μαλλιά. Ξεμπλέκει και λειαίνει κατά το στέγνωμα.",
+   "en": "Comb nozzle for the AirLight Pro hair dryer, for curly and wavy hair. Detangles and smooths while drying."
+  },
+  "description": {
+   "el": "Ακροφύσιο-χτένα για το σεσουάρ AirLight Pro, για σγουρά και κυματιστά μαλλιά. Ξεμπλέκει και λειαίνει κατά το στέγνωμα.",
+   "en": "Comb nozzle for the AirLight Pro hair dryer, for curly and wavy hair. Detangles and smooths while drying."
+  },
+  "howTo": {
+   "el": "",
+   "en": ""
+  },
+  "safety": {
+   "el": "",
+   "en": ""
+  },
+  "hairTypes": [
+   "curly"
+  ],
+  "needs": [
+   "curls"
+  ],
+  "allowNoPhoto": true,
+  "variants": [
+   {
+    "sku": "3474637324728",
+    "ean": "3474637324728",
+    "label": "Ακροφύσιο-χτένα",
+    "size": "",
+    "price": null,
+    "stock": null,
+    "active": true
+   }
+  ],
+  "image": null
+ },
+ {
+  "id": "loreal-airlight-pro-filtra",
+  "brand": "L'Oréal Professionnel",
+  "brandKey": "loreal",
+  "line": "AirLight Pro",
+  "category": "tools",
+  "type": "accessory",
+  "name": {
+   "el": "AirLight Pro Σετ φίλτρων",
+   "en": "AirLight Pro Filter Pack"
+  },
+  "short": {
+   "el": "Ανταλλακτικά φίλτρα για το σεσουάρ AirLight Pro: 2 κύρια φίλτρα και 2 φίλτρα χειρολαβής.",
+   "en": "Replacement filters for the AirLight Pro hair dryer: 2 main filters and 2 handle filters."
+  },
+  "description": {
+   "el": "Ανταλλακτικά φίλτρα για το σεσουάρ AirLight Pro: 2 κύρια φίλτρα και 2 φίλτρα χειρολαβής.",
+   "en": "Replacement filters for the AirLight Pro hair dryer: 2 main filters and 2 handle filters."
+  },
+  "howTo": {
+   "el": "",
+   "en": ""
+  },
+  "safety": {
+   "el": "",
+   "en": ""
+  },
+  "hairTypes": [
+   "all"
+  ],
+  "needs": [],
+  "allowNoPhoto": true,
+  "variants": [
+   {
+    "sku": "3474637324766",
+    "ean": "3474637324766",
+    "label": "2 + 2 φίλτρα",
+    "size": "",
+    "price": null,
+    "stock": null,
+    "active": true
+   }
+  ],
+  "image": null
+ }
+]

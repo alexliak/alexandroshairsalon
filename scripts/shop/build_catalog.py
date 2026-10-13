@@ -647,9 +647,14 @@ def main():
         del p['_eans']
 
     # Άλλες εταιρείες (Evoque, Gotstyle …)
-    other_path = DATA / 'other-brands.json'
-    if other_path.exists():
-        for o in json.loads(other_path.read_text(encoding='utf-8')):
+    # + Εργαλεία L'Oréal χωρίς κείμενα/φωτογραφίες στα αρχεία της L'Oréal (Steampod, AirLight): shop-data/loreal-tools.json
+    manual = []
+    for name in ('other-brands.json', 'loreal-tools.json'):
+        path = DATA / name
+        if path.exists():
+            manual += json.loads(path.read_text(encoding='utf-8'))
+    if manual:
+        for o in manual:
             for v in o['variants']:
                 p = prices.get(v['sku'], {})
                 if p.get('price'):
@@ -689,6 +694,9 @@ def main():
     if settings.get('onlyWithPhoto'):
         kept = []
         for p in products:
+            if p.get('allowNoPhoto'):  # π.χ. Steampod/AirLight μέχρι να έρθουν packshots: σχέδιο αντί για φωτογραφία
+                kept.append(p)
+                continue
             p['variants'] = [v for v in p['variants'] if v.get('image')]
             if p['variants']:
                 p['image'] = p['variants'][0]['image']
