@@ -45,7 +45,7 @@ const TXT = {
     terms: 'Όρους πώλησης & επιστροφές',
     and: 'και την',
     privacy: 'Πολιτική απορρήτου',
-    sealed: 'Τα καλλυντικά επιστρέφονται μέσα σε 14 ημέρες μόνο κλειστά και σφραγισμένα. Ελαττωματικά προϊόντα αντικαθίστανται πάντα.',
+    sealed: 'Τα καλλυντικά επιστρέφονται μέσα σε 14 ημέρες μόνο κλειστά και σφραγισμένα. Ανοιγμένα ή χρησιμοποιημένα δεν επιστρέφονται.',
     dispatch: 'Αποστολή σε {d} από την πληρωμή.',
     empty: 'Το καλάθι σου είναι άδειο.',
     back: 'Πίσω στο shop'
@@ -88,7 +88,7 @@ const TXT = {
     terms: 'Terms of sale & returns',
     and: 'and the',
     privacy: 'Privacy policy',
-    sealed: 'Cosmetics can be returned within 14 days only if unopened and sealed. Faulty products are always replaced.',
+    sealed: 'Cosmetics can be returned within 14 days only if unopened and sealed. Opened or used products cannot be returned.',
     dispatch: 'Dispatched within {d} after payment.',
     empty: 'Your bag is empty.',
     back: 'Back to shop'
