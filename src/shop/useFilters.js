@@ -49,7 +49,10 @@ export const matches = (p, s, ctx, except) => {
 };
 
 const sorters = {
-  featured: (a, b) => (b.image ? 1 : 0) - (a.image ? 1 : 0) || (b.priced ? 1 : 0) - (a.priced ? 1 : 0),
+  featured: (a, b) => (b.image ? 1 : 0) - (a.image ? 1 : 0) || (b.priced ? 1 : 0) - (a.priced ? 1 : 0)
+    || a.featuredRank - b.featuredRank || (a.minPrice ?? 1e9) - (b.minPrice ?? 1e9),
+  new: (a, b) => b.newness - a.newness,
+  'unit-asc': (a, b) => (a.minUnit?.value ?? 1e9) - (b.minUnit?.value ?? 1e9),
   'price-asc': (a, b) => (a.minPrice ?? 1e9) - (b.minPrice ?? 1e9),
   'price-desc': (a, b) => (b.maxPrice ?? -1) - (a.maxPrice ?? -1),
   name: (a, b) => a.name.el.localeCompare(b.name.el, 'el')
@@ -63,7 +66,9 @@ const useFilters = ({ ratings, wish }) => {
   const results = useMemo(() => {
     const list = PRODUCTS.filter((p) => matches(p, state, ctx));
     if (state.sort === 'rating') {
-      return [...list].sort((a, b) => (ratings[b.id]?.avg || 0) - (ratings[a.id]?.avg || 0));
+      // Μέσος όρος με «βάρος» στο πλήθος: 5★ από 1 κριτική δεν περνάει μπροστά από 4,8★ από 40
+      const score = (id) => { const r = ratings[id]; return r ? (r.avg * r.count + 4 * 3) / (r.count + 3) : 0; };
+      return [...list].sort((a, b) => score(b.id) - score(a.id) || (ratings[b.id]?.count || 0) - (ratings[a.id]?.count || 0));
     }
     return [...list].sort(sorters[state.sort] || sorters.featured);
   }, [state, ctx, ratings]);

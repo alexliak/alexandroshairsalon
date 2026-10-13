@@ -212,10 +212,12 @@ const ShopHome = ({ lang, t }) => {
               <span className="sh-visually-hidden">{t.sort}</span>
               <select value={state.sort} onChange={(e) => update({ sort: e.target.value === 'featured' ? null : e.target.value })}>
                 <option value="featured">{t.sortFeatured}</option>
+                {hasRatings && <option value="rating">{t.sortRating}</option>}
+                <option value="new">{t.sortNew}</option>
                 {!CATALOG_MODE && <option value="price-asc">{t.sortPriceAsc}</option>}
                 {!CATALOG_MODE && <option value="price-desc">{t.sortPriceDesc}</option>}
+                {!CATALOG_MODE && <option value="unit-asc">{t.sortUnit}</option>}
                 <option value="name">{t.sortName}</option>
-                {hasRatings && <option value="rating">{t.sortRating}</option>}
               </select>
             </label>
           </div>
