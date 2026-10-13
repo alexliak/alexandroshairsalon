@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from '../../lib/router';
 import { FaHeart, FaRegHeart } from 'react-icons/fa';
-import { money, productUrl, t as tr, typeByKey } from '../catalog';
+import { money, productUrl, t as tr, typeByKey, unitLabel, unitPrice } from '../catalog';
 import { useShop } from '../ShopContext';
 import { CATALOG_MODE, WHATSAPP } from '../config';
 import ProductImage from './ProductImage';
@@ -19,6 +19,9 @@ const ProductCard = ({ product: p, lang, t }) => {
   const name = tr(p.name, lang);
   const r = ratings[p.id];
   const single = p.variants.length === 1 ? p.variants[0] : null;
+  // Τιμή ανά λίτρο/κιλό για την τιμή που φαίνεται (η φθηνότερη επιλογή)
+  const shown = p.variants.filter((v) => v.price === p.minPrice)[0];
+  const unit = shown ? unitPrice(shown) : null;
   const wished = wish.includes(p.id);
   const soldOut = !p.inStock;
 
@@ -58,6 +61,7 @@ const ProductCard = ({ product: p, lang, t }) => {
             <span className="sh-price">
               {p.variants.length > 1 && p.minPrice !== p.maxPrice && <small>{t.from} </small>}
               {money(p.minPrice, lang)}
+              {unit && <small className="sh-unit">{unitLabel(unit, lang)}</small>}
             </span>
           ) : CATALOG_MODE ? (
             <span />

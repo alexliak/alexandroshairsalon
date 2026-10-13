@@ -2,7 +2,7 @@ import React, { useEffect, useMemo, useState } from 'react';
 import { Link } from '../../lib/router';
 import { FaHeart, FaRegHeart, FaWhatsapp } from 'react-icons/fa';
 import {
-  PRODUCTS, hairByKey, money, needByKey, productById, t as tr, typeByKey
+  PRODUCTS, hairByKey, money, needByKey, productById, t as tr, typeByKey, unitLabel, unitPrice
 } from '../catalog';
 import { useShop } from '../ShopContext';
 import { CATALOG_MODE, MAX_QTY } from '../config';
@@ -106,6 +106,7 @@ const ProductPage = ({ product: p, lang, t }) => {
             {priced ? (
               <>
                 <strong>{money(variant.price, lang)}</strong>
+                {unitPrice(variant) && <span className="sh-unit">{unitLabel(unitPrice(variant), lang)}</span>}
                 {typeof variant.compareAt === 'number' && variant.compareAt > variant.price && (
                   <s>{money(variant.compareAt, lang)}</s>
                 )}
