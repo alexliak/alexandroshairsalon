@@ -88,7 +88,9 @@ def main():
         # Μόνο λιανική (R) και εργαλεία: τα επαγγελματικά (T) έχουν άλλη έκπτωση και δεν πουλιούνται στο shop
         if not info or info.get('cls') not in ('R', 'Tools') or not isinstance(info.get('wholesale'), (int, float)):
             continue
-        cost_net = info['wholesale'] * (1 - cfg['lorealRetailDiscount']) * (1 - cfg['lorealPromoDiscount'])
+        # Λιανική (R): σταθερή δομική έκπτωση. Εργαλεία (Tools): στο Partner Shop πωλούνται σχεδόν στην τιμή καταλόγου.
+        disc = cfg.get('lorealToolsDiscount', cfg['lorealRetailDiscount']) if info.get('cls') == 'Tools' else cfg['lorealRetailDiscount']
+        cost_net = info['wholesale'] * (1 - disc) * (1 - cfg['lorealPromoDiscount'])
         fl = floor_price(cost_net, margin, cfg)
         c = comp.get(e) or {}
         now = c.get('now')
