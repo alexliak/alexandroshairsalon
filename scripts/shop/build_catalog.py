@@ -9,6 +9,12 @@
 Πηγές (μία πηγή αλήθειας ανά πληροφορία):
   shop-data/loreal/LP_Assortment_Info.xlsx      -> περιγραφές L'Oréal (από τη L'Oréal)
   shop-data/loreal/PPD_Related_Products_2026.xlsx -> σχετικά προϊόντα + μεγέθη
+  shop-data/loreal/LP_Product_Catalogue_September26_Salons.xlsm
+                                                 -> τιμοκατάλογος L'Oréal: ποια είναι λιανική (R) / εργαλεία (Tools),
+                                                    μέγεθος (ML) και τιμή χονδρικής χωρίς ΦΠΑ
+  shop-data/loreal/LP_Assortment_Product_Info_packshots.xlsx
+                                                 -> packshot ανά EAN (Salsify) + κείμενα για κωδικούς που λείπουν
+  shop-data/packshots.json                       -> EAN -> τοπική φωτογραφία (γράφεται από scripts/shop/fetch_packshots.py)
   shop-data/other-brands.json                    -> Evoque, Gotstyle και κάθε άλλη εταιρεία
   shop-data/prices.csv                           -> ΤΙΜΕΣ, απόθεμα, ενεργό/ανενεργό (το συμπληρώνεις εσύ)
   shop-data/images.json                          -> ποια εικόνα πάει σε ποια σειρά/προϊόν
@@ -327,23 +333,115 @@ def to_price(v):
         return None
 
 
+def ean13(e):
+    """Ίδιο EAN ανεξάρτητα από τα μηδενικά μπροστά (π.χ. 30160606 = 0000030160606)."""
+    e = re.sub(r'\D', '', str(e or ''))
+    return e.lstrip('0').zfill(13) if e else ''
+
+
+def load_pricelist():
+    """Τιμοκατάλογος L'Oréal: EAN -> {cls: R/T/Tools, ml, name, sap, wholesale}."""
+    path = DATA / 'loreal' / 'LP_Product_Catalogue_September26_Salons.xlsm'
+    out = {}
+    if not path.exists():
+        return out
+    import openpyxl
+    ws = openpyxl.load_workbook(path, read_only=True, data_only=True)['Prod Catal 26']
+    section = ''
+    for r in ws.iter_rows(min_row=8, values_only=True):
+        code = clean(r[0])
+        if code.isdigit():
+            cls = clean(r[5]).replace('Τ', 'T')  # ελληνικό Τ σε 3 γραμμές
+            ml = clean(r[4])
+            out[ean13(code)] = {
+                'cls': cls, 'ml': '' if ml in ('-', 'ΝΑ', 'NA') else ml.replace('gr', 'g'),
+                'name': clean(r[2]), 'sap': clean(r[1]), 'section': section,
+                'wholesale': r[6] if isinstance(r[6], (int, float)) else None,
+            }
+        elif code:
+            section = code
+    return out
+
+
+def load_lp_info():
+    """Αρχείο L'Oréal με packshot ανά EAN: EAN -> {name, packshot, category, text}."""
+    path = DATA / 'loreal' / 'LP_Assortment_Product_Info_packshots.xlsx'
+    out = {}
+    if not path.exists():
+        return out
+    import openpyxl
+    ws = openpyxl.load_workbook(path, read_only=True)['ASSORTMENT & PRODUCT INFO']
+    for r in ws.iter_rows(min_row=2, values_only=True):
+        if r[0]:
+            out[ean13(r[0])] = {'name': clean(r[2]), 'packshot': clean(r[3]), 'category': clean(r[4]), 'text': clean(r[5])}
+    return out
+
+
+def line_for(name):
+    """Σειρά από το όνομα (για κωδικούς που δεν υπάρχουν στο LP_Assortment_Info)."""
+    n = (name or '').lower()
+    if 'tecni' in n:
+        return 'Tecni.Art'
+    for line in sorted(set(LINE_NAMES.values()), key=len, reverse=True):
+        if line.lower() in n:
+            return line
+    return ''
+
+
+def synthetic_row(ean, info, pl):
+    """Γραμμή στη μορφή του LP_Assortment_Info, από το αρχείο packshots + τιμοκατάλογο."""
+    line = line_for(info['name']) or line_for(pl.get('name', ''))
+    return {
+        'EAN/UPC': ean, 'Brand_Final': 'Serie Expert', 'Sub_Brand_Final': line,
+        'Product_Name_Long (el-GR)': info['name'], 'Product_Name_Long (en-GB)': '',
+        'Product_type DMI': info['category'], 'Logistic_code': pl.get('sap', ''),
+        'Product_Description_Long (el-GR)': info['text'], 'Product_Description_Long (en-GB)': '',
+        'Instruction_of_use (el-GR)': '', 'Instruction_of_use (en-GB)': '',
+        'Safety_Information_use (el-GR)': '', 'Safety_Information_use (en-GB)': '',
+        'Hair_effect': '', 'Hair_type': '', 'Hair_type.1': '',
+    }
+
+
 def main():
     df = pd.read_excel(DATA / 'loreal' / 'LP_Assortment_Info.xlsx', dtype={'EAN/UPC': str})
     ppd = pd.read_excel(DATA / 'loreal' / 'PPD_Related_Products_2026.xlsx', dtype=str)
-    ppd_name = {clean(r['Barcode']): clean(r['Product Name']) for _, r in ppd.iterrows()}
+    ppd_name = {ean13(r['Barcode']): clean(r['Product Name']) for _, r in ppd.iterrows()}
     related_raw = {}
     for _, r in ppd.iterrows():
-        rel = [clean(r[c]) for c in ppd.columns if c.startswith('Related Product') and not c.endswith('.1')]
-        related_raw[clean(r['Barcode'])] = [x for x in rel if x]
+        rel = [ean13(r[c]) for c in ppd.columns if c.startswith('Related Product') and not c.endswith('.1') and clean(r[c])]
+        related_raw[ean13(r['Barcode'])] = [x for x in rel if x]
 
     images = json.loads((DATA / 'images.json').read_text(encoding='utf-8')) if (DATA / 'images.json').exists() else {}
+    # Φωτογραφίες ανά EAN: χειροκίνητες (images.json) + packshots της L'Oréal που κατέβηκαν (packshots.json)
+    packshots_path = DATA / 'packshots.json'
+    local_shots = json.loads(packshots_path.read_text(encoding='utf-8')).get('local', {}) if packshots_path.exists() else {}
+    product_images = {ean13(k): v for k, v in local_shots.items()}
+    product_images.update({ean13(k): v for k, v in images.get('products', {}).items()})
+    images['products'] = product_images
     prices, prices_path = load_prices()
+    pricelist = load_pricelist()
+    lp_info = load_lp_info()
+
+    settings_path = ROOT / 'src' / 'shop' / 'settings.json'
+    settings = json.loads(settings_path.read_text(encoding='utf-8')) if settings_path.exists() else {}
+    # retailOnly: μόνο ό,τι η L'Oréal χαρακτηρίζει λιανική (R) ή εργαλεία (Tools) στον τιμοκατάλογο
+    retail_only = bool(settings.get('retailOnly')) and bool(pricelist)
+    RETAIL = {'R', 'Tools'}
+
+    source_rows = [r for _, r in df.iterrows()]
+    known = {ean13(clean(r['EAN/UPC'])) for r in source_rows}
+    # Κωδικοί λιανικής που δεν έχει το LP_Assortment_Info αλλά έχει το αρχείο packshots (π.χ. Metal Detox, Tecni.Art)
+    for e, info in lp_info.items():
+        if e not in known and pricelist.get(e, {}).get('cls') in RETAIL:
+            source_rows.append(synthetic_row(e, info, pricelist[e]))
 
     groups = OrderedDict()
-    for _, r in df.iterrows():
-        ean = clean(r['EAN/UPC'])
+    for r in source_rows:
+        ean = ean13(clean(r['EAN/UPC']))
         brand = clean(r['Brand_Final'])
         if brand in PRO_ONLY_BRANDS or ean in PRO_ONLY_EANS:
+            continue
+        if retail_only and pricelist.get(ean, {}).get('cls') not in RETAIL:
             continue
         line = LINE_NAMES.get(clean(r['Sub_Brand_Final']), clean(r['Sub_Brand_Final']))
         name_el = clean(r['Product_Name_Long (el-GR)'])
@@ -352,13 +450,19 @@ def main():
         pname = ppd_name.get(ean, '')
         size = (prices.get(ean, {}).get('size') or '').strip() or find_size(name_en_long, pname, name_el) \
             or find_size(clean(r['Product_Description_Long (el-GR)'])[:400]) or SIZE_HINTS.get(clean(r['Logistic_code'])[:5], '') \
-            or ('300ml' if line == 'Infinium' else '')
+            or ('300ml' if line == 'Infinium' else '') or pricelist.get(ean, {}).get('ml', '')
         ptype = detect_type(name_el, name_en_long + ' ' + pname, dmi, line)
         refill = 'refill' in f'{name_el} {name_en_long} {pname}'.lower() or clean(r['Logistic_code'])[:5] in SIZE_HINTS
         base_el = strip_size(re.sub(r'\s*Refill\b', '', name_el, flags=re.I)) if name_el else ''
         base_el = re.sub(r"^L'Oréal Professionnel\s+", '', base_el)
 
         fam = 'touch-up' if ptype == 'root-spray' else (family_key(base_el) if base_el and not refill else '')
+        if fam and ean not in known:
+            # Κωδικός από το αρχείο packshots: μπαίνει στο ίδιο προϊόν με τα άλλα μεγέθη του (ίδια αρχή ονόματος)
+            head = ' '.join(fam.split()[:3])
+            same = [k for k in groups if k[0] == line and k[1] == ptype and ' '.join(k[2].split()[:3]) == head]
+            if same:
+                fam = same[0][2]
         key = (line, ptype, fam or f'__{ean}')
         g = groups.setdefault(key, {'rows': [], 'line': line, 'type': ptype})
         g['rows'].append({
@@ -552,8 +656,6 @@ def main():
             w.writerow({k: row.get(k, '') for k in w.fieldnames})
 
     # Τι εμφανίζεται στο shop (src/shop/settings.json): εταιρείες και «μόνο με φωτογραφία»
-    settings_path = ROOT / 'src' / 'shop' / 'settings.json'
-    settings = json.loads(settings_path.read_text(encoding='utf-8')) if settings_path.exists() else {}
     allowed = settings.get('brands')
     if allowed:
         products = [p for p in products if p['brandKey'] in allowed]
