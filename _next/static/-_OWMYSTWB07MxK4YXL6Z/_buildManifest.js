@@ -9,7 +9,7 @@ self.__BUILD_MANIFEST = {
     "static/chunks/1i-q_gge7mul2.js"
   ],
   "/aporrito": [
-    "static/chunks/44zcrvy_jlkap.js"
+    "static/chunks/1l4j5d1kbhf8n.js"
   ],
   "/douleia": [
     "static/chunks/173e-78xwq637.js"
@@ -21,7 +21,7 @@ self.__BUILD_MANIFEST = {
     "static/chunks/1wnyiklb94_th.js"
   ],
   "/oroi": [
-    "static/chunks/3k4la-y9j76qg.js"
+    "static/chunks/297o8uds2z7mz.js"
   ],
   "/services": [
     "static/chunks/16wrwuy_avcwe.js"
@@ -33,7 +33,7 @@ self.__BUILD_MANIFEST = {
     "static/chunks/400n3jfdhulnu.js"
   ],
   "/shop/cart": [
-    "static/chunks/0rhlfcq9sfvvp.js"
+    "static/chunks/1r_pbnosh4kje.js"
   ],
   "/shop/diagnosi": [
     "static/chunks/0ti2w1_yfae8t.js"
