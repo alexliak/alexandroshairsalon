@@ -3,7 +3,7 @@ import { Link } from '../../lib/router';
 import emailjs from 'emailjs-com';
 import { money, t as tr } from '../catalog';
 import { useShop } from '../ShopContext';
-import { BANK, EMAILJS } from '../config';
+import { BANK, EMAILJS, SELLER } from '../config';
 import { CartLines } from '../components/CartDrawer';
 
 const TXT = {
@@ -31,7 +31,7 @@ const TXT = {
     shipping: 'Μεταφορικά',
     shippingFree: 'Δωρεάν',
     shippingTbd: 'Επιβεβαιώνεται με email',
-    send: 'Αποστολή παραγγελίας',
+    send: 'Παραγγελία με υποχρέωση πληρωμής',
     sending: 'Αποστολή…',
     required: 'Συμπλήρωσε όλα τα υποχρεωτικά πεδία.',
     unpriced: 'Κάποια προϊόντα δεν έχουν ακόμη τιμή: θα σου την επιβεβαιώσουμε με email.',
@@ -40,7 +40,13 @@ const TXT = {
     successMsg: 'Σου στείλαμε email επιβεβαίωσης. Για να ξεκινήσει η αποστολή, κατάθεσε το ποσό σε έναν από τους λογαριασμούς και στείλε μας την απόδειξη στο',
     holder: 'Δικαιούχος',
     iris: 'IRIS (ΑΦΜ ή κινητό)',
-    consent: 'Συμφωνώ να χρησιμοποιηθούν τα στοιχεία μου μόνο για την παραγγελία.',
+    noAccount: 'Χωρίς λογαριασμό και εγγραφή: μόνο τα στοιχεία της παράδοσης.',
+    consent: 'Διάβασα και αποδέχομαι τους',
+    terms: 'Όρους πώλησης & επιστροφές',
+    and: 'και την',
+    privacy: 'Πολιτική απορρήτου',
+    sealed: 'Τα καλλυντικά επιστρέφονται μέσα σε 14 ημέρες μόνο κλειστά και σφραγισμένα. Ελαττωματικά προϊόντα αντικαθίστανται πάντα.',
+    dispatch: 'Αποστολή σε {d} από την πληρωμή.',
     empty: 'Το καλάθι σου είναι άδειο.',
     back: 'Πίσω στο shop'
   },
@@ -68,7 +74,7 @@ const TXT = {
     shipping: 'Shipping',
     shippingFree: 'Free',
     shippingTbd: 'Confirmed by email',
-    send: 'Place order',
+    send: 'Order with obligation to pay',
     sending: 'Sending…',
     required: 'Please fill in all required fields.',
     unpriced: 'Some products have no price yet: we will confirm it by email.',
@@ -77,7 +83,13 @@ const TXT = {
     successMsg: 'We have emailed you a confirmation. To start delivery, transfer the amount to one of the accounts and send the receipt to',
     holder: 'Account holder',
     iris: 'IRIS (tax no. or mobile)',
-    consent: 'I agree my details are used only for this order.',
+    noAccount: 'No account, no sign-up: just your delivery details.',
+    consent: 'I have read and accept the',
+    terms: 'Terms of sale & returns',
+    and: 'and the',
+    privacy: 'Privacy policy',
+    sealed: 'Cosmetics can be returned within 14 days only if unopened and sealed. Faulty products are always replaced.',
+    dispatch: 'Dispatched within {d} after payment.',
     empty: 'Your bag is empty.',
     back: 'Back to shop'
   }
@@ -192,6 +204,7 @@ const CartPage = ({ lang, t }) => {
 
           <fieldset className="sh-box">
             <legend>{x.details}</legend>
+            <p className="sh-muted sh-small">{x.noAccount}</p>
             <div className="sh-form-row">
               <label><span>{x.name} *</span><input name="name" value={form.name} onChange={set} autoComplete="name" required /></label>
               <label><span>{x.phone} *</span><input name="phone" type="tel" value={form.phone} onChange={set} autoComplete="tel" required /></label>
@@ -223,7 +236,7 @@ const CartPage = ({ lang, t }) => {
 
           <label className="sh-consent">
             <input type="checkbox" name="consent" checked={form.consent} onChange={set} />
-            <span>{x.consent}</span>
+            <span>{x.consent} <Link to="/oroi">{x.terms}</Link> {x.and} <Link to="/aporrito">{x.privacy}</Link>.</span>
           </label>
           {error && <p className="sh-note sh-note-err" role="alert">{error}</p>}
           <button type="submit" className="nh-btn nh-btn-gold sh-w100" disabled={status === 'sending'}>
@@ -240,6 +253,8 @@ const CartPage = ({ lang, t }) => {
             <span>{delivery === 'pickup' ? x.shippingFree : x.shippingTbd}</span>
           </div>
           <p className="sh-muted sh-small">{tr({ el: 'Οι τιμές περιλαμβάνουν ΦΠΑ.', en: 'Prices include VAT.' }, lang)}</p>
+          <p className="sh-muted sh-small">{x.dispatch.replace('{d}', lang === 'en' ? '3-7 working days' : SELLER.dispatchDays)}</p>
+          <p className="sh-muted sh-small">{x.sealed} <Link to="/oroi#ypanaxorisi">{x.terms}</Link></p>
         </aside>
       </div>
     </div>

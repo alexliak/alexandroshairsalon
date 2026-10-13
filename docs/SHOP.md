@@ -37,6 +37,28 @@
 Τα 16 EAN με `active = 0` είναι προϊόντα όπου το αρχείο της L'Oréal δεν γράφει μέγεθος
 (π.χ. Blondifier). Συμπλήρωσε το `size`, βάλε `active = 1` και θα εμφανιστούν.
 
+## Τιμολόγηση (αυτόματες τιμές L'Oréal)
+
+Οι τιμές των προϊόντων L'Oréal δεν γράφονται με το χέρι. Τις βγάζει το `npm run shop:reprice` από:
+
+- `shop-data/pricing.json`: φάση (`launch` 10%, `grow` 18%, `mature` 25% ελάχιστο καθαρό περιθώριο),
+  χρέωση παρόχου πληρωμών, συσκευασία, και `overrides` (`"EAN": 19.99`) για όποια τιμή θέλεις να κλειδώσεις.
+- `shop-data/private/costs.json` (ιδιωτικό): η έκπτωση αγοράς μας από τη L'Oréal.
+- `shop-data/competitors/angelopoulos.json`: τιμές Αγγελόπουλου ανά EAN (ενημερώνεται κάθε εβδομάδα).
+- Τον τιμοκατάλογο αγοράς L'Oréal (`shop-data/private/LP_Product_Catalogue_*.xlsm`, ιδιωτικό).
+
+Κανόνας: η τιμή δεν πέφτει ποτέ κάτω από το ελάχιστο περιθώριο της φάσης, αφού πληρωθούν κόστος, προμήθεια πληρωμής
+και συσκευασία. Αν ο Αγγελόπουλος πουλάει πιο ακριβά από αυτό το όριο, παίρνουμε τη δική του τιμή. Οι τιμές τελειώνουν σε ,49 ή ,99.
+Τα μεταφορικά χρεώνονται χωριστά.
+
+```bash
+npm run shop:reprice -- --phase grow --dry-run --report /tmp/report.csv   # δοκιμή, χωρίς αλλαγές
+npm run shop:reprice && npm run shop:catalog && npm run build             # εφαρμογή
+```
+Η αναφορά `--report` δείχνει κόστος και περιθώριο ανά προϊόν: μην τη βάλεις στο repository (είναι δημόσιο).
+Μην βάζεις `compare_at` (διαγραμμένη τιμή) χωρίς πραγματική προηγούμενη τιμή του δικού μας shop: ο νόμος ζητά ως
+«προηγούμενη» τη χαμηλότερη τιμή των τελευταίων 30 ημερών.
+
 ## Νέα εταιρεία ή προϊόν εκτός L'Oréal
 
 Πρόσθεσε ένα αντικείμενο στο `shop-data/other-brands.json` (αντέγραψε ένα Evoque και άλλαξε
@@ -71,6 +93,7 @@ NEXT_PUBLIC_SHOP_API=https://ahs-shop-api.<λογαριασμός>.workers.dev n
 ## Πληρωμές
 
 Τώρα: αίτημα παραγγελίας με email (EmailJS) και πληρωμή με κατάθεση/IRIS, όπως το παλιό shop.
+Όροι πώλησης/επιστροφές: `/oroi`, απόρρητο: `/aporrito` (`src/views/Legal.js`, στοιχεία πωλητή στο `SELLER` του `src/shop/config.js`).
 Επόμενο βήμα: Stripe Checkout (κάρτες, Apple/Google Pay, Klarna, PayPal) μέσα από τον ίδιο Worker.
 
 ## URLs
@@ -111,6 +134,7 @@ NEXT_PUBLIC_SHOP_API=https://ahs-shop-api.<λογαριασμός>.workers.dev n
 Μένουν στον φάκελο `shop-data/private/`, που αγνοείται από το git (`.gitignore`):
 
 - `shop-data/private/LP_Product_Catalogue_<μήνας>.xlsm`: ο τιμοκατάλογος που στέλνει η L'Oréal.
+- `shop-data/private/costs.json`: οι εκπτώσεις αγοράς μας (από τα τιμολόγια).
 - Αντίγραφο ασφαλείας: Google Drive, φάκελος «Alexandros shop – ιδιωτικά».
 
 Όταν έρθει νέος τιμοκατάλογος, τον βάζεις στο `shop-data/private/` και τρέχεις `npm run shop:catalog`.

@@ -13,6 +13,7 @@
 .sh-center { text-align: center; display: block; margin-left: auto; margin-right: auto; }
 .sh-mt { margin-top: 32px; }
 .sh-w100 { width: 100%; }
+.nh .sh-checkout-form .nh-btn { white-space: normal; height: auto; min-height: 58px; padding-top: 12px; padding-bottom: 12px; text-align: center; line-height: 1.25; }
 .sh-muted { color: var(--nh-muted); }
 .sh-small { font-size: 13px; }
 .sh-mono { font-variant-numeric: tabular-nums; letter-spacing: 0.02em; }
@@ -381,7 +382,7 @@
   .sh-sheet-scrim { position: fixed; inset: 0; z-index: 65; background: rgba(0, 0, 0, 0.55); }
   .sh-pdp { grid-template-columns: 1fr; }
   .sh-pdp-media { position: static; }
-  .sh-checkout { grid-template-columns: 1fr; }
+  .sh-checkout { grid-template-columns: minmax(0, 1fr); }
   .sh-summary { position: static; order: -1; }
 }
 

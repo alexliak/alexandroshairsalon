@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { DIRECTIONS_URL, MAP_EMBED_URL, mapLinkProps } from './NhLayout';
+import { getConsent } from '../lib/consent';
 
 // Χάρτης χωρίς καθυστέρηση.
 // Ο ενσωματωμένος χάρτης της Google κατεβάζει ~1 MB JavaScript και στο κινητό «κλέβει» το σύρσιμο της σελίδας.
@@ -79,7 +80,8 @@ export default function MapEmbed({ language = 'el', className = '' }) {
   useEffect(() => {
     if (live || typeof window === 'undefined') return undefined;
     const touch = window.matchMedia && window.matchMedia('(hover: none) and (pointer: coarse)').matches;
-    if (touch || !('IntersectionObserver' in window) || !ref.current) return undefined;
+    // Αυτόματα μόνο αν ο επισκέπτης αποδέχτηκε τα cookies· αλλιώς φορτώνει μόνο με το κουμπί «Χάρτης εδώ».
+    if (touch || getConsent() !== 'granted' || !('IntersectionObserver' in window) || !ref.current) return undefined;
     const io = new IntersectionObserver(([e]) => {
       if (e.isIntersecting) { setLive(true); io.disconnect(); }
     }, { rootMargin: '300px' });

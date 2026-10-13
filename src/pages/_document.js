@@ -1,19 +1,14 @@
 import { Html, Head, Main, NextScript } from 'next/document';
 import salonSchema from '../data/salon-schema.json';
 import { THEME_BOOT } from '../lib/themeBoot';
-
-const GA_ID = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID || 'G-S7ZQL4YMJ7';
+import { CONSENT_BOOT } from '../lib/consent';
 
 export default function Document() {
   return (
     <Html lang="el">
       <Head>
-        <script async src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`} />
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','${GA_ID}');`
-          }}
-        />
+        {/* Google Analytics μόνο μετά από «Αποδοχή» στο μήνυμα cookies (src/lib/consent.js) */}
+        <script dangerouslySetInnerHTML={{ __html: CONSENT_BOOT }} />
         <link rel="icon" href="/favicon.png" type="image/png" />
         <link rel="shortcut icon" href="/favicon.png" type="image/png" />
         <link rel="apple-touch-icon" href="/logo512.png" />

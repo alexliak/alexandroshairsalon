@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 import { trackPageView } from '../utils/analytics';
+import CookieBanner from '../components/CookieBanner';
 import '../styles/global.css';
 import '../styles/home.css';
 import '../styles/shop.css';
@@ -27,6 +28,7 @@ export default function App({ Component, pageProps }) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
       {page}
+      <CookieBanner language={language} />
     </>
   );
 }

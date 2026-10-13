@@ -28,3 +28,4 @@ yarn-error.log*
 
 # Ιδιωτικά: τιμοκατάλογοι αγοράς, κόστη, εκπτώσεις προμηθευτών. Ποτέ στο GitHub.
 /shop-data/private/
+__pycache__/
