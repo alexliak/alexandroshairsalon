@@ -9,7 +9,8 @@
 Πηγές (μία πηγή αλήθειας ανά πληροφορία):
   shop-data/loreal/LP_Assortment_Info.xlsx      -> περιγραφές L'Oréal (από τη L'Oréal)
   shop-data/loreal/PPD_Related_Products_2026.xlsx -> σχετικά προϊόντα + μεγέθη
-  shop-data/loreal/LP_Product_Catalogue_September26_Salons.xlsm
+  shop-data/loreal/catalog-classes.json (κατηγορία R/T/Tools, μέγεθος· ΧΩΡΙΣ τιμές)
+  shop-data/private/LP_Product_Catalogue_*.xlsm (τιμοκατάλογος αγοράς, μόνο τοπικά, όχι στο GitHub)
                                                  -> τιμοκατάλογος L'Oréal: ποια είναι λιανική (R) / εργαλεία (Tools),
                                                     μέγεθος (ML) και τιμή χονδρικής χωρίς ΦΠΑ
   shop-data/loreal/LP_Assortment_Product_Info_packshots.xlsx
@@ -25,6 +26,7 @@
 import csv
 import json
 import re
+import sys
 import unicodedata
 from collections import OrderedDict, defaultdict
 from pathlib import Path
@@ -339,15 +341,33 @@ def ean13(e):
     return e.lstrip('0').zfill(13) if e else ''
 
 
-def load_pricelist():
-    """Τιμοκατάλογος L'Oréal: EAN -> {cls: R/T/Tools, ml, name, sap, wholesale}."""
-    path = DATA / 'loreal' / 'LP_Product_Catalogue_September26_Salons.xlsm'
-    out = {}
-    if not path.exists():
-        return out
+PRIVATE = DATA / 'private'
+CLASSES = DATA / 'loreal' / 'catalog-classes.json'
+
+
+def _private_pricelist():
+    """Ο τιμοκατάλογος αγοράς L'Oréal (ιδιωτικός, εκτός GitHub): shop-data/private/LP_Product_Catalogue_*.xlsm."""
+    files = sorted(PRIVATE.glob('LP_Product_Catalogue_*.xlsm'))
+    return files[-1] if files else None
+
+
+def load_pricelist(with_costs=False):
+    """Τιμοκατάλογος L'Oréal: EAN -> {cls: R/T/Tools, ml, name, sap, section[, wholesale]}.
+
+    Αν υπάρχει ο ιδιωτικός τιμοκατάλογος (shop-data/private/), διαβάζεται από εκεί και ανανεώνεται το
+    δημόσιο shop-data/loreal/catalog-classes.json ΧΩΡΙΣ τιμές. Αλλιώς (π.χ. στο GitHub) διαβάζεται το JSON.
+    Τιμές αγοράς (wholesale) επιστρέφονται μόνο με with_costs=True και μόνο από το ιδιωτικό αρχείο.
+    """
+    path = _private_pricelist()
+    if not path:
+        if with_costs:
+            sys.exit('Λείπει ο τιμοκατάλογος αγοράς στο shop-data/private/ (δες docs/SHOP.md, «Ιδιωτικά δεδομένα»).')
+        if not CLASSES.exists():
+            return {}
+        return json.loads(CLASSES.read_text(encoding='utf-8'))['products']
     import openpyxl
     ws = openpyxl.load_workbook(path, read_only=True, data_only=True)['Prod Catal 26']
-    section = ''
+    out, section = {}, ''
     for r in ws.iter_rows(min_row=8, values_only=True):
         code = clean(r[0])
         if code.isdigit():
@@ -360,6 +380,13 @@ def load_pricelist():
             }
         elif code:
             section = code
+    public = {e: {k: v for k, v in d.items() if k != 'wholesale'} for e, d in out.items()}
+    body = {'_help': "Κατηγορία (R λιανική / T επαγγελματικό / Tools), μέγεθος και όνομα από τον τιμοκατάλογο L'Oréal. "
+                     'Χωρίς τιμές: ο τιμοκατάλογος αγοράς μένει στο shop-data/private/ και δεν ανεβαίνει στο GitHub.',
+            'source': path.name, 'products': public}
+    CLASSES.write_text(json.dumps(body, ensure_ascii=False, indent=0) + '\n', encoding='utf-8')
+    if not with_costs:
+        return public
     return out
 
 

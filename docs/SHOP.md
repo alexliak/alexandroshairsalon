@@ -97,10 +97,21 @@ NEXT_PUBLIC_SHOP_API=https://ahs-shop-api.<λογαριασμός>.workers.dev n
 ## Ποια προϊόντα μπαίνουν και φωτογραφίες L'Oréal
 
 - **Τι πουλάμε:** με `retailOnly: true` (στο `src/shop/settings.json`) μπαίνει μόνο ό,τι ο τιμοκατάλογος της L'Oréal
-  (`shop-data/loreal/LP_Product_Catalogue_September26_Salons.xlsm`) χαρακτηρίζει **R** (λιανική) ή **Tools** (εργαλεία).
+  (η κατηγορία είναι στο `shop-data/loreal/catalog-classes.json`, χωρίς τιμές) χαρακτηρίζει **R** (λιανική) ή **Tools** (εργαλεία).
   Ό,τι είναι **T** (βαφές, οξυζενέ, επαγγελματικές συσκευασίες 1000/1500ml) μένει έξω.
 - **Μεγέθη:** όπου λείπουν, έρχονται από τη στήλη ML του τιμοκαταλόγου.
 - **Φωτογραφίες:** το `shop-data/packshots.json` έχει τον σύνδεσμο της φωτογραφίας κάθε EAN (από το αρχείο της L'Oréal).
   Το workflow **Packshots** (GitHub Actions) τις κατεβάζει στο `public/images/shop/p/` και ξαναφτιάχνει τον κατάλογο.
   Νέος τιμοκατάλογος/αρχείο packshots: αντικατέστησε τα αρχεία στο `shop-data/loreal/`, ενημέρωσε το `packshots.json`
   και κάνε push· το workflow κάνει τα υπόλοιπα.
+
+## Ιδιωτικά δεδομένα (ποτέ στο GitHub)
+
+Ο τιμοκατάλογος αγοράς της L'Oréal, οι εκπτώσεις μας και τα κόστη **δεν** ανεβαίνουν στο GitHub (το repository είναι δημόσιο).
+Μένουν στον φάκελο `shop-data/private/`, που αγνοείται από το git (`.gitignore`):
+
+- `shop-data/private/LP_Product_Catalogue_<μήνας>.xlsm`: ο τιμοκατάλογος που στέλνει η L'Oréal.
+- Αντίγραφο ασφαλείας: Google Drive, φάκελος «Alexandros shop – ιδιωτικά».
+
+Όταν έρθει νέος τιμοκατάλογος, τον βάζεις στο `shop-data/private/` και τρέχεις `npm run shop:catalog`.
+Το script ενημερώνει μόνο του το δημόσιο `catalog-classes.json` (κατηγορία, μέγεθος, όνομα, χωρίς τιμές).
