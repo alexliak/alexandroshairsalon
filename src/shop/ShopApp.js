@@ -46,7 +46,10 @@ const Shell = ({ language, setLanguage, children }) => {
       language={language}
       setLanguage={setLanguage}
       headerExtra={<CartButton t={t} />}
-      mobileBar={showBar ? <MobileCartBar t={t} lang={language} /> : undefined}
+      // Στο shop δεν δείχνουμε τη μπάρα «Κλείσε ραντεβού» στο κινητό: σκεπάζει κάρτες και κουμπιά
+      // προϊόντων και τραβάει τον επισκέπτη έξω από την αγορά. Μόνο όταν το καλάθι έχει κάτι,
+      // εμφανίζεται η μπάρα καλαθιού. Το ραντεβού μένει διαθέσιμο από τις υπόλοιπες σελίδες.
+      mobileBar={showBar ? <MobileCartBar t={t} lang={language} /> : <></>}
     >
       <main className="nh-page nh-shop-v2">{children(t)}</main>
       <CartDrawer lang={language} t={t} />
