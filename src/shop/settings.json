@@ -1,8 +1,9 @@
 {
-  "_help": "catalogMode: true = κατάλογος χωρίς τιμές και καλάθι. brands: ποιες εταιρείες εμφανίζονται (loreal, evoque, gotstyle). onlyWithPhoto: true = εμφανίζονται μόνο τα μεγέθη που έχουν δική τους φωτογραφία.",
+  "_help": "catalogMode: true = κατάλογος χωρίς τιμές και καλάθι. brands: ποιες εταιρείες εμφανίζονται (loreal, evoque, gotstyle). onlyWithPhoto: true = εμφανίζονται μόνο τα μεγέθη που έχουν δική τους φωτογραφία. retailOnly: true = μόνο όσα ο τιμοκατάλογος της L'Oréal χαρακτηρίζει λιανική (R) ή εργαλεία (Tools)· όχι βαφές, οξυζενέ, επαγγελματικές συσκευασίες (T).",
   "catalogMode": true,
   "brands": [
     "loreal"
   ],
-  "onlyWithPhoto": true
+  "onlyWithPhoto": true,
+  "retailOnly": true
 }

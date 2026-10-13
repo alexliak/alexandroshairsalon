@@ -20,13 +20,16 @@ export async function getStaticProps({ params }) {
   return { props: { id: params.id, detail } };
 }
 
+// Μόνο κανονικά EAN-13 ως GTIN (οι εσωτερικοί κωδικοί L'Oréal 00000301… δεν είναι)
+const gtin = (ean) => (/^[1-9]\d{12}$/.test(ean || '') ? { gtin13: ean } : {});
+
 const schemaFor = (p, description, url, image) => {
   const offers = CATALOG_MODE
     ? []
     : p.variants
       .filter((v) => typeof v.price === 'number')
       .map((v) => ({
-        '@type': 'Offer', sku: v.sku, ...(v.ean ? { gtin13: v.ean } : {}), price: v.price.toFixed(2), priceCurrency: 'EUR',
+        '@type': 'Offer', sku: v.sku, ...gtin(v.ean), price: v.price.toFixed(2), priceCurrency: 'EUR',
         availability: v.stock === 0 ? 'https://schema.org/OutOfStock' : 'https://schema.org/InStock',
         url, itemCondition: 'https://schema.org/NewCondition',
         seller: { '@type': 'Organization', name: 'Alexandros Hair Salon' }
@@ -39,7 +42,7 @@ const schemaFor = (p, description, url, image) => {
     brand: { '@type': 'Brand', name: p.brand },
     category: typeByKey[p.type]?.el,
     sku: p.variants[0].sku,
-    ...(p.variants[0].ean ? { gtin13: p.variants[0].ean } : {}),
+    ...gtin(p.variants[0].ean),
     ...(image ? { image: [image] } : {}),
     url,
     ...(offers.length ? { offers: offers.length === 1 ? offers[0] : offers } : {})
