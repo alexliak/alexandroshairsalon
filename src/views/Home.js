@@ -44,7 +44,7 @@ const content = {
       { tone: 'colour', cat: 'Χρώμα', name: 'Βαφή ρίζας + ρεφλέ', desc: 'Κάλυψη λευκών στη ρίζα και ξεχωριστό gloss για λάμψη σε όλο το μαλλί.', time: '1 ώρα', price: 'από €52' },
       { tone: 'light', cat: 'Ανταύγειες', name: 'Balayage', desc: 'Φυσικό, φωτεινό αποτέλεσμα με εύκολη συντήρηση.', time: '1:35–2:45', price: 'από €55' },
       { tone: 'light', cat: 'Ανταύγειες', name: 'No-Bleach ανταύγειες', desc: 'Απαλό φως χωρίς ντεκαπάζ, ιδανικό για πρώτη φορά.', time: '1:20–1:50', price: 'από €51' },
-      { tone: 'pack', cat: 'Πακέτα', name: 'Κούρεμα & Blowout', desc: 'Κούρεμα και χτένισμα σε ένα ραντεβού.', time: '45–55′', price: 'από €38' }
+      { tone: 'pack', cat: 'Πακέτα', name: 'Κούρεμα & Blowout', desc: 'Κούρεμα και χτένισμα σε ένα ραντεβού.', time: '45–55′', price: 'από €47' }
     ],
     brandsEyebrow: 'Χρώμα με υπογραφή',
     brandsTitleA: 'Δουλεύουμε με ',
@@ -114,7 +114,7 @@ const content = {
       { tone: 'colour', cat: 'Colour', name: 'Root colour + gloss', desc: 'Grey coverage at the root plus a separate gloss for shine throughout.', time: '1 h', price: 'from €52' },
       { tone: 'light', cat: 'Highlights', name: 'Balayage', desc: 'Natural, luminous result that is easy to maintain.', time: '1:35–2:45', price: 'from €55' },
       { tone: 'light', cat: 'Highlights', name: 'No-bleach highlights', desc: 'Soft brightness without bleach, ideal for a first time.', time: '1:20–1:50', price: 'from €51' },
-      { tone: 'pack', cat: 'Packages', name: 'Cut & blowout', desc: 'Haircut and styling in one appointment.', time: '45–55′', price: 'from €38' }
+      { tone: 'pack', cat: 'Packages', name: 'Cut & blowout', desc: 'Haircut and styling in one appointment.', time: '45–55′', price: 'from €47' }
     ],
     brandsEyebrow: 'Signature colour',
     brandsTitleA: 'We work with ',
