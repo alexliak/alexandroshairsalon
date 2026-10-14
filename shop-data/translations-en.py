@@ -287,16 +287,7 @@ EN = {
             "CITRUS LIMON PEEL OIL • PARFUM / FRAGRANCE (F.I.L. Z70052031/3)."
         ),
     },
-    "loreal-tecni-art-super-dust-poydra-gia-kratima": {
-        "name": "Tecni.ART Super Dust Hold Powder",
-        "description": (
-            "Tecni.ART Super Dust is a professional hair powder for volume and texture with a matte finish.\n\n"
-            + CONTACT + "\n\n"
-            "Shake before use, then tap the powder into your palms. Apply to dry hair through lengths and ends to build volume. For more volume, "
-            "apply straight to the roots, holding the pack 1 cm from the root. Very useful for voluminous buns and easy swept-back styles.\n\n"
-            + EYES
-        ),
-    },
+    "loreal-tecni-art-super-dust-poydra-gia-kratima": {"name": "Tecni.ART Super Dust Hold Powder"},
     "loreal-tecni-art-volume-extra-full-afros": {
         "name": "Tecni.ART Volume Extra Full Mousse",
         "description": (

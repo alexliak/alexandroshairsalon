@@ -14,6 +14,8 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[2]
 GREEK = re.compile('[α-ωΑ-Ωά-ώΆ-Ώ]')
 EN = runpy.run_path(str(ROOT / 'shop-data' / 'translations-en.py'))['EN']
+# Διορθώσεις λαθών της πηγής: εφαρμόζονται πάντα, και στις δύο γλώσσες
+FIX = runpy.run_path(str(ROOT / 'shop-data' / 'text-fixes.py'))['FIX']
 
 
 def needs_en(field):
@@ -34,6 +36,11 @@ def short_text(desc, limit=180):
 
 def apply(p):
     """p: dict με name/short/description/howTo/safety ({el, en}). Αλλάζει το p επί τόπου."""
+    for k, v in FIX.get(p.get('id'), {}).items():
+        if k in p:
+            p[k] = dict(v)
+            if k == 'description' and 'short' in p:
+                p['short'] = {lang: short_text(v[lang]) for lang in ('el', 'en')}
     tr = EN.get(p.get('id'), {})
     for k in ('name', 'description', 'howTo', 'safety'):
         if k in tr and k in p and needs_en(p[k]):
