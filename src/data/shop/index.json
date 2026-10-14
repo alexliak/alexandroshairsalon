@@ -422,6 +422,7 @@
      "label": "150ml",
      "size": "150ml",
      "price": 18.49,
+     "stock": 0,
      "active": true,
      "image": "p/3474637257651"
     },
@@ -488,6 +489,7 @@
      "label": "500ml Refill",
      "size": "500ml",
      "price": 18.49,
+     "stock": 0,
      "active": true,
      "image": "p/3474637242190"
     }
@@ -866,6 +868,7 @@
      "label": "Απαλό κράτημα · 300ml",
      "size": "300ml",
      "price": 16.99,
+     "stock": 0,
      "active": true,
      "image": "p/3474636471706"
     },
@@ -951,6 +954,7 @@
      "label": "150ml",
      "size": "150ml",
      "price": 18.49,
+     "stock": 0,
      "active": true,
      "image": "p/3474637255657"
     },
@@ -1036,6 +1040,7 @@
      "label": "250ml",
      "size": "250ml",
      "price": 22.49,
+     "stock": 0,
      "active": true,
      "image": "p/3474637090524"
     }
@@ -1257,6 +1262,7 @@
      "label": "30ml",
      "size": "30ml",
      "price": 15.99,
+     "stock": 0,
      "active": true,
      "image": "p/3474637292423"
     },
@@ -1682,6 +1688,7 @@
      "label": "250ml",
      "size": "250ml",
      "price": 22.49,
+     "stock": 0,
      "active": true,
      "image": "p/3474637069216"
     }
@@ -1764,6 +1771,7 @@
      "label": "250ml",
      "size": "250ml",
      "price": 21.99,
+     "stock": 0,
      "active": true,
      "image": "p/3474636975310"
     }
@@ -2028,15 +2036,6 @@
      "price": 30.49,
      "active": true,
      "image": "p/3474637335731"
-    },
-    {
-     "sku": "3474637335786",
-     "ean": "3474637335786",
-     "label": "500ml Refill",
-     "size": "500ml",
-     "price": 26.49,
-     "active": true,
-     "image": "p/3474637335786"
     }
    ],
    "image": "p/3474637335755",
@@ -2123,6 +2122,7 @@
      "label": "500ml",
      "size": "500ml",
      "price": 19.99,
+     "stock": 0,
      "active": true,
      "image": "p/3474637076504"
     }
@@ -2310,6 +2310,7 @@
      "label": "250ml",
      "size": "250ml",
      "price": 23.99,
+     "stock": 0,
      "active": true,
      "image": "p/3474637268466"
     }
@@ -2389,6 +2390,7 @@
      "label": "Standard",
      "size": "",
      "price": 21.99,
+     "stock": 0,
      "active": true,
      "image": "p/3474637285753"
     }
@@ -2506,6 +2508,7 @@
      "label": "300ml",
      "size": "300ml",
      "price": 14.49,
+     "stock": 0,
      "active": true,
      "image": "p/3474637106454"
     }
@@ -3155,6 +3158,7 @@
      "label": "200ml",
      "size": "200ml",
      "price": 17.49,
+     "stock": 0,
      "active": true,
      "image": "p/0000030157743"
     }
@@ -3303,6 +3307,7 @@
      "label": "100ml",
      "size": "100ml",
      "price": 15.99,
+     "stock": 0,
      "active": true,
      "image": "p/0000030159884"
     }
