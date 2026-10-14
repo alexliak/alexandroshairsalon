@@ -27,19 +27,19 @@ self.__BUILD_MANIFEST = {
     "static/chunks/16wrwuy_avcwe.js"
   ],
   "/shop": [
-    "static/chunks/2jf1tjyxji6l-.js"
+    "static/chunks/1szjpqwuy5g_i.js"
   ],
   "/shop/admin": [
-    "static/chunks/2mfkar188t5f5.js"
+    "static/chunks/2ki6m3lbh3bxn.js"
   ],
   "/shop/cart": [
-    "static/chunks/3cybscjwz-ym7.js"
+    "static/chunks/422c2wyylr7q1.js"
   ],
   "/shop/diagnosi": [
-    "static/chunks/117y2lt7p3atq.js"
+    "static/chunks/16vehfbqpoo5h.js"
   ],
   "/shop/p/[id]": [
-    "static/chunks/2qeh97xn2dcsc.js"
+    "static/chunks/35fiz2ozy39ih.js"
   ],
   "__rewrites": {
     "afterFiles": [],
