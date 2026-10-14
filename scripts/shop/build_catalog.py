@@ -706,6 +706,11 @@ def main():
     for p in products:
         p['related'] = [r for r in p.get('related', []) if r in ids]
 
+    # Αγγλικά κείμενα που λείπουν από τη L'Oréal (shop-data/translations-en.py)
+    sys.path.insert(0, str(Path(__file__).resolve().parent))
+    from apply_translations import apply as apply_en
+    for p in products:
+        apply_en(p)
     brands = OrderedDict()
     for p in products:
         brands.setdefault(p['brandKey'], p['brand'])

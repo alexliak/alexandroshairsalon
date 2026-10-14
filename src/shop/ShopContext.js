@@ -67,7 +67,8 @@ export const ShopProvider = ({ children }) => {
     };
   }, []);
 
-  const add = useCallback((id, sku, qty = 1) => {
+  // opts.quiet: χωρίς άνοιγμα του καλαθιού (π.χ. «ένα-ένα» από τη διάγνωση)
+  const add = useCallback((id, sku, qty = 1, opts = {}) => {
     setCart((prev) => {
       const i = prev.findIndex((l) => l.id === id && l.sku === sku);
       if (i >= 0) {
@@ -78,6 +79,23 @@ export const ShopProvider = ({ children }) => {
       return [...prev, { id, sku, qty: Math.min(MAX_QTY, qty) }];
     });
     setLastAdded({ id, sku, at: Date.now() });
+    if (!opts.quiet) setDrawer(true);
+  }, []);
+
+  // Πολλά προϊόντα μαζί ([{ id, sku, qty }]): μία ενημέρωση, ένα άνοιγμα του καλαθιού
+  const addMany = useCallback((items) => {
+    if (!items.length) return;
+    setCart((prev) => {
+      const next = [...prev];
+      items.forEach(({ id, sku, qty = 1 }) => {
+        const i = next.findIndex((l) => l.id === id && l.sku === sku);
+        if (i >= 0) next[i] = { ...next[i], qty: Math.min(MAX_QTY, next[i].qty + qty) };
+        else next.push({ id, sku, qty: Math.min(MAX_QTY, qty) });
+      });
+      return next;
+    });
+    const last = items[items.length - 1];
+    setLastAdded({ id: last.id, sku: last.sku, at: Date.now() });
     setDrawer(true);
   }, []);
 
@@ -111,7 +129,7 @@ export const ShopProvider = ({ children }) => {
   const hasUnpriced = lines.some((l) => typeof l.variant.price !== 'number');
 
   const value = {
-    lines, count, subtotal, hasUnpriced, add, setQty, clear,
+    lines, count, subtotal, hasUnpriced, add, addMany, setQty, clear,
     wish, toggleWish, drawer, setDrawer, lastAdded, ratings, setRatings
   };
   return <ShopContext.Provider value={value}>{children}</ShopContext.Provider>;

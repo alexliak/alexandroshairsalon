@@ -15,7 +15,7 @@
 // Το ίδιο κείμενο μπαίνει και στις στατικές σελίδες (scripts/build-static-pages.py το διαβάζει από εδώ).
 export const THEME_BOOT = `(function(){
 var d=document.documentElement,KS='ahs-theme',KL='ahs-theme-mode';
-var LIGHT='#f8f5ef',DARK='#12100e';
+var LIGHT='#eee8de',DARK='#12100e';
 var mq=window.matchMedia?window.matchMedia('(prefers-color-scheme: dark)'):null;
 var mqOk=!!(window.matchMedia&&window.matchMedia('(prefers-color-scheme)').matches);
 function urlForced(){

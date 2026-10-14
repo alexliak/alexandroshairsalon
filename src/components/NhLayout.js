@@ -22,6 +22,8 @@ const PLACE_QUERY = encodeURIComponent('Alexandros Hair Salon, Ερυσίχθο�
 // Μορφή «Maps URLs» (api=1): στο κινητό ανοίγει κατευθείαν η εφαρμογή Google Maps, αλλιώς το Maps στον browser.
 export const GOOGLE_PROFILE_URL = `https://www.google.com/maps/search/?api=1&query=${PLACE_QUERY}&query_place_id=${PLACE_ID}`;
 // Οδηγίες μέχρι το κομμωτήριο από εκεί που βρίσκεται ο επισκέπτης (η εφαρμογή διαλέγει πόδια/μετρό/αυτοκίνητο).
+// Κριτικές Google του κομμωτηρίου (ανοίγει κατευθείαν τη λίστα κριτικών, σε κινητό και υπολογιστή)
+export const REVIEWS_URL = `https://search.google.com/local/reviews?placeid=${PLACE_ID}`;
 export const DIRECTIONS_URL = `https://www.google.com/maps/dir/?api=1&destination=${PLACE_QUERY}&destination_place_id=${PLACE_ID}`;
 export const MAP_EMBED_URL = `https://www.google.com/maps?q=${PLACE_QUERY}&z=16&output=embed`;
 
@@ -86,6 +88,7 @@ const layoutText = {
       { label: 'Υπηρεσίες & τιμές', to: '/services' },
       { label: 'L’Oréal & Redken', href: '/#brands' },
       { label: 'Ωράριο', to: '/hours' },
+      { label: 'Ο χώρος', to: '/fotografies' },
       { label: 'Shop', to: '/shop' },
       { label: 'Γίνε μοντέλο', to: '/montela', promo: true },
       { label: 'We are hiring', to: '/douleia', hiring: true }
@@ -122,6 +125,7 @@ const layoutText = {
       ['Balayage στην Αθήνα', '/balayage-athina/'],
       ['Δωρεάν κούρεμα ως μοντέλο', '/dorean-kourema-athina/'],
       ['Βαφή & balayage για μοντέλα', '/montelo-vafi-balayage-athina/'],
+      ['Φωτογραφίες του κομμωτηρίου', '/fotografies'],
       ['Κράτηση online', '/kratisi/']
     ]
   },
@@ -130,6 +134,7 @@ const layoutText = {
       { label: 'Services & prices', to: '/services' },
       { label: 'L’Oréal & Redken', href: '/#brands' },
       { label: 'Hours', to: '/hours' },
+      { label: 'The salon', to: '/fotografies' },
       { label: 'Shop', to: '/shop' },
       { label: 'Be our model', to: '/montela', promo: true },
       { label: 'We are hiring', to: '/douleia', hiring: true }
@@ -165,6 +170,7 @@ const layoutText = {
       ['Hair colour in Athens', '/vafi-mallion-athina/'],
       ['Balayage in Athens', '/balayage-athina/'],
       ['Free haircut as a hair model', '/hair-model-athens/'],
+      ['Photos of the salon', '/fotografies'],
       ['Book online', '/kratisi/']
     ]
   }

@@ -404,7 +404,7 @@
    "type": "mask",
    "name": {
     "el": "Metal Detox Μάσκα για Απόλυτη Επανόρθωση Μαλλιών",
-    "en": "Metal Detox Μάσκα για Απόλυτη Επανόρθωση Μαλλιών"
+    "en": "Metal Detox Mask for Ultimate Hair Repair"
    },
    "hairTypes": [
     "colored",
@@ -455,7 +455,7 @@
    "type": "shampoo",
    "name": {
     "el": "Vitamino Color Σαμπουάν",
-    "en": "Vitamino Color Σαμπουάν"
+    "en": "Vitamino Color Shampoo"
    },
    "hairTypes": [
     "colored"
@@ -513,7 +513,7 @@
    "type": "shampoo",
    "name": {
     "el": "Scalp Advanced Anti-Discomfort Σαμπουάν Για Το Ευαίσθητο Τριχωτό",
-    "en": "Scalp Advanced Anti-Discomfort Σαμπουάν Για Το Ευαίσθητο Τριχωτό"
+    "en": "Scalp Advanced Anti-Discomfort Shampoo for Sensitive Scalp"
    },
    "hairTypes": [
     "sensitive"
@@ -560,7 +560,7 @@
    "type": "shampoo",
    "name": {
     "el": "Scalp Advanced Anti-Dandruff Σαμπουάν Κατά της πιτυρίδας",
-    "en": "Scalp Advanced Anti-Dandruff Σαμπουάν Κατά της πιτυρίδας"
+    "en": "Scalp Advanced Anti-Dandruff Shampoo"
    },
    "hairTypes": [
     "sensitive"
@@ -598,7 +598,7 @@
    "type": "set",
    "name": {
     "el": "Metal Detox Mini Duo Kit Για Προστασία Από Τα Μεταλλικά Στοιχεία",
-    "en": "Metal Detox Mini Duo Kit Για Προστασία Από Τα Μεταλλικά Στοιχεία"
+    "en": "Metal Detox Mini Duo Kit for Protection from Metals"
    },
    "hairTypes": [
     "colored",
@@ -640,7 +640,7 @@
    "type": "leave-in",
    "name": {
     "el": "Pro Longer Leave-in Κρέμα Κατά Της Ψαλίδας Για Πιο Μακριά Μαλλιά",
-    "en": "Pro Longer Leave-in Κρέμα Κατά Της Ψαλίδας Για Πιο Μακριά Μαλλιά"
+    "en": "Pro Longer Leave-in Cream Against Split Ends for Longer Hair"
    },
    "hairTypes": [
     "long"
@@ -681,7 +681,7 @@
    "type": "conditioner",
    "name": {
     "el": "Silver Conditioner Για Λευκά ή Ασημί Μαλλιά",
-    "en": "Silver Conditioner Για Λευκά ή Ασημί Μαλλιά"
+    "en": "Silver Conditioner for White or Grey Hair"
    },
    "hairTypes": [
     "blonde"
@@ -803,7 +803,7 @@
    "type": "mask",
    "name": {
     "el": "Pro Longer Μάσκα Κατά Της Ψαλίδας Για Πιο Μακριά Μαλλιά",
-    "en": "Pro Longer Μάσκα Κατά Της Ψαλίδας Για Πιο Μακριά Μαλλιά"
+    "en": "Pro Longer Mask Against Split Ends for Longer Hair"
    },
    "hairTypes": [
     "long"
@@ -900,7 +900,7 @@
    "type": "mask",
    "name": {
     "el": "Vitamino Color Μάσκα Για Βαμμένα Μαλλιά",
-    "en": "Vitamino Color Μάσκα Για Βαμμένα Μαλλιά"
+    "en": "Vitamino Color Mask for Coloured Hair"
    },
    "hairTypes": [
     "colored"
@@ -939,7 +939,7 @@
    "type": "mask",
    "name": {
     "el": "Absolut Repair Molecular Μάσκα Μοριακής Επανόρθωσης για Ταλαιπωρημένα Μαλλιά",
-    "en": "Absolut Repair Molecular Μάσκα Μοριακής Επανόρθωσης για Ταλαιπωρημένα Μαλλιά"
+    "en": "Absolut Repair Molecular Mask for Damaged Hair"
    },
    "hairTypes": [
     "damaged"
@@ -987,7 +987,7 @@
    "type": "treatment",
    "name": {
     "el": "Scalp Advanced A-Discomfort Περιποίηση Για Το Ευαίσθητο Τριχωτό",
-    "en": "Scalp Advanced A-Discomfort Περιποίηση Για Το Ευαίσθητο Τριχωτό"
+    "en": "Scalp Advanced Anti-Discomfort Treatment for Sensitive Scalp"
    },
    "hairTypes": [
     "sensitive"
@@ -1025,7 +1025,7 @@
    "type": "mask",
    "name": {
     "el": "Scalp Advanced Anti-Oily Άργιλος Κατά της λιπαρότητας",
-    "en": "Scalp Advanced Anti-Oily Άργιλος Κατά της λιπαρότητας"
+    "en": "Scalp Advanced Anti-Oiliness Clay"
    },
    "hairTypes": [
     "oily"
@@ -1065,7 +1065,7 @@
    "type": "shampoo",
    "name": {
     "el": "Silver Σαμπουάν Για Λευκά ή Ασημί Μαλλιά",
-    "en": "Silver Σαμπουάν Για Λευκά ή Ασημί Μαλλιά"
+    "en": "Silver Shampoo for White or Grey Hair"
    },
    "hairTypes": [
     "blonde"
@@ -1150,7 +1150,7 @@
    "type": "conditioner",
    "name": {
     "el": "Vitamino Color Conditioner Για Βαμμένα Μαλλιά",
-    "en": "Vitamino Color Conditioner Για Βαμμένα Μαλλιά"
+    "en": "Vitamino Color Conditioner for Coloured Hair"
    },
    "hairTypes": [
     "colored"
@@ -1246,7 +1246,7 @@
    "type": "oil",
    "name": {
     "el": "Absolut Repair Molecular Bi-Phase Oil για Ταλαιπωρημένα Μαλλιά",
-    "en": "Absolut Repair Molecular Bi-Phase Oil για Ταλαιπωρημένα Μαλλιά"
+    "en": "Absolut Repair Molecular Bi-Phase Oil for Damaged Hair"
    },
    "hairTypes": [
     "damaged"
@@ -1295,7 +1295,7 @@
    "type": "serum",
    "name": {
     "el": "Aminexil Advanced Full, Strong Ορός Κατά της τριχόπτωσης",
-    "en": "Aminexil Advanced Full, Strong Ορός Κατά της τριχόπτωσης"
+    "en": "Aminexil Advanced Full, Strong Anti-Hair-Loss Serum"
    },
    "hairTypes": [
     "fine"
@@ -1334,7 +1334,7 @@
    "type": "conditioner",
    "name": {
     "el": "Pro Longer Conditioner Κατά Της Ψαλίδας Για Πιο Μακριά Μαλλιά",
-    "en": "Pro Longer Conditioner Κατά Της Ψαλίδας Για Πιο Μακριά Μαλλιά"
+    "en": "Pro Longer Conditioner Against Split Ends for Longer Hair"
    },
    "hairTypes": [
     "long"
@@ -1374,7 +1374,7 @@
    "type": "shampoo",
    "name": {
     "el": "Serioxyl Advanced Density Σαμπουάν Για Πύκνωση",
-    "en": "Serioxyl Advanced Density Σαμπουάν Για Πύκνωση"
+    "en": "Serioxyl Advanced Density Shampoo"
    },
    "hairTypes": [
     "fine"
@@ -1413,7 +1413,7 @@
    "type": "set",
    "name": {
     "el": "Absolut Repair Molecular Mini Duo Set Σαμπουάν & Έλαιο",
-    "en": "Absolut Repair Molecular Mini Duo Set Σαμπουάν & Έλαιο"
+    "en": "Absolut Repair Molecular Mini Duo Set Shampoo & Oil"
    },
    "hairTypes": [
     "damaged"
@@ -1454,7 +1454,7 @@
    "type": "set",
    "name": {
     "el": "Absolut Repair Molecular Mini Duo Set Σαμπουάν & Leave-in Μάσκα",
-    "en": "Absolut Repair Molecular Mini Duo Set Σαμπουάν & Leave-in Μάσκα"
+    "en": "Absolut Repair Molecular Mini Duo Set Shampoo & Leave-in Mask"
    },
    "hairTypes": [
     "damaged"
@@ -1628,7 +1628,7 @@
    "type": "treatment",
    "name": {
     "el": "Vitamino Color Σπρέι Πολλαπλών Χρήσεων Για Βαμμένα Μαλλιά",
-    "en": "Vitamino Color Σπρέι Πολλαπλών Χρήσεων Για Βαμμένα Μαλλιά"
+    "en": "Vitamino Color 10-in-1 Multi-Use Spray for Coloured Hair"
    },
    "hairTypes": [
     "colored"
@@ -1837,7 +1837,7 @@
    "type": "shampoo",
    "name": {
     "el": "Absolut Repair Σαμπουάν",
-    "en": "Absolut Repair Σαμπουάν"
+    "en": "Absolut Repair Shampoo"
    },
    "hairTypes": [
     "damaged"
@@ -1896,7 +1896,7 @@
    "type": "shampoo",
    "name": {
     "el": "Metal Detox Σαμπουάν",
-    "en": "Metal Detox Σαμπουάν"
+    "en": "Metal Detox Shampoo"
    },
    "hairTypes": [
     "colored",
@@ -1965,7 +1965,7 @@
    "type": "oil",
    "name": {
     "el": "Metal Detox Έλαιο Απομάκρυνσης Και Προστασίας Από Τα Μεταλλικά Στοιχεία",
-    "en": "Metal Detox Έλαιο Απομάκρυνσης Και Προστασίας Από Τα Μεταλλικά Στοιχεία"
+    "en": "Metal Detox Oil to Remove and Protect from Metals"
    },
    "hairTypes": [
     "colored",
@@ -2147,7 +2147,7 @@
    "type": "shampoo",
    "name": {
     "el": "Absolut Repair Molecular Σαμπουάν Μοριακής Επανόρθωσης Για Ταλαιπωρημένα Μαλλιά",
-    "en": "Absolut Repair Molecular Σαμπουάν Μοριακής Επανόρθωσης Για Ταλαιπωρημένα Μαλλιά"
+    "en": "Absolut Repair Molecular Shampoo for Damaged Hair"
    },
    "hairTypes": [
     "damaged"
@@ -2375,7 +2375,7 @@
    "type": "set",
    "name": {
     "el": "Absolut Repair Molecular Mini Duo Kit Μοριακής Επανόρθωσης για Ταλαιπωρημένα Μαλλιά",
-    "en": "Absolut Repair Molecular Mini Duo Kit Μοριακής Επανόρθωσης για Ταλαιπωρημένα Μαλλιά"
+    "en": "Absolut Repair Molecular Mini Duo Kit for Damaged Hair"
    },
    "hairTypes": [
     "damaged"
@@ -2415,7 +2415,7 @@
    "type": "serum",
    "name": {
     "el": "Absolut Repair Molecular Serum Μοριακής Επανόρθωσης Που Ξεβγάζεται Για Ταλαιπωρημένα Μαλλιά",
-    "en": "Absolut Repair Molecular Serum Μοριακής Επανόρθωσης Που Ξεβγάζεται Για Ταλαιπωρημένα Μαλλιά"
+    "en": "Absolut Repair Molecular Rinse-off Serum for Damaged Hair"
    },
    "hairTypes": [
     "damaged"
@@ -2453,7 +2453,7 @@
    "type": "serum",
    "name": {
     "el": "Serioxyl Advanced Density Ορός Για Πύκνωση",
-    "en": "Serioxyl Advanced Density Ορός Για Πύκνωση"
+    "en": "Serioxyl Advanced Density Serum"
    },
    "hairTypes": [
     "fine"
@@ -2572,7 +2572,7 @@
    "type": "pre-shampoo",
    "name": {
     "el": "Metal Detox Pre-Shampoo Περιποίηση Απομάκρυνσης Και Προστασίας Από Τα Μεταλλικά Στοιχεία",
-    "en": "Metal Detox Pre-Shampoo Περιποίηση Απομάκρυνσης Και Προστασίας Από Τα Μεταλλικά Στοιχεία"
+    "en": "Metal Detox Pre-Shampoo Treatment to Remove and Protect from Metals"
    },
    "hairTypes": [
     "colored",
@@ -2614,7 +2614,7 @@
    "type": "oil",
    "name": {
     "el": "Absolut Repair Έλαιο Θρέψης για Όλους τους Τύπους Μαλλιών",
-    "en": "Absolut Repair Έλαιο Θρέψης για Όλους τους Τύπους Μαλλιών"
+    "en": "Absolut Repair Nourishing Oil for All Hair Types"
    },
    "hairTypes": [
     "damaged"
@@ -2694,7 +2694,7 @@
    "type": "shampoo",
    "name": {
     "el": "Pro Longer Σαμπουάν Κατά Της Ψαλίδας Για Πιο Μακριά Μαλλιά",
-    "en": "Pro Longer Σαμπουάν Κατά Της Ψαλίδας Για Πιο Μακριά Μαλλιά"
+    "en": "Pro Longer Shampoo Against Split Ends for Longer Hair"
    },
    "hairTypes": [
     "long"
@@ -2991,7 +2991,7 @@
    "type": "styling",
    "name": {
     "el": "Tecni.ART Liss Control Κρέμα Για Λείανση Και Έλεγχο",
-    "en": "Tecni.ART Liss Control Κρέμα Για Λείανση Και Έλεγχο"
+    "en": "Tecni.ART Liss Control Smoothing & Control Cream"
    },
    "hairTypes": [
     "all"
@@ -3028,7 +3028,7 @@
    "type": "styling",
    "name": {
     "el": "Tecni.ART Volume Rootlift ​Αφρώδες Spray",
-    "en": "Tecni.ART Volume Rootlift ​Αφρώδες Spray"
+    "en": "Tecni.ART Volume Rootlift Foam Spray"
    },
    "hairTypes": [
     "all"
@@ -3065,7 +3065,7 @@
    "type": "styling",
    "name": {
     "el": "Tecni.ART Volume Extra Full Αφρός",
-    "en": "Tecni.ART Volume Extra Full Αφρός"
+    "en": "Tecni.ART Volume Extra Full Mousse"
    },
    "hairTypes": [
     "all"
@@ -3102,7 +3102,7 @@
    "type": "leave-in",
    "name": {
     "el": "Metal Detox Leave-in Κρέμα Απομάκρυνσης Και Προστασίας Από Τα Μεταλλικά Στοιχεία",
-    "en": "Metal Detox Leave-in Κρέμα Απομάκρυνσης Και Προστασίας Από Τα Μεταλλικά Στοιχεία"
+    "en": "Metal Detox Leave-in Cream to Remove and Protect from Metals"
    },
    "hairTypes": [
     "colored",
@@ -3143,7 +3143,7 @@
    "type": "shampoo",
    "name": {
     "el": "Tecni.ART Morning After Dust Ξηρό Σαμπουάν",
-    "en": "Tecni.ART Morning After Dust Ξηρό Σαμπουάν"
+    "en": "Tecni.ART Morning After Dust Dry Shampoo"
    },
    "hairTypes": [
     "all"
@@ -3218,7 +3218,7 @@
    "type": "styling",
    "name": {
     "el": "Tecni.ART Web Κρέμα Διαμόρφωσης",
-    "en": "Tecni.ART Web Κρέμα Διαμόρφωσης"
+    "en": "Tecni.ART Web Shaping Cream"
    },
    "hairTypes": [
     "all"
@@ -3255,7 +3255,7 @@
    "type": "styling",
    "name": {
     "el": "Tecni.ART Volume Panache Spray Με Πούδρα",
-    "en": "Tecni.ART Volume Panache Spray Με Πούδρα"
+    "en": "Tecni.ART Volume Panache Powder Spray"
    },
    "hairTypes": [
     "all"
@@ -3292,7 +3292,7 @@
    "type": "styling",
    "name": {
     "el": "Tecni.ART Flex Depolish Πάστα Διαμόρφωσης",
-    "en": "Tecni.ART Flex Depolish Πάστα Διαμόρφωσης"
+    "en": "Tecni.ART Flex Depolish Shaping Paste"
    },
    "hairTypes": [
     "all"
@@ -3330,7 +3330,7 @@
    "type": "styling",
    "name": {
     "el": "Tecni.ART Fix Max Ζελέ Διαμόρφωσης",
-    "en": "Tecni.ART Fix Max Ζελέ Διαμόρφωσης"
+    "en": "Tecni.ART Fix Max Shaping Gel"
    },
    "hairTypes": [
     "all"
@@ -3441,7 +3441,7 @@
    "type": "styling",
    "name": {
     "el": "Tecni.ART Super Dust Πούδρα Για Κράτημα",
-    "en": "Tecni.ART Super Dust Πούδρα Για Κράτημα"
+    "en": "Tecni.ART Super Dust Hold Powder"
    },
    "hairTypes": [
     "all"

@@ -1,7 +1,8 @@
 import React, { lazy, Suspense } from 'react';
 import { Link } from '../lib/router';
-import NhLayout, { BOOK, PHONE, GOOGLE_PROFILE_URL, DIRECTIONS_URL, mapLinkProps } from '../components/NhLayout';
+import NhLayout, { BOOK, PHONE, GOOGLE_PROFILE_URL, DIRECTIONS_URL, REVIEWS_URL, mapLinkProps } from '../components/NhLayout';
 import MapEmbed from '../components/MapEmbed';
+import SalonGallery from '../components/SalonGallery';
 
 // Μαθηματικά animation «Κομμωτική 2050»: φορτώνονται σε ξεχωριστό, μικρό αρχείο μετά την αρχική σελίδα.
 const MathArt = lazy(() => import('../components/MathArt'));
@@ -26,11 +27,14 @@ const content = {
     reassure: ['Πληρωμή online ή στο κομμωτήριο', 'Δωρεάν τεστ ευαισθησίας'],
     artCaption: 'Θησείο · Αθήνα',
     stats: [
-      { big: '1992', small: 'οικογενειακό κομμωτήριο' },
-      { big: '4,6 ★', small: 'βαθμολογία στο Google' },
-      { big: '24/7', small: 'online κράτηση, χωρίς τηλέφωνο' },
-      { big: '5′', small: 'με τα πόδια από τον σταθμό Θησείο' }
+      { big: '4,6 ★', small: 'βαθμολογία στο Google · δες κριτικές', go: 'reviews' },
+      { big: '24/7', small: 'online κράτηση, χωρίς τηλέφωνο', go: 'book' },
+      { big: '5′', small: 'με τα πόδια από το μετρό Θησείο · χάρτης', go: 'map' }
     ],
+    salonEyebrow: 'Ο χώρος · Θησείο',
+    salonTitleA: 'Έλα να μας ',
+    salonTitleEm: 'γνωρίσεις.',
+    salonAll: 'Όλες οι φωτογραφίες →',
     popularEyebrow: 'Οι πιο δημοφιλείς',
     popularTitle: 'Διάλεξε & κλείσε',
     allServices: 'Όλες οι τιμές →',
@@ -65,7 +69,7 @@ const content = {
       'Το κούρεμα είναι σχήμα πάνω στο πρόσωπο: μπορεί να το αναδείξει ή να το κρύψει. Γι’ αυτό πρώτα κοιτάμε το πρόσωπο, τα χαρακτηριστικά, την υφή και τη δομή των μαλλιών σου.',
       'Μετά σχεδιάζουμε κούρεμα, χρώμα και χτένισμα μαζί, ως ένα ολοκληρωμένο αποτέλεσμα που σου ταιριάζει και στέκεται στην καθημερινότητά σου.'
     ],
-    promiseSign: 'Αλέξανδρος',
+    promiseSign: 'Αλέξανδρος Λιακόπουλος',
     promises: ['Πρώτα ακούμε.', 'Ό,τι δεν σου ταιριάζει, θα σου το πούμε.'],
     joinTitle: 'Έλα στο κομμωτήριο',
     modelsEyebrow: 'Γίνε μοντέλο',
@@ -93,11 +97,14 @@ const content = {
     reassure: ['Pay online or at the salon', 'Free sensitivity test'],
     artCaption: 'Thiseio · Athens',
     stats: [
-      { big: '1992', small: 'family-run salon' },
-      { big: '4.6 ★', small: 'rating on Google' },
-      { big: '24/7', small: 'online booking, no phone call needed' },
-      { big: '5′', small: 'walk from Thiseio station' }
+      { big: '4.6 ★', small: 'rating on Google · read reviews', go: 'reviews' },
+      { big: '24/7', small: 'online booking, no phone call needed', go: 'book' },
+      { big: '5′', small: 'walk from Thiseio metro · map', go: 'map' }
     ],
+    salonEyebrow: 'The salon · Thiseio',
+    salonTitleA: 'Come and ',
+    salonTitleEm: 'meet us.',
+    salonAll: 'All photos →',
     popularEyebrow: 'Most popular',
     popularTitle: 'Pick & book',
     allServices: 'All prices →',
@@ -132,7 +139,7 @@ const content = {
       'A haircut is a shape around the face: it can bring it out or hide it. So we start by looking at your face, your features and the texture and structure of your hair.',
       'Then we design cut, colour and styling together, as one complete result that suits you and works in your everyday life.'
     ],
-    promiseSign: 'Alexandros',
+    promiseSign: 'Alexandros Liakopoulos',
     promises: ['We listen first.', 'If something doesn’t suit you, we’ll tell you.'],
     joinTitle: 'Join us at the salon',
     modelsEyebrow: 'Be our model',
@@ -193,12 +200,18 @@ const Home = ({ language, setLanguage }) => {
         </section>
 
         <section className="nh-stats" aria-label={language === 'el' ? 'Γιατί εμάς' : 'Why us'}>
-          {t.stats.map((s) => (
-            <div key={s.small} className="nh-stat">
-              <span className={`nh-stat-big${s.brand ? ' nh-stat-brand' : ''}`}>{s.big}</span>
-              <span className="nh-stat-small">{s.small}</span>
-            </div>
-          ))}
+          {t.stats.map((s) => {
+            // Κάθε αριθμός πάει κάπου: κριτικές Google, κράτηση, χάρτης με οδηγίες.
+            const link = s.go === 'reviews' ? mapLinkProps(REVIEWS_URL)
+              : s.go === 'map' ? mapLinkProps(DIRECTIONS_URL)
+              : { href: BOOK };
+            return (
+              <a key={s.small} className="nh-stat" {...link}>
+                <span className="nh-stat-big">{s.big}</span>
+                <span className="nh-stat-small">{s.small}</span>
+              </a>
+            );
+          })}
         </section>
 
         <section className="nh-section" id="services">
@@ -227,6 +240,17 @@ const Home = ({ language, setLanguage }) => {
               </a>
             ))}
           </div>
+        </section>
+
+        <section className="nh-section nh-salon" id="xoros" aria-labelledby="salon-title">
+          <div className="nh-section-head">
+            <div>
+              <span className="nh-eyebrow">{t.salonEyebrow}</span>
+              <h2 id="salon-title" className="nh-h2">{t.salonTitleA}<em>{t.salonTitleEm}</em></h2>
+            </div>
+            <Link to="/fotografies" className="nh-underline">{t.salonAll}</Link>
+          </div>
+          <SalonGallery language={language} names={['eisodos', 'xoros', 'kathreftes']} variant="teaser" />
         </section>
 
         <section className="nh-brands" id="brands" data-tone-host>

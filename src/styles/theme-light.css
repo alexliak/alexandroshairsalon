@@ -1,26 +1,26 @@
-/* ================= Λευκό θέμα ημέρας =================
-   Ενεργό όταν <html data-theme="light"> (το βάζει το src/lib/themeBoot.js ανάλογα με την ώρα της συσκευής).
-   Όχι «σκέτο» λευκό: ζεστή πορσελάνη με αχνή χρυσή λάμψη, λευκές κάρτες με απαλή σκιά,
-   σκούρο-χρυσό για κείμενα ώστε να διαβάζεται (αντίθεση ≥ 4.5:1), σαμπανί χρυσό στα κουμπιά.
-   Το σκούρο θέμα (νύχτα) μένει όπως ήταν στα home.css / shop.css. */
+/* ================= Ανοιχτό θέμα =================
+   Ενεργό όταν <html data-theme="light"> (src/lib/themeBoot.js, ανάλογα με τη ρύθμιση της συσκευής).
+   Ξεκούραστο για τα μάτια: φόντο ζεστό λινό (όχι λευκό), κάρτες σε απαλό ιβουάρ αντί για καθαρό λευκό,
+   κείμενο σκούρο καφέ αντί για μαύρο (αντίθεση ~12:1, άνετη χωρίς να «τσιμπάει»), απαλές σκιές.
+   Το σκούρο θέμα μένει όπως ήταν στα home.css / shop.css. */
 
 html[data-theme='light'] { color-scheme: light; }
 html[data-theme='light'] body,
 html[data-theme='light'] #__next {
-  background-color: #f8f5ef;
+  background-color: #eee8de;
   background-image: none;
-  color: #1c1915;
+  color: #2b2620;
 }
 
 html[data-theme='light'] .nh {
-  --nh-bg: #f8f5ef;          /* πορσελάνη */
-  --nh-surface: #fffefb;     /* κάρτες: σχεδόν λευκό */
-  --nh-line: #e9e2d6;
-  --nh-line-strong: #cdbfaa;
-  --nh-text: #1c1915;
-  --nh-soft: #4a4339;
-  --nh-muted: #6b6253;
-  --nh-gold: #8a6a2e;        /* χρυσό για κείμενα/γραμμές πάνω σε λευκό */
+  --nh-bg: #eee8de;          /* ζεστό λινό */
+  --nh-surface: #f6f2eb;     /* κάρτες: απαλό ιβουάρ */
+  --nh-line: #ddd4c6;
+  --nh-line-strong: #c4b6a0;
+  --nh-text: #2b2620;
+  --nh-soft: #4f473c;
+  --nh-muted: #665d4f;
+  --nh-gold: #7f612b;        /* χρυσό για κείμενα/γραμμές πάνω σε λευκό */
   --nh-gold-hover: #6c5222;
   --nh-gold-fill: #c9a96e;   /* σαμπανί χρυσό για γεμάτα κουμπιά */
   --nh-gold-fill-hover: #bb9a5c;
@@ -35,7 +35,7 @@ html[data-theme='light'] .nh {
 
   color-scheme: light;
   background:
-    radial-gradient(110% 55% at 80% -8%, rgba(201, 169, 110, 0.16), transparent 62%),
+    radial-gradient(110% 55% at 80% -8%, rgba(201, 169, 110, 0.12), transparent 62%),
     radial-gradient(80% 40% at 0% 30%, rgba(201, 169, 110, 0.06), transparent 70%),
     var(--nh-bg);
 }
@@ -44,7 +44,7 @@ html[data-theme='light'] .nh {
 html[data-theme='light'] .nh-header,
 html[data-theme='light'] .nh-subnav,
 html[data-theme='light'] .nh-chips {
-  background: rgba(248, 245, 239, 0.9);
+  background: rgba(238, 232, 222, 0.92);
   -webkit-backdrop-filter: saturate(1.4) blur(12px);
   backdrop-filter: saturate(1.4) blur(12px);
 }
@@ -101,7 +101,7 @@ html[data-theme='light'] .nh-brands {
   background:
     radial-gradient(80% 55% at 85% 12%, hsla(var(--tone-h), var(--tone-s), 62%, 0.22), transparent 70%),
     radial-gradient(70% 50% at 0% 100%, rgba(201, 169, 110, 0.14), transparent 70%),
-    linear-gradient(165deg, #fffdf8 0%, #f2ebdf 100%);
+    linear-gradient(165deg, #f4efe7 0%, #e7dfd1 100%);
   border-color: rgba(138, 106, 46, 0.22);
   box-shadow: var(--nh-shadow);
 }
@@ -113,8 +113,8 @@ html[data-theme='light'] .nh-brands-list li { border-bottom-color: rgba(138, 106
 html[data-theme='light'] .nh-pill input:checked + span { background: rgba(201, 169, 110, 0.2); }
 
 /* Μπάρα κράτησης κινητού και «επάνω» */
-html[data-theme='light'] .nh-mobile-bar { background: rgba(255, 254, 251, 0.96); border-color: var(--nh-line); box-shadow: 0 10px 30px rgba(70, 52, 20, 0.16); }
-html[data-theme='light'] .nh-top { background: rgba(255, 254, 251, 0.94); box-shadow: 0 8px 24px rgba(70, 52, 20, 0.14); }
+html[data-theme='light'] .nh-mobile-bar { background: rgba(246, 242, 235, 0.96); border-color: var(--nh-line); box-shadow: 0 10px 30px rgba(70, 52, 20, 0.16); }
+html[data-theme='light'] .nh-top { background: rgba(246, 242, 235, 0.94); box-shadow: 0 8px 24px rgba(70, 52, 20, 0.14); }
 html[data-theme='light'] .nh-top:hover { background: var(--nh-gold); }
 
 /* Χάρτης */
@@ -134,7 +134,7 @@ html[data-theme='light'] .sh-drawer-scrim { background: rgba(28, 25, 21, 0.35); 
 html[data-theme='light'] .sh-advice { background: var(--nh-cream); }
 
 /* ---------- Διάγνωση (shop/diagnosi) ---------- */
-html[data-theme='light'] .dx-card { background: linear-gradient(180deg, #fffefb, #f4eee3); border-color: rgba(138, 106, 46, 0.22); box-shadow: var(--nh-shadow); }
+html[data-theme='light'] .dx-card { background: linear-gradient(180deg, #f6f2eb, #e9e2d6); border-color: rgba(138, 106, 46, 0.22); box-shadow: var(--nh-shadow); }
 html[data-theme='light'] .nh .dx-opt.is-sel { background: rgba(201, 169, 110, 0.14); }
 html[data-theme='light'] .nh .dx-prod { background: var(--nh-surface); box-shadow: var(--nh-shadow); }
 
@@ -144,8 +144,9 @@ html[data-theme='light'] .nh .dx-prod { background: var(--nh-surface); box-shado
   html[data-theme] .nh .nh-card { transition: background-color 0.6s ease, color 0.6s ease, border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease; }
 }
 html[data-theme='light'] .sh-dx-band {
-  background: linear-gradient(120deg, #f1e7d4, var(--nh-surface) 60%);
+  background: linear-gradient(120deg, #e6dbc6, var(--nh-surface) 60%);
   border-color: rgba(138, 106, 46, 0.24);
   box-shadow: var(--nh-shadow);
 }
-html[data-theme='light'] .dx-halo { background: radial-gradient(closest-side, rgba(255, 253, 248, 0.98), rgba(241, 233, 219, 0.9) 70%, transparent); }
+html[data-theme='light'] .dx-halo { background: radial-gradient(closest-side, rgba(246, 242, 235, 0.98), rgba(233, 225, 211, 0.9) 70%, transparent); }
+html[data-theme='light'] .nh .dx-add.is-on { background: var(--nh-gold-fill); border-color: var(--nh-gold-fill); color: var(--nh-ink); }
