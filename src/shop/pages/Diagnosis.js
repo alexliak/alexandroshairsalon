@@ -1,7 +1,8 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Link } from '../../lib/router';
-import { PRODUCTS, imageSrc, productUrl } from '../catalog';
+import { PRODUCTS, imageSrc, money, productUrl } from '../catalog';
 import { WHATSAPP } from '../config';
+import { useShop } from '../ShopContext';
 
 /*
  * «Διάγνωση μαλλιών»: 3 ερωτήσεις → η ρουτίνα της L'Oréal Professionnel που αντιστοιχεί.
@@ -80,6 +81,48 @@ const ROUTINES = {
     S('Conditioner', 'Στα μήκη, ξέβγαλμα.', 'Conditioner', 'On the lengths, rinse.')]
 };
 
+// Ποιο προϊόν του shop αντιστοιχεί σε κάθε βήμα της ρουτίνας (τύποι κατά σειρά προτίμησης)
+const STEP_TYPES = {
+  'Absolut Repair': [['shampoo'], ['mask', 'conditioner'], ['oil']],
+  'Absolut Repair Molecular': [['shampoo'], ['serum'], ['leave-in']],
+  'Metal Detox': [['shampoo'], ['mask'], ['oil']],
+  'Pro Longer': [['shampoo'], ['mask', 'conditioner'], ['leave-in']],
+  'Vitamino Color': [['shampoo'], ['mask', 'conditioner'], ['treatment']],
+  'Curl Expression': [['shampoo'], ['mask'], ['leave-in']],
+  'Keratin Alpha Sleek': [['shampoo'], ['mask'], ['treatment']],
+  'Serioxyl Advanced': [['shampoo'], ['serum']],
+  'Scalp Advanced': [['shampoo'], ['treatment', 'mask']],
+  Blondifier: [['shampoo'], ['mask']],
+  Silver: [['shampoo'], ['conditioner']]
+};
+// Η σειρά Serioxyl είναι καταχωρημένη μέσα στη Scalp Advanced: ξεχωρίζει από τον κωδικό
+const inLine = (p, line) => (line === 'Serioxyl Advanced'
+  ? /serioxyl/.test(p.id)
+  : p.line === line && !(line === 'Scalp Advanced' && /serioxyl|aminexil/.test(p.id)));
+// Πρώτο διαθέσιμο μέγεθος με τιμή (όχι refill)
+const buyable = (p) => p.variants.find((v) => typeof v.price === 'number' && v.stock !== 0 && !/refill/i.test(v.label || ''))
+  || p.variants.find((v) => typeof v.price === 'number' && v.stock !== 0);
+const pickProduct = (line, types, taken) => {
+  for (const ty of types) {
+    const p = PRODUCTS.find((x) => inLine(x, line) && x.type === ty && x.image && !taken.has(x.id) && buyable(x));
+    if (p) return p;
+  }
+  return null;
+};
+export function routineProducts(main, extra) {
+  const taken = new Set();
+  const out = [];
+  (STEP_TYPES[main] || []).forEach((types) => {
+    const p = pickProduct(main, types, taken);
+    if (p) { taken.add(p.id); out.push({ product: p, variant: buyable(p) }); }
+  });
+  if (extra) {
+    const p = pickProduct(extra, ['oil'], taken);
+    if (p) { taken.add(p.id); out.push({ product: p, variant: buyable(p) }); }
+  }
+  return out;
+}
+
 const WHY = {
   'Absolut Repair': { el: 'Η L’Oréal προτείνει αυτή τη σειρά για ταλαιπωρημένα μαλλιά: θρέψη και αναδόμηση.', en: 'L’Oréal recommends this range for damaged hair: nourishment and repair.' },
   'Absolut Repair Molecular': { el: 'Για μαλλιά που έχουν ξανοιχτεί και σπάνε, η L’Oréal προτείνει τη μοριακή σειρά επανόρθωσης.', en: 'For lightened hair that breaks, L’Oréal recommends its molecular repair range.' },
@@ -114,7 +157,13 @@ const TEXT = {
     a1: 'Τύπος μαλλιών', a2: 'Ανάγκη', a3: 'Χρώμα',
     card: 'Η κάρτα των μαλλιών σου',
     routine: 'Η ρουτίνα σου',
-    live: 'Διαθέσιμα τώρα στο shop',
+    live: 'Η ρουτίνα σου στο shop',
+    more: 'Περισσότερα από τις ίδιες σειρές',
+    addAll: (n, sum) => `Όλη η ρουτίνα στο καλάθι (${n}) · ${sum}`,
+    addOne: 'Στο καλάθι',
+    added: '✓ Στο καλάθι',
+    allAdded: '✓ Όλα στο καλάθι · Δες το καλάθι',
+    orAsk: 'Θες να το συζητήσουμε πρώτα;',
     ask: 'Ζήτα τιμές για τη ρουτίνα σου',
     keep: 'Κράτησέ τα για το ραντεβού μου',
     again: '↺ Κάνε ξανά τη διάγνωση',
@@ -138,7 +187,13 @@ const TEXT = {
     a1: 'Hair type', a2: 'Need', a3: 'Colour',
     card: 'Your hair card',
     routine: 'Your routine',
-    live: 'Available now in the shop',
+    live: 'Your routine in the shop',
+    more: 'More from the same ranges',
+    addAll: (n, sum) => `Add the whole routine (${n}) · ${sum}`,
+    addOne: 'Add to cart',
+    added: '✓ In your cart',
+    allAdded: '✓ All in your cart · View cart',
+    orAsk: 'Prefer to talk it through first?',
     ask: 'Ask for prices for your routine',
     keep: 'Keep them for my appointment',
     again: '↺ Take the diagnosis again',
@@ -232,6 +287,8 @@ const Diagnosis = ({ lang = 'el' }) => {
   const [ans, setAns] = useState({});
   const [lit, setLit] = useState(0);
   const topRef = useRef(null);
+  const { lines: cartLines, add, addMany, setDrawer } = useShop();
+  const inCart = (id, sku) => cartLines.some((l) => l.id === id && l.sku === sku);
 
   // Κάθε νέα οθόνη ξεκινά από πάνω (σημαντικό στο κινητό)
   useEffect(() => {
@@ -302,7 +359,10 @@ const Diagnosis = ({ lang = 'el' }) => {
     const info = LINES[main];
     const steps = ROUTINES[main].map((s) => [`${s[L][0]} ${main}`, s[L][1]]);
     if (extra) steps.push([T.extraOil, T.extraOilD]);
-    const live = PRODUCTS.filter((p) => (p.line === main || p.line === extra) && p.image);
+    const routine = routineProducts(main, extra);
+    const routineIds = new Set(routine.map((r) => r.product.id));
+    const more = PRODUCTS.filter((p) => (inLine(p, main) || p.line === extra) && p.image && !routineIds.has(p.id));
+    const missing = routine.filter((r) => !inCart(r.product.id, r.variant.sku));
     const summary = `${LABEL[ans.texture][L]}, ${LABEL[ans.concern][L].toLowerCase()}, ${LABEL[ans.chem][L].toLowerCase()}. ${T.proposal}: ${main}${extra ? ` + ${extra}` : ''}.`;
     const wa = (tail) => `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(`${T.wa(summary)} ${tail}`)}`;
     body = (
@@ -330,20 +390,52 @@ const Diagnosis = ({ lang = 'el' }) => {
               {steps.map(([a, b]) => <li key={a}><div><b>{a}</b><span>{b}</span></div></li>)}
             </ol>
           </div>
-          {live.length > 0 && (
+          {routine.length > 0 && (
             <div className="dx-live">
               <div className="dx-label">{T.live}</div>
-              {live.map((p) => (
-                <Link key={p.id} to={productUrl(p)} className="dx-prod">
-                  <img src={imageSrc(p.image, 400)} alt="" width="56" height="56" loading="lazy" />
-                  <div><b>{p.name[L] || p.name.el}</b><span>{p.brand}</span></div>
-                </Link>
-              ))}
+              {routine.map(({ product: p, variant: v }) => {
+                const on = inCart(p.id, v.sku);
+                return (
+                  <div key={p.id} className="dx-prod dx-prod--buy">
+                    <Link to={productUrl(p)} className="dx-prod-link">
+                      <img src={imageSrc(p.image, 400)} alt="" width="56" height="56" loading="lazy" />
+                      <div><b>{p.name[L] || p.name.el}</b><span>{v.label} · {money(v.price, L)}</span></div>
+                    </Link>
+                    <button type="button" className={`dx-add${on ? ' is-on' : ''}`}
+                      aria-pressed={on} aria-label={`${on ? T.added : T.addOne}: ${p.name[L] || p.name.el}`}
+                      onClick={() => (on ? setDrawer(true) : add(p.id, v.sku, 1, { quiet: true }))}>
+                      {on ? T.added : T.addOne}
+                    </button>
+                  </div>
+                );
+              })}
+              {routine.length > 1 && (
+                missing.length
+                  ? <button type="button" className="nh-btn nh-btn-gold dx-addall"
+                      onClick={() => addMany(missing.map((r) => ({ id: r.product.id, sku: r.variant.sku })))}>
+                      {T.addAll(missing.length, money(missing.reduce((t, r) => t + r.variant.price, 0), L))}
+                    </button>
+                  : <button type="button" className="nh-btn nh-btn-ghost dx-addall" onClick={() => setDrawer(true)}>{T.allAdded}</button>
+              )}
             </div>
+          )}
+          {more.length > 0 && (
+            <details className="dx-more">
+              <summary>{T.more} ({more.length})</summary>
+              <div className="dx-live">
+                {more.map((p) => (
+                  <Link key={p.id} to={productUrl(p)} className="dx-prod">
+                    <img src={imageSrc(p.image, 400)} alt="" width="56" height="56" loading="lazy" />
+                    <div><b>{p.name[L] || p.name.el}</b><span>{p.brand}</span></div>
+                  </Link>
+                ))}
+              </div>
+            </details>
           )}
           <p className="dx-tip">{TIP[ans.texture][L]}</p>
           <div className="dx-ctas">
-            <a className="nh-btn nh-btn-gold" href={wa(T.waAsk)} target="_blank" rel="noopener noreferrer">{T.ask}</a>
+            {routine.length > 0 && <div className="dx-label">{T.orAsk}</div>}
+            <a className={`nh-btn ${routine.length ? 'nh-btn-ghost' : 'nh-btn-gold'}`} href={wa(T.waAsk)} target="_blank" rel="noopener noreferrer">{T.ask}</a>
             <a className="nh-btn nh-btn-ghost" href={wa(T.waKeep)} target="_blank" rel="noopener noreferrer">{T.keep}</a>
           </div>
         </article>

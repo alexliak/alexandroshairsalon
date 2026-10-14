@@ -90,3 +90,23 @@
 @media (prefers-reduced-motion: reduce) { .dx-screen { animation: none; } }
 .nh .dx-ctas .nh-btn { width: 100%; max-width: 100%; box-sizing: border-box; white-space: normal; text-align: center; height: auto; min-height: 58px; padding: 12px 20px; font-size: 16px; }
 .dx-card > * { min-width: 0; }
+
+/* Ρουτίνα → καλάθι: κάθε προϊόν με δικό του κουμπί, και «όλη η ρουτίνα» με ένα πάτημα */
+.nh .dx-prod--buy { grid-template-columns: 1fr auto; padding: 8px 8px 8px 10px; }
+.nh .dx-prod--buy:hover { border-color: var(--nh-line); }
+.nh .dx-prod-link { display: grid; grid-template-columns: 56px 1fr; gap: 12px; align-items: center; color: var(--nh-text); text-decoration: none; min-width: 0; }
+.nh .dx-prod-link:hover b { color: var(--nh-gold); }
+.nh .dx-add {
+  min-height: 44px; padding: 0 16px; border-radius: 999px; border: 1px solid var(--nh-gold);
+  background: transparent; color: var(--nh-gold); font: inherit; font-size: 14px; font-weight: 600; white-space: nowrap; cursor: pointer;
+  transition: background-color .2s ease, color .2s ease;
+}
+.nh .dx-add:hover { background: rgba(201, 169, 110, .12); }
+.nh .dx-add.is-on { background: var(--nh-gold); color: var(--nh-ink); border-color: var(--nh-gold); }
+.nh .dx-addall { width: 100%; max-width: 100%; box-sizing: border-box; white-space: normal; height: auto; min-height: 56px; padding: 12px 20px; margin-top: 4px; }
+.dx-more summary { cursor: pointer; font-size: 14px; color: var(--nh-soft); padding: 6px 0; }
+.dx-more[open] summary { margin-bottom: 10px; }
+@media (max-width: 420px) {
+  .nh .dx-prod--buy { grid-template-columns: 1fr; }
+  .nh .dx-add { width: 100%; }
+}

@@ -129,6 +129,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
 .totop{position:fixed;right:20px;bottom:24px;z-index:31;width:48px;height:48px;border-radius:999px;border:1px solid var(--gold);background:rgba(18,16,14,.92);color:var(--gold);display:inline-flex;align-items:center;justify-content:center;cursor:pointer;opacity:0;visibility:hidden;transition:opacity .2s,visibility .2s}
 .totop svg{width:18px;height:18px}.totop.on{opacity:1;visibility:visible}.totop:hover{background:var(--gold);color:var(--ink)}
 @media (max-width:760px){.top .btn.gold{display:none}.icons a{width:34px;height:34px}.icons a svg{width:16px;height:16px}.icons{gap:5px}.logo b{font-size:19px}.logo span{letter-spacing:.1em;font-size:9px}.totop{bottom:96px;right:14px;width:44px;height:44px}}
+@media (hover:none) and (pointer:coarse) and (min-width:761px) and (max-width:1180px){.mbar{display:flex;position:fixed;left:12px;right:12px;max-width:560px;margin:0 auto;bottom:14px;z-index:20;align-items:center;justify-content:space-between;padding:8px 8px 8px 18px;border-radius:999px;background:var(--panel);border:1px solid #3a342c;box-shadow:0 10px 30px rgba(0,0,0,.5)} .mbar span{font-size:14px;font-weight:700} body{padding-bottom:96px}}
 @media (prefers-reduced-motion:reduce){.totop{transition:none}}
 .lang{flex:none;min-width:40px;height:40px;border-radius:999px;border:1px solid #5a5247;background:transparent;color:var(--text);font:700 13px var(--sans);cursor:pointer}.lang:hover{border-color:var(--gold);color:var(--gold)}
 @media (max-width:760px){.lang{min-width:34px;height:34px}}
@@ -136,17 +137,17 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
 .tsw{display:flex;flex-wrap:wrap;align-items:center;gap:6px}.tsw span{margin-right:6px;font-size:13px}
 .tsw button{min-height:36px;padding:0 14px;border-radius:999px;border:1px solid #5a5247;background:transparent;color:var(--soft);font:500 13px var(--sans);cursor:pointer}
 .tsw button:hover{border-color:var(--gold);color:var(--gold)}.tsw button.on{border-color:var(--gold);color:var(--text);font-weight:700}
-html[data-theme=light] .tsw button{border-color:#cdbfaa}
+html[data-theme=light] .tsw button{border-color:#c4b6a0}
 
 /* Λευκό θέμα ημέρας (data-theme="light" από το THEME_BOOT) */
-html[data-theme=light]{color-scheme:light;--bg:#f8f5ef;--panel:#fffefb;--line:#e9e2d6;--text:#1c1915;--muted:#6b6253;--soft:#4a4339;--gold:#8a6a2e;--ink:#17140f;--fill:#c9a96e}
-html[data-theme=light] body{background:radial-gradient(110% 55% at 80% -8%,rgba(201,169,110,.16),transparent 62%) var(--bg)}
-html[data-theme=light] header.top{background:rgba(248,245,239,.9)}
+html[data-theme=light]{color-scheme:light;--bg:#eee8de;--panel:#f6f2eb;--line:#ddd4c6;--text:#2b2620;--muted:#665d4f;--soft:#4f473c;--gold:#80632b;--ink:#17140f;--fill:#c9a96e}
+html[data-theme=light] body{background:radial-gradient(110% 55% at 80% -8%,rgba(201,169,110,.12),transparent 62%) var(--bg)}
+html[data-theme=light] header.top{background:rgba(238,232,222,.92)}
 html[data-theme=light] .btn.gold{background:var(--fill);border-color:var(--fill);color:var(--ink);box-shadow:0 6px 18px rgba(138,106,46,.22)}
-html[data-theme=light] .btn.ghost,html[data-theme=light] .icons a,html[data-theme=light] .lang{border-color:#cdbfaa}
+html[data-theme=light] .btn.ghost,html[data-theme=light] .icons a,html[data-theme=light] .lang{border-color:#c4b6a0}
 html[data-theme=light] .svc{box-shadow:0 1px 2px rgba(70,52,20,.05),0 10px 30px rgba(70,52,20,.06)}
-html[data-theme=light] .mbar{background:rgba(255,254,251,.96);border-color:var(--line);box-shadow:0 10px 30px rgba(70,52,20,.16)}
-html[data-theme=light] .totop{background:rgba(255,254,251,.94)}
+html[data-theme=light] .mbar{background:rgba(246,242,235,.96);border-color:var(--line);box-shadow:0 10px 30px rgba(70,52,20,.16)}
+html[data-theme=light] .totop{background:rgba(246,242,235,.94)}
 html[data-theme=light] a#wahanda-online-booking-widget.btn{background:var(--fill)!important;border-color:var(--fill)!important;color:var(--ink)!important}
 html[data-theme=light] .skip,html[data-theme=light] .totop:hover,html[data-theme=light] .icons a.ph:hover,html[data-theme=light] .icons a.ft:hover{color:#fff}
 """
@@ -225,7 +226,7 @@ def page(path, title, desc, body, ld, extra_head="", mbar=True, bilingual=False,
 <footer class="bottom"><div class="wrap">
   <p><strong>Alexandros Hair Salon</strong> · {ADDRESS} · <a href="tel:{PHONE}">{PHONE_TXT}</a> · <a href="tel:+306981319000">Κλήση κινητού</a> · <a href="https://wa.me/306981319000" target="_blank" rel="noopener">WhatsApp</a> · <a href="viber://chat?number=%2B306981319000">Viber</a> · <a href="{GOOGLE}" data-maps target="_blank" rel="noopener">Ωράριο στο Google</a> · <a href="{DIRECTIONS}" data-maps target="_blank" rel="noopener">Οδηγίες</a></p>
   <p class="tsw" role="radiogroup" aria-label="Εμφάνιση"><span>Εμφάνιση</span><button type="button" role="radio" data-mode="auto" title="Όπως η συσκευή σου">Αυτόματο</button><button type="button" role="radio" data-mode="light">Ανοιχτό</button><button type="button" role="radio" data-mode="dark">Σκούρο</button></p>
-  <p class="links"><a href="/">Αρχική</a><a href="/services">Όλες οι τιμές</a><a href="/kourema-athina/">Κούρεμα στην Αθήνα</a><a href="/vafi-mallion-athina/">Βαφή μαλλιών στην Αθήνα</a><a href="/balayage-athina/">Balayage στην Αθήνα</a><a href="/dorean-kourema-athina/">Δωρεάν κούρεμα (μοντέλο)</a><a href="/kratisi/">Κράτηση online</a><a href="/shop">Shop</a></p>
+  <p class="links"><a href="/">Αρχική</a><a href="/services">Όλες οι τιμές</a><a href="/kourema-athina/">Κούρεμα στην Αθήνα</a><a href="/vafi-mallion-athina/">Βαφή μαλλιών στην Αθήνα</a><a href="/balayage-athina/">Balayage στην Αθήνα</a><a href="/dorean-kourema-athina/">Δωρεάν κούρεμα (μοντέλο)</a><a href="/fotografies">Φωτογραφίες</a><a href="/kratisi/">Κράτηση online</a><a href="/shop">Shop</a></p>
 </div></footer>
 {'<div class="mbar"><span>Θησείο · από το 1992</span><a class="btn gold" href="/kratisi/">Κλείσε ραντεβού</a></div>' if mbar else ''}
 <button type="button" class="totop" aria-label="Επιστροφή στην κορυφή" title="Επιστροφή στην κορυφή" tabindex="-1">{ICONS['FaArrowUp']}</button>

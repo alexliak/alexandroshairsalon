@@ -1,7 +1,7 @@
 {
   "/": {
     "title": "Κομμωτήριο Αθήνα, Θησείο | Κούρεμα, Βαφή, Balayage | Alexandros Hair Salon",
-    "description": "Κομμωτήριο στο Θησείο, κέντρο Αθήνας, από το 1992. Κούρεμα από €28, βαφή ρίζας από €35, balayage από €55 με L’Oréal & Redken. 4,6★ στο Google. Κλείσε online."
+    "description": "Κομμωτήριο στο Θησείο, κέντρο Αθήνας, από το 1992. Κούρεμα από €28, βαφή ρίζας από €35, balayage από €55 με L’Oréal & Redken. 4,6★ στις κριτικές Google, φωτογραφίες του χώρου, online κράτηση."
   },
   "/services": {
     "title": "Τιμές Κομμωτηρίου Αθήνα | Κούρεμα, Βαφή, Balayage | Alexandros Hair Salon",
@@ -40,5 +40,15 @@
   "/aporrito": {
     "title": "Πολιτική απορρήτου | Alexandros Hair Salon",
     "description": "Πώς το Alexandros Hair Salon χρησιμοποιεί και προστατεύει τα προσωπικά σου δεδομένα: παραγγελίες, κριτικές, φόρμες και cookies."
+  },
+  "/fotografies": {
+    "title": "Φωτογραφίες | Alexandros Hair Salon, κομμωτήριο στο Θησείο, Αθήνα",
+    "description": "Δες το Alexandros Hair Salon από μέσα: θέσεις κουρέματος, λούσιμο, υποδοχή και χώρο αναμονής. Ερυσίχθονος 3-5, Θησείο, 5′ από το μετρό. Τιμές, κριτικές Google και online κράτηση.",
+    "image": {
+      "url": "https://alexandroshairsalon.gr/images/og-fotografies.jpg",
+      "width": 1200,
+      "height": 630,
+      "type": "image/jpeg"
+    }
   }
 }
