@@ -1,6 +1,6 @@
 self.__BUILD_MANIFEST = {
   "/": [
-    "static/chunks/3kk8a9qkdrlch.js"
+    "static/chunks/1fzaf_xxx3lwo.js"
   ],
   "/404": [
     "static/chunks/1scl8bjamjpho.js"
@@ -12,10 +12,10 @@ self.__BUILD_MANIFEST = {
     "static/chunks/04wwvnwgfbb3p.js"
   ],
   "/douleia": [
-    "static/chunks/3agv92cyfx5dp.js"
+    "static/chunks/2jtyvukwkdcei.js"
   ],
   "/fotografies": [
-    "static/chunks/37f4_k15es1na.js"
+    "static/chunks/3w9wk990f3hrw.js"
   ],
   "/hours": [
     "static/chunks/2fdy9opc0ho9r.js"
