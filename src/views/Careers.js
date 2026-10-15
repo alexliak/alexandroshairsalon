@@ -21,7 +21,8 @@ const text = {
     barBottom: 'αίτηση σε 2 λεπτά',
     offerTitle: 'Τι προσφέρουμε',
     offer: [
-      'Σταθερή εργασία',
+      'Σταθερή εργασία, πλήρης ή μερική απασχόληση',
+      'Βασικός μισθός (κατώτατος: €920 μικτά τον μήνα για πλήρη απασχόληση, αναλογικά για μερική)',
       'Εκπαίδευση στη δουλειά, με L’Oréal Professionnel και Redken',
       'Οικογενειακό, ήρεμο περιβάλλον στο κέντρο της Αθήνας'
     ],
@@ -58,7 +59,8 @@ const text = {
     barBottom: 'apply in 2 minutes',
     offerTitle: 'What we offer',
     offer: [
-      'Stable employment',
+      'Stable employment, full-time or part-time',
+      'Base salary (minimum wage: €920 gross a month full-time, pro rata for part-time)',
       'On-the-job training with L’Oréal Professionnel and Redken',
       'A calm, family environment in central Athens'
     ],
