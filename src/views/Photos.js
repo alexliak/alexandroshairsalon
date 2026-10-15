@@ -16,7 +16,8 @@ const content = {
     prices: 'Τιμές',
     reviews: 'Κριτικές στο Google (4,6 ★)',
     map: 'Οδηγίες στον χάρτη',
-    team: 'Ο Αλέξανδρος Λιακόπουλος και η ομάδα του κομμωτηρίου σάς περιμένουν στο Θησείο.'
+    team: 'Ο Αλέξανδρος Λιακόπουλος και η ομάδα του κομμωτηρίου σάς περιμένουν στο Θησείο.',
+    license: '© Alexandros Hair Salon. Οι φωτογραφίες ανήκουν στο κομμωτήριο. Για χρήση τους ζήτησε άδεια από την '
   },
   en: {
     eyebrow: 'Thiseio · Erisichthonos 3-5',
@@ -27,7 +28,8 @@ const content = {
     prices: 'Prices',
     reviews: 'Google reviews (4.6 ★)',
     map: 'Directions on the map',
-    team: 'Alexandros Liakopoulos and the salon team look forward to seeing you in Thiseio.'
+    team: 'Alexandros Liakopoulos and the salon team look forward to seeing you in Thiseio.',
+    license: '© Alexandros Hair Salon. The photos belong to the salon. To use them, ask for permission via the '
   }
 };
 
@@ -54,6 +56,9 @@ export default function Photos({ language, setLanguage }) {
             <a className="nh-underline" {...mapLinkProps(REVIEWS_URL)}>{t.reviews}</a>
             <a className="nh-underline" {...mapLinkProps(DIRECTIONS_URL)}>{t.map}</a>
           </div>
+          <p id="adeia" className="nh-photos-license">
+            {t.license}<Link to="/hours">{language === 'en' ? 'contact page' : 'σελίδα επικοινωνίας'}</Link>.
+          </p>
         </section>
       </main>
     </NhLayout>
