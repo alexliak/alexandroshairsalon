@@ -71,13 +71,22 @@ const menu = [
         },
         "options": [
           {
-            "el": "",
-            "en": "",
+            "el": "χωρίς λούσιμο",
+            "en": "without wash",
+            "time": {
+              "el": "20′",
+              "en": "20′"
+            },
+            "price": 20
+          },
+          {
+            "el": "με λούσιμο",
+            "en": "with wash",
             "time": {
               "el": "30′",
               "en": "30′"
             },
-            "price": 20
+            "price": 25
           }
         ]
       }
@@ -97,13 +106,22 @@ const menu = [
         },
         "options": [
           {
-            "el": "",
-            "en": "",
+            "el": "κοντά ή μεσαία",
+            "en": "short or medium",
             "time": {
               "el": "20′",
               "en": "20′"
             },
             "price": 20
+          },
+          {
+            "el": "μακριά ή πυκνά",
+            "en": "long or thick",
+            "time": {
+              "el": "25′",
+              "en": "25′"
+            },
+            "price": 24
           }
         ]
       },
@@ -176,7 +194,7 @@ const menu = [
               "el": "45′",
               "en": "45′"
             },
-            "price": 38
+            "price": 42
           },
           {
             "el": "κάτω από τους ώμους",
@@ -185,7 +203,7 @@ const menu = [
               "el": "1 ώρα",
               "en": "1 h"
             },
-            "price": 49
+            "price": 55
           }
         ]
       },
@@ -202,7 +220,7 @@ const menu = [
               "el": "1 ώρα 15′",
               "en": "1 h 15′"
             },
-            "price": 59
+            "price": 69
           }
         ]
       }
@@ -640,7 +658,7 @@ const menu = [
               "el": "45′",
               "en": "45′"
             },
-            "price": 38
+            "price": 47
           },
           {
             "el": "κάτω από τους ώμους ή πυκνά",
@@ -649,7 +667,7 @@ const menu = [
               "el": "55′",
               "en": "55′"
             },
-            "price": 45
+            "price": 53
           }
         ]
       },
@@ -666,7 +684,7 @@ const menu = [
               "el": "1 ώρα 30′",
               "en": "1 h 30′"
             },
-            "price": 63
+            "price": 78
           },
           {
             "el": "κάτω από τους ώμους ή πυκνά",
@@ -675,9 +693,13 @@ const menu = [
               "el": "1 ώρα 40′",
               "en": "1 h 40′"
             },
-            "price": 70
+            "price": 85
           }
-        ]
+        ],
+        "desc": {
+          "el": "Η τιμή είναι με βαφή Farcom. Με Majirel +€7, χωρίς αμμωνία (INOA/Redken) +€9.",
+          "en": "Price with Farcom colour. Majirel +€7, ammonia-free (INOA/Redken) +€9."
+        }
       },
       {
         "name": {
@@ -686,15 +708,28 @@ const menu = [
         },
         "options": [
           {
-            "el": "",
-            "en": "",
+            "el": "κοντά ή μεσαία",
+            "en": "short or medium",
             "time": {
               "el": "1 ώρα 15′",
               "en": "1 h 15′"
             },
-            "price": 52
+            "price": 54
+          },
+          {
+            "el": "μακριά ή πυκνά",
+            "en": "long or thick",
+            "time": {
+              "el": "1 ώρα 25′",
+              "en": "1 h 25′"
+            },
+            "price": 63
           }
-        ]
+        ],
+        "desc": {
+          "el": "Η τιμή είναι με βαφή Farcom. Με Majirel +€7, χωρίς αμμωνία (INOA/Redken) +€9.",
+          "en": "Price with Farcom colour. Majirel +€7, ammonia-free (INOA/Redken) +€9."
+        }
       },
       {
         "name": {
@@ -709,7 +744,7 @@ const menu = [
               "el": "2 ώρες 40′",
               "en": "2 h 40′"
             },
-            "price": 100
+            "price": 124
           },
           {
             "el": "μερικές · κάτω από τους ώμους",
@@ -718,7 +753,7 @@ const menu = [
               "el": "3 ώρες 10′",
               "en": "3 h 10′"
             },
-            "price": 133
+            "price": 155
           }
         ]
       }
