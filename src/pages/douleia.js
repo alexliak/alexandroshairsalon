@@ -19,7 +19,10 @@ const jobPosting = {
   },
   industry: 'Κομμωτική',
   occupationalCategory: '39-5012.00 Hairdressers, Hairstylists, and Cosmetologists',
-  experienceRequirements: { '@type': 'OccupationalExperienceRequirements', monthsOfExperience: 0 },
+  // Χωρίς απαίτηση εμπειρίας: η Google θέλει το κείμενο «no requirements», όχι 0 μήνες
+  experienceRequirements: 'no requirements',
+  // Η αγγελία λήγει· ανανέωσε την ημερομηνία (και το datePosted) αν η θέση μένει ανοιχτή
+  validThrough: '2027-01-31T23:59',
   directApply: true,
   url: `${SITE}/douleia`
 };

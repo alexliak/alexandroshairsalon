@@ -46,7 +46,10 @@ export const GALLERY_LD = {
     height: p.h,
     caption: p.el.alt,
     creditText: 'Alexandros Hair Salon',
-    copyrightNotice: 'Alexandros Hair Salon',
+    copyrightNotice: '© Alexandros Hair Salon',
+    // Άδεια χρήσης: σημείωση στο τέλος της /fotografies· για άδεια, επικοινωνία (/hours)
+    license: `${SITE}/fotografies#adeia`,
+    acquireLicensePage: `${SITE}/hours`,
     creator: { '@type': 'Organization', name: 'Alexandros Hair Salon' },
     contentLocation: { '@type': 'Place', name: 'Θησείο, Αθήνα' }
   }))
