@@ -213,6 +213,10 @@ a.nh-stat:focus-visible { outline: 2px solid var(--nh-gold); outline-offset: -2p
 .nh-menu-options li { display: flex; justify-content: space-between; gap: 16px; padding: 10px 0; border-top: 1px dashed var(--nh-line); font-size: 15px; }
 .nh-menu-options li:first-child { border-top: 0; }
 .nh-menu-time { color: var(--nh-muted); }
+.nh .nh-menu-optlink { display: flex; justify-content: space-between; gap: 16px; width: 100%; color: inherit; text-decoration: none; min-height: 28px; }
+.nh .nh-menu-optlink strong { color: var(--nh-gold, inherit); }
+.nh .nh-menu-optlink:hover .nh-menu-opt { text-decoration: underline; }
+.nh-menu-pick { margin: 0; font-size: 13.5px; color: var(--nh-muted); }
 .nh .nh-menu-book { align-self: flex-start; padding: 10px 0; font-weight: 700; text-decoration: none; }
 .nh-notes { margin-top: clamp(56px, 7vw, 96px); padding: clamp(28px, 4vw, 48px); border-radius: 22px; border: 1px solid var(--nh-line); display: flex; flex-direction: column; gap: 18px; align-items: flex-start; }
 .nh-notes .nh-menu-title { margin-bottom: 0; }

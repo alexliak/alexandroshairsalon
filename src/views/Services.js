@@ -1,7 +1,7 @@
 import React from 'react';
 import NhLayout, { BOOK, PHONE } from '../components/NhLayout';
 import menu from '../data/menu';
-import { priceText } from '../data/prices';
+import { priceText, bookUrl } from '../data/prices';
 
 // Services & prices (2026 design). The list itself lives in src/data/menu.js.
 const text = {
@@ -11,6 +11,7 @@ const text = {
     titleEm: 'και χρόνοι.',
     lead: 'Μία τιμή για κάθε υπηρεσία, ίδια στο κομμωτήριο και online. Κάτω από κάθε υπηρεσία γράφουμε τι περιλαμβάνει. Στην online κράτηση βλέπεις ελεύθερες ώρες και πληρώνεις online ή στο κομμωτήριο.',
     phoneOnly: 'Κλείνεται τηλεφωνικά',
+    pickOption: 'Πάτησε την επιλογή σου για κράτηση',
     book: 'Κλείσε online',
     call: 'Κάλεσε',
     from: 'από',
@@ -30,6 +31,7 @@ const text = {
     titleEm: 'and times.',
     lead: 'One price per service, the same at the salon and online. Under each service we say what it includes. When you book online you see free slots and pay online or at the salon.',
     phoneOnly: 'Book by phone',
+    pickOption: 'Tap your option to book',
     book: 'Book online',
     call: 'Call',
     from: 'from',
@@ -92,23 +94,34 @@ const Services = ({ language, setLanguage }) => {
                     <p className="nh-menu-meta">{s.options[0].time[lang]}</p>
                   ) : (
                   <ul className="nh-menu-options">
-                    {s.options.map((o) => (
-                      <li key={`${o.el}-${o.price}`}>
-                        <span className="nh-menu-opt">
-                          {o[lang] ? `${o[lang]} · ` : ''}
-                          <span className="nh-menu-time">{o.time[lang]}</span>
-                        </span>
-                        <strong>€{o.price}</strong>
-                      </li>
-                    ))}
+                    {s.options.map((o) => {
+                      const row = (
+                        <>
+                          <span className="nh-menu-opt">
+                            {o[lang] ? `${o[lang]} · ` : ''}
+                            <span className="nh-menu-time">{o.time[lang]}</span>
+                          </span>
+                          <strong>€{o.price}{s.options.length > 1 && bookUrl(o) ? ' →' : ''}</strong>
+                        </>
+                      );
+                      return (
+                        <li key={`${o.el}-${o.price}`}>
+                          {s.options.length > 1 && bookUrl(o) ? (
+                            <a className="nh-menu-optlink" href={bookUrl(o)} target="_blank" rel="noopener" aria-label={`${t.bookThis}: ${s.name[lang]} · ${o[lang]}`}>{row}</a>
+                          ) : row}
+                        </li>
+                      );
+                    })}
                   </ul>
                   )}
                   {s.online === false ? (
                     <a href={`tel:${PHONE}`} className="nh-menu-book" aria-label={`${t.phoneOnly}: ${s.name[lang]}`}>
                       {t.phoneOnly} →
                     </a>
+                  ) : s.options.length > 1 ? (
+                    <p className="nh-menu-pick">{t.pickOption}</p>
                   ) : (
-                    <a href={BOOK} className="nh-menu-book" aria-label={`${t.bookThis}: ${s.name[lang]}`}>
+                    <a href={bookUrl(s.options[0]) || BOOK} className="nh-menu-book" target="_blank" rel="noopener" aria-label={`${t.bookThis}: ${s.name[lang]}`}>
                       {t.bookThis} →
                     </a>
                   )}

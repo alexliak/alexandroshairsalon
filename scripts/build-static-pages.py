@@ -34,6 +34,18 @@ ADDRESS = "Ερυσίχθονος 3-5, Θησείο, Αθήνα 118 51"
 _MENU_JSON = json.loads((pathlib.Path(__file__).parent.parent / "src/data/menu.json").read_text(encoding="utf-8"))
 MENU = {s["name"]["el"]: (s["name"]["el"], [(o["el"], o["time"]["el"], o["price"]) for o in s["options"]])
         for c in _MENU_JSON for s in c["services"]}
+import urllib.parse as _up
+
+
+def book_url(o):
+    """Κράτηση της συγκεκριμένης επιλογής στο widget της Treatwell (ίδιο με src/data/prices.js)."""
+    if not o.get("book"):
+        return None
+    ps = json.dumps([{"menuItemId": o["book"]["item"], "optionIds": [o["book"]["option"]]}], separators=(",", ":"))
+    return "https://widget.treatwell.gr/availability?venueId=523778&proposedServices=" + _up.quote(ps, safe="")
+
+
+BOOKS = {s["name"]["el"]: [book_url(o) for o in s["options"]] for c in _MENU_JSON for s in c["services"]}
 DESC = {s["name"]["el"]: s.get("desc", {}).get("el", "") for c in _MENU_JSON for s in c["services"]}
 
 
@@ -94,7 +106,7 @@ section.block{padding:40px 0;border-top:1px solid var(--line)}
 .svc .sd{margin:6px 0 0;color:var(--soft);font-size:14.5px;line-height:1.5}
 .svc ul{list-style:none;margin:10px 0 0;padding:0}
 .svc li{display:flex;justify-content:space-between;gap:12px;padding:8px 0;border-top:1px dashed var(--line);font-size:15px}
-.svc li:first-child{border-top:0}.svc .d{color:var(--muted);white-space:nowrap}.svc .p{font-weight:800;white-space:nowrap;color:var(--gold)}
+.svc li:first-child{border-top:0}.svc li a.bk{display:flex;justify-content:space-between;gap:12px;width:100%;color:inherit;text-decoration:none}.svc li a.bk:hover span:first-child{text-decoration:underline}.svc .d{color:var(--muted);white-space:nowrap}.svc .p{font-weight:800;white-space:nowrap;color:var(--gold)}
 details{border-top:1px solid var(--line);padding:14px 0}details:last-of-type{border-bottom:1px solid var(--line)}
 summary{cursor:pointer;font-weight:700;font-size:17px}details p{color:var(--soft);margin:10px 0 0}
 .links{display:flex;flex-wrap:wrap;gap:10px}.links a{padding:8px 14px;border:1px solid var(--line);border-radius:999px;color:var(--text);text-decoration:none;font-size:14px}.links a:hover{border-color:var(--gold);color:var(--gold)}
@@ -152,10 +164,12 @@ def esc(s):
 
 def svc_html(key):
     name, opts = MENU[key]
-    rows = "".join(
-        f'<li><span>{esc(o) + " · " if o else ""}<span class="d">{esc(d)}</span></span><span class="p">€{p}</span></li>'
-        for o, d, p in opts
-    )
+    def li(o, d, p, url):
+        inner = f'<span>{esc(o) + " · " if o else ""}<span class="d">{esc(d)}</span></span><span class="p">€{p}{" →" if url else ""}</span>'
+        if url:
+            return f'<li><a class="bk" href="{esc(url)}" target="_blank" rel="noopener" aria-label="Κράτηση: {esc(name)}{" · " + esc(o) if o else ""}">{inner}</a></li>'
+        return f'<li>{inner}</li>'
+    rows = "".join(li(o, d, p, u) for (o, d, p), u in zip(opts, BOOKS[key]))
     d = f'<p class="sd">{esc(DESC[key])}</p>' if DESC.get(key) else ""
     return f'<article class="svc"><h3>{esc(name)}</h3>{d}<ul>{rows}</ul></article>'
 
@@ -372,9 +386,13 @@ EN_SVC = {s["name"]["el"]: s for c in _MENU_JSON for s in c["services"]}
 
 def svc_html_en(name):
     s = EN_SVC[name]
-    rows = "".join(
-        f'<li><span>{esc(o["en"]) + " · " if o["en"] else ""}<span class="d">{esc(o["time"]["en"])}</span></span><span class="p">€{o["price"]}</span></li>'
-        for o in s["options"])
+    def li(o):
+        url = book_url(o)
+        inner = f'<span>{esc(o["en"]) + " · " if o["en"] else ""}<span class="d">{esc(o["time"]["en"])}</span></span><span class="p">€{o["price"]}{" →" if url else ""}</span>'
+        if url:
+            return f'<li><a class="bk" href="{esc(url)}" target="_blank" rel="noopener" aria-label="Book: {esc(s["name"]["en"])}{" · " + esc(o["en"]) if o["en"] else ""}">{inner}</a></li>'
+        return f'<li>{inner}</li>'
+    rows = "".join(li(o) for o in s["options"])
     d = f'<p class="sd">{esc(s["desc"]["en"])}</p>' if s.get("desc") else ""
     return f'<article class="svc"><h3>{esc(s["name"]["en"])}</h3>{d}<ul>{rows}</ul></article>'
 

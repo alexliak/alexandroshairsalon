@@ -3,7 +3,7 @@ import { Link } from '../lib/router';
 import NhLayout, { BOOK, PHONE, GOOGLE_PROFILE_URL, DIRECTIONS_URL, REVIEWS_URL, mapLinkProps } from '../components/NhLayout';
 import MapEmbed from '../components/MapEmbed';
 import SalonGallery from '../components/SalonGallery';
-import { priceText } from '../data/prices';
+import { priceText, serviceBookUrl } from '../data/prices';
 
 // Μαθηματικά animation «Κομμωτική 2050»: φορτώνονται σε ξεχωριστό, μικρό αρχείο μετά την αρχική σελίδα.
 const MathArt = lazy(() => import('../components/MathArt'));
@@ -40,12 +40,12 @@ const content = {
     popularTitle: 'Διάλεξε & κλείσε',
     allServices: 'Όλες οι τιμές →',
     services: [
-      { tone: 'cut', cat: 'Κουρέματα', name: 'Γυναικείο κούρεμα', desc: 'Pixie, mullet, butterfly, curtain bangs, φιλάρισμα ή κλασικό, με εμπειρία τριών δεκαετιών.', time: '30–55′', price: priceText('el', 'Κούρεμα χωρίς στέγνωμα', 'Κούρεμα & γρήγορο στέγνωμα', 'Κούρεμα & γρήγορο φορμάρισμα', 'Κούρεμα & χτένισμα') },
-      { tone: 'style', cat: 'Χτένισμα', name: 'Χτένισμα με βούρτσα', desc: 'Πλήρες χτένισμα, ίσιο ή με όγκο, με γυάλισμα για λάμψη που κρατά 3 ημέρες και περισσότερο.', time: '30′', price: priceText('el', 'Χτένισμα με βούρτσα') },
-      { tone: 'colour', cat: 'Χρώμα', name: 'Βαφή ρίζας & ρεφλέ', desc: 'Κάλυψη λευκών στη ρίζα και ξεχωριστό gloss για λάμψη σε όλο το μαλλί.', time: '1 ώρα – 1 ώρα 10′', price: priceText('el', 'Βαφή ρίζας & ρεφλέ στα μήκη') },
-      { tone: 'light', cat: 'Ανταύγειες', name: 'Μερικό μπαλαγιάζ', desc: 'Φυσικό, φωτεινό αποτέλεσμα με εύκολη συντήρηση.', time: '3 ώρες', price: priceText('el', 'Μερικό μπαλαγιάζ') },
-      { tone: 'light', cat: 'Ανταύγειες', name: 'Ανταύγειες χωρίς ντεκαπάζ', desc: 'Με L’Oréal Blond Studio No Bleach™: απαλό φως έως 4 τόνους, χωρίς ντεκαπάζ.', time: '1 ώρα 10′ – 1 ώρα 30′', price: priceText('el', 'Ανταύγειες γύρω από το πρόσωπο', 'Μερικές ανταύγειες') },
-      { tone: 'pack', cat: 'Κουρέματα', name: 'Κούρεμα & χτένισμα', desc: 'Λούσιμο, κούρεμα και πλήρες χτένισμα σε ένα ραντεβού.', time: '55′', price: priceText('el', 'Κούρεμα & χτένισμα') }
+      { tone: 'cut', cat: 'Κουρέματα', name: 'Γυναικείο κούρεμα', desc: 'Pixie, mullet, butterfly, curtain bangs, φιλάρισμα ή κλασικό, με εμπειρία τριών δεκαετιών.', time: '30–55′', price: priceText('el', 'Κούρεμα χωρίς στέγνωμα', 'Κούρεμα & γρήγορο στέγνωμα', 'Κούρεμα & γρήγορο φορμάρισμα', 'Κούρεμα & χτένισμα'), href: '/services#haircuts' },
+      { tone: 'style', cat: 'Χτένισμα', name: 'Χτένισμα με βούρτσα', desc: 'Πλήρες χτένισμα, ίσιο ή με όγκο, με γυάλισμα για λάμψη που κρατά 3 ημέρες και περισσότερο.', time: '30′', price: priceText('el', 'Χτένισμα με βούρτσα'), href: serviceBookUrl('Χτένισμα με βούρτσα') },
+      { tone: 'colour', cat: 'Χρώμα', name: 'Βαφή ρίζας & ρεφλέ', desc: 'Κάλυψη λευκών στη ρίζα και ξεχωριστό gloss για λάμψη σε όλο το μαλλί.', time: '1 ώρα – 1 ώρα 10′', price: priceText('el', 'Βαφή ρίζας & ρεφλέ στα μήκη'), href: '/services#colour' },
+      { tone: 'light', cat: 'Ανταύγειες', name: 'Μερικό μπαλαγιάζ', desc: 'Φυσικό, φωτεινό αποτέλεσμα με εύκολη συντήρηση.', time: '3 ώρες', price: priceText('el', 'Μερικό μπαλαγιάζ'), href: serviceBookUrl('Μερικό μπαλαγιάζ') },
+      { tone: 'light', cat: 'Ανταύγειες', name: 'Ανταύγειες χωρίς ντεκαπάζ', desc: 'Με L’Oréal Blond Studio No Bleach™: απαλό φως έως 4 τόνους, χωρίς ντεκαπάζ.', time: '1 ώρα 10′ – 1 ώρα 30′', price: priceText('el', 'Ανταύγειες γύρω από το πρόσωπο', 'Μερικές ανταύγειες'), href: '/services#highlights' },
+      { tone: 'pack', cat: 'Κουρέματα', name: 'Κούρεμα & χτένισμα', desc: 'Λούσιμο, κούρεμα και πλήρες χτένισμα σε ένα ραντεβού.', time: '55′', price: priceText('el', 'Κούρεμα & χτένισμα'), href: serviceBookUrl('Κούρεμα & χτένισμα') }
     ],
     brandsEyebrow: 'Χρώμα με υπογραφή',
     brandsTitleA: 'Δουλεύουμε με ',
@@ -110,12 +110,12 @@ const content = {
     popularTitle: 'Pick & book',
     allServices: 'All prices →',
     services: [
-      { tone: 'cut', cat: 'Haircuts', name: 'Women’s haircut', desc: 'Pixie, mullet, butterfly, curtain bangs, texturising or classic, with thirty years of experience.', time: '30–55′', price: priceText('en', 'Κούρεμα χωρίς στέγνωμα', 'Κούρεμα & γρήγορο στέγνωμα', 'Κούρεμα & γρήγορο φορμάρισμα', 'Κούρεμα & χτένισμα') },
-      { tone: 'style', cat: 'Styling', name: 'Signature blowdry', desc: 'A full blowdry, sleek or with volume, polished for shine that lasts 3 days or more.', time: '30′', price: priceText('en', 'Χτένισμα με βούρτσα') },
-      { tone: 'colour', cat: 'Colour', name: 'Root colour & gloss', desc: 'Grey coverage at the root plus a separate gloss for shine throughout.', time: '1 h – 1 h 10′', price: priceText('en', 'Βαφή ρίζας & ρεφλέ στα μήκη') },
-      { tone: 'light', cat: 'Highlights', name: 'Partial balayage', desc: 'Natural, luminous result that is easy to maintain.', time: '3 h', price: priceText('en', 'Μερικό μπαλαγιάζ') },
-      { tone: 'light', cat: 'Highlights', name: 'No-bleach highlights', desc: 'With L’Oréal Blond Studio No Bleach™: soft light up to 4 levels, without bleach.', time: '1 h 10′ – 1 h 30′', price: priceText('en', 'Ανταύγειες γύρω από το πρόσωπο', 'Μερικές ανταύγειες') },
-      { tone: 'pack', cat: 'Haircuts', name: 'Haircut & blowdry', desc: 'Wash, cut and a full blowdry in one appointment.', time: '55′', price: priceText('en', 'Κούρεμα & χτένισμα') }
+      { tone: 'cut', cat: 'Haircuts', name: 'Women’s haircut', desc: 'Pixie, mullet, butterfly, curtain bangs, texturising or classic, with thirty years of experience.', time: '30–55′', price: priceText('en', 'Κούρεμα χωρίς στέγνωμα', 'Κούρεμα & γρήγορο στέγνωμα', 'Κούρεμα & γρήγορο φορμάρισμα', 'Κούρεμα & χτένισμα'), href: '/services#haircuts' },
+      { tone: 'style', cat: 'Styling', name: 'Signature blowdry', desc: 'A full blowdry, sleek or with volume, polished for shine that lasts 3 days or more.', time: '30′', price: priceText('en', 'Χτένισμα με βούρτσα'), href: serviceBookUrl('Χτένισμα με βούρτσα') },
+      { tone: 'colour', cat: 'Colour', name: 'Root colour & gloss', desc: 'Grey coverage at the root plus a separate gloss for shine throughout.', time: '1 h – 1 h 10′', price: priceText('en', 'Βαφή ρίζας & ρεφλέ στα μήκη'), href: '/services#colour' },
+      { tone: 'light', cat: 'Highlights', name: 'Partial balayage', desc: 'Natural, luminous result that is easy to maintain.', time: '3 h', price: priceText('en', 'Μερικό μπαλαγιάζ'), href: serviceBookUrl('Μερικό μπαλαγιάζ') },
+      { tone: 'light', cat: 'Highlights', name: 'No-bleach highlights', desc: 'With L’Oréal Blond Studio No Bleach™: soft light up to 4 levels, without bleach.', time: '1 h 10′ – 1 h 30′', price: priceText('en', 'Ανταύγειες γύρω από το πρόσωπο', 'Μερικές ανταύγειες'), href: '/services#highlights' },
+      { tone: 'pack', cat: 'Haircuts', name: 'Haircut & blowdry', desc: 'Wash, cut and a full blowdry in one appointment.', time: '55′', price: priceText('en', 'Κούρεμα & χτένισμα'), href: serviceBookUrl('Κούρεμα & χτένισμα') }
     ],
     brandsEyebrow: 'Signature colour',
     brandsTitleA: 'We work with ',
@@ -230,7 +230,7 @@ const Home = ({ language, setLanguage }) => {
           </div>
           <div className="nh-cards">
             {t.services.map((s) => (
-              <a key={s.name} href={BOOK} className={`nh-card nh-card--${s.tone}`}>
+              <a key={s.name} href={s.href || BOOK} className={`nh-card nh-card--${s.tone}`} {...(/^https?:/.test(s.href || '') ? { target: '_blank', rel: 'noopener' } : {})}>
                 <span className="nh-card-cat">{s.cat}</span>
                 <span className="nh-card-name">{s.name}</span>
                 <span className="nh-card-desc">{s.desc}</span>
