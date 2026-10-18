@@ -158,6 +158,14 @@ html[data-theme=light] .skip,html[data-theme=light] .totop:hover,html[data-theme
 """
 
 
+def eur(p, en=False):
+    """€54 ή €0,01 / €0.01 (ίδιο με eur() στο src/data/prices.js)."""
+    if float(p).is_integer():
+        return f"€{int(p)}"
+    t = f"{p:.2f}"
+    return "€" + (t if en else t.replace(".", ","))
+
+
 def esc(s):
     return html.escape(str(s), quote=True)
 
@@ -165,7 +173,7 @@ def esc(s):
 def svc_html(key):
     name, opts = MENU[key]
     def li(o, d, p, url):
-        inner = f'<span>{esc(o) + " · " if o else ""}<span class="d">{esc(d)}</span></span><span class="p">€{p}{" →" if url else ""}</span>'
+        inner = f'<span>{esc(o) + " · " if o else ""}<span class="d">{esc(d)}</span></span><span class="p">{eur(p)}{" →" if url else ""}</span>'
         if url:
             return f'<li><a class="bk" href="{esc(url)}" target="_blank" rel="noopener" aria-label="Κράτηση: {esc(name)}{" · " + esc(o) if o else ""}">{inner}</a></li>'
         return f'<li>{inner}</li>'
@@ -388,7 +396,7 @@ def svc_html_en(name):
     s = EN_SVC[name]
     def li(o):
         url = book_url(o)
-        inner = f'<span>{esc(o["en"]) + " · " if o["en"] else ""}<span class="d">{esc(o["time"]["en"])}</span></span><span class="p">€{o["price"]}{" →" if url else ""}</span>'
+        inner = f'<span>{esc(o["en"]) + " · " if o["en"] else ""}<span class="d">{esc(o["time"]["en"])}</span></span><span class="p">{eur(o["price"], True)}{" →" if url else ""}</span>'
         if url:
             return f'<li><a class="bk" href="{esc(url)}" target="_blank" rel="noopener" aria-label="Book: {esc(s["name"]["en"])}{" · " + esc(o["en"]) if o["en"] else ""}">{inner}</a></li>'
         return f'<li>{inner}</li>'

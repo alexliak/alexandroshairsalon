@@ -267,16 +267,16 @@
     "services": [
       {
         "name": {
-          "el": "Λούσιμο & γρήγορο φορμάρισμα",
-          "en": "Wash & Quick Styling"
+          "el": "Γρήγορο φορμάρισμα χωρίς λούσιμο",
+          "en": "Quick Styling (No Wash)"
         },
         "desc": {
-          "el": "Λούσιμο και γρήγορο φορμάρισμα: προϊόν styling και πιστολάκι με βούρτσα για όγκο και φόρμα.",
-          "en": "Wash and a quick styling: styling product and a brushed blow-dry for volume and shape."
+          "el": "Γρήγορο φορμάρισμα χωρίς λούσιμο: προϊόν styling και πιστολάκι με βούρτσα για όγκο και φόρμα. Όπου χρειάζεται, γρήγορο πέρασμα με πρέσα σε φράτζα ή άκρες.",
+          "en": "Quick styling without a wash: styling product and a brushed blow-dry for volume and shape. Where needed, a quick pass with the straightener on the fringe or ends."
         },
         "note": {
-          "el": "Χωρίς τελικό γυάλισμα και λεπτομέρεια για μέγιστη διάρκεια — γι’ αυτά: «Χτένισμα με βούρτσα».",
-          "en": "No final polish or detail work for maximum hold — for that: Signature Blowdry."
+          "el": "Έλα με καθαρά μαλλιά· τα βρέχουμε όσο χρειάζεται. Για ίσιωμα σε όλο το μαλλί: «+ Ίσιωμα με πρέσα ατμού». Για τελικό γυάλισμα και διάρκεια: «Χτένισμα με βούρτσα».",
+          "en": "Please come with clean hair; we dampen it as needed. For all-over straightening: Steam Straightener Finish. For a final polish and longer hold: Signature Blowdry."
         },
         "online": false,
         "options": [
@@ -284,10 +284,10 @@
             "el": "",
             "en": "",
             "time": {
-              "el": "27′",
-              "en": "27′"
+              "el": "20′",
+              "en": "20′"
             },
-            "price": 24
+            "price": 18
           }
         ]
       },
@@ -403,7 +403,7 @@
               "el": "5′",
               "en": "5′"
             },
-            "price": 1,
+            "price": 0.01,
             "book": {
               "item": "TR7599830",
               "option": "14438008"
@@ -1295,7 +1295,7 @@
               "el": "15′",
               "en": "15′"
             },
-            "price": 1,
+            "price": 0.01,
             "book": {
               "item": "TR7496077",
               "option": "14237792"

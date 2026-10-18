@@ -9,11 +9,15 @@ export const service = (name) => {
   return s;
 };
 
+// '€54' (ακέραιο) ή '€0,01' / '€0.01' (δεκαδικό: η Treatwell δεν δέχεται €0).
+export const eur = (p, lang) =>
+  Number.isInteger(p) ? `€${p}` : `€${lang === 'en' ? p.toFixed(2) : p.toFixed(2).replace('.', ',')}`;
+
 // '€54' for one price, 'από €26' / 'from €26' for several.
 export const priceText = (lang, ...names) => {
   const ps = names.flatMap((n) => service(n).options.map((o) => o.price));
   const min = Math.min(...ps);
-  return min === Math.max(...ps) ? `€${min}` : `${lang === 'en' ? 'from' : 'από'} €${min}`;
+  return min === Math.max(...ps) ? eur(min, lang) : `${lang === 'en' ? 'from' : 'από'} ${eur(min, lang)}`;
 };
 
 // Κράτηση μιας συγκεκριμένης υπηρεσίας/επιλογής στο ίδιο widget της Treatwell (widget.treatwell.gr, όχι marketplace).

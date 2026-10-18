@@ -1,7 +1,7 @@
 import React from 'react';
 import NhLayout, { BOOK, PHONE } from '../components/NhLayout';
 import menu from '../data/menu';
-import { priceText, bookUrl } from '../data/prices';
+import { priceText, bookUrl, eur } from '../data/prices';
 
 // Services & prices (2026 design). The list itself lives in src/data/menu.js.
 const text = {
@@ -47,10 +47,10 @@ const text = {
   }
 };
 
-const priceLabel = (options, t) => {
+const priceLabel = (options, t, lang) => {
   const prices = options.map((o) => o.price);
   const min = Math.min(...prices);
-  return prices.length > 1 && Math.max(...prices) !== min ? `${t.from} €${min}` : `€${min}`;
+  return prices.length > 1 && Math.max(...prices) !== min ? `${t.from} ${eur(min, lang)}` : eur(min, lang);
 };
 
 const Services = ({ language, setLanguage }) => {
@@ -86,7 +86,7 @@ const Services = ({ language, setLanguage }) => {
                 <article key={s.name.el} className="nh-menu-item">
                   <div className="nh-menu-head">
                     <h3 className="nh-menu-name">{s.name[lang]}</h3>
-                    <span className="nh-menu-from">{priceLabel(s.options, t)}</span>
+                    <span className="nh-menu-from">{priceLabel(s.options, t, lang)}</span>
                   </div>
                   {s.desc ? <p className="nh-menu-desc">{s.desc[lang]}</p> : null}
                   {s.note ? <p className="nh-menu-note">{s.note[lang]}</p> : null}
@@ -101,7 +101,7 @@ const Services = ({ language, setLanguage }) => {
                             {o[lang] ? `${o[lang]} · ` : ''}
                             <span className="nh-menu-time">{o.time[lang]}</span>
                           </span>
-                          <strong>€{o.price}{s.options.length > 1 && bookUrl(o) ? ' →' : ''}</strong>
+                          <strong>{eur(o.price, lang)}{s.options.length > 1 && bookUrl(o) ? ' →' : ''}</strong>
                         </>
                       );
                       return (
