@@ -1,6 +1,7 @@
 import React from 'react';
 import NhLayout, { BOOK, PHONE } from '../components/NhLayout';
 import menu from '../data/menu';
+import { priceText } from '../data/prices';
 
 // Services & prices (2026 design). The list itself lives in src/data/menu.js.
 const text = {
@@ -8,15 +9,16 @@ const text = {
     eyebrow: 'Τιμές κομμωτηρίου · Θησείο, Αθήνα',
     title: 'Τιμές',
     titleEm: 'και χρόνοι.',
-    lead: 'Τιμές και χρόνοι κατά προσέγγιση: τα μακριά ή πυκνά μαλλιά θέλουν λίγο παραπάνω προϊόν και χρόνο. Στην online κράτηση βλέπεις ελεύθερες ώρες και πληρώνεις online ή στο κομμωτήριο.',
+    lead: 'Μία τιμή για κάθε υπηρεσία, ίδια στο κομμωτήριο και online. Κάτω από κάθε υπηρεσία γράφουμε τι περιλαμβάνει. Στην online κράτηση βλέπεις ελεύθερες ώρες και πληρώνεις online ή στο κομμωτήριο.',
+    phoneOnly: 'Κλείνεται τηλεφωνικά',
     book: 'Κλείσε online',
     call: 'Κάλεσε',
     from: 'από',
     bookThis: 'Κράτηση',
     notesTitle: 'Καλό να ξέρεις',
     notes: [
-      'Η τιμή εξαρτάται από το μήκος και την πυκνότητα των μαλλιών.',
-      'Στη βαφή για πολύ πυκνά ή πολύ μακριά μαλλιά υπάρχει η προσθήκη +€19 για την επιπλέον ποσότητα και τον χρόνο.',
+      'Κάθε βαφή περιλαμβάνει συγκεκριμένη ποσότητα. Αν χρειαστεί περισσότερο χρώμα, το «+ Επιπλέον χρώμα ανά 30 g» (' + priceText('el', '+ Επιπλέον χρώμα') + ') το συμφωνούμε πριν την εφαρμογή.',
+      'Στις ανταύγειες και στο μπαλαγιάζ, για μαλλιά κάτω από τους ώμους υπάρχει το «+ Μακριά μαλλιά» (' + priceText('el', '+ Μακριά μαλλιά (ανταύγειες / μπαλαγιάζ)') + ').',
       'Δωρεάν τεστ ευαισθησίας πριν από την πρώτη σου βαφή.',
       'Έχεις extensions; Γράψ’ το στην κράτηση για να κρατήσουμε τον σωστό χρόνο.'
     ],
@@ -26,15 +28,16 @@ const text = {
     eyebrow: 'Hair salon prices · Thiseio, Athens',
     title: 'Prices',
     titleEm: 'and times.',
-    lead: 'Prices and times are approximate: long or thick hair needs a little more product and time. When you book online you see free slots and pay online or at the salon.',
+    lead: 'One price per service, the same at the salon and online. Under each service we say what it includes. When you book online you see free slots and pay online or at the salon.',
+    phoneOnly: 'Book by phone',
     book: 'Book online',
     call: 'Call',
     from: 'from',
     bookThis: 'Book',
     notesTitle: 'Good to know',
     notes: [
-      'Price depends on hair length and thickness.',
-      'For colour on very thick or very long hair there is a +€19 add-on for the extra product and time.',
+      'Every colour includes a set amount of product. If more is needed, Extra Colour per 30 g (' + priceText('en', '+ Επιπλέον χρώμα') + ') is agreed before we apply it.',
+      'For highlights and balayage on hair below the shoulders there is the Long Hair add-on (' + priceText('en', '+ Μακριά μαλλιά (ανταύγειες / μπαλαγιάζ)') + ').',
       'Free sensitivity test before your first colour.',
       'Wearing extensions? Mention it when you book so we reserve the right time.'
     ],
@@ -84,6 +87,7 @@ const Services = ({ language, setLanguage }) => {
                     <span className="nh-menu-from">{priceLabel(s.options, t)}</span>
                   </div>
                   {s.desc ? <p className="nh-menu-desc">{s.desc[lang]}</p> : null}
+                  {s.note ? <p className="nh-menu-note">{s.note[lang]}</p> : null}
                   {s.options.length === 1 && !s.options[0][lang] ? (
                     <p className="nh-menu-meta">{s.options[0].time[lang]}</p>
                   ) : (
@@ -99,9 +103,15 @@ const Services = ({ language, setLanguage }) => {
                     ))}
                   </ul>
                   )}
-                  <a href={BOOK} className="nh-menu-book" aria-label={`${t.bookThis}: ${s.name[lang]}`}>
-                    {t.bookThis} →
-                  </a>
+                  {s.online === false ? (
+                    <a href={`tel:${PHONE}`} className="nh-menu-book" aria-label={`${t.phoneOnly}: ${s.name[lang]}`}>
+                      {t.phoneOnly} →
+                    </a>
+                  ) : (
+                    <a href={BOOK} className="nh-menu-book" aria-label={`${t.bookThis}: ${s.name[lang]}`}>
+                      {t.bookThis} →
+                    </a>
+                  )}
                 </article>
               ))}
             </div>

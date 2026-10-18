@@ -208,6 +208,7 @@ a.nh-stat:focus-visible { outline: 2px solid var(--nh-gold); outline-offset: -2p
 .nh-menu-name { margin: 0; font-family: var(--nh-serif); font-weight: 400; font-size: 24px; line-height: 1.2; }
 .nh-menu-from { font-weight: 800; font-size: 18px; color: var(--nh-gold); white-space: nowrap; }
 .nh-menu-desc { margin: 0; font-size: 15px; color: var(--nh-soft); line-height: 1.5; }
+.nh-menu-note { margin: 0; font-size: 13.5px; color: var(--nh-muted); line-height: 1.5; }
 .nh-menu-options { list-style: none; margin: 0; padding: 0; flex-grow: 1; }
 .nh-menu-options li { display: flex; justify-content: space-between; gap: 16px; padding: 10px 0; border-top: 1px dashed var(--nh-line); font-size: 15px; }
 .nh-menu-options li:first-child { border-top: 0; }

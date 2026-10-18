@@ -1,0 +1,1130 @@
+[
+  {
+    "key": "haircuts",
+    "title": {
+      "el": "Κούρεμα",
+      "en": "Haircuts"
+    },
+    "services": [
+      {
+        "name": {
+          "el": "Κούρεμα χωρίς στέγνωμα",
+          "en": "Haircut (No Dry)"
+        },
+        "desc": {
+          "el": "Λούσιμο και κούρεμα, χωρίς στέγνωμα. Ιδανικό για σγουρά μαλλιά.",
+          "en": "Wash and cut, no dry. Ideal for curly hair."
+        },
+        "online": true,
+        "options": [
+          {
+            "el": "",
+            "en": "",
+            "time": {
+              "el": "30′",
+              "en": "30′"
+            },
+            "price": 26
+          }
+        ]
+      },
+      {
+        "name": {
+          "el": "Κούρεμα & γρήγορο στέγνωμα",
+          "en": "Haircut & Quick Dry"
+        },
+        "desc": {
+          "el": "Λούσιμο, κούρεμα και γρήγορο στέγνωμα: προϊόν για τη φυσική υφή σου, πιστολάκι ή φυσούνα και δάχτυλα. Φυσικό, περιποιημένο αποτέλεσμα.",
+          "en": "Wash, cut and a quick dry: a product for your natural texture, dried with a hairdryer or diffuser and fingers. A natural, neat finish."
+        },
+        "note": {
+          "el": "Χωρίς βούρτσα. Για φόρμα με βούρτσα: «Κούρεμα & γρήγορο φορμάρισμα».",
+          "en": "No brush. For a brushed shape: Haircut & Quick Styling."
+        },
+        "online": true,
+        "options": [
+          {
+            "el": "",
+            "en": "",
+            "time": {
+              "el": "35′",
+              "en": "35′"
+            },
+            "price": 33
+          }
+        ]
+      },
+      {
+        "name": {
+          "el": "Κούρεμα & γρήγορο φορμάρισμα",
+          "en": "Haircut & Quick Styling"
+        },
+        "desc": {
+          "el": "Λούσιμο, κούρεμα και γρήγορο φορμάρισμα: προϊόν styling και πιστολάκι με βούρτσα για όγκο και φόρμα, όπως θέλει να στέκεται το κούρεμα.",
+          "en": "Wash, cut and a quick styling: styling product and a brushed blow-dry for volume and shape, the way your cut is meant to sit."
+        },
+        "note": {
+          "el": "Χωρίς τελικό γυάλισμα και λεπτομέρεια για μέγιστη διάρκεια — γι’ αυτά: «Κούρεμα & χτένισμα».",
+          "en": "No final polish or detail work for maximum hold — for that: Haircut & Blowdry."
+        },
+        "online": true,
+        "options": [
+          {
+            "el": "",
+            "en": "",
+            "time": {
+              "el": "50′",
+              "en": "50′"
+            },
+            "price": 43
+          }
+        ]
+      },
+      {
+        "name": {
+          "el": "Κούρεμα & χτένισμα",
+          "en": "Haircut & Blowdry"
+        },
+        "desc": {
+          "el": "Λούσιμο, κούρεμα και πλήρες χτένισμα: θερμοπροστασία, βούρτσα τούφα-τούφα, γυάλισμα και φινίρισμα για λάμψη και διάρκεια.",
+          "en": "Wash, cut and a full blowdry: heat protection, brushed section by section, polished and finished for shine and hold."
+        },
+        "note": {
+          "el": "Κρατά συνήθως 3 ημέρες ή και περισσότερο, ανάλογα με το πόσο γρήγορα λαδώνει το μαλλί σου και πώς το προσέχεις.",
+          "en": "Usually lasts 3 days or more, depending on how quickly your hair gets oily and how you look after it."
+        },
+        "online": true,
+        "options": [
+          {
+            "el": "",
+            "en": "",
+            "time": {
+              "el": "55′",
+              "en": "55′"
+            },
+            "price": 54
+          }
+        ]
+      },
+      {
+        "name": {
+          "el": "Φράτζα",
+          "en": "Fringe Trim"
+        },
+        "desc": {
+          "el": "Φρεσκάρισμα φράτζας ανάμεσα στα κουρέματα.",
+          "en": "A fringe refresh between cuts."
+        },
+        "note": {
+          "el": "Δωρεάν αν κουρεύτηκες εδώ τις τελευταίες 6 εβδομάδες.",
+          "en": "Free if you had a cut here in the last 6 weeks."
+        },
+        "online": true,
+        "options": [
+          {
+            "el": "",
+            "en": "",
+            "time": {
+              "el": "10′",
+              "en": "10′"
+            },
+            "price": 9
+          }
+        ]
+      },
+      {
+        "name": {
+          "el": "Ανδρικό κούρεμα",
+          "en": "Gentlemen’s Haircut"
+        },
+        "desc": {
+          "el": "Λούσιμο, κούρεμα με ψαλίδι και μηχανή, φορμάρισμα.",
+          "en": "Wash, scissor and clipper cut, styling."
+        },
+        "online": true,
+        "options": [
+          {
+            "el": "",
+            "en": "",
+            "time": {
+              "el": "20′",
+              "en": "20′"
+            },
+            "price": 24
+          }
+        ]
+      },
+      {
+        "name": {
+          "el": "Ανδρικό με μηχανή",
+          "en": "Clipper Cut"
+        },
+        "desc": {
+          "el": "Κούρεμα μόνο με μηχανή, χωρίς λούσιμο.",
+          "en": "Clipper-only cut, no wash."
+        },
+        "note": {
+          "el": "Για σβήσιμο στα πλαϊνά διάλεξε «Ανδρικό κούρεμα».",
+          "en": "For a fade, book the men’s haircut."
+        },
+        "online": true,
+        "options": [
+          {
+            "el": "",
+            "en": "",
+            "time": {
+              "el": "15′",
+              "en": "15′"
+            },
+            "price": 15
+          }
+        ]
+      },
+      {
+        "name": {
+          "el": "Παιδικό κούρεμα",
+          "en": "Children’s Haircut"
+        },
+        "desc": {
+          "el": "Λούσιμο και κούρεμα για παιδιά έως 12 ετών.",
+          "en": "Wash and cut for children up to 12."
+        },
+        "online": true,
+        "options": [
+          {
+            "el": "Έως 12 ετών",
+            "en": "Up to 12 years",
+            "time": {
+              "el": "15′",
+              "en": "15′"
+            },
+            "price": 17
+          }
+        ]
+      },
+      {
+        "name": {
+          "el": "Πλαϊνά & πίσω",
+          "en": "Sides & Back"
+        },
+        "desc": {
+          "el": "Φρεσκάρισμα πλαϊνών και πίσω ανάμεσα στα ανδρικά κουρέματα.",
+          "en": "A tidy-up of the sides and back between cuts."
+        },
+        "online": false,
+        "options": [
+          {
+            "el": "",
+            "en": "",
+            "time": {
+              "el": "10′",
+              "en": "10′"
+            },
+            "price": 10
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "key": "styling",
+    "title": {
+      "el": "Χτένισμα",
+      "en": "Styling"
+    },
+    "services": [
+      {
+        "name": {
+          "el": "Χτένισμα με βούρτσα",
+          "en": "Signature Blowdry"
+        },
+        "desc": {
+          "el": "Λούσιμο και πλήρες χτένισμα, ίσιο ή με όγκο: θερμοπροστασία, βούρτσα τούφα-τούφα, γυάλισμα και φινίρισμα για λάμψη και διάρκεια.",
+          "en": "Wash and a full blowdry, sleek or with volume: heat protection, brushed section by section, polished and finished for shine and hold."
+        },
+        "note": {
+          "el": "Κρατά συνήθως 3 ημέρες ή και περισσότερο, ανάλογα με το πόσο γρήγορα λαδώνει το μαλλί σου και πώς το προσέχεις.",
+          "en": "Usually lasts 3 days or more, depending on how quickly your hair gets oily and how you look after it."
+        },
+        "online": true,
+        "options": [
+          {
+            "el": "",
+            "en": "",
+            "time": {
+              "el": "30′",
+              "en": "30′"
+            },
+            "price": 28
+          }
+        ]
+      },
+      {
+        "name": {
+          "el": "Χτένισμα για εκδήλωση",
+          "en": "Special Occasion Styling"
+        },
+        "desc": {
+          "el": "Μπούκλες, κυματισμοί ή πιάσιμο για γάμο, βάφτιση ή έξοδο — αλλά και για συνέντευξη, σημαντικό meeting, παρουσίαση ή φωτογράφιση. Φτιαγμένο να κρατήσει όλη τη μέρα ή τη βραδιά.",
+          "en": "Curls, waves or an up-do for a wedding, christening or night out — and for an interview, an important meeting, a presentation or a photo shoot. Made to last all day or all night."
+        },
+        "note": {
+          "el": "Έλα με λουσμένα, στεγνά μαλλιά και φέρε φωτογραφία.",
+          "en": "Come with clean, dry hair and bring a photo."
+        },
+        "online": true,
+        "options": [
+          {
+            "el": "",
+            "en": "",
+            "time": {
+              "el": "35′",
+              "en": "35′"
+            },
+            "price": 38
+          }
+        ]
+      },
+      {
+        "name": {
+          "el": "+ Ίσιωμα με πρέσα ατμού",
+          "en": "Steam Straightener Finish (add-on)"
+        },
+        "desc": {
+          "el": "Ίσιωμα με πρέσα ατμού μετά το χτένισμα.",
+          "en": "Steam straightener finish after your blowdry."
+        },
+        "note": {
+          "el": "Κλείνεται μόνο μαζί με χτένισμα.",
+          "en": "Only with a blowdry."
+        },
+        "online": true,
+        "options": [
+          {
+            "el": "",
+            "en": "",
+            "time": {
+              "el": "10′",
+              "en": "10′"
+            },
+            "price": 9
+          }
+        ]
+      },
+      {
+        "name": {
+          "el": "+ Γρήγορο στέγνωμα μετά τη βαφή",
+          "en": "Colour Quick Dry (add-on)"
+        },
+        "desc": {
+          "el": "Προϊόν για τη φυσική υφή σου και στέγνωμα με πιστολάκι ή φυσούνα και δάχτυλα, ώστε να δεις καθαρά το χρώμα σου.",
+          "en": "A product for your natural texture, dried with a hairdryer or diffuser and fingers, so you can see your colour clearly."
+        },
+        "note": {
+          "el": "Μόνο μαζί με βαφή. Χωρίς βούρτσα — για φόρμα: «+ Γρήγορο φορμάρισμα μετά τη βαφή».",
+          "en": "Only with a colour service. No brush — for shape: Quick Styling after Colour."
+        },
+        "online": true,
+        "options": [
+          {
+            "el": "",
+            "en": "",
+            "time": {
+              "el": "5′",
+              "en": "5′"
+            },
+            "price": 1
+          }
+        ]
+      },
+      {
+        "name": {
+          "el": "+ Γρήγορο φορμάρισμα μετά τη βαφή",
+          "en": "Quick Styling after Colour (add-on)"
+        },
+        "desc": {
+          "el": "Αντί για το γρήγορο στέγνωμα της βαφής: προϊόν styling και πιστολάκι με βούρτσα για όγκο και φόρμα.",
+          "en": "Instead of the quick dry after colour: styling product and a brushed blow-dry for volume and shape."
+        },
+        "note": {
+          "el": "Μόνο μαζί με βαφή. Χωρίς τελικό γυάλισμα — γι’ αυτό: «+ Χτένισμα μετά τη βαφή».",
+          "en": "Only with a colour service. No final polish — for that: Blowdry after Colour."
+        },
+        "online": true,
+        "options": [
+          {
+            "el": "",
+            "en": "",
+            "time": {
+              "el": "15′",
+              "en": "15′"
+            },
+            "price": 17
+          }
+        ]
+      },
+      {
+        "name": {
+          "el": "+ Χτένισμα μετά τη βαφή",
+          "en": "Colour Blowdry (add-on)"
+        },
+        "desc": {
+          "el": "Πλήρες χτένισμα μετά τη βαφή: θερμοπροστασία, βούρτσα τούφα-τούφα, γυάλισμα και φινίρισμα για λάμψη και διάρκεια.",
+          "en": "A full blowdry after your colour: heat protection, brushed section by section, polished and finished for shine and hold."
+        },
+        "note": {
+          "el": "Μόνο μαζί με βαφή. Κρατά συνήθως 3 ημέρες ή και περισσότερο, ανάλογα με το πόσο γρήγορα λαδώνει το μαλλί σου και πώς το προσέχεις.",
+          "en": "Only with a colour service. Usually lasts 3 days or more, depending on how quickly your hair gets oily and how you look after it."
+        },
+        "online": true,
+        "options": [
+          {
+            "el": "",
+            "en": "",
+            "time": {
+              "el": "20′",
+              "en": "20′"
+            },
+            "price": 22
+          }
+        ]
+      },
+      {
+        "name": {
+          "el": "Νυφικό δοκιμαστικό",
+          "en": "Bridal Hair Trial"
+        },
+        "desc": {
+          "el": "Δοκιμή του νυφικού χτενίσματος, με σημειώσεις για τη μέρα.",
+          "en": "A full trial of your bridal hair, with notes for the day."
+        },
+        "note": {
+          "el": "Φέρε πέπλο, αξεσουάρ και φωτογραφίες.",
+          "en": "Bring your veil, accessories and photos."
+        },
+        "online": false,
+        "options": [
+          {
+            "el": "",
+            "en": "",
+            "time": {
+              "el": "1 ώρα 15′",
+              "en": "1 h 15′"
+            },
+            "price": 70
+          }
+        ]
+      },
+      {
+        "name": {
+          "el": "Νυφικό χτένισμα",
+          "en": "Bridal Hair"
+        },
+        "desc": {
+          "el": "Το νυφικό σου χτένισμα την ημέρα του γάμου, όπως το δοκιμάσαμε.",
+          "en": "Your bridal hair on the day, as trialled."
+        },
+        "note": {
+          "el": "Μόνο μετά από δοκιμαστικό. Εκτός κομμωτηρίου +€40.",
+          "en": "Only after a trial. Outside the salon +€40."
+        },
+        "online": false,
+        "options": [
+          {
+            "el": "Στο κομμωτήριο",
+            "en": "In the salon",
+            "time": {
+              "el": "1 ώρα",
+              "en": "1 h"
+            },
+            "price": 90
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "key": "colour",
+    "title": {
+      "el": "Χρώμα",
+      "en": "Colour"
+    },
+    "services": [
+      {
+        "name": {
+          "el": "Βαφή ρίζας",
+          "en": "Root Colour"
+        },
+        "desc": {
+          "el": "Μόνιμη βαφή ρίζας με κάλυψη λευκών, λούσιμο και γρήγορο στέγνωμα. Κλασική: Farcom. Ανώτερη: L’Oréal ή Redken χωρίς αμμωνία.",
+          "en": "Permanent root colour with grey coverage, wash and quick dry. Classic: Farcom. Premium: L’Oréal or ammonia-free Redken."
+        },
+        "note": {
+          "el": "Ρίζα έως 6 εβδομάδες, έως 45 g. Περισσότερο χρώμα: «+ Επιπλέον χρώμα ανά 30 g». Πρώτη βαφή: τεστ ευαισθησίας 48 ώρες πριν.",
+          "en": "Up to 6 weeks’ regrowth, up to 45 g. First colour: skin test 48 hours before."
+        },
+        "online": true,
+        "options": [
+          {
+            "el": "Κλασική",
+            "en": "Classic",
+            "time": {
+              "el": "1 ώρα",
+              "en": "1 h"
+            },
+            "price": 36
+          },
+          {
+            "el": "Ανώτερη",
+            "en": "Premium",
+            "time": {
+              "el": "1 ώρα",
+              "en": "1 h"
+            },
+            "price": 42
+          }
+        ]
+      },
+      {
+        "name": {
+          "el": "Βαφή ρίζας & ρεφλέ στα μήκη",
+          "en": "Root Colour & Gloss"
+        },
+        "desc": {
+          "el": "Ανώτερη βαφή ρίζας και ρεφλέ στα μήκη για ενιαίο χρώμα και λάμψη, με λούσιμο και γρήγορο στέγνωμα.",
+          "en": "Premium root colour and a gloss on the lengths for even colour and shine, wash and quick dry."
+        },
+        "note": {
+          "el": "Ρίζα έως 45 g. Ρεφλέ: έως 60 ml (έως τους ώμους) ή 90 ml (κάτω από τους ώμους). Πρώτη βαφή: τεστ ευαισθησίας 48 ώρες πριν.",
+          "en": "Roots up to 45 g; gloss up to 60 ml or 90 ml. First colour: skin test 48 hours before."
+        },
+        "online": true,
+        "options": [
+          {
+            "el": "Έως τους ώμους",
+            "en": "Up to the shoulders",
+            "time": {
+              "el": "1 ώρα",
+              "en": "1 h"
+            },
+            "price": 64
+          },
+          {
+            "el": "Κάτω από τους ώμους",
+            "en": "Below the shoulders",
+            "time": {
+              "el": "1 ώρα 10′",
+              "en": "1 h 10′"
+            },
+            "price": 75
+          }
+        ]
+      },
+      {
+        "name": {
+          "el": "Ρεφλέ",
+          "en": "Gloss & Tone"
+        },
+        "desc": {
+          "el": "Φρεσκάρει τον τόνο και δίνει λάμψη, χωρίς να ξανοίγει τα μαλλιά.",
+          "en": "Refreshes tone and adds shine, without lightening."
+        },
+        "note": {
+          "el": "Έως 60 ml (έως τους ώμους) ή 90 ml (κάτω από τους ώμους). Κρατά 4–6 εβδομάδες.",
+          "en": "Up to 60 ml or 90 ml. Lasts 4–6 weeks."
+        },
+        "online": true,
+        "options": [
+          {
+            "el": "Έως τους ώμους",
+            "en": "Up to the shoulders",
+            "time": {
+              "el": "35′",
+              "en": "35′"
+            },
+            "price": 30
+          },
+          {
+            "el": "Κάτω από τους ώμους",
+            "en": "Below the shoulders",
+            "time": {
+              "el": "40′",
+              "en": "40′"
+            },
+            "price": 37
+          }
+        ]
+      },
+      {
+        "name": {
+          "el": "Βαφή σε όλο το μαλλί",
+          "en": "All-Over Colour"
+        },
+        "desc": {
+          "el": "Μόνιμη βαφή από τη ρίζα ως τις άκρες, με λούσιμο και γρήγορο στέγνωμα.",
+          "en": "Permanent colour from root to ends, wash and quick dry."
+        },
+        "note": {
+          "el": "Έως 60 g. Περισσότερο χρώμα: «+ Επιπλέον χρώμα ανά 30 g». Πρώτη βαφή: τεστ ευαισθησίας 48 ώρες πριν.",
+          "en": "Up to 60 g. First colour: skin test 48 hours before."
+        },
+        "online": true,
+        "options": [
+          {
+            "el": "",
+            "en": "",
+            "time": {
+              "el": "1 ώρα 05′",
+              "en": "1 h 05′"
+            },
+            "price": 50
+          }
+        ]
+      },
+      {
+        "name": {
+          "el": "Ξάνοιγμα ρίζας & ρεφλέ",
+          "en": "Blonde Roots & Tone"
+        },
+        "desc": {
+          "el": "Ξάνοιγμα ρίζας και ρεφλέ για ενιαίο ξανθό, με λούσιμο και γρήγορο στέγνωμα.",
+          "en": "Root lightening and toner for an even blonde, wash and quick dry."
+        },
+        "note": {
+          "el": "Ρίζα έως 2 cm. Πρώτη φορά: συμβουλευτική πριν.",
+          "en": "Regrowth up to 2 cm. First time: consultation first."
+        },
+        "online": true,
+        "options": [
+          {
+            "el": "Έως 2 cm",
+            "en": "Up to 2 cm",
+            "time": {
+              "el": "1 ώρα 50′",
+              "en": "1 h 50′"
+            },
+            "price": 60
+          }
+        ]
+      },
+      {
+        "name": {
+          "el": "Ανδρική βαφή",
+          "en": "Men’s Colour"
+        },
+        "desc": {
+          "el": "Φυσική κάλυψη λευκών για άνδρες.",
+          "en": "Natural grey blending for men."
+        },
+        "online": true,
+        "options": [
+          {
+            "el": "",
+            "en": "",
+            "time": {
+              "el": "25′",
+              "en": "25′"
+            },
+            "price": 25
+          }
+        ]
+      },
+      {
+        "name": {
+          "el": "+ Επιπλέον χρώμα",
+          "en": "Extra Colour (add-on)"
+        },
+        "desc": {
+          "el": "Επιπλέον 30 g χρώμα για μεγάλη ρίζα, μακριά ή πυκνά μαλλιά.",
+          "en": "An extra 30 g of colour for longer regrowth, long or thick hair."
+        },
+        "note": {
+          "el": "Μόνο μαζί με βαφή, και μόνο αν χρειαστεί.",
+          "en": "Only with a colour service, if needed."
+        },
+        "online": true,
+        "options": [
+          {
+            "el": "ανά 30 g",
+            "en": "per 30 g",
+            "time": {
+              "el": "5′",
+              "en": "5′"
+            },
+            "price": 19
+          }
+        ]
+      },
+      {
+        "name": {
+          "el": "Βαφή ρίζας γρήγορη 10′",
+          "en": "Express Root Colour"
+        },
+        "desc": {
+          "el": "Βαφή ρίζας Redken με μόλις 10′ αναμονή, για όταν βιάζεσαι.",
+          "en": "Redken root colour with a 10-minute process, for when you are short on time."
+        },
+        "note": {
+          "el": "Για λίγες περιπτώσεις, αφού το συζητήσουμε.",
+          "en": "For selected cases, after a chat."
+        },
+        "online": false,
+        "options": [
+          {
+            "el": "",
+            "en": "",
+            "time": {
+              "el": "30′",
+              "en": "30′"
+            },
+            "price": 39
+          }
+        ]
+      },
+      {
+        "name": {
+          "el": "Διόρθωση χρώματος",
+          "en": "Colour Correction"
+        },
+        "desc": {
+          "el": "Έλεγχος ιστορικού, τεστ τούφας και γραπτή προσφορά.",
+          "en": "History check, strand test and a written quote."
+        },
+        "note": {
+          "el": "Η τιμή αφαιρείται αν κάνεις τη διόρθωση εδώ.",
+          "en": "Deducted if you book the correction with us."
+        },
+        "online": false,
+        "options": [
+          {
+            "el": "Διάγνωση & προσφορά",
+            "en": "Assessment & quote",
+            "time": {
+              "el": "30′",
+              "en": "30′"
+            },
+            "price": 40
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "key": "highlights",
+    "title": {
+      "el": "Ανταύγειες & μπαλαγιάζ",
+      "en": "Highlights & Balayage"
+    },
+    "services": [
+      {
+        "name": {
+          "el": "Ανταύγειες γύρω από το πρόσωπο",
+          "en": "Face-Framing Highlights"
+        },
+        "desc": {
+          "el": "Λεπτές ανταύγειες γύρω από το πρόσωπο, με ρεφλέ.",
+          "en": "Fine highlights around the face, with toner."
+        },
+        "note": {
+          "el": "Χωρίς ντεκαπάζ: κρέμα ξανοίγματος L’Oréal Professionnel Blond Studio No Bleach™, πιο ήπια για την τρίχα· έως 4 τόνους (σε βαμμένα έως 2,5).",
+          "en": "Bleach-free: L’Oréal Professionnel Blond Studio No Bleach™ Lightening Cream, gentler on the hair; up to 4 levels (2.5 on coloured hair)."
+        },
+        "online": true,
+        "options": [
+          {
+            "el": "Με ντεκαπάζ",
+            "en": "With lightener",
+            "time": {
+              "el": "1 ώρα 15′",
+              "en": "1 h 15′"
+            },
+            "price": 55
+          },
+          {
+            "el": "Χωρίς ντεκαπάζ",
+            "en": "Bleach-free",
+            "time": {
+              "el": "1 ώρα 10′",
+              "en": "1 h 10′"
+            },
+            "price": 50
+          }
+        ]
+      },
+      {
+        "name": {
+          "el": "Μερικές ανταύγειες",
+          "en": "Partial Highlights"
+        },
+        "desc": {
+          "el": "Ανταύγειες στο πάνω μέρος και γύρω από το πρόσωπο, με ρεφλέ.",
+          "en": "Highlights on the top section and around the face, with toner."
+        },
+        "note": {
+          "el": "Τιμή έως τους ώμους· μακριά: «+ Μακριά μαλλιά». Χωρίς ντεκαπάζ: κρέμα L’Oréal Blond Studio No Bleach™, έως 4 τόνους. Σε βαμμένα μαλλιά: συμβουλευτική πριν.",
+          "en": "Price up to the shoulders; long hair: “+ Long Hair”. Bleach-free: L’Oréal Blond Studio No Bleach™, up to 4 levels. Coloured hair: consultation first."
+        },
+        "online": true,
+        "options": [
+          {
+            "el": "Με ντεκαπάζ",
+            "en": "With lightener",
+            "time": {
+              "el": "1 ώρα 20′",
+              "en": "1 h 20′"
+            },
+            "price": 80
+          },
+          {
+            "el": "Χωρίς ντεκαπάζ",
+            "en": "Bleach-free",
+            "time": {
+              "el": "1 ώρα 30′",
+              "en": "1 h 30′"
+            },
+            "price": 80
+          }
+        ]
+      },
+      {
+        "name": {
+          "el": "Ολόκληρες ανταύγειες",
+          "en": "Full Highlights"
+        },
+        "desc": {
+          "el": "Ανταύγειες σε όλο το κεφάλι, με ρεφλέ.",
+          "en": "Highlights all over, with toner."
+        },
+        "note": {
+          "el": "Τιμή έως τους ώμους· μακριά: «+ Μακριά μαλλιά». Σε βαμμένα μαλλιά: συμβουλευτική πριν.",
+          "en": "Price up to the shoulders; long hair: “+ Long Hair”. Coloured hair: consultation first."
+        },
+        "online": true,
+        "options": [
+          {
+            "el": "",
+            "en": "",
+            "time": {
+              "el": "1 ώρα 40′",
+              "en": "1 h 40′"
+            },
+            "price": 105
+          }
+        ]
+      },
+      {
+        "name": {
+          "el": "Μερικό μπαλαγιάζ",
+          "en": "Partial Balayage"
+        },
+        "desc": {
+          "el": "Απαλό φως ζωγραφισμένο με το χέρι, με ρεφλέ.",
+          "en": "Soft, hand-painted light, with toner."
+        },
+        "note": {
+          "el": "Μόνο σε μεσαία και μακριά μαλλιά. Τιμή έως τους ώμους· μακριά: «+ Μακριά μαλλιά». Πρώτη φορά: συμβουλευτική πριν.",
+          "en": "Medium and long hair only. Price up to the shoulders; long hair: “+ Long Hair”. First time: consultation first."
+        },
+        "online": true,
+        "options": [
+          {
+            "el": "",
+            "en": "",
+            "time": {
+              "el": "3 ώρες",
+              "en": "3 h"
+            },
+            "price": 120
+          }
+        ]
+      },
+      {
+        "name": {
+          "el": "+ Μακριά μαλλιά (ανταύγειες / μπαλαγιάζ)",
+          "en": "Long Hair (highlights & balayage add-on)"
+        },
+        "desc": {
+          "el": "Επιπλέον υλικό και χρόνος για μαλλιά κάτω από τους ώμους.",
+          "en": "Extra product and time for hair below the shoulders."
+        },
+        "note": {
+          "el": "Μόνο μαζί με ανταύγειες ή μπαλαγιάζ.",
+          "en": "Only with highlights or balayage."
+        },
+        "online": true,
+        "options": [
+          {
+            "el": "",
+            "en": "",
+            "time": {
+              "el": "15′",
+              "en": "15′"
+            },
+            "price": 28
+          }
+        ]
+      },
+      {
+        "name": {
+          "el": "+ Βαφή ρίζας για λευκά",
+          "en": "Grey Root Coverage (add-on)"
+        },
+        "desc": {
+          "el": "Κάλυψη λευκών στη ρίζα, στο ίδιο ραντεβού με τις ανταύγειες.",
+          "en": "Grey coverage at the root, in the same visit as your highlights."
+        },
+        "note": {
+          "el": "Μόνο μαζί με ανταύγειες ή μπαλαγιάζ. Πρώτη βαφή: τεστ ευαισθησίας 48 ώρες πριν.",
+          "en": "Only with highlights or balayage. First colour: skin test 48 hours before."
+        },
+        "online": true,
+        "options": [
+          {
+            "el": "",
+            "en": "",
+            "time": {
+              "el": "10′",
+              "en": "10′"
+            },
+            "price": 25
+          }
+        ]
+      },
+      {
+        "name": {
+          "el": "+ Ενίσχυση τρίχας στο ξάνοιγμα",
+          "en": "Bond Builder (add-on)"
+        },
+        "desc": {
+          "el": "Προστασία της τρίχας κατά το ξάνοιγμα.",
+          "en": "Protects the hair while lightening."
+        },
+        "note": {
+          "el": "Μόνο μαζί με ανταύγειες, μπαλαγιάζ ή ξάνοιγμα.",
+          "en": "Only with highlights, balayage or lightening."
+        },
+        "online": true,
+        "options": [
+          {
+            "el": "",
+            "en": "",
+            "time": {
+              "el": "10′",
+              "en": "10′"
+            },
+            "price": 15
+          }
+        ]
+      },
+      {
+        "name": {
+          "el": "Ολόκληρο μπαλαγιάζ",
+          "en": "Full Balayage"
+        },
+        "desc": {
+          "el": "Πιο φωτεινό μπαλαγιάζ από τη ρίζα ως τις άκρες, με ρεφλέ.",
+          "en": "A brighter balayage from root to ends, with toner."
+        },
+        "note": {
+          "el": "Τιμή έως τους ώμους· μακριά: «+ Μακριά μαλλιά». Πρώτη φορά: συμβουλευτική πριν.",
+          "en": "Price up to the shoulders; long hair: “+ Long Hair”. First time: consultation first."
+        },
+        "online": false,
+        "options": [
+          {
+            "el": "",
+            "en": "",
+            "time": {
+              "el": "3 ώρες",
+              "en": "3 h"
+            },
+            "price": 140
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "key": "care",
+    "title": {
+      "el": "Περιποίηση",
+      "en": "Hair Care"
+    },
+    "services": [
+      {
+        "name": {
+          "el": "Θεραπεία τριχόπτωσης",
+          "en": "Anti Hair-Loss Treatment"
+        },
+        "desc": {
+          "el": "Αμπούλα για την τριχόπτωση, με εφαρμογή στο τριχωτό.",
+          "en": "Anti hair-loss ampoule applied to the scalp."
+        },
+        "note": {
+          "el": "Δεν είναι ιατρική θεραπεία.",
+          "en": "Not a medical treatment."
+        },
+        "online": true,
+        "options": [
+          {
+            "el": "",
+            "en": "",
+            "time": {
+              "el": "30′",
+              "en": "30′"
+            },
+            "price": 30
+          }
+        ]
+      },
+      {
+        "name": {
+          "el": "+ Λούσιμο με μασάζ",
+          "en": "Scalp Massage Wash (add-on)"
+        },
+        "desc": {
+          "el": "Λούσιμο με μασάζ κεφαλής.",
+          "en": "A wash with a scalp massage."
+        },
+        "note": {
+          "el": "Μαζί με οποιαδήποτε υπηρεσία.",
+          "en": "With any service."
+        },
+        "online": true,
+        "options": [
+          {
+            "el": "",
+            "en": "",
+            "time": {
+              "el": "10′",
+              "en": "10′"
+            },
+            "price": 11
+          }
+        ]
+      },
+      {
+        "name": {
+          "el": "+ Μάσκα",
+          "en": "Hair Mask (add-on)"
+        },
+        "desc": {
+          "el": "Μάσκα ενυδάτωσης ή επανόρθωσης.",
+          "en": "A hydrating or repairing mask."
+        },
+        "note": {
+          "el": "Μαζί με κούρεμα, χτένισμα ή χρώμα.",
+          "en": "With a cut, blowdry or colour."
+        },
+        "online": true,
+        "options": [
+          {
+            "el": "",
+            "en": "",
+            "time": {
+              "el": "10′",
+              "en": "10′"
+            },
+            "price": 11
+          }
+        ]
+      },
+      {
+        "name": {
+          "el": "+ Εντατική θεραπεία",
+          "en": "Intensive Treatment (add-on)"
+        },
+        "desc": {
+          "el": "Αμπούλα και μάσκα για ταλαιπωρημένα μαλλιά.",
+          "en": "Ampoule and mask for damaged hair."
+        },
+        "note": {
+          "el": "Μαζί με κούρεμα, χτένισμα ή χρώμα.",
+          "en": "With a cut, blowdry or colour."
+        },
+        "online": true,
+        "options": [
+          {
+            "el": "",
+            "en": "",
+            "time": {
+              "el": "30′",
+              "en": "30′"
+            },
+            "price": 20
+          }
+        ]
+      },
+      {
+        "name": {
+          "el": "Κερατίνη",
+          "en": "Keratin Smoothing"
+        },
+        "desc": {
+          "el": "Λείανση και ίσιωμα που κρατά έως 3 μήνες.",
+          "en": "Smoothing that lasts up to 3 months."
+        },
+        "note": {
+          "el": "Πρώτο λούσιμο μετά από 72 ώρες.",
+          "en": "First wash after 72 hours."
+        },
+        "online": false,
+        "options": [
+          {
+            "el": "Έως τους ώμους",
+            "en": "Up to the shoulders",
+            "time": {
+              "el": "1 ώρα 45′",
+              "en": "1 h 45′"
+            },
+            "price": 130
+          },
+          {
+            "el": "Κάτω από τους ώμους",
+            "en": "Below the shoulders",
+            "time": {
+              "el": "3 ώρες",
+              "en": "3 h"
+            },
+            "price": 170
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "key": "consultation",
+    "title": {
+      "el": "Συμβουλευτική",
+      "en": "Consultations"
+    },
+    "services": [
+      {
+        "name": {
+          "el": "Συμβουλευτική χρώματος, νυφικού & κερατίνης",
+          "en": "Colour, Bridal & Keratin Consultation"
+        },
+        "desc": {
+          "el": "15 λεπτά για να σχεδιάσουμε χρώμα, νυφικό ή κερατίνη και να σου πούμε ακριβή τιμή.",
+          "en": "15 minutes to plan your colour, bridal hair or keratin, with an exact price."
+        },
+        "note": {
+          "el": "Το €1 αφαιρείται από την υπηρεσία που θα κάνεις. Φέρε φωτογραφίες που σου αρέσουν.",
+          "en": "The €1 is deducted from your service. Bring photos you like."
+        },
+        "online": true,
+        "options": [
+          {
+            "el": "",
+            "en": "",
+            "time": {
+              "el": "15′",
+              "en": "15′"
+            },
+            "price": 1
+          }
+        ]
+      }
+    ]
+  }
+]
