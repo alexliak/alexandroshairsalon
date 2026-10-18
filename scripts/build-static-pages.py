@@ -220,9 +220,9 @@ def page(path, title, desc, body, ld, extra_head="", mbar=True, bilingual=False,
 <footer class="bottom"><div class="wrap">
   <p><strong>Alexandros Hair Salon</strong> · {ADDRESS} · <a href="tel:{PHONE}">{PHONE_TXT}</a> · <a href="tel:+306981319000">Κλήση κινητού</a> · <a href="https://wa.me/306981319000" target="_blank" rel="noopener">WhatsApp</a> · <a href="viber://chat?number=%2B306981319000">Viber</a> · <a href="{GOOGLE}" data-maps target="_blank" rel="noopener">Ωράριο στο Google</a> · <a href="{DIRECTIONS}" data-maps target="_blank" rel="noopener">Οδηγίες</a></p>
   <p class="tsw" role="radiogroup" aria-label="Εμφάνιση"><span>Εμφάνιση</span><button type="button" role="radio" data-mode="auto" title="Όπως η συσκευή σου">Αυτόματο</button><button type="button" role="radio" data-mode="light">Ανοιχτό</button><button type="button" role="radio" data-mode="dark">Σκούρο</button></p>
-  <p class="links"><a href="/">Αρχική</a><a href="/services">Όλες οι τιμές</a><a href="/kourema-athina/">Κούρεμα στην Αθήνα</a><a href="/vafi-mallion-athina/">Βαφή μαλλιών στην Αθήνα</a><a href="/balayage-athina/">Balayage στην Αθήνα</a><a href="/dorean-kourema-athina/">Δωρεάν κούρεμα (μοντέλο)</a><a href="/fotografies">Φωτογραφίες</a><a href="/kratisi/">Κράτηση online</a><a href="/shop">Shop</a></p>
+  <p class="links"><a href="/">Αρχική</a><a href="/services">Όλες οι τιμές</a><a href="/kourema-athina/">Κούρεμα στην Αθήνα</a><a href="/vafi-mallion-athina/">Βαφή μαλλιών στην Αθήνα</a><a href="/balayage-athina/">Balayage στην Αθήνα</a><a href="/dorean-kourema-athina/">Δωρεάν κούρεμα (μοντέλο)</a><a href="/fotografies">Φωτογραφίες</a><a href="/kratisi/">Κράτηση online</a><a href="/hair-salon-athens/" hreflang="en">Hair salon in Athens (English)</a><a href="/shop">Shop</a></p>
 </div></footer>
-{'<div class="mbar"><span>Θησείο · από το 1992</span><a class="btn gold" href="/kratisi/">Κλείσε ραντεβού</a></div>' if mbar else ''}
+{'<div class="mbar"><span data-en="Thiseio · since 1992">Θησείο · από το 1992</span><a class="btn gold" href="/kratisi/" data-en="Book now">Κλείσε ραντεβού</a></div>' if mbar else ''}
 <button type="button" class="totop" aria-label="Επιστροφή στην κορυφή" title="Επιστροφή στην κορυφή" tabindex="-1">{ICONS['FaArrowUp']}</button>
 <script>
 (function(){{var b=document.querySelector('.totop');function f(){{var on=window.scrollY>600;b.classList.toggle('on',on);b.tabIndex=on?0:-1;}}
@@ -283,6 +283,9 @@ def service_page(path, crumb, title, desc, eyebrow, h1, lead, facts, prose, keys
     page(path, title, desc, body, [service_ld, faq_ld, crumbs(crumb, path)])
 
 
+# Ώρες που άλλα κομμωτήρια είναι κλειστά: χωρίς ωράριο στο site, το ωράριο είναι μόνο στο Google Business Profile
+FAQ_WHEN = ("Μπορώ να κλείσω Δευτέρα ή αργά το απόγευμα;",
+            "Συνήθως ναι. Δουλεύουμε και Δευτέρα, και τα απογεύματα της Τετάρτης και του Σαββάτου ως αργά, όταν πολλά κομμωτήρια στην Αθήνα είναι κλειστά ή κλείνουν νωρίς. Τις ελεύθερες ώρες τις βλέπεις ζωντανά στην online κράτηση· το ισχύον ωράριο είναι πάντα στο Google.")
 COMMON_FACTS = ["Θησείο, ~5′ με τα πόδια από τον σταθμό", "Πληρωμή online ή στο κομμωτήριο", "Online κράτηση 24/7"]
 
 # ---------- /kourema-athina/ ----------
@@ -303,6 +306,7 @@ service_page(
     CUTS + ["Φράτζα", "Ανδρικό κούρεμα", "Ανδρικό με μηχανή", "Παιδικό κούρεμα"],
     [("Πόσο κοστίζει ένα γυναικείο κούρεμα;", f"€{P(CUTS[0])} χωρίς στέγνωμα, €{P(CUTS[1])} με γρήγορο στέγνωμα, €{P(CUTS[2])} με γρήγορο φορμάρισμα και €{P(CUTS[3])} με πλήρες χτένισμα. Ίδια τιμή για όλα τα μήκη."),
      ("Κάνετε και ανδρικά ή παιδικά κουρέματα;", f"Ναι. Ανδρικό κούρεμα €{P('Ανδρικό κούρεμα')}, με μηχανή €{P('Ανδρικό με μηχανή')} και παιδικό (έως 12 ετών) €{P('Παιδικό κούρεμα')}."),
+     FAQ_WHEN,
      ("Πρέπει να κλείσω ραντεβού;", "Προτείνουμε ραντεβού για να σε περιμένουμε στην ώρα σου. Κλείνεις online στο alexandroshairsalon.gr/kratisi ή τηλεφωνικά στο 210 346 5554."),
      ("Πού βρίσκεστε;", "Ερυσίχθονος 3-5 στο Θησείο, περίπου 5 λεπτά με τα πόδια από τον σταθμό Θησείο, στο κέντρο της Αθήνας."),
      ("Πώς πληρώνω;", "Όπως προτιμάς: online κατά την κράτηση ή στο κομμωτήριο, μετά την υπηρεσία.")],
@@ -330,6 +334,7 @@ service_page(
     [("Πόσο κοστίζει η βαφή ρίζας;", f"€{ROOT_OPTS['Κλασική']} η Κλασική και €{ROOT_OPTS['Ανώτερη']} η Ανώτερη (Majirel, INOA ή Redken χωρίς αμμωνία), για ρίζα έως 6 εβδομάδες και έως 45 g χρώμα, με λούσιμο και γρήγορο στέγνωμα."),
      ("Έχετε βαφή χωρίς αμμωνία;", f"Ναι, στην Ανώτερη βαφή ρίζας: INOA της L’Oréal Professionnel ή Redken χωρίς αμμωνία, €{ROOT_OPTS['Ανώτερη']}."),
      ("Κάνετε τεστ ευαισθησίας;", "Ναι, δωρεάν, 48 ώρες πριν από την πρώτη σου βαφή."),
+     FAQ_WHEN,
      ("Πόση ώρα διαρκεί η βαφή ρίζας;", "Περίπου μία ώρα μαζί με την αναμονή. Με ρεφλέ στα μήκη από μία ώρα έως μία ώρα και δέκα λεπτά."),
      ("Πώς κλείνω ραντεβού για βαφή;", "Online στο alexandroshairsalon.gr/kratisi, όπου βλέπεις ελεύθερες ώρες, ή στο 210 346 5554. Πληρώνεις online ή στο κομμωτήριο.")],
     "Βαφή μαλλιών",
@@ -354,11 +359,78 @@ service_page(
     [("Πόσο κοστίζει το μπαλαγιάζ (balayage) στην Αθήνα;", f"Στο κομμωτήριό μας το μερικό μπαλαγιάζ κοστίζει €{P('Μερικό μπαλαγιάζ')} για μαλλιά έως τους ώμους, με ρεφλέ. Για πιο μακριά μαλλιά προστίθεται το «+ Μακριά μαλλιά» (€{P('+ Μακριά μαλλιά (ανταύγειες / μπαλαγιάζ)')})."),
      ("Πόσο κοστίζουν οι ανταύγειες;", f"Γύρω από το πρόσωπο €{FACE['Χωρίς ντεκαπάζ']}–€{FACE['Με ντεκαπάζ']}, μερικές €{P('Μερικές ανταύγειες')} και ολόκληρες €{P('Ολόκληρες ανταύγειες')}, πάντα με ρεφλέ."),
      ("Υπάρχει επιλογή χωρίς ντεκαπάζ;", "Ναι, με την κρέμα L’Oréal Professionnel Blond Studio No Bleach™: έως 4 τόνους πιο ανοιχτά, πιο ήπια για την τρίχα."),
+     FAQ_WHEN,
      ("Πόση ώρα διαρκεί;", "Από περίπου 1 ώρα 10′ για ανταύγειες γύρω από το πρόσωπο έως περίπου 3 ώρες για μπαλαγιάζ."),
      ("Πώς κλείνω ραντεβού;", "Online στο alexandroshairsalon.gr/kratisi ή στο 210 346 5554. Αν δεν είσαι σίγουρη τι χρειάζεσαι, κλείσε διάγνωση χρώματος.")],
     "Balayage και ανταύγειες",
     [("Βαφή μαλλιών στην Αθήνα", "/vafi-mallion-athina/"), ("Κούρεμα στην Αθήνα", "/kourema-athina/"), ("Όλες οι τιμές", "/services")],
 )
+
+# ---------- /hair-salon-athens/ : για ξένους επισκέπτες, στα αγγλικά, τιμές από το menu.json ----------
+EN_SVC = {s["name"]["el"]: s for c in _MENU_JSON for s in c["services"]}
+
+
+def svc_html_en(name):
+    s = EN_SVC[name]
+    rows = "".join(
+        f'<li><span>{esc(o["en"]) + " · " if o["en"] else ""}<span class="d">{esc(o["time"]["en"])}</span></span><span class="p">€{o["price"]}</span></li>'
+        for o in s["options"])
+    d = f'<p class="sd">{esc(s["desc"]["en"])}</p>' if s.get("desc") else ""
+    return f'<article class="svc"><h3>{esc(s["name"]["en"])}</h3>{d}<ul>{rows}</ul></article>'
+
+
+def offers_en(names):
+    out = []
+    for n in names:
+        ps = [o["price"] for o in EN_SVC[n]["options"]]
+        o = {"@type": "Offer", "name": EN_SVC[n]["name"]["en"], "priceCurrency": "EUR"}
+        if len(set(ps)) == 1:
+            o["price"] = str(ps[0])
+        else:
+            o["priceSpecification"] = {"@type": "PriceSpecification", "minPrice": min(ps), "maxPrice": max(ps), "priceCurrency": "EUR"}
+        out.append(o)
+    return out
+
+
+EN_KEYS = ["Κούρεμα & γρήγορο στέγνωμα", "Κούρεμα & χτένισμα", "Χτένισμα με βούρτσα", "Χτένισμα για εκδήλωση",
+           "Ανδρικό κούρεμα", "Βαφή ρίζας", "Βαφή ρίζας & ρεφλέ στα μήκη", "Ρεφλέ",
+           "Ανταύγειες γύρω από το πρόσωπο", "Μερικές ανταύγειες", "Μερικό μπαλαγιάζ"]
+EN_FAQ = [
+    ("Are you open on Mondays or in the evening?",
+     "Usually yes. We work on Mondays and until late on Wednesday and Saturday afternoons, when many salons in Athens are closed or close early. You see live free slots in online booking; our current opening hours are always on Google."),
+    ("Do you speak English?", "Yes. Book online in English, or message us on WhatsApp or Viber at +30 698 131 9000."),
+    ("Where is the salon?", "Erisichthonos 3-5, Thiseio, central Athens: about 5 minutes on foot from Thiseio metro station, a short walk from the Acropolis area and Monastiraki."),
+    ("How do I pay?", "Online when you book, or at the salon after your appointment. Prices are the same online and at the salon."),
+    ("Can I just walk in?", "If there is a free chair, yes, but booking online is the safest way to get the time you want, especially when you are in Athens for a few days."),
+]
+_items = "".join(f"<details><summary>{esc(q)}</summary><p>{esc(a)}</p></details>" for q, a in EN_FAQ)
+en_body = f"""
+<section class="hero">
+  <span class="eyebrow">Hair salon · Thiseio, central Athens · since 1992</span>
+  <h1>A hair salon in Athens, <em>when others are closed.</em></h1>
+  <p class="lead">Haircut, blowdry, colour and balayage with L’Oréal Professionnel and Redken, in Thiseio near the Acropolis. We often have free slots on Mondays and later in the afternoon, when many salons in Athens are closed. One clear price per service, the same online and at the salon.</p>
+  <div class="cta"><a class="btn gold" href="/kratisi/">See free times &amp; book</a><a class="btn ghost" href="https://wa.me/306981319000" target="_blank" rel="noopener">WhatsApp</a></div>
+  <ul class="facts"><li>5′ walk from Thiseio metro</li><li>English spoken</li><li>Book online 24/7</li><li>Pay online or at the salon</li></ul>
+</section>
+<section class="block"><h2>Prices &amp; times</h2>{''.join(svc_html_en(k) for k in EN_KEYS)}
+  <p class="cta" style="margin-top:20px"><a class="btn gold" href="/kratisi/">Book online</a><a href="/services">Full price list (switch to EN) →</a></p>
+</section>
+<section class="block prose">
+<h2>What to expect</h2>
+<p>A haircut is a shape around the face. We start with a short talk about your face, your hair and how you style it, then cut and finish it the way you choose: a natural quick dry, a quick brushed styling, or a full blowdry polished for shine that usually lasts 3 days or more.</p>
+<p>For colour we use L’Oréal Professionnel and Redken, including ammonia-free options and bleach-free lightening with L’Oréal Blond Studio No Bleach™. Every price includes a set amount of product; anything extra is agreed before we start.</p>
+</section>
+<section class="block"><h2>Questions</h2>{_items}</section>
+<section class="block"><h2>See also</h2><p class="links"><a href="/services">Prices</a><a href="/hair-model-athens/">Free haircut as a hair model</a><a href="/kratisi/">Book online</a></p></section>
+"""
+en_faq_ld = {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
+    {"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": a}} for q, a in EN_FAQ]}
+en_service_ld = {"@context": "https://schema.org", "@type": "Service", "name": "Hair salon in Athens", "serviceType": "Hair salon",
+                 "areaServed": {"@type": "City", "name": "Athens"}, "provider": SALON_REF, "url": f"{SITE}/hair-salon-athens/",
+                 "availableLanguage": ["English", "Greek"], "offers": offers_en(EN_KEYS)}
+page("/hair-salon-athens/", f"Hair Salon in Athens, Thiseio | from €{P('Κούρεμα χωρίς στέγνωμα')} | Alexandros Hair Salon",
+     f"Hair salon in central Athens near the Acropolis: haircut from €{P('Κούρεμα χωρίς στέγνωμα')}, colour, balayage. Free slots on Mondays and late afternoons. English spoken.",
+     en_body, [en_service_ld, en_faq_ld, crumbs("Hair salon in Athens", "/hair-salon-athens/")], lang="en", bilingual=True)
 
 # ---------- /kratisi/ : official Treatwell Connect widget (no marketplace commission) ----------
 kratisi_head = f"""<script src="{TW_JS}"></script>
