@@ -324,7 +324,7 @@ service_page(
 <p>Ξεκινάμε με λίγη κουβέντα: τι σε ενοχλεί σήμερα, πώς χτενίζεσαι στο σπίτι και πόσο συχνά θέλεις να έρχεσαι. Μετά προτείνουμε γραμμή και μήκος που θα στέκονται σωστά και όταν τα φορμάρεις μόνη σου.</p>
 <p>Κάνουμε κλασικά και σύγχρονα κουρέματα: pixie, mullet, bob και lob, butterfly, curtain bangs, φιλάρισμα για όγκο ή ελάφρυνση, καθαρό φρεσκάρισμα άκρων.</p>
 <h2>Πώς θέλεις να φύγεις;</h2>
-<p>Μία τιμή για κάθε μήκος· διαλέγεις μόνο το τέλος. <strong>Χωρίς στέγνωμα</strong>, ιδανικό για σγουρά. <strong>Γρήγορο στέγνωμα</strong>: προϊόν για τη φυσική υφή σου, πιστολάκι ή φυσούνα και δάχτυλα. <strong>Γρήγορο φορμάρισμα</strong>: βούρτσα για όγκο και φόρμα. <strong>Χτένισμα</strong>: θερμοπροστασία, βούρτσα τούφα-τούφα, γυάλισμα και φινίρισμα, που κρατά συνήθως 3 ημέρες ή και περισσότερο.</p>""",
+<p>Μία τιμή για κάθε μήκος· διαλέγεις μόνο το τέλος. <strong>Χωρίς στέγνωμα</strong>, ιδανικό για σγουρά. <strong>Γρήγορο στέγνωμα</strong>: με τα χέρια, με πιστολάκι ή φυσούνα, για φυσικό αποτέλεσμα. <strong>Γρήγορο φορμάρισμα</strong>: πιστολάκι και βούρτσα για όγκο και φόρμα. <strong>Χτένισμα</strong>: πλήρες, ίσιο και λείο ή με όγκο και κίνηση, που κρατά συνήθως 2–3 ημέρες.</p>""",
     CUTS + ["Φράτζα", "Ανδρικό κούρεμα", "Ανδρικό με μηχανή", "Παιδικό κούρεμα"],
     [("Πόσο κοστίζει ένα γυναικείο κούρεμα;", f"€{P(CUTS[0])} χωρίς στέγνωμα, €{P(CUTS[1])} με γρήγορο στέγνωμα, €{P(CUTS[2])} με γρήγορο φορμάρισμα και €{P(CUTS[3])} με πλήρες χτένισμα. Ίδια τιμή για όλα τα μήκη."),
      ("Κάνετε και ανδρικά ή παιδικά κουρέματα;", f"Ναι. Ανδρικό κούρεμα €{P('Ανδρικό κούρεμα')}, με μηχανή €{P('Ανδρικό με μηχανή')} και παιδικό (έως 12 ετών) €{P('Παιδικό κούρεμα')}."),
@@ -443,7 +443,7 @@ en_body = f"""
 </section>
 <section class="block prose">
 <h2>What to expect</h2>
-<p>A haircut is a shape around the face. We start with a short talk about your face, your hair and how you style it, then cut and finish it the way you choose: a natural quick dry, a quick brushed styling, or a full blowdry polished for shine that usually lasts 3 days or more.</p>
+<p>A haircut is a shape around the face. We start with a short talk about your face, your hair and how you style it, then cut and finish it the way you choose: a natural quick dry, a quick brushed styling, or a full blow-out, bouncy or sleek, that usually lasts 2–3 days.</p>
 <p>For colour we use L’Oréal Professionnel and Redken, including ammonia-free options and bleach-free lightening with L’Oréal Blond Studio No Bleach™. Every price includes a set amount of product; anything extra is agreed before we start.</p>
 </section>
 <section class="block"><h2>Questions</h2>{_items}</section>

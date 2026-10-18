@@ -38,8 +38,8 @@
           "en": "Haircut & Quick Dry"
         },
         "desc": {
-          "el": "Λούσιμο, κούρεμα και γρήγορο στέγνωμα: προϊόν styling και φυσικό χτένισμα με τα χέρια, με πιστολάκι ή φυσούνα. Φυσικό, περιποιημένο αποτέλεσμα.",
-          "en": "Wash, cut and a quick dry: styling product and a natural finish shaped by hand, with a hairdryer or diffuser. A natural, neat result."
+          "el": "Λούσιμο, κούρεμα και γρήγορο στέγνωμα με τα χέρια, με πιστολάκι ή φυσούνα, για φυσικό αποτέλεσμα.",
+          "en": "Wash, cut and a quick dry shaped by hand, with a hairdryer or diffuser, for a natural finish."
         },
         "note": {
           "el": "Χωρίς βούρτσα. Για φόρμα με βούρτσα: «Κούρεμα & γρήγορο φορμάρισμα».",
@@ -68,12 +68,12 @@
           "en": "Haircut & Quick Styling"
         },
         "desc": {
-          "el": "Λούσιμο, κούρεμα και γρήγορο φορμάρισμα: προϊόν styling και πιστολάκι με βούρτσα για όγκο και φόρμα, όπως θέλει να στέκεται το κούρεμα.",
-          "en": "Wash, cut and a quick styling: styling product and a brushed blow-dry for volume and shape, the way your cut is meant to sit."
+          "el": "Λούσιμο, κούρεμα και γρήγορο φορμάρισμα με πιστολάκι και βούρτσα, για όγκο και φόρμα.",
+          "en": "Wash, cut and a quick brushed styling for volume and shape."
         },
         "note": {
-          "el": "Χωρίς τελικό γυάλισμα και λεπτομέρεια για μέγιστη διάρκεια — γι’ αυτά: «Κούρεμα & χτένισμα».",
-          "en": "No final polish or detail work for maximum hold — for that: Haircut & Blowdry."
+          "el": "Για πλήρες χτένισμα με λάμψη και διάρκεια: «Κούρεμα & χτένισμα».",
+          "en": "For a full blow-out with shine and hold: Haircut & Blowdry."
         },
         "online": true,
         "options": [
@@ -98,12 +98,12 @@
           "en": "Haircut & Blowdry"
         },
         "desc": {
-          "el": "Λούσιμο, κούρεμα και πλήρες χτένισμα (blow-out): θερμοπροστασία, πιστολάκι με βούρτσα τούφα-τούφα — ίσιο, με όγκο ή με κίνηση — γυάλισμα και φινίρισμα για λάμψη και διάρκεια. Όπου χρειάζεται, πρέσα ή ψαλίδι σε φράτζα ή άκρες.",
-          "en": "Wash, cut and a full blow-out: heat protection, hairdryer and round brush section by section — sleek, with volume or with movement — polished and finished for shine and hold. Where needed, straightener or curling iron on the fringe or ends."
+          "el": "Λούσιμο, κούρεμα και πλήρες χτένισμα με πιστολάκι και βούρτσα — ίσιο και λείο, ή με όγκο και κίνηση — για λάμψη που κρατά.",
+          "en": "Wash, cut and a full blow-out — bouncy or sleek — for shine that lasts."
         },
         "note": {
-          "el": "Για ίσιωμα σε όλο το μαλλί: «+ Ίσιωμα με πρέσα ατμού». Για μπούκλες, κυματισμούς ή πιάσιμο: «Χτένισμα για εκδήλωση». Κρατά συνήθως 3 ημέρες ή και περισσότερο, ανάλογα με το πόσο γρήγορα λαδώνει το μαλλί σου και πώς το προσέχεις.",
-          "en": "For all-over straightening: Steam Straightener Finish. For curls, waves or an up-do: Special Occasion Styling. Usually lasts 3 days or more, depending on how quickly your hair gets oily and how you look after it."
+          "el": "Για ίσιωμα με πρέσα: «+ Ίσιωμα με πρέσα ατμού». Για μπούκλες ή κυματισμούς: «Χτένισμα για εκδήλωση». Κρατά συνήθως 2–3 ημέρες.",
+          "en": "For a straightened finish: Steam Straightener Finish. For curls or waves: Special Occasion Styling. Usually lasts 2–3 days."
         },
         "online": true,
         "options": [
@@ -271,12 +271,12 @@
           "en": "Wash & Quick Styling"
         },
         "desc": {
-          "el": "Λούσιμο και γρήγορο φορμάρισμα: προϊόν styling και πιστολάκι με βούρτσα για όγκο και φόρμα. Όπου χρειάζεται, γρήγορο πέρασμα με πρέσα σε φράτζα ή άκρες.",
-          "en": "Wash and a quick styling: styling product and a brushed blow-dry for volume and shape. Where needed, a quick pass with the straightener on the fringe or ends."
+          "el": "Λούσιμο και γρήγορο φορμάρισμα με πιστολάκι και βούρτσα, για όγκο και φόρμα.",
+          "en": "Wash and a quick brushed styling for volume and shape."
         },
         "note": {
-          "el": "Έως 15′ φορμάρισμα, χωρίς τελικό γυάλισμα — γι’ αυτό: «Χτένισμα με βούρτσα». Για ίσιωμα σε όλο το μαλλί: «+ Ίσιωμα με πρέσα ατμού».",
-          "en": "Up to 15′ of styling, no final polish — for that: Signature Blowdry. For all-over straightening: Steam Straightener Finish."
+          "el": "Έως 15′. Για πλήρες χτένισμα με λάμψη και διάρκεια: «Χτένισμα με βούρτσα».",
+          "en": "Up to 15′. For a full blow-out with shine and hold: Signature Blowdry."
         },
         "online": false,
         "options": [
@@ -297,12 +297,12 @@
           "en": "Signature Blowdry"
         },
         "desc": {
-          "el": "Λούσιμο και πλήρες χτένισμα (blow-out): θερμοπροστασία, πιστολάκι με βούρτσα τούφα-τούφα — ίσιο, με όγκο ή με κίνηση — γυάλισμα και φινίρισμα για λάμψη και διάρκεια. Όπου χρειάζεται, πρέσα ή ψαλίδι σε φράτζα ή άκρες.",
-          "en": "Wash and a full blow-out: heat protection, hairdryer and round brush section by section — sleek, with volume or with movement — polished and finished for shine and hold. Where needed, straightener or curling iron on the fringe or ends."
+          "el": "Λούσιμο και πλήρες χτένισμα με πιστολάκι και βούρτσα — ίσιο και λείο, ή με όγκο και κίνηση — για λάμψη που κρατά.",
+          "en": "Wash and a full blow-out — bouncy or sleek — for shine that lasts."
         },
         "note": {
-          "el": "Για ίσιωμα σε όλο το μαλλί: «+ Ίσιωμα με πρέσα ατμού». Για μπούκλες, κυματισμούς ή πιάσιμο: «Χτένισμα για εκδήλωση». Κρατά συνήθως 3 ημέρες ή και περισσότερο, ανάλογα με το πόσο γρήγορα λαδώνει το μαλλί σου και πώς το προσέχεις.",
-          "en": "For all-over straightening: Steam Straightener Finish. For curls, waves or an up-do: Special Occasion Styling. Usually lasts 3 days or more, depending on how quickly your hair gets oily and how you look after it."
+          "el": "Για ίσιωμα με πρέσα: «+ Ίσιωμα με πρέσα ατμού». Για μπούκλες ή κυματισμούς: «Χτένισμα για εκδήλωση». Κρατά συνήθως 2–3 ημέρες.",
+          "en": "For a straightened finish: Steam Straightener Finish. For curls or waves: Special Occasion Styling. Usually lasts 2–3 days."
         },
         "online": true,
         "options": [
@@ -327,12 +327,12 @@
           "en": "Special Occasion Styling"
         },
         "desc": {
-          "el": "Μπούκλες ή κυματισμοί με ψαλίδι ή πρέσα, ή πιάσιμο, για γάμο, βάφτιση ή έξοδο — αλλά και για συνέντευξη, σημαντικό meeting, παρουσίαση ή φωτογράφιση. Φτιαγμένο να κρατήσει όλη τη μέρα ή τη βραδιά.",
-          "en": "Curls or waves with a curling iron or straightener, or an up-do, for a wedding, christening or night out — and for an interview, an important meeting, a presentation or a photo shoot. Made to last all day or all night."
+          "el": "Ένα βήμα πέρα από το χτένισμα: μπούκλες, κυματισμοί ή πιάσιμο, για γάμο, έξοδο, σημαντικό meeting ή φωτογράφιση.",
+          "en": "One step beyond a blow-out: curls, waves or an up-do, for a wedding, a night out, an important meeting or a photo shoot."
         },
         "note": {
-          "el": "Για απλό χτένισμα με πιστολάκι και βούρτσα (blow-out): «Χτένισμα με βούρτσα». Έλα με λουσμένα, στεγνά μαλλιά και φέρε φωτογραφία.",
-          "en": "For a simple blow-out with hairdryer and brush: Signature Blowdry. Come with clean, dry hair and bring a photo."
+          "el": "Έλα με λουσμένα, στεγνά μαλλιά και φέρε φωτογραφία.",
+          "en": "Come with clean, dry hair and bring a photo."
         },
         "online": true,
         "options": [
@@ -387,12 +387,12 @@
           "en": "Colour Quick Dry (add-on)"
         },
         "desc": {
-          "el": "Προϊόν styling και φυσικό χτένισμα με τα χέρια, με πιστολάκι ή φυσούνα, ώστε να δεις καθαρά το χρώμα σου.",
-          "en": "Styling product and a natural finish shaped by hand, with a hairdryer or diffuser, so you can see your colour clearly."
+          "el": "Γρήγορο στέγνωμα με τα χέρια, με πιστολάκι ή φυσούνα, για να δεις καθαρά το χρώμα σου.",
+          "en": "A quick dry shaped by hand, with a hairdryer or diffuser, so you can see your colour clearly."
         },
         "note": {
-          "el": "Μόνο μαζί με βαφή. Χωρίς βούρτσα — για φόρμα: «+ Γρήγορο φορμάρισμα μετά τη βαφή».",
-          "en": "Only with a colour service. No brush — for shape: Quick Styling after Colour."
+          "el": "Μόνο μαζί με βαφή. Για φόρμα με βούρτσα: «+ Γρήγορο φορμάρισμα μετά τη βαφή».",
+          "en": "Only with a colour service. For a brushed shape: Quick Styling after Colour."
         },
         "online": true,
         "options": [
@@ -417,12 +417,12 @@
           "en": "Quick Styling after Colour (add-on)"
         },
         "desc": {
-          "el": "Αντί για το γρήγορο στέγνωμα της βαφής: προϊόν styling και πιστολάκι με βούρτσα για όγκο και φόρμα.",
-          "en": "Instead of the quick dry after colour: styling product and a brushed blow-dry for volume and shape."
+          "el": "Γρήγορο φορμάρισμα με πιστολάκι και βούρτσα μετά τη βαφή, για όγκο και φόρμα.",
+          "en": "A quick brushed styling after your colour, for volume and shape."
         },
         "note": {
-          "el": "Μόνο μαζί με βαφή. Χωρίς τελικό γυάλισμα — γι’ αυτό: «+ Χτένισμα μετά τη βαφή».",
-          "en": "Only with a colour service. No final polish — for that: Blowdry after Colour."
+          "el": "Μόνο μαζί με βαφή. Για πλήρες χτένισμα: «+ Χτένισμα μετά τη βαφή».",
+          "en": "Only with a colour service. For a full blow-out: Colour Blowdry."
         },
         "online": true,
         "options": [
@@ -447,12 +447,12 @@
           "en": "Colour Blowdry (add-on)"
         },
         "desc": {
-          "el": "Πλήρες χτένισμα (blow-out) μετά τη βαφή: θερμοπροστασία, πιστολάκι με βούρτσα τούφα-τούφα — ίσιο, με όγκο ή με κίνηση — γυάλισμα και φινίρισμα για λάμψη και διάρκεια. Όπου χρειάζεται, πρέσα ή ψαλίδι σε φράτζα ή άκρες.",
-          "en": "A full blow-out after your colour: heat protection, hairdryer and round brush section by section — sleek, with volume or with movement — polished and finished for shine and hold. Where needed, straightener or curling iron on the fringe or ends."
+          "el": "Πλήρες χτένισμα μετά τη βαφή, με πιστολάκι και βούρτσα — ίσιο και λείο, ή με όγκο και κίνηση.",
+          "en": "A full blow-out after your colour — bouncy or sleek."
         },
         "note": {
-          "el": "Μόνο μαζί με βαφή. Για ίσιωμα σε όλο το μαλλί: «+ Ίσιωμα με πρέσα ατμού». Κρατά συνήθως 3 ημέρες ή και περισσότερο, ανάλογα με το πόσο γρήγορα λαδώνει το μαλλί σου και πώς το προσέχεις.",
-          "en": "Only with a colour service. For all-over straightening: Steam Straightener Finish. Usually lasts 3 days or more, depending on how quickly your hair gets oily and how you look after it."
+          "el": "Μόνο μαζί με βαφή. Κρατά συνήθως 2–3 ημέρες.",
+          "en": "Only with a colour service. Usually lasts 2–3 days."
         },
         "online": true,
         "options": [
@@ -848,8 +848,8 @@
           "en": "Fine highlights around the face, with toner."
         },
         "note": {
-          "el": "Χωρίς ντεκαπάζ: κρέμα ξανοίγματος L’Oréal Professionnel Blond Studio No Bleach™, πιο ήπια για την τρίχα· έως 4 τόνους (σε βαμμένα έως 2,5).",
-          "en": "Bleach-free: L’Oréal Professionnel Blond Studio No Bleach™ Lightening Cream, gentler on the hair; up to 4 levels (2.5 on coloured hair)."
+          "el": "Χωρίς ντεκαπάζ: πιο ήπιο ξάνοιγμα έως 4 τόνους, με L’Oréal Blond Studio No Bleach™. Σε βαμμένα μαλλιά: συμβουλευτική πριν.",
+          "en": "Bleach-free: gentler lightening up to 4 levels, with L’Oréal Blond Studio No Bleach™. Coloured hair: consultation first."
         },
         "online": true,
         "options": [
@@ -891,8 +891,8 @@
           "en": "Highlights on the top section and around the face, with toner."
         },
         "note": {
-          "el": "Τιμή έως τους ώμους· μακριά: «+ Μακριά μαλλιά». Χωρίς ντεκαπάζ: κρέμα L’Oréal Blond Studio No Bleach™, έως 4 τόνους. Σε βαμμένα μαλλιά: συμβουλευτική πριν.",
-          "en": "Price up to the shoulders; long hair: “+ Long Hair”. Bleach-free: L’Oréal Blond Studio No Bleach™, up to 4 levels. Coloured hair: consultation first."
+          "el": "Τιμή για μαλλιά έως τους ώμους· πιο μακριά: «+ Μακριά μαλλιά». Χωρίς ντεκαπάζ: πιο ήπιο ξάνοιγμα έως 4 τόνους, με L’Oréal Blond Studio No Bleach™. Σε βαμμένα μαλλιά: συμβουλευτική πριν.",
+          "en": "Price for hair up to the shoulders; longer: Long Hair add-on. Bleach-free: gentler lightening up to 4 levels, with L’Oréal Blond Studio No Bleach™. Coloured hair: consultation first."
         },
         "online": true,
         "options": [
@@ -1279,12 +1279,12 @@
           "en": "Colour, Bridal & Keratin Consultation"
         },
         "desc": {
-          "el": "15 λεπτά για να σχεδιάσουμε χρώμα, νυφικό ή κερατίνη και να σου πούμε ακριβή τιμή.",
-          "en": "15 minutes to plan your colour, bridal hair or keratin, with an exact price."
+          "el": "15 λεπτά για να σχεδιάσουμε μαζί χρώμα, νυφικό ή κερατίνη, με ακριβή τιμή.",
+          "en": "15 minutes to plan your colour, bridal hair or keratin together, with an exact price."
         },
         "note": {
-          "el": "Το €1 αφαιρείται από την υπηρεσία που θα κάνεις. Φέρε φωτογραφίες που σου αρέσουν.",
-          "en": "The €1 is deducted from your service. Bring photos you like."
+          "el": "Φέρε φωτογραφίες που σου αρέσουν.",
+          "en": "Bring photos you like."
         },
         "online": true,
         "options": [
