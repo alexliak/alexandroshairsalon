@@ -267,6 +267,32 @@
     "services": [
       {
         "name": {
+          "el": "Λούσιμο & γρήγορο φορμάρισμα",
+          "en": "Wash & Quick Styling"
+        },
+        "desc": {
+          "el": "Λούσιμο και γρήγορο φορμάρισμα: προϊόν styling και πιστολάκι με βούρτσα για όγκο και φόρμα.",
+          "en": "Wash and a quick styling: styling product and a brushed blow-dry for volume and shape."
+        },
+        "note": {
+          "el": "Χωρίς τελικό γυάλισμα και λεπτομέρεια για μέγιστη διάρκεια — γι’ αυτά: «Χτένισμα με βούρτσα».",
+          "en": "No final polish or detail work for maximum hold — for that: Signature Blowdry."
+        },
+        "online": false,
+        "options": [
+          {
+            "el": "",
+            "en": "",
+            "time": {
+              "el": "27′",
+              "en": "27′"
+            },
+            "price": 24
+          }
+        ]
+      },
+      {
+        "name": {
           "el": "Χτένισμα με βούρτσα",
           "en": "Signature Blowdry"
         },
