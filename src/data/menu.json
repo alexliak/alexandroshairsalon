@@ -102,7 +102,7 @@
           "en": "Wash, cut and a full blow-out — bouncy or sleek — for shine that lasts."
         },
         "note": {
-          "el": "Για ίσιωμα με πρέσα: «+ Ίσιωμα με πρέσα ατμού». Για μπούκλες ή κυματισμούς: «Χτένισμα για εκδήλωση». Κρατά συνήθως 2–3 ημέρες.",
+          "el": "Για ίσιωμα με πρέσα: «+ Ίσιωμα με πρέσα ατμού». Για μπούκλες ή κυματισμούς: «Χτένισμα για εκδήλωση». Διαρκεί συνήθως 2–3 ημέρες.",
           "en": "For a straightened finish: Steam Straightener Finish. For curls or waves: Special Occasion Styling. Usually lasts 2–3 days."
         },
         "online": true,
@@ -132,8 +132,8 @@
           "en": "A fringe refresh between cuts."
         },
         "note": {
-          "el": "Δωρεάν αν κουρεύτηκες εδώ τις τελευταίες 6 εβδομάδες.",
-          "en": "Free if you had a cut here in the last 6 weeks."
+          "el": "Δωρεάν, αν έχεις κουρευτεί σε εμάς τις τελευταίες 6 εβδομάδες.",
+          "en": "Free if you’ve had a haircut with us in the last 6 weeks."
         },
         "online": true,
         "options": [
@@ -158,8 +158,8 @@
           "en": "Gentlemen’s Haircut"
         },
         "desc": {
-          "el": "Λούσιμο, κούρεμα με ψαλίδι και μηχανή, φορμάρισμα.",
-          "en": "Wash, scissor and clipper cut, styling."
+          "el": "Λούσιμο, κούρεμα με ψαλίδι και μηχανή και φορμάρισμα.",
+          "en": "Wash, scissor and clipper cut, and styling."
         },
         "online": true,
         "options": [
@@ -188,8 +188,8 @@
           "en": "Clipper-only cut, no wash."
         },
         "note": {
-          "el": "Για σβήσιμο (fade) διάλεξε «Ανδρικό κούρεμα»· για φρεσκάρισμα πλαϊνών ανάμεσα στα κουρέματα, «Πλαϊνά & πίσω» (τηλεφωνικά).",
-          "en": "For a fade, book the men’s haircut; for a sides-and-back tidy between cuts, Sides & Back (by phone)."
+          "el": "Για σβήσιμο (fade): «Ανδρικό κούρεμα». Για φρεσκάρισμα στα πλαϊνά και στον αυχένα: «Πλαϊνά & αυχένας» (κλείνεται τηλεφωνικά).",
+          "en": "For a fade: Gentlemen’s Haircut. For a tidy-up of the sides and neckline: Sides & Back (by phone)."
         },
         "online": true,
         "options": [
@@ -236,12 +236,12 @@
       },
       {
         "name": {
-          "el": "Πλαϊνά & πίσω",
+          "el": "Πλαϊνά & αυχένας",
           "en": "Sides & Back"
         },
         "desc": {
-          "el": "Φρεσκάρισμα πλαϊνών και πίσω ανάμεσα στα ανδρικά κουρέματα.",
-          "en": "A tidy-up of the sides and back between cuts."
+          "el": "Φρεσκάρισμα στα πλαϊνά και στον αυχένα, ανάμεσα στα κουρέματα.",
+          "en": "A tidy-up of the sides and neckline between cuts."
         },
         "online": false,
         "options": [
@@ -275,8 +275,8 @@
           "en": "Wash and a quick brushed styling for volume and shape."
         },
         "note": {
-          "el": "Έως 15′. Για πλήρες χτένισμα με λάμψη που έχει διάρκεια: «Χτένισμα με βούρτσα».",
-          "en": "Up to 15′. For a full blow-out with shine that lasts: Signature Blowdry."
+          "el": "Φορμάρισμα έως 15′. Για πλήρες χτένισμα με λάμψη που έχει διάρκεια: «Χτένισμα με βούρτσα».",
+          "en": "Up to 15′ of styling. For a full blow-out with shine that lasts: Signature Blowdry."
         },
         "online": false,
         "options": [
@@ -301,7 +301,7 @@
           "en": "Wash and a full blow-out — bouncy or sleek — for shine that lasts."
         },
         "note": {
-          "el": "Για ίσιωμα με πρέσα: «+ Ίσιωμα με πρέσα ατμού». Για μπούκλες ή κυματισμούς: «Χτένισμα για εκδήλωση». Κρατά συνήθως 2–3 ημέρες.",
+          "el": "Για ίσιωμα με πρέσα: «+ Ίσιωμα με πρέσα ατμού». Για μπούκλες ή κυματισμούς: «Χτένισμα για εκδήλωση». Διαρκεί συνήθως 2–3 ημέρες.",
           "en": "For a straightened finish: Steam Straightener Finish. For curls or waves: Special Occasion Styling. Usually lasts 2–3 days."
         },
         "online": true,
@@ -327,12 +327,12 @@
           "en": "Special Occasion Styling"
         },
         "desc": {
-          "el": "Ένα βήμα πέρα από το χτένισμα: μπούκλες, κυματισμοί ή πιάσιμο, για γάμο, έξοδο, σημαντικό meeting ή φωτογράφιση.",
-          "en": "One step beyond a blow-out: curls, waves or an up-do, for a wedding, a night out, an important meeting or a photo shoot."
+          "el": "Μπούκλες, κυματισμοί ή πιάσιμο, για γάμο, έξοδο, σημαντική συνάντηση ή φωτογράφιση.",
+          "en": "Curls, waves or an up-do, for a wedding, a night out, an important meeting or a photo shoot."
         },
         "note": {
-          "el": "Έλα με λουσμένα, στεγνά μαλλιά και φέρε φωτογραφία.",
-          "en": "Come with clean, dry hair and bring a photo."
+          "el": "Καλό είναι να έρθεις με λουσμένα, στεγνά μαλλιά. Μια φωτογραφία με αυτό που σου αρέσει μάς βοηθά πολύ.",
+          "en": "It’s best to come with clean, dry hair. A photo of the look you like is always helpful."
         },
         "online": true,
         "options": [
@@ -451,7 +451,7 @@
           "en": "A full blow-out after your colour — bouncy or sleek."
         },
         "note": {
-          "el": "Μόνο μαζί με βαφή. Κρατά συνήθως 2–3 ημέρες.",
+          "el": "Μόνο μαζί με βαφή. Διαρκεί συνήθως 2–3 ημέρες.",
           "en": "Only with a colour service. Usually lasts 2–3 days."
         },
         "online": true,
@@ -477,12 +477,12 @@
           "en": "Bridal Hair Trial"
         },
         "desc": {
-          "el": "Δοκιμή του νυφικού χτενίσματος, με σημειώσεις για τη μέρα.",
-          "en": "A full trial of your bridal hair, with notes for the day."
+          "el": "Δοκιμάζουμε μαζί το νυφικό σου χτένισμα και κρατάμε σημειώσεις για την ημέρα του γάμου.",
+          "en": "We try your bridal hair together and keep notes for the wedding day."
         },
         "note": {
-          "el": "Φέρε πέπλο, αξεσουάρ και φωτογραφίες.",
-          "en": "Bring your veil, accessories and photos."
+          "el": "Θα βοηθήσει να έχεις μαζί σου το πέπλο, τα αξεσουάρ και φωτογραφίες που σου αρέσουν.",
+          "en": "It helps to bring your veil, accessories and photos you like."
         },
         "online": false,
         "options": [
@@ -507,8 +507,8 @@
           "en": "Your bridal hair on the day, as trialled."
         },
         "note": {
-          "el": "Μόνο μετά από δοκιμαστικό. Εκτός κομμωτηρίου +€40.",
-          "en": "Only after a trial. Outside the salon +€40."
+          "el": "Μόνο μετά από δοκιμαστικό. Εκτός κομμωτηρίου: +€40.",
+          "en": "Only after a trial. Outside the salon: +€40."
         },
         "online": false,
         "options": [
@@ -542,8 +542,8 @@
           "en": "Permanent root colour with grey coverage, wash and quick dry. Classic: Farcom. Premium: L’Oréal or ammonia-free Redken."
         },
         "note": {
-          "el": "Ρίζα έως 6 εβδομάδες, έως 45 g. Περισσότερο χρώμα: «+ Επιπλέον χρώμα ανά 30 g». Πρώτη βαφή: τεστ ευαισθησίας 48 ώρες πριν.",
-          "en": "Up to 6 weeks’ regrowth, up to 45 g. First colour: skin test 48 hours before."
+          "el": "Για ρίζα έως 6 εβδομάδων, με έως 45 g χρώμα. Αν χρειαστεί περισσότερο: «+ Επιπλέον χρώμα ανά 30 g». Αν βάφεσαι πρώτη φορά, χρειάζεται τεστ ευαισθησίας 48 ώρες πριν.",
+          "en": "For up to 6 weeks’ regrowth, with up to 45 g of colour. If more is needed: Extra Colour per 30 g. If it’s your first colour with us, we need a skin test 48 hours before."
         },
         "online": true,
         "options": [
@@ -585,8 +585,8 @@
           "en": "Premium root colour and a gloss on the lengths for even colour and shine, wash and quick dry."
         },
         "note": {
-          "el": "Ρίζα έως 45 g. Ρεφλέ: έως 60 ml (έως τους ώμους) ή 90 ml (κάτω από τους ώμους). Πρώτη βαφή: τεστ ευαισθησίας 48 ώρες πριν.",
-          "en": "Roots up to 45 g; gloss up to 60 ml or 90 ml. First colour: skin test 48 hours before."
+          "el": "Ρίζα έως 45 g. Ρεφλέ έως 60 ml για μαλλιά έως τους ώμους ή 90 ml για πιο μακριά. Αν βάφεσαι πρώτη φορά, χρειάζεται τεστ ευαισθησίας 48 ώρες πριν.",
+          "en": "Roots up to 45 g. Gloss up to 60 ml for hair up to the shoulders, or 90 ml for longer hair. If it’s your first colour with us, we need a skin test 48 hours before."
         },
         "online": true,
         "options": [
@@ -628,8 +628,8 @@
           "en": "Refreshes tone and adds shine, without lightening."
         },
         "note": {
-          "el": "Έως 60 ml (έως τους ώμους) ή 90 ml (κάτω από τους ώμους). Κρατά 4–6 εβδομάδες.",
-          "en": "Up to 60 ml or 90 ml. Lasts 4–6 weeks."
+          "el": "Έως 60 ml για μαλλιά έως τους ώμους ή 90 ml για πιο μακριά. Διαρκεί 4–6 εβδομάδες.",
+          "en": "Up to 60 ml for hair up to the shoulders, or 90 ml for longer hair. Lasts 4–6 weeks."
         },
         "online": true,
         "options": [
@@ -671,8 +671,8 @@
           "en": "Permanent colour from root to ends, wash and quick dry."
         },
         "note": {
-          "el": "Έως 60 g. Περισσότερο χρώμα: «+ Επιπλέον χρώμα ανά 30 g». Πρώτη βαφή: τεστ ευαισθησίας 48 ώρες πριν.",
-          "en": "Up to 60 g. First colour: skin test 48 hours before."
+          "el": "Έως 60 g χρώμα. Αν χρειαστεί περισσότερο: «+ Επιπλέον χρώμα ανά 30 g». Αν βάφεσαι πρώτη φορά, χρειάζεται τεστ ευαισθησίας 48 ώρες πριν.",
+          "en": "Up to 60 g of colour. If more is needed: Extra Colour per 30 g. If it’s your first colour with us, we need a skin test 48 hours before."
         },
         "online": true,
         "options": [
@@ -701,8 +701,8 @@
           "en": "Root lightening and toner for an even blonde, wash and quick dry."
         },
         "note": {
-          "el": "Ρίζα έως 2 cm. Πρώτη φορά: συμβουλευτική πριν.",
-          "en": "Regrowth up to 2 cm. First time: consultation first."
+          "el": "Για ρίζα έως 2 cm. Την πρώτη φορά προηγείται συμβουλευτική.",
+          "en": "For regrowth up to 2 cm. The first time, a consultation comes first."
         },
         "online": true,
         "options": [
@@ -757,8 +757,8 @@
           "en": "An extra 30 g of colour for longer regrowth, long or thick hair."
         },
         "note": {
-          "el": "Μόνο μαζί με βαφή, και μόνο αν χρειαστεί.",
-          "en": "Only with a colour service, if needed."
+          "el": "Μόνο μαζί με βαφή και μόνο αν χρειαστεί.",
+          "en": "Only with a colour service, and only if needed."
         },
         "online": true,
         "options": [
@@ -779,7 +779,7 @@
       },
       {
         "name": {
-          "el": "Βαφή ρίζας γρήγορη 10′",
+          "el": "Γρήγορη βαφή ρίζας (10′)",
           "en": "Express Root Colour"
         },
         "desc": {
@@ -787,8 +787,8 @@
           "en": "Redken root colour with a 10-minute process, for when you are short on time."
         },
         "note": {
-          "el": "Για λίγες περιπτώσεις, αφού το συζητήσουμε.",
-          "en": "For selected cases, after a chat."
+          "el": "Κατάλληλη μόνο για ορισμένες περιπτώσεις· το συζητάμε πρώτα.",
+          "en": "Suitable only in some cases; we discuss it first."
         },
         "online": false,
         "options": [
@@ -813,8 +813,8 @@
           "en": "History check, strand test and a written quote."
         },
         "note": {
-          "el": "Η τιμή αφαιρείται αν κάνεις τη διόρθωση εδώ.",
-          "en": "Deducted if you book the correction with us."
+          "el": "Το ποσό αφαιρείται από την τιμή, αν κάνεις τη διόρθωση σε εμάς.",
+          "en": "Deducted from the price if you book the correction with us."
         },
         "online": false,
         "options": [
@@ -848,8 +848,8 @@
           "en": "Fine highlights around the face, with toner."
         },
         "note": {
-          "el": "Χωρίς ντεκαπάζ: πιο ήπιο ξάνοιγμα έως 4 τόνους, με L’Oréal Blond Studio No Bleach™. Σε βαμμένα μαλλιά: συμβουλευτική πριν.",
-          "en": "Bleach-free: gentler lightening up to 4 levels, with L’Oréal Blond Studio No Bleach™. Coloured hair: consultation first."
+          "el": "Χωρίς ντεκαπάζ: πιο ήπιο ξάνοιγμα, έως 4 τόνους, με L’Oréal Blond Studio No Bleach™. Σε βαμμένα μαλλιά προηγείται συμβουλευτική.",
+          "en": "Bleach-free: gentler lightening, up to 4 levels, with L’Oréal Blond Studio No Bleach™. On coloured hair, a consultation comes first."
         },
         "online": true,
         "options": [
@@ -891,8 +891,8 @@
           "en": "Highlights on the top section and around the face, with toner."
         },
         "note": {
-          "el": "Τιμή για μαλλιά έως τους ώμους· πιο μακριά: «+ Μακριά μαλλιά». Χωρίς ντεκαπάζ: πιο ήπιο ξάνοιγμα έως 4 τόνους, με L’Oréal Blond Studio No Bleach™. Σε βαμμένα μαλλιά: συμβουλευτική πριν.",
-          "en": "Price for hair up to the shoulders; longer: Long Hair add-on. Bleach-free: gentler lightening up to 4 levels, with L’Oréal Blond Studio No Bleach™. Coloured hair: consultation first."
+          "el": "Η τιμή αφορά μαλλιά έως τους ώμους· για πιο μακριά: «+ Μακριά μαλλιά». Χωρίς ντεκαπάζ: πιο ήπιο ξάνοιγμα, έως 4 τόνους, με L’Oréal Blond Studio No Bleach™. Σε βαμμένα μαλλιά προηγείται συμβουλευτική.",
+          "en": "Price for hair up to the shoulders; for longer hair: Long Hair add-on. Bleach-free: gentler lightening, up to 4 levels, with L’Oréal Blond Studio No Bleach™. On coloured hair, a consultation comes first."
         },
         "online": true,
         "options": [
@@ -934,8 +934,8 @@
           "en": "Highlights all over, with toner."
         },
         "note": {
-          "el": "Τιμή έως τους ώμους· μακριά: «+ Μακριά μαλλιά». Σε βαμμένα μαλλιά: συμβουλευτική πριν.",
-          "en": "Price up to the shoulders; long hair: “+ Long Hair”. Coloured hair: consultation first."
+          "el": "Η τιμή αφορά μαλλιά έως τους ώμους· για πιο μακριά: «+ Μακριά μαλλιά». Σε βαμμένα μαλλιά προηγείται συμβουλευτική.",
+          "en": "Price for hair up to the shoulders; for longer hair: Long Hair add-on. On coloured hair, a consultation comes first."
         },
         "online": true,
         "options": [
@@ -960,12 +960,12 @@
           "en": "Partial Balayage"
         },
         "desc": {
-          "el": "Απαλό φως ζωγραφισμένο με το χέρι, ελεύθερα ή σε αλουμινόχαρτα (foilayage), με ρεφλέ.",
-          "en": "Soft, hand-painted light, freehand or in foils (foilayage), with toner."
+          "el": "Φυσικές, φωτεινές ανταύγειες ζωγραφισμένες με το χέρι, ελεύθερα ή σε αλουμινόχαρτα (foilayage), με ρεφλέ.",
+          "en": "Natural, luminous highlights painted by hand, freehand or in foils (foilayage), with toner."
         },
         "note": {
-          "el": "Μόνο σε μεσαία και μακριά μαλλιά. Τιμή έως τους ώμους· μακριά: «+ Μακριά μαλλιά». Πρώτη φορά: συμβουλευτική πριν.",
-          "en": "Medium and long hair only. Price up to the shoulders; long hair: “+ Long Hair”. First time: consultation first."
+          "el": "Μόνο για μεσαία και μακριά μαλλιά. Η τιμή αφορά μαλλιά έως τους ώμους· για πιο μακριά: «+ Μακριά μαλλιά». Την πρώτη φορά προηγείται συμβουλευτική.",
+          "en": "Medium and long hair only. Price for hair up to the shoulders; for longer hair: Long Hair add-on. The first time, a consultation comes first."
         },
         "online": true,
         "options": [
@@ -1024,8 +1024,8 @@
           "en": "Grey coverage at the root, in the same visit as your highlights."
         },
         "note": {
-          "el": "Μόνο μαζί με ανταύγειες ή μπαλαγιάζ. Πρώτη βαφή: τεστ ευαισθησίας 48 ώρες πριν.",
-          "en": "Only with highlights or balayage. First colour: skin test 48 hours before."
+          "el": "Μόνο μαζί με ανταύγειες ή μπαλαγιάζ. Αν βάφεσαι πρώτη φορά, χρειάζεται τεστ ευαισθησίας 48 ώρες πριν.",
+          "en": "Only with highlights or balayage. If it’s your first colour with us, we need a skin test 48 hours before."
         },
         "online": true,
         "options": [
@@ -1080,12 +1080,12 @@
           "en": "Full Balayage"
         },
         "desc": {
-          "el": "Πιο φωτεινό μπαλαγιάζ από τη ρίζα ως τις άκρες, ζωγραφισμένο ελεύθερα ή σε αλουμινόχαρτα (foilayage), με ρεφλέ.",
-          "en": "A brighter balayage from root to ends, painted freehand or in foils (foilayage), with toner."
+          "el": "Φωτεινό μπαλαγιάζ από τη ρίζα ως τις άκρες, ζωγραφισμένο με το χέρι, ελεύθερα ή σε αλουμινόχαρτα (foilayage), με ρεφλέ.",
+          "en": "A luminous balayage from root to ends, painted by hand, freehand or in foils (foilayage), with toner."
         },
         "note": {
-          "el": "Τιμή έως τους ώμους· μακριά: «+ Μακριά μαλλιά». Πρώτη φορά: συμβουλευτική πριν.",
-          "en": "Price up to the shoulders; long hair: “+ Long Hair”. First time: consultation first."
+          "el": "Η τιμή αφορά μαλλιά έως τους ώμους· για πιο μακριά: «+ Μακριά μαλλιά». Την πρώτη φορά προηγείται συμβουλευτική.",
+          "en": "Price for hair up to the shoulders; for longer hair: Long Hair add-on. The first time, a consultation comes first."
         },
         "online": false,
         "options": [
@@ -1115,8 +1115,8 @@
           "en": "Anti Hair-Loss Treatment"
         },
         "desc": {
-          "el": "Αμπούλα για την τριχόπτωση, με εφαρμογή στο τριχωτό.",
-          "en": "Anti hair-loss ampoule applied to the scalp."
+          "el": "Αμπούλα κατά της τριχόπτωσης, που εφαρμόζεται στο τριχωτό της κεφαλής.",
+          "en": "An anti hair-loss ampoule applied to the scalp."
         },
         "note": {
           "el": "Δεν είναι ιατρική θεραπεία.",
@@ -1235,12 +1235,12 @@
           "en": "Keratin Smoothing"
         },
         "desc": {
-          "el": "Λείανση και ίσιωμα που κρατά έως 3 μήνες.",
+          "el": "Λείανση και ίσιωμα που διαρκεί έως 3 μήνες.",
           "en": "Smoothing that lasts up to 3 months."
         },
         "note": {
-          "el": "Πρώτο λούσιμο μετά από 72 ώρες.",
-          "en": "First wash after 72 hours."
+          "el": "Το πρώτο λούσιμο γίνεται μετά από 72 ώρες.",
+          "en": "Your first wash is after 72 hours."
         },
         "online": false,
         "options": [
@@ -1283,8 +1283,8 @@
           "en": "15 minutes to plan your colour, bridal hair or keratin together, with an exact price."
         },
         "note": {
-          "el": "Φέρε φωτογραφίες που σου αρέσουν.",
-          "en": "Bring photos you like."
+          "el": "Φωτογραφίες με αυτό που σου αρέσει μάς βοηθούν πολύ.",
+          "en": "Photos of looks you like are always helpful."
         },
         "online": true,
         "options": [
