@@ -1,48 +1,48 @@
 self.__BUILD_MANIFEST = {
   "/": [
-    "static/chunks/15udokl0ebchr.js"
+    "static/chunks/3fmxt1i66t3iz.js"
   ],
   "/404": [
-    "static/chunks/33fbo6psunqs_.js"
+    "static/chunks/0-3-8h8sbhrx2.js"
   ],
   "/_error": [
     "static/chunks/1i-q_gge7mul2.js"
   ],
   "/aporrito": [
-    "static/chunks/01txd0d7urt8n.js"
+    "static/chunks/07rxlf25rznh_.js"
   ],
   "/douleia": [
-    "static/chunks/3lp73q7zchpoh.js"
+    "static/chunks/1t643qw9e2e21.js"
   ],
   "/fotografies": [
-    "static/chunks/0c70xp7ux2ohq.js"
+    "static/chunks/2m48c5sa81um6.js"
   ],
   "/hours": [
-    "static/chunks/21rtt_mstgqs7.js"
+    "static/chunks/3scd53dx3_rjq.js"
   ],
   "/montela": [
-    "static/chunks/2fesb-wfarm9t.js"
+    "static/chunks/0dke69jfs99z3.js"
   ],
   "/oroi": [
-    "static/chunks/2mr9vaxt--n3i.js"
+    "static/chunks/33nmtobz6vzgp.js"
   ],
   "/services": [
-    "static/chunks/012maq0kao3k0.js"
+    "static/chunks/3m5cfmtfjriir.js"
   ],
   "/shop": [
-    "static/chunks/3nzmsi29o3-fv.js"
+    "static/chunks/29op7lh4bj36c.js"
   ],
   "/shop/admin": [
-    "static/chunks/3189k24e6eqem.js"
+    "static/chunks/2mrkq7_8avorv.js"
   ],
   "/shop/cart": [
-    "static/chunks/0o2hh3yh_4rx6.js"
+    "static/chunks/29m7s9gvvwj6x.js"
   ],
   "/shop/diagnosi": [
-    "static/chunks/0617qvag8sfbm.js"
+    "static/chunks/1jzuxs694xgym.js"
   ],
   "/shop/p/[id]": [
-    "static/chunks/2cdcmsmtz7noi.js"
+    "static/chunks/0w8fry7zttx8d.js"
   ],
   "__rewrites": {
     "afterFiles": [],

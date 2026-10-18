@@ -4,6 +4,6 @@ __turbopack_load_page_chunks__("/shop/diagnosi", [
   "static/chunks/1z_ehihpbacb6.js",
   "static/chunks/05k951tjy4hig.js",
   "static/chunks/397dchgjzuv-1.js",
-  "static/chunks/0ek38j1tpuot6.js",
-  "static/chunks/turbopack-3o21wph6dhlof.js"
+  "static/chunks/3bwd-me0hbibm.js",
+  "static/chunks/turbopack-32dvhyfywh-sw.js"
 ])
