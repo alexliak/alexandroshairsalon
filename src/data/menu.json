@@ -72,8 +72,8 @@
           "en": "Wash, cut and a quick brushed styling for volume and shape."
         },
         "note": {
-          "el": "Για πλήρες χτένισμα με λάμψη και διάρκεια: «Κούρεμα & χτένισμα».",
-          "en": "For a full blow-out with shine and hold: Haircut & Blowdry."
+          "el": "Για πλήρες χτένισμα με λάμψη που κρατά: «Κούρεμα & χτένισμα».",
+          "en": "For a full blow-out with shine that lasts: Haircut & Blowdry."
         },
         "online": true,
         "options": [
@@ -275,8 +275,8 @@
           "en": "Wash and a quick brushed styling for volume and shape."
         },
         "note": {
-          "el": "Έως 15′. Για πλήρες χτένισμα με λάμψη και διάρκεια: «Χτένισμα με βούρτσα».",
-          "en": "Up to 15′. For a full blow-out with shine and hold: Signature Blowdry."
+          "el": "Έως 15′. Για πλήρες χτένισμα με λάμψη που κρατά: «Χτένισμα με βούρτσα».",
+          "en": "Up to 15′. For a full blow-out with shine that lasts: Signature Blowdry."
         },
         "online": false,
         "options": [
@@ -960,8 +960,8 @@
           "en": "Partial Balayage"
         },
         "desc": {
-          "el": "Απαλό φως ζωγραφισμένο με το χέρι, με ρεφλέ.",
-          "en": "Soft, hand-painted light, with toner."
+          "el": "Απαλό φως ζωγραφισμένο με το χέρι, ελεύθερα ή σε αλουμινόχαρτα (foilayage), με ρεφλέ.",
+          "en": "Soft, hand-painted light, freehand or in foils (foilayage), with toner."
         },
         "note": {
           "el": "Μόνο σε μεσαία και μακριά μαλλιά. Τιμή έως τους ώμους· μακριά: «+ Μακριά μαλλιά». Πρώτη φορά: συμβουλευτική πριν.",
@@ -1080,8 +1080,8 @@
           "en": "Full Balayage"
         },
         "desc": {
-          "el": "Πιο φωτεινό μπαλαγιάζ από τη ρίζα ως τις άκρες, με ρεφλέ.",
-          "en": "A brighter balayage from root to ends, with toner."
+          "el": "Πιο φωτεινό μπαλαγιάζ από τη ρίζα ως τις άκρες, ζωγραφισμένο ελεύθερα ή σε αλουμινόχαρτα (foilayage), με ρεφλέ.",
+          "en": "A brighter balayage from root to ends, painted freehand or in foils (foilayage), with toner."
         },
         "note": {
           "el": "Τιμή έως τους ώμους· μακριά: «+ Μακριά μαλλιά». Πρώτη φορά: συμβουλευτική πριν.",
