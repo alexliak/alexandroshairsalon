@@ -3,6 +3,7 @@ import { Link } from '../lib/router';
 import NhLayout, { BOOK, PHONE, GOOGLE_PROFILE_URL, DIRECTIONS_URL, REVIEWS_URL, mapLinkProps } from '../components/NhLayout';
 import MapEmbed from '../components/MapEmbed';
 import SalonGallery from '../components/SalonGallery';
+import { priceText } from '../data/prices';
 
 // Μαθηματικά animation «Κομμωτική 2050»: φορτώνονται σε ξεχωριστό, μικρό αρχείο μετά την αρχική σελίδα.
 const MathArt = lazy(() => import('../components/MathArt'));
@@ -39,12 +40,12 @@ const content = {
     popularTitle: 'Διάλεξε & κλείσε',
     allServices: 'Όλες οι τιμές →',
     services: [
-      { tone: 'cut', cat: 'Κουρέματα', name: 'Γυναικείο κούρεμα', desc: 'Pixie, mullet, butterfly, curtain bangs, φιλάρισμα ή κλασικό, με εμπειρία τριών δεκαετιών.', time: '30–45′', price: 'από €28' },
-      { tone: 'style', cat: 'Χτένισμα', name: 'Blowout', desc: 'Όγκος και λάμψη με πιστολάκι ή πρέσα. Πρόσθεσε SteamPod για διάρκεια.', time: '25–40′', price: 'από €24' },
-      { tone: 'colour', cat: 'Χρώμα', name: 'Βαφή ρίζας + ρεφλέ', desc: 'Κάλυψη λευκών στη ρίζα και ξεχωριστό gloss για λάμψη σε όλο το μαλλί.', time: '1 ώρα', price: 'από €52' },
-      { tone: 'light', cat: 'Ανταύγειες', name: 'Balayage', desc: 'Φυσικό, φωτεινό αποτέλεσμα με εύκολη συντήρηση.', time: '1:35–2:45', price: 'από €55' },
-      { tone: 'light', cat: 'Ανταύγειες', name: 'No-Bleach ανταύγειες', desc: 'Απαλό φως χωρίς ντεκαπάζ, ιδανικό για πρώτη φορά.', time: '1:20–1:50', price: 'από €51' },
-      { tone: 'pack', cat: 'Πακέτα', name: 'Κούρεμα & Blowout', desc: 'Κούρεμα και χτένισμα σε ένα ραντεβού.', time: '45–55′', price: 'από €47' }
+      { tone: 'cut', cat: 'Κουρέματα', name: 'Γυναικείο κούρεμα', desc: 'Pixie, mullet, butterfly, curtain bangs, φιλάρισμα ή κλασικό, με εμπειρία τριών δεκαετιών.', time: '30–55′', price: priceText('el', 'Κούρεμα χωρίς στέγνωμα', 'Κούρεμα & γρήγορο στέγνωμα', 'Κούρεμα & γρήγορο φορμάρισμα', 'Κούρεμα & χτένισμα') },
+      { tone: 'style', cat: 'Χτένισμα', name: 'Χτένισμα με βούρτσα', desc: 'Πλήρες χτένισμα, ίσιο ή με όγκο, με γυάλισμα για λάμψη που κρατά 3 ημέρες και περισσότερο.', time: '30′', price: priceText('el', 'Χτένισμα με βούρτσα') },
+      { tone: 'colour', cat: 'Χρώμα', name: 'Βαφή ρίζας & ρεφλέ', desc: 'Κάλυψη λευκών στη ρίζα και ξεχωριστό gloss για λάμψη σε όλο το μαλλί.', time: '1 ώρα – 1 ώρα 10′', price: priceText('el', 'Βαφή ρίζας & ρεφλέ στα μήκη') },
+      { tone: 'light', cat: 'Ανταύγειες', name: 'Μερικό μπαλαγιάζ', desc: 'Φυσικό, φωτεινό αποτέλεσμα με εύκολη συντήρηση.', time: '3 ώρες', price: priceText('el', 'Μερικό μπαλαγιάζ') },
+      { tone: 'light', cat: 'Ανταύγειες', name: 'Ανταύγειες χωρίς ντεκαπάζ', desc: 'Με L’Oréal Blond Studio No Bleach™: απαλό φως έως 4 τόνους, χωρίς ντεκαπάζ.', time: '1 ώρα 10′ – 1 ώρα 30′', price: priceText('el', 'Ανταύγειες γύρω από το πρόσωπο', 'Μερικές ανταύγειες') },
+      { tone: 'pack', cat: 'Κουρέματα', name: 'Κούρεμα & χτένισμα', desc: 'Λούσιμο, κούρεμα και πλήρες χτένισμα σε ένα ραντεβού.', time: '55′', price: priceText('el', 'Κούρεμα & χτένισμα') }
     ],
     brandsEyebrow: 'Χρώμα με υπογραφή',
     brandsTitleA: 'Δουλεύουμε με ',
@@ -57,10 +58,10 @@ const content = {
     brandsText: 'Εκπαιδευόμαστε συνεχώς στις νέες τεχνικές τους.',
     brandsCta: 'Κλείσε χρώμα',
     colorList: [
-      ['Βαφή ρίζας – κάλυψη λευκών', 'από €35'],
-      ['Βαφή ρίζας + ρεφλέ (gloss)', 'από €52'],
-      ['Face framing', '€46'],
-      ['Balayage – μερικές', 'από €55']
+      ['Βαφή ρίζας – κάλυψη λευκών', priceText('el', 'Βαφή ρίζας')],
+      ['Βαφή ρίζας & ρεφλέ (gloss)', priceText('el', 'Βαφή ρίζας & ρεφλέ στα μήκη')],
+      ['Ανταύγειες γύρω από το πρόσωπο', priceText('el', 'Ανταύγειες γύρω από το πρόσωπο')],
+      ['Μερικό μπαλαγιάζ', priceText('el', 'Μερικό μπαλαγιάζ')]
     ],
     promiseEyebrow: 'Η ματιά μας',
     promiseTitleA: 'Κάθε πρόσωπο έχει όμορφα χαρακτηριστικά. ',
@@ -109,12 +110,12 @@ const content = {
     popularTitle: 'Pick & book',
     allServices: 'All prices →',
     services: [
-      { tone: 'cut', cat: 'Haircuts', name: 'Women’s haircut', desc: 'Pixie, mullet, butterfly, curtain bangs, texturising or classic, with thirty years of experience.', time: '30–45′', price: 'from €28' },
-      { tone: 'style', cat: 'Styling', name: 'Blowout', desc: 'Volume and shine with brush or iron. Add SteamPod for long-lasting results.', time: '25–40′', price: 'from €24' },
-      { tone: 'colour', cat: 'Colour', name: 'Root colour + gloss', desc: 'Grey coverage at the root plus a separate gloss for shine throughout.', time: '1 h', price: 'from €52' },
-      { tone: 'light', cat: 'Highlights', name: 'Balayage', desc: 'Natural, luminous result that is easy to maintain.', time: '1:35–2:45', price: 'from €55' },
-      { tone: 'light', cat: 'Highlights', name: 'No-bleach highlights', desc: 'Soft brightness without bleach, ideal for a first time.', time: '1:20–1:50', price: 'from €51' },
-      { tone: 'pack', cat: 'Packages', name: 'Cut & blowout', desc: 'Haircut and styling in one appointment.', time: '45–55′', price: 'from €47' }
+      { tone: 'cut', cat: 'Haircuts', name: 'Women’s haircut', desc: 'Pixie, mullet, butterfly, curtain bangs, texturising or classic, with thirty years of experience.', time: '30–55′', price: priceText('en', 'Κούρεμα χωρίς στέγνωμα', 'Κούρεμα & γρήγορο στέγνωμα', 'Κούρεμα & γρήγορο φορμάρισμα', 'Κούρεμα & χτένισμα') },
+      { tone: 'style', cat: 'Styling', name: 'Signature blowdry', desc: 'A full blowdry, sleek or with volume, polished for shine that lasts 3 days or more.', time: '30′', price: priceText('en', 'Χτένισμα με βούρτσα') },
+      { tone: 'colour', cat: 'Colour', name: 'Root colour & gloss', desc: 'Grey coverage at the root plus a separate gloss for shine throughout.', time: '1 h – 1 h 10′', price: priceText('en', 'Βαφή ρίζας & ρεφλέ στα μήκη') },
+      { tone: 'light', cat: 'Highlights', name: 'Partial balayage', desc: 'Natural, luminous result that is easy to maintain.', time: '3 h', price: priceText('en', 'Μερικό μπαλαγιάζ') },
+      { tone: 'light', cat: 'Highlights', name: 'No-bleach highlights', desc: 'With L’Oréal Blond Studio No Bleach™: soft light up to 4 levels, without bleach.', time: '1 h 10′ – 1 h 30′', price: priceText('en', 'Ανταύγειες γύρω από το πρόσωπο', 'Μερικές ανταύγειες') },
+      { tone: 'pack', cat: 'Haircuts', name: 'Haircut & blowdry', desc: 'Wash, cut and a full blowdry in one appointment.', time: '55′', price: priceText('en', 'Κούρεμα & χτένισμα') }
     ],
     brandsEyebrow: 'Signature colour',
     brandsTitleA: 'We work with ',
@@ -127,10 +128,10 @@ const content = {
     brandsText: 'We train continuously in their latest techniques.',
     brandsCta: 'Book colour',
     colorList: [
-      ['Root colour & grey coverage', 'from €35'],
-      ['Root colour + gloss', 'from €52'],
-      ['Face-frame highlights', '€46'],
-      ['Partial balayage', 'from €55']
+      ['Root colour & grey coverage', priceText('en', 'Βαφή ρίζας')],
+      ['Root colour & gloss', priceText('en', 'Βαφή ρίζας & ρεφλέ στα μήκη')],
+      ['Face-frame highlights', priceText('en', 'Ανταύγειες γύρω από το πρόσωπο')],
+      ['Partial balayage', priceText('en', 'Μερικό μπαλαγιάζ')]
     ],
     promiseEyebrow: 'Our approach',
     promiseTitleA: 'Every face has beautiful features. ',
