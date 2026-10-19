@@ -17,6 +17,7 @@ const text = {
     from: 'από',
     bookThis: 'Κράτηση',
     notesTitle: 'Καλό να ξέρεις',
+    footnote: '* Αν βάφεσαι πρώτη φορά σε εμάς, μπορούμε να κάνουμε δωρεάν τεστ ευαισθησίας πριν από τη βαφή. Δεν χρειάζεται για να κλείσεις ραντεβού.',
     notes: [
       'Κάθε βαφή περιλαμβάνει συγκεκριμένη ποσότητα. Αν χρειαστεί περισσότερο χρώμα, το «+ Επιπλέον χρώμα ανά 30 g» (' + priceText('el', '+ Επιπλέον χρώμα') + ') το συμφωνούμε πριν την εφαρμογή.',
       'Στις ανταύγειες και στο μπαλαγιάζ, για μαλλιά κάτω από τους ώμους υπάρχει το «+ Μακριά μαλλιά» (' + priceText('el', '+ Μακριά μαλλιά (ανταύγειες / μπαλαγιάζ)') + ').',
@@ -36,6 +37,7 @@ const text = {
     from: 'from',
     bookThis: 'Book',
     notesTitle: 'Good to know',
+    footnote: '* If it’s your first colour with us, we can do a free skin test beforehand. You don’t need one to book.',
     notes: [
       'Every colour includes a set amount of product. If more is needed, Extra Colour per 30 g (' + priceText('en', '+ Επιπλέον χρώμα') + ') is agreed before we apply it.',
       'For highlights and balayage on hair below the shoulders there is the Long Hair add-on (' + priceText('en', '+ Μακριά μαλλιά (ανταύγειες / μπαλαγιάζ)') + ').',
@@ -136,6 +138,7 @@ const Services = ({ language, setLanguage }) => {
               <li key={n}>{n}</li>
             ))}
           </ul>
+          <p className="nh-footnote" style={{ fontSize: '0.82em', opacity: 0.75, margin: '0 0 18px' }}>{t.footnote}</p>
           <a href={BOOK} className="nh-btn nh-btn-gold">{t.book}</a>
         </section>
       </main>

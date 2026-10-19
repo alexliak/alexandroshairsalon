@@ -280,7 +280,7 @@ def faq_block(faqs):
     return f'<section class="block"><h2>Συχνές ερωτήσεις</h2>{items}</section>', ld
 
 
-def service_page(path, crumb, title, desc, eyebrow, h1, lead, facts, prose, keys, faqs, service_type, related):
+def service_page(path, crumb, title, desc, eyebrow, h1, lead, facts, prose, keys, faqs, service_type, related, footnote=""):
     faq_html, faq_ld = faq_block(faqs)
     facts_html = "".join(f"<li>{esc(f)}</li>" for f in facts)
     rel = "".join(f'<a href="{h}">{esc(t)}</a>' for t, h in related)
@@ -295,7 +295,7 @@ def service_page(path, crumb, title, desc, eyebrow, h1, lead, facts, prose, keys
 <section class="block"><h2>Τιμές &amp; χρόνοι</h2>{''.join(svc_html(k) for k in keys)}
   <p class="cta" style="margin-top:20px"><a class="btn gold" href="/kratisi/">Κλείσε online</a><a href="/services">Όλος ο τιμοκατάλογος →</a></p>
 </section>
-<section class="block prose">{prose}</section>
+<section class="block prose">{prose}{footnote}</section>
 {faq_html}
 <section class="block"><h2>Δες επίσης</h2><p class="links">{rel}</p></section>
 """
@@ -337,6 +337,7 @@ service_page(
 )
 
 # ---------- /vafi-mallion-athina/ ----------
+SKIN_NOTE = '<p class="footnote" style="font-size:.82em;opacity:.75">* Αν βάφεσαι πρώτη φορά σε εμάς, μπορούμε να κάνουμε δωρεάν τεστ ευαισθησίας πριν από τη βαφή. Δεν χρειάζεται για να κλείσεις ραντεβού.</p>'
 ROOT = "Βαφή ρίζας"
 ROOT_OPTS = dict((o, p) for o, _, p in MENU[ROOT][1])
 service_page(
@@ -360,6 +361,7 @@ service_page(
      ("Πώς κλείνω ραντεβού για βαφή;", "Online στο alexandroshairsalon.gr/kratisi, όπου βλέπεις ελεύθερες ώρες, ή στο 210 346 5554. Πληρώνεις online ή στο κομμωτήριο.")],
     "Βαφή μαλλιών",
     [("Balayage στην Αθήνα", "/balayage-athina/"), ("Κούρεμα στην Αθήνα", "/kourema-athina/"), ("Όλες οι τιμές", "/services")],
+    footnote=SKIN_NOTE,
 )
 
 # ---------- /balayage-athina/ ----------
@@ -385,6 +387,7 @@ service_page(
      ("Πώς κλείνω ραντεβού;", "Online στο alexandroshairsalon.gr/kratisi ή στο 210 346 5554. Αν δεν είσαι σίγουρη τι χρειάζεσαι, κλείσε διάγνωση χρώματος.")],
     "Balayage και ανταύγειες",
     [("Βαφή μαλλιών στην Αθήνα", "/vafi-mallion-athina/"), ("Κούρεμα στην Αθήνα", "/kourema-athina/"), ("Όλες οι τιμές", "/services")],
+    footnote=SKIN_NOTE,
 )
 
 # ---------- /hair-salon-athens/ : για ξένους επισκέπτες, στα αγγλικά, τιμές από το menu.json ----------
