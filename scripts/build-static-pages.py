@@ -242,7 +242,7 @@ def page(path, title, desc, body, ld, extra_head="", mbar=True, bilingual=False,
 <footer class="bottom"><div class="wrap">
   <p><strong>Alexandros Hair Salon</strong> · {ADDRESS} · <a href="tel:{PHONE}">{PHONE_TXT}</a> · <a href="tel:+306981319000">Κλήση κινητού</a> · <a href="https://wa.me/306981319000" target="_blank" rel="noopener">WhatsApp</a> · <a href="viber://chat?number=%2B306981319000">Viber</a> · <a href="{GOOGLE}" data-maps target="_blank" rel="noopener">Ωράριο στο Google</a> · <a href="{DIRECTIONS}" data-maps target="_blank" rel="noopener">Οδηγίες</a></p>
   <p class="tsw" role="radiogroup" aria-label="Εμφάνιση"><span>Εμφάνιση</span><button type="button" role="radio" data-mode="auto" title="Όπως η συσκευή σου">Αυτόματο</button><button type="button" role="radio" data-mode="light">Ανοιχτό</button><button type="button" role="radio" data-mode="dark">Σκούρο</button></p>
-  <p class="links"><a href="/">Αρχική</a><a href="/services">Όλες οι τιμές</a><a href="/kourema-athina/">Κούρεμα στην Αθήνα</a><a href="/vafi-mallion-athina/">Βαφή μαλλιών στην Αθήνα</a><a href="/balayage-athina/">Balayage στην Αθήνα</a><a href="/dorean-kourema-athina/">Δωρεάν κούρεμα (μοντέλο)</a><a href="/fotografies">Φωτογραφίες</a><a href="/kratisi/">Κράτηση online</a><a href="/hair-salon-athens/" hreflang="en">Hair salon in Athens (English)</a><a href="/shop">Shop</a></p>
+  <p class="links"><a href="/">Αρχική</a><a href="/services">Όλες οι τιμές</a><a href="/kourema-athina/">Κούρεμα στην Αθήνα</a><a href="/vafi-mallion-athina/">Βαφή μαλλιών στην Αθήνα</a><a href="/balayage-athina/">Balayage στην Αθήνα</a><a href="/dorean-kourema-athina/">Δωρεάν κούρεμα (μοντέλο)</a><a href="/fotografies">Φωτογραφίες</a><a href="/kratisi/">Κράτηση online</a><a href="/hair-salon-athens/" hreflang="en">Hair salon in Athens (English)</a><a href="/xtenisma-fotografisi-athina/">Χτένισμα για φωτογράφιση</a><a href="/synergasies/">Συνεργασίες</a><a href="/shop">Shop</a></p>
 </div></footer>
 {'<div class="mbar"><span data-en="Thiseio · since 1992">Θησείο · από το 1992</span><a class="btn gold" href="/kratisi/" data-en="Book now">Κλείσε ραντεβού</a></div>' if mbar else ''}
 <button type="button" class="totop" aria-label="Επιστροφή στην κορυφή" title="Επιστροφή στην κορυφή" tabindex="-1">{ICONS['FaArrowUp']}</button>
@@ -562,7 +562,7 @@ model_page(
     """<h2>Ποιες τεχνικές χρώματος</h2>
 <p><strong>Βαφή ρίζας με ρεφλέ:</strong> κάλυψη λευκών με Majirel, INOA χωρίς αμμωνία ή Redken, και ξεχωριστό gloss στα μήκη για λάμψη.</p>
 <p><strong>Ανταύγειες χωρίς ντεκαπάζ:</strong> απαλό φως γύρω από το πρόσωπο, ιδανικό αν δεν έχεις κάνει ποτέ ανταύγειες.</p>
-<p><strong>Balayage:</strong> φυσικό σβήσιμο από τη ρίζα στα άκρα, με ενσωματωμένο bonder για την προστασία της τρίχας.</p>
+<p><strong>Balayage:</strong> φυσικό σβήσιμο από τη ρίζα στα άκρα, με ρεφλέ.</p>
 <h2>Πόση ώρα και τι χρειάζεται</h2>
 <p>Η βαφή θέλει περίπου δύο ώρες, το balayage δύο με τρεις, μαζί με τη φωτογράφιση.</p>""",
     [("Πόσο κοστίζει η βαφή ως μοντέλο;", "Μόνο ένα μικρό μέρος της κανονικής τιμής, για τα υλικά. Το ακριβές ποσό το ξέρεις πριν κλείσουμε ραντεβού.")] + MODEL_FAQ_COMMON,
@@ -589,6 +589,192 @@ model_page(
     [("Δωρεάν κούρεμα (Ελληνικά)", "/dorean-kourema-athina/"), ("Colour & balayage for models (Greek)", "/montelo-vafi-balayage-athina/"), ("Prices", "/services")],
     "Sign up as a model", lang="en", faq_title="Questions", related_title="See also",
 )
+
+# ---------- Σελίδες B2B: φωτογραφίσεις, ξενοδοχεία, γάμοι, συνεργάτες (τιμές από το menu.json) ----------
+WA = "https://wa.me/306981319000"
+EXPERIENCE_EL = "Ο Αλέξανδρος Λιακόπουλος δουλεύει στο κομμωτήριο της οικογένειας στο Θησείο και δούλεψε στο κεντρικό κομμωτήριο Rob Peetoom στο Άμστερνταμ (2011–2013), την ομάδα που κάνει τα μαλλιά σε fashion shows της Amsterdam Fashion Week."
+EXPERIENCE_EN = "Alexandros Liakopoulos works at his family’s salon in Thiseio and worked at Rob Peetoom’s flagship salon in Amsterdam (2011–2013), the team behind the hair at Amsterdam Fashion Week shows."
+
+
+def alt_head(el_path, en_path):
+    return (f'<link rel="alternate" hreflang="el" href="{SITE}{el_path}">'
+            f'<link rel="alternate" hreflang="en" href="{SITE}{en_path}">'
+            f'<link rel="alternate" hreflang="x-default" href="{SITE}{en_path}">')
+
+
+def b2b_page(path, crumb, title, desc, eyebrow, h1, lead, facts, prose, keys, faqs, related, lang, service_type, head=""):
+    en = lang == "en"
+    cards = "".join((svc_html_en if en else svc_html)(k) for k in keys)
+    items = "".join(f"<details><summary>{esc(q)}</summary><p>{esc(a)}</p></details>" for q, a in faqs)
+    faq_ld = {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
+        {"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": a}} for q, a in faqs]}
+    facts_html = "".join(f"<li>{esc(f)}</li>" for f in facts)
+    rel = "".join(f'<a href="{h}">{esc(t)}</a>' for t, h in related)
+    t = (lambda a, b: b if en else a)
+    body = f"""
+<section class="hero">
+  <span class="eyebrow">{esc(eyebrow)}</span>
+  <h1>{h1}</h1>
+  <p class="lead">{esc(lead)}</p>
+  <div class="cta"><a class="btn gold" href="{WA}" target="_blank" rel="noopener">{t("Μήνυμα στο WhatsApp", "Message us on WhatsApp")}</a><a class="btn ghost" href="tel:+306981319000">{t("Κλήση 698 131 9000", "Call +30 698 131 9000")}</a></div>
+  <ul class="facts">{facts_html}</ul>
+</section>
+{"<section class='block'><h2>" + t("Τιμές &amp; χρόνοι", "Prices &amp; times") + "</h2>" + cards + "<p class='cta' style='margin-top:20px'><a class='btn gold' href='/kratisi/'>" + t("Κλείσε online", "Book online") + "</a></p></section>" if keys else ""}
+<section class="block prose">{prose}</section>
+<section class="block"><h2>{t("Συχνές ερωτήσεις", "Questions")}</h2>{items}</section>
+<section class="block"><h2>{t("Δες επίσης", "See also")}</h2><p class="links">{rel}</p></section>
+"""
+    ld = {"@context": "https://schema.org", "@type": "Service", "name": crumb, "serviceType": service_type,
+          "areaServed": {"@type": "City", "name": "Athens" if en else "Αθήνα"}, "provider": SALON_REF, "url": f"{SITE}{path}"}
+    if keys:
+        ld["offers"] = offers_en(keys) if en else offers(keys)
+    page(path, title, desc, body, [ld, faq_ld, crumbs(crumb, path)], extra_head=head, lang=lang, bilingual=en)
+
+
+EV = "Χτένισμα για εκδήλωση"
+BD = "Χτένισμα με βούρτσα"
+PHOTO_KEYS = [EV, BD, "Κούρεμα & χτένισμα"]
+
+# /hair-stylist-photoshoot-athens/ (EN)
+b2b_page(
+    "/hair-stylist-photoshoot-athens/", "Hair stylist for photo shoots in Athens",
+    f"Hair Stylist for Photo Shoots in Athens, Thiseio | from €{P(EV)} | Alexandros Hair Salon",
+    f"Photo-ready hair in Thiseio, a short walk from Filopappou Hill and the Acropolis views: styling for portrait, couple and fashion shoots from €{P(EV)}. Half and full days on set for photographers and brands.",
+    "Hair for photo shoots · Thiseio, Athens",
+    "Photo-ready hair, <em>a short walk from the Acropolis views.</em>",
+    "Many photo shoots in Athens do not include hair. We style it in our salon in Thiseio, right before your session, and you walk to Filopappou Hill, Apostolou Pavlou or the Ancient Agora. For photographers and brands we also work on set, by the half or full day.",
+    [f"Styling from €{P(EV)}", "5′ walk from Thiseio metro", "English spoken", "On-set work by the half or full day"],
+    f"""<h2>For your own photo shoot</h2>
+<p>Book <strong>Special Occasion Styling</strong> for curls, waves or an up-do, or a <strong>Signature Blowdry</strong> for sleek or bouncy hair. Please come with clean, dry hair and a photo of the look you like. We plan the time with your photographer so the hair is fresh for the first frame.</p>
+<h2>For photographers, brands and productions</h2>
+<p>We work on lookbooks, editorials, e-commerce and campaigns, in the salon or on set, by the half or full day, with a clear quote before the shoot. Ask us for a quote on WhatsApp or by phone.</p>
+<h2>Who does the work</h2>
+<p>{esc(EXPERIENCE_EN)}</p>""",
+    PHOTO_KEYS,
+    [("Is hair included in my photo shoot?", "Usually not: most photographers in Athens work without a hair stylist. Book styling with us before your session; the salon is a short walk from the most photographed spots around the Acropolis."),
+     ("How long does it take?", f"Special Occasion Styling takes about 45 minutes and costs €{P(EV)}. A Signature Blowdry takes about 30 minutes and costs €{P(BD)}."),
+     ("Can you come to the set or to my hotel?", "Yes, by arrangement. For productions we quote by the half or full day. Message us with the date, place and number of looks."),
+     ("Do you speak English?", "Yes. Message us on WhatsApp or Viber at +30 698 131 9000."),
+     ("Where is the salon?", "Erisichthonos 3-5, Thiseio, central Athens, about 5 minutes on foot from Thiseio metro station.")],
+    [("Greek version", "/xtenisma-fotografisi-athina/"), ("Hair for hotel guests", "/hotel-hair-stylist-athens/"), ("Elopement & wedding hair", "/elopement-hair-athens/"), ("For partners", "/partners/")],
+    "en", "Hair styling for photography",
+    head=alt_head("/xtenisma-fotografisi-athina/", "/hair-stylist-photoshoot-athens/"),
+)
+
+# /xtenisma-fotografisi-athina/ (EL)
+b2b_page(
+    "/xtenisma-fotografisi-athina/", "Χτένισμα για φωτογράφιση στην Αθήνα",
+    f"Κομμωτής για Φωτογράφιση Αθήνα – Θησείο | από €{P(EV)} | Alexandros Hair Salon",
+    f"Χτένισμα για φωτογράφιση στο Θησείο από €{P(EV)}. Κομμωτής για lookbook, editorial, e-shop και διαφημιστικές φωτογραφίσεις, στο κομμωτήριο ή στο σετ, με μισή ή πλήρη ημέρα.",
+    "Μαλλιά για φωτογράφιση · Θησείο, Αθήνα",
+    "Χτένισμα για φωτογράφιση, <em>στο κομμωτήριο ή στο σετ.</em>",
+    "Για προσωπικές, επαγγελματικές και φωτογραφίσεις μόδας. Ετοιμάζουμε τα μαλλιά στο κομμωτήριο στο Θησείο, λίγα λεπτά από τον Φιλοπάππου και την Αποστόλου Παύλου, ή ερχόμαστε στο σετ για μισή ή πλήρη ημέρα.",
+    [f"Χτένισμα από €{P(EV)}", "Θησείο, 5′ από το μετρό", "Στο σετ με μισή ή πλήρη ημέρα", "Γραπτή προσφορά πριν τη φωτογράφιση"],
+    f"""<h2>Για τη δική σου φωτογράφιση</h2>
+<p>Κλείσε <strong>Χτένισμα για εκδήλωση</strong> για μπούκλες, κυματισμούς ή πιάσιμο, ή <strong>Χτένισμα με βούρτσα</strong> για ίσιο και λείο ή με όγκο. Καλό είναι να έρθεις με λουσμένα, στεγνά μαλλιά και μια φωτογραφία με αυτό που σου αρέσει. Κανονίζουμε την ώρα μαζί με τον φωτογράφο, ώστε τα μαλλιά να είναι φρέσκα στο πρώτο κάδρο.</p>
+<h2>Για φωτογράφους, brands και παραγωγές</h2>
+<p>Lookbooks, editorial, φωτογραφίες προϊόντων για e-shop, διαφημιστικές καμπάνιες. Στο κομμωτήριο ή στο σετ, με μισή ή πλήρη ημέρα και γραπτή προσφορά πριν τη φωτογράφιση. Στείλε μας ημερομηνία, χώρο και αριθμό looks στο WhatsApp.</p>
+<h2>Ποιος κάνει τη δουλειά</h2>
+<p>{esc(EXPERIENCE_EL)}</p>""",
+    PHOTO_KEYS,
+    [("Πόσο κοστίζει το χτένισμα για φωτογράφιση;", f"Το Χτένισμα για εκδήλωση κοστίζει €{P(EV)} και διαρκεί περίπου 45 λεπτά. Το Χτένισμα με βούρτσα €{P(BD)}, περίπου 30 λεπτά."),
+     ("Έρχεστε στο σετ;", "Ναι, κατόπιν συνεννόησης. Για παραγωγές δίνουμε γραπτή προσφορά για μισή ή πλήρη ημέρα, ανάλογα με τα looks και τον χώρο."),
+     ("Πώς κλείνω για μια παραγωγή;", "Με μήνυμα στο WhatsApp ή στο Viber στο 698 131 9000, με ημερομηνία, χώρο, ώρες και αριθμό μοντέλων."),
+     ("Πού βρίσκεστε;", "Ερυσίχθονος 3-5 στο Θησείο, περίπου 5 λεπτά με τα πόδια από τον σταθμό Θησείο.")],
+    [("English version", "/hair-stylist-photoshoot-athens/"), ("Για συνεργάτες", "/synergasies/"), ("Κούρεμα στην Αθήνα", "/kourema-athina/"), ("Όλες οι τιμές", "/services")],
+    "el", "Χτένισμα για φωτογράφιση",
+    head=alt_head("/xtenisma-fotografisi-athina/", "/hair-stylist-photoshoot-athens/"),
+)
+
+# /hotel-hair-stylist-athens/ (EN)
+b2b_page(
+    "/hotel-hair-stylist-athens/", "Hair salon for hotel guests in Athens",
+    f"Hair Salon near the Acropolis for Hotel Guests | Blowdry €{P(BD)} | Alexandros Hair Salon",
+    f"Staying near the Acropolis, Thiseio or Monastiraki? Blowdry €{P(BD)}, occasion styling €{P(EV)}, haircut and colour in Thiseio, often the same day. English spoken. Book online or on WhatsApp.",
+    "For hotel guests · Thiseio, near the Acropolis",
+    "Your hair done before dinner, <em>a short walk from your hotel.</em>",
+    "A blowdry before a dinner, an up-do for a wedding, a haircut on a long trip. Our salon in Thiseio is a few minutes from the hotels around the Acropolis, Thiseio, Psyrri and Monastiraki, and we often have free time the same day.",
+    [f"Blowdry €{P(BD)}", "Often same-day", "English spoken", "In-room styling by arrangement"],
+    """<h2>How to book</h2>
+<p>See free times and book online, or message us on WhatsApp with the time you need. If you are staying in a hotel nearby, the front desk can call us at +30 210 346 5554.</p>
+<h2>Styling in your room</h2>
+<p>For weddings and special occasions we can come to your hotel in Thiseio and the centre of Athens, by arrangement. Message us with the date, the hotel and the number of people.</p>""",
+    [BD, EV, "Κούρεμα & χτένισμα", "Νυφικό χτένισμα"],
+    [("Can I book for today?", "Often yes. See live free slots in online booking, or message us on WhatsApp."),
+     ("How far is the salon from my hotel?", "Erisichthonos 3-5, Thiseio: about 5 minutes on foot from Thiseio metro and a short walk from Monastiraki, Psyrri and the Acropolis area."),
+     ("Do you come to hotels?", "For weddings and special occasions, yes, by arrangement. Message us with the date, the hotel and the number of people."),
+     ("How do I pay?", "Online when you book, or at the salon. Prices are the same online and at the salon.")],
+    [("Hair for photo shoots", "/hair-stylist-photoshoot-athens/"), ("Hair salon in Athens", "/hair-salon-athens/"), ("Book online", "/kratisi/")],
+    "en", "Hair salon",
+)
+
+# /elopement-hair-athens/ (EN)
+TRIAL = "Νυφικό δοκιμαστικό"
+BRIDE = "Νυφικό χτένισμα"
+b2b_page(
+    "/elopement-hair-athens/", "Elopement and wedding hair in Athens",
+    f"Elopement & Wedding Hair in Athens | Bridal Hair €{P(BRIDE)} | Alexandros Hair Salon",
+    f"Bridal hair for weddings and elopements in Athens: trial €{P(TRIAL)}, bridal hair €{P(BRIDE)} in our Thiseio salon, near Filopappou Hill and the Acropolis views, or on location by arrangement.",
+    "Weddings & elopements · Athens",
+    "Bridal hair in Athens, <em>near the Acropolis views.</em>",
+    "For couples who marry or elope in Athens. We try your bridal hair together, keep notes, and on the day we style it in our salon in Thiseio, a short walk from Filopappou Hill, or at your hotel or venue.",
+    [f"Trial €{P(TRIAL)}", f"Bridal hair €{P(BRIDE)}", "Outside the salon: +€40", "English spoken"],
+    """<h2>How it works</h2>
+<p>First the <strong>bridal trial</strong>: we try the hairstyle together, with your veil and accessories, and keep notes. On the day, the <strong>bridal hair</strong> is done as trialled, in the salon or on location. Photographers and planners can contact us directly to plan the timing.</p>""",
+    [TRIAL, BRIDE],
+    [("Do I need a trial?", "Yes. The bridal hair is booked only after a trial, so the day runs on time and as you imagined it."),
+     ("Can you come to our hotel or venue?", "Yes, in Athens, by arrangement. The bridal hair outside the salon costs €40 more."),
+     ("How do we book?", "Message us on WhatsApp or Viber at +30 698 131 9000 with the date and the place. Bridal services are not booked online.")],
+    [("Hair for photo shoots", "/hair-stylist-photoshoot-athens/"), ("For planners & photographers", "/partners/"), ("Hair salon in Athens", "/hair-salon-athens/")],
+    "en", "Bridal hair styling",
+)
+
+# /synergasies/ (EL) και /partners/ (EN): συνεργασίες + έτοιμο κείμενο credit για backlink
+CREDIT = {
+    "el": [("Σε φωτογραφίες, άρθρα και site", '<a href="https://alexandroshairsalon.gr/">Μαλλιά: Alexandros Hair Salon, Θησείο</a>'),
+           ("Σε σελίδα ξενοδοχείου ή οδηγό επισκεπτών", '<a href="https://alexandroshairsalon.gr/hotel-hair-stylist-athens/">Alexandros Hair Salon – κομμωτήριο στο Θησείο</a>'),
+           ("Σε φωτογράφιση γάμου", '<a href="https://alexandroshairsalon.gr/elopement-hair-athens/">Hair: Alexandros Hair Salon, Athens</a>')],
+    "en": [("Photos, articles and websites", '<a href="https://alexandroshairsalon.gr/">Hair: Alexandros Hair Salon, Athens</a>'),
+           ("Hotel pages and guest guides", '<a href="https://alexandroshairsalon.gr/hotel-hair-stylist-athens/">Alexandros Hair Salon – hair salon in Thiseio</a>'),
+           ("Wedding features", '<a href="https://alexandroshairsalon.gr/elopement-hair-athens/">Hair: Alexandros Hair Salon, Athens</a>')],
+}
+
+
+def partners_page(lang):
+    en = lang == "en"
+    path = "/partners/" if en else "/synergasies/"
+    t = (lambda a, b: b if en else a)
+    snippets = "".join(f'<h3 style="margin-top:18px">{esc(n)}</h3><pre style="white-space:pre-wrap;background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:12px;font-size:13px">{esc(code)}</pre>' for n, code in CREDIT[lang])
+    prose = f"""<h2>{t("Με ποιους δουλεύουμε", "Who we work with")}</h2>
+<p>{t("Φωτογράφους, ξενοδοχεία και καταλύματα, wedding planners, brands ρούχων, πρακτορεία μοντέλων και σχολές μόδας και φωτογραφίας.", "Photographers, hotels and short-stay hosts, wedding planners, fashion brands, model agencies, and fashion and photography schools.")}</p>
+<h2>{t("Τι προσφέρουμε", "What we offer")}</h2>
+<p>{t(f"Χτένισμα για φωτογράφιση στο κομμωτήριο από €{P(EV)}, για τους πελάτες σας στη δημόσια τιμή του τιμοκαταλόγου. Μαλλιά στο σετ με μισή ή πλήρη ημέρα, με γραπτή προσφορά πριν τη δουλειά. Νυφικό χτένισμα στο κομμωτήριο ή σε ξενοδοχείο.", f"Photo-ready styling in the salon from €{P(EV)}, at our public price for your clients. Hair on set by the half or full day, with a written quote before the job. Bridal hair in the salon or at the hotel.")}</p>
+<p>{esc(EXPERIENCE_EN if en else EXPERIENCE_EL)}</p>
+<h2>{t("Αν δείξετε τη δουλειά μας", "If you show our work")}</h2>
+<p>{t("Αντιγράψτε όποιο από τα παρακάτω ταιριάζει στη σελίδα σας. Στο Instagram αρκεί ένα tag στον λογαριασμό του κομμωτηρίου. Θα δείξουμε κι εμείς τη δική σας δουλειά, με σύνδεσμο προς εσάς.", "Copy whichever line fits your page. On Instagram, a tag to the salon’s account is enough. We show your work too, with a link back to you.")}</p>
+{snippets}
+<h2>{t("Επικοινωνία", "Contact")}</h2>
+<p>{t("WhatsApp ή Viber: 698 131 9000 · Κομμωτήριο: 210 346 5554 · Ερυσίχθονος 3-5, Θησείο.", "WhatsApp or Viber: +30 698 131 9000 · Salon: +30 210 346 5554 · Erisichthonos 3-5, Thiseio, Athens.")}</p>"""
+    faqs = [(t("Πληρώνετε προμήθεια για συστάσεις;", "Do you pay a referral commission?"),
+             t("Όχι χρηματική. Ανταποδίδουμε με προβολή: σύνδεσμο, αναφορά και φωτογραφίες της δουλειάς σας.", "No cash commission. We return the favour with exposure: a link, a mention and photos of your work.")),
+            (t("Πώς ζητάμε προσφορά για παραγωγή;", "How do we ask for a quote?"),
+             t("Στείλτε στο WhatsApp ημερομηνία, χώρο, ώρες και αριθμό looks. Απαντάμε με γραπτή προσφορά.", "Send the date, place, hours and number of looks on WhatsApp. We reply with a written quote."))]
+    b2b_page(path, t("Συνεργασίες", "Partners"),
+             t("Συνεργασίες με φωτογράφους, ξενοδοχεία & brands | Alexandros Hair Salon", "Partners: photographers, hotels & brands | Alexandros Hair Salon"),
+             t("Κομμωτής για φωτογράφους, ξενοδοχεία, wedding planners και brands στο Θησείο, Αθήνα: χτένισμα, μαλλιά στο σετ, νυφικά. Όροι συνεργασίας και έτοιμο κείμενο credit.",
+               "Hair for photographers, hotels, wedding planners and brands in Thiseio, Athens: styling, on-set hair, bridal. How we work together and a ready-made credit line."),
+             t("Συνεργασίες · Θησείο, Αθήνα", "Partners · Thiseio, Athens"),
+             t("Συνεργασίες, <em>με απλούς όρους.</em>", "Working together, <em>on simple terms.</em>"),
+             t("Για όσους φέρνουν πελάτες ή χρειάζονται μαλλιά για τη δουλειά τους: φωτογράφους, ξενοδοχεία, wedding planners και brands.", "For those who send us clients or need hair for their work: photographers, hotels, wedding planners and brands."),
+             [t("Δημόσια τιμή για τους πελάτες σας", "Public price for your clients"), t("Γραπτή προσφορά για παραγωγές", "Written quotes for productions"), t("Θησείο, 5′ από το μετρό", "5′ from Thiseio metro")],
+             prose, [], faqs,
+             [(t("Χτένισμα για φωτογράφιση", "Hair for photo shoots"), "/xtenisma-fotografisi-athina/" if not en else "/hair-stylist-photoshoot-athens/"),
+              (t("English version", "Ελληνικά"), "/partners/" if not en else "/synergasies/")],
+             lang, t("Συνεργασίες κομμωτηρίου", "Salon partnerships"), head=alt_head("/synergasies/", "/partners/"))
+
+
+partners_page("el")
+partners_page("en")
 
 
 page("/kratisi/", "Κράτηση ραντεβού online | Alexandros Hair Salon – Κομμωτήριο Θησείο",

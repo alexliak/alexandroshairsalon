@@ -53,7 +53,7 @@ const content = {
     brandsRows: [
       ['Ρίζα', 'Majirel, INOA χωρίς αμμωνία ή Redken'],
       ['Μήκη', 'ρεφλέ χωρίς αμμωνία: Dia Color, Dia Light, Shades EQ'],
-      ['Ξάνοιγμα', 'ντεκαπάζ με ενσωματωμένο bonder ή, όπου γίνεται, χωρίς ντεκαπάζ']
+      ['Ξάνοιγμα', 'ντεκαπάζ L’Oréal Blond Studio ή, όπου γίνεται, χωρίς ντεκαπάζ']
     ],
     brandsText: 'Εκπαιδευόμαστε συνεχώς στις νέες τεχνικές τους.',
     brandsCta: 'Κλείσε χρώμα',
@@ -123,7 +123,7 @@ const content = {
     brandsRows: [
       ['Roots', 'Majirel, ammonia-free INOA or Redken'],
       ['Lengths', 'ammonia-free gloss: Dia Color, Dia Light, Shades EQ'],
-      ['Lightening', 'lightener with built-in bonder or, where possible, no bleach at all']
+      ['Lightening', 'L’Oréal Blond Studio lightener or, where possible, no bleach at all']
     ],
     brandsText: 'We train continuously in their latest techniques.',
     brandsCta: 'Book colour',
