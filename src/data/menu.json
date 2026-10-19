@@ -189,7 +189,7 @@
         },
         "note": {
           "el": "Για σβήσιμο (fade): «Ανδρικό κούρεμα». Για φρεσκάρισμα στα πλαϊνά και στον αυχένα: «Πλαϊνά & αυχένας» (κλείνεται τηλεφωνικά).",
-          "en": "For a fade: Gentlemen’s Haircut. For a tidy-up of the sides and neckline: Sides & Back (by phone)."
+          "en": "For a fade: Gentlemen’s Haircut. For a tidy-up of the sides and neckline: Sides & Neckline (by phone)."
         },
         "online": true,
         "options": [
@@ -237,7 +237,7 @@
       {
         "name": {
           "el": "Πλαϊνά & αυχένας",
-          "en": "Sides & Back"
+          "en": "Sides & Neckline"
         },
         "desc": {
           "el": "Φρεσκάρισμα στα πλαϊνά και στον αυχένα, ανάμεσα στα κουρέματα.",
