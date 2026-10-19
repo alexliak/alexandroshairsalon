@@ -25,7 +25,7 @@ const content = {
       'Τρεις δεκαετίες σε κούρεμα, χρώμα και χτένισμα, με L’Oréal Professionnel και Redken. Διάλεξε υπηρεσία, δες τιμή και ώρα, κλείσε σε ένα λεπτό.',
     bookOnline: 'Κλείσε online',
     seePrices: 'Δες τιμές',
-    reassure: ['Πληρωμή online ή στο κομμωτήριο', 'Δωρεάν τεστ ευαισθησίας'],
+    reassure: ['Πληρωμή online ή στο κομμωτήριο', 'Online κράτηση 24/7'],
     artCaption: 'Θησείο · Αθήνα',
     stats: [
       { big: '4,6 ★', small: 'βαθμολογία στο Google · δες κριτικές', go: 'reviews' },
@@ -95,7 +95,7 @@ const content = {
       'Three decades of cutting, colour and styling, with L’Oréal Professionnel and Redken. Pick a service, see price and time, book in a minute.',
     bookOnline: 'Book online',
     seePrices: 'See prices',
-    reassure: ['Pay online or at the salon', 'Free sensitivity test'],
+    reassure: ['Pay online or at the salon', 'Book online 24/7'],
     artCaption: 'Thiseio · Athens',
     stats: [
       { big: '4.6 ★', small: 'rating on Google · read reviews', go: 'reviews' },
