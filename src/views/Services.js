@@ -21,7 +21,8 @@ const text = {
     notes: [
       'Κάθε βαφή περιλαμβάνει συγκεκριμένη ποσότητα. Αν χρειαστεί περισσότερο χρώμα, το «+ Επιπλέον χρώμα ανά 30 g» (' + priceText('el', '+ Επιπλέον χρώμα') + ') το συμφωνούμε πριν την εφαρμογή.',
       'Στις ανταύγειες και στο μπαλαγιάζ, για μαλλιά κάτω από τους ώμους υπάρχει το «+ Μακριά μαλλιά» (' + priceText('el', '+ Μακριά μαλλιά (ανταύγειες / μπαλαγιάζ)') + ').',
-      'Έχεις extensions; Γράψ’ το στην κράτηση για να κρατήσουμε τον σωστό χρόνο.'
+      'Έχεις extensions; Γράψ’ το στην κράτηση για να κρατήσουμε τον σωστό χρόνο.',
+      'Σύντομα: πρόγραμμα μέλους για τακτικές πελάτισσες στη βαφή ρίζας, στις ανταύγειες και στο κούρεμα.'
     ],
     jump: 'Κατηγορίες'
   },
@@ -41,7 +42,8 @@ const text = {
     notes: [
       'Every colour includes a set amount of product. If more is needed, Extra Colour per 30 g (' + priceText('en', '+ Επιπλέον χρώμα') + ') is agreed before we apply it.',
       'For highlights and balayage on hair below the shoulders there is the Long Hair add-on (' + priceText('en', '+ Μακριά μαλλιά (ανταύγειες / μπαλαγιάζ)') + ').',
-      'Wearing extensions? Mention it when you book so we reserve the right time.'
+      'Wearing extensions? Mention it when you book so we reserve the right time.',
+      'Coming soon: a membership for regular clients for root colour, highlights and haircuts.'
     ],
     jump: 'Categories'
   }
