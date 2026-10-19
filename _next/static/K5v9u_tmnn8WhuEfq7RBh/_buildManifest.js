@@ -27,7 +27,7 @@ self.__BUILD_MANIFEST = {
     "static/chunks/2g2czc6_bgrcp.js"
   ],
   "/services": [
-    "static/chunks/2ueb8dflshbe6.js"
+    "static/chunks/3d4yabugza143.js"
   ],
   "/shop": [
     "static/chunks/3ifr7_1jucjj_.js"
