@@ -126,6 +126,8 @@ const layoutText = {
       ['Hair salon in Athens (English)', '/hair-salon-athens/'],
       ['Δωρεάν κούρεμα ως μοντέλο', '/dorean-kourema-athina/'],
       ['Βαφή & balayage για μοντέλα', '/montelo-vafi-balayage-athina/'],
+      ['Χτένισμα για φωτογράφιση', '/xtenisma-fotografisi-athina/'],
+      ['Συνεργασίες', '/synergasies/'],
       ['Φωτογραφίες του κομμωτηρίου', '/fotografies'],
       ['Κράτηση online', '/kratisi/']
     ]
@@ -172,6 +174,10 @@ const layoutText = {
       ['Balayage in Athens', '/balayage-athina/'],
       ['Hair salon in Athens, open when others are closed', '/hair-salon-athens/'],
       ['Free haircut as a hair model', '/hair-model-athens/'],
+      ['Hair for photo shoots in Athens', '/hair-stylist-photoshoot-athens/'],
+      ['Hair salon for hotel guests', '/hotel-hair-stylist-athens/'],
+      ['Elopement & wedding hair', '/elopement-hair-athens/'],
+      ['Partners', '/partners/'],
       ['Photos of the salon', '/fotografies'],
       ['Book online', '/kratisi/']
     ]
