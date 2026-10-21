@@ -194,7 +194,7 @@ def offers(keys):
     return [{k: v for k, v in o.items() if v is not None} for o in out]
 
 
-# ---------- Κουμπί «Αποστολή σε φίλη» (ίδιο με src/components/ShareButton.js, χωρίς εξωτερικά scripts) ----------
+# ---------- Κουμπί «Αποστολή σε φίλο ή φίλη» (ίδιο με src/components/ShareButton.js, χωρίς εξωτερικά scripts) ----------
 SHARE_CSS = """
 .share{position:relative;display:inline-block}
 .share>button{display:inline-flex;align-items:center;gap:10px;cursor:pointer;font:700 16px var(--sans)}
@@ -547,7 +547,7 @@ kratisi_ld = [{"@context": "https://schema.org", **{k: v for k, v in SALON_REF.i
                "potentialAction": {"@type": "ReserveAction", "target": f"{SITE}/kratisi/"}}]
 # ---------- Σελίδες για μοντέλα μαλλιών: φέρνουν αναζητήσεις «δωρεάν κούρεμα / βαφή» στη φόρμα /montela ----------
 MODELS_FORM = "/montela#dilosi"
-MODEL_OG = f"{SITE}/images/og-montela.jpg"
+MODEL_OG = f"{SITE}/images/og-montela-2.jpg"
 
 
 def model_page(path, crumb, title, desc, eyebrow, h1, lead, facts, prose, faqs, related, cta, lang="el", faq_title="Συχνές ερωτήσεις", related_title="Δες επίσης", share=""):
@@ -577,29 +577,29 @@ def model_page(path, crumb, title, desc, eyebrow, h1, lead, facts, prose, faqs, 
 
 MODEL_FACTS = ["Κούρεμα & χτένισμα δωρεάν", "Χρώμα μόνο με το κόστος των υλικών", "Φυσικό, κλασικό ή ελαφρώς μοντέρνο", "Θησείο, 5′ από το μετρό"]
 MODEL_FAQ_COMMON = [
-    ("Θα φαίνεται το πρόσωπό μου στις φωτογραφίες;", "Το διαλέγεις εσύ: με το πρόσωπό σου ή μόνο τα μαλλιά. Με πρόσωπο έχεις προτεραιότητα στα ραντεβού. Βλέπεις πρώτη τις φωτογραφίες και υπογράφεις συγκατάθεση πριν από τη φωτογράφιση."),
+    ("Θα φαίνεται το πρόσωπό μου στις φωτογραφίες;", "Το διαλέγεις εσύ: με το πρόσωπό σου ή μόνο τα μαλλιά. Με πρόσωπο έχεις προτεραιότητα στα ραντεβού. Βλέπεις πρώτα εσύ τις φωτογραφίες και υπογράφεις συγκατάθεση πριν από τη φωτογράφιση."),
     ("Ποιος κάνει τη δουλειά;", "Οι έμπειροι κομμωτές του κομμωτηρίου, που δουλεύει στο Θησείο από το 1992, με L’Oréal Professionnel και Redken. Όχι μαθητευόμενοι."),
     ("Πώς δηλώνω συμμετοχή;", "Συμπληρώνεις τη φόρμα ενός λεπτού στο alexandroshairsalon.gr/montela. Όταν προγραμματίσουμε τεχνική που ταιριάζει στα μαλλιά σου, σου στέλνουμε μήνυμα για ραντεβού."),
-    ("Υπάρχει όριο ηλικίας;", "Δεχόμαστε από 18 ετών και άνω, κυρίως γυναίκες κάθε ηλικίας. Τα λευκά μαλλιά, τα πολύ μακριά ή τα σγουρά είναι ευπρόσδεκτα: χρειαζόμαστε ποικιλία."),
+    ("Υπάρχει όριο ηλικίας;", "Δεχόμαστε από 18 ετών και άνω, γυναίκες και άνδρες κάθε ηλικίας· οι άνδρες κυρίως για κούρεμα και styling. Τα λευκά μαλλιά, τα πολύ μακριά ή τα σγουρά είναι ευπρόσδεκτα: χρειαζόμαστε ποικιλία."),
 ]
 
 model_page(
     "/dorean-kourema-athina/", "Δωρεάν κούρεμα στην Αθήνα",
     "Δωρεάν κούρεμα στην Αθήνα – Γίνε μοντέλο μαλλιών στο Θησείο | Alexandros Hair Salon",
-    "Δωρεάν γυναικείο κούρεμα και χτένισμα στην Αθήνα, ως μοντέλο μαλλιών στο Θησείο. Φυσικό, κλασικό ή ελαφρώς μοντέρνο αποτέλεσμα από έμπειρους κομμωτές. Φόρμα 1 λεπτού.",
+    "Δωρεάν κούρεμα και χτένισμα για γυναίκες και άνδρες στην Αθήνα, ως μοντέλο μαλλιών στο Θησείο. Φυσικό, κλασικό ή ελαφρώς μοντέρνο αποτέλεσμα από έμπειρους κομμωτές. Φόρμα 1 λεπτού.",
     "Μοντέλα μαλλιών · Θησείο, κέντρο Αθήνας",
     "Δωρεάν κούρεμα στην Αθήνα, <em>ως μοντέλο μαλλιών.</em>",
-    "Ψάχνουμε γυναίκες κάθε ηλικίας για κούρεμα και χτένισμα δωρεάν, σε αντάλλαγμα για φωτογραφίες του νέου look. Δουλεύουν οι έμπειροι κομμωτές του κομμωτηρίου, με αποτέλεσμα που στέκεται στην καθημερινότητά σου.",
+    "Ψάχνουμε γυναίκες και άνδρες κάθε ηλικίας για κούρεμα και χτένισμα δωρεάν, σε αντάλλαγμα για φωτογραφίες του νέου look. Δουλεύουν οι έμπειροι κομμωτές του κομμωτηρίου, με αποτέλεσμα που στέκεται στην καθημερινότητά σου.",
     MODEL_FACTS,
     """<h2>Τι περιλαμβάνει το δωρεάν κούρεμα</h2>
 <p>Συζήτηση για το πρόσωπο, τα χαρακτηριστικά και την υφή των μαλλιών σου, λούσιμο, κούρεμα και χτένισμα με πιστολάκι, και φωτογράφιση στο τέλος. Υπολόγισε περίπου μία ώρα.</p>
-<p>Κουρεύουμε pixie, bob και lob, butterfly, curtain bangs, φιλάρισμα για όγκο, καθαρό φρεσκάρισμα. Ό,τι κάνουμε το συμφωνούμε πριν ξεκινήσουμε· αν κάτι δεν σου ταιριάζει, θα σου το πούμε.</p>
+<p>Στα γυναικεία κουρεύουμε pixie, bob και lob, butterfly, curtain bangs, φιλάρισμα για όγκο, καθαρό φρεσκάρισμα. Στα ανδρικά, κλασικά και μοντέρνα κουρέματα με ψαλίδι και μηχανή, με styling για τη φωτογράφιση. Ό,τι κάνουμε το συμφωνούμε πριν ξεκινήσουμε· αν κάτι δεν σου ταιριάζει, θα σου το πούμε.</p>
 <h2>Γιατί δωρεάν;</h2>
 <p>Δοκιμάζουμε νέες τεχνικές και χρειαζόμαστε φωτογραφίες της δουλειάς μας για το site και τα social. Εσύ παίρνεις ένα επαγγελματικό κούρεμα, εμείς τις φωτογραφίες.</p>""",
     MODEL_FAQ_COMMON,
     [("Βαφή & balayage σε τιμή υλικών", "/montelo-vafi-balayage-athina/"), ("Free haircut in Athens (English)", "/hair-model-athens/"), ("Κούρεμα στην Αθήνα", "/kourema-athina/")],
     "Δήλωσε συμμετοχή",
-    share=share_html("/dorean-kourema-athina/", "dorean-kourema-athina", "Δωρεάν κούρεμα ως μοντέλο μαλλιών στο Θησείο", "Το Alexandros Hair Salon στο Θησείο ψάχνει μοντέλα μαλλιών για δωρεάν κούρεμα και χτένισμα. Μήπως σε ενδιαφέρει;", "Αποστολή σε φίλη", "el")
+    share=share_html("/dorean-kourema-athina/", "dorean-kourema-athina", "Δωρεάν κούρεμα ως μοντέλο μαλλιών στο Θησείο", "Το Alexandros Hair Salon στο Θησείο ψάχνει μοντέλα μαλλιών για δωρεάν κούρεμα και χτένισμα. Μήπως σε ενδιαφέρει;", "Αποστολή σε φίλο ή φίλη", "el")
 )
 
 model_page(
@@ -619,7 +619,7 @@ model_page(
     [("Πόσο κοστίζει η βαφή ως μοντέλο;", "Μόνο ένα μικρό μέρος της κανονικής τιμής, για τα υλικά. Το ακριβές ποσό το ξέρεις πριν κλείσουμε ραντεβού.")] + MODEL_FAQ_COMMON,
     [("Δωρεάν κούρεμα ως μοντέλο", "/dorean-kourema-athina/"), ("Βαφή μαλλιών στην Αθήνα", "/vafi-mallion-athina/"), ("Balayage στην Αθήνα", "/balayage-athina/")],
     "Δήλωσε συμμετοχή",
-    share=share_html("/montelo-vafi-balayage-athina/", "montelo-vafi-balayage-athina", "Βαφή και balayage σε τιμή υλικών στο Θησείο", "Το Alexandros Hair Salon στο Θησείο ψάχνει μοντέλα για βαφή και balayage, μόνο με το κόστος των υλικών. Μήπως σε ενδιαφέρει;", "Αποστολή σε φίλη", "el")
+    share=share_html("/montelo-vafi-balayage-athina/", "montelo-vafi-balayage-athina", "Βαφή και balayage σε τιμή υλικών στο Θησείο", "Το Alexandros Hair Salon στο Θησείο ψάχνει μοντέλα για βαφή και balayage, μόνο με το κόστος των υλικών. Μήπως σε ενδιαφέρει;", "Αποστολή σε φίλο ή φίλη", "el")
 )
 
 model_page(
@@ -628,7 +628,7 @@ model_page(
     "Become a hair model in central Athens: free haircut and styling, colour and balayage at material cost, with L’Oréal Professionnel and Redken. Natural, classic or softly modern results. One-minute form.",
     "Hair models wanted · Thiseio, central Athens",
     "Free haircut in Athens, <em>as a hair model.</em>",
-    "We are looking for women of any age, including students and visitors living in Athens, for a free haircut and styling or colour at material cost, in exchange for photos of the result. The work is done by the salon’s experienced stylists, not trainees.",
+    "We are looking for women and men of any age (men mainly for haircuts and styling), including students and visitors living in Athens, for a free haircut and styling or colour at material cost, in exchange for photos of the result. The work is done by the salon’s experienced stylists, not trainees.",
     ["Free cut & styling", "Colour at material cost", "Natural, classic or softly modern", "5′ from Thiseio metro"],
     """<h2>What you get</h2>
 <p>A consultation, wash, haircut and blow-dry, about one hour, or a colour service such as root colour with gloss, no-bleach highlights or balayage, two to three hours. We agree on the result before we start, and it has to suit your everyday life.</p>
