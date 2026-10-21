@@ -17,7 +17,13 @@
   },
   "/douleia": {
     "title": "Ζητείται βοηθός κομμωτηρίου – Θησείο, Αθήνα | Alexandros Hair Salon",
-    "description": "Ζητείται βοηθός κομμωτηρίου στο Θησείο, Αθήνα. Σταθερή θέση με εκπαίδευση σε L’Oréal Professionnel & Redken· η εμπειρία δεν είναι απαραίτητη. Κάνε αίτηση online."
+    "description": "Ζητείται βοηθός κομμωτηρίου στο Θησείο, Αθήνα. Σταθερή θέση με εκπαίδευση σε L’Oréal Professionnel & Redken· η εμπειρία δεν είναι απαραίτητη. Κάνε αίτηση online.",
+    "image": {
+      "url": "https://alexandroshairsalon.gr/images/og-douleia.jpg",
+      "width": 1200,
+      "height": 630,
+      "type": "image/jpeg"
+    }
   },
   "/montela": {
     "title": "Μοντέλο για δωρεάν κούρεμα & βαφή μαλλιών στο Θησείο, Αθήνα | Alexandros Hair Salon",
