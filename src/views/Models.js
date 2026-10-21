@@ -15,10 +15,10 @@ const text = {
     eyebrow: 'Ζητούνται μοντέλα μαλλιών · Θησείο',
     title: 'Ψάχνουμε μοντέλα',
     titleEm: 'για κούρεμα και χρώμα.',
-    lead: 'Κούρεμα, βαφή, balayage ή ανταύγειες δωρεάν ή σε πολύ χαμηλή τιμή, στο Θησείο. Κυρίως γυναίκες, κάθε ηλικίας, χωρίς εμπειρία ως μοντέλο. Δουλεύουμε νέες τεχνικές και φωτογραφίζουμε το αποτέλεσμα για την εκπαίδευσή μας και για να δείξουμε τη δουλειά μας.',
+    lead: 'Κούρεμα, βαφή, balayage ή ανταύγειες δωρεάν ή σε πολύ χαμηλή τιμή, στο Θησείο. Γυναίκες και άνδρες κάθε ηλικίας, χωρίς εμπειρία ως μοντέλο· οι άνδρες κυρίως για κούρεμα και styling. Δουλεύουμε νέες τεχνικές και φωτογραφίζουμε το αποτέλεσμα για την εκπαίδευσή μας και για να δείξουμε τη δουλειά μας.',
     facts: ['Δωρεάν ή σε πολύ χαμηλή τιμή', 'Φυσικό, κλασικό ή ελαφρώς μοντέρνο αποτέλεσμα', 'Φόρμα ενός λεπτού', '5′ από το μετρό Θησείο'],
     cta: 'Δήλωσε συμμετοχή',
-    shareLabel: 'Αποστολή σε φίλη',
+    shareLabel: 'Αποστολή σε φίλο ή φίλη',
     shareTitle: 'Ζητούνται μοντέλα μαλλιών στο Θησείο',
     shareText: 'Το Alexandros Hair Salon στο Θησείο ψάχνει μοντέλα μαλλιών για κούρεμα και χρώμα, δωρεάν ή σε πολύ χαμηλή τιμή. Μήπως σε ενδιαφέρει;',
     barTop: 'Μοντέλο μαλλιών',
@@ -34,7 +34,7 @@ const text = {
     you: [
       'Κούρεμα ή χρώμα δωρεάν ή σε πολύ χαμηλότερη τιμή, ανάλογα με την τεχνική.',
       'Επαγγελματικές φωτογραφίες του νέου σου look.',
-      'Φωτογραφίες με το πρόσωπό σου ή μόνο τα μαλλιά: το διαλέγεις εσύ. Με πρόσωπο έχεις προτεραιότητα στα ραντεβού, και τις φωτογραφίες τις βλέπεις πρώτη.'
+      'Φωτογραφίες με το πρόσωπό σου ή μόνο τα μαλλιά: το διαλέγεις εσύ. Με πρόσωπο έχεις προτεραιότητα στα ραντεβού, και τις φωτογραφίες τις βλέπεις πρώτα εσύ.'
     ],
     formTitle: 'Δήλωσε συμμετοχή',
     formLead: 'Όταν προγραμματίσουμε τεχνική που ταιριάζει στα μαλλιά σου, θα σου στείλουμε μήνυμα.',
@@ -42,13 +42,15 @@ const text = {
     faq: [
       ['Είναι πραγματικά δωρεάν;', 'Κούρεμα και χτένισμα για φωτογράφιση είναι συνήθως δωρεάν. Στο χρώμα, στις ανταύγειες και στο balayage πληρώνεις συνήθως μόνο ένα μικρό μέρος της κανονικής τιμής, για τα υλικά. Το ποσό το ξέρεις πάντα πριν ξεκινήσουμε.'],
       ['Ποιος κάνει τη δουλειά;', 'Έμπειροι κομμωτές του κομμωτηρίου, που δουλεύουν από το 1992, με προϊόντα L’Oréal Professionnel και Redken.'],
-      ['Θα φαίνεται το πρόσωπό μου στις φωτογραφίες;', 'Το διαλέγεις εσύ: με το πρόσωπό σου ή μόνο τα μαλλιά. Με πρόσωπο έχεις προτεραιότητα στα ραντεβού, γιατί το κούρεμα και το χρώμα φαίνονται καλύτερα πάνω στο πρόσωπο. Σε κάθε περίπτωση βλέπεις πρώτη τις φωτογραφίες και υπογράφεις συγκατάθεση πριν από τη φωτογράφιση.'],
+      ['Θα φαίνεται το πρόσωπό μου στις φωτογραφίες;', 'Το διαλέγεις εσύ: με το πρόσωπό σου ή μόνο τα μαλλιά. Με πρόσωπο έχεις προτεραιότητα στα ραντεβού, γιατί το κούρεμα και το χρώμα φαίνονται καλύτερα πάνω στο πρόσωπο. Σε κάθε περίπτωση βλέπεις πρώτα εσύ τις φωτογραφίες και υπογράφεις συγκατάθεση πριν από τη φωτογράφιση.'],
       ['Πόση ώρα χρειάζεται;', 'Ένα κούρεμα με χτένισμα περίπου μία ώρα. Χρώμα ή balayage δύο έως τρεις ώρες, μαζί με τη φωτογράφιση.'],
       ['Πού είναι το κομμωτήριο;', 'Ερυσίχθονος 3-5, Θησείο, Αθήνα, πέντε λεπτά με τα πόδια από τον σταθμό του μετρό Θησείο.']
     ],
     name: 'Όνομα',
     email: 'Email',
     instagram: 'Instagram (προαιρετικά)',
+    gender: 'Είσαι',
+    genderOptions: ['Γυναίκα', 'Άνδρας'],
     ageGroup: 'Ηλικία',
     ageOptions: ['18–29', '30–44', '45–59', '60+'],
     length: 'Μήκος μαλλιών',
@@ -56,10 +58,10 @@ const text = {
     colour: 'Χρώμα μαλλιών σήμερα',
     colourOptions: ['Φυσικό, χωρίς βαφή', 'Βαμμένα', 'Με ανταύγειες ή ντεκαπάζ', 'Με χένα ή φυτική βαφή'],
     lastColour: 'Πότε βάφτηκαν τελευταία φορά; (αν ισχύει)',
-    open: 'Σε τι είσαι ανοιχτή;',
+    open: 'Τι σε ενδιαφέρει;',
     openOptions: ['Κούρεμα', 'Χρώμα', 'Ανταύγειες / balayage', 'Χτένισμα'],
     change: 'Πόση αλλαγή θέλεις;',
-    changeOptions: ['Μικρή, φρεσκάρισμα', 'Αισθητή αλλαγή', 'Είμαι ανοιχτή σε προτάσεις'],
+    changeOptions: ['Μικρή, φρεσκάρισμα', 'Αισθητή αλλαγή', 'Δέχομαι προτάσεις'],
     photos: 'Φωτογραφίες',
     photosOptions: ['Με το πρόσωπό μου (προτεραιότητα)', 'Μόνο τα μαλλιά, χωρίς πρόσωπο'],
     days: 'Ποιες μέρες σε βολεύουν;',
@@ -76,7 +78,7 @@ const text = {
     eyebrow: 'Hair models wanted · Thiseio',
     title: 'We are looking for models',
     titleEm: 'for cuts and colour.',
-    lead: 'A haircut, colour, balayage or highlights for free or at a very low price, in Thiseio, Athens. Mostly women, of any age, no modelling experience needed. We work on new techniques and photograph the result for our training and to show our work.',
+    lead: 'A haircut, colour, balayage or highlights for free or at a very low price, in Thiseio, Athens. Women and men of any age, no modelling experience needed; men mainly for haircuts and styling. We work on new techniques and photograph the result for our training and to show our work.',
     facts: ['Free or at a very low price', 'Natural, classic or softly modern results', 'One-minute form', '5′ from Thiseio metro'],
     cta: 'Sign up',
     shareLabel: 'Send to a friend',
@@ -110,6 +112,8 @@ const text = {
     name: 'Name',
     email: 'Email',
     instagram: 'Instagram (optional)',
+    gender: 'You are',
+    genderOptions: ['A woman', 'A man'],
     ageGroup: 'Age',
     ageOptions: ['18–29', '30–44', '45–59', '60+'],
     length: 'Hair length',
@@ -221,6 +225,7 @@ const Models = ({ language, setLanguage }) => {
                   <span>{t.email} *</span>
                   <input type="email" name="email" required autoComplete="email" />
                 </label>
+                <Pills label={t.gender} name="gender" options={t.genderOptions} required />
                 <Pills label={t.length} name="length" options={t.lengthOptions} required />
                 <Pills label={t.colour} name="colour" options={t.colourOptions} required />
                 <Pills label={t.open} name="open_to" options={t.openOptions} type="checkbox" />
