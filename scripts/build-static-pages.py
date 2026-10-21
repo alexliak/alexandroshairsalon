@@ -194,6 +194,56 @@ def offers(keys):
     return [{k: v for k, v in o.items() if v is not None} for o in out]
 
 
+# ---------- Κουμπί «Αποστολή σε φίλη» (ίδιο με src/components/ShareButton.js, χωρίς εξωτερικά scripts) ----------
+SHARE_CSS = """
+.share{position:relative;display:inline-block}
+.share>button{display:inline-flex;align-items:center;gap:10px;cursor:pointer;font:700 16px var(--sans)}
+.share>button svg,.share-menu svg{width:16px;height:16px}
+.share-menu{position:absolute;z-index:30;top:calc(100% + 8px);left:0;min-width:230px;display:flex;flex-direction:column;padding:6px;border-radius:16px;background:var(--panel);border:1px solid #5a5247;box-shadow:0 16px 40px rgba(0,0,0,.35)}
+.share-menu[hidden]{display:none}
+.share-menu a,.share-menu button{display:flex;align-items:center;gap:12px;min-height:44px;padding:0 14px;border-radius:10px;color:var(--text);text-decoration:none;font:500 15px var(--sans);background:none;border:0;cursor:pointer;text-align:left}
+.share-menu svg{color:var(--gold)}
+.share-menu a:hover,.share-menu button:hover{background:var(--bg);color:var(--gold)}
+html[data-theme=light] .share-menu{border-color:#c4b6a0;box-shadow:0 16px 40px rgba(70,52,20,.16)}
+@media (max-width:760px){.share{display:block;flex:1 1 100%}.share>button{width:100%;justify-content:center}.share-menu{right:0}}
+"""
+SHARE_JS = """<script>
+(function(){document.querySelectorAll('[data-share]').forEach(function(box){
+var b=box.querySelector('button'),m=box.querySelector('.share-menu'),c=box.querySelector('[data-copy]'),d=box.dataset;
+function track(k){try{if(window.gtag)gtag('event','share',{method:k,content_type:'page',item_id:d.campaign});}catch(e){}}
+var native=!!navigator.share&&window.matchMedia&&matchMedia('(hover: none) and (pointer: coarse)').matches;
+b.addEventListener('click',function(e){e.stopPropagation();
+ if(native){navigator.share({title:d.title,text:d.text,url:d.url}).then(function(){track('native');},function(err){if(err&&err.name!=='AbortError'){m.hidden=false;}});return;}
+ m.hidden=!m.hidden;b.setAttribute('aria-expanded',!m.hidden);});
+document.addEventListener('click',function(e){if(!box.contains(e.target)){m.hidden=true;b.setAttribute('aria-expanded','false');}});
+document.addEventListener('keydown',function(e){if(e.key==='Escape'){m.hidden=true;b.setAttribute('aria-expanded','false');}});
+m.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){track(a.dataset.k);});});
+c.addEventListener('click',function(){var done=function(){var t=c.querySelector('span:last-child');var o=t.textContent;t.textContent=c.dataset.done;track('copy');setTimeout(function(){t.textContent=o;},2500);};
+ if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(d.url).then(done,function(){window.prompt('',d.url);});}else{window.prompt('',d.url);}});
+});})();
+</script>"""
+_SHARE_ICON = ICONS['FaShareAlt']
+_MAIL_ICON = ICONS['FaEnvelope']
+_LINK_ICON = ICONS['FaLink']
+
+
+def share_html(path, campaign, title, text, label, lang="el"):
+    """Κουμπί κοινοποίησης για στατική σελίδα. Ο σύνδεσμος έχει UTM για το Analytics."""
+    url = f"{SITE}{path}?utm_source=share&utm_medium=referral&utm_campaign={campaign}"
+    msg = _up.quote(f"{text} {url}")
+    en = lang == "en"
+    items = [("whatsapp", "WhatsApp", ICONS["FaWhatsapp"], f"https://wa.me/?text={msg}", True),
+             ("viber", "Viber", ICONS["FaViber"], f"viber://forward?text={msg}", False),
+             ("facebook", "Facebook", ICONS["FaFacebookF"], f"https://www.facebook.com/sharer/sharer.php?u={_up.quote(url, safe='')}", True),
+             ("email", "Email", _MAIL_ICON, f"mailto:?subject={_up.quote(title)}&body={msg}", False)]
+    links = "".join(f'<a data-k="{k}" href="{esc(h)}"{" target=\"_blank\" rel=\"noopener noreferrer\"" if blank else ""}>{ic}<span>{n}</span></a>' for k, n, ic, h, blank in items)
+    copy_t, done_t = ("Copy link", "Link copied") if en else ("Αντιγραφή συνδέσμου", "Ο σύνδεσμος αντιγράφηκε")
+    return (f'<div class="share" data-share data-campaign="{esc(campaign)}" data-url="{esc(url)}" data-title="{esc(title)}" data-text="{esc(text)}">'
+            f'<button type="button" class="btn ghost" aria-expanded="false">{_SHARE_ICON}<span>{esc(label)}</span></button>'
+            f'<div class="share-menu" role="group" aria-label="{"Sharing options" if en else "Επιλογές αποστολής"}" hidden>{links}'
+            f'<button type="button" data-copy data-done="{esc(done_t)}">{_LINK_ICON}<span>{copy_t}</span></button></div></div>')
+
+
 def page(path, title, desc, body, ld, extra_head="", mbar=True, bilingual=False, lang="el", image=None):
     ld_tags = "\n".join(f'<script type="application/ld+json">{json.dumps(x, ensure_ascii=False)}</script>' for x in ld)
     doc = f"""<!doctype html>
@@ -213,7 +263,7 @@ def page(path, title, desc, body, ld, extra_head="", mbar=True, bilingual=False,
 <link rel="icon" href="/favicon.png" type="image/png">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;1,9..144,300&family=Manrope:wght@400;500;700;800&display=swap">
-<style>{CSS}</style>
+<style>{CSS}{SHARE_CSS if 'data-share' in body else ''}</style>
 {extra_head}
 {ld_tags}
 </head>
@@ -252,7 +302,7 @@ window.addEventListener('scroll',f,{{passive:true}});f();
 b.addEventListener('click',function(){{var r=window.matchMedia('(prefers-reduced-motion: reduce)').matches;window.scrollTo({{top:0,behavior:r?'auto':'smooth'}});document.getElementById('main').focus({{preventScroll:true}});}});}})();
 </script>
 {LANG_JS if bilingual else ''}
-{MAPS_JS}
+{MAPS_JS}{chr(10) + SHARE_JS if 'data-share' in body else ''}
 </body>
 </html>
 """
@@ -500,7 +550,7 @@ MODELS_FORM = "/montela#dilosi"
 MODEL_OG = f"{SITE}/images/og-montela.jpg"
 
 
-def model_page(path, crumb, title, desc, eyebrow, h1, lead, facts, prose, faqs, related, cta, lang="el", faq_title="Συχνές ερωτήσεις", related_title="Δες επίσης"):
+def model_page(path, crumb, title, desc, eyebrow, h1, lead, facts, prose, faqs, related, cta, lang="el", faq_title="Συχνές ερωτήσεις", related_title="Δες επίσης", share=""):
     items = "".join(f"<details><summary>{esc(q)}</summary><p>{esc(a)}</p></details>" for q, a in faqs)
     faq_ld = {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
         {"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": a}} for q, a in faqs]}
@@ -511,7 +561,7 @@ def model_page(path, crumb, title, desc, eyebrow, h1, lead, facts, prose, faqs, 
   <span class="eyebrow">{esc(eyebrow)}</span>
   <h1>{h1}</h1>
   <p class="lead">{esc(lead)}</p>
-  <div class="cta"><a class="btn gold" href="{MODELS_FORM}">{esc(cta)}</a></div>
+  <div class="cta"><a class="btn gold" href="{MODELS_FORM}">{esc(cta)}</a>{share}</div>
   <ul class="facts">{facts_html}</ul>
 </section>
 <section class="block prose">{prose}
@@ -549,6 +599,7 @@ model_page(
     MODEL_FAQ_COMMON,
     [("Βαφή & balayage σε τιμή υλικών", "/montelo-vafi-balayage-athina/"), ("Free haircut in Athens (English)", "/hair-model-athens/"), ("Κούρεμα στην Αθήνα", "/kourema-athina/")],
     "Δήλωσε συμμετοχή",
+    share=share_html("/dorean-kourema-athina/", "dorean-kourema-athina", "Δωρεάν κούρεμα ως μοντέλο μαλλιών στο Θησείο", "Το Alexandros Hair Salon στο Θησείο ψάχνει μοντέλα μαλλιών για δωρεάν κούρεμα και χτένισμα. Μήπως σε ενδιαφέρει;", "Αποστολή σε φίλη", "el")
 )
 
 model_page(
@@ -568,6 +619,7 @@ model_page(
     [("Πόσο κοστίζει η βαφή ως μοντέλο;", "Μόνο ένα μικρό μέρος της κανονικής τιμής, για τα υλικά. Το ακριβές ποσό το ξέρεις πριν κλείσουμε ραντεβού.")] + MODEL_FAQ_COMMON,
     [("Δωρεάν κούρεμα ως μοντέλο", "/dorean-kourema-athina/"), ("Βαφή μαλλιών στην Αθήνα", "/vafi-mallion-athina/"), ("Balayage στην Αθήνα", "/balayage-athina/")],
     "Δήλωσε συμμετοχή",
+    share=share_html("/montelo-vafi-balayage-athina/", "montelo-vafi-balayage-athina", "Βαφή και balayage σε τιμή υλικών στο Θησείο", "Το Alexandros Hair Salon στο Θησείο ψάχνει μοντέλα για βαφή και balayage, μόνο με το κόστος των υλικών. Μήπως σε ενδιαφέρει;", "Αποστολή σε φίλη", "el")
 )
 
 model_page(
@@ -588,6 +640,7 @@ model_page(
      ("Where is the salon?", "Erisichthonos 3-5, Thiseio, Athens, a five-minute walk from Thiseio metro station.")],
     [("Δωρεάν κούρεμα (Ελληνικά)", "/dorean-kourema-athina/"), ("Colour & balayage for models (Greek)", "/montelo-vafi-balayage-athina/"), ("Prices", "/services")],
     "Sign up as a model", lang="en", faq_title="Questions", related_title="See also",
+    share=share_html("/hair-model-athens/", "hair-model-athens", "Free haircut in Athens as a hair model", "Alexandros Hair Salon in Thiseio, Athens is looking for hair models: a free haircut and styling, or colour at material cost. Might this interest you?", "Send to a friend", "en")
 )
 
 # ---------- Σελίδες B2B: φωτογραφίσεις, ξενοδοχεία, γάμοι, συνεργάτες (τιμές από το menu.json) ----------
@@ -602,7 +655,7 @@ def alt_head(el_path, en_path):
             f'<link rel="alternate" hreflang="x-default" href="{SITE}{en_path}">')
 
 
-def b2b_page(path, crumb, title, desc, eyebrow, h1, lead, facts, prose, keys, faqs, related, lang, service_type, head=""):
+def b2b_page(path, crumb, title, desc, eyebrow, h1, lead, facts, prose, keys, faqs, related, lang, service_type, head="", share=""):
     en = lang == "en"
     cards = "".join((svc_html_en if en else svc_html)(k) for k in keys)
     items = "".join(f"<details><summary>{esc(q)}</summary><p>{esc(a)}</p></details>" for q, a in faqs)
@@ -616,7 +669,7 @@ def b2b_page(path, crumb, title, desc, eyebrow, h1, lead, facts, prose, keys, fa
   <span class="eyebrow">{esc(eyebrow)}</span>
   <h1>{h1}</h1>
   <p class="lead">{esc(lead)}</p>
-  <div class="cta"><a class="btn gold" href="{WA}" target="_blank" rel="noopener">{t("Μήνυμα στο WhatsApp", "Message us on WhatsApp")}</a><a class="btn ghost" href="tel:+306981319000">{t("Κλήση 698 131 9000", "Call +30 698 131 9000")}</a></div>
+  <div class="cta"><a class="btn gold" href="{WA}" target="_blank" rel="noopener">{t("Μήνυμα στο WhatsApp", "Message us on WhatsApp")}</a><a class="btn ghost" href="tel:+306981319000">{t("Κλήση 698 131 9000", "Call +30 698 131 9000")}</a>{share}</div>
   <ul class="facts">{facts_html}</ul>
 </section>
 {"<section class='block'><h2>" + t("Τιμές &amp; χρόνοι", "Prices &amp; times") + "</h2>" + cards + "<p class='cta' style='margin-top:20px'><a class='btn gold' href='/kratisi/'>" + t("Κλείσε online", "Book online") + "</a></p></section>" if keys else ""}
@@ -770,7 +823,11 @@ def partners_page(lang):
              prose, [], faqs,
              [(t("Χτένισμα για φωτογράφιση", "Hair for photo shoots"), "/xtenisma-fotografisi-athina/" if not en else "/hair-stylist-photoshoot-athens/"),
               (t("English version", "Ελληνικά"), "/partners/" if not en else "/synergasies/")],
-             lang, t("Συνεργασίες κομμωτηρίου", "Salon partnerships"), head=alt_head("/synergasies/", "/partners/"))
+             lang, t("Συνεργασίες κομμωτηρίου", "Salon partnerships"), head=alt_head("/synergasies/", "/partners/"),
+             share=share_html(path, path.strip("/"), t("Κομμωτής για φωτογραφίσεις, ξενοδοχεία και γάμους στο Θησείο", "Hair for photo shoots, hotels and weddings in Athens"),
+                              t("Alexandros Hair Salon, Θησείο: κομμωτής για φωτογραφίσεις, ξενοδοχεία, γάμους και παραγωγές, στο κομμωτήριο ή στο σετ.",
+                                "Alexandros Hair Salon, Thiseio, Athens: hair for photo shoots, hotels, weddings and productions, in the salon or on set."),
+                              t("Αποστολή σε συνεργάτη", "Send to a colleague"), lang))
 
 
 partners_page("el")

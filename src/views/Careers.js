@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import NhLayout from '../components/NhLayout';
 import Pills from '../components/FormPills';
 import useInView from '../components/useInView';
+import ShareButton from '../components/ShareButton';
 
 // "We are hiring" page. The form posts to FormSubmit (formsubmit.co), which emails
 // every application, CV attached, to the salon inbox. No backend needed on GitHub Pages.
@@ -17,6 +18,9 @@ const text = {
     lead: 'Ψάχνουμε βοηθό κομμωτηρίου με όρεξη για δουλειά και εκπαίδευση, σε οικογενειακό κομμωτήριο στο Θησείο που λειτουργεί από το 1992.',
     facts: ['Σταθερή θέση', 'Εκπαίδευση στη δουλειά', 'Και χωρίς εμπειρία'],
     cta: 'Κάνε αίτηση',
+    shareLabel: 'Αποστολή σε φίλο ή φίλη',
+    shareTitle: 'Ζητείται βοηθός κομμωτηρίου στο Θησείο',
+    shareText: 'Το Alexandros Hair Salon στο Θησείο ζητά βοηθό κομμωτηρίου, με πλήρη ή μερική απασχόληση και εκπαίδευση στη δουλειά. Μήπως σε ενδιαφέρει;',
     barTop: 'Βοηθός κομμωτηρίου',
     barBottom: 'αίτηση σε 2 λεπτά',
     offerTitle: 'Τι προσφέρουμε',
@@ -55,6 +59,9 @@ const text = {
     lead: 'We are looking for a salon assistant who is eager to work and learn, in a family salon in Thiseio open since 1992.',
     facts: ['Stable position', 'On-the-job training', 'No experience needed'],
     cta: 'Apply',
+    shareLabel: 'Send to a friend',
+    shareTitle: 'Salon assistant wanted in Thiseio, Athens',
+    shareText: 'Alexandros Hair Salon in Thiseio, Athens is hiring a salon assistant, full or part time, with on-the-job training. Might this interest you?',
     barTop: 'Salon assistant',
     barBottom: 'apply in 2 minutes',
     offerTitle: 'What we offer',
@@ -119,7 +126,11 @@ const Careers = ({ language, setLanguage }) => {
           </h1>
           <p className="nh-lead">{t.lead}</p>
           <ul className="nh-reassure">{t.facts.map((f) => <li key={f}>{f}</li>)}</ul>
-          {!sent && <a href="#aitisi" className="nh-btn nh-btn-gold nh-page-cta">{t.cta}</a>}
+          <div className="nh-hero-actions">
+            {!sent && <a href="#aitisi" className="nh-btn nh-btn-gold nh-page-cta">{t.cta}</a>}
+            <ShareButton path="/douleia" campaign="douleia" language={language}
+              label={t.shareLabel} title={t.shareTitle} text={t.shareText} />
+          </div>
         </section>
 
         <section className="nh-info-grid">

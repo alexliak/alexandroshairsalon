@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import NhLayout, { BOOK } from '../components/NhLayout';
 import Pills from '../components/FormPills';
 import useInView from '../components/useInView';
+import ShareButton from '../components/ShareButton';
 
 // "Hair models" page. Same delivery as the hiring form: FormSubmit emails each
 // application (photo attached, if given) to the salon owner. No phone field on purpose:
@@ -17,6 +18,9 @@ const text = {
     lead: 'Κούρεμα, βαφή, balayage ή ανταύγειες δωρεάν ή σε πολύ χαμηλή τιμή, στο Θησείο. Κυρίως γυναίκες, κάθε ηλικίας, χωρίς εμπειρία ως μοντέλο. Δουλεύουμε νέες τεχνικές και φωτογραφίζουμε το αποτέλεσμα για την εκπαίδευσή μας και για να δείξουμε τη δουλειά μας.',
     facts: ['Δωρεάν ή σε πολύ χαμηλή τιμή', 'Φυσικό, κλασικό ή ελαφρώς μοντέρνο αποτέλεσμα', 'Φόρμα ενός λεπτού', '5′ από το μετρό Θησείο'],
     cta: 'Δήλωσε συμμετοχή',
+    shareLabel: 'Αποστολή σε φίλη',
+    shareTitle: 'Ζητούνται μοντέλα μαλλιών στο Θησείο',
+    shareText: 'Το Alexandros Hair Salon στο Θησείο ψάχνει μοντέλα μαλλιών για κούρεμα και χρώμα, δωρεάν ή σε πολύ χαμηλή τιμή. Μήπως σε ενδιαφέρει;',
     barTop: 'Μοντέλο μαλλιών',
     barBottom: 'φόρμα 1 λεπτού',
     more: 'Περισσότερα για σένα (προαιρετικά)',
@@ -75,6 +79,9 @@ const text = {
     lead: 'A haircut, colour, balayage or highlights for free or at a very low price, in Thiseio, Athens. Mostly women, of any age, no modelling experience needed. We work on new techniques and photograph the result for our training and to show our work.',
     facts: ['Free or at a very low price', 'Natural, classic or softly modern results', 'One-minute form', '5′ from Thiseio metro'],
     cta: 'Sign up',
+    shareLabel: 'Send to a friend',
+    shareTitle: 'Hair models wanted in Thiseio, Athens',
+    shareText: 'Alexandros Hair Salon in Thiseio, Athens is looking for hair models: haircuts and colour, free or at a very low price. Might this interest you?',
     barTop: 'Hair model',
     barBottom: 'one-minute form',
     more: 'More about you (optional)',
@@ -171,7 +178,11 @@ const Models = ({ language, setLanguage }) => {
           </h1>
           <p className="nh-lead">{t.lead}</p>
           <ul className="nh-reassure">{t.facts.map((f) => <li key={f}>{f}</li>)}</ul>
-          {!sent && <a href="#dilosi" className="nh-btn nh-btn-gold nh-page-cta">{t.cta}</a>}
+          <div className="nh-hero-actions">
+            {!sent && <a href="#dilosi" className="nh-btn nh-btn-gold nh-page-cta">{t.cta}</a>}
+            <ShareButton path="/montela" campaign="montela" language={language}
+              label={t.shareLabel} title={t.shareTitle} text={t.shareText} />
+          </div>
         </section>
 
         <section className="nh-info-grid">
