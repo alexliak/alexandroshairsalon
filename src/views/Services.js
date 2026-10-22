@@ -17,12 +17,14 @@ const text = {
     from: 'από',
     bookThis: 'Κράτηση',
     notesTitle: 'Καλό να ξέρεις',
-    footnote: '* Αν βάφεσαι πρώτη φορά σε εμάς, μπορούμε να κάνουμε δωρεάν τεστ ευαισθησίας πριν από τη βαφή. Δεν χρειάζεται για να κλείσεις ραντεβού.',
+    footnotes: [
+      '* Αν βάφεσαι πρώτη φορά σε εμάς, μπορούμε να κάνουμε δωρεάν τεστ ευαισθησίας πριν από τη βαφή. Δεν χρειάζεται για να κλείσεις ραντεβού.',
+      'Κάθε βαφή περιλαμβάνει συγκεκριμένη ποσότητα χρώματος. Αν χρειαστεί περισσότερο, το «+ Επιπλέον χρώμα ανά 30 g» (' + priceText('el', '+ Επιπλέον χρώμα') + ') το συμφωνούμε πριν την εφαρμογή.'
+    ],
     notes: [
-      'Κάθε βαφή περιλαμβάνει συγκεκριμένη ποσότητα. Αν χρειαστεί περισσότερο χρώμα, το «+ Επιπλέον χρώμα ανά 30 g» (' + priceText('el', '+ Επιπλέον χρώμα') + ') το συμφωνούμε πριν την εφαρμογή.',
+      'Μηνιαία ρίζα (' + priceText('el', 'Βαφή ρίζας') + '): όταν η επόμενη βαφή ρίζας γίνεται μέσα σε 30 ημέρες από την προηγούμενη σε εμάς. Στο ταμείο παίρνεις καρτελάκι με την ημερομηνία.',
       'Στις ανταύγειες και στο μπαλαγιάζ, για μαλλιά κάτω από τους ώμους υπάρχει το «+ Μακριά μαλλιά» (' + priceText('el', '+ Μακριά μαλλιά (ανταύγειες / μπαλαγιάζ)') + ').',
-      'Έχεις extensions; Γράψ’ το στην κράτηση για να κρατήσουμε τον σωστό χρόνο.',
-      'Σύντομα: πρόγραμμα μέλους για τακτικές πελάτισσες στη βαφή ρίζας, στις ανταύγειες και στο κούρεμα.'
+      'Έχεις extensions; Γράψ’ το στην κράτηση για να κρατήσουμε τον σωστό χρόνο.'
     ],
     jump: 'Κατηγορίες'
   },
@@ -38,12 +40,14 @@ const text = {
     from: 'from',
     bookThis: 'Book',
     notesTitle: 'Good to know',
-    footnote: '* If it’s your first colour with us, we can do a free skin test beforehand. You don’t need one to book.',
+    footnotes: [
+      '* If it’s your first colour with us, we can do a free skin test beforehand. You don’t need one to book.',
+      'Every colour includes a set amount of product. If more is needed, Extra Colour per 30 g (' + priceText('en', '+ Επιπλέον χρώμα') + ') is agreed before we apply it.'
+    ],
     notes: [
-      'Every colour includes a set amount of product. If more is needed, Extra Colour per 30 g (' + priceText('en', '+ Επιπλέον χρώμα') + ') is agreed before we apply it.',
+      'Monthly Root (' + priceText('en', 'Βαφή ρίζας') + '): when your next root colour is within 30 days of your last one with us. At the desk you get a small card with the date.',
       'For highlights and balayage on hair below the shoulders there is the Long Hair add-on (' + priceText('en', '+ Μακριά μαλλιά (ανταύγειες / μπαλαγιάζ)') + ').',
-      'Wearing extensions? Mention it when you book so we reserve the right time.',
-      'Coming soon: a membership for regular clients for root colour, highlights and haircuts.'
+      'Wearing extensions? Mention it when you book so we reserve the right time.'
     ],
     jump: 'Categories'
   }
@@ -140,7 +144,10 @@ const Services = ({ language, setLanguage }) => {
               <li key={n}>{n}</li>
             ))}
           </ul>
-          <p className="nh-footnote" style={{ fontSize: '0.82em', opacity: 0.75, margin: '0 0 18px' }}>{t.footnote}</p>
+          {t.footnotes.map((f) => (
+            <p key={f} className="nh-footnote" style={{ fontSize: '0.82em', opacity: 0.75, margin: '0 0 8px' }}>{f}</p>
+          ))}
+          <div style={{ height: 10 }} />
           <a href={BOOK} className="nh-btn nh-btn-gold">{t.book}</a>
         </section>
       </main>

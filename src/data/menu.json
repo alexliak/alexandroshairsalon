@@ -538,40 +538,58 @@
           "en": "Root Colour"
         },
         "desc": {
-          "el": "Μόνιμη βαφή ρίζας με κάλυψη λευκών, λούσιμο και γρήγορο στέγνωμα. Κλασική: Farcom. Ανώτερη: L’Oréal ή Redken χωρίς αμμωνία.",
-          "en": "Permanent root colour with grey coverage, wash and quick dry. Classic: Farcom. Premium: L’Oréal or ammonia-free Redken."
+          "el": "Μόνιμη βαφή ρίζας με κάλυψη λευκών, λούσιμο και γρήγορο στέγνωμα, με Farcom ή Majirel της L’Oréal. Χωρίς αμμωνία: INOA της L’Oréal ή Redken. Μηνιαία ρίζα: όταν η επόμενη βαφή ρίζας γίνεται μέσα σε 30 ημέρες από την προηγούμενη σε εμάς.",
+          "en": "Permanent root colour with grey coverage, wash and quick dry, with Farcom or L’Oréal Majirel. Ammonia-free: L’Oréal INOA or Redken. Monthly Root: when your next root colour is within 30 days of your last one with us."
         },
         "note": {
-          "el": "Για ρίζα έως 6 εβδομάδων, με έως 45 g χρώμα. Αν χρειαστεί περισσότερο: «+ Επιπλέον χρώμα ανά 30 g».",
-          "en": "For up to 6 weeks’ regrowth, with up to 45 g of colour. If more is needed: Extra Colour per 30 g."
+          "el": "Περιλαμβάνει έως 45 g χρώμα. Αν χρειαστεί περισσότερο, το συμφωνούμε πριν.",
+          "en": "Includes up to 45 g of colour. If more is needed, we agree it beforehand."
         },
         "online": true,
         "options": [
           {
-            "el": "Κλασική",
-            "en": "Classic",
+            "el": "Κανονική",
+            "en": "Regular",
             "time": {
               "el": "1 ώρα",
               "en": "1 h"
             },
-            "price": 36,
+            "price": 39,
             "book": {
               "item": "TR7492468",
               "option": "14289303"
             }
           },
           {
-            "el": "Ανώτερη",
-            "en": "Premium",
+            "el": "Μηνιαία ρίζα",
+            "en": "Monthly Root",
             "time": {
               "el": "1 ώρα",
               "en": "1 h"
             },
-            "price": 42,
+            "price": 35
+          },
+          {
+            "el": "Χωρίς αμμωνία",
+            "en": "Ammonia-free",
+            "time": {
+              "el": "1 ώρα",
+              "en": "1 h"
+            },
+            "price": 40,
             "book": {
               "item": "TR7492468",
               "option": "14289305"
             }
+          },
+          {
+            "el": "Χωρίς αμμωνία · μηνιαία ρίζα",
+            "en": "Ammonia-free · Monthly Root",
+            "time": {
+              "el": "1 ώρα",
+              "en": "1 h"
+            },
+            "price": 36
           }
         ]
       },
@@ -581,8 +599,8 @@
           "en": "Root Colour & Gloss"
         },
         "desc": {
-          "el": "Ανώτερη βαφή ρίζας και ρεφλέ στα μήκη για ενιαίο χρώμα και λάμψη, με λούσιμο και γρήγορο στέγνωμα.",
-          "en": "Premium root colour and a gloss on the lengths for even colour and shine, wash and quick dry."
+          "el": "Βαφή ρίζας και ρεφλέ στα μήκη για ενιαίο χρώμα και λάμψη, με λούσιμο και γρήγορο στέγνωμα.",
+          "en": "Root colour and a gloss on the lengths for even colour and shine, wash and quick dry."
         },
         "note": {
           "el": "Ρίζα έως 45 g. Ρεφλέ έως 60 ml για μαλλιά έως τους ώμους ή 90 ml για πιο μακριά.",
