@@ -1,7 +1,9 @@
 import React from 'react';
 import NhLayout, { BOOK, PHONE } from '../components/NhLayout';
 import menu from '../data/menu';
-import { priceText, bookUrl, eur } from '../data/prices';
+import { priceText, bookUrl, eur, service } from '../data/prices';
+
+const rootPrice = (label, lang) => eur(service('Βαφή ρίζας').options.find((o) => o.el === label).price, lang);
 
 // Services & prices (2026 design). The list itself lives in src/data/menu.js.
 const text = {
@@ -22,7 +24,7 @@ const text = {
       'Κάθε βαφή περιλαμβάνει συγκεκριμένη ποσότητα χρώματος. Αν χρειαστεί περισσότερο, το «+ Επιπλέον χρώμα ανά 30 g» (' + priceText('el', '+ Επιπλέον χρώμα') + ') το συμφωνούμε πριν την εφαρμογή.'
     ],
     notes: [
-      'Μηνιαία ρίζα (€35, χωρίς αμμωνία €36): όταν η επόμενη βαφή ρίζας γίνεται μέσα σε 30 ημέρες από την προηγούμενη σε εμάς. Στο ταμείο παίρνεις καρτελάκι με την ημερομηνία.',
+      'Μηνιαία ρίζα (' + rootPrice('Μηνιαία ρίζα', 'el') + ', χωρίς αμμωνία ' + rootPrice('Χωρίς αμμωνία · μηνιαία ρίζα', 'el') + '): όταν η επόμενη βαφή ρίζας γίνεται μέσα σε 30 ημέρες από την προηγούμενη σε εμάς. Στο ταμείο παίρνεις καρτελάκι με την ημερομηνία.',
       'Στις ανταύγειες και στο μπαλαγιάζ, για μαλλιά κάτω από τους ώμους υπάρχει το «+ Μακριά μαλλιά» (' + priceText('el', '+ Μακριά μαλλιά (ανταύγειες / μπαλαγιάζ)') + ').',
       'Έχεις extensions; Γράψ’ το στην κράτηση για να κρατήσουμε τον σωστό χρόνο.'
     ],
@@ -45,7 +47,7 @@ const text = {
       'Every colour includes a set amount of product. If more is needed, Extra Colour per 30 g (' + priceText('en', '+ Επιπλέον χρώμα') + ') is agreed before we apply it.'
     ],
     notes: [
-      'Monthly Root (€35, ammonia-free €36): when your next root colour is within 30 days of your last one with us. At the desk you get a small card with the date.',
+      'Monthly Root (' + rootPrice('Μηνιαία ρίζα', 'en') + ', ammonia-free ' + rootPrice('Χωρίς αμμωνία · μηνιαία ρίζα', 'en') + '): when your next root colour is within 30 days of your last one with us. At the desk you get a small card with the date.',
       'For highlights and balayage on hair below the shoulders there is the Long Hair add-on (' + priceText('en', '+ Μακριά μαλλιά (ανταύγειες / μπαλαγιάζ)') + ').',
       'Wearing extensions? Mention it when you book so we reserve the right time.'
     ],
