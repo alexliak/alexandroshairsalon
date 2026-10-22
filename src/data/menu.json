@@ -301,8 +301,8 @@
           "en": "Wash and a full blow-out — bouncy or sleek — for shine that lasts."
         },
         "note": {
-          "el": "Για ίσιωμα με πρέσα: «+ Ίσιωμα με πρέσα ατμού». Για μπούκλες ή κυματισμούς: «Χτένισμα για εκδήλωση». Διαρκεί συνήθως 2–3 ημέρες.",
-          "en": "For a straightened finish: Steam Straightener Finish. For curls or waves: Special Occasion Styling. Usually lasts 2–3 days."
+          "el": "Για ίσιωμα με πρέσα: «+ Ίσιωμα με πρέσα ατμού». Για μπούκλες ή κυματισμούς: «Χτένισμα για εκδήλωση». Διαρκεί συνήθως 2–3 ημέρες. Για όσες χτενίζονται κάθε εβδομάδα υπάρχει και το «Εβδομαδιαίο χτένισμα με μάσκα».",
+          "en": "For a straightened finish: Steam Straightener Finish. For curls or waves: Special Occasion Styling. Usually lasts 2–3 days. If you have a blow-out every week, there is also the Weekly Blowdry with Mask."
         },
         "online": true,
         "options": [
@@ -352,7 +352,11 @@
               "el": "30′",
               "en": "30′"
             },
-            "price": 21
+            "price": 21,
+            "book": {
+              "item": "TR7618827",
+              "option": "14473242"
+            }
           },
           {
             "el": "Μακριά",
@@ -726,7 +730,7 @@
             "price": 50,
             "book": {
               "item": "TR7599379",
-              "option": "14437204"
+              "option": "14473214"
             }
           },
           {
@@ -736,7 +740,11 @@
               "el": "1 ώρα 05′",
               "en": "1 h 05′"
             },
-            "price": 50
+            "price": 50,
+            "book": {
+              "item": "TR7599379",
+              "option": "14473215"
+            }
           }
         ]
       },
