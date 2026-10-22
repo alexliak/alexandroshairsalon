@@ -323,6 +323,50 @@
       },
       {
         "name": {
+          "el": "Εβδομαδιαίο χτένισμα με μάσκα",
+          "en": "Weekly Blowdry with Mask"
+        },
+        "desc": {
+          "el": "Για όσες θέλουν να είναι περιποιημένες όλη την εβδομάδα, στη δουλειά και στα ραντεβού τους, χωρίς να το σκέφτονται. Λούσιμο, μάσκα και χτένισμα με βούρτσα, την ίδια μέρα και ώρα κάθε εβδομάδα. Χωριστά θα ήταν €39.",
+          "en": "For those who like to look polished all week, at work and at every meeting, without having to think about it. Wash, mask and a full blow-out, on the same day and time every week. Separately it would be €39."
+        },
+        "note": {
+          "el": "Δευτέρα–Πέμπτη, όταν υπάρχει ελεύθερη ώρα. Ισχύει όταν το προηγούμενο χτένισμα έγινε σε εμάς τις τελευταίες 8 ημέρες· την πρώτη φορά ξεκινάμε μαζί. Online κλείνεται το μεσαίο· κοντά και μακριά τηλεφωνικά. Δεν συνδυάζεται με άλλη έκπτωση.",
+          "en": "Monday to Thursday, when there is a free slot. Applies when your previous blow-out was with us within the last 8 days; the first time, we start together. Medium length can be booked online; short and long by phone. Not combined with other discounts."
+        },
+        "online": true,
+        "options": [
+          {
+            "el": "Κοντά",
+            "en": "Short",
+            "time": {
+              "el": "25′",
+              "en": "25′"
+            },
+            "price": 19
+          },
+          {
+            "el": "Μεσαία",
+            "en": "Medium",
+            "time": {
+              "el": "30′",
+              "en": "30′"
+            },
+            "price": 21
+          },
+          {
+            "el": "Μακριά",
+            "en": "Long",
+            "time": {
+              "el": "35′",
+              "en": "35′"
+            },
+            "price": 23
+          }
+        ]
+      },
+      {
+        "name": {
           "el": "Χτένισμα για εκδήλωση",
           "en": "Special Occasion Styling"
         },
@@ -331,8 +375,8 @@
           "en": "Curls, waves or an up-do, for a wedding, a night out, an important meeting or a photo shoot."
         },
         "note": {
-          "el": "Καλό είναι να έρθεις με λουσμένα, στεγνά μαλλιά. Μια φωτογραφία με αυτό που σου αρέσει μάς βοηθά πολύ.",
-          "en": "It’s best to come with clean, dry hair. A photo of the look you like is always helpful."
+          "el": "Μια φωτογραφία με αυτό που σου αρέσει μάς βοηθά πολύ. Για μπούκλες ή πιάσιμο σε πολλά ή πολύ μακριά μαλλιά, υπάρχει μια μικρή συμβουλή στις Συχνές ερωτήσεις.",
+          "en": "A photo of the look you like is always helpful. For curls or an up-do on thick or very long hair, there is a small tip in our FAQ."
         },
         "online": true,
         "options": [
@@ -383,36 +427,6 @@
       },
       {
         "name": {
-          "el": "+ Γρήγορο στέγνωμα μετά τη βαφή",
-          "en": "Colour Quick Dry (add-on)"
-        },
-        "desc": {
-          "el": "Γρήγορο στέγνωμα με τα χέρια, με πιστολάκι ή φυσούνα, για να δεις καθαρά το χρώμα σου.",
-          "en": "A quick dry shaped by hand, with a hairdryer or diffuser, so you can see your colour clearly."
-        },
-        "note": {
-          "el": "Μόνο μαζί με βαφή. Για φόρμα με βούρτσα: «+ Γρήγορο φορμάρισμα μετά τη βαφή».",
-          "en": "Only with a colour service. For a brushed shape: Quick Styling after Colour."
-        },
-        "online": true,
-        "options": [
-          {
-            "el": "",
-            "en": "",
-            "time": {
-              "el": "5′",
-              "en": "5′"
-            },
-            "price": 0.01,
-            "book": {
-              "item": "TR7599830",
-              "option": "14438008"
-            }
-          }
-        ]
-      },
-      {
-        "name": {
           "el": "+ Γρήγορο φορμάρισμα μετά τη βαφή",
           "en": "Quick Styling after Colour (add-on)"
         },
@@ -421,8 +435,8 @@
           "en": "A quick brushed styling after your colour, for volume and shape."
         },
         "note": {
-          "el": "Μόνο μαζί με βαφή. Για πλήρες χτένισμα: «+ Χτένισμα μετά τη βαφή».",
-          "en": "Only with a colour service. For a full blow-out: Colour Blowdry."
+          "el": "Μόνο μαζί με βαφή. Για πλήρες χτένισμα: «+ Χτένισμα μετά τη βαφή». Χωρίς βαφή: «Λούσιμο & γρήγορο φορμάρισμα» €22, κλείνεται τηλεφωνικά.",
+          "en": "Only with a colour service. For a full blow-out: Colour Blowdry. Without colour: Wash & Quick Styling, €22, booked by phone."
         },
         "online": true,
         "options": [
@@ -607,8 +621,8 @@
           "en": "Root Colour & Gloss"
         },
         "desc": {
-          "el": "Βαφή ρίζας και ρεφλέ στα μήκη για ενιαίο χρώμα και λάμψη, με λούσιμο και γρήγορο στέγνωμα.",
-          "en": "Root colour and a gloss on the lengths for even colour and shine, wash and quick dry."
+          "el": "Βαφή ρίζας με όποια μόνιμη βαφή και χρώμα στα μήκη, για ενιαίο χρώμα και λάμψη, με λούσιμο και γρήγορο στέγνωμα. Στα μήκη: όξινο ρεφλέ (Dia Light ή Redken Shades EQ) ή, όταν τα μήκη θέλουν περισσότερο χρώμα, ημιμόνιμη βαφή Dia Color.",
+          "en": "Root colour with any of our permanent colours and colour on the lengths, for even colour and shine, with a wash and quick dry. On the lengths: an acidic gloss (Dia Light or Redken Shades EQ) or, when the lengths need more colour, Dia Color demi-permanent."
         },
         "note": {
           "el": "Ρίζα έως 45 g. Ρεφλέ έως 60 ml για μαλλιά έως τους ώμους ή 90 ml για πιο μακριά.",
@@ -650,8 +664,8 @@
           "en": "Gloss & Tone"
         },
         "desc": {
-          "el": "Φρεσκάρει τον τόνο και δίνει λάμψη, χωρίς να ξανοίγει τα μαλλιά.",
-          "en": "Refreshes tone and adds shine, without lightening."
+          "el": "Για μήκη που ξεθώριασαν: ζωντανεύει τον τόνο και δίνει λάμψη, με λούσιμο και γρήγορο στέγνωμα. Όξινο ρεφλέ χωρίς αμμωνία (Dia Light ή Redken Shades EQ), που δεν ξανοίγει τα μαλλιά και δεν καλύπτει πλήρως τα λευκά.",
+          "en": "For faded lengths: revives tone and adds shine, with a wash and quick dry. An acidic, ammonia-free gloss (Dia Light or Redken Shades EQ) that doesn’t lighten hair or fully cover grey."
         },
         "note": {
           "el": "Έως 60 ml για μαλλιά έως τους ώμους ή 90 ml για πιο μακριά. Διαρκεί 4–6 εβδομάδες.",
@@ -693,18 +707,18 @@
           "en": "All-Over Colour"
         },
         "desc": {
-          "el": "Μόνιμη βαφή από τη ρίζα ως τις άκρες, με λούσιμο και γρήγορο στέγνωμα.",
-          "en": "Permanent colour from root to ends, wash and quick dry."
+          "el": "Χρώμα από τη ρίζα ως τις άκρες, με λούσιμο και γρήγορο στέγνωμα. Μόνιμη: με όποια από τις μόνιμες βαφές μας, για πλήρη κάλυψη λευκών ή αλλαγή απόχρωσης. Ημιμόνιμη: Dia Color της L’Oréal, πιο ήπια για τα μαλλιά, καλύπτει έως 70% των λευκών, κρατά έως 6 εβδομάδες και φεύγει σταδιακά, χωρίς έντονη γραμμή στη ρίζα.",
+          "en": "Colour from root to ends, with a wash and quick dry. Permanent: any of our permanent colours, for full grey coverage or a change of shade. Demi-permanent: L’Oréal Dia Color, gentler on the hair, covers up to 70% grey, lasts up to 6 weeks and fades gradually, with no harsh line at the root."
         },
         "note": {
-          "el": "Έως 60 g χρώμα. Αν χρειαστεί περισσότερο: «+ Επιπλέον χρώμα ανά 30 g».",
-          "en": "Up to 60 g of colour. If more is needed: Extra Colour per 30 g."
+          "el": "Έως 60 g ή 60 ml. Αν χρειαστεί περισσότερο, το «+ Επιπλέον χρώμα» το συμφωνούμε πριν.",
+          "en": "Up to 60 g or 60 ml. If more is needed, Extra Colour is agreed beforehand."
         },
         "online": true,
         "options": [
           {
-            "el": "",
-            "en": "",
+            "el": "Μόνιμη",
+            "en": "Permanent",
             "time": {
               "el": "1 ώρα 05′",
               "en": "1 h 05′"
@@ -714,6 +728,15 @@
               "item": "TR7599379",
               "option": "14437204"
             }
+          },
+          {
+            "el": "Ημιμόνιμη",
+            "en": "Demi-permanent",
+            "time": {
+              "el": "1 ώρα 05′",
+              "en": "1 h 05′"
+            },
+            "price": 50
           }
         ]
       },
@@ -753,8 +776,8 @@
           "en": "Men’s Colour"
         },
         "desc": {
-          "el": "Φυσική κάλυψη λευκών για άνδρες.",
-          "en": "Natural grey blending for men."
+          "el": "Φυσική κάλυψη λευκών για άνδρες, με λούσιμο και γρήγορο στέγνωμα.",
+          "en": "Natural grey blending for men, with a wash and quick dry."
         },
         "online": true,
         "options": [
@@ -779,23 +802,23 @@
           "en": "Extra Colour (add-on)"
         },
         "desc": {
-          "el": "Επιπλέον 30 g χρώμα για μεγάλη ρίζα, μακριά ή πυκνά μαλλιά.",
-          "en": "An extra 30 g of colour for longer regrowth, long or thick hair."
+          "el": "Επιπλέον 30 g βαφής ή 30 ml ρεφλέ, για μεγάλη ρίζα, μακριά ή πυκνά μαλλιά.",
+          "en": "An extra 30 g of colour or 30 ml of gloss, for longer regrowth, long or thick hair."
         },
         "note": {
-          "el": "Μόνο μαζί με βαφή και μόνο αν χρειαστεί.",
-          "en": "Only with a colour service, and only if needed."
+          "el": "Μόνο μαζί με βαφή και μόνο αν χρειαστεί. Πάντα το λέμε πριν.",
+          "en": "Only with a colour service and only if needed. We always tell you first."
         },
         "online": true,
         "options": [
           {
-            "el": "ανά 30 g",
-            "en": "per 30 g",
+            "el": "ανά 30 g ή 30 ml",
+            "en": "per 30 g or 30 ml",
             "time": {
               "el": "5′",
               "en": "5′"
             },
-            "price": 19,
+            "price": 12,
             "book": {
               "item": "TR7599378",
               "option": "14437209"
@@ -870,8 +893,8 @@
           "en": "Face-Framing Highlights"
         },
         "desc": {
-          "el": "Λεπτές ανταύγειες γύρω από το πρόσωπο, με ρεφλέ.",
-          "en": "Fine highlights around the face, with toner."
+          "el": "Λεπτές ανταύγειες γύρω από το πρόσωπο, με ρεφλέ, με λούσιμο και γρήγορο στέγνωμα.",
+          "en": "Fine highlights around the face, with toner, with a wash and quick dry."
         },
         "note": {
           "el": "Χωρίς ντεκαπάζ: πιο ήπιο ξάνοιγμα, έως 4 τόνους, με L’Oréal Blond Studio No Bleach™. Σε βαμμένα μαλλιά προηγείται συμβουλευτική.",
@@ -913,8 +936,8 @@
           "en": "Partial Highlights"
         },
         "desc": {
-          "el": "Ανταύγειες στο πάνω μέρος και γύρω από το πρόσωπο, με ρεφλέ.",
-          "en": "Highlights on the top section and around the face, with toner."
+          "el": "Ανταύγειες στο πάνω μέρος και γύρω από το πρόσωπο, με ρεφλέ, με λούσιμο και γρήγορο στέγνωμα.",
+          "en": "Highlights on the top section and around the face, with toner, with a wash and quick dry."
         },
         "note": {
           "el": "Η τιμή αφορά μαλλιά έως τους ώμους· για πιο μακριά: «+ Μακριά μαλλιά». Χωρίς ντεκαπάζ: πιο ήπιο ξάνοιγμα, έως 4 τόνους, με L’Oréal Blond Studio No Bleach™. Σε βαμμένα μαλλιά προηγείται συμβουλευτική.",
@@ -956,8 +979,8 @@
           "en": "Full Highlights"
         },
         "desc": {
-          "el": "Ανταύγειες σε όλο το κεφάλι, με ρεφλέ.",
-          "en": "Highlights all over, with toner."
+          "el": "Ανταύγειες σε όλο το κεφάλι, με ρεφλέ, με λούσιμο και γρήγορο στέγνωμα.",
+          "en": "Highlights all over, with toner, with a wash and quick dry."
         },
         "note": {
           "el": "Η τιμή αφορά μαλλιά έως τους ώμους· για πιο μακριά: «+ Μακριά μαλλιά». Σε βαμμένα μαλλιά προηγείται συμβουλευτική.",
@@ -986,8 +1009,8 @@
           "en": "Partial Balayage"
         },
         "desc": {
-          "el": "Φυσικές, φωτεινές ανταύγειες ζωγραφισμένες με το χέρι, ελεύθερα ή σε αλουμινόχαρτα (foilayage), με ρεφλέ.",
-          "en": "Natural, luminous highlights painted by hand, freehand or in foils (foilayage), with toner."
+          "el": "Φυσικές, φωτεινές ανταύγειες ζωγραφισμένες με το χέρι, ελεύθερα ή σε αλουμινόχαρτα (foilayage), με ρεφλέ, με λούσιμο και γρήγορο στέγνωμα.",
+          "en": "Natural, luminous highlights painted by hand, freehand or in foils (foilayage), with toner, with a wash and quick dry."
         },
         "note": {
           "el": "Μόνο για μεσαία και μακριά μαλλιά. Η τιμή αφορά μαλλιά έως τους ώμους· για πιο μακριά: «+ Μακριά μαλλιά». Την πρώτη φορά προηγείται συμβουλευτική.",
@@ -1106,8 +1129,8 @@
           "en": "Full Balayage"
         },
         "desc": {
-          "el": "Φωτεινό μπαλαγιάζ από τη ρίζα ως τις άκρες, ζωγραφισμένο με το χέρι, ελεύθερα ή σε αλουμινόχαρτα (foilayage), με ρεφλέ.",
-          "en": "A luminous balayage from root to ends, painted by hand, freehand or in foils (foilayage), with toner."
+          "el": "Φωτεινό μπαλαγιάζ από τη ρίζα ως τις άκρες, ζωγραφισμένο με το χέρι, ελεύθερα ή σε αλουμινόχαρτα (foilayage), με ρεφλέ, με λούσιμο και γρήγορο στέγνωμα.",
+          "en": "A luminous balayage from root to ends, painted by hand, freehand or in foils (foilayage), with toner, with a wash and quick dry."
         },
         "note": {
           "el": "Η τιμή αφορά μαλλιά έως τους ώμους· για πιο μακριά: «+ Μακριά μαλλιά». Την πρώτη φορά προηγείται συμβουλευτική.",

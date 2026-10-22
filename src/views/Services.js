@@ -11,9 +11,9 @@ const text = {
     eyebrow: 'Τιμές κομμωτηρίου · Θησείο, Αθήνα',
     title: 'Τιμές',
     titleEm: 'και χρόνοι.',
-    lead: 'Μία τιμή για κάθε υπηρεσία, ίδια στο κομμωτήριο και online. Κάτω από κάθε υπηρεσία γράφουμε τι περιλαμβάνει. Στην online κράτηση βλέπεις ελεύθερες ώρες και πληρώνεις online ή στο κομμωτήριο.',
+    lead: 'Ξέρεις την τιμή πριν καθίσεις. Κάτω από κάθε υπηρεσία γράφουμε τι περιλαμβάνει, για ποιο μήκος και πόσο χρώμα. Ό,τι επιπλέον χρειαστεί είναι κι αυτό γραμμένο εδώ, και μπορείς πάντα να ρωτήσεις πριν ξεκινήσουμε. Ίδιες τιμές στο κομμωτήριο και online.',
     phoneOnly: 'Κλείνεται τηλεφωνικά',
-    pickOption: 'Πάτησε την επιλογή σου για κράτηση',
+    pickOption: 'Η κράτηση γίνεται από την επιλογή σου.',
     book: 'Κλείσε online',
     call: 'Κάλεσε',
     from: 'από',
@@ -26,7 +26,8 @@ const text = {
     notes: [
       'Μηνιαία ρίζα (' + rootPrice('Μηνιαία ρίζα', 'el') + ', χωρίς αμμωνία ' + rootPrice('Χωρίς αμμωνία · μηνιαία ρίζα', 'el') + '): όταν η επόμενη βαφή ρίζας γίνεται μέσα σε 30 ημέρες από την προηγούμενη σε εμάς. Στο ταμείο παίρνεις καρτελάκι με την ημερομηνία.',
       'Στις ανταύγειες και στο μπαλαγιάζ, για μαλλιά κάτω από τους ώμους υπάρχει το «+ Μακριά μαλλιά» (' + priceText('el', '+ Μακριά μαλλιά (ανταύγειες / μπαλαγιάζ)') + ').',
-      'Έχεις extensions; Γράψ’ το στην κράτηση για να κρατήσουμε τον σωστό χρόνο.'
+      'Αν έχεις extensions, μπορείς να το σημειώσεις στην κράτηση, για να κρατήσουμε τον σωστό χρόνο.',
+      'Ποια βαφή σού ταιριάζει, τι περιλαμβάνει κάθε υπηρεσία και τι δεν συνδυάζεται: στις Συχνές ερωτήσεις (alexandroshairsalon.gr/syxnes-erotiseis). Κάτι δεν σου άρεσε; Μπορείς να μας το πεις ανώνυμα στο alexandroshairsalon.gr/gnomi.'
     ],
     jump: 'Κατηγορίες'
   },
@@ -34,9 +35,9 @@ const text = {
     eyebrow: 'Hair salon prices · Thiseio, Athens',
     title: 'Prices',
     titleEm: 'and times.',
-    lead: 'One price per service, the same at the salon and online. Under each service we say what it includes. When you book online you see free slots and pay online or at the salon.',
+    lead: 'You know the price before you sit down. Under each service we say what it includes, for which length and how much colour. Anything extra is written here too, and you can always ask before we start. Same prices at the salon and online.',
     phoneOnly: 'Book by phone',
-    pickOption: 'Tap your option to book',
+    pickOption: 'Booking starts from your option.',
     book: 'Book online',
     call: 'Call',
     from: 'from',
@@ -49,7 +50,8 @@ const text = {
     notes: [
       'Monthly Root (' + rootPrice('Μηνιαία ρίζα', 'en') + ', ammonia-free ' + rootPrice('Χωρίς αμμωνία · μηνιαία ρίζα', 'en') + '): when your next root colour is within 30 days of your last one with us. At the desk you get a small card with the date.',
       'For highlights and balayage on hair below the shoulders there is the Long Hair add-on (' + priceText('en', '+ Μακριά μαλλιά (ανταύγειες / μπαλαγιάζ)') + ').',
-      'Wearing extensions? Mention it when you book so we reserve the right time.'
+      'If you wear extensions, you can note it when you book so we reserve the right time.',
+      'Which colour suits you, what each service includes and what can’t be combined: see our FAQ (alexandroshairsalon.gr/syxnes-erotiseis). Something you didn’t like? You can tell us anonymously at alexandroshairsalon.gr/gnomi.'
     ],
     jump: 'Categories'
   }
