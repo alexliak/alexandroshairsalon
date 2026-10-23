@@ -38,8 +38,8 @@
           "en": "Haircut & Quick Dry"
         },
         "desc": {
-          "el": "Λούσιμο, κούρεμα, προϊόν styling και γρήγορο στέγνωμα με τα χέρια, με πιστολάκι ή φυσούνα, για φυσικό αποτέλεσμα.",
-          "en": "Wash, cut, styling product and a quick dry shaped by hand, with a hairdryer or diffuser, for a natural finish."
+          "el": "Λούσιμο, κούρεμα και γρήγορο στέγνωμα με τα χέρια, με πιστολάκι ή φυσούνα, για φυσικό αποτέλεσμα. Με προϊόν styling (προαιρετικά).",
+          "en": "Wash, cut and a quick dry shaped by hand, with a hairdryer or diffuser, for a natural finish. With styling product (optional)."
         },
         "note": {
           "el": "Χωρίς βούρτσα. Για φόρμα με βούρτσα: «Κούρεμα & γρήγορο φορμάρισμα».",
@@ -68,8 +68,8 @@
           "en": "Haircut & Quick Styling"
         },
         "desc": {
-          "el": "Λούσιμο, κούρεμα, προϊόν styling, θερμοπροστατευτικό και γρήγορο φορμάρισμα με πιστολάκι και βούρτσα, για όγκο και φόρμα.",
-          "en": "Wash, cut, styling product, heat protectant and a quick brushed styling for volume and shape."
+          "el": "Λούσιμο, κούρεμα και γρήγορο φορμάρισμα με πιστολάκι και βούρτσα, για όγκο και φόρμα. Με θερμοπροστατευτικό και προϊόν styling (προαιρετικά).",
+          "en": "Wash, cut and a quick brushed styling for volume and shape. With heat protectant and styling product (optional)."
         },
         "note": {
           "el": "Για πλήρες χτένισμα με λάμψη που έχει διάρκεια: «Κούρεμα & χτένισμα».",
@@ -98,8 +98,8 @@
           "en": "Haircut & Blowdry"
         },
         "desc": {
-          "el": "Λούσιμο, κούρεμα, θερμοπροστατευτικό και πλήρες χτένισμα με πιστολάκι και βούρτσα — ίσιο και λείο, ή με όγκο και κίνηση — με λάμψη που έχει διάρκεια.",
-          "en": "Wash, cut, heat protectant and a full blow-out — bouncy or sleek — for shine that lasts."
+          "el": "Λούσιμο, κούρεμα και πλήρες χτένισμα με πιστολάκι και βούρτσα — ίσιο και λείο, ή με όγκο και κίνηση — με λάμψη που έχει διάρκεια. Με θερμοπροστατευτικό και προϊόν styling (προαιρετικά).",
+          "en": "Wash, cut and a full blow-out — bouncy or sleek — for shine that lasts. With heat protectant and styling product (optional)."
         },
         "note": {
           "el": "Για ίσιωμα με πρέσα: «+ Ίσιωμα με πρέσα ατμού». Για μπούκλες ή κυματισμούς: «Χτένισμα για εκδήλωση». Κρατά έως και 7 ημέρες, ανάλογα με τη φύση των μαλλιών, τις συνθήκες, όπως η υγρασία, και τη φροντίδα τους στο σπίτι.",
@@ -158,8 +158,8 @@
           "en": "Gentlemen’s Haircut"
         },
         "desc": {
-          "el": "Λούσιμο, κούρεμα με ψαλίδι και μηχανή και φορμάρισμα.",
-          "en": "Wash, scissor and clipper cut, and styling."
+          "el": "Λούσιμο, κούρεμα με ψαλίδι και μηχανή και φορμάρισμα. Με προϊόν styling (προαιρετικά).",
+          "en": "Wash, scissor and clipper cut, and styling. With styling product (optional)."
         },
         "online": true,
         "options": [
@@ -184,8 +184,8 @@
           "en": "Clipper Cut"
         },
         "desc": {
-          "el": "Κούρεμα μόνο με μηχανή, χωρίς λούσιμο.",
-          "en": "Clipper-only cut, no wash."
+          "el": "Κούρεμα μόνο με μηχανή, χωρίς λούσιμο. Με προϊόν styling (προαιρετικά).",
+          "en": "Clipper-only cut, no wash. With styling product (optional)."
         },
         "note": {
           "el": "Για σβήσιμο (fade): «Ανδρικό κούρεμα». Για φρεσκάρισμα στα πλαϊνά και στον αυχένα: «Πλαϊνά & αυχένας» (κλείνεται τηλεφωνικά).",
@@ -271,8 +271,8 @@
           "en": "Wash & Quick Styling"
         },
         "desc": {
-          "el": "Λούσιμο, προϊόν styling, θερμοπροστατευτικό και γρήγορο φορμάρισμα με πιστολάκι και βούρτσα, για όγκο και φόρμα.",
-          "en": "Wash, styling product, heat protectant and a quick brushed styling for volume and shape."
+          "el": "Λούσιμο και γρήγορο φορμάρισμα με πιστολάκι και βούρτσα, για όγκο και φόρμα. Με θερμοπροστατευτικό και προϊόν styling (προαιρετικά).",
+          "en": "Wash and a quick brushed styling for volume and shape. With heat protectant and styling product (optional)."
         },
         "note": {
           "el": "Φορμάρισμα έως 15′. Για πλήρες χτένισμα με λάμψη που έχει διάρκεια: «Χτένισμα με βούρτσα».",
@@ -297,8 +297,8 @@
           "en": "Signature Blowdry"
         },
         "desc": {
-          "el": "Λούσιμο, θερμοπροστατευτικό και πλήρες χτένισμα με πιστολάκι και βούρτσα — ίσιο και λείο, ή με όγκο και κίνηση — με λάμψη που έχει διάρκεια.",
-          "en": "Wash, heat protectant and a full blow-out — bouncy or sleek — for shine that lasts."
+          "el": "Λούσιμο και πλήρες χτένισμα με πιστολάκι και βούρτσα — ίσιο και λείο, ή με όγκο και κίνηση — με λάμψη που έχει διάρκεια. Με θερμοπροστατευτικό και προϊόν styling (προαιρετικά).",
+          "en": "Wash and a full blow-out — bouncy or sleek — for shine that lasts. With heat protectant and styling product (optional)."
         },
         "note": {
           "el": "Για ίσιωμα με πρέσα: «+ Ίσιωμα με πρέσα ατμού». Για μπούκλες ή κυματισμούς: «Χτένισμα για εκδήλωση». Κρατά έως και 7 ημέρες, ανάλογα με τη φύση των μαλλιών, τις συνθήκες, όπως η υγρασία, και τη φροντίδα τους στο σπίτι. Για όσες χτενίζονται κάθε εβδομάδα υπάρχει και το «Εβδομαδιαίο χτένισμα με μάσκα».",
@@ -327,8 +327,8 @@
           "en": "Weekly Blowdry with Mask"
         },
         "desc": {
-          "el": "Για όσες θέλουν να είναι περιποιημένες όλη την εβδομάδα, στη δουλειά και στα ραντεβού τους, χωρίς να το σκέφτονται. Λούσιμο, μάσκα, θερμοπροστατευτικό και χτένισμα με βούρτσα, την ίδια μέρα και ώρα κάθε εβδομάδα. Κρατά έως και 7 ημέρες, ανάλογα με τα μαλλιά και τις συνθήκες. Χωριστά θα ήταν €39.",
-          "en": "For those who like to look polished all week, at work and at every meeting, without having to think about it. Wash, mask, heat protectant and a full blow-out, on the same day and time every week. Lasts up to 7 days, depending on your hair and conditions. Separately it would be €39."
+          "el": "Για όσες θέλουν να είναι περιποιημένες όλη την εβδομάδα, στη δουλειά και στα ραντεβού τους, χωρίς να το σκέφτονται. Λούσιμο, μάσκα και χτένισμα με βούρτσα, την ίδια μέρα και ώρα κάθε εβδομάδα. Με θερμοπροστατευτικό και προϊόν styling (προαιρετικά). Κρατά έως και 7 ημέρες, ανάλογα με τα μαλλιά και τις συνθήκες. Χωριστά θα ήταν €39.",
+          "en": "For those who like to look polished all week, at work and at every meeting, without having to think about it. Wash, mask and a full blow-out, on the same day and time every week. With heat protectant and styling product (optional). Lasts up to 7 days, depending on your hair and conditions. Separately it would be €39."
         },
         "note": {
           "el": "Δευτέρα–Πέμπτη, όταν υπάρχει ελεύθερη ώρα. Ισχύει όταν το προηγούμενο χτένισμα έγινε σε εμάς τις τελευταίες 8 ημέρες· την πρώτη φορά ξεκινάμε μαζί. Online κλείνεται το μεσαίο· κοντά και μακριά τηλεφωνικά. Δεν συνδυάζεται με άλλη έκπτωση.",
@@ -375,8 +375,8 @@
           "en": "Special Occasion Styling"
         },
         "desc": {
-          "el": "Μπούκλες, κυματισμοί ή πιάσιμο, για γάμο, έξοδο, σημαντική συνάντηση ή φωτογράφιση.",
-          "en": "Curls, waves or an up-do, for a wedding, a night out, an important meeting or a photo shoot."
+          "el": "Μπούκλες, κυματισμοί ή πιάσιμο, για γάμο, έξοδο, σημαντική συνάντηση ή φωτογράφιση. Με θερμοπροστατευτικό και προϊόν styling (προαιρετικά).",
+          "en": "Curls, waves or an up-do, for a wedding, a night out, an important meeting or a photo shoot. With heat protectant and styling product (optional)."
         },
         "note": {
           "el": "Μια φωτογραφία με αυτό που σου αρέσει μάς βοηθά πολύ. Για μπούκλες ή πιάσιμο σε πολλά ή πολύ μακριά μαλλιά, υπάρχει μια μικρή συμβουλή στις Συχνές ερωτήσεις.",
@@ -435,8 +435,8 @@
           "en": "Quick Styling after Colour (add-on)"
         },
         "desc": {
-          "el": "Γρήγορο φορμάρισμα με προϊόν styling, θερμοπροστατευτικό, πιστολάκι και βούρτσα μετά τη βαφή, για όγκο και φόρμα.",
-          "en": "A quick brushed styling after your colour, with styling product and heat protectant, for volume and shape."
+          "el": "Γρήγορο φορμάρισμα με πιστολάκι και βούρτσα μετά τη βαφή, για όγκο και φόρμα. Με θερμοπροστατευτικό και προϊόν styling (προαιρετικά).",
+          "en": "A quick brushed styling after your colour, for volume and shape. With heat protectant and styling product (optional)."
         },
         "note": {
           "el": "Μόνο μαζί με βαφή. Για πλήρες χτένισμα: «+ Χτένισμα μετά τη βαφή». Χωρίς βαφή: «Λούσιμο & γρήγορο φορμάρισμα» €22, κλείνεται τηλεφωνικά.",
@@ -465,8 +465,8 @@
           "en": "Colour Blowdry (add-on)"
         },
         "desc": {
-          "el": "Πλήρες χτένισμα μετά τη βαφή, με θερμοπροστατευτικό, πιστολάκι και βούρτσα — ίσιο και λείο, ή με όγκο και κίνηση.",
-          "en": "A full blow-out after your colour, with heat protectant — bouncy or sleek."
+          "el": "Πλήρες χτένισμα μετά τη βαφή, με πιστολάκι και βούρτσα — ίσιο και λείο, ή με όγκο και κίνηση. Με θερμοπροστατευτικό και προϊόν styling (προαιρετικά).",
+          "en": "A full blow-out after your colour — bouncy or sleek. With heat protectant and styling product (optional)."
         },
         "note": {
           "el": "Μόνο μαζί με βαφή. Κρατά έως και 7 ημέρες, ανάλογα με τη φύση των μαλλιών, τις συνθήκες, όπως η υγρασία, και τη φροντίδα τους στο σπίτι.",
@@ -495,8 +495,8 @@
           "en": "Bridal Hair Trial"
         },
         "desc": {
-          "el": "Δοκιμάζουμε μαζί το νυφικό σου χτένισμα και κρατάμε σημειώσεις για την ημέρα του γάμου.",
-          "en": "We try your bridal hair together and keep notes for the wedding day."
+          "el": "Δοκιμάζουμε μαζί το νυφικό σου χτένισμα και κρατάμε σημειώσεις για την ημέρα του γάμου. Με θερμοπροστατευτικό και προϊόν styling (προαιρετικά).",
+          "en": "We try your bridal hair together and keep notes for the wedding day. With heat protectant and styling product (optional)."
         },
         "note": {
           "el": "Θα βοηθήσει να έχεις μαζί σου το πέπλο, τα αξεσουάρ και φωτογραφίες που σου αρέσουν.",
@@ -521,8 +521,8 @@
           "en": "Bridal Hair"
         },
         "desc": {
-          "el": "Το νυφικό σου χτένισμα την ημέρα του γάμου, όπως το δοκιμάσαμε.",
-          "en": "Your bridal hair on the day, as trialled."
+          "el": "Το νυφικό σου χτένισμα την ημέρα του γάμου, όπως το δοκιμάσαμε. Με θερμοπροστατευτικό και προϊόν styling (προαιρετικά).",
+          "en": "Your bridal hair on the day, as trialled. With heat protectant and styling product (optional)."
         },
         "note": {
           "el": "Μόνο μετά από δοκιμαστικό. Εκτός κομμωτηρίου: +€40.",
@@ -948,8 +948,8 @@
           "en": "Fine highlights around the face, with toner, with a wash and quick dry."
         },
         "note": {
-          "el": "Χωρίς ντεκαπάζ: πιο ήπιο ξάνοιγμα, έως 4 τόνους, με L’Oréal Blond Studio No Bleach™. Σε βαμμένα μαλλιά προηγείται συμβουλευτική.",
-          "en": "Bleach-free: gentler lightening, up to 4 levels, with L’Oréal Blond Studio No Bleach™. On coloured hair, a consultation comes first."
+          "el": "Χωρίς ντεκαπάζ: πιο ήπιο ξάνοιγμα, έως 4 τόνους σε φυσικά μαλλιά και έως 2,5 σε βαμμένα, με L’Oréal Blond Studio No Bleach™. Σε βαμμένα μαλλιά προηγείται συμβουλευτική.",
+          "en": "Bleach-free: gentler lightening, up to 4 levels on natural hair and 2.5 on coloured hair, with L’Oréal Blond Studio No Bleach™. On coloured hair, a consultation comes first."
         },
         "online": true,
         "options": [
@@ -991,8 +991,8 @@
           "en": "Highlights on the top section and around the face, with toner, with a wash and quick dry."
         },
         "note": {
-          "el": "Η τιμή αφορά μαλλιά έως τους ώμους· για πιο μακριά: «+ Μακριά μαλλιά». Χωρίς ντεκαπάζ: πιο ήπιο ξάνοιγμα, έως 4 τόνους, με L’Oréal Blond Studio No Bleach™. Σε βαμμένα μαλλιά προηγείται συμβουλευτική.",
-          "en": "Price for hair up to the shoulders; for longer hair: Long Hair add-on. Bleach-free: gentler lightening, up to 4 levels, with L’Oréal Blond Studio No Bleach™. On coloured hair, a consultation comes first."
+          "el": "Η τιμή αφορά μαλλιά έως τους ώμους· για πιο μακριά: «+ Μακριά μαλλιά». Χωρίς ντεκαπάζ: πιο ήπιο ξάνοιγμα, έως 4 τόνους σε φυσικά μαλλιά και έως 2,5 σε βαμμένα, με L’Oréal Blond Studio No Bleach™. Σε βαμμένα μαλλιά προηγείται συμβουλευτική.",
+          "en": "Price for hair up to the shoulders; for longer hair: Long Hair add-on. Bleach-free: gentler lightening, up to 4 levels on natural hair and 2.5 on coloured hair, with L’Oréal Blond Studio No Bleach™. On coloured hair, a consultation comes first."
         },
         "online": true,
         "options": [
@@ -1146,12 +1146,12 @@
       },
       {
         "name": {
-          "el": "+ Ενίσχυση τρίχας στο ξάνοιγμα",
-          "en": "Bond Builder (add-on)"
+          "el": "+ Προστασία τρίχας στο ξάνοιγμα",
+          "en": "Hair Protection for Lightening (add-on)"
         },
         "desc": {
-          "el": "Προστασία της τρίχας κατά το ξάνοιγμα.",
-          "en": "Protects the hair while lightening."
+          "el": "Ψεκασμός με L’Oréal Metal Detox πριν από τις ανταύγειες ή το ξάνοιγμα, για προστασία της τρίχας.",
+          "en": "A L’Oréal Metal Detox pre-treatment spray before highlights or lightening, to protect the hair."
         },
         "note": {
           "el": "Μόνο μαζί με ανταύγειες, μπαλαγιάζ ή ξάνοιγμα.",
@@ -1211,16 +1211,16 @@
     "services": [
       {
         "name": {
-          "el": "Θεραπεία τριχόπτωσης",
-          "en": "Anti Hair-Loss Treatment"
+          "el": "+ Θεραπεία τριχόπτωσης",
+          "en": "Anti Hair-Loss Treatment (add-on)"
         },
         "desc": {
-          "el": "Αμπούλα κατά της τριχόπτωσης, που εφαρμόζεται στο τριχωτό της κεφαλής.",
-          "en": "An anti hair-loss ampoule applied to the scalp."
+          "el": "Αμπούλα κατά της τριχόπτωσης στο τριχωτό της κεφαλής, με γρήγορο styling στο τέλος.",
+          "en": "An anti hair-loss ampoule applied to the scalp, with a quick styling at the end."
         },
         "note": {
-          "el": "Δεν είναι ιατρική θεραπεία.",
-          "en": "Not a medical treatment."
+          "el": "Μαζί με άλλη υπηρεσία. Δεν είναι ιατρική θεραπεία.",
+          "en": "With another service. Not a medical treatment."
         },
         "online": true,
         "options": [
@@ -1228,10 +1228,10 @@
             "el": "",
             "en": "",
             "time": {
-              "el": "30′",
-              "en": "30′"
+              "el": "15′",
+              "en": "15′"
             },
-            "price": 30,
+            "price": 15,
             "book": {
               "item": "TR7599383",
               "option": "14437239"

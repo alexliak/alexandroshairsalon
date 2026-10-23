@@ -441,7 +441,7 @@ service_page(
 <p><strong>Γύρω από το πρόσωπο</strong>: λεπτές ανταύγειες που φωτίζουν το πρόσωπο, ιδανικές για πρώτη φορά. <strong>Μερικές</strong>: στο πάνω μέρος και γύρω από το πρόσωπο. <strong>Ολόκληρες</strong>: σε όλο το κεφάλι. <strong>Μερικό μπαλαγιάζ (balayage)</strong>: απαλό φως ζωγραφισμένο με το χέρι, ελεύθερα ή σε αλουμινόχαρτα (foilayage), για μεσαία και μακριά μαλλιά.</p>
 <p><strong>Χωρίς ντεκαπάζ</strong>: με την κρέμα ξανοίγματος L’Oréal Professionnel Blond Studio No Bleach™, πιο ήπια για την τρίχα, έως 4 τόνους (σε βαμμένα μαλλιά έως 2,5). Γύρω από το πρόσωπο €{FACE['Χωρίς ντεκαπάζ']}, με ντεκαπάζ €{FACE['Με ντεκαπάζ']}.</p>
 <p>Οι τιμές είναι για μαλλιά έως τους ώμους· για πιο μακριά υπάρχει το «+ Μακριά μαλλιά» (€{P('+ Μακριά μαλλιά (ανταύγειες / μπαλαγιάζ)')}). Για έντονη αλλαγή, πλατινέ ή διόρθωση παλιού χρώματος κλείσε πρώτα <strong>διάγνωση χρώματος</strong>, ώστε να συμφωνήσουμε ρεαλιστικό πλάνο και συγκεκριμένη τιμή.</p>""",
-    ["Ανταύγειες γύρω από το πρόσωπο", "Μερικές ανταύγειες", "Ολόκληρες ανταύγειες", "Μερικό μπαλαγιάζ", "Ολόκληρο μπαλαγιάζ", "+ Μακριά μαλλιά (ανταύγειες / μπαλαγιάζ)", "+ Ενίσχυση τρίχας στο ξάνοιγμα", "Διόρθωση χρώματος"],
+    ["Ανταύγειες γύρω από το πρόσωπο", "Μερικές ανταύγειες", "Ολόκληρες ανταύγειες", "Μερικό μπαλαγιάζ", "Ολόκληρο μπαλαγιάζ", "+ Μακριά μαλλιά (ανταύγειες / μπαλαγιάζ)", "+ Προστασία τρίχας στο ξάνοιγμα", "Διόρθωση χρώματος"],
     [("Πόσο κοστίζει το μπαλαγιάζ (balayage) στην Αθήνα;", f"Στο κομμωτήριό μας το μερικό μπαλαγιάζ κοστίζει €{P('Μερικό μπαλαγιάζ')} για μαλλιά έως τους ώμους, με ρεφλέ. Για πιο μακριά μαλλιά προστίθεται το «+ Μακριά μαλλιά» (€{P('+ Μακριά μαλλιά (ανταύγειες / μπαλαγιάζ)')})."),
      ("Πόσο κοστίζουν οι ανταύγειες;", f"Γύρω από το πρόσωπο €{FACE['Χωρίς ντεκαπάζ']}–€{FACE['Με ντεκαπάζ']}, μερικές €{P('Μερικές ανταύγειες')} και ολόκληρες €{P('Ολόκληρες ανταύγειες')}, πάντα με ρεφλέ."),
      ("Υπάρχει επιλογή χωρίς ντεκαπάζ;", "Ναι, με την κρέμα L’Oréal Professionnel Blond Studio No Bleach™: έως 4 τόνους πιο ανοιχτά, πιο ήπια για την τρίχα."),
@@ -873,6 +873,8 @@ def svc_anchor(name):
 
 # Επίσημες σελίδες των προϊόντων που χρησιμοποιούμε (ελέγχθηκαν 23/10/2026)
 PRODUCT_LINKS = [
+    ("Farcom Expertia", "https://www.farcom.gr/expertia-bafh-100-ml-471-kastano-kafe-santre"),
+    ("L’Oréal Metal Detox", "https://www.angelopouloshair.gr/el/l-oreal-professionnel-serie-expert-metal-detox-neutralizer-pre-treatment-500ml"),
     ("Redken Color Gels Oils", "https://redken.co.uk/products/haircolor/colorgels/color-gels-oils"),
     ("Redken Shades EQ", "https://redken.co.uk/products/haircolor/shades-eq/shades-eq-hair-gloss"),
     ("Blond Studio No Bleach™", "https://www.lorealprofessionnel.com/no-bleach-french-highlights"),
@@ -953,13 +955,13 @@ FAQ_GROUPS = [
    "Gloss (Dia Light, Redken Shades EQ): acidic and ammonia-free; adds tone and shine without lightening, and doesn’t fully cover grey.",
    []),
   ("Τι είναι το ντεκαπάζ;",
-   "Το ξάνοιγμα των μαλλιών με σκόνη ξανοίγματος, για ανταύγειες και μπαλαγιάζ που χρειάζονται να ανοίξουν αρκετούς τόνους. Μετά ακολουθεί πάντα ρεφλέ, για τον τόνο που θέλεις. "
-   "Για πιο ήπιο αποτέλεσμα υπάρχει και η επιλογή χωρίς ντεκαπάζ, με L’Oréal Blond Studio No Bleach™, που ανοίγει έως 4 τόνους. "
-   f"Για επιπλέον προστασία της τρίχας υπάρχει η «+ Ενίσχυση τρίχας στο ξάνοιγμα» ({O('+ Ενίσχυση τρίχας στο ξάνοιγμα')}). Σε βαμμένα μαλλιά προηγείται συμβουλευτική.",
+   "Το ξάνοιγμα των μαλλιών με σκόνη ξανοίγματος, για ανταύγειες και μπαλαγιάζ που χρειάζονται να ανοίξουν αρκετούς τόνους. Μετά ακολουθεί σχεδόν πάντα ρεφλέ, για τον τόνο που θέλεις. "
+   "Για πιο ήπιο αποτέλεσμα υπάρχει και η επιλογή χωρίς ντεκαπάζ, με L’Oréal Blond Studio No Bleach™, που ανοίγει έως 4 τόνους σε φυσικά μαλλιά και έως 2,5 σε βαμμένα. "
+   f"Για επιπλέον προστασία, πριν από το ξάνοιγμα μπορούμε να ψεκάσουμε L’Oréal Metal Detox: «+ Προστασία τρίχας στο ξάνοιγμα» ({O('+ Προστασία τρίχας στο ξάνοιγμα')}). Σε βαμμένα μαλλιά προηγείται συμβουλευτική.",
    "What is bleaching (ντεκαπάζ)?",
-   "Lightening the hair with lightening powder, for highlights and balayage that need to lift several levels. A gloss always follows, for the tone you want. "
-   "For a gentler result there is also a bleach-free option, with L’Oréal Blond Studio No Bleach™, which lifts up to 4 levels. "
-   f"For extra protection of the hair there is the Bond Builder add-on ({O('+ Ενίσχυση τρίχας στο ξάνοιγμα')}). On coloured hair, a consultation comes first.",
+   "Lightening the hair with lightening powder, for highlights and balayage that need to lift several levels. A gloss almost always follows, for the tone you want. "
+   "For a gentler result there is also a bleach-free option, with L’Oréal Blond Studio No Bleach™, which lifts up to 4 levels on natural hair and up to 2.5 on coloured hair. "
+   f"For extra protection, we can spray L’Oréal Metal Detox before lightening: the Hair Protection add-on ({O('+ Προστασία τρίχας στο ξάνοιγμα')}). On coloured hair, a consultation comes first.",
    [("Ανταύγειες γύρω από το πρόσωπο", "Με ντεκαπάζ"), ("Ανταύγειες γύρω από το πρόσωπο", "Χωρίς ντεκαπάζ"), ("Συμβουλευτική χρώματος, νυφικού & κερατίνης", None)]),
   ("Πόσο χρώμα περιλαμβάνει κάθε βαφή;",
    "Βαφή ρίζας έως 45 g. Βαφή σε όλο το μαλλί έως 60 g ή 60 ml. Ρεφλέ έως 60 ml για μαλλιά έως τους ώμους ή 90 ml για πιο μακριά. Βαφή ρίζας & ρεφλέ: ρίζα έως 45 g και ρεφλέ 60 ή 90 ml. Οι ποσότητες είναι πριν από το οξειδωτικό.",
@@ -996,9 +998,9 @@ FAQ_GROUPS = [
    "Up to 7 days. It depends on your hair, on conditions such as humidity, and on how it is cared for at home.",
    [("Χτένισμα με βούρτσα", None)]),
   ("Μπούκλες ή πιάσιμο σε πολλά ή πολύ μακριά μαλλιά;",
-   "Οι μπούκλες και το πιάσιμο κρατούν καλύτερα σε μαλλιά λουσμένα από πριν και στεγνωμένα φυσικά, χωρίς βαριά μαλακτικά ή λάδια. Σε πολλά ή πολύ μακριά μαλλιά βοηθά το λούσιμο να γίνει την προηγούμενη μέρα.",
+   "Οι μπούκλες και το πιάσιμο κρατούν καλύτερα σε μαλλιά λουσμένα από πριν και στεγνωμένα φυσικά, χωρίς βαριά μαλακτικά ή έλαια μαλλιών. Σε πολλά ή πολύ μακριά μαλλιά βοηθά το λούσιμο να γίνει την προηγούμενη μέρα.",
    "Curls or an up-do on thick or very long hair?",
-   "Curls and up-dos hold best on hair washed beforehand and left to dry naturally, without heavy conditioners or oils. On thick or very long hair, washing the day before helps.",
+   "Curls and up-dos hold best on hair washed beforehand and left to dry naturally, without heavy conditioners or hair oils. On thick or very long hair, washing the day before helps.",
    [("Χτένισμα για εκδήλωση", None)]),
   ("Υπάρχει λούσιμο και γρήγορο φορμάρισμα χωρίς βαφή;",
    f"Ναι, το Λούσιμο & γρήγορο φορμάρισμα, {O('Λούσιμο & γρήγορο φορμάρισμα')}.",
