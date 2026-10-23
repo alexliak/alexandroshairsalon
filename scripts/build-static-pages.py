@@ -388,7 +388,7 @@ service_page(
 <p>Κάνουμε κλασικά και σύγχρονα κουρέματα: pixie, mullet, bob και lob, butterfly, curtain bangs, φιλάρισμα για όγκο ή ελάφρυνση, καθαρό φρεσκάρισμα άκρων.</p>
 <h2>Πώς θέλεις να φύγεις;</h2>
 <p>Μία τιμή για κάθε μήκος· διαλέγεις μόνο το τέλος. <strong>Χωρίς στέγνωμα</strong>, ιδανικό για σγουρά. <strong>Γρήγορο στέγνωμα</strong>: με τα χέρια, με πιστολάκι ή φυσούνα, για φυσικό αποτέλεσμα. <strong>Γρήγορο φορμάρισμα</strong>: πιστολάκι και βούρτσα για όγκο και φόρμα. <strong>Χτένισμα</strong>: πλήρες, ίσιο και λείο ή με όγκο και κίνηση, που κρατά συνήθως 2–3 ημέρες.</p>""",
-    CUTS + ["Φράτζα", "Ανδρικό κούρεμα", "Ανδρικό με μηχανή", "Παιδικό κούρεμα"],
+    CUTS + ["Φράτζα & αφέλειες", "Ανδρικό κούρεμα", "Ανδρικό με μηχανή", "Παιδικό κούρεμα"],
     [("Πόσο κοστίζει ένα γυναικείο κούρεμα;", f"€{P(CUTS[0])} χωρίς στέγνωμα, €{P(CUTS[1])} με γρήγορο στέγνωμα, €{P(CUTS[2])} με γρήγορο φορμάρισμα και €{P(CUTS[3])} με πλήρες χτένισμα. Ίδια τιμή για όλα τα μήκη."),
      ("Κάνετε και ανδρικά ή παιδικά κουρέματα;", f"Ναι. Ανδρικό κούρεμα €{P('Ανδρικό κούρεμα')}, με μηχανή €{P('Ανδρικό με μηχανή')} και παιδικό (έως 12 ετών) €{P('Παιδικό κούρεμα')}."),
      FAQ_WHEN,
@@ -858,97 +858,186 @@ def O(name, label=None):
     p = next(pp for l, _, pp in opts if label is None or l == label)
     return f"€{p:g}"
 
+def S(name):
+    """Όνομα υπηρεσίας στα αγγλικά, από το menu.json."""
+    return EN_NAME[name]
+
+EN_NAME = {s["name"]["el"]: s["name"]["en"] for c in _MENU_JSON for s in c["services"]}
+EN_OPT = {(s["name"]["el"], o["el"]): o["en"] for c in _MENU_JSON for s in c["services"] for o in s["options"]}
+
+
+def svc_anchor(name):
+    """Ίδιο με το id κάθε υπηρεσίας στη σελίδα /services (src/views/Services.js)."""
+    return re.sub(r"[^a-z0-9]+", "-", EN_NAME[name].lower()).strip("-")
+
+
+# Επίσημες σελίδες των προϊόντων που χρησιμοποιούμε (ελέγχθηκαν 23/10/2026)
+PRODUCT_LINKS = [
+    ("Redken Color Gels Oils", "https://redken.co.uk/products/haircolor/colorgels/color-gels-oils"),
+    ("Redken Shades EQ", "https://redken.co.uk/products/haircolor/shades-eq/shades-eq-hair-gloss"),
+    ("Blond Studio No Bleach™", "https://www.lorealprofessionnel.com/no-bleach-french-highlights"),
+    ("Majirel", "https://www.lorealprofessionnel.com/all-products/hair-color/majirel"),
+    ("INOA", "https://www.lorealprofessionnel.com/all-products/hair-color/inoa"),
+    ("Dia Color", "https://www.lorealprofessionnel.com/all-products/hair-color/dia-color"),
+    ("Dia Light", "https://www.lorealprofessionnel.com/all-products/hair-color/dia-light"),
+]
+_PROD_RE = re.compile("|".join(re.escape(esc(n)) for n, _ in PRODUCT_LINKS))
+_PROD_URL = {esc(n): u for n, u in PRODUCT_LINKS}
+
+
+def link_products(h):
+    """Η πρώτη αναφορά κάθε προϊόντος σε μια απάντηση γίνεται σύνδεσμος προς την επίσημη σελίδα του."""
+    seen = set()
+    def rep(m):
+        t = m.group(0)
+        if t in seen:
+            return t
+        seen.add(t)
+        return f'<a class="il" href="{_PROD_URL[t]}" target="_blank" rel="noopener">{t}</a>'
+    return _PROD_RE.sub(rep, h)
+
+
+def book_links(books, lang):
+    """Γραμμή «Κράτηση:» με σύνδεσμο για κάθε υπηρεσία που αναφέρει η απάντηση."""
+    if not books:
+        return ""
+    out = []
+    for name, opt in books:
+        s = next(s for c in _MENU_JSON for s in c["services"] if s["name"]["el"] == name)
+        o = next(o for o in s["options"] if opt is None or o["el"] == opt)
+        label = (name if lang == "el" else EN_NAME[name]) + ((" · " + (opt if lang == "el" else EN_OPT[(name, opt)])) if opt else "")
+        u = book_url(o)
+        if u:
+            out.append(f'<a class="il" href="{esc(u)}" target="_blank" rel="noopener">{esc(label)}</a>')
+        else:
+            tel = "Τηλεφωνικά" if lang == "el" else "By phone"
+            out.append(f'<a class="il" href="/services#{svc_anchor(name)}">{esc(label)}</a> ({tel} <a class="il" href="tel:{PHONE}">{PHONE_TXT}</a>)')
+    return f'<span class="bk">{"Κράτηση" if lang == "el" else "Book"}: ' + " · ".join(out) + "</span>"
+
+
+# (ερώτηση, απάντηση, ερώτηση EN, απάντηση EN, υπηρεσίες για κράτηση)
 FAQ_GROUPS = [
- ("Χρώμα", [
+ ("Χρώμα", "Colour", [
   ("Θέλω να καλύψω τα λευκά στη ρίζα. Τι μου ταιριάζει;",
-   f"Η Βαφή ρίζας ({O('Βαφή ρίζας','Κανονική')}), με Farcom ή Majirel της L’Oréal. Αν βάφεσαι κάθε μήνα, η Μηνιαία ρίζα ({O('Βαφή ρίζας','Μηνιαία ρίζα')})."),
+   f"Η Βαφή ρίζας ({O('Βαφή ρίζας','Κανονική')}), με Farcom Expertia ή Majirel της L’Oréal, που καλύπτουν πλήρως τα λευκά. Αν βάφεσαι κάθε μήνα, η Μηνιαία ρίζα ({O('Βαφή ρίζας','Μηνιαία ρίζα')}).",
+   "I want to cover grey at the roots. What suits me?",
+   f"Root Colour ({O('Βαφή ρίζας','Κανονική')}), with Farcom Expertia or L’Oréal Majirel, for full grey coverage. If you colour every month, the Monthly Root ({O('Βαφή ρίζας','Μηνιαία ρίζα')}).",
+   [("Βαφή ρίζας", "Κανονική"), ("Βαφή ρίζας", "Μηνιαία ρίζα")]),
   ("Με ενοχλεί η μυρωδιά ή έχω ευαίσθητο δέρμα.",
-   f"Η Βαφή ρίζας χωρίς αμμωνία ({O('Βαφή ρίζας','Χωρίς αμμωνία')}, μηνιαία {O('Βαφή ρίζας','Χωρίς αμμωνία · μηνιαία ρίζα')}), με INOA της L’Oréal ή Redken Color Gels Oils."),
+   f"Η Βαφή ρίζας χωρίς αμμωνία ({O('Βαφή ρίζας','Χωρίς αμμωνία')}, μηνιαία {O('Βαφή ρίζας','Χωρίς αμμωνία · μηνιαία ρίζα')}), με INOA της L’Oréal ή Redken Color Gels Oils. Η μυρωδιά είναι πολύ πιο ήπια και η κάλυψη των λευκών παραμένει πλήρης.",
+   "The smell bothers me, or I have sensitive skin.",
+   f"Ammonia-free Root Colour ({O('Βαφή ρίζας','Χωρίς αμμωνία')}, monthly {O('Βαφή ρίζας','Χωρίς αμμωνία · μηνιαία ρίζα')}), with L’Oréal INOA or Redken Color Gels Oils. The smell is much milder and grey coverage stays full.",
+   [("Βαφή ρίζας", "Χωρίς αμμωνία"), ("Βαφή ρίζας", "Χωρίς αμμωνία · μηνιαία ρίζα")]),
   ("Τα μήκη μου ξεθώριασαν.",
-   f"Η Βαφή ρίζας & ρεφλέ ({O('Βαφή ρίζας & ρεφλέ στα μήκη','Έως τους ώμους')} έως τους ώμους, {O('Βαφή ρίζας & ρεφλέ στα μήκη','Κάτω από τους ώμους')} πιο κάτω). Στα μήκη βάζουμε όξινο ρεφλέ χωρίς αμμωνία (Dia Light ή Redken Shades EQ), που δίνει τόνο και λάμψη, δεν ξανοίγει τα μαλλιά και δεν καλύπτει πλήρως τα λευκά. Αν τα μήκη θέλουν περισσότερο χρώμα, ημιμόνιμη Dia Color, στην ίδια τιμή."),
+   f"Η Βαφή ρίζας & ρεφλέ ({O('Βαφή ρίζας & ρεφλέ στα μήκη','Έως τους ώμους')} έως τους ώμους, {O('Βαφή ρίζας & ρεφλέ στα μήκη','Κάτω από τους ώμους')} πιο κάτω). Στη ρίζα μόνιμη βαφή· στα μήκη όξινο ρεφλέ χωρίς αμμωνία (Dia Light ή Redken Shades EQ), που ξαναδίνει τόνο και λάμψη χωρίς να ξανοίγει τα μαλλιά. Αν τα μήκη θέλουν περισσότερο χρώμα, ημιμόνιμη Dia Color, στην ίδια τιμή.",
+   "My lengths have faded.",
+   f"Root Colour & Gloss ({O('Βαφή ρίζας & ρεφλέ στα μήκη','Έως τους ώμους')} up to the shoulders, {O('Βαφή ρίζας & ρεφλέ στα μήκη','Κάτω από τους ώμους')} longer). Permanent colour on the roots; on the lengths an acidic, ammonia-free gloss (Dia Light or Redken Shades EQ) that brings back tone and shine without lightening. If the lengths need more colour, Dia Color demi-permanent, at the same price.",
+   [("Βαφή ρίζας & ρεφλέ στα μήκη", "Έως τους ώμους"), ("Βαφή ρίζας & ρεφλέ στα μήκη", "Κάτω από τους ώμους")]),
   ("Θέλω άλλο χρώμα ή έχω λευκά και στα μήκη.",
-   f"Η Βαφή σε όλο το μαλλί, μόνιμη ({O('Βαφή σε όλο το μαλλί','Μόνιμη')}): χρώμα από τη ρίζα ως τις άκρες, με πλήρη κάλυψη λευκών."),
+   f"Η Βαφή σε όλο το μαλλί, μόνιμη ({O('Βαφή σε όλο το μαλλί','Μόνιμη')}): ένα ενιαίο χρώμα από τη ρίζα ως τις άκρες, με πλήρη κάλυψη λευκών.",
+   "I want a different colour, or I have grey on the lengths too.",
+   f"All-over Colour, permanent ({O('Βαφή σε όλο το μαλλί','Μόνιμη')}): one even colour from roots to ends, with full grey coverage.",
+   [("Βαφή σε όλο το μαλλί", "Μόνιμη")]),
   ("Θέλω κάτι πιο ήπιο από τη μόνιμη βαφή.",
-   f"Η Βαφή σε όλο το μαλλί, ημιμόνιμη ({O('Βαφή σε όλο το μαλλί','Ημιμόνιμη')}), με Dia Color της L’Oréal. Καλύπτει έως 70% των λευκών, κρατά έως 6 εβδομάδες και φεύγει σταδιακά, χωρίς έντονη γραμμή στη ρίζα. Ταιριάζει και σε ταλαιπωρημένα μαλλιά."),
+   f"Η Βαφή σε όλο το μαλλί, ημιμόνιμη ({O('Βαφή σε όλο το μαλλί','Ημιμόνιμη')}), με Dia Color της L’Oréal. Καλύπτει έως 70% των λευκών, κρατά έως 6 εβδομάδες και ξεθωριάζει σταδιακά, χωρίς έντονη γραμμή στη ρίζα. Ταιριάζει και σε ταλαιπωρημένα μαλλιά.",
+   "I’d like something gentler than permanent colour.",
+   f"All-over Colour, demi-permanent ({O('Βαφή σε όλο το μαλλί','Ημιμόνιμη')}), with L’Oréal Dia Color. It covers up to 70% of grey, lasts up to 6 weeks and fades gradually, with no sharp regrowth line. It also suits stressed hair.",
+   [("Βαφή σε όλο το μαλλί", "Ημιμόνιμη")]),
   ("Τι σημαίνει μόνιμη, ημιμόνιμη και ρεφλέ;",
-   "Μόνιμη βαφή (Farcom Expertia, Majirel, INOA, Redken Color Gels Oils): αλκαλική, μπαίνει μέσα στην τρίχα, καλύπτει πλήρως τα λευκά και μένει ως το κούρεμα· όταν μεγαλώνει, φαίνεται η ρίζα. Ημιμόνιμη (Dia Color): πιο ήπια, καλύπτει έως 70% των λευκών και φεύγει σε περίπου 6 εβδομάδες. Ρεφλέ (Dia Light, Redken Shades EQ): όξινο, χωρίς αμμωνία, δίνει τόνο και λάμψη χωρίς να ξανοίγει."),
+   "Μόνιμη βαφή (Farcom Expertia, Majirel, INOA, Redken Color Gels Oils): μπαίνει μέσα στην τρίχα και καλύπτει πλήρως τα λευκά. Δεν φεύγει με το λούσιμο· το χρώμα μένει στην τρίχα μέχρι να κοπεί. Καθώς τα μαλλιά μεγαλώνουν φαίνεται η νέα ρίζα, γι’ αυτό η ρίζα βάφεται συνήθως κάθε 4–6 εβδομάδες. "
+   "Ημιμόνιμη (Dia Color): πιο ήπια, καλύπτει έως 70% των λευκών και ξεθωριάζει σταδιακά σε περίπου 6 εβδομάδες, χωρίς έντονη γραμμή στη ρίζα. "
+   "Ρεφλέ (Dia Light, Redken Shades EQ): όξινο, χωρίς αμμωνία· δίνει τόνο και λάμψη χωρίς να ξανοίγει τα μαλλιά και δεν καλύπτει πλήρως τα λευκά.",
+   "What do permanent, demi-permanent and gloss mean?",
+   "Permanent colour (Farcom Expertia, Majirel, INOA, Redken Color Gels Oils): goes inside the hair and fully covers grey. It doesn’t wash out; the colour stays in the hair until it is cut. As your hair grows the new roots show, so roots are usually coloured every 4–6 weeks. "
+   "Demi-permanent (Dia Color): gentler, covers up to 70% of grey and fades gradually over about 6 weeks, with no sharp regrowth line. "
+   "Gloss (Dia Light, Redken Shades EQ): acidic and ammonia-free; adds tone and shine without lightening, and doesn’t fully cover grey.",
+   []),
+  ("Τι είναι το ντεκαπάζ;",
+   "Το ξάνοιγμα των μαλλιών με σκόνη ξανοίγματος, για ανταύγειες και μπαλαγιάζ που χρειάζονται να ανοίξουν αρκετούς τόνους. Μετά ακολουθεί πάντα ρεφλέ, για τον τόνο που θέλεις. "
+   "Για πιο ήπιο αποτέλεσμα υπάρχει και η επιλογή χωρίς ντεκαπάζ, με L’Oréal Blond Studio No Bleach™, που ανοίγει έως 4 τόνους. "
+   f"Για επιπλέον προστασία της τρίχας υπάρχει η «+ Ενίσχυση τρίχας στο ξάνοιγμα» ({O('+ Ενίσχυση τρίχας στο ξάνοιγμα')}). Σε βαμμένα μαλλιά προηγείται συμβουλευτική.",
+   "What is bleaching (ντεκαπάζ)?",
+   "Lightening the hair with lightening powder, for highlights and balayage that need to lift several levels. A gloss always follows, for the tone you want. "
+   "For a gentler result there is also a bleach-free option, with L’Oréal Blond Studio No Bleach™, which lifts up to 4 levels. "
+   f"For extra protection of the hair there is the Bond Builder add-on ({O('+ Ενίσχυση τρίχας στο ξάνοιγμα')}). On coloured hair, a consultation comes first.",
+   [("Ανταύγειες γύρω από το πρόσωπο", "Με ντεκαπάζ"), ("Ανταύγειες γύρω από το πρόσωπο", "Χωρίς ντεκαπάζ"), ("Συμβουλευτική χρώματος, νυφικού & κερατίνης", None)]),
   ("Πόσο χρώμα περιλαμβάνει κάθε βαφή;",
-   "Βαφή ρίζας έως 45 g. Βαφή σε όλο το μαλλί έως 60 g ή 60 ml. Ρεφλέ έως 60 ml για μαλλιά έως τους ώμους ή 90 ml για πιο μακριά. Βαφή ρίζας & ρεφλέ: ρίζα έως 45 g και ρεφλέ 60 ή 90 ml. Οι ποσότητες είναι πριν από το οξειδωτικό."),
+   "Βαφή ρίζας έως 45 g. Βαφή σε όλο το μαλλί έως 60 g ή 60 ml. Ρεφλέ έως 60 ml για μαλλιά έως τους ώμους ή 90 ml για πιο μακριά. Βαφή ρίζας & ρεφλέ: ρίζα έως 45 g και ρεφλέ 60 ή 90 ml. Οι ποσότητες είναι πριν από το οξειδωτικό.",
+   "How much colour does each service include?",
+   "Root Colour up to 45 g. All-over Colour up to 60 g or 60 ml. Gloss up to 60 ml for hair up to the shoulders, or 90 ml for longer hair. Root Colour & Gloss: roots up to 45 g and gloss 60 or 90 ml. Amounts are before developer.",
+   []),
   ("Έχω πολλά ή μακριά μαλλιά. Θα πληρώσω παραπάνω;",
-   f"Μόνο αν χρειαστεί περισσότερο χρώμα από όσο περιλαμβάνει η υπηρεσία: {O('+ Επιπλέον χρώμα')} για κάθε 30 g βαφής ή 30 ml ρεφλέ. Θα σου το πούμε πριν το ανοίξουμε. Για παράδειγμα, βαφή σε όλο με 90 g κοστίζει €62."),
-  ("Έχω λίγα ή λεπτά μαλλιά.", "Πληρώνεις την ίδια τιμή και δεν θα χρειαστείς ποτέ επιπλέον χρώμα."),
+   f"Μόνο αν χρειαστεί περισσότερο χρώμα από όσο περιλαμβάνει η υπηρεσία: {O('+ Επιπλέον χρώμα')} για κάθε 30 g βαφής ή 30 ml ρεφλέ. Θα σου το πούμε πριν το εφαρμόσουμε. Για παράδειγμα, βαφή σε όλο με 90 g κοστίζει €62.",
+   "I have thick or long hair. Will I pay more?",
+   f"Only if more colour is needed than the service includes: {O('+ Επιπλέον χρώμα')} for every extra 30 g of colour or 30 ml of gloss. We always tell you before we apply it. For example, All-over Colour with 90 g costs €62.",
+   []),
+  ("Έχω λίγα ή λεπτά μαλλιά.", "Πληρώνεις την ίδια τιμή και δεν θα χρειαστείς ποτέ επιπλέον χρώμα.",
+   "I have fine or thin hair.", "You pay the same price, and you will never need extra colour.", []),
   ("Μπορώ να φέρω τη δική μου βαφή;",
-   f"Ναι, η Βαφή με τη δική σας βαφή: ρίζα {O('Βαφή με τη δική σας βαφή','Ρίζα')}, ρίζα και μήκη {O('Βαφή με τη δική σας βαφή','Ρίζα & μήκη')}, με λούσιμο και γρήγορο στέγνωμα. Η βαφή έρχεται κλειστή, στη συσκευασία της, μαζί με το οξειδωτικό της. Το αποτέλεσμα εξαρτάται από τη βαφή που επιλέχθηκε."),
+   f"Ναι, η Βαφή με τη δική σας βαφή: ρίζα {O('Βαφή με τη δική σας βαφή','Ρίζα')}, ρίζα και μήκη {O('Βαφή με τη δική σας βαφή','Ρίζα & μήκη')}, με λούσιμο και γρήγορο στέγνωμα. Η βαφή έρχεται κατά προτίμηση κλειστή, ή ανοιγμένη πρόσφατα, στη συσκευασία της και μαζί με το οξειδωτικό της. Το αποτέλεσμα εξαρτάται από τη βαφή που επιλέχθηκε.",
+   "Can I bring my own colour?",
+   f"Yes: Bring Your Own Colour, roots {O('Βαφή με τη δική σας βαφή','Ρίζα')}, roots and lengths {O('Βαφή με τη δική σας βαφή','Ρίζα & μήκη')}, with a wash and quick dry. The colour is preferably unopened, or only recently opened, in its box and with its own developer. The result depends on the colour chosen.",
+   [("Βαφή με τη δική σας βαφή", "Ρίζα"), ("Βαφή με τη δική σας βαφή", "Ρίζα & μήκη")]),
   ("Πότε ισχύει η Μηνιαία ρίζα;",
-   "Όταν η επόμενη βαφή ρίζας γίνεται μέσα σε 30 ημέρες από την προηγούμενη σε εμάς. Στο ταμείο σού δίνουμε ένα καρτελάκι με την ημερομηνία."),
+   "Όταν η επόμενη βαφή ρίζας γίνεται μέσα σε 30 ημέρες από την προηγούμενη σε εμάς. Στο ταμείο σού δίνουμε ένα καρτελάκι με την ημερομηνία.",
+   "When does the Monthly Root apply?",
+   "When your next root colour is within 30 days of your last one with us. At the desk we give you a small card with the date.",
+   [("Βαφή ρίζας", "Μηνιαία ρίζα"), ("Βαφή ρίζας", "Χωρίς αμμωνία · μηνιαία ρίζα")]),
  ]),
- ("Χτένισμα", [
+ ("Χτένισμα", "Blow-dry & styling", [
   ("Τι είναι το Εβδομαδιαίο χτένισμα με μάσκα;",
-   f"Για όσες θέλουν να είναι περιποιημένες όλη την εβδομάδα, στη δουλειά και στα ραντεβού τους, χωρίς να το σκέφτονται. Λούσιμο, μάσκα και χτένισμα με βούρτσα, την ίδια μέρα και ώρα κάθε εβδομάδα: κοντά {O('Εβδομαδιαίο χτένισμα με μάσκα','Κοντά')}, μεσαία {O('Εβδομαδιαίο χτένισμα με μάσκα','Μεσαία')}, μακριά {O('Εβδομαδιαίο χτένισμα με μάσκα','Μακριά')} (χωριστά θα ήταν €39). Δευτέρα έως Πέμπτη, όταν υπάρχει ελεύθερη ώρα, και όταν το προηγούμενο χτένισμα έγινε σε εμάς τις τελευταίες 8 ημέρες."),
+   f"Για όσες θέλουν να είναι περιποιημένες όλη την εβδομάδα, στη δουλειά και στα ραντεβού τους, χωρίς να το σκέφτονται. Λούσιμο, μάσκα και χτένισμα με βούρτσα, την ίδια μέρα και ώρα κάθε εβδομάδα: κοντά {O('Εβδομαδιαίο χτένισμα με μάσκα','Κοντά')}, μεσαία {O('Εβδομαδιαίο χτένισμα με μάσκα','Μεσαία')}, μακριά {O('Εβδομαδιαίο χτένισμα με μάσκα','Μακριά')} (χωριστά θα ήταν €39). Δευτέρα έως Πέμπτη, όταν υπάρχει ελεύθερη ώρα, και όταν το προηγούμενο χτένισμα έγινε σε εμάς τις τελευταίες 8 ημέρες.",
+   "What is the Weekly Blowdry with Mask?",
+   f"For anyone who wants to look polished all week, at work and out, without thinking about it. Wash, mask and blow-dry, same day and time every week: short {O('Εβδομαδιαίο χτένισμα με μάσκα','Κοντά')}, medium {O('Εβδομαδιαίο χτένισμα με μάσκα','Μεσαία')}, long {O('Εβδομαδιαίο χτένισμα με μάσκα','Μακριά')} (separately €39). Monday to Thursday, when there is a free slot, and when your previous blow-dry was with us in the last 8 days.",
+   [("Εβδομαδιαίο χτένισμα με μάσκα", "Μεσαία"), ("Εβδομαδιαίο χτένισμα με μάσκα", "Κοντά"), ("Εβδομαδιαίο χτένισμα με μάσκα", "Μακριά")]),
   ("Πόσο κρατά το χτένισμα;",
-   "Το χτένισμα με βούρτσα, και το εβδομαδιαίο, κρατά συνήθως 2–3 ημέρες. Εξαρτάται από τα μαλλιά, την υγρασία και το αν τα μαζεύεις τη νύχτα."),
+   "Έως και 7 ημέρες. Η διάρκεια εξαρτάται από τη φύση των μαλλιών, τις συνθήκες, όπως η υγρασία, και τη φροντίδα τους στο σπίτι.",
+   "How long does a blow-dry last?",
+   "Up to 7 days. It depends on your hair, on conditions such as humidity, and on how it is cared for at home.",
+   [("Χτένισμα με βούρτσα", None)]),
   ("Μπούκλες ή πιάσιμο σε πολλά ή πολύ μακριά μαλλιά;",
-   "Οι μπούκλες με σίδερο και το πιάσιμο κρατούν περισσότερο σε μαλλιά λουσμένα από την προηγούμενη μέρα. Σε λεπτά ή πιο κοντά μαλλιά δεν χρειάζεται."),
+   "Οι μπούκλες και το πιάσιμο κρατούν καλύτερα σε μαλλιά λουσμένα από πριν και στεγνωμένα φυσικά, χωρίς βαριά μαλακτικά ή λάδια. Σε πολλά ή πολύ μακριά μαλλιά βοηθά το λούσιμο να γίνει την προηγούμενη μέρα.",
+   "Curls or an up-do on thick or very long hair?",
+   "Curls and up-dos hold best on hair washed beforehand and left to dry naturally, without heavy conditioners or oils. On thick or very long hair, washing the day before helps.",
+   [("Χτένισμα για εκδήλωση", None)]),
   ("Υπάρχει λούσιμο και γρήγορο φορμάρισμα χωρίς βαφή;",
-   f"Ναι, το Λούσιμο & γρήγορο φορμάρισμα, {O('Λούσιμο & γρήγορο φορμάρισμα')}. Κλείνεται τηλεφωνικά στο {PHONE_TXT}."),
+   f"Ναι, το Λούσιμο & γρήγορο φορμάρισμα, {O('Λούσιμο & γρήγορο φορμάρισμα')}.",
+   "Is there a wash and quick styling without colour?",
+   f"Yes, Wash & Quick Styling, {O('Λούσιμο & γρήγορο φορμάρισμα')}.",
+   [("Λούσιμο & γρήγορο φορμάρισμα", None)]),
   ("Περιλαμβάνεται λούσιμο;",
-   "Σε κάθε υπηρεσία γράφουμε αν περιλαμβάνει λούσιμο. Το περιλαμβάνουν όλα τα κουρέματα (εκτός από το ανδρικό με μηχανή), τα χτενίσματα με βούρτσα και όλες οι βαφές, τα ρεφλέ και οι ανταύγειες."),
+   "Σε κάθε υπηρεσία γράφουμε αν περιλαμβάνει λούσιμο. Το περιλαμβάνουν όλα τα κουρέματα (εκτός από το ανδρικό με μηχανή), τα χτενίσματα με βούρτσα και όλες οι βαφές, τα ρεφλέ και οι ανταύγειες. Όλες οι υπηρεσίες: alexandroshairsalon.gr/services.",
+   "Is a wash included?",
+   "Every service says whether a wash is included. It is included in all haircuts (except the men’s clipper cut), all blow-dries and all colour, gloss and highlights services. All services: alexandroshairsalon.gr/services.",
+   []),
  ]),
- ("Τιμές", [
+ ("Τιμές", "Prices", [
   ("Τι δεν συνδυάζεται;",
-   "Η Μηνιαία ρίζα και το Εβδομαδιαίο χτένισμα είναι ήδη χαμηλότερες τιμές για τακτικές πελάτισσες. Δεν συνδυάζονται με άλλη έκπτωση ή προσφορά, όπως οι εκπτώσεις της Treatwell σε ώρες χαμηλής κίνησης ή τελευταίας στιγμής."),
+   "Η Μηνιαία ρίζα και το Εβδομαδιαίο χτένισμα είναι ήδη χαμηλότερες τιμές για τακτικές πελάτισσες. Δεν συνδυάζονται με άλλη έκπτωση ή προσφορά, όπως οι εκπτώσεις της Treatwell σε ώρες χαμηλής κίνησης ή τελευταίας στιγμής.",
+   "What can’t be combined?",
+   "The Monthly Root and the Weekly Blowdry are already lower prices for regular clients. They can’t be combined with any other discount or offer, such as Treatwell off-peak or last-minute discounts.",
+   []),
   ("Τι δεν κάνουμε;",
-   "Δεν φρεσκάρουμε τα μήκη με τα υπόλοιπα της μόνιμης βαφής: για τα μήκη υπάρχει το ρεφλέ ή η ημιμόνιμη βαφή, που είναι πιο ήπια. Δεν ανοίγουμε επιπλέον χρώμα χωρίς να σου το πούμε. Δεν υποσχόμαστε πλήρη κάλυψη λευκών με ρεφλέ."),
+   "Δεν φρεσκάρουμε τα μήκη με τα υπόλοιπα της μόνιμης βαφής: για τα μήκη υπάρχει το ρεφλέ ή η ημιμόνιμη βαφή, που είναι πιο ήπια. Δεν χρησιμοποιούμε επιπλέον χρώμα χωρίς να σου το πούμε πριν. Δεν υποσχόμαστε πλήρη κάλυψη λευκών με ρεφλέ.",
+   "What we don’t do",
+   "We don’t refresh the lengths with leftover permanent colour: for the lengths there is gloss or demi-permanent colour, which are gentler. We don’t use extra colour without telling you first. We don’t promise full grey coverage with a gloss.",
+   []),
   ("Κάτι δεν σου άρεσε;",
-   "Μπορείς να μας το πεις ανώνυμα στη σελίδα alexandroshairsalon.gr/gnomi, χωρίς όνομα, τηλέφωνο ή email."),
+   "Μπορείς να μας το πεις ανώνυμα στη σελίδα alexandroshairsalon.gr/gnomi, χωρίς όνομα, τηλέφωνο ή email.",
+   "Something you didn’t like?",
+   "You can tell us anonymously at alexandroshairsalon.gr/gnomi, with no name, phone or email.",
+   []),
  ]),
 ]
-FAQ_TITLES_EN = {"Χρώμα": "Colour", "Χτένισμα": "Blow-dry & styling", "Τιμές": "Prices"}
-FAQ_EN = {
- "Θέλω να καλύψω τα λευκά στη ρίζα. Τι μου ταιριάζει;": ("I want to cover grey at the roots. What suits me?",
-   f"Root Colour ({O('Βαφή ρίζας','Κανονική')}), with Farcom or L’Oréal Majirel. If you colour every month, the Monthly Root ({O('Βαφή ρίζας','Μηνιαία ρίζα')})."),
- "Με ενοχλεί η μυρωδιά ή έχω ευαίσθητο δέρμα.": ("The smell bothers me, or I have sensitive skin.",
-   f"Ammonia-free Root Colour ({O('Βαφή ρίζας','Χωρίς αμμωνία')}, monthly {O('Βαφή ρίζας','Χωρίς αμμωνία · μηνιαία ρίζα')}), with L’Oréal INOA or Redken Color Gels Oils."),
- "Τα μήκη μου ξεθώριασαν.": ("My lengths have faded.",
-   f"Root Colour & Gloss ({O('Βαφή ρίζας & ρεφλέ στα μήκη','Έως τους ώμους')} up to the shoulders, {O('Βαφή ρίζας & ρεφλέ στα μήκη','Κάτω από τους ώμους')} longer). On the lengths we use an acidic, ammonia-free gloss (Dia Light or Redken Shades EQ) for tone and shine; it doesn’t lighten hair or fully cover grey. If the lengths need more colour, Dia Color demi-permanent, at the same price."),
- "Θέλω άλλο χρώμα ή έχω λευκά και στα μήκη.": ("I want a different colour, or I have grey on the lengths too.",
-   f"All-over Colour, permanent ({O('Βαφή σε όλο το μαλλί','Μόνιμη')}): colour from roots to ends, with full grey coverage."),
- "Θέλω κάτι πιο ήπιο από τη μόνιμη βαφή.": ("I’d like something gentler than permanent colour.",
-   f"All-over Colour, demi-permanent ({O('Βαφή σε όλο το μαλλί','Ημιμόνιμη')}), with L’Oréal Dia Color. It covers up to 70% of grey, lasts up to 6 weeks and fades gradually, with no sharp regrowth line. It also suits stressed hair."),
- "Τι σημαίνει μόνιμη, ημιμόνιμη και ρεφλέ;": ("What do permanent, demi-permanent and gloss mean?",
-   "Permanent colour (Farcom Expertia, Majirel, INOA, Redken Color Gels Oils): alkaline, goes inside the hair, fully covers grey and stays until it’s cut; as it grows, the roots show. Demi-permanent (Dia Color): gentler, covers up to 70% of grey and fades in about 6 weeks. Gloss (Dia Light, Redken Shades EQ): acidic, ammonia-free, adds tone and shine without lightening."),
- "Πόσο χρώμα περιλαμβάνει κάθε βαφή;": ("How much colour does each service include?",
-   "Root Colour up to 45 g. All-over Colour up to 60 g or 60 ml. Gloss up to 60 ml for hair up to the shoulders, or 90 ml for longer hair. Root Colour & Gloss: roots up to 45 g and gloss 60 or 90 ml. Amounts are before developer."),
- "Έχω πολλά ή μακριά μαλλιά. Θα πληρώσω παραπάνω;": ("I have thick or long hair. Will I pay more?",
-   f"Only if more colour is needed than the service includes: {O('+ Επιπλέον χρώμα')} for every extra 30 g of colour or 30 ml of gloss. We always tell you before we open it. For example, All-over Colour with 90 g costs €62."),
- "Έχω λίγα ή λεπτά μαλλιά.": ("I have fine or thin hair.", "You pay the same price, and you will never need extra colour."),
- "Μπορώ να φέρω τη δική μου βαφή;": ("Can I bring my own colour?",
-   f"Yes: Bring Your Own Colour, roots {O('Βαφή με τη δική σας βαφή','Ρίζα')}, roots and lengths {O('Βαφή με τη δική σας βαφή','Ρίζα & μήκη')}, with a wash and quick dry. The colour comes unopened, in its box, with its own developer. The result depends on the colour chosen."),
- "Πότε ισχύει η Μηνιαία ρίζα;": ("When does the Monthly Root apply?",
-   "When your next root colour is within 30 days of your last one with us. At the desk we give you a small card with the date."),
- "Τι είναι το Εβδομαδιαίο χτένισμα με μάσκα;": ("What is the Weekly Blowdry with Mask?",
-   f"For anyone who wants to look polished all week, at work and out, without thinking about it. Wash, mask and blow-dry, same day and time every week: short {O('Εβδομαδιαίο χτένισμα με μάσκα','Κοντά')}, medium {O('Εβδομαδιαίο χτένισμα με μάσκα','Μεσαία')}, long {O('Εβδομαδιαίο χτένισμα με μάσκα','Μακριά')} (separately €39). Monday to Thursday, when there is a free slot, and when your previous blow-dry was with us in the last 8 days."),
- "Πόσο κρατά το χτένισμα;": ("How long does a blow-dry last?",
-   "A blow-dry, weekly or not, usually lasts 2–3 days. It depends on your hair, the humidity and whether you tie it up at night."),
- "Μπούκλες ή πιάσιμο σε πολλά ή πολύ μακριά μαλλιά;": ("Curls or an up-do on thick or very long hair?",
-   "Iron curls and up-dos hold better on hair washed the day before. Fine or shorter hair doesn’t need this."),
- "Υπάρχει λούσιμο και γρήγορο φορμάρισμα χωρίς βαφή;": ("Is there a wash and quick styling without colour?",
-   f"Yes, Wash & Quick Styling, {O('Λούσιμο & γρήγορο φορμάρισμα')}. It is booked by phone on {PHONE_TXT}."),
- "Περιλαμβάνεται λούσιμο;": ("Is a wash included?",
-   "Every service says whether a wash is included. It is included in all haircuts (except the men’s clipper cut), all blow-dries and all colour, gloss and highlights services."),
- "Τι δεν συνδυάζεται;": ("What can’t be combined?",
-   "The Monthly Root and the Weekly Blowdry are already lower prices for regular clients. They can’t be combined with any other discount or offer, such as Treatwell off-peak or last-minute discounts."),
- "Τι δεν κάνουμε;": ("What we don’t do",
-   "We don’t refresh the lengths with leftover permanent colour: for the lengths there is gloss or demi-permanent colour, which are gentler. We don’t open extra colour without telling you. We don’t promise full grey coverage with a gloss."),
- "Κάτι δεν σου άρεσε;": ("Something you didn’t like?",
-   "You can tell us anonymously at alexandroshairsalon.gr/gnomi, with no name, phone or email."),
-}
-_faq_all = [qa for _, g in FAQ_GROUPS for qa in g]
-assert all(q in FAQ_EN for q, _ in _faq_all), [q for q, _ in _faq_all if q not in FAQ_EN]
+
+
+def _answer(text, books, lang):
+    return linkify(link_products(esc(text))) + book_links(books, lang)
+
+
+_faq_all = [(q, a) for _, _, g in FAQ_GROUPS for q, a, *_ in g]
 _faq_ld = {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
     {"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": a}} for q, a in _faq_all]}
-def _bi(tag, el, en, attrs=""):
-    return f'<{tag}{attrs} data-en="{esc(esc(en))}">{esc(el)}</{tag}>'
 _faq_body = """
 <section class="hero">
   <span class="eyebrow" data-en="FAQ">Συχνές ερωτήσεις</span>
@@ -956,13 +1045,15 @@ _faq_body = """
   <p class="lead" data-en="Which colour suits you, how much colour each service includes, what happens with thick or long hair, and what can’t be combined. Anything not covered here, you can always ask before we start.">Ποια βαφή σού ταιριάζει, πόσο χρώμα περιλαμβάνει κάθε υπηρεσία, τι γίνεται με τα πολλά ή τα μακριά μαλλιά και τι δεν συνδυάζεται. Ό,τι δεν βρεις εδώ, μπορείς πάντα να το ρωτήσεις πριν ξεκινήσουμε.</p>
   <div class="cta"><a class="btn gold" href="/services" data-en="All prices">Όλες οι τιμές</a><a class="btn ghost" href="tel:""" + PHONE + """" data-en="Call """ + PHONE_TXT + """">Κλήση """ + PHONE_TXT + """</a></div>
 </section>
-""" + "".join('<section class="block">' + _bi("h2", t, FAQ_TITLES_EN[t]) + "".join(
-    f'<details><summary data-en="{esc(esc(FAQ_EN[q][0]))}">{esc(q)}</summary><p data-en="{esc(esc(FAQ_EN[q][1]))}">{esc(a)}</p></details>' for q, a in g) + "</section>" for t, g in FAQ_GROUPS) + """
+""" + "".join(
+    f'<section class="block"><h2 data-en="{esc(esc(ten))}">{esc(t)}</h2>' + "".join(
+        f'<details><summary data-en="{esc(esc(qe))}">{esc(q)}</summary>'
+        f'<p data-en="{esc(_answer(ae, b, "en"))}">{_answer(a, b, "el")}</p></details>'
+        for q, a, qe, ae, b in g) + "</section>"
+    for t, ten, g in FAQ_GROUPS) + """
 <section class="block"><p class="links"><a href="/services" data-en="All prices">Όλες οι τιμές</a><a href="/vafi-mallion-athina/" data-en="Hair colour">Βαφή μαλλιών</a><a href="/gnomi/" data-en="Your feedback, anonymously">Η γνώμη σου, ανώνυμα</a></p></section>
+<style>.bk{display:block;margin-top:10px;font-size:.92em;color:var(--muted)}</style>
 """
-# ο σύνδεσμος προς τη φόρμα γνώμης να πατιέται (ελληνικά και αγγλικά)
-_faq_body = _faq_body.replace("σελίδα alexandroshairsalon.gr/gnomi,", 'σελίδα <a class="il" href="/gnomi/">alexandroshairsalon.gr/gnomi</a>,')
-_faq_body = _faq_body.replace("at alexandroshairsalon.gr/gnomi,", "at " + esc('<a class="il" href="/gnomi/">alexandroshairsalon.gr/gnomi</a>') + ",")
 page("/syxnes-erotiseis/", "Συχνές ερωτήσεις: βαφή, ποσότητες, τιμές | Alexandros Hair Salon – Θησείο",
      "Ποια βαφή σού ταιριάζει (μόνιμη, ημιμόνιμη, ρεφλέ), πόσο χρώμα περιλαμβάνει κάθε υπηρεσία, Μηνιαία ρίζα, εβδομαδιαίο χτένισμα και τι δεν συνδυάζεται.",
      _faq_body, [_faq_ld, crumbs("Συχνές ερωτήσεις", "/syxnes-erotiseis/")], bilingual=True)

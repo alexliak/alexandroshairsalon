@@ -38,8 +38,8 @@
           "en": "Haircut & Quick Dry"
         },
         "desc": {
-          "el": "Λούσιμο, κούρεμα και γρήγορο στέγνωμα με τα χέρια, με πιστολάκι ή φυσούνα, για φυσικό αποτέλεσμα.",
-          "en": "Wash, cut and a quick dry shaped by hand, with a hairdryer or diffuser, for a natural finish."
+          "el": "Λούσιμο, κούρεμα, προϊόν styling και γρήγορο στέγνωμα με τα χέρια, με πιστολάκι ή φυσούνα, για φυσικό αποτέλεσμα.",
+          "en": "Wash, cut, styling product and a quick dry shaped by hand, with a hairdryer or diffuser, for a natural finish."
         },
         "note": {
           "el": "Χωρίς βούρτσα. Για φόρμα με βούρτσα: «Κούρεμα & γρήγορο φορμάρισμα».",
@@ -68,8 +68,8 @@
           "en": "Haircut & Quick Styling"
         },
         "desc": {
-          "el": "Λούσιμο, κούρεμα και γρήγορο φορμάρισμα με πιστολάκι και βούρτσα, για όγκο και φόρμα.",
-          "en": "Wash, cut and a quick brushed styling for volume and shape."
+          "el": "Λούσιμο, κούρεμα, προϊόν styling, θερμοπροστατευτικό και γρήγορο φορμάρισμα με πιστολάκι και βούρτσα, για όγκο και φόρμα.",
+          "en": "Wash, cut, styling product, heat protectant and a quick brushed styling for volume and shape."
         },
         "note": {
           "el": "Για πλήρες χτένισμα με λάμψη που έχει διάρκεια: «Κούρεμα & χτένισμα».",
@@ -98,12 +98,12 @@
           "en": "Haircut & Blowdry"
         },
         "desc": {
-          "el": "Λούσιμο, κούρεμα και πλήρες χτένισμα με πιστολάκι και βούρτσα — ίσιο και λείο, ή με όγκο και κίνηση — με λάμψη που έχει διάρκεια.",
-          "en": "Wash, cut and a full blow-out — bouncy or sleek — for shine that lasts."
+          "el": "Λούσιμο, κούρεμα, θερμοπροστατευτικό και πλήρες χτένισμα με πιστολάκι και βούρτσα — ίσιο και λείο, ή με όγκο και κίνηση — με λάμψη που έχει διάρκεια.",
+          "en": "Wash, cut, heat protectant and a full blow-out — bouncy or sleek — for shine that lasts."
         },
         "note": {
-          "el": "Για ίσιωμα με πρέσα: «+ Ίσιωμα με πρέσα ατμού». Για μπούκλες ή κυματισμούς: «Χτένισμα για εκδήλωση». Διαρκεί συνήθως 2–3 ημέρες.",
-          "en": "For a straightened finish: Steam Straightener Finish. For curls or waves: Special Occasion Styling. Usually lasts 2–3 days."
+          "el": "Για ίσιωμα με πρέσα: «+ Ίσιωμα με πρέσα ατμού». Για μπούκλες ή κυματισμούς: «Χτένισμα για εκδήλωση». Κρατά έως και 7 ημέρες, ανάλογα με τη φύση των μαλλιών, τις συνθήκες, όπως η υγρασία, και τη φροντίδα τους στο σπίτι.",
+          "en": "For a straightened finish: Steam Straightener Finish. For curls or waves: Special Occasion Styling. Lasts up to 7 days, depending on your hair, conditions such as humidity, and how it is cared for at home."
         },
         "online": true,
         "options": [
@@ -124,12 +124,12 @@
       },
       {
         "name": {
-          "el": "Φράτζα",
-          "en": "Fringe Trim"
+          "el": "Φράτζα & αφέλειες",
+          "en": "Fringe & Bangs Trim"
         },
         "desc": {
-          "el": "Φρεσκάρισμα φράτζας ανάμεσα στα κουρέματα.",
-          "en": "A fringe refresh between cuts."
+          "el": "Φρεσκάρισμα σε φράτζα ή αφέλειες, ανάμεσα στα κουρέματα.",
+          "en": "A fringe or bangs refresh between cuts."
         },
         "note": {
           "el": "Δωρεάν, αν έχεις κουρευτεί σε εμάς τις τελευταίες 6 εβδομάδες.",
@@ -271,8 +271,8 @@
           "en": "Wash & Quick Styling"
         },
         "desc": {
-          "el": "Λούσιμο και γρήγορο φορμάρισμα με πιστολάκι και βούρτσα, για όγκο και φόρμα.",
-          "en": "Wash and a quick brushed styling for volume and shape."
+          "el": "Λούσιμο, προϊόν styling, θερμοπροστατευτικό και γρήγορο φορμάρισμα με πιστολάκι και βούρτσα, για όγκο και φόρμα.",
+          "en": "Wash, styling product, heat protectant and a quick brushed styling for volume and shape."
         },
         "note": {
           "el": "Φορμάρισμα έως 15′. Για πλήρες χτένισμα με λάμψη που έχει διάρκεια: «Χτένισμα με βούρτσα».",
@@ -297,12 +297,12 @@
           "en": "Signature Blowdry"
         },
         "desc": {
-          "el": "Λούσιμο και πλήρες χτένισμα με πιστολάκι και βούρτσα — ίσιο και λείο, ή με όγκο και κίνηση — με λάμψη που έχει διάρκεια.",
-          "en": "Wash and a full blow-out — bouncy or sleek — for shine that lasts."
+          "el": "Λούσιμο, θερμοπροστατευτικό και πλήρες χτένισμα με πιστολάκι και βούρτσα — ίσιο και λείο, ή με όγκο και κίνηση — με λάμψη που έχει διάρκεια.",
+          "en": "Wash, heat protectant and a full blow-out — bouncy or sleek — for shine that lasts."
         },
         "note": {
-          "el": "Για ίσιωμα με πρέσα: «+ Ίσιωμα με πρέσα ατμού». Για μπούκλες ή κυματισμούς: «Χτένισμα για εκδήλωση». Διαρκεί συνήθως 2–3 ημέρες. Για όσες χτενίζονται κάθε εβδομάδα υπάρχει και το «Εβδομαδιαίο χτένισμα με μάσκα».",
-          "en": "For a straightened finish: Steam Straightener Finish. For curls or waves: Special Occasion Styling. Usually lasts 2–3 days. If you have a blow-out every week, there is also the Weekly Blowdry with Mask."
+          "el": "Για ίσιωμα με πρέσα: «+ Ίσιωμα με πρέσα ατμού». Για μπούκλες ή κυματισμούς: «Χτένισμα για εκδήλωση». Κρατά έως και 7 ημέρες, ανάλογα με τη φύση των μαλλιών, τις συνθήκες, όπως η υγρασία, και τη φροντίδα τους στο σπίτι. Για όσες χτενίζονται κάθε εβδομάδα υπάρχει και το «Εβδομαδιαίο χτένισμα με μάσκα».",
+          "en": "For a straightened finish: Steam Straightener Finish. For curls or waves: Special Occasion Styling. Lasts up to 7 days, depending on your hair, conditions such as humidity, and how it is cared for at home. If you have a blow-out every week, there is also the Weekly Blowdry with Mask."
         },
         "online": true,
         "options": [
@@ -327,8 +327,8 @@
           "en": "Weekly Blowdry with Mask"
         },
         "desc": {
-          "el": "Για όσες θέλουν να είναι περιποιημένες όλη την εβδομάδα, στη δουλειά και στα ραντεβού τους, χωρίς να το σκέφτονται. Λούσιμο, μάσκα και χτένισμα με βούρτσα, την ίδια μέρα και ώρα κάθε εβδομάδα. Κρατά συνήθως 2–3 ημέρες. Χωριστά θα ήταν €39.",
-          "en": "For those who like to look polished all week, at work and at every meeting, without having to think about it. Wash, mask and a full blow-out, on the same day and time every week. Usually lasts 2–3 days. Separately it would be €39."
+          "el": "Για όσες θέλουν να είναι περιποιημένες όλη την εβδομάδα, στη δουλειά και στα ραντεβού τους, χωρίς να το σκέφτονται. Λούσιμο, μάσκα, θερμοπροστατευτικό και χτένισμα με βούρτσα, την ίδια μέρα και ώρα κάθε εβδομάδα. Κρατά έως και 7 ημέρες, ανάλογα με τα μαλλιά και τις συνθήκες. Χωριστά θα ήταν €39.",
+          "en": "For those who like to look polished all week, at work and at every meeting, without having to think about it. Wash, mask, heat protectant and a full blow-out, on the same day and time every week. Lasts up to 7 days, depending on your hair and conditions. Separately it would be €39."
         },
         "note": {
           "el": "Δευτέρα–Πέμπτη, όταν υπάρχει ελεύθερη ώρα. Ισχύει όταν το προηγούμενο χτένισμα έγινε σε εμάς τις τελευταίες 8 ημέρες· την πρώτη φορά ξεκινάμε μαζί. Online κλείνεται το μεσαίο· κοντά και μακριά τηλεφωνικά. Δεν συνδυάζεται με άλλη έκπτωση.",
@@ -435,8 +435,8 @@
           "en": "Quick Styling after Colour (add-on)"
         },
         "desc": {
-          "el": "Γρήγορο φορμάρισμα με πιστολάκι και βούρτσα μετά τη βαφή, για όγκο και φόρμα.",
-          "en": "A quick brushed styling after your colour, for volume and shape."
+          "el": "Γρήγορο φορμάρισμα με προϊόν styling, θερμοπροστατευτικό, πιστολάκι και βούρτσα μετά τη βαφή, για όγκο και φόρμα.",
+          "en": "A quick brushed styling after your colour, with styling product and heat protectant, for volume and shape."
         },
         "note": {
           "el": "Μόνο μαζί με βαφή. Για πλήρες χτένισμα: «+ Χτένισμα μετά τη βαφή». Χωρίς βαφή: «Λούσιμο & γρήγορο φορμάρισμα» €22, κλείνεται τηλεφωνικά.",
@@ -465,12 +465,12 @@
           "en": "Colour Blowdry (add-on)"
         },
         "desc": {
-          "el": "Πλήρες χτένισμα μετά τη βαφή, με πιστολάκι και βούρτσα — ίσιο και λείο, ή με όγκο και κίνηση.",
-          "en": "A full blow-out after your colour — bouncy or sleek."
+          "el": "Πλήρες χτένισμα μετά τη βαφή, με θερμοπροστατευτικό, πιστολάκι και βούρτσα — ίσιο και λείο, ή με όγκο και κίνηση.",
+          "en": "A full blow-out after your colour, with heat protectant — bouncy or sleek."
         },
         "note": {
-          "el": "Μόνο μαζί με βαφή. Διαρκεί συνήθως 2–3 ημέρες.",
-          "en": "Only with a colour service. Usually lasts 2–3 days."
+          "el": "Μόνο μαζί με βαφή. Κρατά έως και 7 ημέρες, ανάλογα με τη φύση των μαλλιών, τις συνθήκες, όπως η υγρασία, και τη φροντίδα τους στο σπίτι.",
+          "en": "Only with a colour service. Lasts up to 7 days, depending on your hair, conditions such as humidity, and how it is cared for at home."
         },
         "online": true,
         "options": [
@@ -814,8 +814,8 @@
           "en": "We apply the colour you bring, on the roots or on the roots and lengths, with a wash and quick dry."
         },
         "note": {
-          "el": "Η βαφή έρχεται κλειστή, στη συσκευασία της, μαζί με το οξειδωτικό της. Το αποτέλεσμα εξαρτάται από τη βαφή που επιλέχθηκε.",
-          "en": "The colour comes unopened, in its box, with its own developer. The result depends on the colour chosen."
+          "el": "Η βαφή έρχεται κατά προτίμηση κλειστή, ή ανοιγμένη πρόσφατα, στη συσκευασία της και μαζί με το οξειδωτικό της. Το αποτέλεσμα εξαρτάται από τη βαφή που επιλέχθηκε.",
+          "en": "The colour is preferably unopened, or only recently opened, in its box and with its own developer. The result depends on the colour chosen."
         },
         "online": true,
         "options": [
@@ -1379,8 +1379,8 @@
           "en": "Colour, Bridal & Keratin Consultation"
         },
         "desc": {
-          "el": "15 λεπτά για να σχεδιάσουμε μαζί χρώμα, νυφικό ή κερατίνη, με ακριβή τιμή.",
-          "en": "15 minutes to plan your colour, bridal hair or keratin together, with an exact price."
+          "el": "15 λεπτά για να σχεδιάσουμε μαζί χρώμα, νυφικό ή κερατίνη. Πριν ξεκινήσουμε, ξέρεις την τελική τιμή.",
+          "en": "15 minutes to plan your colour, bridal hair or keratin together. Before we start, you know the final price."
         },
         "note": {
           "el": "Φωτογραφίες με αυτό που σου αρέσει μάς βοηθούν πολύ.",

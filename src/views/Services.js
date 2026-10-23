@@ -3,6 +3,9 @@ import NhLayout, { BOOK, PHONE } from '../components/NhLayout';
 import menu from '../data/menu';
 import { priceText, bookUrl, eur, service } from '../data/prices';
 
+// Ίδιο με το svc_anchor() του scripts/build-static-pages.py: σύνδεσμος σε συγκεκριμένη υπηρεσία
+const anchor = (s) => s.name.en.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
+
 const rootPrice = (label, lang) => eur(service('Βαφή ρίζας').options.find((o) => o.el === label).price, lang);
 
 // Services & prices (2026 design). The list itself lives in src/data/menu.js.
@@ -103,7 +106,7 @@ const Services = ({ language, setLanguage }) => {
             <h2 id={`h-${c.key}`} className="nh-h2 nh-menu-title">{c.title[lang]}</h2>
             <div className="nh-menu-list">
               {c.services.map((s) => (
-                <article key={s.name.el} className="nh-menu-item">
+                <article key={s.name.el} id={anchor(s)} className="nh-menu-item">
                   <div className="nh-menu-head">
                     <h3 className="nh-menu-name">{s.name[lang]}</h3>
                     <span className="nh-menu-from">{priceLabel(s.options, t, lang)}</span>
