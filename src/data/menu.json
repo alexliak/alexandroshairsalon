@@ -806,6 +806,49 @@
       },
       {
         "name": {
+          "el": "Βαφή με τη δική σας βαφή",
+          "en": "Bring Your Own Colour"
+        },
+        "desc": {
+          "el": "Εφαρμογή της βαφής που φέρνετε, στη ρίζα ή στη ρίζα και τα μήκη, με λούσιμο και γρήγορο στέγνωμα.",
+          "en": "We apply the colour you bring, on the roots or on the roots and lengths, with a wash and quick dry."
+        },
+        "note": {
+          "el": "Η βαφή έρχεται κλειστή, στη συσκευασία της, μαζί με το οξειδωτικό της. Το αποτέλεσμα εξαρτάται από τη βαφή που επιλέχθηκε.",
+          "en": "The colour comes unopened, in its box, with its own developer. The result depends on the colour chosen."
+        },
+        "online": true,
+        "options": [
+          {
+            "el": "Ρίζα",
+            "en": "Roots",
+            "time": {
+              "el": "1 ώρα",
+              "en": "1 h"
+            },
+            "price": 23,
+            "book": {
+              "item": "TR7620147",
+              "option": "14475754"
+            }
+          },
+          {
+            "el": "Ρίζα & μήκη",
+            "en": "Roots & lengths",
+            "time": {
+              "el": "1 ώρα 10′",
+              "en": "1 h 10′"
+            },
+            "price": 33,
+            "book": {
+              "item": "TR7620147",
+              "option": "14475753"
+            }
+          }
+        ]
+      },
+      {
+        "name": {
           "el": "+ Επιπλέον χρώμα",
           "en": "Extra Colour (add-on)"
         },

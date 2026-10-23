@@ -906,8 +906,8 @@ page("/syxnes-erotiseis/", "Συχνές ερωτήσεις: βαφή, ποσό�
      _faq_body, [_faq_ld, crumbs("Συχνές ερωτήσεις", "/syxnes-erotiseis/")])
 
 
-# ---------- /gnomi/ : ανώνυμη γνώμη, χωρίς κανένα προσωπικό στοιχείο (αποστολή με EmailJS, χωρίς αποθήκευση στο site) ----------
-GNOMI_TEMPLATE = "template_gnomi"
+# ---------- /gnomi/ : ανώνυμη γνώμη, χωρίς κανένα προσωπικό στοιχείο (αποστολή σε Google Form, χωρίς αποθήκευση στο site) ----------
+GNOMI_FORM = "1FAIpQLSe4NOQXPGj1ujfBYrkWBSyJFPEOs2VepAY-TrU6v1NJCtsKew"
 _gn_body = """
 <section class="hero">
   <span class="eyebrow">Βοηθήστε μας να γίνουμε καλύτεροι</span>
@@ -937,9 +937,8 @@ f.addEventListener('submit',function(e){e.preventDefault();var m=f.message.value
 if(f.website.value){return;}
 if(m.length<3){st.textContent='Το κουτί είναι άδειο. Μπορείς να γράψεις όσα λίγα θέλεις.';return;}
 var b=f.querySelector('button');b.disabled=true;st.textContent='Αποστολή…';
-fetch('https://api.emailjs.com/api/v1.0/email/send',{method:'POST',headers:{'Content-Type':'application/json'},
-body:JSON.stringify({service_id:'service_nul8u7q',template_id:'""" + GNOMI_TEMPLATE + """',user_id:'XL7dj9dSLwxsDvNtb',
-template_params:{kind:f.kind.value,message:m}})}).then(function(r){if(!r.ok)throw 0;
+var fd=new URLSearchParams();fd.append('entry.760992725',f.kind.value);fd.append('entry.329498901',m);
+fetch('https://docs.google.com/forms/d/e/""" + GNOMI_FORM + """/formResponse',{method:'POST',mode:'no-cors',body:fd}).then(function(){
 f.reset();st.textContent='Ευχαριστούμε. Το μήνυμά σου έφτασε.';}).catch(function(){
 st.textContent='Δεν στάλθηκε. Μπορείς να δοκιμάσεις ξανά σε λίγο.';}).then(function(){b.disabled=false;});});})();
 </script>
