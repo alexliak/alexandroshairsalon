@@ -27,9 +27,12 @@ const text = {
       'Μηνιαία ρίζα (' + rootPrice('Μηνιαία ρίζα', 'el') + ', χωρίς αμμωνία ' + rootPrice('Χωρίς αμμωνία · μηνιαία ρίζα', 'el') + '): όταν η επόμενη βαφή ρίζας γίνεται μέσα σε 30 ημέρες από την προηγούμενη σε εμάς. Στο ταμείο παίρνεις καρτελάκι με την ημερομηνία.',
       'Στις ανταύγειες και στο μπαλαγιάζ, για μαλλιά κάτω από τους ώμους υπάρχει το «+ Μακριά μαλλιά» (' + priceText('el', '+ Μακριά μαλλιά (ανταύγειες / μπαλαγιάζ)') + ').',
       'Αν έχεις extensions, μπορείς να το σημειώσεις στην κράτηση, για να κρατήσουμε τον σωστό χρόνο.',
-      'Ποια βαφή σού ταιριάζει, τι περιλαμβάνει κάθε υπηρεσία και τι δεν συνδυάζεται: στις Συχνές ερωτήσεις (alexandroshairsalon.gr/syxnes-erotiseis). Κάτι δεν σου άρεσε; Μπορείς να μας το πεις ανώνυμα στο alexandroshairsalon.gr/gnomi.'
+      <>Ποια βαφή σού ταιριάζει, τι περιλαμβάνει κάθε υπηρεσία και τι δεν συνδυάζεται: στις <a className="nh-inline-link" href="/syxnes-erotiseis/">Συχνές ερωτήσεις</a>.</>,
+      <>Κάτι δεν σου άρεσε; Μπορείς να μας το πεις <a className="nh-inline-link" href="/gnomi/">ανώνυμα εδώ</a>.</>
     ],
-    jump: 'Κατηγορίες'
+    jump: 'Κατηγορίες',
+    faq: 'Συχνές ερωτήσεις',
+    feedback: 'Η γνώμη σου, ανώνυμα'
   },
   en: {
     eyebrow: 'Hair salon prices · Thiseio, Athens',
@@ -51,9 +54,12 @@ const text = {
       'Monthly Root (' + rootPrice('Μηνιαία ρίζα', 'en') + ', ammonia-free ' + rootPrice('Χωρίς αμμωνία · μηνιαία ρίζα', 'en') + '): when your next root colour is within 30 days of your last one with us. At the desk you get a small card with the date.',
       'For highlights and balayage on hair below the shoulders there is the Long Hair add-on (' + priceText('en', '+ Μακριά μαλλιά (ανταύγειες / μπαλαγιάζ)') + ').',
       'If you wear extensions, you can note it when you book so we reserve the right time.',
-      'Which colour suits you, what each service includes and what can’t be combined: see our FAQ (alexandroshairsalon.gr/syxnes-erotiseis). Something you didn’t like? You can tell us anonymously at alexandroshairsalon.gr/gnomi.'
+      <>Which colour suits you, what each service includes and what can’t be combined: see our <a className="nh-inline-link" href="/syxnes-erotiseis/">FAQ</a>.</>,
+      <>Something you didn’t like? You can <a className="nh-inline-link" href="/gnomi/">tell us anonymously here</a>.</>
     ],
-    jump: 'Categories'
+    jump: 'Categories',
+    faq: 'FAQ',
+    feedback: 'Your feedback, anonymously'
   }
 };
 
@@ -80,6 +86,10 @@ const Services = ({ language, setLanguage }) => {
             <a href={BOOK} className="nh-btn nh-btn-gold">{t.book}</a>
             <a href={`tel:${PHONE}`} className="nh-btn nh-btn-ghost">{t.call} 210 346 5554</a>
           </div>
+          <p className="nh-help-links">
+            <a className="nh-inline-link" href="/syxnes-erotiseis/">{t.faq} →</a>
+            <a className="nh-inline-link" href="/gnomi/">{t.feedback} →</a>
+          </p>
         </section>
 
         <nav className="nh-chips" aria-label={t.jump}>
@@ -144,8 +154,8 @@ const Services = ({ language, setLanguage }) => {
         <section className="nh-notes" aria-labelledby="notes-title">
           <h2 id="notes-title" className="nh-h2 nh-menu-title">{t.notesTitle}</h2>
           <ul>
-            {t.notes.map((n) => (
-              <li key={n}>{n}</li>
+            {t.notes.map((n, i) => (
+              <li key={i}>{n}</li>
             ))}
           </ul>
           {t.footnotes.map((f) => (

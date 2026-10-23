@@ -828,3 +828,7 @@ a.nh-stat:focus-visible { outline: 2px solid var(--nh-gold); outline-offset: -2p
   .nh .nh-share-menu { left: 0; right: 0; }
 }
 html[data-theme='light'] .nh .nh-share-menu { box-shadow: 0 16px 40px rgba(70, 52, 20, .16); }
+
+.nh-inline-link { color: var(--nh-gold); font-weight: 700; text-decoration: underline; text-underline-offset: 3px; }
+.nh-help-links { display: flex; flex-wrap: wrap; gap: 10px 22px; margin: 18px 0 0; font-size: 1.02em; }
+.nh-help-links a { padding: 6px 0; }

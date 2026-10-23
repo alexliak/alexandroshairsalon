@@ -108,6 +108,8 @@ const layoutText = {
     themeOpts: [['auto', 'Αυτόματο', 'Όπως η συσκευή σου'], ['light', 'Ανοιχτό', ''], ['dark', 'Σκούρο', '']],
     footerJobs: 'Δουλειά μαζί μας',
     footerModels: 'Γίνε μοντέλο μας',
+    footerFaq: 'Συχνές ερωτήσεις',
+    footerFeedback: 'Η γνώμη σου',
     langSwitch: 'EN',
     langAria: 'Switch to English',
     skip: 'Μετάβαση στο περιεχόμενο',
@@ -157,6 +159,8 @@ const layoutText = {
     themeOpts: [['auto', 'Auto', 'Same as your device'], ['light', 'Light', ''], ['dark', 'Dark', '']],
     footerJobs: 'We are hiring',
     footerModels: 'Be our model',
+    footerFaq: 'FAQ',
+    footerFeedback: 'Your feedback',
     langSwitch: 'EL',
     langAria: 'Αλλαγή στα Ελληνικά',
     skip: 'Skip to content',
@@ -352,6 +356,8 @@ const NhLayout = ({ language, setLanguage, children, headerExtra, mobileBar }) =
           <Link to="/shop">{t.footerShop}</Link>
           <Link to="/douleia">{t.footerJobs}</Link>
           <Link to="/montela">{t.footerModels}</Link>
+          <a href="/syxnes-erotiseis/">{t.footerFaq}</a>
+          <a href="/gnomi/">{t.footerFeedback}</a>
           <a {...mapLinkProps(GOOGLE_PROFILE_URL)}>{t.footerHours}</a>
           <Link to="/oroi">{t.footerTerms}</Link>
           <Link to="/aporrito">{t.footerPrivacy}</Link>
