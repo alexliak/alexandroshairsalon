@@ -494,7 +494,7 @@ EN_FAQ = [
     ("How do I pay?", "Online when you book, or at the salon after your appointment. Prices are the same online and at the salon."),
     ("Can I just walk in?", "If there is a free chair, yes, but booking online is the safest way to get the time you want, especially when you are in Athens for a few days."),
 ]
-_items = "".join(f"<details><summary>{esc(q)}</summary><p>{esc(a)}</p></details>" for q, a in EN_FAQ)
+_items = "".join(f"<details><summary>{esc(q)}</summary><p>{linkify(esc(a))}</p></details>" for q, a in EN_FAQ)
 en_body = f"""
 <section class="hero">
   <span class="eyebrow">Hair salon · Thiseio, central Athens · since 1992</span>
@@ -563,7 +563,7 @@ MODEL_OG = f"{SITE}/images/og-montela-2.jpg"
 
 
 def model_page(path, crumb, title, desc, eyebrow, h1, lead, facts, prose, faqs, related, cta, lang="el", faq_title="Συχνές ερωτήσεις", related_title="Δες επίσης", share=""):
-    items = "".join(f"<details><summary>{esc(q)}</summary><p>{esc(a)}</p></details>" for q, a in faqs)
+    items = "".join(f"<details><summary>{esc(q)}</summary><p>{linkify(esc(a))}</p></details>" for q, a in faqs)
     faq_ld = {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
         {"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": a}} for q, a in faqs]}
     facts_html = "".join(f"<li>{esc(f)}</li>" for f in facts)
@@ -670,7 +670,7 @@ def alt_head(el_path, en_path):
 def b2b_page(path, crumb, title, desc, eyebrow, h1, lead, facts, prose, keys, faqs, related, lang, service_type, head="", share=""):
     en = lang == "en"
     cards = "".join((svc_html_en if en else svc_html)(k) for k in keys)
-    items = "".join(f"<details><summary>{esc(q)}</summary><p>{esc(a)}</p></details>" for q, a in faqs)
+    items = "".join(f"<details><summary>{esc(q)}</summary><p>{linkify(esc(a))}</p></details>" for q, a in faqs)
     faq_ld = {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
         {"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": a}} for q, a in faqs]}
     facts_html = "".join(f"<li>{esc(f)}</li>" for f in facts)
