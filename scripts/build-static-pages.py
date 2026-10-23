@@ -138,7 +138,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
 @media (prefers-reduced-motion:reduce){.totop{transition:none}}
 .lang{flex:none;min-width:40px;height:40px;border-radius:999px;border:1px solid #5a5247;background:transparent;color:var(--text);font:700 13px var(--sans);cursor:pointer}.lang:hover{border-color:var(--gold);color:var(--gold)}
 @media (max-width:760px){.lang{min-width:34px;height:34px}}
-.mbar{gap:10px}.mbar span{white-space:nowrap;font-size:12.5px}.mbar .btn{white-space:nowrap;padding:0 16px}
+.mbar{gap:10px}.mbar .mb2{display:flex;flex-direction:column;line-height:1.15}.mbar .mb2 small{font-size:11.5px;font-weight:500;color:var(--muted)}.mbar .mb2 b{font-size:14px}.mbar span{white-space:nowrap;font-size:12.5px}.mbar .btn{white-space:nowrap;padding:0 16px}
 .tsw{display:flex;flex-wrap:wrap;align-items:center;gap:6px}.tsw span{margin-right:6px;font-size:13px}
 .tsw button{min-height:36px;padding:0 14px;border-radius:999px;border:1px solid #5a5247;background:transparent;color:var(--soft);font:500 13px var(--sans);cursor:pointer}
 .tsw button:hover{border-color:var(--gold);color:var(--gold)}.tsw button.on{border-color:var(--gold);color:var(--text);font-weight:700}
@@ -244,6 +244,13 @@ def share_html(path, campaign, title, text, label, lang="el"):
             f'<button type="button" data-copy data-done="{esc(done_t)}">{_LINK_ICON}<span>{copy_t}</span></button></div></div>')
 
 
+# Ελληνικές σελίδες SEO χωρίς διακόπτη γλώσσας: το «EN» οδηγεί στην αντίστοιχη αγγλική σελίδα
+EN_SISTER = {"/kourema-athina/": "/hair-salon-athens/", "/vafi-mallion-athina/": "/hair-salon-athens/",
+             "/balayage-athina/": "/hair-salon-athens/", "/synergasies/": "/partners/",
+             "/xtenisma-fotografisi-athina/": "/hair-stylist-photoshoot-athens/",
+             "/dorean-kourema-athina/": "/hair-model-athens/", "/montelo-vafi-balayage-athina/": "/hair-model-athens/"}
+
+
 def page(path, title, desc, body, ld, extra_head="", mbar=True, bilingual=False, lang="el", image=None):
     ld_tags = "\n".join(f'<script type="application/ld+json">{json.dumps(x, ensure_ascii=False)}</script>' for x in ld)
     doc = f"""<!doctype html>
@@ -268,7 +275,7 @@ def page(path, title, desc, body, ld, extra_head="", mbar=True, bilingual=False,
 {ld_tags}
 </head>
 <body>
-<a class="skip" href="#main">Μετάβαση στο περιεχόμενο</a>
+<a class="skip" href="#main" data-en="Skip to content">Μετάβαση στο περιεχόμενο</a>
 <header class="top"><div class="wrap">
   <a class="logo" href="/"><b>Alexandros</b><span>Hair Salon · Θησείο</span></a>
   <nav aria-label="Κύριο μενού">
@@ -283,18 +290,18 @@ def page(path, title, desc, body, ld, extra_head="", mbar=True, bilingual=False,
       <a class="vb" href="viber://chat?number=%2B306981319000" aria-label="Μήνυμα στο Viber" title="Viber">{ICONS['FaViber']}</a>
     </span>
     <a class="btn gold" href="/kratisi/" data-en="Book now">Κλείσε ραντεβού</a>
-    {'<button type="button" class="lang" data-lang-toggle aria-label="Switch to English">EN</button>' if bilingual else ''}
+    {'<button type="button" class="lang" data-lang-toggle aria-label="Switch to English">EN</button>' if bilingual else (f'<a class="lang" href="{EN_SISTER[path]}" hreflang="en" lang="en" aria-label="English version" style="display:inline-flex;align-items:center;justify-content:center;text-decoration:none">EN</a>' if path in EN_SISTER else '')}
   </nav>
 </div></header>
 <main class="wrap" id="main" tabindex="-1">
 {body}
 </main>
 <footer class="bottom"><div class="wrap">
-  <p><strong>Alexandros Hair Salon</strong> · {ADDRESS} · <a href="tel:{PHONE}">{PHONE_TXT}</a> · <a href="tel:+306981319000">Κλήση κινητού</a> · <a href="https://wa.me/306981319000" target="_blank" rel="noopener">WhatsApp</a> · <a href="viber://chat?number=%2B306981319000">Viber</a> · <a href="{GOOGLE}" data-maps target="_blank" rel="noopener">Ωράριο στο Google</a> · <a href="{DIRECTIONS}" data-maps target="_blank" rel="noopener">Οδηγίες</a></p>
-  <p class="tsw" role="radiogroup" aria-label="Εμφάνιση"><span>Εμφάνιση</span><button type="button" role="radio" data-mode="auto" title="Όπως η συσκευή σου">Αυτόματο</button><button type="button" role="radio" data-mode="light">Ανοιχτό</button><button type="button" role="radio" data-mode="dark">Σκούρο</button></p>
-  <p class="links"><a href="/">Αρχική</a><a href="/services">Όλες οι τιμές</a><a href="/kourema-athina/">Κούρεμα στην Αθήνα</a><a href="/vafi-mallion-athina/">Βαφή μαλλιών στην Αθήνα</a><a href="/balayage-athina/">Balayage στην Αθήνα</a><a href="/dorean-kourema-athina/">Δωρεάν κούρεμα (μοντέλο)</a><a href="/fotografies">Φωτογραφίες</a><a href="/kratisi/">Κράτηση online</a><a href="/hair-salon-athens/" hreflang="en">Hair salon in Athens (English)</a><a href="/xtenisma-fotografisi-athina/">Χτένισμα για φωτογράφιση</a><a href="/synergasies/">Συνεργασίες</a><a href="/syxnes-erotiseis/">Συχνές ερωτήσεις</a><a href="/gnomi/">Η γνώμη σου</a><a href="/shop">Shop</a></p>
+  <p><strong>Alexandros Hair Salon</strong> · {ADDRESS} · <a href="tel:{PHONE}">{PHONE_TXT}</a> · <a href="tel:+306981319000" data-en="Call mobile">Κλήση κινητού</a> · <a href="https://wa.me/306981319000" target="_blank" rel="noopener">WhatsApp</a> · <a href="viber://chat?number=%2B306981319000">Viber</a> · <a href="{GOOGLE}" data-maps target="_blank" rel="noopener" data-en="Hours on Google">Ωράριο στο Google</a> · <a href="{DIRECTIONS}" data-maps target="_blank" rel="noopener" data-en="Directions">Οδηγίες</a></p>
+  <p class="tsw" role="radiogroup" aria-label="Εμφάνιση"><span data-en="Theme">Εμφάνιση</span><button type="button" role="radio" data-mode="auto" title="Όπως η συσκευή σου" data-en="Auto">Αυτόματο</button><button type="button" role="radio" data-mode="light" data-en="Light">Ανοιχτό</button><button type="button" role="radio" data-mode="dark" data-en="Dark">Σκούρο</button></p>
+  <p class="links"><a href="/" data-en="Home">Αρχική</a><a href="/services" data-en="All prices">Όλες οι τιμές</a><a href="/kourema-athina/">Κούρεμα στην Αθήνα</a><a href="/vafi-mallion-athina/">Βαφή μαλλιών στην Αθήνα</a><a href="/balayage-athina/">Balayage στην Αθήνα</a><a href="/dorean-kourema-athina/">Δωρεάν κούρεμα (μοντέλο)</a><a href="/fotografies" data-en="Photos">Φωτογραφίες</a><a href="/kratisi/" data-en="Book online">Κράτηση online</a><a href="/hair-salon-athens/" hreflang="en">Hair salon in Athens (English)</a><a href="/xtenisma-fotografisi-athina/">Χτένισμα για φωτογράφιση</a><a href="/synergasies/">Συνεργασίες</a><a href="/syxnes-erotiseis/" data-en="FAQ">Συχνές ερωτήσεις</a><a href="/gnomi/" data-en="Your feedback">Η γνώμη σου</a><a href="/shop">Shop</a></p>
 </div></footer>
-{'<div class="mbar"><span data-en="Thiseio · since 1992">Θησείο · από το 1992</span><a class="btn gold" href="/kratisi/" data-en="Book now">Κλείσε ραντεβού</a></div>' if mbar else ''}
+{'<div class="mbar"><span class="mb2"><small data-en="Book online">Online κράτηση</small><b data-en="in 1 minute">σε 1 λεπτό</b></span><a class="btn gold" href="/kratisi/" data-en="Book now">Κλείσε ραντεβού</a></div>' if mbar else ''}
 <button type="button" class="totop" aria-label="Επιστροφή στην κορυφή" title="Επιστροφή στην κορυφή" tabindex="-1">{ICONS['FaArrowUp']}</button>
 <script>
 (function(){{var b=document.querySelector('.totop');function f(){{var on=window.scrollY>600;b.classList.toggle('on',on);b.tabIndex=on?0:-1;}}
@@ -864,6 +871,8 @@ FAQ_GROUPS = [
   ("Έχω πολλά ή μακριά μαλλιά. Θα πληρώσω παραπάνω;",
    f"Μόνο αν χρειαστεί περισσότερο χρώμα από όσο περιλαμβάνει η υπηρεσία: {O('+ Επιπλέον χρώμα')} για κάθε 30 g βαφής ή 30 ml ρεφλέ. Θα σου το πούμε πριν το ανοίξουμε. Για παράδειγμα, βαφή σε όλο με 90 g κοστίζει €62."),
   ("Έχω λίγα ή λεπτά μαλλιά.", "Πληρώνεις την ίδια τιμή και δεν θα χρειαστείς ποτέ επιπλέον χρώμα."),
+  ("Μπορώ να φέρω τη δική μου βαφή;",
+   f"Ναι, η Βαφή με τη δική σας βαφή: ρίζα {O('Βαφή με τη δική σας βαφή','Ρίζα')}, ρίζα και μήκη {O('Βαφή με τη δική σας βαφή','Ρίζα & μήκη')}, με λούσιμο και γρήγορο στέγνωμα. Η βαφή έρχεται κλειστή, στη συσκευασία της, μαζί με το οξειδωτικό της. Το αποτέλεσμα εξαρτάται από τη βαφή που επιλέχθηκε."),
   ("Πότε ισχύει η Μηνιαία ρίζα;",
    "Όταν η επόμενη βαφή ρίζας γίνεται μέσα σε 30 ημέρες από την προηγούμενη σε εμάς. Στο ταμείο σού δίνουμε ένα καρτελάκι με την ημερομηνία."),
  ]),
@@ -888,43 +897,87 @@ FAQ_GROUPS = [
    "Μπορείς να μας το πεις ανώνυμα στη σελίδα alexandroshairsalon.gr/gnomi, χωρίς όνομα, τηλέφωνο ή email."),
  ]),
 ]
+FAQ_TITLES_EN = {"Χρώμα": "Colour", "Χτένισμα": "Blow-dry & styling", "Τιμές": "Prices"}
+FAQ_EN = {
+ "Θέλω να καλύψω τα λευκά στη ρίζα. Τι μου ταιριάζει;": ("I want to cover grey at the roots. What suits me?",
+   f"Root Colour ({O('Βαφή ρίζας','Κανονική')}), with Farcom or L’Oréal Majirel. If you colour every month, the Monthly Root ({O('Βαφή ρίζας','Μηνιαία ρίζα')})."),
+ "Με ενοχλεί η μυρωδιά ή έχω ευαίσθητο δέρμα.": ("The smell bothers me, or I have sensitive skin.",
+   f"Ammonia-free Root Colour ({O('Βαφή ρίζας','Χωρίς αμμωνία')}, monthly {O('Βαφή ρίζας','Χωρίς αμμωνία · μηνιαία ρίζα')}), with L’Oréal INOA or Redken Color Gels Oils."),
+ "Τα μήκη μου ξεθώριασαν.": ("My lengths have faded.",
+   f"Root Colour & Gloss ({O('Βαφή ρίζας & ρεφλέ στα μήκη','Έως τους ώμους')} up to the shoulders, {O('Βαφή ρίζας & ρεφλέ στα μήκη','Κάτω από τους ώμους')} longer). On the lengths we use an acidic, ammonia-free gloss (Dia Light or Redken Shades EQ) for tone and shine; it doesn’t lighten hair or fully cover grey. If the lengths need more colour, Dia Color demi-permanent, at the same price."),
+ "Θέλω άλλο χρώμα ή έχω λευκά και στα μήκη.": ("I want a different colour, or I have grey on the lengths too.",
+   f"All-over Colour, permanent ({O('Βαφή σε όλο το μαλλί','Μόνιμη')}): colour from roots to ends, with full grey coverage."),
+ "Θέλω κάτι πιο ήπιο από τη μόνιμη βαφή.": ("I’d like something gentler than permanent colour.",
+   f"All-over Colour, demi-permanent ({O('Βαφή σε όλο το μαλλί','Ημιμόνιμη')}), with L’Oréal Dia Color. It covers up to 70% of grey, lasts up to 6 weeks and fades gradually, with no sharp regrowth line. It also suits stressed hair."),
+ "Τι σημαίνει μόνιμη, ημιμόνιμη και ρεφλέ;": ("What do permanent, demi-permanent and gloss mean?",
+   "Permanent colour (Farcom Expertia, Majirel, INOA, Redken Color Gels Oils): alkaline, goes inside the hair, fully covers grey and stays until it’s cut; as it grows, the roots show. Demi-permanent (Dia Color): gentler, covers up to 70% of grey and fades in about 6 weeks. Gloss (Dia Light, Redken Shades EQ): acidic, ammonia-free, adds tone and shine without lightening."),
+ "Πόσο χρώμα περιλαμβάνει κάθε βαφή;": ("How much colour does each service include?",
+   "Root Colour up to 45 g. All-over Colour up to 60 g or 60 ml. Gloss up to 60 ml for hair up to the shoulders, or 90 ml for longer hair. Root Colour & Gloss: roots up to 45 g and gloss 60 or 90 ml. Amounts are before developer."),
+ "Έχω πολλά ή μακριά μαλλιά. Θα πληρώσω παραπάνω;": ("I have thick or long hair. Will I pay more?",
+   f"Only if more colour is needed than the service includes: {O('+ Επιπλέον χρώμα')} for every extra 30 g of colour or 30 ml of gloss. We always tell you before we open it. For example, All-over Colour with 90 g costs €62."),
+ "Έχω λίγα ή λεπτά μαλλιά.": ("I have fine or thin hair.", "You pay the same price, and you will never need extra colour."),
+ "Μπορώ να φέρω τη δική μου βαφή;": ("Can I bring my own colour?",
+   f"Yes: Bring Your Own Colour, roots {O('Βαφή με τη δική σας βαφή','Ρίζα')}, roots and lengths {O('Βαφή με τη δική σας βαφή','Ρίζα & μήκη')}, with a wash and quick dry. The colour comes unopened, in its box, with its own developer. The result depends on the colour chosen."),
+ "Πότε ισχύει η Μηνιαία ρίζα;": ("When does the Monthly Root apply?",
+   "When your next root colour is within 30 days of your last one with us. At the desk we give you a small card with the date."),
+ "Τι είναι το Εβδομαδιαίο χτένισμα με μάσκα;": ("What is the Weekly Blowdry with Mask?",
+   f"For anyone who wants to look polished all week, at work and out, without thinking about it. Wash, mask and blow-dry, same day and time every week: short {O('Εβδομαδιαίο χτένισμα με μάσκα','Κοντά')}, medium {O('Εβδομαδιαίο χτένισμα με μάσκα','Μεσαία')}, long {O('Εβδομαδιαίο χτένισμα με μάσκα','Μακριά')} (separately €39). Monday to Thursday, when there is a free slot, and when your previous blow-dry was with us in the last 8 days."),
+ "Πόσο κρατά το χτένισμα;": ("How long does a blow-dry last?",
+   "A blow-dry, weekly or not, usually lasts 2–3 days. It depends on your hair, the humidity and whether you tie it up at night."),
+ "Μπούκλες ή πιάσιμο σε πολλά ή πολύ μακριά μαλλιά;": ("Curls or an up-do on thick or very long hair?",
+   "Iron curls and up-dos hold better on hair washed the day before. Fine or shorter hair doesn’t need this."),
+ "Υπάρχει λούσιμο και γρήγορο φορμάρισμα χωρίς βαφή;": ("Is there a wash and quick styling without colour?",
+   f"Yes, Wash & Quick Styling, {O('Λούσιμο & γρήγορο φορμάρισμα')}. It is booked by phone on {PHONE_TXT}."),
+ "Περιλαμβάνεται λούσιμο;": ("Is a wash included?",
+   "Every service says whether a wash is included. It is included in all haircuts (except the men’s clipper cut), all blow-dries and all colour, gloss and highlights services."),
+ "Τι δεν συνδυάζεται;": ("What can’t be combined?",
+   "The Monthly Root and the Weekly Blowdry are already lower prices for regular clients. They can’t be combined with any other discount or offer, such as Treatwell off-peak or last-minute discounts."),
+ "Τι δεν κάνουμε;": ("What we don’t do",
+   "We don’t refresh the lengths with leftover permanent colour: for the lengths there is gloss or demi-permanent colour, which are gentler. We don’t open extra colour without telling you. We don’t promise full grey coverage with a gloss."),
+ "Κάτι δεν σου άρεσε;": ("Something you didn’t like?",
+   "You can tell us anonymously at alexandroshairsalon.gr/gnomi, with no name, phone or email."),
+}
 _faq_all = [qa for _, g in FAQ_GROUPS for qa in g]
+assert all(q in FAQ_EN for q, _ in _faq_all), [q for q, _ in _faq_all if q not in FAQ_EN]
 _faq_ld = {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
     {"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": a}} for q, a in _faq_all]}
+def _bi(tag, el, en, attrs=""):
+    return f'<{tag}{attrs} data-en="{esc(esc(en))}">{esc(el)}</{tag}>'
 _faq_body = """
 <section class="hero">
-  <span class="eyebrow">Συχνές ερωτήσεις</span>
-  <h1>Ξέρεις την τιμή <em>πριν καθίσεις.</em></h1>
-  <p class="lead">Ποια βαφή σού ταιριάζει, πόσο χρώμα περιλαμβάνει κάθε υπηρεσία, τι γίνεται με τα πολλά ή τα μακριά μαλλιά και τι δεν συνδυάζεται. Ό,τι δεν βρεις εδώ, μπορείς πάντα να το ρωτήσεις πριν ξεκινήσουμε.</p>
-  <div class="cta"><a class="btn gold" href="/services">Όλες οι τιμές</a><a class="btn ghost" href="tel:""" + PHONE + """">Κλήση """ + PHONE_TXT + """</a></div>
+  <span class="eyebrow" data-en="FAQ">Συχνές ερωτήσεις</span>
+  <h1 data-en="Know the price &lt;em&gt;before you sit down.&lt;/em&gt;">Ξέρεις την τιμή <em>πριν καθίσεις.</em></h1>
+  <p class="lead" data-en="Which colour suits you, how much colour each service includes, what happens with thick or long hair, and what can’t be combined. Anything not covered here, you can always ask before we start.">Ποια βαφή σού ταιριάζει, πόσο χρώμα περιλαμβάνει κάθε υπηρεσία, τι γίνεται με τα πολλά ή τα μακριά μαλλιά και τι δεν συνδυάζεται. Ό,τι δεν βρεις εδώ, μπορείς πάντα να το ρωτήσεις πριν ξεκινήσουμε.</p>
+  <div class="cta"><a class="btn gold" href="/services" data-en="All prices">Όλες οι τιμές</a><a class="btn ghost" href="tel:""" + PHONE + """" data-en="Call """ + PHONE_TXT + """">Κλήση """ + PHONE_TXT + """</a></div>
 </section>
-""" + "".join(f'<section class="block"><h2>{esc(t)}</h2>' + "".join(f"<details><summary>{esc(q)}</summary><p>{esc(a)}</p></details>" for q, a in g) + "</section>" for t, g in FAQ_GROUPS) + """
-<section class="block"><p class="links"><a href="/services">Όλες οι τιμές</a><a href="/vafi-mallion-athina/">Βαφή μαλλιών</a><a href="/gnomi/">Η γνώμη σου, ανώνυμα</a></p></section>
+""" + "".join('<section class="block">' + _bi("h2", t, FAQ_TITLES_EN[t]) + "".join(
+    f'<details><summary data-en="{esc(esc(FAQ_EN[q][0]))}">{esc(q)}</summary><p data-en="{esc(esc(FAQ_EN[q][1]))}">{esc(a)}</p></details>' for q, a in g) + "</section>" for t, g in FAQ_GROUPS) + """
+<section class="block"><p class="links"><a href="/services" data-en="All prices">Όλες οι τιμές</a><a href="/vafi-mallion-athina/" data-en="Hair colour">Βαφή μαλλιών</a><a href="/gnomi/" data-en="Your feedback, anonymously">Η γνώμη σου, ανώνυμα</a></p></section>
 """
 page("/syxnes-erotiseis/", "Συχνές ερωτήσεις: βαφή, ποσότητες, τιμές | Alexandros Hair Salon – Θησείο",
      "Ποια βαφή σού ταιριάζει (μόνιμη, ημιμόνιμη, ρεφλέ), πόσο χρώμα περιλαμβάνει κάθε υπηρεσία, Μηνιαία ρίζα, εβδομαδιαίο χτένισμα και τι δεν συνδυάζεται.",
-     _faq_body, [_faq_ld, crumbs("Συχνές ερωτήσεις", "/syxnes-erotiseis/")])
+     _faq_body, [_faq_ld, crumbs("Συχνές ερωτήσεις", "/syxnes-erotiseis/")], bilingual=True)
 
 
 # ---------- /gnomi/ : ανώνυμη γνώμη, χωρίς κανένα προσωπικό στοιχείο (αποστολή σε Google Form, χωρίς αποθήκευση στο site) ----------
 GNOMI_FORM = "1FAIpQLSe4NOQXPGj1ujfBYrkWBSyJFPEOs2VepAY-TrU6v1NJCtsKew"
 _gn_body = """
 <section class="hero">
-  <span class="eyebrow">Βοηθήστε μας να γίνουμε καλύτεροι</span>
-  <h1>Η γνώμη σου, <em>ανώνυμα.</em></h1>
-  <p class="lead">Δεν ζητάμε όνομα, τηλέφωνο ή email. Το διαβάζει μόνο ο Αλέξανδρος, για να βελτιώσει την εμπειρία σου και τις υπηρεσίες μας. Μας βοηθάει· δεν το κρίνουμε.</p>
+  <span class="eyebrow" data-en="Help us get better">Βοηθήστε μας να γίνουμε καλύτεροι</span>
+  <h1 data-en="Your feedback, &lt;em&gt;anonymously.&lt;/em&gt;">Η γνώμη σου, <em>ανώνυμα.</em></h1>
+  <p class="lead" data-en="We don’t ask for your name, phone or email. Only Alexandros reads it, to improve your experience and our services. It helps us; we don’t judge it.">Δεν ζητάμε όνομα, τηλέφωνο ή email. Το διαβάζει μόνο ο Αλέξανδρος, για να βελτιώσει την εμπειρία σου και τις υπηρεσίες μας. Μας βοηθάει· δεν το κρίνουμε.</p>
 </section>
 <section class="block">
 <form id="gn" class="gn" novalidate>
-  <fieldset><legend>Τι θα ήθελες να μας πεις;</legend>
-    <label><input type="radio" name="kind" value="Κάτι δεν πήγε καλά" checked> Κάτι δεν πήγε καλά</label>
-    <label><input type="radio" name="kind" value="Κάτι μου άρεσε"> Κάτι μου άρεσε</label>
-    <label><input type="radio" name="kind" value="Έχω μια ιδέα"> Έχω μια ιδέα</label>
+  <fieldset><legend data-en="What would you like to tell us?">Τι θα ήθελες να μας πεις;</legend>
+    <label><input type="radio" name="kind" value="Κάτι δεν πήγε καλά" checked> <span data-en="Something didn’t go well">Κάτι δεν πήγε καλά</span></label>
+    <label><input type="radio" name="kind" value="Κάτι μου άρεσε"> <span data-en="Something I liked">Κάτι μου άρεσε</span></label>
+    <label><input type="radio" name="kind" value="Έχω μια ιδέα"> <span data-en="I have an idea">Έχω μια ιδέα</span></label>
   </fieldset>
-  <label for="gn-msg" class="gn-l">Το μήνυμά σου</label>
+  <label for="gn-msg" class="gn-l" data-en="Your message">Το μήνυμά σου</label>
   <textarea id="gn-msg" name="message" rows="7" maxlength="3000" required></textarea>
   <input type="text" name="website" tabindex="-1" autocomplete="off" class="gn-hp" aria-hidden="true">
-  <button type="submit" class="btn gold">Αποστολή</button>
+  <button type="submit" class="btn gold" data-en="Send">Αποστολή</button>
   <p id="gn-st" class="gn-st" role="status" aria-live="polite"></p>
 </form>
 </section>
@@ -933,16 +986,17 @@ _gn_body = """
 .gn-hp{position:absolute;left:-9999px}.gn-st{margin-top:14px;font-size:17px}</style>
 <script>
 (function(){var f=document.getElementById('gn'),st=document.getElementById('gn-st');
+function T(el,en){return document.documentElement.lang==='en'?en:el;}
 f.addEventListener('submit',function(e){e.preventDefault();var m=f.message.value.trim();
 if(f.website.value){return;}
-if(m.length<3){st.textContent='Το κουτί είναι άδειο. Μπορείς να γράψεις όσα λίγα θέλεις.';return;}
-var b=f.querySelector('button');b.disabled=true;st.textContent='Αποστολή…';
+if(m.length<3){st.textContent=T('Το κουτί είναι άδειο. Μπορείς να γράψεις όσα λίγα θέλεις.','The box is empty. A few words are enough.');return;}
+var b=f.querySelector('button');b.disabled=true;st.textContent=T('Αποστολή…','Sending…');
 var fd=new URLSearchParams();fd.append('entry.760992725',f.kind.value);fd.append('entry.329498901',m);
 fetch('https://docs.google.com/forms/d/e/""" + GNOMI_FORM + """/formResponse',{method:'POST',mode:'no-cors',body:fd}).then(function(){
-f.reset();st.textContent='Ευχαριστούμε. Το μήνυμά σου έφτασε.';}).catch(function(){
-st.textContent='Δεν στάλθηκε. Μπορείς να δοκιμάσεις ξανά σε λίγο.';}).then(function(){b.disabled=false;});});})();
+f.reset();st.textContent=T('Ευχαριστούμε. Το μήνυμά σου έφτασε.','Thank you. Your message has arrived.');}).catch(function(){
+st.textContent=T('Δεν στάλθηκε. Μπορείς να δοκιμάσεις ξανά σε λίγο.','It wasn’t sent. You can try again in a moment.');}).then(function(){b.disabled=false;});});})();
 </script>
 """
 page("/gnomi/", "Η γνώμη σου, ανώνυμα | Alexandros Hair Salon – Θησείο",
      "Μπορείς να μας πεις ανώνυμα τι δεν πήγε καλά ή τι σου άρεσε. Δεν ζητάμε όνομα, τηλέφωνο ή email.",
-     _gn_body, [crumbs("Η γνώμη σου", "/gnomi/")])
+     _gn_body, [crumbs("Η γνώμη σου", "/gnomi/")], bilingual=True)
