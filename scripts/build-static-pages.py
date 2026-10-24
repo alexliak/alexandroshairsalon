@@ -374,7 +374,7 @@ FAQ_WHEN = ("Μπορώ να κλείσω Δευτέρα ή αργά το από
 COMMON_FACTS = ["Θησείο, ~5′ με τα πόδια από τον σταθμό", "Πληρωμή online ή στο κομμωτήριο", "Online κράτηση 24/7"]
 
 # ---------- /kourema-athina/ ----------
-CUTS = ["Κούρεμα", "Κούρεμα & στέγνωμα", "Κούρεμα & φορμάρισμα", "Κούρεμα & χτένισμα"]
+CUTS = ["Κούρεμα χωρίς στέγνωμα", "Κούρεμα & στέγνωμα", "Κούρεμα & φορμάρισμα", "Κούρεμα & χτένισμα"]
 service_page(
     "/kourema-athina/", "Κούρεμα στην Αθήνα",
     f"Κούρεμα Αθήνα – Θησείο | Γυναικείο από €{P(CUTS[0])} | Alexandros Hair Salon",
@@ -387,7 +387,7 @@ service_page(
 <p>Ξεκινάμε με λίγη κουβέντα: τι σε ενοχλεί σήμερα, πώς χτενίζεσαι στο σπίτι και πόσο συχνά θέλεις να έρχεσαι. Μετά προτείνουμε γραμμή και μήκος που θα στέκονται σωστά και όταν τα φορμάρεις μόνη σου.</p>
 <p>Κάνουμε κλασικά και σύγχρονα κουρέματα: pixie, mullet, bob και lob, butterfly, curtain bangs, φιλάρισμα για όγκο ή ελάφρυνση, καθαρό φρεσκάρισμα άκρων.</p>
 <h2>Πώς θέλεις να φύγεις;</h2>
-<p>Μία τιμή για κάθε μήκος· διαλέγεις μόνο το τέλος. <strong>Κούρεμα</strong>, με φυσικό στέγνωμα, ιδανικό για σγουρά. <strong>Στέγνωμα</strong>: με τα χέρια, με πιστολάκι ή φυσούνα, για φυσικό αποτέλεσμα. <strong>Φορμάρισμα</strong>: πιστολάκι και βούρτσα για όγκο και φόρμα. <strong>Χτένισμα</strong>: πλήρες, ίσιο και λείο ή με όγκο και κίνηση, που κρατά συνήθως 2–3 ημέρες.</p>""",
+<p>Μία τιμή για κάθε μήκος· διαλέγεις μόνο το τέλος. <strong>Χωρίς στέγνωμα</strong>: τα μαλλιά στεγνώνουν φυσικά, ιδανικό για σγουρά. <strong>Στέγνωμα</strong>: με τα χέρια, με πιστολάκι ή φυσούνα, για φυσικό αποτέλεσμα. <strong>Φορμάρισμα</strong>: πιστολάκι και βούρτσα για όγκο και φόρμα. <strong>Χτένισμα</strong>: πλήρες, ίσιο και λείο ή με όγκο και κίνηση, που κρατά συνήθως 2–3 ημέρες.</p>""",
     CUTS + ["Φράτζα & αφέλειες", "Ανδρικό κούρεμα", "Ανδρικό με μηχανή", "Παιδικό κούρεμα"],
     [("Πόσο κοστίζει ένα γυναικείο κούρεμα;", f"€{P(CUTS[0])} με φυσικό στέγνωμα, €{P(CUTS[1])} με στέγνωμα, €{P(CUTS[2])} με φορμάρισμα και €{P(CUTS[3])} με πλήρες χτένισμα. Ίδια τιμή για όλα τα μήκη."),
      ("Κάνετε και ανδρικά ή παιδικά κουρέματα;", f"Ναι. Ανδρικό κούρεμα €{P('Ανδρικό κούρεμα')}, με μηχανή €{P('Ανδρικό με μηχανή')} και παιδικό (έως 12 ετών) €{P('Παιδικό κούρεμα')}."),
@@ -412,12 +412,12 @@ service_page(
     "Κάλυψη λευκών στη ρίζα, βαφή χωρίς αμμωνία, ρεφλέ για λάμψη και τόνο. Μία τιμή για κάθε υπηρεσία, με συγκεκριμένη ποσότητα χρώματος, ώστε να ξέρεις από πριν τι πληρώνεις.",
     [f"Βαφή ρίζας από €{P(ROOT)}"] + COMMON_FACTS,
     f"""<h2>Βαφή ρίζας και Μηνιαία ρίζα</h2>
-<p><strong>Βαφή ρίζας (€{ROOT_OPTS['Κλασική']})</strong>: μόνιμη βαφή με Farcom ή Majirel της L’Oréal Professionnel, για σίγουρη κάλυψη λευκών. <strong>Χωρίς αμμωνία (€{ROOT_OPTS['Χωρίς αμμωνία']})</strong>: INOA της L’Oréal Professionnel ή Redken. Και οι δύο περιλαμβάνουν λούσιμο και γρήγορο στέγνωμα.</p>
+<p><strong>Βαφή ρίζας (€{ROOT_OPTS['Κλασική']})</strong>: μόνιμη βαφή με Farcom ή Majirel της L’Oréal Professionnel, για σίγουρη κάλυψη λευκών. <strong>Χωρίς αμμωνία (€{ROOT_OPTS['Χωρίς αμμωνία']})</strong>: INOA της L’Oréal Professionnel ή Redken. Και οι δύο περιλαμβάνουν λούσιμο και στέγνωμα.</p>
 <p><strong>Μηνιαία ρίζα (€{ROOT_OPTS['Μηνιαία ρίζα']}, χωρίς αμμωνία €{ROOT_OPTS['Χωρίς αμμωνία · μηνιαία ρίζα']})</strong>: όταν η επόμενη βαφή ρίζας γίνεται μέσα σε 30 ημέρες από την προηγούμενη σε εμάς. Στο ταμείο παίρνεις καρτελάκι με την ημερομηνία.</p>
 <h2>Ρίζα + ρεφλέ</h2>
 <p>Με το <strong>ρεφλέ (gloss)</strong> στα μήκη το χρώμα δένει από τη ρίζα ως τις άκρες και τα μαλλιά αποκτούν λάμψη. Είναι ξεχωριστή εφαρμογή στα μήκη, έως 60 ml για μαλλιά έως τους ώμους ή 90 ml κάτω από τους ώμους, όχι απλό τράβηγμα της βαφής της ρίζας. Για μεγάλη αλλαγή ή διόρθωση προηγούμενου χρώματος ξεκινάμε με διάγνωση, ώστε να ξέρεις πλάνο και τιμή πριν από οτιδήποτε.</p>""",
     [ROOT, "Βαφή ρίζας & ρεφλέ στα μήκη", "Ρεφλέ", "Βαφή σε όλο το μαλλί", "Ξάνοιγμα ρίζας & ρεφλέ", "+ Επιπλέον χρώμα", "Διόρθωση χρώματος"],
-    [("Πόσο κοστίζει η βαφή ρίζας;", f"€{ROOT_OPTS['Κλασική']}, ή €{ROOT_OPTS['Χωρίς αμμωνία']} χωρίς αμμωνία, με λούσιμο και γρήγορο στέγνωμα. Όταν η επόμενη βαφή ρίζας γίνεται μέσα σε 30 ημέρες, η Μηνιαία ρίζα είναι €{ROOT_OPTS['Μηνιαία ρίζα']} (χωρίς αμμωνία €{ROOT_OPTS['Χωρίς αμμωνία · μηνιαία ρίζα']})."),
+    [("Πόσο κοστίζει η βαφή ρίζας;", f"€{ROOT_OPTS['Κλασική']}, ή €{ROOT_OPTS['Χωρίς αμμωνία']} χωρίς αμμωνία, με λούσιμο και στέγνωμα. Όταν η επόμενη βαφή ρίζας γίνεται μέσα σε 30 ημέρες, η Μηνιαία ρίζα είναι €{ROOT_OPTS['Μηνιαία ρίζα']} (χωρίς αμμωνία €{ROOT_OPTS['Χωρίς αμμωνία · μηνιαία ρίζα']})."),
      ("Έχετε βαφή χωρίς αμμωνία;", f"Ναι: INOA της L’Oréal Professionnel ή Redken, €{ROOT_OPTS['Χωρίς αμμωνία']} (Μηνιαία ρίζα €{ROOT_OPTS['Χωρίς αμμωνία · μηνιαία ρίζα']})."),
      FAQ_WHEN,
      ("Πόση ώρα διαρκεί η βαφή ρίζας;", "Περίπου μία ώρα μαζί με την αναμονή. Με ρεφλέ στα μήκη από μία ώρα έως μία ώρα και δέκα λεπτά."),
@@ -519,8 +519,8 @@ en_faq_ld = {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity":
 en_service_ld = {"@context": "https://schema.org", "@type": "Service", "name": "Hair salon in Athens", "serviceType": "Hair salon",
                  "areaServed": {"@type": "City", "name": "Athens"}, "provider": SALON_REF, "url": f"{SITE}/hair-salon-athens/",
                  "availableLanguage": ["English", "Greek"], "offers": offers_en(EN_KEYS)}
-page("/hair-salon-athens/", f"Hair Salon in Athens, Thiseio | from €{P('Κούρεμα')} | Alexandros Hair Salon",
-     f"Hair salon in central Athens near the Acropolis: haircut from €{P('Κούρεμα')}, colour, balayage. Free slots on Mondays and late afternoons. English spoken.",
+page("/hair-salon-athens/", f"Hair Salon in Athens, Thiseio | from €{P('Κούρεμα χωρίς στέγνωμα')} | Alexandros Hair Salon",
+     f"Hair salon in central Athens near the Acropolis: haircut from €{P('Κούρεμα χωρίς στέγνωμα')}, colour, balayage. Free slots on Mondays and late afternoons. English spoken.",
      en_body, [en_service_ld, en_faq_ld, crumbs("Hair salon in Athens", "/hair-salon-athens/")], lang="en", bilingual=True)
 
 # ---------- /kratisi/ : official Treatwell Connect widget (no marketplace commission) ----------
@@ -530,6 +530,7 @@ kratisi_head = f"""<script src="{TW_JS}"></script>
 #wahanda-online-booking-widget-iframe{{min-height:720px;background:#fff;border-radius:16px;overflow:hidden}}
 #wahanda-online-booking-widget-iframe iframe{{display:block;width:100%!important;min-height:720px;border:0}}
 .tw-fallback{{font-size:14px;color:var(--muted);margin-top:12px}}
+.en-only{{display:none;border:1px solid var(--gold);border-radius:14px;padding:16px 18px;margin:18px 0}}html[lang=en] .en-only{{display:block}}
 /* Treatwell button: keep the site's gold style instead of Treatwell's green */
 a#wahanda-online-booking-widget.btn{{display:inline-flex!important;align-items:center!important;justify-content:center!important;background:var(--gold)!important;color:var(--ink)!important;border:1px solid var(--gold)!important;border-radius:999px!important;font:800 16px/1 var(--sans)!important;text-transform:none!important;letter-spacing:0!important;padding:0 24px!important;height:auto!important;min-height:48px!important;width:auto!important;box-shadow:none!important;background-image:none!important}}
 a#wahanda-online-booking-widget.btn span{{background:none!important;padding:0!important;font:inherit!important;color:inherit!important;text-transform:none!important;line-height:1.2!important;height:auto!important}}
@@ -540,6 +541,7 @@ kratisi_body = f"""
   <span class="eyebrow" data-en="Book online">Online κράτηση</span>
   <h1 data-en="Book in <em>one minute.</em>">Κλείσε ραντεβού <em>σε ένα λεπτό.</em></h1>
   <p class="lead" data-en="Choose a service and time below. You see the price and duration and pay online or at the salon.">Διάλεξε υπηρεσία και ώρα παρακάτω. Βλέπεις τιμή και διάρκεια και πληρώνεις online ή στο κομμωτήριο.</p>
+  <div class="en-only"><p><strong>Booking in English:</strong> our booking system is in Greek. The easiest way is our English price list: tap any price and the booking opens with your service already selected, so you only pick a time.</p><p class="cta"><a class="btn gold" href="/services">English price list &amp; booking</a><a class="btn ghost" href="https://wa.me/306981319000" target="_blank" rel="noopener">WhatsApp</a></p></div>
   <div class="cta">
     <a class="btn gold" href="{WIDGET}" id="wahanda-online-booking-widget" onclick='wahanda.openOnlineBookingWidget("{WIDGET}"); return false;' target="_blank"><span data-en="See times &amp; book">Δες ώρες &amp; κλείσε</span></a>
     <a class="btn ghost" href="tel:{PHONE}" data-en="Call {PHONE_TXT}">Κάλεσε {PHONE_TXT}</a>
@@ -994,9 +996,9 @@ FAQ_GROUPS = [
   ("Έχω λίγα ή λεπτά μαλλιά.", "Πληρώνεις την ίδια τιμή και δεν θα χρειαστείς ποτέ επιπλέον χρώμα.",
    "I have fine or thin hair.", "You pay the same price, and you will never need extra colour.", []),
   ("Μπορώ να φέρω τη δική μου βαφή;",
-   f"Ναι, η Βαφή με τη δική σας βαφή: ρίζα {O('Βαφή με τη δική σας βαφή','Ρίζα')}, ρίζα και μήκη {O('Βαφή με τη δική σας βαφή','Ρίζα & μήκη')}, με λούσιμο και γρήγορο στέγνωμα. Η βαφή έρχεται κατά προτίμηση κλειστή, ή ανοιγμένη πρόσφατα, στη συσκευασία της και μαζί με το οξειδωτικό της. Το αποτέλεσμα εξαρτάται από τη βαφή που επιλέχθηκε.",
+   f"Ναι, η Βαφή με τη δική σας βαφή: ρίζα {O('Βαφή με τη δική σας βαφή','Ρίζα')}, ρίζα και μήκη {O('Βαφή με τη δική σας βαφή','Ρίζα & μήκη')}, με λούσιμο και στέγνωμα. Η βαφή έρχεται κατά προτίμηση κλειστή, ή ανοιγμένη πρόσφατα, στη συσκευασία της και μαζί με το οξειδωτικό της. Το αποτέλεσμα εξαρτάται από τη βαφή που επιλέχθηκε.",
    "Can I bring my own colour?",
-   f"Yes: Bring Your Own Colour, roots {O('Βαφή με τη δική σας βαφή','Ρίζα')}, roots and lengths {O('Βαφή με τη δική σας βαφή','Ρίζα & μήκη')}, with a wash and quick dry. The colour is preferably unopened, or only recently opened, in its box and with its own developer. The result depends on the colour chosen.",
+   f"Yes: Bring Your Own Colour, roots {O('Βαφή με τη δική σας βαφή','Ρίζα')}, roots and lengths {O('Βαφή με τη δική σας βαφή','Ρίζα & μήκη')}, with a wash and dry. The colour is preferably unopened, or only recently opened, in its box and with its own developer. The result depends on the colour chosen.",
    [("Βαφή με τη δική σας βαφή", "Ρίζα"), ("Βαφή με τη δική σας βαφή", "Ρίζα & μήκη")]),
   ("Πότε ισχύει η Μηνιαία ρίζα;",
    "Όταν η επόμενη βαφή ρίζας γίνεται μέσα σε 30 ημέρες από την προηγούμενη σε εμάς. Στο ταμείο σού δίνουμε ένα καρτελάκι με την ημερομηνία.",

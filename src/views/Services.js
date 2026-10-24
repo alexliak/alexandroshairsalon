@@ -44,10 +44,11 @@ const text = {
     lead: 'You know the price before you sit down. Under each service we say what it includes, for which length and how much colour. Anything extra is written here too, and you can always ask before we start. Same prices at the salon and online.',
     phoneOnly: 'Book by phone',
     pickOption: 'Booking starts from your option.',
-    book: 'Book online',
+    book: 'Choose a service ↓',
     call: 'Call',
     from: 'from',
     bookThis: 'Book',
+    bookNote: 'Tap any price to book: the booking page opens in Greek with your service already selected, so you only pick a time. Prefer to message us in English? WhatsApp +30 698 131 9000.',
     notesTitle: 'Good to know',
     footnotes: [
       '* If it’s your first colour with us, we can do a free skin test beforehand. You don’t need one to book.',
@@ -85,8 +86,9 @@ const Services = ({ language, setLanguage }) => {
             {t.title} <em>{t.titleEm}</em>
           </h1>
           <p className="nh-lead">{t.lead}</p>
+          {t.bookNote ? <p className="nh-help-links">{t.bookNote}</p> : null}
           <div className="nh-cta-row">
-            <a href={BOOK} className="nh-btn nh-btn-gold">{t.book}</a>
+            <a href={t.bookNote ? '#haircuts' : BOOK} className="nh-btn nh-btn-gold">{t.book}</a>
             <a href={`tel:${PHONE}`} className="nh-btn nh-btn-ghost">{t.call} 210 346 5554</a>
           </div>
           <p className="nh-help-links">

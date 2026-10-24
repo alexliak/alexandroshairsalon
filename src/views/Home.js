@@ -40,7 +40,7 @@ const content = {
     popularTitle: 'Διάλεξε & κλείσε',
     allServices: 'Όλες οι τιμές →',
     services: [
-      { tone: 'cut', cat: 'Κουρέματα', name: 'Γυναικείο κούρεμα', desc: 'Pixie, mullet, butterfly, curtain bangs, φιλάρισμα ή κλασικό, με εμπειρία τριών δεκαετιών.', time: '30–55′', price: priceText('el', 'Κούρεμα', 'Κούρεμα & στέγνωμα', 'Κούρεμα & φορμάρισμα', 'Κούρεμα & χτένισμα'), href: '/services#haircuts' },
+      { tone: 'cut', cat: 'Κουρέματα', name: 'Γυναικείο κούρεμα', desc: 'Pixie, mullet, butterfly, curtain bangs, φιλάρισμα ή κλασικό, με εμπειρία τριών δεκαετιών.', time: '30–55′', price: priceText('el', 'Κούρεμα χωρίς στέγνωμα', 'Κούρεμα & στέγνωμα', 'Κούρεμα & φορμάρισμα', 'Κούρεμα & χτένισμα'), href: '/services#haircuts' },
       { tone: 'style', cat: 'Χτένισμα', name: 'Blowout · Κλασικό χτένισμα', desc: 'Χτένισμα με όγκο και κίνηση που κρατά μέρες, με βούρτσα ή με ρολά και κλιπς.', time: '30–45′', price: priceText('el', 'Blowout · Κλασικό χτένισμα'), href: serviceBookUrl('Blowout · Κλασικό χτένισμα') },
       { tone: 'colour', cat: 'Χρώμα', name: 'Βαφή ρίζας & ρεφλέ', desc: 'Κάλυψη λευκών στη ρίζα και ξεχωριστό gloss για λάμψη σε όλο το μαλλί.', time: '1 ώρα – 1 ώρα 10′', price: priceText('el', 'Βαφή ρίζας & ρεφλέ στα μήκη'), href: '/services#colour' },
       { tone: 'light', cat: 'Ανταύγειες', name: 'Μερικό μπαλαγιάζ', desc: 'Φυσικό, φωτεινό αποτέλεσμα με εύκολη συντήρηση.', time: '3 ώρες', price: priceText('el', 'Μερικό μπαλαγιάζ'), href: serviceBookUrl('Μερικό μπαλαγιάζ') },
@@ -110,7 +110,7 @@ const content = {
     popularTitle: 'Pick & book',
     allServices: 'All prices →',
     services: [
-      { tone: 'cut', cat: 'Haircuts', name: 'Women’s haircut', desc: 'Pixie, mullet, butterfly, curtain bangs, texturising or classic, with thirty years of experience.', time: '30–55′', price: priceText('en', 'Κούρεμα', 'Κούρεμα & στέγνωμα', 'Κούρεμα & φορμάρισμα', 'Κούρεμα & χτένισμα'), href: '/services#haircuts' },
+      { tone: 'cut', cat: 'Haircuts', name: 'Women’s haircut', desc: 'Pixie, mullet, butterfly, curtain bangs, texturising or classic, with thirty years of experience.', time: '30–55′', price: priceText('en', 'Κούρεμα χωρίς στέγνωμα', 'Κούρεμα & στέγνωμα', 'Κούρεμα & φορμάρισμα', 'Κούρεμα & χτένισμα'), href: '/services#haircuts' },
       { tone: 'style', cat: 'Styling', name: 'Classic blowout', desc: 'A blowout with volume and movement that lasts for days, brushed or set with rollers and clips.', time: '30–45′', price: priceText('en', 'Blowout · Κλασικό χτένισμα'), href: serviceBookUrl('Blowout · Κλασικό χτένισμα') },
       { tone: 'colour', cat: 'Colour', name: 'Root colour & gloss', desc: 'Grey coverage at the root plus a separate gloss for shine throughout.', time: '1 h – 1 h 10′', price: priceText('en', 'Βαφή ρίζας & ρεφλέ στα μήκη'), href: '/services#colour' },
       { tone: 'light', cat: 'Highlights', name: 'Partial balayage', desc: 'Natural, luminous result that is easy to maintain.', time: '3 h', price: priceText('en', 'Μερικό μπαλαγιάζ'), href: serviceBookUrl('Μερικό μπαλαγιάζ') },

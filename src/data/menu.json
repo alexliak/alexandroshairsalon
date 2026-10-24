@@ -8,8 +8,8 @@
     "services": [
       {
         "name": {
-          "el": "Κούρεμα",
-          "en": "Haircut"
+          "el": "Κούρεμα χωρίς στέγνωμα",
+          "en": "Haircut, No Blow-dry"
         },
         "desc": {
           "el": "Λούσιμο και κούρεμα. Τα μαλλιά στεγνώνουν φυσικά, κάτι που ταιριάζει ιδιαίτερα στα σγουρά. Για στέγνωμα στο κομμωτήριο υπάρχει το «Κούρεμα & στέγνωμα».",
@@ -573,8 +573,8 @@
           "en": "Root Colour"
         },
         "desc": {
-          "el": "Μόνιμη βαφή ρίζας με κάλυψη λευκών, λούσιμο και γρήγορο στέγνωμα, με Farcom ή Majirel της L’Oréal. Χωρίς αμμωνία: INOA της L’Oréal ή Redken. Μηνιαία ρίζα: όταν η επόμενη βαφή ρίζας γίνεται μέσα σε 30 ημέρες από την προηγούμενη σε εμάς.",
-          "en": "Permanent root colour with grey coverage, wash and quick dry, with Farcom or L’Oréal Majirel. Ammonia-free: L’Oréal INOA or Redken. Monthly Root: when your next root colour is within 30 days of your last one with us."
+          "el": "Μόνιμη βαφή ρίζας με κάλυψη λευκών, λούσιμο και στέγνωμα, με Farcom ή Majirel της L’Oréal. Χωρίς αμμωνία: INOA της L’Oréal ή Redken. Μηνιαία ρίζα: όταν η επόμενη βαφή ρίζας γίνεται μέσα σε 30 ημέρες από την προηγούμενη σε εμάς.",
+          "en": "Permanent root colour with grey coverage, wash and dry, with Farcom or L’Oréal Majirel. Ammonia-free: L’Oréal INOA or Redken. Monthly Root: when your next root colour is within 30 days of your last one with us."
         },
         "note": {
           "el": "Περιλαμβάνει έως 45 g χρώμα. Αν χρειαστεί περισσότερο, το συμφωνούμε πριν. Η Μηνιαία ρίζα κλείνεται online ως κλασική βαφή ρίζας· η μηνιαία τιμή εφαρμόζεται στο κομμωτήριο.",
@@ -647,8 +647,8 @@
           "en": "Root Colour & Gloss"
         },
         "desc": {
-          "el": "Βαφή ρίζας με όποια μόνιμη βαφή και χρώμα στα μήκη, για ενιαίο χρώμα και λάμψη, με λούσιμο και γρήγορο στέγνωμα. Στα μήκη: όξινο ρεφλέ (Dia Light ή Redken Shades EQ) ή, όταν τα μήκη θέλουν περισσότερο χρώμα, ημιμόνιμη βαφή Dia Color.",
-          "en": "Root colour with any of our permanent colours and colour on the lengths, for even colour and shine, with a wash and quick dry. On the lengths: an acidic gloss (Dia Light or Redken Shades EQ) or, when the lengths need more colour, Dia Color demi-permanent."
+          "el": "Βαφή ρίζας με όποια μόνιμη βαφή και χρώμα στα μήκη, για ενιαίο χρώμα και λάμψη, με λούσιμο και στέγνωμα. Στα μήκη: όξινο ρεφλέ (Dia Light ή Redken Shades EQ) ή, όταν τα μήκη θέλουν περισσότερο χρώμα, ημιμόνιμη βαφή Dia Color.",
+          "en": "Root colour with any of our permanent colours and colour on the lengths, for even colour and shine, with a wash and dry. On the lengths: an acidic gloss (Dia Light or Redken Shades EQ) or, when the lengths need more colour, Dia Color demi-permanent."
         },
         "note": {
           "el": "Ρίζα έως 45 g. Ρεφλέ έως 60 ml για μαλλιά έως τους ώμους ή 90 ml για πιο μακριά.",
@@ -695,8 +695,8 @@
           "en": "Gloss & Tone"
         },
         "desc": {
-          "el": "Για μήκη που ξεθώριασαν: ζωντανεύει τον τόνο και δίνει λάμψη, με λούσιμο και γρήγορο στέγνωμα. Όξινο ρεφλέ χωρίς αμμωνία (Dia Light ή Redken Shades EQ), που δεν ξανοίγει τα μαλλιά και δεν καλύπτει πλήρως τα λευκά.",
-          "en": "For faded lengths: revives tone and adds shine, with a wash and quick dry. An acidic, ammonia-free gloss (Dia Light or Redken Shades EQ) that doesn’t lighten hair or fully cover grey."
+          "el": "Για μήκη που ξεθώριασαν: ζωντανεύει τον τόνο και δίνει λάμψη, με λούσιμο και στέγνωμα. Όξινο ρεφλέ χωρίς αμμωνία (Dia Light ή Redken Shades EQ), που δεν ξανοίγει τα μαλλιά και δεν καλύπτει πλήρως τα λευκά.",
+          "en": "For faded lengths: revives tone and adds shine, with a wash and dry. An acidic, ammonia-free gloss (Dia Light or Redken Shades EQ) that doesn’t lighten hair or fully cover grey."
         },
         "note": {
           "el": "Έως 60 ml για μαλλιά έως τους ώμους ή 90 ml για πιο μακριά. Διαρκεί 4–6 εβδομάδες.",
@@ -743,8 +743,8 @@
           "en": "Root Smudge & Gloss"
         },
         "desc": {
-          "el": "Για όσες έχουν τα πρώτα λευκά (περίπου 10–40%) σε φυσικά μαλλιά και θέλουν ένα πολύ απαλό, φυσικό αποτέλεσμα χωρίς μόνιμη βαφή. Τεχνική που έγινε γνωστή στην Αμερική: όξινη τεχνολογία χρώματος χωρίς αμμωνία, Redken Shades EQ ή L’Oréal Dia Light, «σβήνει» απαλά τα λευκά στη ρίζα και συνεχίζει στα μήκη με τόνο και λάμψη. Προς τα μήκη και τις άκρες γίνεται διαβάθμιση σε πιο ανοιχτές αποχρώσεις, όπου το επιτρέπει η κατάσταση των μαλλιών, ώστε να μοιάζει με φυσικό ξάνοιγμα από τον ήλιο. Δεν ξανοίγει τα μαλλιά και δεν αφήνει «μπάρα» χρώματος όταν μεγαλώνει η ρίζα. Από τις πιο ήπιες τεχνολογίες χρώματος, με λάμψη που κρατά έως 6 εβδομάδες. Με λούσιμο και γρήγορο στέγνωμα.",
-          "en": "For your first greys (about 10–40%) on natural hair, when you want a very soft, natural result without permanent colour. A technique made popular in the US: an ammonia-free acidic colour technology, Redken Shades EQ or L’Oréal Dia Light, gently blurs greys at the root and continues through the lengths with tone and shine. Through the lengths and ends, lighter shades graduate where the condition of the hair allows, like natural sun-lightening. It doesn’t lighten the hair and leaves no band of colour as the roots grow. One of the gentlest colour technologies, with shine that lasts up to 6 weeks. With a wash and quick dry."
+          "el": "Για όσες έχουν τα πρώτα λευκά (περίπου 10–40%) σε φυσικά μαλλιά και θέλουν ένα πολύ απαλό, φυσικό αποτέλεσμα χωρίς μόνιμη βαφή. Τεχνική που έγινε γνωστή στην Αμερική: όξινη τεχνολογία χρώματος χωρίς αμμωνία, Redken Shades EQ ή L’Oréal Dia Light, «σβήνει» απαλά τα λευκά στη ρίζα και συνεχίζει στα μήκη με τόνο και λάμψη. Προς τα μήκη και τις άκρες γίνεται διαβάθμιση σε πιο ανοιχτές αποχρώσεις, όπου το επιτρέπει η κατάσταση των μαλλιών, ώστε να μοιάζει με φυσικό ξάνοιγμα από τον ήλιο. Δεν ξανοίγει τα μαλλιά και δεν αφήνει «μπάρα» χρώματος όταν μεγαλώνει η ρίζα. Από τις πιο ήπιες τεχνολογίες χρώματος, με λάμψη που κρατά έως 6 εβδομάδες. Με λούσιμο και στέγνωμα.",
+          "en": "For your first greys (about 10–40%) on natural hair, when you want a very soft, natural result without permanent colour. A technique made popular in the US: an ammonia-free acidic colour technology, Redken Shades EQ or L’Oréal Dia Light, gently blurs greys at the root and continues through the lengths with tone and shine. Through the lengths and ends, lighter shades graduate where the condition of the hair allows, like natural sun-lightening. It doesn’t lighten the hair and leaves no band of colour as the roots grow. One of the gentlest colour technologies, with shine that lasts up to 6 weeks. With a wash and dry."
         },
         "note": {
           "el": "Για μαλλιά με βαφή ή ανταύγειες ταιριάζει το «Ρεφλέ». Μεσαία: έως τους ώμους· μακριά: κάτω από τους ώμους. Έως 3 φόρμουλες (ρίζα, μήκη, άκρες), με Redken Shades EQ ή L’Oréal Dia Light: έως 30 ml στη ρίζα και 60 ml στα μήκη στα μεσαία, 90 ml στα μακριά. Δεν καλύπτει πλήρως τα λευκά. Αν χρειαστεί περισσότερη ποσότητα, το συμφωνούμε πριν.",
@@ -791,8 +791,8 @@
           "en": "All-Over Colour"
         },
         "desc": {
-          "el": "Χρώμα από τη ρίζα ως τις άκρες, με λούσιμο και γρήγορο στέγνωμα. Μόνιμη: με όποια από τις μόνιμες βαφές μας, για πλήρη κάλυψη λευκών ή αλλαγή απόχρωσης. Ημιμόνιμη: Dia Color της L’Oréal, πιο ήπια για τα μαλλιά, καλύπτει έως 70% των λευκών, κρατά έως 6 εβδομάδες και φεύγει σταδιακά, χωρίς έντονη γραμμή στη ρίζα.",
-          "en": "Colour from root to ends, with a wash and quick dry. Permanent: any of our permanent colours, for full grey coverage or a change of shade. Demi-permanent: L’Oréal Dia Color, gentler on the hair, covers up to 70% grey, lasts up to 6 weeks and fades gradually, with no harsh line at the root."
+          "el": "Χρώμα από τη ρίζα ως τις άκρες, με λούσιμο και στέγνωμα. Μόνιμη: με όποια από τις μόνιμες βαφές μας, για πλήρη κάλυψη λευκών ή αλλαγή απόχρωσης. Ημιμόνιμη: Dia Color της L’Oréal, πιο ήπια για τα μαλλιά, καλύπτει έως 70% των λευκών, κρατά έως 6 εβδομάδες και φεύγει σταδιακά, χωρίς έντονη γραμμή στη ρίζα.",
+          "en": "Colour from root to ends, with a wash and dry. Permanent: any of our permanent colours, for full grey coverage or a change of shade. Demi-permanent: L’Oréal Dia Color, gentler on the hair, covers up to 70% grey, lasts up to 6 weeks and fades gradually, with no harsh line at the root."
         },
         "note": {
           "el": "Έως 60 g ή 60 ml. Αν χρειαστεί περισσότερο, το «+ Επιπλέον χρώμα» το συμφωνούμε πριν.",
@@ -839,8 +839,8 @@
           "en": "Blonde Roots & Tone"
         },
         "desc": {
-          "el": "Ξάνοιγμα ρίζας και ρεφλέ για ενιαίο ξανθό, με λούσιμο και γρήγορο στέγνωμα.",
-          "en": "Root lightening and toner for an even blonde, wash and quick dry."
+          "el": "Ξάνοιγμα ρίζας και ρεφλέ για ενιαίο ξανθό, με λούσιμο και στέγνωμα.",
+          "en": "Root lightening and toner for an even blonde, wash and dry."
         },
         "note": {
           "el": "Για ρίζα έως 2 cm. Την πρώτη φορά προηγείται συμβουλευτική.",
@@ -869,8 +869,8 @@
           "en": "Men’s Colour"
         },
         "desc": {
-          "el": "Φυσική κάλυψη λευκών για άνδρες, με λούσιμο και γρήγορο στέγνωμα.",
-          "en": "Natural grey blending for men, with a wash and quick dry."
+          "el": "Φυσική κάλυψη λευκών για άνδρες, με λούσιμο και στέγνωμα.",
+          "en": "Natural grey blending for men, with a wash and dry."
         },
         "online": true,
         "options": [
@@ -895,8 +895,8 @@
           "en": "Bring Your Own Colour"
         },
         "desc": {
-          "el": "Εφαρμογή της βαφής που φέρνετε, στη ρίζα ή στη ρίζα και τα μήκη, με λούσιμο και γρήγορο στέγνωμα.",
-          "en": "We apply the colour you bring, on the roots or on the roots and lengths, with a wash and quick dry."
+          "el": "Εφαρμογή της βαφής που φέρνετε, στη ρίζα ή στη ρίζα και τα μήκη, με λούσιμο και στέγνωμα.",
+          "en": "We apply the colour you bring, on the roots or on the roots and lengths, with a wash and dry."
         },
         "note": {
           "el": "Η βαφή έρχεται κατά προτίμηση κλειστή, ή ανοιγμένη πρόσφατα, στη συσκευασία της και μαζί με το οξειδωτικό της. Το αποτέλεσμα εξαρτάται από τη βαφή που επιλέχθηκε.",
@@ -964,8 +964,8 @@
       },
       {
         "name": {
-          "el": "Γρήγορη βαφή ρίζας (10′)",
-          "en": "Express Root Colour"
+          "el": "Βαφή ρίζας με 10′ αναμονή",
+          "en": "Root Colour, 10-Minute Processing"
         },
         "desc": {
           "el": "Βαφή ρίζας Redken με μόλις 10′ αναμονή, για όταν βιάζεσαι.",
@@ -1029,8 +1029,8 @@
           "en": "Face-Framing Highlights"
         },
         "desc": {
-          "el": "Λεπτές ανταύγειες γύρω από το πρόσωπο, με ρεφλέ, με λούσιμο και γρήγορο στέγνωμα.",
-          "en": "Fine highlights around the face, with toner, with a wash and quick dry."
+          "el": "Λεπτές ανταύγειες γύρω από το πρόσωπο, με ρεφλέ, με λούσιμο και στέγνωμα.",
+          "en": "Fine highlights around the face, with toner, with a wash and dry."
         },
         "note": {
           "el": "Χωρίς ντεκαπάζ: πιο ήπιο ξάνοιγμα, έως 4 τόνους σε φυσικά μαλλιά και έως 2,5 σε βαμμένα, με L’Oréal Blond Studio No Bleach™. Σε βαμμένα μαλλιά προηγείται συμβουλευτική.",
@@ -1072,8 +1072,8 @@
           "en": "Partial Highlights"
         },
         "desc": {
-          "el": "Ανταύγειες στο πάνω μέρος και γύρω από το πρόσωπο, με ρεφλέ, με λούσιμο και γρήγορο στέγνωμα.",
-          "en": "Highlights on the top section and around the face, with toner, with a wash and quick dry."
+          "el": "Ανταύγειες στο πάνω μέρος και γύρω από το πρόσωπο, με ρεφλέ, με λούσιμο και στέγνωμα.",
+          "en": "Highlights on the top section and around the face, with toner, with a wash and dry."
         },
         "note": {
           "el": "Η τιμή αφορά μαλλιά έως τους ώμους· για πιο μακριά: «+ Μακριά μαλλιά». Χωρίς ντεκαπάζ: πιο ήπιο ξάνοιγμα, έως 4 τόνους σε φυσικά μαλλιά και έως 2,5 σε βαμμένα, με L’Oréal Blond Studio No Bleach™. Σε βαμμένα μαλλιά προηγείται συμβουλευτική.",
@@ -1115,8 +1115,8 @@
           "en": "Full Highlights"
         },
         "desc": {
-          "el": "Ανταύγειες σε όλο το κεφάλι, με ρεφλέ, με λούσιμο και γρήγορο στέγνωμα.",
-          "en": "Highlights all over, with toner, with a wash and quick dry."
+          "el": "Ανταύγειες σε όλο το κεφάλι, με ρεφλέ, με λούσιμο και στέγνωμα.",
+          "en": "Highlights all over, with toner, with a wash and dry."
         },
         "note": {
           "el": "Η τιμή αφορά μαλλιά έως τους ώμους· για πιο μακριά: «+ Μακριά μαλλιά». Σε βαμμένα μαλλιά προηγείται συμβουλευτική.",
@@ -1145,8 +1145,8 @@
           "en": "Partial Balayage"
         },
         "desc": {
-          "el": "Φυσικές, φωτεινές ανταύγειες ζωγραφισμένες με το χέρι, ελεύθερα ή σε αλουμινόχαρτα (foilayage), με ρεφλέ, με λούσιμο και γρήγορο στέγνωμα.",
-          "en": "Natural, luminous highlights painted by hand, freehand or in foils (foilayage), with toner, with a wash and quick dry."
+          "el": "Φυσικές, φωτεινές ανταύγειες ζωγραφισμένες με το χέρι, ελεύθερα ή σε αλουμινόχαρτα (foilayage), με ρεφλέ, με λούσιμο και στέγνωμα.",
+          "en": "Natural, luminous highlights painted by hand, freehand or in foils (foilayage), with toner, with a wash and dry."
         },
         "note": {
           "el": "Μόνο για μεσαία και μακριά μαλλιά. Η τιμή αφορά μαλλιά έως τους ώμους· για πιο μακριά: «+ Μακριά μαλλιά». Την πρώτη φορά προηγείται συμβουλευτική.",
@@ -1265,8 +1265,8 @@
           "en": "Full Balayage"
         },
         "desc": {
-          "el": "Φωτεινό μπαλαγιάζ από τη ρίζα ως τις άκρες, ζωγραφισμένο με το χέρι, ελεύθερα ή σε αλουμινόχαρτα (foilayage), με ρεφλέ, με λούσιμο και γρήγορο στέγνωμα.",
-          "en": "A luminous balayage from root to ends, painted by hand, freehand or in foils (foilayage), with toner, with a wash and quick dry."
+          "el": "Φωτεινό μπαλαγιάζ από τη ρίζα ως τις άκρες, ζωγραφισμένο με το χέρι, ελεύθερα ή σε αλουμινόχαρτα (foilayage), με ρεφλέ, με λούσιμο και στέγνωμα.",
+          "en": "A luminous balayage from root to ends, painted by hand, freehand or in foils (foilayage), with toner, with a wash and dry."
         },
         "note": {
           "el": "Η τιμή αφορά μαλλιά έως τους ώμους· για πιο μακριά: «+ Μακριά μαλλιά». Την πρώτη φορά προηγείται συμβουλευτική.",
@@ -1300,8 +1300,8 @@
           "en": "Anti Hair-Loss Treatment (add-on)"
         },
         "desc": {
-          "el": "Αμπούλα κατά της τριχόπτωσης στο τριχωτό της κεφαλής, με γρήγορο styling στο τέλος.",
-          "en": "An anti hair-loss ampoule applied to the scalp, with a quick styling at the end."
+          "el": "Αμπούλα κατά της τριχόπτωσης στο τριχωτό της κεφαλής, με styling στο τέλος.",
+          "en": "An anti hair-loss ampoule applied to the scalp, with styling at the end."
         },
         "note": {
           "el": "Μαζί με άλλη υπηρεσία. Δεν είναι ιατρική θεραπεία.",
