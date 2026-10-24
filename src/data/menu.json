@@ -267,16 +267,16 @@
     "services": [
       {
         "name": {
-          "el": "Φορμάρισμα",
-          "en": "Blow-dry"
+          "el": "Φορμάρισμα με λάμψη",
+          "en": "Glossy Blow-dry"
         },
         "desc": {
-          "el": "Λούσιμο και φορμάρισμα με πιστολάκι και βούρτσα, για όγκο και φόρμα. Με θερμοπροστατευτικό και προϊόν styling (προαιρετικά).",
-          "en": "Wash and a brushed blow-dry for volume and shape. With heat protectant and styling product (optional)."
+          "el": "Το ίσιωμα με πιστολάκι και βούρτσα, με λούσιμο: λείο και λαμπερό, ή με απαλή κίνηση στις άκρες, με βούρτσες με φυσική τρίχα. Ταιριάζει και στα σγουρά μαλλιά. Με θερμοπροστατευτικό και προϊόν styling (προαιρετικά).",
+          "en": "A classic straight blow-dry with a wash: smooth and glossy, or with a soft bend at the ends, using natural-bristle brushes. Works on curly hair too. With heat protectant and styling product (optional)."
         },
         "note": {
-          "el": "Φορμάρισμα έως 15′. Για πλήρες χτένισμα με λάμψη που έχει διάρκεια: «Κλασικό χτένισμα».",
-          "en": "Up to 15′ of styling. For a full blow-out with shine that lasts: Classic Blow-out."
+          "el": "Για όγκο και κίνηση που κρατούν μέρες: «Blowout · Κλασικό χτένισμα».",
+          "en": "For volume and movement that last for days: Classic Blowout."
         },
         "online": true,
         "options": [
@@ -297,22 +297,22 @@
       },
       {
         "name": {
-          "el": "Κλασικό χτένισμα",
-          "en": "Classic Blow-out"
+          "el": "Blowout · Κλασικό χτένισμα",
+          "en": "Classic Blowout"
         },
         "desc": {
-          "el": "Λούσιμο και πλήρες χτένισμα με πιστολάκι και βούρτσα — ίσιο και λείο, ή με όγκο και κίνηση — με λάμψη που έχει διάρκεια. Με θερμοπροστατευτικό και προϊόν styling (προαιρετικά).",
-          "en": "Wash and a full blow-out — bouncy or sleek — for shine that lasts. With heat protectant and styling product (optional)."
+          "el": "Λούσιμο και χτένισμα με όγκο και κίνηση που κρατά μέρες. Με βούρτσα για κοντά έως μεσαία μαλλιά, ή με ρολά ή κλιπς για περισσότερο όγκο και διάρκεια. Με θερμοπροστατευτικό και επαγγελματικά προϊόντα κρατήματος.",
+          "en": "Wash and a blowout with volume and movement that lasts for days. Brushed for short to medium hair, or set with rollers or clips for extra body and hold. With heat protectant and professional finishing products."
         },
         "note": {
-          "el": "Για ίσιωμα με πρέσα: «+ Ίσιωμα με πρέσα ατμού». Για μπούκλες ή κυματισμούς: «Χτένισμα για εκδήλωση». Κρατά έως και 7 ημέρες, ανάλογα με τη φύση των μαλλιών, τις συνθήκες, όπως η υγρασία, και τη φροντίδα τους στο σπίτι. Για όσες χτενίζονται κάθε εβδομάδα υπάρχει και το «Εβδομαδιαίο χτένισμα με μάσκα».",
-          "en": "For a straightened finish: Steam Straightener Finish. For curls or waves: Special Occasion Styling. Lasts up to 7 days, depending on your hair, conditions such as humidity, and how it is cared for at home. If you have a blow-out every week, there is also the Weekly Blowdry with Mask."
+          "el": "Για ίσιο και λείο: «Φορμάρισμα με λάμψη». Για μπούκλες ή κυματισμούς: «Χτένισμα για εκδήλωση». Κρατά έως και 7 ημέρες, ανάλογα με τη φύση των μαλλιών, τις συνθήκες, όπως η υγρασία, και τη φροντίδα τους στο σπίτι. Για όσες χτενίζονται κάθε εβδομάδα υπάρχει και το «Εβδομαδιαίο χτένισμα με μάσκα».",
+          "en": "For sleek, straight hair: Glossy Blow-dry. For curls or waves: Special Occasion Styling. Lasts up to 7 days, depending on your hair, conditions such as humidity, and how it is cared for at home. If you have a blow-out every week, there is also the Weekly Blowdry with Mask."
         },
         "online": true,
         "options": [
           {
-            "el": "",
-            "en": "",
+            "el": "Με βούρτσα",
+            "en": "Brushed",
             "time": {
               "el": "30′",
               "en": "30′"
@@ -320,7 +320,20 @@
             "price": 28,
             "book": {
               "item": "TR7229312",
-              "option": "14436593"
+              "option": "14484122"
+            }
+          },
+          {
+            "el": "Με ρολά ή κλιπς",
+            "en": "Rollers or clips",
+            "time": {
+              "el": "45′",
+              "en": "45′"
+            },
+            "price": 38,
+            "book": {
+              "item": "TR7229312",
+              "option": "14484123"
             }
           }
         ]
@@ -443,8 +456,8 @@
           "en": "A brushed blow-dry after your colour, for volume and shape. With heat protectant and styling product (optional)."
         },
         "note": {
-          "el": "Μόνο μαζί με βαφή. Για πλήρες χτένισμα: «+ Χτένισμα μετά τη βαφή». Χωρίς βαφή: «Φορμάρισμα» €22.",
-          "en": "Only with a colour service. For a full blow-out: Blow-out after Colour. Without colour: Blow-dry, €22."
+          "el": "Μόνο μαζί με βαφή. Για πλήρες χτένισμα: «+ Χτένισμα μετά τη βαφή». Χωρίς βαφή: «Φορμάρισμα με λάμψη» €22.",
+          "en": "Only with a colour service. For a full blow-out: Blow-out after Colour. Without colour: Glossy Blow-dry, €22."
         },
         "online": true,
         "options": [
@@ -706,6 +719,45 @@
               "item": "TR7499210",
               "option": "14244508"
             }
+          }
+        ]
+      },
+      {
+        "name": {
+          "el": "Root smudge & ρεφλέ",
+          "en": "Root Smudge & Gloss"
+        },
+        "desc": {
+          "el": "Νέα τεχνική που ζητούν πολλές πελάτισσες από την Αμερική. Όξινο χρώμα στη ρίζα «σβήνει» απαλά τη γραμμή ανάμεσα στη ρίζα και το προηγούμενο χρώμα ή τις ανταύγειες, και ρεφλέ στα μήκη δίνει τόνο και λάμψη. Ταιριάζει και σε φυσικά μαλλιά: τα λευκά σβήνουν πολύ απαλά, με διαβάθμιση σε πιο ανοιχτές αποχρώσεις προς τα μήκη και τις άκρες, όπου το επιτρέπει η κατάσταση των μαλλιών. Δεν ξανοίγει τα μαλλιά και δεν αφήνει «μπάρα» χρώματος όταν μεγαλώνει η ρίζα. Αποτέλεσμα πολύ φυσικό, με λάμψη που κρατά έως 6 εβδομάδες. Με λούσιμο και γρήγορο στέγνωμα.",
+          "en": "A new technique many clients ask for from the US. An acidic colour at the root softly blurs the line between your regrowth and your previous colour or highlights, and a gloss on the lengths adds tone and shine. It also suits natural hair: greys are softened very gently, with lighter shades graduating through the lengths and ends where the condition of the hair allows. It doesn’t lighten the hair and leaves no band of colour as the roots grow. A very natural result, with shine that lasts up to 6 weeks. With a wash and quick dry."
+        },
+        "note": {
+          "el": "Μεσαία: έως τους ώμους· μακριά: κάτω από τους ώμους. Έως 3 φόρμουλες (ρίζα, μήκη, άκρες), με Redken Shades EQ: έως 30 ml στη ρίζα και 60 ml στα μήκη στα μεσαία, 90 ml στα μακριά. Δεν καλύπτει πλήρως τα λευκά. Αν χρειαστεί περισσότερη ποσότητα, το συμφωνούμε πριν.",
+          "en": "Medium: up to the shoulders; long: below the shoulders. Up to 3 formulas (root, lengths, ends) with Redken Shades EQ: up to 30 ml at the root and 60 ml on the lengths for medium hair, 90 ml for long. Does not fully cover grey. If more product is needed, we agree it beforehand."
+        },
+        "online": true,
+        "options": [
+          {
+            "el": "Μεσαία",
+            "en": "Medium",
+            "time": {
+              "el": "1 ώρα",
+              "en": "1 h"
+            },
+            "price": 55,
+            "book": {
+              "item": "TR7624219",
+              "option": "14484127"
+            }
+          },
+          {
+            "el": "Μακριά",
+            "en": "Long",
+            "time": {
+              "el": "1 ώρα 10′",
+              "en": "1 h 10′"
+            },
+            "price": 69
           }
         ]
       },

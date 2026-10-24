@@ -483,7 +483,7 @@ def offers_en(names):
     return out
 
 
-EN_KEYS = ["Κούρεμα & στέγνωμα", "Κούρεμα & χτένισμα", "Κλασικό χτένισμα", "Χτένισμα για εκδήλωση",
+EN_KEYS = ["Κούρεμα & στέγνωμα", "Κούρεμα & χτένισμα", "Blowout · Κλασικό χτένισμα", "Χτένισμα για εκδήλωση",
            "Ανδρικό κούρεμα", "Βαφή ρίζας", "Βαφή ρίζας & ρεφλέ στα μήκη", "Ρεφλέ",
            "Ανταύγειες γύρω από το πρόσωπο", "Μερικές ανταύγειες", "Μερικό μπαλαγιάζ"]
 EN_FAQ = [
@@ -697,7 +697,7 @@ def b2b_page(path, crumb, title, desc, eyebrow, h1, lead, facts, prose, keys, fa
 
 
 EV = "Χτένισμα για εκδήλωση"
-BD = "Κλασικό χτένισμα"
+BD = "Blowout · Κλασικό χτένισμα"
 PHOTO_KEYS = [EV, BD, "Κούρεμα & χτένισμα"]
 
 # /hair-stylist-photoshoot-athens/ (EN)
@@ -710,14 +710,14 @@ b2b_page(
     "Many photo shoots in Athens do not include hair. We style it in our salon in Thiseio, right before your session, and you walk to Filopappou Hill, Apostolou Pavlou or the Ancient Agora. For photographers and brands we also work on set, by the half or full day.",
     [f"Styling from €{P(EV)}", "5′ walk from Thiseio metro", "English spoken", "On-set work by the half or full day"],
     f"""<h2>For your own photo shoot</h2>
-<p>Book <strong>Special Occasion Styling</strong> for curls, waves or an up-do, or a <strong>Classic Blow-out</strong> for sleek or bouncy hair. Please come with clean, dry hair and a photo of the look you like. We plan the time with your photographer so the hair is fresh for the first frame.</p>
+<p>Book <strong>Special Occasion Styling</strong> for curls, waves or an up-do, a <strong>Glossy Blow-dry</strong> for sleek, straight hair, or a <strong>Classic Blowout</strong> for volume and movement. Please come with clean, dry hair and a photo of the look you like. We plan the time with your photographer so the hair is fresh for the first frame.</p>
 <h2>For photographers, brands and productions</h2>
 <p>We work on lookbooks, editorials, e-commerce and campaigns, in the salon or on set, by the half or full day, with a clear quote before the shoot. Ask us for a quote on WhatsApp or by phone.</p>
 <h2>Who does the work</h2>
 <p>{esc(EXPERIENCE_EN)}</p>""",
     PHOTO_KEYS,
     [("Is hair included in my photo shoot?", "Usually not: most photographers in Athens work without a hair stylist. Book styling with us before your session; the salon is a short walk from the most photographed spots around the Acropolis."),
-     ("How long does it take?", f"Special Occasion Styling takes about 45 minutes and costs €{P(EV)}. A Classic Blow-out takes about 30 minutes and costs €{P(BD)}."),
+     ("How long does it take?", f"Special Occasion Styling takes about 45 minutes and costs €{P(EV)}. A Classic Blowout takes 30–45 minutes and costs from €{P(BD)}."),
      ("Can you come to the set or to my hotel?", "Yes, by arrangement. For productions we quote by the half or full day. Message us with the date, place and number of looks."),
      ("Do you speak English?", "Yes. Message us on WhatsApp or Viber at +30 698 131 9000."),
      ("Where is the salon?", "Erisichthonos 3-5, Thiseio, central Athens, about 5 minutes on foot from Thiseio metro station.")],
@@ -736,13 +736,13 @@ b2b_page(
     "Για προσωπικές, επαγγελματικές και φωτογραφίσεις μόδας. Ετοιμάζουμε τα μαλλιά στο κομμωτήριο στο Θησείο, λίγα λεπτά από τον Φιλοπάππου και την Αποστόλου Παύλου, ή ερχόμαστε στο σετ για μισή ή πλήρη ημέρα.",
     [f"Χτένισμα από €{P(EV)}", "Θησείο, 5′ από το μετρό", "Στο σετ με μισή ή πλήρη ημέρα", "Γραπτή προσφορά πριν τη φωτογράφιση"],
     f"""<h2>Για τη δική σου φωτογράφιση</h2>
-<p>Κλείσε <strong>Χτένισμα για εκδήλωση</strong> για μπούκλες, κυματισμούς ή πιάσιμο, ή <strong>Κλασικό χτένισμα</strong> για ίσιο και λείο ή με όγκο. Καλό είναι να έρθεις με λουσμένα, στεγνά μαλλιά και μια φωτογραφία με αυτό που σου αρέσει. Κανονίζουμε την ώρα μαζί με τον φωτογράφο, ώστε τα μαλλιά να είναι φρέσκα στο πρώτο κάδρο.</p>
+<p>Κλείσε <strong>Χτένισμα για εκδήλωση</strong> για μπούκλες, κυματισμούς ή πιάσιμο, <strong>Φορμάρισμα με λάμψη</strong> για ίσιο και λείο, ή <strong>Blowout · Κλασικό χτένισμα</strong> για όγκο και κίνηση. Καλό είναι να έρθεις με λουσμένα, στεγνά μαλλιά και μια φωτογραφία με αυτό που σου αρέσει. Κανονίζουμε την ώρα μαζί με τον φωτογράφο, ώστε τα μαλλιά να είναι φρέσκα στο πρώτο κάδρο.</p>
 <h2>Για φωτογράφους, brands και παραγωγές</h2>
 <p>Lookbooks, editorial, φωτογραφίες προϊόντων για e-shop, διαφημιστικές καμπάνιες. Στο κομμωτήριο ή στο σετ, με μισή ή πλήρη ημέρα και γραπτή προσφορά πριν τη φωτογράφιση. Στείλε μας ημερομηνία, χώρο και αριθμό looks στο WhatsApp.</p>
 <h2>Ποιος κάνει τη δουλειά</h2>
 <p>{esc(EXPERIENCE_EL)}</p>""",
     PHOTO_KEYS,
-    [("Πόσο κοστίζει το χτένισμα για φωτογράφιση;", f"Το Χτένισμα για εκδήλωση κοστίζει €{P(EV)} και διαρκεί περίπου 45 λεπτά. Το Κλασικό χτένισμα €{P(BD)}, περίπου 30 λεπτά."),
+    [("Πόσο κοστίζει το χτένισμα για φωτογράφιση;", f"Το Χτένισμα για εκδήλωση κοστίζει €{P(EV)} και διαρκεί περίπου 45 λεπτά. Το Blowout · Κλασικό χτένισμα από €{P(BD)}, 30–45 λεπτά."),
      ("Έρχεστε στο σετ;", "Ναι, κατόπιν συνεννόησης. Για παραγωγές δίνουμε γραπτή προσφορά για μισή ή πλήρη ημέρα, ανάλογα με τα looks και τον χώρο."),
      ("Πώς κλείνω για μια παραγωγή;", "Με μήνυμα στο WhatsApp ή στο Viber στο 698 131 9000, με ημερομηνία, χώρο, ώρες και αριθμό μοντέλων."),
      ("Πού βρίσκεστε;", "Ερυσίχθονος 3-5 στο Θησείο, περίπου 5 λεπτά με τα πόδια από τον σταθμό Θησείο.")],
@@ -996,17 +996,17 @@ FAQ_GROUPS = [
    "Έως και 7 ημέρες. Η διάρκεια εξαρτάται από τη φύση των μαλλιών, τις συνθήκες, όπως η υγρασία, και τη φροντίδα τους στο σπίτι.",
    "How long does a blow-dry last?",
    "Up to 7 days. It depends on your hair, on conditions such as humidity, and on how it is cared for at home.",
-   [("Κλασικό χτένισμα", None)]),
+   [("Blowout · Κλασικό χτένισμα", None)]),
   ("Μπούκλες ή πιάσιμο σε πολλά ή πολύ μακριά μαλλιά;",
    "Οι μπούκλες και το πιάσιμο κρατούν καλύτερα σε μαλλιά λουσμένα από πριν και στεγνωμένα φυσικά, χωρίς βαριά μαλακτικά ή έλαια μαλλιών. Σε πολλά ή πολύ μακριά μαλλιά βοηθά το λούσιμο να γίνει την προηγούμενη μέρα.",
    "Curls or an up-do on thick or very long hair?",
    "Curls and up-dos hold best on hair washed beforehand and left to dry naturally, without heavy conditioners or hair oils. On thick or very long hair, washing the day before helps.",
    [("Χτένισμα για εκδήλωση", None)]),
   ("Υπάρχει φορμάρισμα με λούσιμο χωρίς βαφή;",
-   f"Ναι, το Φορμάρισμα, {O('Φορμάρισμα')}.",
+   f"Ναι, το Φορμάρισμα με λάμψη, {O('Φορμάρισμα με λάμψη')}.",
    "Is there a wash and blow-dry without colour?",
-   f"Yes, Blow-dry, {O('Φορμάρισμα')}.",
-   [("Φορμάρισμα", None)]),
+   f"Yes, Glossy Blow-dry, {O('Φορμάρισμα με λάμψη')}.",
+   [("Φορμάρισμα με λάμψη", None)]),
   ("Περιλαμβάνεται λούσιμο;",
    "Σε κάθε υπηρεσία γράφουμε αν περιλαμβάνει λούσιμο. Το περιλαμβάνουν όλα τα κουρέματα (εκτός από το ανδρικό με μηχανή), τα χτενίσματα με βούρτσα και όλες οι βαφές, τα ρεφλέ και οι ανταύγειες. Όλες οι υπηρεσίες: alexandroshairsalon.gr/services.",
    "Is a wash included?",
