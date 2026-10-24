@@ -284,8 +284,8 @@
             "el": "",
             "en": "",
             "time": {
-              "el": "22′",
-              "en": "22′"
+              "el": "25′",
+              "en": "25′"
             },
             "price": 22
           }
@@ -439,8 +439,8 @@
           "en": "A quick brushed styling after your colour, for volume and shape. With heat protectant and styling product (optional)."
         },
         "note": {
-          "el": "Μόνο μαζί με βαφή. Για πλήρες χτένισμα: «+ Χτένισμα μετά τη βαφή». Χωρίς βαφή: «Λούσιμο & γρήγορο φορμάρισμα» €22, κλείνεται τηλεφωνικά.",
-          "en": "Only with a colour service. For a full blow-out: Colour Blowdry. Without colour: Wash & Quick Styling, €22, booked by phone."
+          "el": "Μόνο μαζί με βαφή. Για πλήρες χτένισμα: «+ Χτένισμα μετά τη βαφή». Χωρίς βαφή: «Λούσιμο & γρήγορο φορμάρισμα» €22.",
+          "en": "Only with a colour service. For a full blow-out: Colour Blowdry. Without colour: Wash & Quick Styling, €22."
         },
         "online": true,
         "options": [
@@ -560,8 +560,8 @@
           "en": "Permanent root colour with grey coverage, wash and quick dry, with Farcom or L’Oréal Majirel. Ammonia-free: L’Oréal INOA or Redken. Monthly Root: when your next root colour is within 30 days of your last one with us."
         },
         "note": {
-          "el": "Περιλαμβάνει έως 45 g χρώμα. Αν χρειαστεί περισσότερο, το συμφωνούμε πριν.",
-          "en": "Includes up to 45 g of colour. If more is needed, we agree it beforehand."
+          "el": "Περιλαμβάνει έως 45 g χρώμα. Αν χρειαστεί περισσότερο, το συμφωνούμε πριν. Η Μηνιαία ρίζα κλείνεται online ως κανονική βαφή ρίζας· η μηνιαία τιμή εφαρμόζεται στο κομμωτήριο.",
+          "en": "Includes up to 45 g of colour. If more is needed, we agree it beforehand. Monthly Root is booked online as a regular root colour; the monthly price is applied at the salon."
         },
         "online": true,
         "options": [
@@ -588,7 +588,7 @@
             "price": 35,
             "book": {
               "item": "TR7492468",
-              "option": "14471716"
+              "option": "14289303"
             }
           },
           {
@@ -614,7 +614,7 @@
             "price": 36,
             "book": {
               "item": "TR7492468",
-              "option": "14471717"
+              "option": "14289305"
             }
           }
         ]
