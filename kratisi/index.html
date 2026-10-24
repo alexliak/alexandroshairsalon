@@ -160,6 +160,7 @@ html[data-theme=light] .skip,html[data-theme=light] .totop:hover,html[data-theme
 #wahanda-online-booking-widget-iframe{min-height:720px;background:#fff;border-radius:16px;overflow:hidden}
 #wahanda-online-booking-widget-iframe iframe{display:block;width:100%!important;min-height:720px;border:0}
 .tw-fallback{font-size:14px;color:var(--muted);margin-top:12px}
+.en-only{display:none;border:1px solid var(--gold);border-radius:14px;padding:16px 18px;margin:18px 0}html[lang=en] .en-only{display:block}
 /* Treatwell button: keep the site's gold style instead of Treatwell's green */
 a#wahanda-online-booking-widget.btn{display:inline-flex!important;align-items:center!important;justify-content:center!important;background:var(--gold)!important;color:var(--ink)!important;border:1px solid var(--gold)!important;border-radius:999px!important;font:800 16px/1 var(--sans)!important;text-transform:none!important;letter-spacing:0!important;padding:0 24px!important;height:auto!important;min-height:48px!important;width:auto!important;box-shadow:none!important;background-image:none!important}
 a#wahanda-online-booking-widget.btn span{background:none!important;padding:0!important;font:inherit!important;color:inherit!important;text-transform:none!important;line-height:1.2!important;height:auto!important}
@@ -192,6 +193,7 @@ a#wahanda-online-booking-widget.btn:hover{filter:brightness(1.08)}
   <span class="eyebrow" data-en="Book online">Online κράτηση</span>
   <h1 data-en="Book in <em>one minute.</em>">Κλείσε ραντεβού <em>σε ένα λεπτό.</em></h1>
   <p class="lead" data-en="Choose a service and time below. You see the price and duration and pay online or at the salon.">Διάλεξε υπηρεσία και ώρα παρακάτω. Βλέπεις τιμή και διάρκεια και πληρώνεις online ή στο κομμωτήριο.</p>
+  <div class="en-only"><p><strong>Booking in English:</strong> our booking system is in Greek. The easiest way is our English price list: tap any price and the booking opens with your service already selected, so you only pick a time.</p><p class="cta"><a class="btn gold" href="/services">English price list &amp; booking</a><a class="btn ghost" href="https://wa.me/306981319000" target="_blank" rel="noopener">WhatsApp</a></p></div>
   <div class="cta">
     <a class="btn gold" href="https://widget.treatwell.gr/place/523778/menu/" id="wahanda-online-booking-widget" onclick='wahanda.openOnlineBookingWidget("https://widget.treatwell.gr/place/523778/menu/"); return false;' target="_blank"><span data-en="See times &amp; book">Δες ώρες &amp; κλείσε</span></a>
     <a class="btn ghost" href="tel:+302103465554" data-en="Call 210 346 5554">Κάλεσε 210 346 5554</a>
