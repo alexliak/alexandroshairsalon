@@ -8,12 +8,12 @@
     "services": [
       {
         "name": {
-          "el": "Κούρεμα χωρίς στέγνωμα",
-          "en": "Haircut (No Dry)"
+          "el": "Κούρεμα",
+          "en": "Haircut"
         },
         "desc": {
-          "el": "Λούσιμο και κούρεμα, χωρίς στέγνωμα. Ιδανικό για σγουρά μαλλιά.",
-          "en": "Wash and cut, no dry. Ideal for curly hair."
+          "el": "Λούσιμο και κούρεμα. Τα μαλλιά στεγνώνουν φυσικά, κάτι που ταιριάζει ιδιαίτερα στα σγουρά. Για στέγνωμα στο κομμωτήριο υπάρχει το «Κούρεμα & στέγνωμα».",
+          "en": "Wash and cut, left to dry naturally, perfect for curls. For a dry in the salon, see Haircut & Dry."
         },
         "online": true,
         "options": [
@@ -34,16 +34,16 @@
       },
       {
         "name": {
-          "el": "Κούρεμα & γρήγορο στέγνωμα",
-          "en": "Haircut & Quick Dry"
+          "el": "Κούρεμα & στέγνωμα",
+          "en": "Haircut & Dry"
         },
         "desc": {
-          "el": "Λούσιμο, κούρεμα και γρήγορο στέγνωμα με τα χέρια, με πιστολάκι ή φυσούνα, για φυσικό αποτέλεσμα. Με προϊόν styling (προαιρετικά).",
-          "en": "Wash, cut and a quick dry shaped by hand, with a hairdryer or diffuser, for a natural finish. With styling product (optional)."
+          "el": "Λούσιμο, κούρεμα και στέγνωμα με τα χέρια, με πιστολάκι ή φυσούνα, για φυσικό αποτέλεσμα. Με προϊόν styling (προαιρετικά).",
+          "en": "Wash, cut and a dry shaped by hand, with a hairdryer or diffuser, for a natural finish. With styling product (optional)."
         },
         "note": {
-          "el": "Χωρίς βούρτσα. Για φόρμα με βούρτσα: «Κούρεμα & γρήγορο φορμάρισμα».",
-          "en": "No brush. For a brushed shape: Haircut & Quick Styling."
+          "el": "Χωρίς βούρτσα. Για φόρμα με βούρτσα: «Κούρεμα & φορμάρισμα».",
+          "en": "No brush. For a brushed shape: Haircut & Blow-dry."
         },
         "online": true,
         "options": [
@@ -64,16 +64,16 @@
       },
       {
         "name": {
-          "el": "Κούρεμα & γρήγορο φορμάρισμα",
-          "en": "Haircut & Quick Styling"
+          "el": "Κούρεμα & φορμάρισμα",
+          "en": "Haircut & Blow-dry"
         },
         "desc": {
-          "el": "Λούσιμο, κούρεμα και γρήγορο φορμάρισμα με πιστολάκι και βούρτσα, για όγκο και φόρμα. Με θερμοπροστατευτικό και προϊόν styling (προαιρετικά).",
-          "en": "Wash, cut and a quick brushed styling for volume and shape. With heat protectant and styling product (optional)."
+          "el": "Λούσιμο, κούρεμα και φορμάρισμα με πιστολάκι και βούρτσα, για όγκο και φόρμα. Με θερμοπροστατευτικό και προϊόν styling (προαιρετικά).",
+          "en": "Wash, cut and a brushed blow-dry for volume and shape. With heat protectant and styling product (optional)."
         },
         "note": {
           "el": "Για πλήρες χτένισμα με λάμψη που έχει διάρκεια: «Κούρεμα & χτένισμα».",
-          "en": "For a full blow-out with shine that lasts: Haircut & Blowdry."
+          "en": "For a full blow-out with shine that lasts: Haircut & Blow-out."
         },
         "online": true,
         "options": [
@@ -95,7 +95,7 @@
       {
         "name": {
           "el": "Κούρεμα & χτένισμα",
-          "en": "Haircut & Blowdry"
+          "en": "Haircut & Blow-out"
         },
         "desc": {
           "el": "Λούσιμο, κούρεμα και πλήρες χτένισμα με πιστολάκι και βούρτσα — ίσιο και λείο, ή με όγκο και κίνηση — με λάμψη που έχει διάρκεια. Με θερμοπροστατευτικό και προϊόν styling (προαιρετικά).",
@@ -267,16 +267,16 @@
     "services": [
       {
         "name": {
-          "el": "Λούσιμο & γρήγορο φορμάρισμα",
-          "en": "Wash & Quick Styling"
+          "el": "Φορμάρισμα",
+          "en": "Blow-dry"
         },
         "desc": {
-          "el": "Λούσιμο και γρήγορο φορμάρισμα με πιστολάκι και βούρτσα, για όγκο και φόρμα. Με θερμοπροστατευτικό και προϊόν styling (προαιρετικά).",
-          "en": "Wash and a quick brushed styling for volume and shape. With heat protectant and styling product (optional)."
+          "el": "Λούσιμο και φορμάρισμα με πιστολάκι και βούρτσα, για όγκο και φόρμα. Με θερμοπροστατευτικό και προϊόν styling (προαιρετικά).",
+          "en": "Wash and a brushed blow-dry for volume and shape. With heat protectant and styling product (optional)."
         },
         "note": {
-          "el": "Φορμάρισμα έως 15′. Για πλήρες χτένισμα με λάμψη που έχει διάρκεια: «Χτένισμα με βούρτσα».",
-          "en": "Up to 15′ of styling. For a full blow-out with shine that lasts: Signature Blowdry."
+          "el": "Φορμάρισμα έως 15′. Για πλήρες χτένισμα με λάμψη που έχει διάρκεια: «Κλασικό χτένισμα».",
+          "en": "Up to 15′ of styling. For a full blow-out with shine that lasts: Classic Blow-out."
         },
         "online": true,
         "options": [
@@ -297,8 +297,8 @@
       },
       {
         "name": {
-          "el": "Χτένισμα με βούρτσα",
-          "en": "Signature Blowdry"
+          "el": "Κλασικό χτένισμα",
+          "en": "Classic Blow-out"
         },
         "desc": {
           "el": "Λούσιμο και πλήρες χτένισμα με πιστολάκι και βούρτσα — ίσιο και λείο, ή με όγκο και κίνηση — με λάμψη που έχει διάρκεια. Με θερμοπροστατευτικό και προϊόν styling (προαιρετικά).",
@@ -435,16 +435,16 @@
       },
       {
         "name": {
-          "el": "+ Γρήγορο φορμάρισμα μετά τη βαφή",
-          "en": "Quick Styling after Colour (add-on)"
+          "el": "+ Φορμάρισμα μετά τη βαφή",
+          "en": "Blow-dry after Colour (add-on)"
         },
         "desc": {
-          "el": "Γρήγορο φορμάρισμα με πιστολάκι και βούρτσα μετά τη βαφή, για όγκο και φόρμα. Με θερμοπροστατευτικό και προϊόν styling (προαιρετικά).",
-          "en": "A quick brushed styling after your colour, for volume and shape. With heat protectant and styling product (optional)."
+          "el": "Φορμάρισμα με πιστολάκι και βούρτσα μετά τη βαφή, για όγκο και φόρμα. Με θερμοπροστατευτικό και προϊόν styling (προαιρετικά).",
+          "en": "A brushed blow-dry after your colour, for volume and shape. With heat protectant and styling product (optional)."
         },
         "note": {
-          "el": "Μόνο μαζί με βαφή. Για πλήρες χτένισμα: «+ Χτένισμα μετά τη βαφή». Χωρίς βαφή: «Λούσιμο & γρήγορο φορμάρισμα» €22.",
-          "en": "Only with a colour service. For a full blow-out: Colour Blowdry. Without colour: Wash & Quick Styling, €22."
+          "el": "Μόνο μαζί με βαφή. Για πλήρες χτένισμα: «+ Χτένισμα μετά τη βαφή». Χωρίς βαφή: «Φορμάρισμα» €22.",
+          "en": "Only with a colour service. For a full blow-out: Blow-out after Colour. Without colour: Blow-dry, €22."
         },
         "online": true,
         "options": [
@@ -466,7 +466,7 @@
       {
         "name": {
           "el": "+ Χτένισμα μετά τη βαφή",
-          "en": "Colour Blowdry (add-on)"
+          "en": "Blow-out after Colour (add-on)"
         },
         "desc": {
           "el": "Πλήρες χτένισμα μετά τη βαφή, με πιστολάκι και βούρτσα — ίσιο και λείο, ή με όγκο και κίνηση. Με θερμοπροστατευτικό και προϊόν styling (προαιρετικά).",
@@ -564,14 +564,14 @@
           "en": "Permanent root colour with grey coverage, wash and quick dry, with Farcom or L’Oréal Majirel. Ammonia-free: L’Oréal INOA or Redken. Monthly Root: when your next root colour is within 30 days of your last one with us."
         },
         "note": {
-          "el": "Περιλαμβάνει έως 45 g χρώμα. Αν χρειαστεί περισσότερο, το συμφωνούμε πριν. Η Μηνιαία ρίζα κλείνεται online ως κανονική βαφή ρίζας· η μηνιαία τιμή εφαρμόζεται στο κομμωτήριο.",
+          "el": "Περιλαμβάνει έως 45 g χρώμα. Αν χρειαστεί περισσότερο, το συμφωνούμε πριν. Η Μηνιαία ρίζα κλείνεται online ως κλασική βαφή ρίζας· η μηνιαία τιμή εφαρμόζεται στο κομμωτήριο.",
           "en": "Includes up to 45 g of colour. If more is needed, we agree it beforehand. Monthly Root is booked online as a regular root colour; the monthly price is applied at the salon."
         },
         "online": true,
         "options": [
           {
-            "el": "Κανονική",
-            "en": "Regular",
+            "el": "Κλασική",
+            "en": "Classic",
             "time": {
               "el": "1 ώρα",
               "en": "1 h"
@@ -1249,8 +1249,8 @@
           "en": "Scalp Massage Wash (add-on)"
         },
         "desc": {
-          "el": "Λούσιμο με μασάζ κεφαλής.",
-          "en": "A wash with a scalp massage."
+          "el": "Μασάζ κεφαλής κατά το λούσιμο, για χαλάρωση.",
+          "en": "A relaxing scalp massage during your wash."
         },
         "note": {
           "el": "Μαζί με οποιαδήποτε υπηρεσία.",

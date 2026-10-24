@@ -374,7 +374,7 @@ FAQ_WHEN = ("Μπορώ να κλείσω Δευτέρα ή αργά το από
 COMMON_FACTS = ["Θησείο, ~5′ με τα πόδια από τον σταθμό", "Πληρωμή online ή στο κομμωτήριο", "Online κράτηση 24/7"]
 
 # ---------- /kourema-athina/ ----------
-CUTS = ["Κούρεμα χωρίς στέγνωμα", "Κούρεμα & γρήγορο στέγνωμα", "Κούρεμα & γρήγορο φορμάρισμα", "Κούρεμα & χτένισμα"]
+CUTS = ["Κούρεμα", "Κούρεμα & στέγνωμα", "Κούρεμα & φορμάρισμα", "Κούρεμα & χτένισμα"]
 service_page(
     "/kourema-athina/", "Κούρεμα στην Αθήνα",
     f"Κούρεμα Αθήνα – Θησείο | Γυναικείο από €{P(CUTS[0])} | Alexandros Hair Salon",
@@ -387,9 +387,9 @@ service_page(
 <p>Ξεκινάμε με λίγη κουβέντα: τι σε ενοχλεί σήμερα, πώς χτενίζεσαι στο σπίτι και πόσο συχνά θέλεις να έρχεσαι. Μετά προτείνουμε γραμμή και μήκος που θα στέκονται σωστά και όταν τα φορμάρεις μόνη σου.</p>
 <p>Κάνουμε κλασικά και σύγχρονα κουρέματα: pixie, mullet, bob και lob, butterfly, curtain bangs, φιλάρισμα για όγκο ή ελάφρυνση, καθαρό φρεσκάρισμα άκρων.</p>
 <h2>Πώς θέλεις να φύγεις;</h2>
-<p>Μία τιμή για κάθε μήκος· διαλέγεις μόνο το τέλος. <strong>Χωρίς στέγνωμα</strong>, ιδανικό για σγουρά. <strong>Γρήγορο στέγνωμα</strong>: με τα χέρια, με πιστολάκι ή φυσούνα, για φυσικό αποτέλεσμα. <strong>Γρήγορο φορμάρισμα</strong>: πιστολάκι και βούρτσα για όγκο και φόρμα. <strong>Χτένισμα</strong>: πλήρες, ίσιο και λείο ή με όγκο και κίνηση, που κρατά συνήθως 2–3 ημέρες.</p>""",
+<p>Μία τιμή για κάθε μήκος· διαλέγεις μόνο το τέλος. <strong>Κούρεμα</strong>, με φυσικό στέγνωμα, ιδανικό για σγουρά. <strong>Στέγνωμα</strong>: με τα χέρια, με πιστολάκι ή φυσούνα, για φυσικό αποτέλεσμα. <strong>Φορμάρισμα</strong>: πιστολάκι και βούρτσα για όγκο και φόρμα. <strong>Χτένισμα</strong>: πλήρες, ίσιο και λείο ή με όγκο και κίνηση, που κρατά συνήθως 2–3 ημέρες.</p>""",
     CUTS + ["Φράτζα & αφέλειες", "Ανδρικό κούρεμα", "Ανδρικό με μηχανή", "Παιδικό κούρεμα"],
-    [("Πόσο κοστίζει ένα γυναικείο κούρεμα;", f"€{P(CUTS[0])} χωρίς στέγνωμα, €{P(CUTS[1])} με γρήγορο στέγνωμα, €{P(CUTS[2])} με γρήγορο φορμάρισμα και €{P(CUTS[3])} με πλήρες χτένισμα. Ίδια τιμή για όλα τα μήκη."),
+    [("Πόσο κοστίζει ένα γυναικείο κούρεμα;", f"€{P(CUTS[0])} με φυσικό στέγνωμα, €{P(CUTS[1])} με στέγνωμα, €{P(CUTS[2])} με φορμάρισμα και €{P(CUTS[3])} με πλήρες χτένισμα. Ίδια τιμή για όλα τα μήκη."),
      ("Κάνετε και ανδρικά ή παιδικά κουρέματα;", f"Ναι. Ανδρικό κούρεμα €{P('Ανδρικό κούρεμα')}, με μηχανή €{P('Ανδρικό με μηχανή')} και παιδικό (έως 12 ετών) €{P('Παιδικό κούρεμα')}."),
      FAQ_WHEN,
      ("Πρέπει να κλείσω ραντεβού;", "Προτείνουμε ραντεβού για να σε περιμένουμε στην ώρα σου. Κλείνεις online στο alexandroshairsalon.gr/kratisi ή τηλεφωνικά στο 210 346 5554."),
@@ -406,18 +406,18 @@ ROOT_OPTS = dict((o, p) for o, _, p in MENU[ROOT][1])
 service_page(
     "/vafi-mallion-athina/", "Βαφή μαλλιών στην Αθήνα",
     f"Βαφή Μαλλιών Αθήνα – Θησείο | Ρίζα από €{P(ROOT)} | Alexandros Hair Salon",
-    f"Βαφή ρίζας & κάλυψη λευκών €{ROOT_OPTS['Κανονική']}, Μηνιαία ρίζα €{ROOT_OPTS['Μηνιαία ρίζα']}, χωρίς αμμωνία €{ROOT_OPTS['Χωρίς αμμωνία']} (INOA, Redken). Ρίζα & ρεφλέ από €{P('Βαφή ρίζας & ρεφλέ στα μήκη')}. Κομμωτήριο στο Θησείο, Αθήνα. Κλείσε online.",
+    f"Βαφή ρίζας & κάλυψη λευκών €{ROOT_OPTS['Κλασική']}, Μηνιαία ρίζα €{ROOT_OPTS['Μηνιαία ρίζα']}, χωρίς αμμωνία €{ROOT_OPTS['Χωρίς αμμωνία']} (INOA, Redken). Ρίζα & ρεφλέ από €{P('Βαφή ρίζας & ρεφλέ στα μήκη')}. Κομμωτήριο στο Θησείο, Αθήνα. Κλείσε online.",
     "Χρώμα · L’Oréal Professionnel & Redken",
     "Βαφή μαλλιών στην Αθήνα, <em>με L’Oréal &amp; Redken.</em>",
     "Κάλυψη λευκών στη ρίζα, βαφή χωρίς αμμωνία, ρεφλέ για λάμψη και τόνο. Μία τιμή για κάθε υπηρεσία, με συγκεκριμένη ποσότητα χρώματος, ώστε να ξέρεις από πριν τι πληρώνεις.",
     [f"Βαφή ρίζας από €{P(ROOT)}"] + COMMON_FACTS,
     f"""<h2>Βαφή ρίζας και Μηνιαία ρίζα</h2>
-<p><strong>Βαφή ρίζας (€{ROOT_OPTS['Κανονική']})</strong>: μόνιμη βαφή με Farcom ή Majirel της L’Oréal Professionnel, για σίγουρη κάλυψη λευκών. <strong>Χωρίς αμμωνία (€{ROOT_OPTS['Χωρίς αμμωνία']})</strong>: INOA της L’Oréal Professionnel ή Redken. Και οι δύο περιλαμβάνουν λούσιμο και γρήγορο στέγνωμα.</p>
+<p><strong>Βαφή ρίζας (€{ROOT_OPTS['Κλασική']})</strong>: μόνιμη βαφή με Farcom ή Majirel της L’Oréal Professionnel, για σίγουρη κάλυψη λευκών. <strong>Χωρίς αμμωνία (€{ROOT_OPTS['Χωρίς αμμωνία']})</strong>: INOA της L’Oréal Professionnel ή Redken. Και οι δύο περιλαμβάνουν λούσιμο και γρήγορο στέγνωμα.</p>
 <p><strong>Μηνιαία ρίζα (€{ROOT_OPTS['Μηνιαία ρίζα']}, χωρίς αμμωνία €{ROOT_OPTS['Χωρίς αμμωνία · μηνιαία ρίζα']})</strong>: όταν η επόμενη βαφή ρίζας γίνεται μέσα σε 30 ημέρες από την προηγούμενη σε εμάς. Στο ταμείο παίρνεις καρτελάκι με την ημερομηνία.</p>
 <h2>Ρίζα + ρεφλέ</h2>
 <p>Με το <strong>ρεφλέ (gloss)</strong> στα μήκη το χρώμα δένει από τη ρίζα ως τις άκρες και τα μαλλιά αποκτούν λάμψη. Είναι ξεχωριστή εφαρμογή στα μήκη, έως 60 ml για μαλλιά έως τους ώμους ή 90 ml κάτω από τους ώμους, όχι απλό τράβηγμα της βαφής της ρίζας. Για μεγάλη αλλαγή ή διόρθωση προηγούμενου χρώματος ξεκινάμε με διάγνωση, ώστε να ξέρεις πλάνο και τιμή πριν από οτιδήποτε.</p>""",
     [ROOT, "Βαφή ρίζας & ρεφλέ στα μήκη", "Ρεφλέ", "Βαφή σε όλο το μαλλί", "Ξάνοιγμα ρίζας & ρεφλέ", "+ Επιπλέον χρώμα", "Διόρθωση χρώματος"],
-    [("Πόσο κοστίζει η βαφή ρίζας;", f"€{ROOT_OPTS['Κανονική']}, ή €{ROOT_OPTS['Χωρίς αμμωνία']} χωρίς αμμωνία, με λούσιμο και γρήγορο στέγνωμα. Όταν η επόμενη βαφή ρίζας γίνεται μέσα σε 30 ημέρες, η Μηνιαία ρίζα είναι €{ROOT_OPTS['Μηνιαία ρίζα']} (χωρίς αμμωνία €{ROOT_OPTS['Χωρίς αμμωνία · μηνιαία ρίζα']})."),
+    [("Πόσο κοστίζει η βαφή ρίζας;", f"€{ROOT_OPTS['Κλασική']}, ή €{ROOT_OPTS['Χωρίς αμμωνία']} χωρίς αμμωνία, με λούσιμο και γρήγορο στέγνωμα. Όταν η επόμενη βαφή ρίζας γίνεται μέσα σε 30 ημέρες, η Μηνιαία ρίζα είναι €{ROOT_OPTS['Μηνιαία ρίζα']} (χωρίς αμμωνία €{ROOT_OPTS['Χωρίς αμμωνία · μηνιαία ρίζα']})."),
      ("Έχετε βαφή χωρίς αμμωνία;", f"Ναι: INOA της L’Oréal Professionnel ή Redken, €{ROOT_OPTS['Χωρίς αμμωνία']} (Μηνιαία ρίζα €{ROOT_OPTS['Χωρίς αμμωνία · μηνιαία ρίζα']})."),
      FAQ_WHEN,
      ("Πόση ώρα διαρκεί η βαφή ρίζας;", "Περίπου μία ώρα μαζί με την αναμονή. Με ρεφλέ στα μήκη από μία ώρα έως μία ώρα και δέκα λεπτά."),
@@ -483,7 +483,7 @@ def offers_en(names):
     return out
 
 
-EN_KEYS = ["Κούρεμα & γρήγορο στέγνωμα", "Κούρεμα & χτένισμα", "Χτένισμα με βούρτσα", "Χτένισμα για εκδήλωση",
+EN_KEYS = ["Κούρεμα & στέγνωμα", "Κούρεμα & χτένισμα", "Κλασικό χτένισμα", "Χτένισμα για εκδήλωση",
            "Ανδρικό κούρεμα", "Βαφή ρίζας", "Βαφή ρίζας & ρεφλέ στα μήκη", "Ρεφλέ",
            "Ανταύγειες γύρω από το πρόσωπο", "Μερικές ανταύγειες", "Μερικό μπαλαγιάζ"]
 EN_FAQ = [
@@ -508,7 +508,7 @@ en_body = f"""
 </section>
 <section class="block prose">
 <h2>What to expect</h2>
-<p>A haircut is a shape around the face. We start with a short talk about your face, your hair and how you style it, then cut and finish it the way you choose: a natural quick dry, a quick brushed styling, or a full blow-out, bouncy or sleek, that usually lasts 2–3 days.</p>
+<p>A haircut is a shape around the face. We start with a short talk about your face, your hair and how you style it, then cut and finish it the way you choose: a natural dry, a brushed blow-dry, or a full blow-out, bouncy or sleek, that usually lasts 2–3 days.</p>
 <p>For colour we use L’Oréal Professionnel and Redken, including ammonia-free options and bleach-free lightening with L’Oréal Blond Studio No Bleach™. Every price includes a set amount of product; anything extra is agreed before we start.</p>
 </section>
 <section class="block"><h2>Questions</h2>{_items}</section>
@@ -519,8 +519,8 @@ en_faq_ld = {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity":
 en_service_ld = {"@context": "https://schema.org", "@type": "Service", "name": "Hair salon in Athens", "serviceType": "Hair salon",
                  "areaServed": {"@type": "City", "name": "Athens"}, "provider": SALON_REF, "url": f"{SITE}/hair-salon-athens/",
                  "availableLanguage": ["English", "Greek"], "offers": offers_en(EN_KEYS)}
-page("/hair-salon-athens/", f"Hair Salon in Athens, Thiseio | from €{P('Κούρεμα χωρίς στέγνωμα')} | Alexandros Hair Salon",
-     f"Hair salon in central Athens near the Acropolis: haircut from €{P('Κούρεμα χωρίς στέγνωμα')}, colour, balayage. Free slots on Mondays and late afternoons. English spoken.",
+page("/hair-salon-athens/", f"Hair Salon in Athens, Thiseio | from €{P('Κούρεμα')} | Alexandros Hair Salon",
+     f"Hair salon in central Athens near the Acropolis: haircut from €{P('Κούρεμα')}, colour, balayage. Free slots on Mondays and late afternoons. English spoken.",
      en_body, [en_service_ld, en_faq_ld, crumbs("Hair salon in Athens", "/hair-salon-athens/")], lang="en", bilingual=True)
 
 # ---------- /kratisi/ : official Treatwell Connect widget (no marketplace commission) ----------
@@ -697,7 +697,7 @@ def b2b_page(path, crumb, title, desc, eyebrow, h1, lead, facts, prose, keys, fa
 
 
 EV = "Χτένισμα για εκδήλωση"
-BD = "Χτένισμα με βούρτσα"
+BD = "Κλασικό χτένισμα"
 PHOTO_KEYS = [EV, BD, "Κούρεμα & χτένισμα"]
 
 # /hair-stylist-photoshoot-athens/ (EN)
@@ -710,14 +710,14 @@ b2b_page(
     "Many photo shoots in Athens do not include hair. We style it in our salon in Thiseio, right before your session, and you walk to Filopappou Hill, Apostolou Pavlou or the Ancient Agora. For photographers and brands we also work on set, by the half or full day.",
     [f"Styling from €{P(EV)}", "5′ walk from Thiseio metro", "English spoken", "On-set work by the half or full day"],
     f"""<h2>For your own photo shoot</h2>
-<p>Book <strong>Special Occasion Styling</strong> for curls, waves or an up-do, or a <strong>Signature Blowdry</strong> for sleek or bouncy hair. Please come with clean, dry hair and a photo of the look you like. We plan the time with your photographer so the hair is fresh for the first frame.</p>
+<p>Book <strong>Special Occasion Styling</strong> for curls, waves or an up-do, or a <strong>Classic Blow-out</strong> for sleek or bouncy hair. Please come with clean, dry hair and a photo of the look you like. We plan the time with your photographer so the hair is fresh for the first frame.</p>
 <h2>For photographers, brands and productions</h2>
 <p>We work on lookbooks, editorials, e-commerce and campaigns, in the salon or on set, by the half or full day, with a clear quote before the shoot. Ask us for a quote on WhatsApp or by phone.</p>
 <h2>Who does the work</h2>
 <p>{esc(EXPERIENCE_EN)}</p>""",
     PHOTO_KEYS,
     [("Is hair included in my photo shoot?", "Usually not: most photographers in Athens work without a hair stylist. Book styling with us before your session; the salon is a short walk from the most photographed spots around the Acropolis."),
-     ("How long does it take?", f"Special Occasion Styling takes about 45 minutes and costs €{P(EV)}. A Signature Blowdry takes about 30 minutes and costs €{P(BD)}."),
+     ("How long does it take?", f"Special Occasion Styling takes about 45 minutes and costs €{P(EV)}. A Classic Blow-out takes about 30 minutes and costs €{P(BD)}."),
      ("Can you come to the set or to my hotel?", "Yes, by arrangement. For productions we quote by the half or full day. Message us with the date, place and number of looks."),
      ("Do you speak English?", "Yes. Message us on WhatsApp or Viber at +30 698 131 9000."),
      ("Where is the salon?", "Erisichthonos 3-5, Thiseio, central Athens, about 5 minutes on foot from Thiseio metro station.")],
@@ -736,13 +736,13 @@ b2b_page(
     "Για προσωπικές, επαγγελματικές και φωτογραφίσεις μόδας. Ετοιμάζουμε τα μαλλιά στο κομμωτήριο στο Θησείο, λίγα λεπτά από τον Φιλοπάππου και την Αποστόλου Παύλου, ή ερχόμαστε στο σετ για μισή ή πλήρη ημέρα.",
     [f"Χτένισμα από €{P(EV)}", "Θησείο, 5′ από το μετρό", "Στο σετ με μισή ή πλήρη ημέρα", "Γραπτή προσφορά πριν τη φωτογράφιση"],
     f"""<h2>Για τη δική σου φωτογράφιση</h2>
-<p>Κλείσε <strong>Χτένισμα για εκδήλωση</strong> για μπούκλες, κυματισμούς ή πιάσιμο, ή <strong>Χτένισμα με βούρτσα</strong> για ίσιο και λείο ή με όγκο. Καλό είναι να έρθεις με λουσμένα, στεγνά μαλλιά και μια φωτογραφία με αυτό που σου αρέσει. Κανονίζουμε την ώρα μαζί με τον φωτογράφο, ώστε τα μαλλιά να είναι φρέσκα στο πρώτο κάδρο.</p>
+<p>Κλείσε <strong>Χτένισμα για εκδήλωση</strong> για μπούκλες, κυματισμούς ή πιάσιμο, ή <strong>Κλασικό χτένισμα</strong> για ίσιο και λείο ή με όγκο. Καλό είναι να έρθεις με λουσμένα, στεγνά μαλλιά και μια φωτογραφία με αυτό που σου αρέσει. Κανονίζουμε την ώρα μαζί με τον φωτογράφο, ώστε τα μαλλιά να είναι φρέσκα στο πρώτο κάδρο.</p>
 <h2>Για φωτογράφους, brands και παραγωγές</h2>
 <p>Lookbooks, editorial, φωτογραφίες προϊόντων για e-shop, διαφημιστικές καμπάνιες. Στο κομμωτήριο ή στο σετ, με μισή ή πλήρη ημέρα και γραπτή προσφορά πριν τη φωτογράφιση. Στείλε μας ημερομηνία, χώρο και αριθμό looks στο WhatsApp.</p>
 <h2>Ποιος κάνει τη δουλειά</h2>
 <p>{esc(EXPERIENCE_EL)}</p>""",
     PHOTO_KEYS,
-    [("Πόσο κοστίζει το χτένισμα για φωτογράφιση;", f"Το Χτένισμα για εκδήλωση κοστίζει €{P(EV)} και διαρκεί περίπου 45 λεπτά. Το Χτένισμα με βούρτσα €{P(BD)}, περίπου 30 λεπτά."),
+    [("Πόσο κοστίζει το χτένισμα για φωτογράφιση;", f"Το Χτένισμα για εκδήλωση κοστίζει €{P(EV)} και διαρκεί περίπου 45 λεπτά. Το Κλασικό χτένισμα €{P(BD)}, περίπου 30 λεπτά."),
      ("Έρχεστε στο σετ;", "Ναι, κατόπιν συνεννόησης. Για παραγωγές δίνουμε γραπτή προσφορά για μισή ή πλήρη ημέρα, ανάλογα με τα looks και τον χώρο."),
      ("Πώς κλείνω για μια παραγωγή;", "Με μήνυμα στο WhatsApp ή στο Viber στο 698 131 9000, με ημερομηνία, χώρο, ώρες και αριθμό μοντέλων."),
      ("Πού βρίσκεστε;", "Ερυσίχθονος 3-5 στο Θησείο, περίπου 5 λεπτά με τα πόδια από τον σταθμό Θησείο.")],
@@ -921,10 +921,10 @@ def book_links(books, lang):
 FAQ_GROUPS = [
  ("Χρώμα", "Colour", [
   ("Θέλω να καλύψω τα λευκά στη ρίζα. Τι μου ταιριάζει;",
-   f"Η Βαφή ρίζας ({O('Βαφή ρίζας','Κανονική')}), με Farcom Expertia ή Majirel της L’Oréal, που καλύπτουν πλήρως τα λευκά. Αν βάφεσαι κάθε μήνα, η Μηνιαία ρίζα ({O('Βαφή ρίζας','Μηνιαία ρίζα')}).",
+   f"Η Βαφή ρίζας ({O('Βαφή ρίζας','Κλασική')}), με Farcom Expertia ή Majirel της L’Oréal, που καλύπτουν πλήρως τα λευκά. Αν βάφεσαι κάθε μήνα, η Μηνιαία ρίζα ({O('Βαφή ρίζας','Μηνιαία ρίζα')}).",
    "I want to cover grey at the roots. What suits me?",
-   f"Root Colour ({O('Βαφή ρίζας','Κανονική')}), with Farcom Expertia or L’Oréal Majirel, for full grey coverage. If you colour every month, the Monthly Root ({O('Βαφή ρίζας','Μηνιαία ρίζα')}).",
-   [("Βαφή ρίζας", "Κανονική"), ("Βαφή ρίζας", "Μηνιαία ρίζα")]),
+   f"Root Colour ({O('Βαφή ρίζας','Κλασική')}), with Farcom Expertia or L’Oréal Majirel, for full grey coverage. If you colour every month, the Monthly Root ({O('Βαφή ρίζας','Μηνιαία ρίζα')}).",
+   [("Βαφή ρίζας", "Κλασική"), ("Βαφή ρίζας", "Μηνιαία ρίζα")]),
   ("Με ενοχλεί η μυρωδιά ή έχω ευαίσθητο δέρμα.",
    f"Η Βαφή ρίζας χωρίς αμμωνία ({O('Βαφή ρίζας','Χωρίς αμμωνία')}, μηνιαία {O('Βαφή ρίζας','Χωρίς αμμωνία · μηνιαία ρίζα')}), με INOA της L’Oréal ή Redken Color Gels Oils. Η μυρωδιά είναι πολύ πιο ήπια και η κάλυψη των λευκών παραμένει πλήρης.",
    "The smell bothers me, or I have sensitive skin.",
@@ -996,17 +996,17 @@ FAQ_GROUPS = [
    "Έως και 7 ημέρες. Η διάρκεια εξαρτάται από τη φύση των μαλλιών, τις συνθήκες, όπως η υγρασία, και τη φροντίδα τους στο σπίτι.",
    "How long does a blow-dry last?",
    "Up to 7 days. It depends on your hair, on conditions such as humidity, and on how it is cared for at home.",
-   [("Χτένισμα με βούρτσα", None)]),
+   [("Κλασικό χτένισμα", None)]),
   ("Μπούκλες ή πιάσιμο σε πολλά ή πολύ μακριά μαλλιά;",
    "Οι μπούκλες και το πιάσιμο κρατούν καλύτερα σε μαλλιά λουσμένα από πριν και στεγνωμένα φυσικά, χωρίς βαριά μαλακτικά ή έλαια μαλλιών. Σε πολλά ή πολύ μακριά μαλλιά βοηθά το λούσιμο να γίνει την προηγούμενη μέρα.",
    "Curls or an up-do on thick or very long hair?",
    "Curls and up-dos hold best on hair washed beforehand and left to dry naturally, without heavy conditioners or hair oils. On thick or very long hair, washing the day before helps.",
    [("Χτένισμα για εκδήλωση", None)]),
-  ("Υπάρχει λούσιμο και γρήγορο φορμάρισμα χωρίς βαφή;",
-   f"Ναι, το Λούσιμο & γρήγορο φορμάρισμα, {O('Λούσιμο & γρήγορο φορμάρισμα')}.",
-   "Is there a wash and quick styling without colour?",
-   f"Yes, Wash & Quick Styling, {O('Λούσιμο & γρήγορο φορμάρισμα')}.",
-   [("Λούσιμο & γρήγορο φορμάρισμα", None)]),
+  ("Υπάρχει φορμάρισμα με λούσιμο χωρίς βαφή;",
+   f"Ναι, το Φορμάρισμα, {O('Φορμάρισμα')}.",
+   "Is there a wash and blow-dry without colour?",
+   f"Yes, Blow-dry, {O('Φορμάρισμα')}.",
+   [("Φορμάρισμα", None)]),
   ("Περιλαμβάνεται λούσιμο;",
    "Σε κάθε υπηρεσία γράφουμε αν περιλαμβάνει λούσιμο. Το περιλαμβάνουν όλα τα κουρέματα (εκτός από το ανδρικό με μηχανή), τα χτενίσματα με βούρτσα και όλες οι βαφές, τα ρεφλέ και οι ανταύγειες. Όλες οι υπηρεσίες: alexandroshairsalon.gr/services.",
    "Is a wash included?",
