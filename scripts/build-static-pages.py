@@ -954,6 +954,24 @@ FAQ_GROUPS = [
    "Demi-permanent (Dia Color): gentler, covers up to 70% of grey and fades gradually over about 6 weeks, with no sharp regrowth line. "
    "Gloss (Dia Light, Redken Shades EQ): acidic and ammonia-free; adds tone and shine without lightening, and doesn’t fully cover grey.",
    []),
+  ("Τι διαφέρει η όξινη από την αλκαλική τεχνολογία χρώματος;",
+   "Η διαφορά είναι το pH. Η αλκαλική τεχνολογία (pH πάνω από 7) ανοίγει ελαφρά την επιφάνεια της τρίχας, ώστε το χρώμα να μπει βαθιά: μπορεί να ξανοίξει τα μαλλιά, καλύπτει τα λευκά και κρατά πολύ. Η όξινη (pH κάτω από 7, κοντά στο φυσικό pH της τρίχας) δεν ξανοίγει: αφήνει τόνο, λειαίνει την επιφάνεια της τρίχας και δίνει λάμψη και περιποίηση, χωρίς να καλύπτει πλήρως τα λευκά. Γι’ αυτό συχνά η αλκαλική μπαίνει στη ρίζα και η όξινη στα μήκη. "
+   "Αλκαλικές: Majirel της L’Oréal, μόνιμη, κάλυψη έως 100% των λευκών· Redken Color Gels Oils, μόνιμη χωρίς αμμωνία, κάλυψη έως 100%· Dia Color της L’Oréal, ημιμόνιμη, κάλυψη έως 70%. "
+   "Όξινες: Dia Light της L’Oréal, χωρίς αμμωνία, κρατά 4–6 εβδομάδες και δεν είναι για κάλυψη λευκών· Redken Shades EQ, όξινο ρεφλέ με λάμψη και περιποίηση.",
+   "What’s the difference between acidic and alkaline colour?",
+   "It comes down to pH. Alkaline colour (pH above 7) gently opens the hair’s surface so colour can go deep: it can lighten, covers grey and lasts. Acidic colour (pH below 7, close to the hair’s natural pH) doesn’t lighten: it deposits tone, smooths the hair’s surface and adds shine and condition, without fully covering grey. That’s why alkaline colour often goes on the roots and acidic colour on the lengths. "
+   "Alkaline: L’Oréal Majirel, permanent, up to 100% grey coverage; Redken Color Gels Oils, permanent and ammonia-free, up to 100%; L’Oréal Dia Color, demi-permanent, up to 70%. "
+   "Acidic: L’Oréal Dia Light, ammonia-free, lasts 4–6 weeks and is not for grey coverage; Redken Shades EQ, an acidic gloss for shine and condition.",
+   [("Ρεφλέ", "Έως τους ώμους"), ("Root smudge & ρεφλέ", "Μεσαία")], "oxini-alkaliki"),
+  ("Υπάρχει φυτική βαφή;",
+   "Υπάρχει, αλλά πολύ πιο περιορισμένη απ’ όσο λέγεται. Καθαρή φυτική βαφή είναι οι σκόνες από φυτά, όπως η χέννα, το indigo και η cassia· η L’Oréal Professionnel έχει παρουσιάσει και σειρά 100% φυτική, τη Botanéa. Δίνουν χρώμα και λάμψη, αλλά δεν ξανοίγουν τα μαλλιά, έχουν λίγες αποχρώσεις και στα λευκά το αποτέλεσμα είναι λιγότερο προβλέψιμο. "
+   "Πολλά προϊόντα που πωλούνται ως «φυτική» ή «φυσική» βαφή είναι στην πράξη κανονικές βαφές με εκχυλίσματα φυτών. Σε έλεγχο 26 τέτοιων βαφών από το Συμβούλιο Καταναλωτών του Χονγκ Κονγκ, οι 11 περιείχαν PPD, τη χημική ουσία των μόνιμων βαφών, και τρεις χέννες την περιείχαν χωρίς να επιτρέπεται. Ένας απλός κανόνας: αν μια βαφή χρειάζεται οξειδωτικό για να δουλέψει, δεν είναι φυτική. "
+   "Φυτική βαφή δεν κάνουμε. Για το πιο ήπιο αποτέλεσμα υπάρχει το Root smudge & ρεφλέ, με όξινη τεχνολογία χρώματος χωρίς αμμωνία.",
+   "Is there such a thing as plant-based hair colour?",
+   "Yes, but it is far more limited than often claimed. True plant colour is powder from plants such as henna, indigo and cassia; L’Oréal Professionnel has also presented a 100% plant-based line, Botanéa. It gives colour and shine, but it doesn’t lighten, comes in few shades, and on grey the result is less predictable. "
+   "Many products sold as “herbal” or “natural” colour are in fact regular hair dyes with plant extracts. When the Hong Kong Consumer Council tested 26 such dyes, 11 contained PPD, the chemical used in permanent colour, and three hennas contained it although it is not allowed. A simple rule: if a colour needs developer to work, it is not plant-based. "
+   "We don’t offer plant colour. For the gentlest result there is Root Smudge & Gloss, with an ammonia-free acidic colour technology.",
+   [("Root smudge & ρεφλέ", "Μεσαία")], "fytiki-vafi"),
   ("Τι είναι το ντεκαπάζ;",
    "Το ξάνοιγμα των μαλλιών με σκόνη ξανοίγματος, για ανταύγειες και μπαλαγιάζ που χρειάζονται να ανοίξουν αρκετούς τόνους. Μετά ακολουθεί σχεδόν πάντα ρεφλέ, για τον τόνο που θέλεις. "
    "Για πιο ήπιο αποτέλεσμα υπάρχει και η επιλογή χωρίς ντεκαπάζ, με L’Oréal Blond Studio No Bleach™, που ανοίγει έως 4 τόνους σε φυσικά μαλλιά και έως 2,5 σε βαμμένα. "
@@ -1049,12 +1067,13 @@ _faq_body = """
 </section>
 """ + "".join(
     f'<section class="block"><h2 data-en="{esc(esc(ten))}">{esc(t)}</h2>' + "".join(
-        f'<details><summary data-en="{esc(esc(qe))}">{esc(q)}</summary>'
+        f'<details{(' id="' + r[0] + '"') if r else ""}><summary data-en="{esc(esc(qe))}">{esc(q)}</summary>'
         f'<p data-en="{esc(_answer(ae, b, "en"))}">{_answer(a, b, "el")}</p></details>'
-        for q, a, qe, ae, b in g) + "</section>"
+        for q, a, qe, ae, b, *r in g) + "</section>"
     for t, ten, g in FAQ_GROUPS) + """
 <section class="block"><p class="links"><a href="/services" data-en="All prices">Όλες οι τιμές</a><a href="/vafi-mallion-athina/" data-en="Hair colour">Βαφή μαλλιών</a><a href="/gnomi/" data-en="Your feedback, anonymously">Η γνώμη σου, ανώνυμα</a></p></section>
 <style>.bk{display:block;margin-top:10px;font-size:.92em;color:var(--muted)}</style>
+<script>(function(){function o(){var h=location.hash.slice(1);if(!h)return;var d=document.getElementById(h);if(d&&d.tagName==="DETAILS"){d.open=true;d.scrollIntoView();}}window.addEventListener("hashchange",o);o();})();</script>
 """
 page("/syxnes-erotiseis/", "Συχνές ερωτήσεις: βαφή, ποσότητες, τιμές | Alexandros Hair Salon – Θησείο",
      "Ποια βαφή σού ταιριάζει (μόνιμη, ημιμόνιμη, ρεφλέ), πόσο χρώμα περιλαμβάνει κάθε υπηρεσία, Μηνιαία ρίζα, εβδομαδιαίο χτένισμα και τι δεν συνδυάζεται.",

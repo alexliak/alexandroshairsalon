@@ -113,6 +113,7 @@ const Services = ({ language, setLanguage }) => {
                   </div>
                   {s.desc ? <p className="nh-menu-desc">{s.desc[lang]}</p> : null}
                   {s.note ? <p className="nh-menu-note">{s.note[lang]}</p> : null}
+                  {s.faq ? <p className="nh-menu-note"><a className="nh-inline-link" href={s.faq.href}>{s.faq[lang]} →</a></p> : null}
                   {s.options.length === 1 && !s.options[0][lang] ? (
                     <p className="nh-menu-meta">{s.options[0].time[lang]}</p>
                   ) : (
