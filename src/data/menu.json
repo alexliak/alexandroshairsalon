@@ -278,7 +278,7 @@
           "el": "Φορμάρισμα έως 15′. Για πλήρες χτένισμα με λάμψη που έχει διάρκεια: «Χτένισμα με βούρτσα».",
           "en": "Up to 15′ of styling. For a full blow-out with shine that lasts: Signature Blowdry."
         },
-        "online": false,
+        "online": true,
         "options": [
           {
             "el": "",
@@ -287,7 +287,11 @@
               "el": "25′",
               "en": "25′"
             },
-            "price": 22
+            "price": 22,
+            "book": {
+              "item": "TR7623278",
+              "option": "14481909"
+            }
           }
         ]
       },
