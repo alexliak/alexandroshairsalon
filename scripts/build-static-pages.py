@@ -305,7 +305,7 @@ def page(path, title, desc, body, ld, extra_head="", mbar=True, bilingual=False,
 <footer class="bottom"><div class="wrap">
   <p><strong>Alexandros Hair Salon</strong> · {ADDRESS} · <a href="tel:{PHONE}">{PHONE_TXT}</a> · <a href="tel:+306981319000" data-en="Call mobile">Κλήση κινητού</a> · <a href="https://wa.me/306981319000" target="_blank" rel="noopener">WhatsApp</a> · <a href="viber://chat?number=%2B306981319000">Viber</a> · <a href="{GOOGLE}" data-maps target="_blank" rel="noopener" data-en="Hours on Google">Ωράριο στο Google</a> · <a href="{DIRECTIONS}" data-maps target="_blank" rel="noopener" data-en="Directions">Οδηγίες</a></p>
   <p class="tsw" role="radiogroup" aria-label="Εμφάνιση"><span data-en="Theme">Εμφάνιση</span><button type="button" role="radio" data-mode="auto" title="Όπως η συσκευή σου" data-en="Auto">Αυτόματο</button><button type="button" role="radio" data-mode="light" data-en="Light">Ανοιχτό</button><button type="button" role="radio" data-mode="dark" data-en="Dark">Σκούρο</button></p>
-  <p class="links"><a href="/" data-en="Home">Αρχική</a><a href="/services" data-en="All prices">Όλες οι τιμές</a><a href="/kourema-athina/">Κούρεμα στην Αθήνα</a><a href="/vafi-mallion-athina/">Βαφή μαλλιών στην Αθήνα</a><a href="/balayage-athina/">Balayage στην Αθήνα</a><a href="/dorean-kourema-athina/">Δωρεάν κούρεμα (μοντέλο)</a><a href="/fotografies" data-en="Photos">Φωτογραφίες</a><a href="/kratisi/" data-en="Book online">Κράτηση online</a><a href="/hair-salon-athens/" hreflang="en">Hair salon in Athens (English)</a><a href="/xtenisma-fotografisi-athina/">Χτένισμα για φωτογράφιση</a><a href="/synergasies/">Συνεργασίες</a><a href="/syxnes-erotiseis/" data-en="FAQ">Συχνές ερωτήσεις</a><a href="/gnomi/" data-en="Your feedback">Η γνώμη σου</a><a href="/shop">Shop</a></p>
+  <p class="links"><a href="/" data-en="Home">Αρχική</a><a href="/services" data-en="All prices">Όλες οι τιμές</a><a href="/kourema-athina/">Κούρεμα στην Αθήνα</a><a href="/vafi-mallion-athina/">Βαφή μαλλιών στην Αθήνα</a><a href="/balayage-athina/">Balayage στην Αθήνα</a><a href="/dorean-kourema-athina/">Δωρεάν κούρεμα (μοντέλο)</a><a href="/fotografies" data-en="Photos">Φωτογραφίες</a><a href="/kratisi/" data-en="Book online">Κράτηση online</a><a href="/hair-salon-athens/" hreflang="en">Hair salon in Athens (English)</a><a href="/xtenisma-fotografisi-athina/">Χτένισμα για φωτογράφιση</a><a href="/synergasies/">Συνεργασίες</a><a href="/syxnes-erotiseis/" data-en="FAQ">Συχνές ερωτήσεις</a><a href="/dorokarta/" data-en="Gift card">Δωροκάρτα</a><a href="/gnomi/" data-en="Your feedback">Η γνώμη σου</a><a href="/shop">Shop</a></p>
 </div></footer>
 {'<div class="mbar"><span class="mb2"><small data-en="Book online">Online κράτηση</small><b data-en="in 1 minute">σε 1 λεπτό</b></span><a class="btn gold" href="/kratisi/" data-en="Book now">Κλείσε ραντεβού</a></div>' if mbar else ''}
 <button type="button" class="totop" aria-label="Επιστροφή στην κορυφή" title="Επιστροφή στην κορυφή" tabindex="-1">{ICONS['FaArrowUp']}</button>
@@ -1125,6 +1125,51 @@ f.reset();st.textContent=T('Ευχαριστούμε. Το μήνυμά σου �
 st.textContent=T('Δεν στάλθηκε. Μπορείς να δοκιμάσεις ξανά σε λίγο.','It wasn’t sent. You can try again in a moment.');}).then(function(){b.disabled=false;});});})();
 </script>
 """
+# ---------- /dorokarta/ : δωροκάρτες (πληρωμή στο κομμωτήριο, IRIS ή κατάθεση· όχι online ακόμα) ----------
+_WA_GIFT = "https://wa.me/306981319000?text=" + _up.quote("Γεια σας, θα ήθελα μια δωροκάρτα Alexandros Hair Salon αξίας €")
+_dk_card = lambda amt, el, en: (f'<div class="gc"><span class="gc-amt">€{amt}</span>'
+    f'<p data-en="{esc(en)}">{esc(el)}</p></div>')
+_dk_body = f"""
+<section class="hero">
+  <span class="eyebrow" data-en="Gift card">Δωροκάρτα</span>
+  <h1 data-en="A gift she’ll <em>actually use.</em>">Ένα δώρο που <em>θα χρησιμοποιήσει.</em></h1>
+  <p class="lead" data-en="A gift card from Alexandros Hair Salon in Thiseio, for any service or product. She chooses what she wants, when she wants it, within 12 months.">Δωροκάρτα του Alexandros Hair Salon στο Θησείο, για όποια υπηρεσία ή προϊόν θέλει. Διαλέγει εκείνη τι και πότε, μέσα σε 12 μήνες.</p>
+  <div class="cta"><a class="btn gold" href="{_WA_GIFT}" target="_blank" rel="noopener" data-en="Order on WhatsApp">Παραγγελία στο WhatsApp</a><a class="btn ghost" href="tel:{PHONE}" data-en="Call {PHONE_TXT}">Κάλεσε {PHONE_TXT}</a></div>
+</section>
+<section class="block">
+  <h2 data-en="Choose the amount">Διάλεξε ποσό</h2>
+  <div class="gcs">
+    {_dk_card(30, "Για κούρεμα ή χτένισμα.", "For a haircut or a blow-dry.")}
+    {_dk_card(50, "Για βαφή ρίζας ή κούρεμα με χτένισμα.", "For root colour, or a cut with a blow-out.")}
+    {_dk_card(100, "Για ανταύγειες, ή για βαφή με κούρεμα και χτένισμα.", "For highlights, or colour with a cut and blow-out.")}
+  </div>
+  <p data-en="Any other amount is possible too. Just tell us.">Γίνεται και όποιο άλλο ποσό θέλεις· αρκεί να μας το πεις.</p>
+</section>
+<section class="block prose">
+  <h2 data-en="How it works">Πώς γίνεται</h2>
+  <ol>
+    <li data-en="Tell us the amount on WhatsApp, by phone or at the salon.">Μας λες το ποσό στο WhatsApp, στο τηλέφωνο ή στο κομμωτήριο.</li>
+    <li data-en="Pay at the salon, by IRIS or bank transfer; we send you the details in a message.">Πληρώνεις στο κομμωτήριο, με IRIS ή με κατάθεση· τα στοιχεία σού τα στέλνουμε με μήνυμα.</li>
+    <li data-en="You receive the card printed at the salon, or as a PDF to forward, with its own unique code.">Παίρνεις την κάρτα τυπωμένη από το κομμωτήριο ή σε PDF για να τη στείλεις, με δικό της μοναδικό κωδικό.</li>
+    <li data-en="She books online or by phone and shows the code at the desk.">Εκείνη κλείνει ραντεβού online ή τηλεφωνικά και δείχνει τον κωδικό στο ταμείο.</li>
+  </ol>
+  <h2 data-en="Good to know">Καλό να ξέρεις</h2>
+  <ul>
+    <li data-en="Valid for 12 months from the date of purchase, for any service or product of the salon.">Ισχύει 12 μήνες από την αγορά, για όποια υπηρεσία ή προϊόν του κομμωτηρίου.</li>
+    <li data-en="It can be used in more than one visit; the remaining balance stays on the card.">Χρησιμοποιείται και σε περισσότερες από μία επισκέψεις· το υπόλοιπο μένει στην κάρτα.</li>
+    <li data-en="It can be given to anyone. It is not exchanged for cash.">Μπορεί να δοθεί σε οποιονδήποτε. Δεν εξαργυρώνεται σε μετρητά.</li>
+    <li data-en="If the service costs more, the difference is paid at the salon.">Αν η υπηρεσία κοστίζει περισσότερο, η διαφορά πληρώνεται στο κομμωτήριο.</li>
+    <li data-en="A receipt is issued when you buy the card.">Η απόδειξη εκδίδεται κατά την αγορά της κάρτας.</li>
+  </ul>
+  <p class="links"><a href="/services" data-en="See all prices">Δες όλες τις τιμές</a><a href="/syxnes-erotiseis/" data-en="FAQ">Συχνές ερωτήσεις</a></p>
+</section>
+<style>.gcs{{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px;margin:18px 0}}.gc{{border:1px solid var(--gold);border-radius:16px;padding:22px;background:var(--panel)}}.gc-amt{{display:block;font-family:var(--serif);font-size:44px;color:var(--gold);line-height:1}}.gc p{{margin:10px 0 0;color:var(--soft)}}</style>
+"""
+page("/dorokarta/", "Δωροκάρτα κομμωτηρίου στο Θησείο | Alexandros Hair Salon",
+     "Δωροκάρτα €30, €50 ή €100 για κούρεμα, χτένισμα, βαφή ή προϊόντα στο Alexandros Hair Salon στο Θησείο. Ισχύει 12 μήνες.",
+     _dk_body, [crumbs("Δωροκάρτα", "/dorokarta/")], bilingual=True)
+
+
 page("/gnomi/", "Η γνώμη σου, ανώνυμα | Alexandros Hair Salon – Θησείο",
      "Μπορείς να μας πεις ανώνυμα τι δεν πήγε καλά ή τι σου άρεσε. Δεν ζητάμε όνομα, τηλέφωνο ή email.",
      _gn_body, [crumbs("Η γνώμη σου", "/gnomi/")], bilingual=True)
