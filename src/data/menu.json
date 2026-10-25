@@ -158,14 +158,14 @@
           "en": "Gentlemen’s Haircut"
         },
         "desc": {
-          "el": "Λούσιμο, κούρεμα με ψαλίδι και μηχανή και φορμάρισμα. Με προϊόν styling (προαιρετικά).",
-          "en": "Wash, scissor and clipper cut, and styling. With styling product (optional)."
+          "el": "Λούσιμο, κούρεμα με ψαλίδι και μηχανή και φορμάρισμα. Με προϊόν styling (προαιρετικά). Μηνιαίο: όταν το επόμενο κούρεμα γίνεται μέσα σε 30 ημέρες από το προηγούμενο σε εμάς.",
+          "en": "Wash, scissor and clipper cut, and styling. With styling product (optional). Monthly: when your next cut is within 30 days of your last one with us."
         },
         "online": true,
         "options": [
           {
-            "el": "",
-            "en": "",
+            "el": "Κλασικό",
+            "en": "Classic",
             "time": {
               "el": "20′",
               "en": "20′"
@@ -175,8 +175,25 @@
               "item": "TR7229061",
               "option": "14269233"
             }
+          },
+          {
+            "el": "Μηνιαίο",
+            "en": "Monthly",
+            "time": {
+              "el": "20′",
+              "en": "20′"
+            },
+            "price": 18,
+            "book": {
+              "item": "TR7229061",
+              "option": "14269233"
+            }
           }
-        ]
+        ],
+        "note": {
+          "el": "Το μηνιαίο κλείνεται online ως κλασικό· η μηνιαία τιμή εφαρμόζεται στο κομμωτήριο.",
+          "en": "Monthly is booked online as Classic; the monthly price is applied at the salon."
+        }
       },
       {
         "name": {
