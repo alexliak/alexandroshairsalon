@@ -429,7 +429,7 @@ service_page(
      ("Πώς κλείνω ραντεβού για βαφή;", "Online στο alexandroshairsalon.gr/kratisi, όπου βλέπεις ελεύθερες ώρες, ή στο 210 346 5554. Πληρώνεις online ή στο κομμωτήριο.")],
     "Βαφή μαλλιών",
     [("Balayage στην Αθήνα", "/balayage-athina/"), ("Κούρεμα στην Αθήνα", "/kourema-athina/"), ("Όλες οι τιμές", "/services")],
-    footnote=SKIN_NOTE + f'<p class="footnote" style="font-size:.82em;opacity:.75">Κάθε βαφή περιλαμβάνει συγκεκριμένη ποσότητα χρώματος (στη βαφή ρίζας έως 45 g). Αν χρειαστεί περισσότερο, το «+ Επιπλέον χρώμα ανά 30 g» (€{P("+ Επιπλέον χρώμα")}) το συμφωνούμε πριν την εφαρμογή.</p>',
+    footnote=SKIN_NOTE + f'<p class="footnote" style="font-size:.82em;opacity:.75">Κάθε βαφή περιλαμβάνει συγκεκριμένη ποσότητα χρώματος (στη βαφή ρίζας έως 45 g). Αν χρειαστεί περισσότερο, το «+ Επιπλέον χρώμα» (€{P("+ Επιπλέον χρώμα")} ανά 30 g, Redken {OP("+ Επιπλέον χρώμα","Redken · ανά 30 g ή 30 ml")}) το συμφωνούμε πριν την εφαρμογή.</p>',
 )
 
 # ---------- /balayage-athina/ ----------
@@ -558,7 +558,7 @@ kratisi_body = f"""
 </section>
 <section class="block prose">
   <h2 data-en="Good to know">Καλό να ξέρεις</h2>
-  <p data-en="One price per service, the same online and at the salon; the price list says what each one includes. If a colour needs more product, Extra Colour per 30 g (€{P('+ Επιπλέον χρώμα')}) is agreed before we apply it. Wearing extensions? Mention it when you book so we reserve the right time.">Μία τιμή για κάθε υπηρεσία, ίδια online και στο κομμωτήριο· στον τιμοκατάλογο γράφουμε τι περιλαμβάνει η καθεμία. Αν η βαφή θέλει περισσότερο χρώμα, το «+ Επιπλέον χρώμα ανά 30 g» (€{P('+ Επιπλέον χρώμα')}) το συμφωνούμε πριν την εφαρμογή. Αν έχεις extensions, μπορείς να το σημειώσεις στην κράτηση, για να κρατήσουμε τον σωστό χρόνο.</p>
+  <p data-en="One price per service, the same online and at the salon; the price list says what each one includes. If a colour needs more product, Extra Colour (€{P('+ Επιπλέον χρώμα')} per 30 g, Redken {OP('+ Επιπλέον χρώμα','Redken · ανά 30 g ή 30 ml')}) is agreed before we apply it. Wearing extensions? Mention it when you book so we reserve the right time.">Μία τιμή για κάθε υπηρεσία, ίδια online και στο κομμωτήριο· στον τιμοκατάλογο γράφουμε τι περιλαμβάνει η καθεμία. Αν η βαφή θέλει περισσότερο χρώμα, το «+ Επιπλέον χρώμα» (€{P('+ Επιπλέον χρώμα')} ανά 30 g, Redken {OP('+ Επιπλέον χρώμα','Redken · ανά 30 g ή 30 ml')}) το συμφωνούμε πριν την εφαρμογή. Αν έχεις extensions, μπορείς να το σημειώσεις στην κράτηση, για να κρατήσουμε τον σωστό χρόνο.</p>
   <p><a href="/services" data-en="Full price list with descriptions →">Όλος ο τιμοκατάλογος με περιγραφές →</a></p>
 </section>
 """
@@ -865,6 +865,9 @@ def O(name, label=None):
     p = next(pp for l, _, pp in opts if label is None or l == label)
     return f"€{p:g}"
 
+XC = O("+ Επιπλέον χρώμα", "ανά 30 g ή 30 ml")
+XR = O("+ Επιπλέον χρώμα", "Redken · ανά 30 g ή 30 ml")
+
 def S(name):
     """Όνομα υπηρεσίας στα αγγλικά, από το menu.json."""
     return EN_NAME[name]
@@ -969,16 +972,16 @@ FAQ_GROUPS = [
    "It comes down to pH. Alkaline colour (pH above 7) gently opens the hair’s surface so colour can go deep: it can lighten, covers grey and lasts. Acidic colour (pH below 7, close to the hair’s natural pH) doesn’t lighten: it deposits tone, smooths the hair’s surface and adds shine and condition, without fully covering grey. That’s why alkaline colour often goes on the roots and acidic colour on the lengths. "
    "Alkaline: L’Oréal Majirel, permanent, up to 100% grey coverage; Redken Color Gels Oils, permanent and ammonia-free, up to 100%; L’Oréal Dia Color, demi-permanent, up to 70%. "
    "Acidic: L’Oréal Dia Light, ammonia-free, lasts 4–6 weeks and is not for grey coverage; Redken Shades EQ, an acidic gloss for shine and condition.",
-   [("Ρεφλέ", "Έως τους ώμους"), ("Root smudge & ρεφλέ", "Μεσαία")], "oxini-alkaliki"),
+   [("Ρεφλέ", "Έως τους ώμους · 30–45 ml"), ("Ρεφλέ", "Κάτω από τους ώμους · έως 60 ml")], "oxini-alkaliki"),
   ("Υπάρχει φυτική βαφή;",
    "Υπάρχει, αλλά πολύ πιο περιορισμένη απ’ όσο λέγεται. Καθαρή φυτική βαφή είναι οι σκόνες από φυτά, όπως η χέννα, το indigo και η cassia· η L’Oréal Professionnel έχει παρουσιάσει και σειρά 100% φυτική, τη Botanéa. Δίνουν χρώμα και λάμψη, αλλά δεν ξανοίγουν τα μαλλιά, έχουν λίγες αποχρώσεις και στα λευκά το αποτέλεσμα είναι λιγότερο προβλέψιμο. "
    "Πολλά προϊόντα που πωλούνται ως «φυτική» ή «φυσική» βαφή είναι στην πράξη κανονικές βαφές με εκχυλίσματα φυτών. Σε έλεγχο 26 τέτοιων βαφών από το Συμβούλιο Καταναλωτών του Χονγκ Κονγκ, οι 11 περιείχαν PPD, τη χημική ουσία των μόνιμων βαφών, και τρεις χέννες την περιείχαν χωρίς να επιτρέπεται. Ένας απλός κανόνας: αν μια βαφή χρειάζεται οξειδωτικό για να δουλέψει, δεν είναι φυτική. "
-   "Φυτική βαφή δεν κάνουμε. Για το πιο ήπιο αποτέλεσμα υπάρχει το Root smudge & ρεφλέ, με όξινη τεχνολογία χρώματος χωρίς αμμωνία.",
+   "Φυτική βαφή δεν κάνουμε. Για το πιο ήπιο αποτέλεσμα υπάρχει το Ρεφλέ, που γίνεται και ως root smudge για τα πρώτα λευκά, με όξινη τεχνολογία χρώματος χωρίς αμμωνία.",
    "Is there such a thing as plant-based hair colour?",
    "Yes, but it is far more limited than often claimed. True plant colour is powder from plants such as henna, indigo and cassia; L’Oréal Professionnel has also presented a 100% plant-based line, Botanéa. It gives colour and shine, but it doesn’t lighten, comes in few shades, and on grey the result is less predictable. "
    "Many products sold as “herbal” or “natural” colour are in fact regular hair dyes with plant extracts. When the Hong Kong Consumer Council tested 26 such dyes, 11 contained PPD, the chemical used in permanent colour, and three hennas contained it although it is not allowed. A simple rule: if a colour needs developer to work, it is not plant-based. "
-   "We don’t offer plant colour. For the gentlest result there is Root Smudge & Gloss, with an ammonia-free acidic colour technology.",
-   [("Root smudge & ρεφλέ", "Μεσαία")], "fytiki-vafi"),
+   "We don’t offer plant colour. For the gentlest result there is Gloss & Tone, also done as a root smudge for first greys, with an ammonia-free acidic colour technology.",
+   [("Ρεφλέ", "Έως τους ώμους · 30–45 ml")], "fytiki-vafi"),
   ("Τι είναι το ντεκαπάζ;",
    "Το ξάνοιγμα των μαλλιών με σκόνη ξανοίγματος, για ανταύγειες και μπαλαγιάζ που χρειάζονται να ανοίξουν αρκετούς τόνους. Μετά ακολουθεί σχεδόν πάντα ρεφλέ, για τον τόνο που θέλεις. "
    "Για πιο ήπιο αποτέλεσμα υπάρχει και η επιλογή χωρίς ντεκαπάζ, με L’Oréal Blond Studio No Bleach™, που ανοίγει έως 4 τόνους σε φυσικά μαλλιά και έως 2,5 σε βαμμένα. "
@@ -989,14 +992,14 @@ FAQ_GROUPS = [
    f"For extra protection, we can spray L’Oréal Metal Detox before lightening: the Hair Protection add-on ({O('+ Προστασία τρίχας στο ξάνοιγμα')}). On coloured hair, a consultation comes first.",
    [("Ανταύγειες γύρω από το πρόσωπο", "Με ντεκαπάζ"), ("Ανταύγειες γύρω από το πρόσωπο", "Χωρίς ντεκαπάζ"), ("Συμβουλευτική χρώματος, νυφικού & κερατίνης", None)]),
   ("Πόσο χρώμα περιλαμβάνει κάθε βαφή;",
-   "Βαφή ρίζας έως 45 g. Βαφή σε όλο το μαλλί έως 60 g ή 60 ml. Ρεφλέ έως 60 ml για μαλλιά έως τους ώμους ή 90 ml για πιο μακριά. Βαφή ρίζας & ρεφλέ: ρίζα έως 45 g και ρεφλέ 60 ή 90 ml. Οι ποσότητες είναι πριν από το οξειδωτικό.",
+   "Βαφή ρίζας έως 45 g. Βαφή σε όλο το μαλλί έως 60 g ή 60 ml. Ρεφλέ 30–45 ml για μαλλιά έως τους ώμους ή έως 60 ml για πιο μακριά. Βαφή ρίζας & ρεφλέ: ρίζα έως 45 g και ρεφλέ 60 ή 90 ml. Οι ποσότητες είναι πριν από το οξειδωτικό.",
    "How much colour does each service include?",
-   "Root Colour up to 45 g. All-over Colour up to 60 g or 60 ml. Gloss up to 60 ml for hair up to the shoulders, or 90 ml for longer hair. Root Colour & Gloss: roots up to 45 g and gloss 60 or 90 ml. Amounts are before developer.",
+   "Root Colour up to 45 g. All-over Colour up to 60 g or 60 ml. Gloss 30–45 ml for hair up to the shoulders, or up to 60 ml for longer hair. Root Colour & Gloss: roots up to 45 g and gloss 60 or 90 ml. Amounts are before developer.",
    []),
   ("Έχω πολλά ή μακριά μαλλιά. Θα πληρώσω παραπάνω;",
-   f"Μόνο αν χρειαστεί περισσότερο χρώμα από όσο περιλαμβάνει η υπηρεσία: {O('+ Επιπλέον χρώμα')} για κάθε 30 g βαφής ή 30 ml ρεφλέ. Θα σου το πούμε πριν το εφαρμόσουμε. Για παράδειγμα, βαφή σε όλο με 90 g κοστίζει €62.",
+   f"Μόνο αν χρειαστεί περισσότερο χρώμα από όσο περιλαμβάνει η υπηρεσία: {XC} για κάθε 30 g βαφής ή 30 ml ρεφλέ ({XR} με Redken). Χρεώνεται μόνο το υλικό, όχι ο χρόνος, και θα σου το πούμε πριν το εφαρμόσουμε. Για παράδειγμα, βαφή σε όλο με 90 g κοστίζει €{P('Βαφή σε όλο το μαλλί')+7:g}.",
    "I have thick or long hair. Will I pay more?",
-   f"Only if more colour is needed than the service includes: {O('+ Επιπλέον χρώμα')} for every extra 30 g of colour or 30 ml of gloss. We always tell you before we apply it. For example, All-over Colour with 90 g costs €62.",
+   f"Only if more colour is needed than the service includes: {XC} for every extra 30 g of colour or 30 ml of gloss ({XR} with Redken). You pay for the product only, not the time, and we always tell you before we apply it. For example, All-over Colour with 90 g costs €{P('Βαφή σε όλο το μαλλί')+7:g}.",
    []),
   ("Έχω λίγα ή λεπτά μαλλιά.", "Πληρώνεις την ίδια τιμή και δεν θα χρειαστείς ποτέ επιπλέον χρώμα.",
    "I have fine or thin hair.", "You pay the same price, and you will never need extra colour.", []),

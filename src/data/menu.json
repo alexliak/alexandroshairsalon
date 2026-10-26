@@ -712,18 +712,18 @@
           "en": "Gloss & Tone"
         },
         "desc": {
-          "el": "Για μήκη που ξεθώριασαν: ζωντανεύει τον τόνο και δίνει λάμψη, με λούσιμο και στέγνωμα. Όξινο ρεφλέ χωρίς αμμωνία (Dia Light ή Redken Shades EQ), που δεν ξανοίγει τα μαλλιά και δεν καλύπτει πλήρως τα λευκά.",
-          "en": "For faded lengths: revives tone and adds shine, with a wash and dry. An acidic, ammonia-free gloss (Dia Light or Redken Shades EQ) that doesn’t lighten hair or fully cover grey."
+          "el": "Για μήκη που ξεθώριασαν ή για τα πρώτα λευκά σε φυσικά μαλλιά: ζωντανεύει τον τόνο και δίνει λάμψη, με λούσιμο και στέγνωμα. Όξινη τεχνολογία χρώματος χωρίς αμμωνία (L’Oréal Dia Light ή Redken Shades EQ), που δεν ξανοίγει τα μαλλιά. Γίνεται και ως root smudge ή root melt: «σβήνει» απαλά τα πρώτα λευκά στη ρίζα (περίπου 10–40%) και δένει με τα μήκη, χωρίς «μπάρα» χρώματος όταν μεγαλώνει η ρίζα. Δεν καλύπτει πλήρως τα λευκά.",
+          "en": "For faded lengths or first greys on natural hair: revives tone and adds shine, with a wash and dry. An ammonia-free acidic colour technology (L’Oréal Dia Light or Redken Shades EQ) that doesn’t lighten the hair. Also done as a root smudge or root melt: it gently blurs first greys at the root (about 10–40%) into the lengths, with no band of colour as the roots grow. It doesn’t fully cover grey."
         },
         "note": {
-          "el": "Έως 60 ml για μαλλιά έως τους ώμους ή 90 ml για πιο μακριά. Διαρκεί 4–6 εβδομάδες.",
-          "en": "Up to 60 ml for hair up to the shoulders, or 90 ml for longer hair. Lasts 4–6 weeks."
+          "el": "Έως τους ώμους: 30–45 ml. Κάτω από τους ώμους: έως 60 ml. Αν χρειαστεί περισσότερο, το «+ Επιπλέον χρώμα» το συμφωνούμε πριν. Διαρκεί 4–6 εβδομάδες.",
+          "en": "Up to the shoulders: 30–45 ml. Below the shoulders: up to 60 ml. If more is needed, Extra Colour is agreed beforehand. Lasts 4–6 weeks."
         },
         "online": true,
         "options": [
           {
-            "el": "Έως τους ώμους",
-            "en": "Up to the shoulders",
+            "el": "Έως τους ώμους · 30–45 ml",
+            "en": "Up to the shoulders · 30–45 ml",
             "time": {
               "el": "35′",
               "en": "35′"
@@ -735,8 +735,8 @@
             }
           },
           {
-            "el": "Κάτω από τους ώμους",
-            "en": "Below the shoulders",
+            "el": "Κάτω από τους ώμους · έως 60 ml",
+            "en": "Below the shoulders · up to 60 ml",
             "time": {
               "el": "40′",
               "en": "40′"
@@ -745,54 +745,6 @@
             "book": {
               "item": "TR7499210",
               "option": "14244508"
-            }
-          }
-        ],
-        "faq": {
-          "href": "/syxnes-erotiseis/#oxini-alkaliki",
-          "el": "Όξινη ή αλκαλική τεχνολογία χρώματος: ποια η διαφορά;",
-          "en": "Acidic or alkaline colour: what’s the difference?"
-        }
-      },
-      {
-        "name": {
-          "el": "Root smudge & ρεφλέ",
-          "en": "Root Smudge & Gloss"
-        },
-        "desc": {
-          "el": "Για όσες έχουν τα πρώτα λευκά (περίπου 10–40%) σε φυσικά μαλλιά και θέλουν ένα πολύ απαλό, φυσικό αποτέλεσμα χωρίς μόνιμη βαφή. Τεχνική που έγινε γνωστή στην Αμερική: όξινη τεχνολογία χρώματος χωρίς αμμωνία, Redken Shades EQ ή L’Oréal Dia Light, «σβήνει» απαλά τα λευκά στη ρίζα και συνεχίζει στα μήκη με τόνο και λάμψη. Προς τα μήκη και τις άκρες γίνεται διαβάθμιση σε πιο ανοιχτές αποχρώσεις, όπου το επιτρέπει η κατάσταση των μαλλιών, ώστε να μοιάζει με φυσικό ξάνοιγμα από τον ήλιο. Δεν ξανοίγει τα μαλλιά και δεν αφήνει «μπάρα» χρώματος όταν μεγαλώνει η ρίζα. Από τις πιο ήπιες τεχνολογίες χρώματος, με λάμψη που κρατά έως 6 εβδομάδες. Με λούσιμο και στέγνωμα.",
-          "en": "For your first greys (about 10–40%) on natural hair, when you want a very soft, natural result without permanent colour. A technique made popular in the US: an ammonia-free acidic colour technology, Redken Shades EQ or L’Oréal Dia Light, gently blurs greys at the root and continues through the lengths with tone and shine. Through the lengths and ends, lighter shades graduate where the condition of the hair allows, like natural sun-lightening. It doesn’t lighten the hair and leaves no band of colour as the roots grow. One of the gentlest colour technologies, with shine that lasts up to 6 weeks. With a wash and dry."
-        },
-        "note": {
-          "el": "Για μαλλιά με βαφή ή ανταύγειες ταιριάζει το «Ρεφλέ». Μεσαία: έως τους ώμους· μακριά: κάτω από τους ώμους. Έως 3 φόρμουλες (ρίζα, μήκη, άκρες), με Redken Shades EQ ή L’Oréal Dia Light: έως 30 ml στη ρίζα και 60 ml στα μήκη στα μεσαία, 90 ml στα μακριά. Δεν καλύπτει πλήρως τα λευκά. Αν χρειαστεί περισσότερη ποσότητα, το συμφωνούμε πριν.",
-          "en": "For coloured or highlighted hair, choose Gloss & Tone. Medium: up to the shoulders; long: below the shoulders. Up to 3 formulas (root, lengths, ends) with Redken Shades EQ or L’Oréal Dia Light: up to 30 ml at the root and 60 ml on the lengths for medium hair, 90 ml for long. Does not fully cover grey. If more product is needed, we agree it beforehand."
-        },
-        "online": true,
-        "options": [
-          {
-            "el": "Μεσαία",
-            "en": "Medium",
-            "time": {
-              "el": "1 ώρα",
-              "en": "1 h"
-            },
-            "price": 55,
-            "book": {
-              "item": "TR7624219",
-              "option": "14484129"
-            }
-          },
-          {
-            "el": "Μακριά",
-            "en": "Long",
-            "time": {
-              "el": "1 ώρα 10′",
-              "en": "1 h 10′"
-            },
-            "price": 69,
-            "book": {
-              "item": "TR7624219",
-              "option": "14484130"
             }
           }
         ],
@@ -955,8 +907,8 @@
           "en": "Extra Colour (add-on)"
         },
         "desc": {
-          "el": "Επιπλέον 30 g βαφής ή 30 ml ρεφλέ, για μεγάλη ρίζα, μακριά ή πυκνά μαλλιά.",
-          "en": "An extra 30 g of colour or 30 ml of gloss, for longer regrowth, long or thick hair."
+          "el": "Επιπλέον 30 g βαφής ή 30 ml ρεφλέ, για μεγάλη ρίζα, μακριά ή πυκνά μαλλιά. Χρεώνεται μόνο το υλικό.",
+          "en": "An extra 30 g of colour or 30 ml of gloss, for longer regrowth, long or thick hair. You pay for the product only."
         },
         "note": {
           "el": "Μόνο μαζί με βαφή και μόνο αν χρειαστεί. Πάντα το λέμε πριν.",
@@ -971,11 +923,20 @@
               "el": "5′",
               "en": "5′"
             },
-            "price": 12,
+            "price": 7,
             "book": {
               "item": "TR7599378",
               "option": "14437209"
             }
+          },
+          {
+            "el": "Redken · ανά 30 g ή 30 ml",
+            "en": "Redken · per 30 g or 30 ml",
+            "time": {
+              "el": "5′",
+              "en": "5′"
+            },
+            "price": 10
           }
         ]
       },

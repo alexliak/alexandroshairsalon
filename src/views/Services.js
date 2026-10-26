@@ -24,7 +24,7 @@ const text = {
     notesTitle: 'Καλό να ξέρεις',
     footnotes: [
       '* Αν βάφεσαι πρώτη φορά σε εμάς, μπορούμε να κάνουμε δωρεάν τεστ ευαισθησίας πριν από τη βαφή. Δεν χρειάζεται για να κλείσεις ραντεβού.',
-      'Κάθε βαφή περιλαμβάνει συγκεκριμένη ποσότητα χρώματος. Αν χρειαστεί περισσότερο, το «+ Επιπλέον χρώμα ανά 30 g» (' + priceText('el', '+ Επιπλέον χρώμα') + ') το συμφωνούμε πριν την εφαρμογή.'
+      'Κάθε βαφή περιλαμβάνει συγκεκριμένη ποσότητα χρώματος. Αν χρειαστεί περισσότερο, το «+ Επιπλέον χρώμα» (' + eur(service('+ Επιπλέον χρώμα').options[0].price, 'el') + ' ανά 30 g, Redken ' + eur(service('+ Επιπλέον χρώμα').options[1].price, 'el') + ') το συμφωνούμε πριν την εφαρμογή.'
     ],
     notes: [
       'Μηνιαία ρίζα (' + rootPrice('Μηνιαία ρίζα', 'el') + ', χωρίς αμμωνία ' + rootPrice('Χωρίς αμμωνία · μηνιαία ρίζα', 'el') + '): όταν η επόμενη βαφή ρίζας γίνεται μέσα σε 30 ημέρες από την προηγούμενη σε εμάς. Στο ταμείο παίρνεις καρτελάκι με την ημερομηνία.',
@@ -52,7 +52,7 @@ const text = {
     notesTitle: 'Good to know',
     footnotes: [
       '* If it’s your first colour with us, we can do a free skin test beforehand. You don’t need one to book.',
-      'Every colour includes a set amount of product. If more is needed, Extra Colour per 30 g (' + priceText('en', '+ Επιπλέον χρώμα') + ') is agreed before we apply it.'
+      'Every colour includes a set amount of product. If more is needed, Extra Colour (' + eur(service('+ Επιπλέον χρώμα').options[0].price, 'en') + ' per 30 g, Redken ' + eur(service('+ Επιπλέον χρώμα').options[1].price, 'en') + ') is agreed before we apply it.'
     ],
     notes: [
       'Monthly Root (' + rootPrice('Μηνιαία ρίζα', 'en') + ', ammonia-free ' + rootPrice('Χωρίς αμμωνία · μηνιαία ρίζα', 'en') + '): when your next root colour is within 30 days of your last one with us. At the desk you get a small card with the date.',
