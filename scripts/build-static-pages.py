@@ -46,6 +46,12 @@ def book_url(o):
     return "https://widget.treatwell.gr/availability?venueId=523778&proposedServices=" + _up.quote(ps, safe="")
 
 
+def _anchor(name):
+    """Σύνδεσμος υπηρεσίας στο /services (ίδιο με svc_anchor())."""
+    en = next(x["name"]["en"] for c in _MENU_JSON for x in c["services"] if x["name"]["el"] == name)
+    return re.sub(r"[^a-z0-9]+", "-", en.lower()).strip("-")
+
+
 BOOKS = {s["name"]["el"]: [book_url(o) for o in s["options"]] for c in _MENU_JSON for s in c["services"]}
 DESC = {s["name"]["el"]: s.get("desc", {}).get("el", "") for c in _MENU_JSON for s in c["services"]}
 
@@ -179,10 +185,10 @@ def esc(s):
 def svc_html(key):
     name, opts = MENU[key]
     def li(o, d, p, url):
-        inner = f'<span>{esc(o) + " · " if o else ""}<span class="d">{esc(d)}</span></span><span class="p">{eur(p)}{" →" if url else ""}</span>'
+        inner = f'<span>{esc(o) + " · " if o else ""}<span class="d">{esc(d)}</span></span><span class="p">{eur(p)}{" →" if url else " ☎"}</span>'
         if url:
             return f'<li><a class="bk" href="{esc(url)}" target="_blank" rel="noopener" aria-label="Κράτηση: {esc(name)}{" · " + esc(o) if o else ""}">{inner}</a></li>'
-        return f'<li>{inner}</li>'
+        return f'<li><a class="bk" href="/services#{_anchor(key)}" aria-label="Κράτηση με κλήση ή μήνυμα: {esc(name)}{" · " + esc(o) if o else ""}">{inner}</a></li>'
     rows = "".join(li(o, d, p, u) for (o, d, p), u in zip(opts, BOOKS[key]))
     d = f'<p class="sd">{esc(DESC[key])}</p>' if DESC.get(key) else ""
     return f'<article class="svc"><h3>{esc(name)}</h3>{d}<ul>{rows}</ul></article>'
@@ -466,10 +472,10 @@ def svc_html_en(name):
     s = EN_SVC[name]
     def li(o):
         url = book_url(o)
-        inner = f'<span>{esc(o["en"]) + " · " if o["en"] else ""}<span class="d">{esc(o["time"]["en"])}</span></span><span class="p">{eur(o["price"], True)}{" →" if url else ""}</span>'
+        inner = f'<span>{esc(o["en"]) + " · " if o["en"] else ""}<span class="d">{esc(o["time"]["en"])}</span></span><span class="p">{eur(o["price"], True)}{" →" if url else " ☎"}</span>'
         if url:
             return f'<li><a class="bk" href="{esc(url)}" target="_blank" rel="noopener" aria-label="Book: {esc(s["name"]["en"])}{" · " + esc(o["en"]) if o["en"] else ""}">{inner}</a></li>'
-        return f'<li>{inner}</li>'
+        return f'<li><a class="bk" href="/services#{_anchor(name)}" aria-label="Book by call or message: {esc(s["name"]["en"])}{" · " + esc(o["en"]) if o["en"] else ""}">{inner}</a></li>'
     rows = "".join(li(o) for o in s["options"])
     d = f'<p class="sd">{esc(s["desc"]["en"])}</p>' if s.get("desc") else ""
     return f'<article class="svc"><h3>{esc(s["name"]["en"])}</h3>{d}<ul>{rows}</ul></article>'

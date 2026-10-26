@@ -1,5 +1,6 @@
-import React from 'react';
-import NhLayout, { BOOK, PHONE } from '../components/NhLayout';
+import React, { useState } from 'react';
+import { FaWhatsapp, FaViber, FaPhoneAlt } from 'react-icons/fa';
+import NhLayout, { BOOK, PHONE, PHONE_DISPLAY, WHATSAPP_URL, VIBER_URL } from '../components/NhLayout';
 import menu from '../data/menu';
 import { priceText, bookUrl, eur, service } from '../data/prices';
 
@@ -16,7 +17,13 @@ const text = {
     titleEm: 'και χρόνοι.',
     lead: 'Ξέρεις την τιμή πριν καθίσεις. Κάτω από κάθε υπηρεσία γράφουμε τι περιλαμβάνει, για ποιο μήκος και πόσο χρώμα. Ό,τι επιπλέον χρειαστεί είναι κι αυτό γραμμένο εδώ, και μπορείς πάντα να ρωτήσεις πριν ξεκινήσουμε. Ίδιες τιμές στο κομμωτήριο και online.',
     phoneOnly: 'Κλείνεται τηλεφωνικά',
-    pickOption: 'Η κράτηση γίνεται από την επιλογή σου.',
+    pickOnline: 'Πάτησε την τιμή που σου ταιριάζει: ανοίγει η κράτηση online.',
+    pickMixed: 'Πάτησε την τιμή που σου ταιριάζει: με → κλείνεις online, με ☎ μας καλείς ή μας στέλνεις μήνυμα.',
+    pickPhone: 'Πάτησε την τιμή που σου ταιριάζει για να μας καλέσεις ή να μας στείλεις μήνυμα.',
+    phoneBtn: 'Κλείσε με κλήση ή μήνυμα',
+    contactTitle: 'Κλείσε ραντεβού για',
+    callBtn: 'Κλήση',
+    waMsg: 'Γεια σας, θα ήθελα να κλείσω ραντεβού για: ',
     book: 'Κλείσε online',
     call: 'Κάλεσε',
     from: 'από',
@@ -43,7 +50,13 @@ const text = {
     titleEm: 'and times.',
     lead: 'You know the price before you sit down. Under each service we say what it includes, for which length and how much colour. Anything extra is written here too, and you can always ask before we start. Same prices at the salon and online.',
     phoneOnly: 'Book by phone',
-    pickOption: 'Booking starts from your option.',
+    pickOnline: 'Tap the price that suits you to book online.',
+    pickMixed: 'Tap the price that suits you: → books online, ☎ means call or message us.',
+    pickPhone: 'Tap the price that suits you to call or message us.',
+    phoneBtn: 'Book by call or message',
+    contactTitle: 'Book',
+    callBtn: 'Call',
+    waMsg: 'Hello, I would like to book: ',
     book: 'Choose a service ↓',
     call: 'Call',
     from: 'from',
@@ -76,6 +89,23 @@ const priceLabel = (options, t, lang) => {
 const Services = ({ language, setLanguage }) => {
   const t = text[language] || text.el;
   const lang = language === 'en' ? 'en' : 'el';
+  const [open, setOpen] = useState(null);
+  const toggle = (k) => setOpen((v) => (v === k ? null : k));
+  // Κλήση / WhatsApp / Viber για επιλογές που δεν κλείνονται online
+  const contact = (s, o) => {
+    const label = s.name[lang] + (o[lang] ? ` · ${o[lang]}` : '');
+    const msg = encodeURIComponent(t.waMsg + label);
+    return (
+      <div className="nh-contact" role="group" aria-label={`${t.contactTitle}: ${label}`}>
+        <span className="nh-contact-title">{t.contactTitle}: <strong>{label}</strong> ({eur(o.price, lang)})</span>
+        <div className="nh-contact-btns">
+          <a className="nh-contact-btn is-call" href={`tel:${PHONE}`}><FaPhoneAlt aria-hidden="true" /> {t.callBtn} {PHONE_DISPLAY}</a>
+          <a className="nh-contact-btn is-wa" href={`${WHATSAPP_URL}?text=${msg}`} target="_blank" rel="noopener noreferrer"><FaWhatsapp aria-hidden="true" /> WhatsApp</a>
+          <a className="nh-contact-btn is-viber" href={`${VIBER_URL}&draft=${msg}`}><FaViber aria-hidden="true" /> Viber</a>
+        </div>
+      </div>
+    );
+  };
 
   return (
     <NhLayout language={language} setLanguage={setLanguage}>
@@ -121,36 +151,53 @@ const Services = ({ language, setLanguage }) => {
                   ) : (
                   <ul className="nh-menu-options">
                     {s.options.map((o) => {
+                      const online = !!bookUrl(o);
+                      const key = `${s.name.el}|${o.el}`;
                       const row = (
                         <>
                           <span className="nh-menu-opt">
                             {o[lang] ? `${o[lang]} · ` : ''}
                             <span className="nh-menu-time">{o.time[lang]}</span>
                           </span>
-                          <strong>{eur(o.price, lang)}{s.options.length > 1 && bookUrl(o) ? ' →' : ''}</strong>
+                          <strong>{eur(o.price, lang)}{s.options.length > 1 ? (online ? ' →' : ' ☎') : ''}</strong>
                         </>
                       );
                       return (
                         <li key={`${o.el}-${o.price}`}>
-                          {s.options.length > 1 && bookUrl(o) ? (
+                          {s.options.length > 1 && online ? (
                             <a className="nh-menu-optlink" href={bookUrl(o)} target="_blank" rel="noopener" aria-label={`${t.bookThis}: ${s.name[lang]} · ${o[lang]}`}>{row}</a>
+                          ) : s.options.length > 1 ? (
+                            <button type="button" className="nh-menu-optlink nh-menu-optbtn" aria-expanded={open === key} onClick={() => toggle(key)}>{row}</button>
                           ) : row}
+                          {open === key ? contact(s, o) : null}
                         </li>
                       );
                     })}
                   </ul>
                   )}
-                  {s.online === false ? (
-                    <a href={`tel:${PHONE}`} className="nh-menu-book" aria-label={`${t.phoneOnly}: ${s.name[lang]}`}>
-                      {t.phoneOnly} →
-                    </a>
-                  ) : s.options.length > 1 ? (
-                    <p className="nh-menu-pick">{t.pickOption}</p>
-                  ) : (
-                    <a href={bookUrl(s.options[0]) || BOOK} className="nh-menu-book" target="_blank" rel="noopener" aria-label={`${t.bookThis}: ${s.name[lang]}`}>
-                      {t.bookThis} →
-                    </a>
-                  )}
+                  {(() => {
+                    const on = s.options.map((o) => !!bookUrl(o));
+                    if (s.options.length > 1) {
+                      const msg = on.every(Boolean) ? t.pickOnline : on.some(Boolean) ? t.pickMixed : t.pickPhone;
+                      return <p className="nh-menu-pick">{msg}</p>;
+                    }
+                    if (!on[0]) {
+                      const key = `${s.name.el}|${s.options[0].el}`;
+                      return (
+                        <>
+                          <button type="button" className="nh-menu-book nh-menu-optbtn" aria-expanded={open === key} onClick={() => toggle(key)}>
+                            ☎ {t.phoneBtn} →
+                          </button>
+                          {open === key ? contact(s, s.options[0]) : null}
+                        </>
+                      );
+                    }
+                    return (
+                      <a href={bookUrl(s.options[0]) || BOOK} className="nh-menu-book" target="_blank" rel="noopener" aria-label={`${t.bookThis}: ${s.name[lang]}`}>
+                        {t.bookThis} →
+                      </a>
+                    );
+                  })()}
                 </article>
               ))}
             </div>
