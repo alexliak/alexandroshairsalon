@@ -668,8 +668,8 @@
           "en": "Root colour with any of our permanent colours and colour on the lengths, for even colour and shine, with a wash and dry. On the lengths: an acidic gloss (Dia Light or Redken Shades EQ) or, when the lengths need more colour, Dia Color demi-permanent."
         },
         "note": {
-          "el": "Ρίζα έως 45 g. Ρεφλέ έως 60 ml για μαλλιά έως τους ώμους ή 90 ml για πιο μακριά.",
-          "en": "Roots up to 45 g. Gloss up to 60 ml for hair up to the shoulders, or 90 ml for longer hair."
+          "el": "Ρίζα έως 45 g. Ρεφλέ στα μήκη 30–45 ml για μαλλιά έως τους ώμους ή έως 60 ml για πιο μακριά. Αν χρειαστεί περισσότερο, το «+ Επιπλέον χρώμα» το συμφωνούμε πριν.",
+          "en": "Roots up to 45 g. Gloss on the lengths 30–45 ml for hair up to the shoulders, or up to 60 ml for longer hair. If more is needed, Extra Colour is agreed beforehand."
         },
         "online": true,
         "options": [
@@ -926,7 +926,7 @@
             "price": 7,
             "book": {
               "item": "TR7599378",
-              "option": "14437209"
+              "option": "14493451"
             }
           },
           {
@@ -936,7 +936,11 @@
               "el": "5′",
               "en": "5′"
             },
-            "price": 10
+            "price": 10,
+            "book": {
+              "item": "TR7599378",
+              "option": "14493452"
+            }
           }
         ]
       },
