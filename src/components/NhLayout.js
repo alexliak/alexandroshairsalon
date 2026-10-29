@@ -9,6 +9,7 @@ import { themeMode, setThemeMode } from '../lib/themeBoot';
 export const BOOK = '/kratisi/';
 export const PHONE = '+302103465554';
 export const PHONE_DISPLAY = '210 346 5554';
+export const EMAIL = 'info@alexandroshairsalon.gr';
 // Mobile: call, WhatsApp, Viber, FaceTime
 export const MOBILE = '+306981319000';
 export const MOBILE_DISPLAY = '698 131 9000';
@@ -364,6 +365,7 @@ const NhLayout = ({ language, setLanguage, children, headerExtra, mobileBar }) =
           <button type="button" className="nh-footer-linkbtn" onClick={openConsent}>{t.footerCookies}</button>
           <a href="https://www.facebook.com/alexandros.hairsalon" target="_blank" rel="noopener noreferrer">Facebook</a>
           <a href={`tel:${PHONE}`}>{PHONE_DISPLAY}</a>
+          <a href={`mailto:${EMAIL}`}>{EMAIL}</a>
           <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">WhatsApp</a>
           <a href={VIBER_URL}>Viber</a>
         </span>
