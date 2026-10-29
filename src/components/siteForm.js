@@ -5,8 +5,8 @@ import { PHONE, PHONE_DISPLAY, WHATSAPP_URL, VIBER_URL } from './NhLayout';
 // Πού πηγαίνουν οι φόρμες του site (Αίτηση εργασίας, Μοντέλα).
 // FORMS_ENDPOINT: το Google Apps Script web app του κομμωτηρίου (apps-script/forms.gs):
 // email στο Gmail + αρχεία στο Drive, χωρίς τρίτη υπηρεσία.
-// Όσο είναι κενό, η φόρμα στέλνεται όπως πριν στη FormSubmit (formsubmit.co).
-export const FORMS_ENDPOINT = '';
+// Αν το αδειάσεις (''), η φόρμα στέλνεται όπως παλιά στη FormSubmit (formsubmit.co).
+export const FORMS_ENDPOINT = 'https://script.google.com/macros/s/AKfycbyVuiaQ5YLAITO3eT_U_rt-CzjnN6cg5jsn_FZEqhOo5KheLuwwGF7zsQvU-IUrgr7q/exec';
 
 const MAX_BYTES = 18 * 1024 * 1024; // σύνολο αρχείων ανά αποστολή
 
