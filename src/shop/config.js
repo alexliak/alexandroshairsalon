@@ -33,7 +33,7 @@ export const SELLER = {
   doy: 'ΚΕΦΟΔΕ Αττικής',
   gemi: '',
   phone: '210 346 5554',
-  email: 'liakopoulosalex@gmail.com',
+  email: 'info@alexandroshairsalon.gr',
   dispatchDays: '3-7 εργάσιμες ημέρες',
   updated: '14/10/2026'
 };
@@ -48,7 +48,7 @@ export const BANK = {
   ],
   irisAfm: '070233060',
   irisPhone: '6981319000',
-  email: 'liakopoulosalex@gmail.com'
+  email: 'info@alexandroshairsalon.gr'
 };
 
 // EmailJS (ίδιο template με το παλιό shop)

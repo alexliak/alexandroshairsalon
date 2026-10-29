@@ -8,7 +8,7 @@ import { useSiteForm, SubmitArea } from '../components/siteForm';
 // "Hair models" page. Same delivery as the hiring form: FormSubmit emails each
 // application (photo attached, if given) to the salon owner. No phone field on purpose:
 // the salon replies by email or Instagram only when an appointment fits.
-const FORM_ACTION = 'https://formsubmit.co/liakopoulosalex@gmail.com';
+const FORM_ACTION = 'https://formsubmit.co/models@alexandroshairsalon.gr';
 const THANKS_URL = 'https://alexandroshairsalon.gr/montela#sent';
 
 const text = {

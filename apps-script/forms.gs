@@ -9,7 +9,7 @@
  * και τα αρχεία ως base64 (file_count, file_0_name, file_0_type, file_0_data …).
  * Αντίγραφο αυτού του αρχείου υπάρχει στο repo: apps-script/forms.gs
  */
-const TO = 'liakopoulosalex@gmail.com';
+const TO = 'alexandroshairsalongr@gmail.com';
 const ROOT_FOLDER_ID = '1LUwZab7IJZkzZ61bRK0tWXUCm1MBlIst'; // Alexandros Hair Salon (Drive)
 const FORMS_FOLDER = '6 Φόρμες site';
 const FORMS = { douleia: 'Αιτήσεις εργασίας', montela: 'Μοντέλα μαλλιών' };
