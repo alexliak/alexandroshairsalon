@@ -3,6 +3,7 @@ import NhLayout, { BOOK } from '../components/NhLayout';
 import Pills from '../components/FormPills';
 import useInView from '../components/useInView';
 import ShareButton from '../components/ShareButton';
+import { useSiteForm, SubmitArea } from '../components/siteForm';
 
 // "Hair models" page. Same delivery as the hiring form: FormSubmit emails each
 // application (photo attached, if given) to the salon owner. No phone field on purpose:
@@ -149,6 +150,7 @@ export const MODELS_FAQ_LD = {
 const Models = ({ language, setLanguage }) => {
   const t = text[language] || text.el;
   const [sent, setSent] = useState(false);
+  const form = useSiteForm('montela', language === 'en' ? 'en' : 'el', () => setSent(true));
   const formInView = useInView('dilosi');
   const dayNames = language === 'en'
     ? ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
@@ -210,7 +212,7 @@ const Models = ({ language, setLanguage }) => {
             <>
               <h2 id="model-form-title" className="nh-h2">{t.formTitle}</h2>
               <p className="nh-lead">{t.formLead}</p>
-              <form className="nh-job-form" action={FORM_ACTION} method="POST" encType="multipart/form-data">
+              <form className="nh-job-form" action={FORM_ACTION} method="POST" encType="multipart/form-data" onSubmit={form.onSubmit}>
                 <input type="hidden" name="_subject" value={t.subject} />
                 <input type="hidden" name="_next" value={THANKS_URL} />
                 <input type="hidden" name="_template" value="table" />
@@ -262,7 +264,7 @@ const Models = ({ language, setLanguage }) => {
                   <input type="checkbox" name="consent" value="yes" required />
                   <span>{t.consent}</span>
                 </label>
-                <button type="submit" className="nh-btn nh-btn-gold nh-job-full">{t.submit}</button>
+                <SubmitArea label={t.submit} form={form} />
               </form>
             </>
           )}
