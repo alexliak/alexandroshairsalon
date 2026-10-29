@@ -12,7 +12,7 @@ self.__BUILD_MANIFEST = {
     "static/chunks/0vpzv0ya8ld_k.js"
   ],
   "/douleia": [
-    "static/chunks/3u0633f9nvor-.js"
+    "static/chunks/185qo1dmc4xgd.js"
   ],
   "/fotografies": [
     "static/chunks/41kis3pzd3s4z.js"
@@ -21,7 +21,7 @@ self.__BUILD_MANIFEST = {
     "static/chunks/2dpk1-brjn9kd.js"
   ],
   "/montela": [
-    "static/chunks/3norwlj-nv3lz.js"
+    "static/chunks/053bkv_l8jr37.js"
   ],
   "/oroi": [
     "static/chunks/1ovzq7kf8qlhv.js"
