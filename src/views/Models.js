@@ -66,7 +66,8 @@ const text = {
     photos: 'Φωτογραφίες',
     photosOptions: ['Με το πρόσωπό μου (προτεραιότητα)', 'Μόνο τα μαλλιά, χωρίς πρόσωπο'],
     days: 'Ποιες μέρες σε βολεύουν;',
-    photo: 'Φωτογραφία των μαλλιών σου σήμερα (προαιρετικά, βοηθά πολύ)',
+    photo: 'Φωτογραφίες των μαλλιών σου σήμερα, έως 6: μπροστά, πλάι, πίσω (προαιρετικά, βοηθά πολύ)',
+    photoHint: 'Στο κινητό μπορείς να τραβήξεις φωτογραφία εκείνη τη στιγμή ή να διαλέξεις πολλές μαζί από τη συλλογή σου.',
     message: 'Κάτι άλλο που θέλεις να ξέρουμε;',
     adult: 'Είμαι 18 ετών και άνω.',
     consent: 'Συμφωνώ να χρησιμοποιηθούν τα στοιχεία μου μόνο για να επικοινωνήσετε μαζί μου γι’ αυτό. Για οποιαδήποτε φωτογράφιση θα υπογράψω ξεχωριστή συγκατάθεση στο κομμωτήριο.',
@@ -129,7 +130,8 @@ const text = {
     photos: 'Photos',
     photosOptions: ['With my face (priority)', 'Hair only, no face'],
     days: 'Which days suit you?',
-    photo: 'A photo of your hair today (optional, it helps a lot)',
+    photo: 'Photos of your hair today, up to 6: front, side, back (optional, it helps a lot)',
+    photoHint: 'On your phone you can take a photo right away or pick several at once from your gallery.',
     message: 'Anything else we should know?',
     adult: 'I am 18 or older.',
     consent: 'I agree that my details are used only to contact me about this. For any photo shoot I will sign a separate consent at the salon.',
@@ -234,7 +236,8 @@ const Models = ({ language, setLanguage }) => {
                 <Pills label={t.photos} name="photos" options={t.photosOptions} required />
                 <label className="nh-job-full">
                   <span>{t.photo}</span>
-                  <input type="file" name="attachment" accept="image/*,.heic" />
+                  <input type="file" name="attachment" accept="image/*,.heic,.heif" multiple />
+                  <small className="nh-form-hint">{t.photoHint}</small>
                 </label>
                 <details className="nh-job-full nh-more">
                   <summary>{t.more}</summary>
