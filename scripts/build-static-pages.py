@@ -413,6 +413,20 @@ service_page(
 # ---------- /vafi-mallion-athina/ ----------
 SKIN_NOTE = '<p class="footnote" style="font-size:.82em;opacity:.75">* Αν βάφεσαι πρώτη φορά σε εμάς, μπορούμε να κάνουμε δωρεάν τεστ ευαισθησίας πριν από τη βαφή. Δεν χρειάζεται για να κλείσεις ραντεβού.</p>'
 ROOT = "Βαφή ρίζας"
+# Πριν & μετά από δουλειές του κομμωτηρίου (public/images/work/). Πλάνα χωρίς πρόσωπο.
+WORK = [
+    ("color-correction-sunset-copper", "Θησείο Sunset Copper", "Color correction: από σκούρα, ανομοιόμορφη βαφή σε καθαρό, φωτεινό χάλκινο από τη ρίζα ως τις άκρες.",
+     "Πριν και μετά: color correction σε χάλκινο Θησείο Sunset Copper, Alexandros Hair Salon, Θησείο"),
+    ("cherry-cola", "Cherry Cola · Midnight Merlot", "Από μαύρο βαμμένο σε βαθύ κερασί με βελούδινη λάμψη: κόκκινο-βιολετί σε καφέ βάση.",
+     "Στάδιο ξανοίγματος και τελικό: cherry cola (Midnight Merlot), Alexandros Hair Salon, Θησείο"),
+]
+BEFORE_AFTER = '<h2>Πριν &amp; μετά</h2>' + "".join(
+    f'<figure style="margin:0 0 28px"><img src="/images/work/alexandros-hair-salon-thiseio-{n}-1200.webp" '
+    f'srcset="/images/work/alexandros-hair-salon-thiseio-{n}-600.webp 600w, /images/work/alexandros-hair-salon-thiseio-{n}-1200.webp 1200w" '
+    f'sizes="(max-width: 760px) 100vw, 760px" width="1200" height="900" loading="lazy" decoding="async" alt="{esc(alt)}" '
+    f'style="width:100%;height:auto;display:block;border-radius:14px;border:1px solid var(--line)">'
+    f'<figcaption style="margin-top:10px"><strong>{esc(t)}</strong> · {esc(c)}</figcaption></figure>'
+    for n, t, c, alt in WORK)
 ROOT_OPTS = dict((o, p) for o, _, p in MENU[ROOT][1])
 service_page(
     "/vafi-mallion-athina/", "Βαφή μαλλιών στην Αθήνα",
@@ -426,7 +440,8 @@ service_page(
 <p><strong>Βαφή ρίζας (€{ROOT_OPTS['Κλασική']})</strong>: μόνιμη βαφή με Farcom ή Majirel της L’Oréal Professionnel, για σίγουρη κάλυψη λευκών. <strong>Χωρίς αμμωνία (€{ROOT_OPTS['Χωρίς αμμωνία']})</strong>: INOA της L’Oréal Professionnel ή Redken. Και οι δύο περιλαμβάνουν λούσιμο και στέγνωμα.</p>
 <p><strong>Μηνιαία ρίζα (€{ROOT_OPTS['Μηνιαία ρίζα']}, χωρίς αμμωνία €{ROOT_OPTS['Χωρίς αμμωνία · μηνιαία ρίζα']})</strong>: όταν η επόμενη βαφή ρίζας γίνεται μέσα σε 30 ημέρες από την προηγούμενη σε εμάς. Στο ταμείο παίρνεις καρτελάκι με την ημερομηνία.</p>
 <h2>Ρίζα + ρεφλέ</h2>
-<p>Με το <strong>ρεφλέ (gloss)</strong> στα μήκη το χρώμα δένει από τη ρίζα ως τις άκρες και τα μαλλιά αποκτούν λάμψη. Είναι ξεχωριστή εφαρμογή στα μήκη, 30–45 ml για μαλλιά έως τους ώμους ή έως 60 ml κάτω από τους ώμους, όχι απλό τράβηγμα της βαφής της ρίζας. Για μεγάλη αλλαγή ή διόρθωση προηγούμενου χρώματος ξεκινάμε με διάγνωση, ώστε να ξέρεις πλάνο και τιμή πριν από οτιδήποτε.</p>""",
+<p>Με το <strong>ρεφλέ (gloss)</strong> στα μήκη το χρώμα δένει από τη ρίζα ως τις άκρες και τα μαλλιά αποκτούν λάμψη. Είναι ξεχωριστή εφαρμογή στα μήκη, 30–45 ml για μαλλιά έως τους ώμους ή έως 60 ml κάτω από τους ώμους, όχι απλό τράβηγμα της βαφής της ρίζας. Για μεγάλη αλλαγή ή διόρθωση προηγούμενου χρώματος ξεκινάμε με διάγνωση, ώστε να ξέρεις πλάνο και τιμή πριν από οτιδήποτε.</p>
+{BEFORE_AFTER}""",
     [ROOT, "Βαφή ρίζας & ρεφλέ στα μήκη", "Ρεφλέ", "Βαφή σε όλο το μαλλί", "Ξάνοιγμα ρίζας & ρεφλέ", "+ Επιπλέον χρώμα", "Διόρθωση χρώματος"],
     [("Πόσο κοστίζει η βαφή ρίζας;", f"€{ROOT_OPTS['Κλασική']}, ή €{ROOT_OPTS['Χωρίς αμμωνία']} χωρίς αμμωνία, με λούσιμο και στέγνωμα. Όταν η επόμενη βαφή ρίζας γίνεται μέσα σε 30 ημέρες, η Μηνιαία ρίζα είναι €{ROOT_OPTS['Μηνιαία ρίζα']} (χωρίς αμμωνία €{ROOT_OPTS['Χωρίς αμμωνία · μηνιαία ρίζα']})."),
      ("Έχετε βαφή χωρίς αμμωνία;", f"Ναι: INOA της L’Oréal Professionnel ή Redken, €{ROOT_OPTS['Χωρίς αμμωνία']} (Μηνιαία ρίζα €{ROOT_OPTS['Χωρίς αμμωνία · μηνιαία ρίζα']})."),
