@@ -54,6 +54,7 @@ def _anchor(name):
 
 BOOKS = {s["name"]["el"]: [book_url(o) for o in s["options"]] for c in _MENU_JSON for s in c["services"]}
 DESC = {s["name"]["el"]: s.get("desc", {}).get("el", "") for c in _MENU_JSON for s in c["services"]}
+SVC_FAQ = {s["name"]["el"]: s["faq"] for c in _MENU_JSON for s in c["services"] if s.get("faq")}
 
 
 def OP(name, label):
@@ -191,6 +192,9 @@ def svc_html(key):
         return f'<li><a class="bk" href="/services#{_anchor(key)}" aria-label="Κράτηση με κλήση ή μήνυμα: {esc(name)}{" · " + esc(o) if o else ""}">{inner}</a></li>'
     rows = "".join(li(o, d, p, u) for (o, d, p), u in zip(opts, BOOKS[key]))
     d = f'<p class="sd">{esc(DESC[key])}</p>' if DESC.get(key) else ""
+    fq = SVC_FAQ.get(key)
+    if fq:
+        d += f'<p class="sd"><a class="il" href="{esc(fq['href'])}">{esc(fq['el'])} →</a></p>'
     return f'<article class="svc"><h3>{esc(name)}</h3>{d}<ul>{rows}</ul></article>'
 
 
@@ -260,7 +264,7 @@ def share_html(path, campaign, title, text, label, lang="el"):
 EN_SISTER = {"/kourema-athina/": "/hair-salon-athens/", "/vafi-mallion-athina/": "/hair-salon-athens/",
              "/balayage-athina/": "/hair-salon-athens/", "/synergasies/": "/partners/",
              "/xtenisma-fotografisi-athina/": "/hair-stylist-photoshoot-athens/",
-             "/dorean-kourema-athina/": "/hair-model-athens/", "/montelo-vafi-balayage-athina/": "/hair-model-athens/"}
+             "/dorean-kourema-athina/": "/hair-model-athens/", "/diorthosi-xromatos-athina/": "/hair-colour-correction-athens/", "/montelo-vafi-balayage-athina/": "/hair-model-athens/"}
 
 
 def page(path, title, desc, body, ld, extra_head="", mbar=True, bilingual=False, lang="el", image=None):
@@ -311,7 +315,7 @@ def page(path, title, desc, body, ld, extra_head="", mbar=True, bilingual=False,
 <footer class="bottom"><div class="wrap">
   <p><strong>Alexandros Hair Salon</strong> · {ADDRESS} · <a href="tel:{PHONE}">{PHONE_TXT}</a> · <a href="mailto:info@alexandroshairsalon.gr">info@alexandroshairsalon.gr</a> · <a href="tel:+306981319000" data-en="Call mobile">Κλήση κινητού</a> · <a href="https://wa.me/306981319000" target="_blank" rel="noopener">WhatsApp</a> · <a href="viber://chat?number=%2B306981319000">Viber</a> · <a href="{GOOGLE}" data-maps target="_blank" rel="noopener" data-en="Hours on Google">Ωράριο στο Google</a> · <a href="{DIRECTIONS}" data-maps target="_blank" rel="noopener" data-en="Directions">Οδηγίες</a></p>
   <p class="tsw" role="radiogroup" aria-label="Εμφάνιση"><span data-en="Theme">Εμφάνιση</span><button type="button" role="radio" data-mode="auto" title="Όπως η συσκευή σου" data-en="Auto">Αυτόματο</button><button type="button" role="radio" data-mode="light" data-en="Light">Ανοιχτό</button><button type="button" role="radio" data-mode="dark" data-en="Dark">Σκούρο</button></p>
-  <p class="links"><a href="/" data-en="Home">Αρχική</a><a href="/services" data-en="All prices">Όλες οι τιμές</a><a href="/kourema-athina/">Κούρεμα στην Αθήνα</a><a href="/vafi-mallion-athina/">Βαφή μαλλιών στην Αθήνα</a><a href="/balayage-athina/">Balayage στην Αθήνα</a><a href="/diorthosi-xromatos-athina/">Διόρθωση χρώματος</a><a href="/dorean-kourema-athina/">Δωρεάν κούρεμα (μοντέλο)</a><a href="/fotografies" data-en="Photos">Φωτογραφίες</a><a href="/kratisi/" data-en="Book online">Κράτηση online</a><a href="/hair-salon-athens/" hreflang="en">Hair salon in Athens (English)</a><a href="/xtenisma-fotografisi-athina/">Χτένισμα για φωτογράφιση</a><a href="/synergasies/">Συνεργασίες</a><a href="/syxnes-erotiseis/" data-en="FAQ">Συχνές ερωτήσεις</a><a href="/dorokarta/" data-en="Gift card">Δωροκάρτα</a><a href="/gnomi/" data-en="Your feedback">Η γνώμη σου</a><a href="/shop">Shop</a></p>
+  <p class="links"><a href="/" data-en="Home">Αρχική</a><a href="/services" data-en="All prices">Όλες οι τιμές</a><a href="/kourema-athina/">Κούρεμα στην Αθήνα</a><a href="/vafi-mallion-athina/">Βαφή μαλλιών στην Αθήνα</a><a href="/balayage-athina/">Balayage στην Αθήνα</a><a href="/diorthosi-xromatos-athina/" data-en="Colour correction">Διόρθωση &amp; αλλαγή χρώματος</a><a href="/dorean-kourema-athina/">Δωρεάν κούρεμα (μοντέλο)</a><a href="/fotografies" data-en="Photos">Φωτογραφίες</a><a href="/kratisi/" data-en="Book online">Κράτηση online</a><a href="/hair-salon-athens/" hreflang="en">Hair salon in Athens (English)</a><a href="/xtenisma-fotografisi-athina/">Χτένισμα για φωτογράφιση</a><a href="/synergasies/">Συνεργασίες</a><a href="/syxnes-erotiseis/" data-en="FAQ">Συχνές ερωτήσεις</a><a href="/dorokarta/" data-en="Gift card">Δωροκάρτα</a><a href="/gnomi/" data-en="Your feedback">Η γνώμη σου</a><a href="/shop">Shop</a></p>
 </div></footer>
 {'<div class="mbar"><span class="mb2"><small data-en="Book online">Online κράτηση</small><b data-en="in 1 minute">σε 1 λεπτό</b></span><a class="btn gold" href="/kratisi/" data-en="Book now">Κλείσε ραντεβού</a></div>' if mbar else ''}
 <button type="button" class="totop" aria-label="Επιστροφή στην κορυφή" title="Επιστροφή στην κορυφή" tabindex="-1">{ICONS['FaArrowUp']}</button>
@@ -354,7 +358,12 @@ def faq_block(faqs):
     return f'<section class="block"><h2>Συχνές ερωτήσεις</h2>{items}</section>', ld
 
 
-def service_page(path, crumb, title, desc, eyebrow, h1, lead, facts, prose, keys, faqs, service_type, related, footnote=""):
+# FQ(): λέξη μέσα σε περιγραφή που οδηγεί στην απάντησή της στις Συχνές ερωτήσεις (η απάντηση ανοίγει μόνη της)
+def FQ(word, aid):
+    return f'<a class="il" href="/syxnes-erotiseis/#{aid}">{word}</a>'
+
+
+def service_page(path, crumb, title, desc, eyebrow, h1, lead, facts, prose, keys, faqs, service_type, related, footnote="", head=""):
     faq_html, faq_ld = faq_block(faqs)
     facts_html = "".join(f"<li>{esc(f)}</li>" for f in facts)
     rel = "".join(f'<a href="{h}">{esc(t)}</a>' for t, h in related)
@@ -376,7 +385,7 @@ def service_page(path, crumb, title, desc, eyebrow, h1, lead, facts, prose, keys
     service_ld = {"@context": "https://schema.org", "@type": "Service", "name": crumb, "serviceType": service_type,
                   "areaServed": {"@type": "City", "name": "Αθήνα"}, "provider": SALON_REF, "url": f"{SITE}{path}",
                   "offers": offers(keys)}
-    page(path, title, desc, body, [service_ld, faq_ld, crumbs(crumb, path)])
+    page(path, title, desc, body, [service_ld, faq_ld, crumbs(crumb, path)], extra_head=head)
 
 
 # Ώρες που άλλα κομμωτήρια είναι κλειστά: χωρίς ωράριο στο site, το ωράριο είναι μόνο στο Google Business Profile
@@ -440,7 +449,7 @@ service_page(
 <p><strong>Βαφή ρίζας (€{ROOT_OPTS['Κλασική']})</strong>: μόνιμη βαφή με Farcom ή Majirel της L’Oréal Professionnel, για σίγουρη κάλυψη λευκών. <strong>Χωρίς αμμωνία (€{ROOT_OPTS['Χωρίς αμμωνία']})</strong>: INOA της L’Oréal Professionnel ή Redken. Και οι δύο περιλαμβάνουν λούσιμο και στέγνωμα.</p>
 <p><strong>Μηνιαία ρίζα (€{ROOT_OPTS['Μηνιαία ρίζα']}, χωρίς αμμωνία €{ROOT_OPTS['Χωρίς αμμωνία · μηνιαία ρίζα']})</strong>: όταν η επόμενη βαφή ρίζας γίνεται μέσα σε 30 ημέρες από την προηγούμενη σε εμάς. Στο ταμείο παίρνεις καρτελάκι με την ημερομηνία.</p>
 <h2>Ρίζα + ρεφλέ</h2>
-<p>Με το <strong>ρεφλέ (gloss)</strong> στα μήκη το χρώμα δένει από τη ρίζα ως τις άκρες και τα μαλλιά αποκτούν λάμψη. Είναι ξεχωριστή εφαρμογή στα μήκη, 30–45 ml για μαλλιά έως τους ώμους ή έως 60 ml κάτω από τους ώμους, όχι απλό τράβηγμα της βαφής της ρίζας. Για μεγάλη αλλαγή ή διόρθωση προηγούμενου χρώματος ξεκινάμε με διάγνωση, ώστε να ξέρεις πλάνο και τιμή πριν από οτιδήποτε.</p>
+<p>Με το <strong>{FQ('ρεφλέ (gloss)', 'refle')}</strong> στα μήκη το χρώμα δένει από τη ρίζα ως τις άκρες και τα μαλλιά αποκτούν λάμψη. Είναι ξεχωριστή εφαρμογή στα μήκη, 30–45 ml για μαλλιά έως τους ώμους ή έως 60 ml κάτω από τους ώμους, όχι απλό τράβηγμα της βαφής της ρίζας. Για μεγάλη <a class="il" href="/diorthosi-xromatos-athina/">αλλαγή ή διόρθωση προηγούμενου χρώματος</a> ξεκινάμε με διάγνωση, ώστε να ξέρεις πλάνο και τιμή πριν από οτιδήποτε.</p>
 {BEFORE_AFTER}""",
     [ROOT, "Βαφή ρίζας & ρεφλέ στα μήκη", "Ρεφλέ", "Βαφή σε όλο το μαλλί", "Ξάνοιγμα ρίζας & ρεφλέ", "+ Επιπλέον χρώμα", "Διόρθωση χρώματος"],
     [("Πόσο κοστίζει η βαφή ρίζας;", f"€{ROOT_OPTS['Κλασική']}, ή €{ROOT_OPTS['Χωρίς αμμωνία']} χωρίς αμμωνία, με λούσιμο και στέγνωμα. Όταν η επόμενη βαφή ρίζας γίνεται μέσα σε 30 ημέρες, η Μηνιαία ρίζα είναι €{ROOT_OPTS['Μηνιαία ρίζα']} (χωρίς αμμωνία €{ROOT_OPTS['Χωρίς αμμωνία · μηνιαία ρίζα']})."),
@@ -465,8 +474,8 @@ service_page(
     [f"Πρόσωπο από €{P('Ανταύγειες γύρω από το πρόσωπο')}", "Επιλογή χωρίς ντεκαπάζ"] + COMMON_FACTS[:2],
     f"""<h2>Ποιο να διαλέξω;</h2>
 <p><strong>Γύρω από το πρόσωπο</strong>: λεπτές ανταύγειες που φωτίζουν το πρόσωπο, ιδανικές για πρώτη φορά. <strong>Μερικές</strong>: στο πάνω μέρος και γύρω από το πρόσωπο. <strong>Ολόκληρες</strong>: σε όλο το κεφάλι. <strong>Μερικό μπαλαγιάζ (balayage)</strong>: απαλό φως ζωγραφισμένο με το χέρι, ελεύθερα ή σε αλουμινόχαρτα (foilayage), για μεσαία και μακριά μαλλιά.</p>
-<p><strong>Χωρίς ντεκαπάζ</strong>: με την κρέμα ξανοίγματος L’Oréal Professionnel Blond Studio No Bleach™, πιο ήπια για την τρίχα, έως 4 τόνους (σε βαμμένα μαλλιά έως 2,5). Γύρω από το πρόσωπο €{FACE['Χωρίς ντεκαπάζ']}, με ντεκαπάζ €{FACE['Με ντεκαπάζ']}.</p>
-<p>Οι τιμές είναι για μαλλιά έως τους ώμους· για πιο μακριά υπάρχει το «+ Μακριά μαλλιά» (€{P('+ Μακριά μαλλιά (ανταύγειες / μπαλαγιάζ)')}). Για έντονη αλλαγή, πλατινέ ή διόρθωση παλιού χρώματος κλείσε πρώτα <strong>διάγνωση χρώματος</strong>, ώστε να συμφωνήσουμε ρεαλιστικό πλάνο και συγκεκριμένη τιμή.</p>""",
+<p><strong>Χωρίς {FQ('ντεκαπάζ', 'ntekapaz')}</strong>: με την κρέμα ξανοίγματος L’Oréal Professionnel Blond Studio No Bleach™, πιο ήπια για την τρίχα, έως 4 τόνους (σε βαμμένα μαλλιά έως 2,5). Γύρω από το πρόσωπο €{FACE['Χωρίς ντεκαπάζ']}, με ντεκαπάζ €{FACE['Με ντεκαπάζ']}.</p>
+<p>Οι τιμές είναι για μαλλιά έως τους ώμους· για πιο μακριά υπάρχει το «+ Μακριά μαλλιά» (€{P('+ Μακριά μαλλιά (ανταύγειες / μπαλαγιάζ)')}). Για έντονη αλλαγή, πλατινέ ή <a class="il" href="/diorthosi-xromatos-athina/">διόρθωση παλιού χρώματος</a> κλείσε πρώτα <strong>διάγνωση χρώματος</strong>, ώστε να συμφωνήσουμε ρεαλιστικό πλάνο και συγκεκριμένη τιμή.</p>""",
     ["Ανταύγειες γύρω από το πρόσωπο", "Μερικές ανταύγειες", "Ολόκληρες ανταύγειες", "Μερικό μπαλαγιάζ", "Ολόκληρο μπαλαγιάζ", "+ Μακριά μαλλιά (ανταύγειες / μπαλαγιάζ)", "+ Προστασία τρίχας στο ξάνοιγμα", "Διόρθωση χρώματος"],
     [("Πόσο κοστίζει το μπαλαγιάζ (balayage) στην Αθήνα;", f"Στο κομμωτήριό μας το μερικό μπαλαγιάζ κοστίζει €{P('Μερικό μπαλαγιάζ')} για μαλλιά έως τους ώμους, με ρεφλέ. Για πιο μακριά μαλλιά προστίθεται το «+ Μακριά μαλλιά» (€{P('+ Μακριά μαλλιά (ανταύγειες / μπαλαγιάζ)')})."),
      ("Πόσο κοστίζουν οι ανταύγειες;", f"Γύρω από το πρόσωπο €{FACE['Χωρίς ντεκαπάζ']}–€{FACE['Με ντεκαπάζ']}, μερικές €{P('Μερικές ανταύγειες')} και ολόκληρες €{P('Ολόκληρες ανταύγειες')}, πάντα με ρεφλέ."),
@@ -479,31 +488,60 @@ service_page(
     footnote=SKIN_NOTE,
 )
 
-# ---------- /diorthosi-xromatos-athina/ ----------
+# ---------- /diorthosi-xromatos-athina/ (αγγλικά: /hair-colour-correction-athens/) ----------
+CC_EL, CC_EN = "/diorthosi-xromatos-athina/", "/hair-colour-correction-athens/"
+CC_HEAD = (f'<link rel="alternate" hreflang="el" href="{SITE}{CC_EL}">'
+           f'<link rel="alternate" hreflang="en" href="{SITE}{CC_EN}">'
+           f'<link rel="alternate" hreflang="x-default" href="{SITE}{CC_EN}">')
 DIAG = dict((o, p) for o, _, p in MENU["Διόρθωση χρώματος"][1])["Διάγνωση & προσφορά"]
+
+
+def work_figs(lang):
+    data = {
+        "el": [("color-correction-sunset-copper", "Θησείο Sunset Copper", "Διόρθωση χρώματος: από σκούρα, ανομοιόμορφη βαφή σε καθαρό, φωτεινό χάλκινο από τη ρίζα ως τις άκρες.",
+                "Πριν και μετά: διόρθωση χρώματος σε χάλκινο Θησείο Sunset Copper, Alexandros Hair Salon, Θησείο"),
+               ("cherry-cola", "Cherry Cola · Midnight Merlot", "Αλλαγή χρώματος: από μαύρο βαμμένο σε βαθύ κερασί με βελούδινη λάμψη.",
+                "Στάδιο ξανοίγματος και τελικό: αλλαγή χρώματος από μαύρο σε cherry cola, Alexandros Hair Salon, Θησείο")],
+        "en": [("color-correction-sunset-copper", "Thiseio Sunset Copper", "Colour correction: from dark, patchy colour to a clean, bright copper from root to ends.",
+                "Before and after: colour correction to Thiseio Sunset Copper, Alexandros Hair Salon, Thiseio, Athens"),
+               ("cherry-cola", "Cherry Cola · Midnight Merlot", "Colour change: from dyed black to a deep cherry with a velvet shine.",
+                "Lightening stage and final result: colour change from black to cherry cola, Alexandros Hair Salon, Thiseio, Athens")],
+    }[lang]
+    return "".join(
+        f'<figure style="margin:0 0 28px"><img src="/images/work/alexandros-hair-salon-thiseio-{n}-1200.webp" '
+        f'srcset="/images/work/alexandros-hair-salon-thiseio-{n}-600.webp 600w, /images/work/alexandros-hair-salon-thiseio-{n}-1200.webp 1200w" '
+        f'sizes="(max-width: 760px) 100vw, 760px" width="1200" height="900" loading="lazy" decoding="async" alt="{esc(alt)}" '
+        f'style="width:100%;height:auto;display:block;border-radius:14px;border:1px solid var(--line)">'
+        f'<figcaption style="margin-top:10px"><strong>{esc(t)}</strong> · {esc(c)}</figcaption></figure>'
+        for n, t, c, alt in data)
+
+
 service_page(
-    "/diorthosi-xromatos-athina/", "Διόρθωση χρώματος στην Αθήνα",
-    f"Διόρθωση Χρώματος Αθήνα – Θησείο | Color Correction | Alexandros Hair Salon",
-    f"Διόρθωση χρώματος (color correction) στο Θησείο, Αθήνα: από σκούρα ή ανομοιόμορφη βαφή σε καθαρό, ομοιόμορφο χρώμα. Διάγνωση με τεστ τούφας και γραπτή προσφορά €{DIAG}, που αφαιρείται από την τιμή.",
+    CC_EL, "Διόρθωση & αλλαγή χρώματος στην Αθήνα",
+    "Διόρθωση & Αλλαγή Χρώματος Αθήνα – Θησείο | Color Correction | Alexandros Hair Salon",
+    f"Διόρθωση χρώματος (color correction) και αλλαγή χρώματος στο Θησείο, Αθήνα: από σκούρα ή ανομοιόμορφη βαφή σε καθαρό χρώμα, ή από μαύρο σε χάλκινο και κόκκινο. Διάγνωση με strand test και γραπτή προσφορά €{DIAG}, που αφαιρείται από την τιμή.",
     "Color correction · Θησείο",
-    "Διόρθωση χρώματος στην Αθήνα, <em>με πλάνο πριν από κάθε βήμα.</em>",
-    "Σκούρες ζώνες, βαφή που δεν έπιασε, πορτοκαλί ή κίτρινο που δεν έφυγε, μαύρο που θέλεις να αφήσεις πίσω σου. Η διόρθωση ξεκινά πάντα με διάγνωση και τεστ τούφας, ώστε να ξέρεις από πριν το πλάνο, τον χρόνο και την τιμή.",
-    [f"Διάγνωση & προσφορά €{DIAG}", "Αφαιρείται από την τιμή της διόρθωσης"] + COMMON_FACTS[:2],
-    f"""<h2>Πώς γίνεται η διόρθωση</h2>
-<p><strong>1. Διάγνωση (€{DIAG}, 30′)</strong>: κοιτάμε το ιστορικό του χρώματος, την κατάσταση της τρίχας και κάνουμε τεστ σε μια τούφα. Παίρνεις γραπτή προσφορά με πλάνο, χρόνο και τιμή. Αν κάνεις τη διόρθωση σε εμάς, το ποσό της διάγνωσης αφαιρείται.</p>
-<p><strong>2. Ελεγχόμενο ξάνοιγμα</strong>, μόνο όπου χρειάζεται: σκούρες λωρίδες ή παλιό μαύρο ανοίγουν ως το φόντο που θέλει το τελικό χρώμα, χωρίς να ταλαιπωρούνται τα σημεία που είναι ήδη σωστά.</p>
-<p><strong>3. Χρώμα ανά ζώνη</strong>: διαφορετική συνταγή για ρίζα, μήκη και άκρες, ώστε το αποτέλεσμα να βγει ομοιόμορφο από τη ρίζα ως τις άκρες.</p>
-<p>Μερικές φορές το ασφαλέστερο είναι η διόρθωση να γίνει σε δύο ραντεβού. Θα σου το πούμε από τη διάγνωση, όχι στη μέση της δουλειάς.</p>
-{BEFORE_AFTER}""",
+    "Διόρθωση &amp; αλλαγή χρώματος, <em>με πλάνο πριν από κάθε βήμα.</em>",
+    "Διόρθωση, όταν το χρώμα βγήκε σκούρο, ανομοιόμορφο, πορτοκαλί ή κίτρινο. Αλλαγή, όταν θέλεις κάτι εντελώς διαφορετικό, π.χ. από μαύρο σε χάλκινο ή κόκκινο. Και στις δύο ξεκινάμε με διάγνωση και strand test, ώστε να ξέρεις από πριν το πλάνο, τον χρόνο και την τιμή.",
+    [f"Διάγνωση & προσφορά €{DIAG}", "Αφαιρείται από την τιμή της δουλειάς"] + COMMON_FACTS[:2],
+    f"""<h2>Διόρθωση ή αλλαγή χρώματος;</h2>
+<p><strong>Διόρθωση χρώματος</strong> είναι όταν το χρώμα δεν βγήκε όπως έπρεπε: σκούρες ζώνες, βαφή που δεν έπιασε, πορτοκαλί ή κίτρινο που δεν έφυγε. <strong>Αλλαγή χρώματος</strong> είναι όταν θέλεις να πας σε κάτι εντελώς άλλο, π.χ. από μαύρο σε cherry cola. Η δουλειά μοιάζει, γι' αυτό και οι δύο ξεκινούν με {FQ('διάγνωση', 'diorthosi-allagi')}.</p>
+<h2>Πώς γίνεται</h2>
+<p><strong>1. Διάγνωση (€{DIAG}, 30′)</strong>: κοιτάμε το ιστορικό του χρώματος, την κατάσταση της τρίχας και κάνουμε {FQ('strand test', 'strand-test')}. Παίρνεις γραπτή προσφορά με πλάνο, χρόνο και τιμή. Αν κάνεις τη δουλειά σε εμάς, το ποσό της διάγνωσης αφαιρείται.</p>
+<p><strong>2. Ελεγχόμενο {FQ('ξάνοιγμα', 'ntekapaz')}</strong>, μόνο όπου χρειάζεται: σκούρες λωρίδες ή παλιό μαύρο ανοίγουν ως το φόντο που θέλει το τελικό χρώμα, χωρίς να ταλαιπωρούνται τα σημεία που είναι ήδη σωστά.</p>
+<p><strong>3. Χρώμα ανά ζώνη</strong>: διαφορετική συνταγή για ρίζα, μήκη και άκρες, συχνά με {FQ('ρεφλέ', 'refle')} στο τέλος, ώστε το αποτέλεσμα να βγει ομοιόμορφο από τη ρίζα ως τις άκρες.</p>
+<p>Μερικές φορές το ασφαλέστερο είναι να γίνει σε δύο ραντεβού. Θα σου το πούμε από τη διάγνωση, όχι στη μέση της δουλειάς.</p>
+<h2>Πριν &amp; μετά</h2>{work_figs('el')}""",
     ["Διόρθωση χρώματος", "Βαφή σε όλο το μαλλί", "Ρεφλέ", "+ Προστασία τρίχας στο ξάνοιγμα", "+ Επιπλέον χρώμα"],
-    [("Πόσο κοστίζει η διόρθωση χρώματος;", f"Εξαρτάται από το ιστορικό και το μήκος, γι' αυτό ξεκινάμε με διάγνωση (€{DIAG}). Παίρνεις γραπτή προσφορά με συγκεκριμένη τιμή, και το ποσό της διάγνωσης αφαιρείται αν κάνεις τη διόρθωση σε εμάς."),
-     ("Μπορώ να πάω από μαύρο σε κόκκινο ή χάλκινο;", "Συνήθως ναι, με ελεγχόμενο ξάνοιγμα και μετά το χρώμα που θέλεις, όπως το cherry cola και το χάλκινο στις φωτογραφίες. Στη διάγνωση βλέπουμε αν γίνεται σε ένα ή σε δύο ραντεβού."),
-     ("Θα χαλάσουν τα μαλλιά μου;", "Ανοίγουμε μόνο όσο χρειάζεται και μόνο εκεί που χρειάζεται. Προτείνουμε και την προστασία τρίχας στο ξάνοιγμα. Αν η τρίχα δεν αντέχει όλη τη διόρθωση σε μία μέρα, τη χωρίζουμε σε δύο ραντεβού."),
+    [("Πόσο κοστίζει η διόρθωση ή η αλλαγή χρώματος;", f"Εξαρτάται από το ιστορικό και το μήκος, γι' αυτό ξεκινάμε με διάγνωση (€{DIAG}). Παίρνεις γραπτή προσφορά με συγκεκριμένη τιμή, και το ποσό της διάγνωσης αφαιρείται αν κάνεις τη δουλειά σε εμάς."),
+     ("Μπορώ να πάω από μαύρο σε κόκκινο ή χάλκινο;", "Συνήθως ναι. Είναι αλλαγή χρώματος: ελεγχόμενο ξάνοιγμα και μετά το χρώμα που θέλεις, όπως το cherry cola στις φωτογραφίες. Στη διάγνωση βλέπουμε αν γίνεται σε ένα ή σε δύο ραντεβού."),
+     ("Τι είναι το strand test;", "Δοκιμή σε μια μικρή, κρυφή τούφα πριν από τη δουλειά: βλέπουμε πώς ανοίγει και πώς πιάνει το χρώμα, και πόσο αντέχει η τρίχα. Έτσι η προσφορά και ο χρόνος βασίζονται στα δικά σου μαλλιά."),
+     ("Θα χαλάσουν τα μαλλιά μου;", "Ανοίγουμε μόνο όσο χρειάζεται και μόνο εκεί που χρειάζεται. Προτείνουμε και την προστασία τρίχας στο ξάνοιγμα. Αν η τρίχα δεν αντέχει όλη τη δουλειά σε μία μέρα, τη χωρίζουμε σε δύο ραντεβού."),
      FAQ_WHEN,
      ("Πώς κλείνω διάγνωση;", "Στο 210 346 5554 ή στο κινητό μέσω WhatsApp/Viber, με μια φωτογραφία των μαλλιών σου στο φως της μέρας.")],
     "Διόρθωση χρώματος",
-    [("Βαφή μαλλιών στην Αθήνα", "/vafi-mallion-athina/"), ("Balayage στην Αθήνα", "/balayage-athina/"), ("Όλες οι τιμές", "/services")],
-    footnote=SKIN_NOTE,
+    [("Βαφή μαλλιών στην Αθήνα", "/vafi-mallion-athina/"), ("Balayage στην Αθήνα", "/balayage-athina/"), ("Συχνές ερωτήσεις", "/syxnes-erotiseis/"), ("Colour correction (English)", CC_EN)],
+    footnote=SKIN_NOTE, head=CC_HEAD,
 )
 
 # ---------- /hair-salon-athens/ : για ξένους επισκέπτες, στα αγγλικά, τιμές από το menu.json ----------
@@ -520,6 +558,8 @@ def svc_html_en(name):
         return f'<li><a class="bk" href="/services#{_anchor(name)}" aria-label="Book by call or message: {esc(s["name"]["en"])}{" · " + esc(o["en"]) if o["en"] else ""}">{inner}</a></li>'
     rows = "".join(li(o) for o in s["options"])
     d = f'<p class="sd">{esc(s["desc"]["en"])}</p>' if s.get("desc") else ""
+    if s.get("faq"):
+        d += f'<p class="sd"><a class="il" href="{esc(s["faq"]["href"])}">{esc(s["faq"]["en"])} →</a></p>'
     return f'<article class="svc"><h3>{esc(s["name"]["en"])}</h3>{d}<ul>{rows}</ul></article>'
 
 
@@ -906,6 +946,33 @@ page("/kratisi/", "Κράτηση ραντεβού online | Alexandros Hair Salo
      kratisi_body, kratisi_ld, extra_head=kratisi_head, mbar=False, bilingual=True)
 
 
+# /hair-colour-correction-athens/ (EN): αγγλική εκδοχή της /diorthosi-xromatos-athina/
+b2b_page(
+    CC_EN, "Hair colour correction in Athens",
+    "Hair Colour Correction in Athens – Thiseio | Alexandros Hair Salon",
+    f"Hair colour correction and colour change in Thiseio, central Athens: from dark or patchy colour to a clean, even result, or from black to copper and red. Assessment with a strand test and a written quote, €{DIAG}, deducted from the price.",
+    "Colour correction · Thiseio, central Athens",
+    "Hair colour correction in Athens, <em>with a plan before every step.</em>",
+    "Correction, when colour came out too dark, patchy, orange or yellow. Change, when you want something completely different, such as black to copper or red. Both start with an assessment and a strand test, so you know the plan, the time and the price in advance. We speak English.",
+    [f"Assessment & quote €{DIAG}", "Deducted from the final price", "5′ from Thiseio metro", "We speak English"],
+    f"""<h2>Correction or colour change?</h2>
+<p><strong>Colour correction</strong> is when colour didn’t turn out as it should: dark bands, colour that didn’t take, orange or yellow that won’t go. <strong>Colour change</strong> is when you want something completely different, such as dyed black to cherry cola. The work is similar, so both start with an assessment.</p>
+<h2>How it works</h2>
+<p><strong>1. Assessment (€{DIAG}, 30′)</strong>: we look at your colour history and the condition of your hair, and do a <strong>strand test</strong> on a small hidden section. You get a written quote with the plan, time and price. If you book the work with us, the assessment fee is deducted.</p>
+<p><strong>2. Controlled lightening</strong>, only where needed: dark bands or old black are lifted to the base the final colour needs, without stressing the parts that are already right.</p>
+<p><strong>3. Colour by zone</strong>: a different formula for roots, lengths and ends, often finished with a gloss, so the result is even from root to ends.</p>
+<p>Sometimes the safest route is two appointments. We tell you at the assessment, not halfway through.</p>
+<h2>Before &amp; after</h2>{work_figs('en')}""",
+    ["Διόρθωση χρώματος", "Βαφή σε όλο το μαλλί", "Ρεφλέ", "+ Προστασία τρίχας στο ξάνοιγμα"],
+    [("How much does colour correction cost?", f"It depends on your colour history and hair length, so we start with an assessment (€{DIAG}). You get a written quote with a fixed price, and the assessment fee is deducted if you book the work with us."),
+     ("Can I go from black to red or copper?", "Usually yes. That is a colour change: controlled lightening, then the colour you want, like the cherry cola in the photos. At the assessment we see whether it takes one or two appointments."),
+     ("What is a strand test?", "A test on a small, hidden section before the work: we see how your hair lifts and takes colour, and how much it can handle. Your quote and timing are then based on your own hair."),
+     ("How do I book an assessment?", "Message us on WhatsApp or call +30 698 131 9000, ideally with a photo of your hair in daylight. The salon is at Erisichthonos 3-5, Thiseio, a five-minute walk from Thiseio metro.")],
+    [("Διόρθωση χρώματος (Ελληνικά)", CC_EL), ("Hair salon in Athens", "/hair-salon-athens/"), ("Prices", "/services")],
+    "en", "Hair colour correction", head=CC_HEAD,
+)
+
+
 # ---------- /syxnes-erotiseis/ : ποια βαφή ταιριάζει, ποσότητες, τι δεν συνδυάζεται (τιμές από το menu.json) ----------
 def O(name, label=None):
     """Τιμή μίας επιλογής (ή της μοναδικής) σε μορφή €39."""
@@ -1011,7 +1078,7 @@ FAQ_GROUPS = [
    "Permanent colour (Farcom Expertia, Majirel, INOA, Redken Color Gels Oils): goes inside the hair and fully covers grey. It doesn’t wash out; the colour stays in the hair until it is cut. As your hair grows the new roots show, so roots are usually coloured every 4–6 weeks. "
    "Demi-permanent (Dia Color): gentler, covers up to 70% of grey and fades gradually over about 6 weeks, with no sharp regrowth line. "
    "Gloss (Dia Light, Redken Shades EQ): acidic and ammonia-free; adds tone and shine without lightening, and doesn’t fully cover grey.",
-   []),
+   [], "refle"),
   ("Τι διαφέρει η όξινη από την αλκαλική τεχνολογία χρώματος;",
    "Η διαφορά είναι το pH. Η αλκαλική τεχνολογία (pH πάνω από 7) ανοίγει ελαφρά την επιφάνεια της τρίχας, ώστε το χρώμα να μπει βαθιά: μπορεί να ξανοίξει τα μαλλιά, καλύπτει τα λευκά και κρατά πολύ. Η όξινη (pH κάτω από 7, κοντά στο φυσικό pH της τρίχας) δεν ξανοίγει: αφήνει τόνο, λειαίνει την επιφάνεια της τρίχας και δίνει λάμψη και περιποίηση, χωρίς να καλύπτει πλήρως τα λευκά. Γι’ αυτό συχνά η αλκαλική μπαίνει στη ρίζα και η όξινη στα μήκη. "
    "Αλκαλικές: Majirel της L’Oréal, μόνιμη, κάλυψη έως 100% των λευκών· Redken Color Gels Oils, μόνιμη χωρίς αμμωνία, κάλυψη έως 100%· Dia Color της L’Oréal, ημιμόνιμη, κάλυψη έως 70%. "
@@ -1038,7 +1105,22 @@ FAQ_GROUPS = [
    "Lightening the hair with lightening powder, for highlights and balayage that need to lift several levels. A gloss almost always follows, for the tone you want. "
    "For a gentler result there is also a bleach-free option, with L’Oréal Blond Studio No Bleach™, which lifts up to 4 levels on natural hair and up to 2.5 on coloured hair. "
    f"For extra protection, we can spray L’Oréal Metal Detox before lightening: the Hair Protection add-on ({O('+ Προστασία τρίχας στο ξάνοιγμα')}). On coloured hair, a consultation comes first.",
-   [("Ανταύγειες γύρω από το πρόσωπο", "Με ντεκαπάζ"), ("Ανταύγειες γύρω από το πρόσωπο", "Χωρίς ντεκαπάζ"), ("Συμβουλευτική χρώματος, νυφικού & κερατίνης", None)]),
+   [("Ανταύγειες γύρω από το πρόσωπο", "Με ντεκαπάζ"), ("Ανταύγειες γύρω από το πρόσωπο", "Χωρίς ντεκαπάζ"), ("Συμβουλευτική χρώματος, νυφικού & κερατίνης", None)], "ntekapaz"),
+  ("Τι είναι το Metal Detox;",
+   f"Το L’Oréal Professionnel Metal Detox είναι ολοκληρωμένο πρωτόκολλο προστασίας της τρίχας από τα μέταλλα που μαζεύει από το νερό της βρύσης (π.χ. χαλκό), τα οποία στο ξάνοιγμα και στη βαφή αυξάνουν το σπάσιμο. Στο κομμωτήριο το ξεκινάμε με το σπρέι προθεραπείας Metal Detox, που ψεκάζεται πριν από ανταύγειες, μπαλαγιάζ ή ξάνοιγμα ({O('+ Προστασία τρίχας στο ξάνοιγμα')}). Το προτείνουμε σε κάθε τεχνική με ντεκαπάζ ή κρέμα ξανοίγματος, και είναι μέρος του επίσημου πρωτοκόλλου No Bleach French Highlights. Το πρωτόκολλο συνεχίζεται στο σπίτι με τα προϊόντα περιποίησης Metal Detox (σαμπουάν, μάσκα κ.ά.).",
+   "What is Metal Detox?",
+   f"L’Oréal Professionnel Metal Detox is a complete protocol that protects hair from the metals it picks up from tap water (such as copper), which increase breakage during lightening and colour. In the salon it starts with the Metal Detox pre-treatment spray, applied before highlights, balayage or lightening ({O('+ Προστασία τρίχας στο ξάνοιγμα')}). We recommend it with every lightening technique, and it is part of the official No Bleach French Highlights protocol. The protocol continues at home with the Metal Detox care range (shampoo, mask and more).",
+   [("+ Προστασία τρίχας στο ξάνοιγμα", None)], "metal-detox"),
+  ("Τι είναι το strand test;",
+   "Δοκιμή σε μια μικρή, κρυφή τούφα πριν από διόρθωση ή μεγάλη αλλαγή χρώματος: βλέπουμε πώς ανοίγει και πώς πιάνει το χρώμα, και πόσο αντέχει η τρίχα. Γίνεται στη διάγνωση, ώστε η προσφορά, ο χρόνος και το πλάνο να βασίζονται στα δικά σου μαλλιά. Περισσότερα: alexandroshairsalon.gr/diorthosi-xromatos-athina",
+   "What is a strand test?",
+   "A test on a small, hidden section before a colour correction or a big colour change: we see how your hair lifts and takes colour, and how much it can handle. It is part of the assessment, so your quote, timing and plan are based on your own hair. More: alexandroshairsalon.gr/hair-colour-correction-athens",
+   [("Διόρθωση χρώματος", "Διάγνωση & προσφορά")], "strand-test"),
+  ("Τι διαφέρει η διόρθωση από την αλλαγή χρώματος;",
+   f"Διόρθωση χρώματος είναι όταν το χρώμα δεν βγήκε όπως έπρεπε: σκούρες ζώνες, βαφή που δεν έπιασε, πορτοκαλί ή κίτρινο που δεν έφυγε. Αλλαγή χρώματος είναι όταν θέλεις κάτι εντελώς άλλο, π.χ. από μαύρο σε χάλκινο ή κόκκινο. Και οι δύο ξεκινούν με διάγνωση και strand test ({O('Διόρθωση χρώματος')}), που αφαιρείται από την τιμή αν κάνεις τη δουλειά σε εμάς. Περισσότερα: alexandroshairsalon.gr/diorthosi-xromatos-athina",
+   "What’s the difference between colour correction and a colour change?",
+   f"Colour correction is when colour didn’t turn out as it should: dark bands, colour that didn’t take, orange or yellow that won’t go. A colour change is when you want something completely different, such as black to copper or red. Both start with an assessment and a strand test ({O('Διόρθωση χρώματος')}), deducted from the price if you book the work with us. More: alexandroshairsalon.gr/hair-colour-correction-athens",
+   [("Διόρθωση χρώματος", "Διάγνωση & προσφορά")], "diorthosi-allagi"),
   ("Πόσο χρώμα περιλαμβάνει κάθε βαφή;",
    "Βαφή ρίζας έως 45 g. Βαφή σε όλο το μαλλί έως 60 g ή 60 ml. Ρεφλέ 30–45 ml για μαλλιά έως τους ώμους ή έως 60 ml για πιο μακριά. Βαφή ρίζας & ρεφλέ: ρίζα έως 45 g και ρεφλέ 30–45 ml ή έως 60 ml. Οι ποσότητες είναι πριν από το οξειδωτικό.",
    "How much colour does each service include?",

@@ -812,8 +812,8 @@
           "en": "Root lightening and toner for an even blonde, wash and dry."
         },
         "note": {
-          "el": "Για ρίζα έως 2 cm. Την πρώτη φορά προηγείται συμβουλευτική.",
-          "en": "For regrowth up to 2 cm. The first time, a consultation comes first."
+          "el": "Για ρίζα έως 2 cm. Την πρώτη φορά προηγείται συμβουλευτική. Προστασία τρίχας: προτείνουμε το σπρέι προθεραπείας L’Oréal Metal Detox πριν από το ξάνοιγμα, μέρος του ολοκληρωμένου πρωτοκόλλου Metal Detox (+ Προστασία τρίχας στο ξάνοιγμα).",
+          "en": "For regrowth up to 2 cm. The first time, a consultation comes first. Hair protection: we recommend the L’Oréal Metal Detox pre-treatment spray before lightening, part of the complete Metal Detox protocol (Hair Protection for Lightening add-on)."
         },
         "online": true,
         "options": [
@@ -830,7 +830,12 @@
               "option": "14437188"
             }
           }
-        ]
+        ],
+        "faq": {
+          "href": "/syxnes-erotiseis/#metal-detox",
+          "el": "Τι είναι το Metal Detox;",
+          "en": "What is Metal Detox?"
+        }
       },
       {
         "name": {
@@ -976,12 +981,12 @@
           "en": "Colour Correction"
         },
         "desc": {
-          "el": "Έλεγχος ιστορικού, τεστ τούφας και γραπτή προσφορά.",
+          "el": "Έλεγχος ιστορικού, strand test και γραπτή προσφορά.",
           "en": "History check, strand test and a written quote."
         },
         "note": {
-          "el": "Το ποσό αφαιρείται από την τιμή, αν κάνεις τη διόρθωση σε εμάς.",
-          "en": "Deducted from the price if you book the correction with us."
+          "el": "Το ποσό αφαιρείται από την τιμή, αν κάνεις τη διόρθωση σε εμάς. Προστασία τρίχας: προτείνουμε το σπρέι προθεραπείας L’Oréal Metal Detox πριν από το ξάνοιγμα, μέρος του ολοκληρωμένου πρωτοκόλλου Metal Detox (+ Προστασία τρίχας στο ξάνοιγμα).",
+          "en": "Deducted from the price if you book the correction with us. Hair protection: we recommend the L’Oréal Metal Detox pre-treatment spray before lightening, part of the complete Metal Detox protocol (Hair Protection for Lightening add-on)."
         },
         "online": false,
         "options": [
@@ -994,7 +999,12 @@
             },
             "price": 40
           }
-        ]
+        ],
+        "faq": {
+          "href": "/syxnes-erotiseis/#metal-detox",
+          "el": "Τι είναι το Metal Detox;",
+          "en": "What is Metal Detox?"
+        }
       }
     ]
   },
@@ -1015,8 +1025,8 @@
           "en": "Fine highlights around the face, with toner, with a wash and dry."
         },
         "note": {
-          "el": "Χωρίς ντεκαπάζ: πιο ήπιο ξάνοιγμα, έως 4 τόνους σε φυσικά μαλλιά και έως 2,5 σε βαμμένα, με L’Oréal Blond Studio No Bleach™. Σε βαμμένα μαλλιά προηγείται συμβουλευτική.",
-          "en": "Bleach-free: gentler lightening, up to 4 levels on natural hair and 2.5 on coloured hair, with L’Oréal Blond Studio No Bleach™. On coloured hair, a consultation comes first."
+          "el": "Χωρίς ντεκαπάζ: πιο ήπιο ξάνοιγμα, έως 4 τόνους σε φυσικά μαλλιά και έως 2,5 σε βαμμένα, με L’Oréal Blond Studio No Bleach™. Σε βαμμένα μαλλιά προηγείται συμβουλευτική. Προστασία τρίχας: προτείνουμε το σπρέι προθεραπείας L’Oréal Metal Detox πριν από το ξάνοιγμα, μέρος του ολοκληρωμένου πρωτοκόλλου Metal Detox (+ Προστασία τρίχας στο ξάνοιγμα).",
+          "en": "Bleach-free: gentler lightening, up to 4 levels on natural hair and 2.5 on coloured hair, with L’Oréal Blond Studio No Bleach™. On coloured hair, a consultation comes first. Hair protection: we recommend the L’Oréal Metal Detox pre-treatment spray before lightening, part of the complete Metal Detox protocol (Hair Protection for Lightening add-on)."
         },
         "online": true,
         "options": [
@@ -1046,7 +1056,12 @@
               "option": "14436631"
             }
           }
-        ]
+        ],
+        "faq": {
+          "href": "/syxnes-erotiseis/#metal-detox",
+          "el": "Τι είναι το Metal Detox;",
+          "en": "What is Metal Detox?"
+        }
       },
       {
         "name": {
@@ -1058,8 +1073,8 @@
           "en": "Highlights on the top section and around the face, with toner, with a wash and dry."
         },
         "note": {
-          "el": "Η τιμή αφορά μαλλιά έως τους ώμους· για πιο μακριά: «+ Μακριά μαλλιά». Χωρίς ντεκαπάζ: πιο ήπιο ξάνοιγμα, έως 4 τόνους σε φυσικά μαλλιά και έως 2,5 σε βαμμένα, με L’Oréal Blond Studio No Bleach™. Σε βαμμένα μαλλιά προηγείται συμβουλευτική.",
-          "en": "Price for hair up to the shoulders; for longer hair: Long Hair add-on. Bleach-free: gentler lightening, up to 4 levels on natural hair and 2.5 on coloured hair, with L’Oréal Blond Studio No Bleach™. On coloured hair, a consultation comes first."
+          "el": "Η τιμή αφορά μαλλιά έως τους ώμους· για πιο μακριά: «+ Μακριά μαλλιά». Χωρίς ντεκαπάζ: πιο ήπιο ξάνοιγμα, έως 4 τόνους σε φυσικά μαλλιά και έως 2,5 σε βαμμένα, με L’Oréal Blond Studio No Bleach™. Σε βαμμένα μαλλιά προηγείται συμβουλευτική. Προστασία τρίχας: προτείνουμε το σπρέι προθεραπείας L’Oréal Metal Detox πριν από το ξάνοιγμα, μέρος του ολοκληρωμένου πρωτοκόλλου Metal Detox (+ Προστασία τρίχας στο ξάνοιγμα).",
+          "en": "Price for hair up to the shoulders; for longer hair: Long Hair add-on. Bleach-free: gentler lightening, up to 4 levels on natural hair and 2.5 on coloured hair, with L’Oréal Blond Studio No Bleach™. On coloured hair, a consultation comes first. Hair protection: we recommend the L’Oréal Metal Detox pre-treatment spray before lightening, part of the complete Metal Detox protocol (Hair Protection for Lightening add-on)."
         },
         "online": true,
         "options": [
@@ -1089,7 +1104,12 @@
               "option": "14244882"
             }
           }
-        ]
+        ],
+        "faq": {
+          "href": "/syxnes-erotiseis/#metal-detox",
+          "el": "Τι είναι το Metal Detox;",
+          "en": "What is Metal Detox?"
+        }
       },
       {
         "name": {
@@ -1101,8 +1121,8 @@
           "en": "Highlights all over, with toner, with a wash and dry."
         },
         "note": {
-          "el": "Η τιμή αφορά μαλλιά έως τους ώμους· για πιο μακριά: «+ Μακριά μαλλιά». Σε βαμμένα μαλλιά προηγείται συμβουλευτική.",
-          "en": "Price for hair up to the shoulders; for longer hair: Long Hair add-on. On coloured hair, a consultation comes first."
+          "el": "Η τιμή αφορά μαλλιά έως τους ώμους· για πιο μακριά: «+ Μακριά μαλλιά». Σε βαμμένα μαλλιά προηγείται συμβουλευτική. Προστασία τρίχας: προτείνουμε το σπρέι προθεραπείας L’Oréal Metal Detox πριν από το ξάνοιγμα, μέρος του ολοκληρωμένου πρωτοκόλλου Metal Detox (+ Προστασία τρίχας στο ξάνοιγμα).",
+          "en": "Price for hair up to the shoulders; for longer hair: Long Hair add-on. On coloured hair, a consultation comes first. Hair protection: we recommend the L’Oréal Metal Detox pre-treatment spray before lightening, part of the complete Metal Detox protocol (Hair Protection for Lightening add-on)."
         },
         "online": true,
         "options": [
@@ -1119,7 +1139,12 @@
               "option": "14436638"
             }
           }
-        ]
+        ],
+        "faq": {
+          "href": "/syxnes-erotiseis/#metal-detox",
+          "el": "Τι είναι το Metal Detox;",
+          "en": "What is Metal Detox?"
+        }
       },
       {
         "name": {
@@ -1131,8 +1156,8 @@
           "en": "Natural, luminous highlights painted by hand, freehand or in foils (foilayage), with toner, with a wash and dry."
         },
         "note": {
-          "el": "Μόνο για μεσαία και μακριά μαλλιά. Η τιμή αφορά μαλλιά έως τους ώμους· για πιο μακριά: «+ Μακριά μαλλιά». Την πρώτη φορά προηγείται συμβουλευτική.",
-          "en": "Medium and long hair only. Price for hair up to the shoulders; for longer hair: Long Hair add-on. The first time, a consultation comes first."
+          "el": "Μόνο για μεσαία και μακριά μαλλιά. Η τιμή αφορά μαλλιά έως τους ώμους· για πιο μακριά: «+ Μακριά μαλλιά». Την πρώτη φορά προηγείται συμβουλευτική. Προστασία τρίχας: προτείνουμε το σπρέι προθεραπείας L’Oréal Metal Detox πριν από το ξάνοιγμα, μέρος του ολοκληρωμένου πρωτοκόλλου Metal Detox (+ Προστασία τρίχας στο ξάνοιγμα).",
+          "en": "Medium and long hair only. Price for hair up to the shoulders; for longer hair: Long Hair add-on. The first time, a consultation comes first. Hair protection: we recommend the L’Oréal Metal Detox pre-treatment spray before lightening, part of the complete Metal Detox protocol (Hair Protection for Lightening add-on)."
         },
         "online": true,
         "options": [
@@ -1149,7 +1174,12 @@
               "option": "14436656"
             }
           }
-        ]
+        ],
+        "faq": {
+          "href": "/syxnes-erotiseis/#metal-detox",
+          "el": "Τι είναι το Metal Detox;",
+          "en": "What is Metal Detox?"
+        }
       },
       {
         "name": {
@@ -1217,8 +1247,8 @@
           "en": "Hair Protection for Lightening (add-on)"
         },
         "desc": {
-          "el": "Ψεκασμός με L’Oréal Metal Detox πριν από τις ανταύγειες ή το ξάνοιγμα, για προστασία της τρίχας.",
-          "en": "A L’Oréal Metal Detox pre-treatment spray before highlights or lightening, to protect the hair."
+          "el": "Ψεκασμός με το σπρέι προθεραπείας L’Oréal Metal Detox πριν από τις ανταύγειες ή το ξάνοιγμα, το πρώτο βήμα του πρωτοκόλλου Metal Detox, για προστασία της τρίχας.",
+          "en": "The L’Oréal Metal Detox pre-treatment spray before highlights or lightening, the first step of the Metal Detox protocol, to protect the hair."
         },
         "note": {
           "el": "Μόνο μαζί με ανταύγειες, μπαλαγιάζ ή ξάνοιγμα.",
@@ -1239,7 +1269,12 @@
               "option": "14437202"
             }
           }
-        ]
+        ],
+        "faq": {
+          "href": "/syxnes-erotiseis/#metal-detox",
+          "el": "Τι είναι το Metal Detox;",
+          "en": "What is Metal Detox?"
+        }
       },
       {
         "name": {
@@ -1251,8 +1286,8 @@
           "en": "A luminous balayage from root to ends, painted by hand, freehand or in foils (foilayage), with toner, with a wash and dry."
         },
         "note": {
-          "el": "Η τιμή αφορά μαλλιά έως τους ώμους· για πιο μακριά: «+ Μακριά μαλλιά». Την πρώτη φορά προηγείται συμβουλευτική.",
-          "en": "Price for hair up to the shoulders; for longer hair: Long Hair add-on. The first time, a consultation comes first."
+          "el": "Η τιμή αφορά μαλλιά έως τους ώμους· για πιο μακριά: «+ Μακριά μαλλιά». Την πρώτη φορά προηγείται συμβουλευτική. Προστασία τρίχας: προτείνουμε το σπρέι προθεραπείας L’Oréal Metal Detox πριν από το ξάνοιγμα, μέρος του ολοκληρωμένου πρωτοκόλλου Metal Detox (+ Προστασία τρίχας στο ξάνοιγμα).",
+          "en": "Price for hair up to the shoulders; for longer hair: Long Hair add-on. The first time, a consultation comes first. Hair protection: we recommend the L’Oréal Metal Detox pre-treatment spray before lightening, part of the complete Metal Detox protocol (Hair Protection for Lightening add-on)."
         },
         "online": false,
         "options": [
@@ -1265,7 +1300,12 @@
             },
             "price": 140
           }
-        ]
+        ],
+        "faq": {
+          "href": "/syxnes-erotiseis/#metal-detox",
+          "el": "Τι είναι το Metal Detox;",
+          "en": "What is Metal Detox?"
+        }
       }
     ]
   },
