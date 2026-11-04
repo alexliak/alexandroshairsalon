@@ -54,6 +54,7 @@ def _anchor(name):
 
 BOOKS = {s["name"]["el"]: [book_url(o) for o in s["options"]] for c in _MENU_JSON for s in c["services"]}
 DESC = {s["name"]["el"]: s.get("desc", {}).get("el", "") for c in _MENU_JSON for s in c["services"]}
+SVC_FAQ = {s["name"]["el"]: s["faq"] for c in _MENU_JSON for s in c["services"] if s.get("faq")}
 
 
 def OP(name, label):
@@ -191,6 +192,9 @@ def svc_html(key):
         return f'<li><a class="bk" href="/services#{_anchor(key)}" aria-label="Κράτηση με κλήση ή μήνυμα: {esc(name)}{" · " + esc(o) if o else ""}">{inner}</a></li>'
     rows = "".join(li(o, d, p, u) for (o, d, p), u in zip(opts, BOOKS[key]))
     d = f'<p class="sd">{esc(DESC[key])}</p>' if DESC.get(key) else ""
+    fq = SVC_FAQ.get(key)
+    if fq:
+        d += f'<p class="sd"><a class="il" href="{esc(fq['href'])}">{esc(fq['el'])} →</a></p>'
     return f'<article class="svc"><h3>{esc(name)}</h3>{d}<ul>{rows}</ul></article>'
 
 
@@ -554,6 +558,8 @@ def svc_html_en(name):
         return f'<li><a class="bk" href="/services#{_anchor(name)}" aria-label="Book by call or message: {esc(s["name"]["en"])}{" · " + esc(o["en"]) if o["en"] else ""}">{inner}</a></li>'
     rows = "".join(li(o) for o in s["options"])
     d = f'<p class="sd">{esc(s["desc"]["en"])}</p>' if s.get("desc") else ""
+    if s.get("faq"):
+        d += f'<p class="sd"><a class="il" href="{esc(s["faq"]["href"])}">{esc(s["faq"]["en"])} →</a></p>'
     return f'<article class="svc"><h3>{esc(s["name"]["en"])}</h3>{d}<ul>{rows}</ul></article>'
 
 
@@ -1100,6 +1106,11 @@ FAQ_GROUPS = [
    "For a gentler result there is also a bleach-free option, with L’Oréal Blond Studio No Bleach™, which lifts up to 4 levels on natural hair and up to 2.5 on coloured hair. "
    f"For extra protection, we can spray L’Oréal Metal Detox before lightening: the Hair Protection add-on ({O('+ Προστασία τρίχας στο ξάνοιγμα')}). On coloured hair, a consultation comes first.",
    [("Ανταύγειες γύρω από το πρόσωπο", "Με ντεκαπάζ"), ("Ανταύγειες γύρω από το πρόσωπο", "Χωρίς ντεκαπάζ"), ("Συμβουλευτική χρώματος, νυφικού & κερατίνης", None)], "ntekapaz"),
+  ("Τι είναι το Metal Detox;",
+   f"Το L’Oréal Professionnel Metal Detox είναι προστατευτικό σπρέι που ψεκάζεται πριν από ανταύγειες, μπαλαγιάζ ή ξάνοιγμα. Εξουδετερώνει τα μέταλλα που μαζεύει η τρίχα από το νερό της βρύσης (π.χ. χαλκό), τα οποία στο ξάνοιγμα αυξάνουν το σπάσιμο. Το προτείνουμε σε κάθε τεχνική με ντεκαπάζ ή κρέμα ξανοίγματος ({O('+ Προστασία τρίχας στο ξάνοιγμα')}) και είναι μέρος του επίσημου πρωτοκόλλου No Bleach French Highlights. Για το σπίτι υπάρχουν σαμπουάν και μάσκα Metal Detox.",
+   "What is Metal Detox?",
+   f"L’Oréal Professionnel Metal Detox is a protective spray applied before highlights, balayage or lightening. It neutralises the metals hair picks up from tap water (such as copper), which increase breakage during lightening. We recommend it with every lightening technique ({O('+ Προστασία τρίχας στο ξάνοιγμα')}), and it is part of the official No Bleach French Highlights protocol. Metal Detox shampoo and mask are available for home care.",
+   [("+ Προστασία τρίχας στο ξάνοιγμα", None)], "metal-detox"),
   ("Τι είναι το strand test;",
    "Δοκιμή σε μια μικρή, κρυφή τούφα πριν από διόρθωση ή μεγάλη αλλαγή χρώματος: βλέπουμε πώς ανοίγει και πώς πιάνει το χρώμα, και πόσο αντέχει η τρίχα. Γίνεται στη διάγνωση, ώστε η προσφορά, ο χρόνος και το πλάνο να βασίζονται στα δικά σου μαλλιά. Περισσότερα: alexandroshairsalon.gr/diorthosi-xromatos-athina",
    "What is a strand test?",
