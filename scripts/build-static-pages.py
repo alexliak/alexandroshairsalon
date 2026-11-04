@@ -311,7 +311,7 @@ def page(path, title, desc, body, ld, extra_head="", mbar=True, bilingual=False,
 <footer class="bottom"><div class="wrap">
   <p><strong>Alexandros Hair Salon</strong> · {ADDRESS} · <a href="tel:{PHONE}">{PHONE_TXT}</a> · <a href="mailto:info@alexandroshairsalon.gr">info@alexandroshairsalon.gr</a> · <a href="tel:+306981319000" data-en="Call mobile">Κλήση κινητού</a> · <a href="https://wa.me/306981319000" target="_blank" rel="noopener">WhatsApp</a> · <a href="viber://chat?number=%2B306981319000">Viber</a> · <a href="{GOOGLE}" data-maps target="_blank" rel="noopener" data-en="Hours on Google">Ωράριο στο Google</a> · <a href="{DIRECTIONS}" data-maps target="_blank" rel="noopener" data-en="Directions">Οδηγίες</a></p>
   <p class="tsw" role="radiogroup" aria-label="Εμφάνιση"><span data-en="Theme">Εμφάνιση</span><button type="button" role="radio" data-mode="auto" title="Όπως η συσκευή σου" data-en="Auto">Αυτόματο</button><button type="button" role="radio" data-mode="light" data-en="Light">Ανοιχτό</button><button type="button" role="radio" data-mode="dark" data-en="Dark">Σκούρο</button></p>
-  <p class="links"><a href="/" data-en="Home">Αρχική</a><a href="/services" data-en="All prices">Όλες οι τιμές</a><a href="/kourema-athina/">Κούρεμα στην Αθήνα</a><a href="/vafi-mallion-athina/">Βαφή μαλλιών στην Αθήνα</a><a href="/balayage-athina/">Balayage στην Αθήνα</a><a href="/dorean-kourema-athina/">Δωρεάν κούρεμα (μοντέλο)</a><a href="/fotografies" data-en="Photos">Φωτογραφίες</a><a href="/kratisi/" data-en="Book online">Κράτηση online</a><a href="/hair-salon-athens/" hreflang="en">Hair salon in Athens (English)</a><a href="/xtenisma-fotografisi-athina/">Χτένισμα για φωτογράφιση</a><a href="/synergasies/">Συνεργασίες</a><a href="/syxnes-erotiseis/" data-en="FAQ">Συχνές ερωτήσεις</a><a href="/dorokarta/" data-en="Gift card">Δωροκάρτα</a><a href="/gnomi/" data-en="Your feedback">Η γνώμη σου</a><a href="/shop">Shop</a></p>
+  <p class="links"><a href="/" data-en="Home">Αρχική</a><a href="/services" data-en="All prices">Όλες οι τιμές</a><a href="/kourema-athina/">Κούρεμα στην Αθήνα</a><a href="/vafi-mallion-athina/">Βαφή μαλλιών στην Αθήνα</a><a href="/balayage-athina/">Balayage στην Αθήνα</a><a href="/diorthosi-xromatos-athina/">Διόρθωση χρώματος</a><a href="/dorean-kourema-athina/">Δωρεάν κούρεμα (μοντέλο)</a><a href="/fotografies" data-en="Photos">Φωτογραφίες</a><a href="/kratisi/" data-en="Book online">Κράτηση online</a><a href="/hair-salon-athens/" hreflang="en">Hair salon in Athens (English)</a><a href="/xtenisma-fotografisi-athina/">Χτένισμα για φωτογράφιση</a><a href="/synergasies/">Συνεργασίες</a><a href="/syxnes-erotiseis/" data-en="FAQ">Συχνές ερωτήσεις</a><a href="/dorokarta/" data-en="Gift card">Δωροκάρτα</a><a href="/gnomi/" data-en="Your feedback">Η γνώμη σου</a><a href="/shop">Shop</a></p>
 </div></footer>
 {'<div class="mbar"><span class="mb2"><small data-en="Book online">Online κράτηση</small><b data-en="in 1 minute">σε 1 λεπτό</b></span><a class="btn gold" href="/kratisi/" data-en="Book now">Κλείσε ραντεβού</a></div>' if mbar else ''}
 <button type="button" class="totop" aria-label="Επιστροφή στην κορυφή" title="Επιστροφή στην κορυφή" tabindex="-1">{ICONS['FaArrowUp']}</button>
@@ -449,7 +449,7 @@ service_page(
      ("Πόση ώρα διαρκεί η βαφή ρίζας;", "Περίπου μία ώρα μαζί με την αναμονή. Με ρεφλέ στα μήκη από μία ώρα έως μία ώρα και δέκα λεπτά."),
      ("Πώς κλείνω ραντεβού για βαφή;", "Online στο alexandroshairsalon.gr/kratisi, όπου βλέπεις ελεύθερες ώρες, ή στο 210 346 5554. Πληρώνεις online ή στο κομμωτήριο.")],
     "Βαφή μαλλιών",
-    [("Balayage στην Αθήνα", "/balayage-athina/"), ("Κούρεμα στην Αθήνα", "/kourema-athina/"), ("Όλες οι τιμές", "/services")],
+    [("Διόρθωση χρώματος", "/diorthosi-xromatos-athina/"), ("Balayage στην Αθήνα", "/balayage-athina/"), ("Όλες οι τιμές", "/services")],
     footnote=SKIN_NOTE + f'<p class="footnote" style="font-size:.82em;opacity:.75">Κάθε βαφή περιλαμβάνει συγκεκριμένη ποσότητα χρώματος (στη βαφή ρίζας έως 45 g). Αν χρειαστεί περισσότερο, το «+ Επιπλέον χρώμα» (€{P("+ Επιπλέον χρώμα")} ανά 30 g, Redken {OP("+ Επιπλέον χρώμα","Redken · ανά 30 g ή 30 ml")}) το συμφωνούμε πριν την εφαρμογή.</p>',
 )
 
@@ -476,6 +476,33 @@ service_page(
      ("Πώς κλείνω ραντεβού;", "Online στο alexandroshairsalon.gr/kratisi ή στο 210 346 5554. Αν δεν είσαι σίγουρη τι χρειάζεσαι, κλείσε διάγνωση χρώματος.")],
     "Balayage και ανταύγειες",
     [("Βαφή μαλλιών στην Αθήνα", "/vafi-mallion-athina/"), ("Κούρεμα στην Αθήνα", "/kourema-athina/"), ("Όλες οι τιμές", "/services")],
+    footnote=SKIN_NOTE,
+)
+
+# ---------- /diorthosi-xromatos-athina/ ----------
+DIAG = dict((o, p) for o, _, p in MENU["Διόρθωση χρώματος"][1])["Διάγνωση & προσφορά"]
+service_page(
+    "/diorthosi-xromatos-athina/", "Διόρθωση χρώματος στην Αθήνα",
+    f"Διόρθωση Χρώματος Αθήνα – Θησείο | Color Correction | Alexandros Hair Salon",
+    f"Διόρθωση χρώματος (color correction) στο Θησείο, Αθήνα: από σκούρα ή ανομοιόμορφη βαφή σε καθαρό, ομοιόμορφο χρώμα. Διάγνωση με τεστ τούφας και γραπτή προσφορά €{DIAG}, που αφαιρείται από την τιμή.",
+    "Color correction · Θησείο",
+    "Διόρθωση χρώματος στην Αθήνα, <em>με πλάνο πριν από κάθε βήμα.</em>",
+    "Σκούρες ζώνες, βαφή που δεν έπιασε, πορτοκαλί ή κίτρινο που δεν έφυγε, μαύρο που θέλεις να αφήσεις πίσω σου. Η διόρθωση ξεκινά πάντα με διάγνωση και τεστ τούφας, ώστε να ξέρεις από πριν το πλάνο, τον χρόνο και την τιμή.",
+    [f"Διάγνωση & προσφορά €{DIAG}", "Αφαιρείται από την τιμή της διόρθωσης"] + COMMON_FACTS[:2],
+    f"""<h2>Πώς γίνεται η διόρθωση</h2>
+<p><strong>1. Διάγνωση (€{DIAG}, 30′)</strong>: κοιτάμε το ιστορικό του χρώματος, την κατάσταση της τρίχας και κάνουμε τεστ σε μια τούφα. Παίρνεις γραπτή προσφορά με πλάνο, χρόνο και τιμή. Αν κάνεις τη διόρθωση σε εμάς, το ποσό της διάγνωσης αφαιρείται.</p>
+<p><strong>2. Ελεγχόμενο ξάνοιγμα</strong>, μόνο όπου χρειάζεται: σκούρες λωρίδες ή παλιό μαύρο ανοίγουν ως το φόντο που θέλει το τελικό χρώμα, χωρίς να ταλαιπωρούνται τα σημεία που είναι ήδη σωστά.</p>
+<p><strong>3. Χρώμα ανά ζώνη</strong>: διαφορετική συνταγή για ρίζα, μήκη και άκρες, ώστε το αποτέλεσμα να βγει ομοιόμορφο από τη ρίζα ως τις άκρες.</p>
+<p>Μερικές φορές το ασφαλέστερο είναι η διόρθωση να γίνει σε δύο ραντεβού. Θα σου το πούμε από τη διάγνωση, όχι στη μέση της δουλειάς.</p>
+{BEFORE_AFTER}""",
+    ["Διόρθωση χρώματος", "Βαφή σε όλο το μαλλί", "Ρεφλέ", "+ Προστασία τρίχας στο ξάνοιγμα", "+ Επιπλέον χρώμα"],
+    [("Πόσο κοστίζει η διόρθωση χρώματος;", f"Εξαρτάται από το ιστορικό και το μήκος, γι' αυτό ξεκινάμε με διάγνωση (€{DIAG}). Παίρνεις γραπτή προσφορά με συγκεκριμένη τιμή, και το ποσό της διάγνωσης αφαιρείται αν κάνεις τη διόρθωση σε εμάς."),
+     ("Μπορώ να πάω από μαύρο σε κόκκινο ή χάλκινο;", "Συνήθως ναι, με ελεγχόμενο ξάνοιγμα και μετά το χρώμα που θέλεις, όπως το cherry cola και το χάλκινο στις φωτογραφίες. Στη διάγνωση βλέπουμε αν γίνεται σε ένα ή σε δύο ραντεβού."),
+     ("Θα χαλάσουν τα μαλλιά μου;", "Ανοίγουμε μόνο όσο χρειάζεται και μόνο εκεί που χρειάζεται. Προτείνουμε και την προστασία τρίχας στο ξάνοιγμα. Αν η τρίχα δεν αντέχει όλη τη διόρθωση σε μία μέρα, τη χωρίζουμε σε δύο ραντεβού."),
+     FAQ_WHEN,
+     ("Πώς κλείνω διάγνωση;", "Στο 210 346 5554 ή στο κινητό μέσω WhatsApp/Viber, με μια φωτογραφία των μαλλιών σου στο φως της μέρας.")],
+    "Διόρθωση χρώματος",
+    [("Βαφή μαλλιών στην Αθήνα", "/vafi-mallion-athina/"), ("Balayage στην Αθήνα", "/balayage-athina/"), ("Όλες οι τιμές", "/services")],
     footnote=SKIN_NOTE,
 )
 
