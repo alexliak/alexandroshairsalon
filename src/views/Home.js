@@ -3,6 +3,7 @@ import { Link } from '../lib/router';
 import NhLayout, { BOOK, PHONE, GOOGLE_PROFILE_URL, DIRECTIONS_URL, REVIEWS_URL, mapLinkProps } from '../components/NhLayout';
 import MapEmbed from '../components/MapEmbed';
 import SalonGallery from '../components/SalonGallery';
+import WorkStrip from '../components/WorkStrip';
 import { priceText, serviceBookUrl } from '../data/prices';
 
 // Μαθηματικά animation «Κομμωτική 2050»: φορτώνονται σε ξεχωριστό, μικρό αρχείο μετά την αρχική σελίδα.
@@ -32,6 +33,11 @@ const content = {
       { big: '24/7', small: 'online κράτηση, χωρίς τηλέφωνο', go: 'book' },
       { big: '5′', small: 'με τα πόδια από το μετρό Θησείο · χάρτης', go: 'map' }
     ],
+    workEyebrow: 'Πρόσφατα αποτελέσματα',
+    workTitleA: 'Πριν & μετά, ',
+    workTitleEm: 'από το Θησείο.',
+    workAll: 'Διόρθωση & αλλαγή χρώματος →',
+    workHref: '/diorthosi-xromatos-athina/',
     salonEyebrow: 'Ο χώρος · Θησείο',
     salonTitleA: 'Έλα να μας ',
     salonTitleEm: 'γνωρίσεις.',
@@ -102,6 +108,11 @@ const content = {
       { big: '24/7', small: 'online booking, no phone call needed', go: 'book' },
       { big: '5′', small: 'walk from Thiseio metro · map', go: 'map' }
     ],
+    workEyebrow: 'Recent work',
+    workTitleA: 'Before & after, ',
+    workTitleEm: 'from Thiseio.',
+    workAll: 'Colour correction & change →',
+    workHref: '/hair-colour-correction-athens/',
     salonEyebrow: 'The salon · Thiseio',
     salonTitleA: 'Come and ',
     salonTitleEm: 'meet us.',
@@ -241,6 +252,17 @@ const Home = ({ language, setLanguage }) => {
               </a>
             ))}
           </div>
+        </section>
+
+        <section className="nh-section nh-work-section" id="apotelesmata" aria-labelledby="work-title">
+          <div className="nh-section-head">
+            <div>
+              <span className="nh-eyebrow">{t.workEyebrow}</span>
+              <h2 id="work-title" className="nh-h2">{t.workTitleA}<em>{t.workTitleEm}</em></h2>
+            </div>
+            <a href={t.workHref} className="nh-underline">{t.workAll}</a>
+          </div>
+          <WorkStrip language={language} href={t.workHref} />
         </section>
 
         <section className="nh-section nh-salon" id="xoros" aria-labelledby="salon-title">
