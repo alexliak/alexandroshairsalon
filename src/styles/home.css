@@ -909,6 +909,8 @@ html[data-theme='light'] .nh .nh-share-menu { box-shadow: 0 16px 40px rgba(70, 5
 .nh-res:hover .nh-res-media::after { transform: translateX(120%); }
 .nh-res-cap { display: flex; flex-direction: column; gap: 6px; padding: 0 4px; max-width: calc(var(--h) * 1.3333); }
 .nh-res--video .nh-res-cap { max-width: calc(var(--h) * .5625); }
+.nh-res-chip { align-self: flex-start; font-style: normal; font-size: 10px; letter-spacing: .2em; text-transform: uppercase; padding: 4px 10px; border-radius: 999px; color: #f0c9b0; border: 1px solid rgba(214, 120, 96, .55); background: rgba(176, 58, 72, .14); }
+.nh-res-chip--diorthosi { color: var(--r-gold); border-color: rgba(212, 182, 124, .55); background: rgba(212, 182, 124, .1); }
 .nh-res-cap strong { font-family: var(--nh-serif); font-weight: 400; font-size: 22px; line-height: 1.15; color: var(--r-text); }
 .nh-res-cap span { font-size: 14.5px; line-height: 1.5; color: var(--r-muted); }
 .nh-results-foot { display: flex; flex-wrap: wrap; align-items: center; gap: 18px 28px; margin-top: clamp(18px, 2.4vw, 28px); }

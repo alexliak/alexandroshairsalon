@@ -116,7 +116,7 @@ h3{font-size:17px;margin:0}
 .facts li:before{content:"✓ ";color:var(--gold)}
 section.block{padding:40px 0;border-top:1px solid var(--line)}
 .prose p{color:var(--soft);max-width:760px}
-.work{display:grid;gap:28px;margin:6px 0 34px;max-width:760px}.work-card{margin:0;padding:12px 12px 18px;border-radius:20px;border:1px solid var(--line);background:var(--panel)}.work-card img,.work-card video{width:100%;height:auto;display:block;border-radius:12px;background:#000}.work-card figcaption{margin-top:14px;padding:0 4px;font-size:15px;line-height:1.5;color:var(--soft)}.work-card figcaption strong{display:block;font-family:var(--serif);font-weight:400;font-size:22px;color:var(--text);margin:6px 0 4px}.work-top{display:flex;justify-content:space-between;align-items:baseline}.work-top b{font-family:var(--serif);font-weight:400;font-size:30px;line-height:1;color:transparent;-webkit-text-stroke:1px var(--gold)}.work-top time{font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--muted)}@media (min-width:761px){.work-video video{aspect-ratio:4/5;object-fit:cover;object-position:50% 12%}}
+.work{display:grid;gap:28px;margin:6px 0 34px;max-width:760px}.work-cat{font-family:var(--serif);font-weight:400;font-size:24px;margin:30px 0 4px;color:var(--text)}.work-cat-d{margin:0 0 16px;color:var(--muted);font-size:15px}.work-chip{display:inline-block;font-style:normal;font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);border:1px solid var(--gold);border-radius:999px;padding:3px 10px;margin-top:10px}.work-card{margin:0;padding:12px 12px 18px;border-radius:20px;border:1px solid var(--line);background:var(--panel)}.work-card img,.work-card video{width:100%;height:auto;display:block;border-radius:12px;background:#000}.work-card figcaption{margin-top:14px;padding:0 4px;font-size:15px;line-height:1.5;color:var(--soft)}.work-card figcaption strong{display:block;font-family:var(--serif);font-weight:400;font-size:22px;color:var(--text);margin:6px 0 4px}.work-top{display:flex;justify-content:space-between;align-items:baseline}.work-top b{font-family:var(--serif);font-weight:400;font-size:30px;line-height:1;color:transparent;-webkit-text-stroke:1px var(--gold)}.work-top time{font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--muted)}@media (min-width:761px){.work-video video{aspect-ratio:4/5;object-fit:cover;object-position:50% 12%}}
 .svc{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:18px 20px;margin:12px 0}
 .svc .sd{margin:6px 0 0;color:var(--soft);font-size:14.5px;line-height:1.5}
 .svc ul{list-style:none;margin:10px 0 0;padding:0}
@@ -430,23 +430,43 @@ MONTHS = {"el": ["Ιανουάριος", "Φεβρουάριος", "Μάρτιο
           "en": ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]}
 
 
+WORK_CATS = {
+    "allagi": {"el": ("Αλλαγή χρώματος από μαύρο", "Από μαύρο βαμμένο σε κόκκινο, χάλκινο ή πιο ανοιχτό χρώμα."),
+               "en": ("Colour change from black", "From dyed black to red, copper or a lighter colour.")},
+    "diorthosi": {"el": ("Διόρθωση χρώματος", "Color correction: όταν η βαφή βγήκε σκούρα, ανομοιόμορφη ή σε λάθος τόνο."),
+                  "en": ("Colour correction", "When colour came out too dark, patchy or the wrong tone.")},
+}
+
+
 def work_grid(lang):
-    """Κάθε δουλειά σε δική της κάρτα (01, 02…), με μικρή ημερομηνία· το βίντεο με το κείμενο δίπλα σε υπολογιστή."""
-    out = []
-    for n, w in enumerate(WORK, 1):
-        y, m = w["date"].split("-")
-        t = w[lang]
-        cap = (f'<figcaption><span class="work-top"><b aria-hidden="true">{n:02d}</b><time datetime="{w["date"]}">{MONTHS[lang][int(m) - 1]} {y}</time></span>'
-               f'<strong>{esc(t["title"])}</strong>{esc(t["desc"])}</figcaption>')
-        if w["type"] == "video":
-            media = (f'<video src="{w["src"]}" poster="{w["poster"]}" width="{w["w"]}" height="{w["h"]}" '
-                     f'autoplay muted loop playsinline preload="metadata" aria-label="{esc(t["alt"])}"></video>')
-        else:
-            media = (f'<img src="/images/work/alexandros-hair-salon-thiseio-{w["id"]}-1200.webp" '
-                     f'srcset="/images/work/alexandros-hair-salon-thiseio-{w["id"]}-600.webp 600w, /images/work/alexandros-hair-salon-thiseio-{w["id"]}-1200.webp 1200w" '
-                     f'sizes="(max-width: 760px) 100vw, 760px" width="{w["w"]}" height="{w["h"]}" loading="lazy" decoding="async" alt="{esc(t["alt"])}">')
-        out.append(f'<figure class="work-card work-{w["type"]}">{media}{cap}</figure>')
-    return f'<div class="work">{"".join(out)}</div>'
+    """Οι δουλειές ανά κατηγορία (αλλαγή από μαύρο / διόρθωση), κάθε μία σε δική της αριθμημένη κάρτα με ημερομηνία,
+    και VideoObject για το Google."""
+    out, n, ld = [], 0, []
+    for cat, (cname, cdesc) in ((k, v[lang]) for k, v in WORK_CATS.items()):
+        items = [w for w in WORK if w["category"] == cat]
+        if not items:
+            continue
+        out.append(f'<h3 class="work-cat">{esc(cname)}</h3><p class="work-cat-d">{esc(cdesc)}</p><div class="work">')
+        for w in items:
+            n += 1
+            y, m = w["date"].split("-")
+            t = w[lang]
+            cap = (f'<figcaption><span class="work-top"><b aria-hidden="true">{n:02d}</b><time datetime="{w["date"]}">{MONTHS[lang][int(m) - 1]} {y}</time></span>'
+                   f'<em class="work-chip">{esc(cname)}</em><strong>{esc(t["title"])}</strong>{esc(t["desc"])}</figcaption>')
+            if w["type"] == "video":
+                media = (f'<video src="{w["src"]}" poster="{w["poster"]}" width="{w["w"]}" height="{w["h"]}" '
+                         f'autoplay muted loop playsinline preload="metadata" aria-label="{esc(t["alt"])}"></video>')
+                ld.append({"@context": "https://schema.org", "@type": "VideoObject", "name": f'{t["title"]} · Alexandros Hair Salon',
+                           "description": t["desc"], "thumbnailUrl": SITE + w["poster"], "contentUrl": SITE + w["src"],
+                           "uploadDate": w["uploadDate"], "inLanguage": lang})
+            else:
+                media = (f'<img src="/images/work/alexandros-hair-salon-thiseio-{w["id"]}-1200.webp" '
+                         f'srcset="/images/work/alexandros-hair-salon-thiseio-{w["id"]}-600.webp 600w, /images/work/alexandros-hair-salon-thiseio-{w["id"]}-1200.webp 1200w" '
+                         f'sizes="(max-width: 760px) 100vw, 760px" width="{w["w"]}" height="{w["h"]}" loading="lazy" decoding="async" alt="{esc(t["alt"])}">')
+            out.append(f'<figure class="work-card work-{w["type"]}">{media}{cap}</figure>')
+        out.append('</div>')
+    out += [f'<script type="application/ld+json">{json.dumps(x, ensure_ascii=False)}</script>' for x in ld]
+    return "".join(out)
 
 
 BEFORE_AFTER = '<h2>Πριν &amp; μετά</h2>' + work_grid("el")

@@ -8,6 +8,11 @@ const MONTHS = {
   en: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
 };
 
+const CATS = {
+  allagi: { el: 'Αλλαγή χρώματος από μαύρο', en: 'Colour change from black' },
+  diorthosi: { el: 'Διόρθωση χρώματος', en: 'Colour correction' }
+};
+
 const text = {
   el: {
     eyebrow: 'Αποτελέσματα · Πριν & μετά',
@@ -99,6 +104,7 @@ export default function WorkStrip({ language = 'el', book }) {
                 )}
               </div>
               <div className="nh-res-cap">
+                <em className={`nh-res-chip nh-res-chip--${w.category}`}>{CATS[w.category][lang]}</em>
                 <strong>{w[lang].title}</strong>
                 <span>{w[lang].desc}</span>
               </div>
