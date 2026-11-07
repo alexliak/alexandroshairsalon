@@ -89,7 +89,7 @@ const layoutText = {
       { label: 'Υπηρεσίες & τιμές', to: '/services' },
       { label: 'L’Oréal & Redken', href: '/#brands' },
       { label: 'Ωράριο', to: '/hours' },
-      { label: 'Ο χώρος', to: '/fotografies' },
+      { label: 'Φωτογραφίες', to: '/fotografies' },
       { label: 'Shop', to: '/shop' },
       { label: 'Γίνε μοντέλο', to: '/montela', promo: true },
       { label: 'We are hiring', to: '/douleia', hiring: true }
@@ -141,7 +141,7 @@ const layoutText = {
       { label: 'Services & prices', to: '/services' },
       { label: 'L’Oréal & Redken', href: '/#brands' },
       { label: 'Hours', to: '/hours' },
-      { label: 'The salon', to: '/fotografies' },
+      { label: 'Photos', to: '/fotografies' },
       { label: 'Shop', to: '/shop' },
       { label: 'Be our model', to: '/montela', promo: true },
       { label: 'We are hiring', to: '/douleia', hiring: true }
