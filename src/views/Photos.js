@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from '../lib/router';
 import NhLayout, { BOOK, DIRECTIONS_URL, REVIEWS_URL, mapLinkProps } from '../components/NhLayout';
 import SalonGallery from '../components/SalonGallery';
+import WorkStrip from '../components/WorkStrip';
 
 // /fotografies: οι φωτογραφίες του χώρου, για όσους ψάχνουν «alexandros hair salon photos / φωτογραφίες»,
 // με σύνδεσμο σε τιμές, κριτικές Google, χάρτη και κράτηση.
@@ -11,7 +12,8 @@ const content = {
     eyebrow: 'Θησείο · Ερυσίχθονος 3-5',
     titleA: 'Φωτογραφίες του ',
     titleEm: 'κομμωτηρίου.',
-    lead: 'Το Alexandros Hair Salon από μέσα, όπως είναι: οι θέσεις κουρέματος, το λούσιμο, η υποδοχή και ο χώρος αναμονής. Βρισκόμαστε στην Ερυσίχθονος 3-5, πέντε λεπτά με τα πόδια από το μετρό Θησείο.',
+    salonTitle: 'Ο χώρος',
+    lead: 'Πρώτα οι δουλειές μας, πριν & μετά. Και μετά το Alexandros Hair Salon από μέσα, όπως είναι: οι θέσεις κουρέματος, το λούσιμο, η υποδοχή και ο χώρος αναμονής. Βρισκόμαστε στην Ερυσίχθονος 3-5, πέντε λεπτά με τα πόδια από το μετρό Θησείο.',
     book: 'Κλείσε ραντεβού',
     prices: 'Τιμές',
     reviews: 'Κριτικές στο Google (4,6 ★)',
@@ -23,7 +25,8 @@ const content = {
     eyebrow: 'Thiseio · Erisichthonos 3-5',
     titleA: 'Photos of the ',
     titleEm: 'salon.',
-    lead: 'Alexandros Hair Salon from the inside, as it is: the cutting stations, backwash, reception and waiting area. We are at Erisichthonos 3-5, a five-minute walk from Thiseio metro.',
+    salonTitle: 'The salon',
+    lead: 'First our work, before & after. Then Alexandros Hair Salon from the inside, as it is: the cutting stations, backwash, reception and waiting area. We are at Erisichthonos 3-5, a five-minute walk from Thiseio metro.',
     book: 'Book an appointment',
     prices: 'Prices',
     reviews: 'Google reviews (4.6 ★)',
@@ -48,6 +51,9 @@ export default function Photos({ language, setLanguage }) {
           </div>
         </header>
 
+        <div id="apotelesmata"><WorkStrip language={language} book={BOOK} /></div>
+
+        <h2 className="nh-h2 nh-photos-sub">{t.salonTitle}</h2>
         <SalonGallery language={language} />
 
         <section className="nh-photos-foot">
