@@ -1,6 +1,6 @@
 self.__BUILD_MANIFEST = {
   "/": [
-    "static/chunks/2p1x727x9_fxa.js"
+    "static/chunks/186l_pxcss54k.js"
   ],
   "/404": [
     "static/chunks/0tkyr66aheje2.js"
@@ -12,7 +12,7 @@ self.__BUILD_MANIFEST = {
     "static/chunks/2zt54b-ovidr1.js"
   ],
   "/apotelesmata": [
-    "static/chunks/3it5bv651zld0.js"
+    "static/chunks/33qm3t8pjq0xj.js"
   ],
   "/douleia": [
     "static/chunks/3g6b0xg59g34a.js"
@@ -30,7 +30,7 @@ self.__BUILD_MANIFEST = {
     "static/chunks/3xc6pbwkrh5ub.js"
   ],
   "/services": [
-    "static/chunks/0xdtwwoh83it3.js"
+    "static/chunks/14m1xd2gm8h50.js"
   ],
   "/shop": [
     "static/chunks/0y96oijnh7193.js"
