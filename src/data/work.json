@@ -1,0 +1,55 @@
+[
+  {
+    "id": "cherry-cola-pixie",
+    "type": "video",
+    "src": "/videos/alexandros-hair-salon-thiseio-cherry-cola.mp4",
+    "poster": "/videos/alexandros-hair-salon-thiseio-cherry-cola-poster.webp",
+    "w": 720,
+    "h": 1280,
+    "date": "2026-11",
+    "el": {
+      "title": "Cherry Cola & pixie",
+      "desc": "Από μαύρο βαμμένο σε cherry cola, με ελεγχόμενο ξάνοιγμα και νέο pixie κούρεμα.",
+      "alt": "Βίντεο: αλλαγή χρώματος από μαύρο σε cherry cola και pixie κούρεμα, Alexandros Hair Salon, Θησείο"
+    },
+    "en": {
+      "title": "Cherry Cola & pixie",
+      "desc": "From dyed black to cherry cola, with controlled lightening and a new pixie cut.",
+      "alt": "Video: colour change from black to cherry cola and a pixie cut, Alexandros Hair Salon, Thiseio, Athens"
+    }
+  },
+  {
+    "id": "color-correction-sunset-copper",
+    "type": "image",
+    "w": 1200,
+    "h": 900,
+    "date": "2026-11",
+    "el": {
+      "title": "Θησείο Sunset Copper",
+      "desc": "Διόρθωση χρώματος: από σκούρα, ανομοιόμορφη βαφή σε καθαρό, φωτεινό χάλκινο από τη ρίζα ως τις άκρες.",
+      "alt": "Πριν και μετά: διόρθωση χρώματος σε χάλκινο Θησείο Sunset Copper, Alexandros Hair Salon, Θησείο"
+    },
+    "en": {
+      "title": "Thiseio Sunset Copper",
+      "desc": "Colour correction: from dark, patchy colour to a clean, bright copper from root to ends.",
+      "alt": "Before and after: colour correction to Thiseio Sunset Copper, Alexandros Hair Salon, Thiseio, Athens"
+    }
+  },
+  {
+    "id": "cherry-cola",
+    "type": "image",
+    "w": 1200,
+    "h": 900,
+    "date": "2026-11",
+    "el": {
+      "title": "Cherry Cola · Midnight Merlot",
+      "desc": "Αλλαγή χρώματος: από μαύρο βαμμένο σε βαθύ κερασί με βελούδινη λάμψη.",
+      "alt": "Στάδιο ξανοίγματος και τελικό: αλλαγή χρώματος από μαύρο σε cherry cola, Alexandros Hair Salon, Θησείο"
+    },
+    "en": {
+      "title": "Cherry Cola · Midnight Merlot",
+      "desc": "Colour change: from dyed black to a deep cherry with a velvet shine.",
+      "alt": "Lightening stage and final result: colour change from black to cherry cola, Alexandros Hair Salon, Thiseio, Athens"
+    }
+  }
+]

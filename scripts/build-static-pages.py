@@ -5,6 +5,7 @@ Run from the repo root:  python3 scripts/build-static-pages.py
 Prices come from the MENU below. Keep it the same as Treatwell and src/data/menu.js.
 """
 import json
+import os
 import re
 import html
 import pathlib
@@ -115,6 +116,7 @@ h3{font-size:17px;margin:0}
 .facts li:before{content:"✓ ";color:var(--gold)}
 section.block{padding:40px 0;border-top:1px solid var(--line)}
 .prose p{color:var(--soft);max-width:760px}
+.work{display:grid;gap:22px;margin:6px 0 30px}.work figure{margin:0}.work img,.work video{width:100%;height:auto;display:block;border-radius:14px;border:1px solid var(--line);background:var(--panel)}.work-col{display:grid;gap:22px;align-content:start}.work figcaption{margin-top:10px;font-size:15px;line-height:1.5;color:var(--soft)}.work figcaption strong{display:block;font-family:var(--serif);font-weight:400;font-size:20px;color:var(--text);margin-bottom:2px}.work time{display:block;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);margin-bottom:4px}@media (min-width:761px){.work{grid-template-columns:minmax(0,5fr) minmax(0,6fr);align-items:start}}
 .svc{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:18px 20px;margin:12px 0}
 .svc .sd{margin:6px 0 0;color:var(--soft);font-size:14.5px;line-height:1.5}
 .svc ul{list-style:none;margin:10px 0 0;padding:0}
@@ -422,20 +424,33 @@ service_page(
 # ---------- /vafi-mallion-athina/ ----------
 SKIN_NOTE = '<p class="footnote" style="font-size:.82em;opacity:.75">* Αν βάφεσαι πρώτη φορά σε εμάς, μπορούμε να κάνουμε δωρεάν τεστ ευαισθησίας πριν από τη βαφή. Δεν χρειάζεται για να κλείσεις ραντεβού.</p>'
 ROOT = "Βαφή ρίζας"
-# Πριν & μετά από δουλειές του κομμωτηρίου (public/images/work/). Πλάνα χωρίς πρόσωπο.
-WORK = [
-    ("color-correction-sunset-copper", "Θησείο Sunset Copper", "Color correction: από σκούρα, ανομοιόμορφη βαφή σε καθαρό, φωτεινό χάλκινο από τη ρίζα ως τις άκρες.",
-     "Πριν και μετά: color correction σε χάλκινο Θησείο Sunset Copper, Alexandros Hair Salon, Θησείο"),
-    ("cherry-cola", "Cherry Cola · Midnight Merlot", "Από μαύρο βαμμένο σε βαθύ κερασί με βελούδινη λάμψη: κόκκινο-βιολετί σε καφέ βάση.",
-     "Στάδιο ξανοίγματος και τελικό: cherry cola (Midnight Merlot), Alexandros Hair Salon, Θησείο"),
-]
-BEFORE_AFTER = '<h2>Πριν &amp; μετά</h2>' + "".join(
-    f'<figure style="margin:0 0 28px"><img src="/images/work/alexandros-hair-salon-thiseio-{n}-1200.webp" '
-    f'srcset="/images/work/alexandros-hair-salon-thiseio-{n}-600.webp 600w, /images/work/alexandros-hair-salon-thiseio-{n}-1200.webp 1200w" '
-    f'sizes="(max-width: 760px) 100vw, 760px" width="1200" height="900" loading="lazy" decoding="async" alt="{esc(alt)}" '
-    f'style="width:100%;height:auto;display:block;border-radius:14px;border:1px solid var(--line)">'
-    f'<figcaption style="margin-top:10px"><strong>{esc(t)}</strong> · {esc(c)}</figcaption></figure>'
-    for n, t, c, alt in WORK)
+# Πριν & μετά από δουλειές του κομμωτηρίου: μία πηγή, src/data/work.json (τη διαβάζει και η αρχική).
+WORK = json.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "src", "data", "work.json"), encoding="utf-8"))
+MONTHS = {"el": ["Ιανουάριος", "Φεβρουάριος", "Μάρτιος", "Απρίλιος", "Μάιος", "Ιούνιος", "Ιούλιος", "Αύγουστος", "Σεπτέμβριος", "Οκτώβριος", "Νοέμβριος", "Δεκέμβριος"],
+          "en": ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]}
+
+
+def work_grid(lang):
+    """Βίντεο (9:16) αριστερά, φωτογραφίες πριν & μετά δεξιά· στο κινητό το ένα κάτω από το άλλο. Μικρή ημερομηνία πάνω από κάθε τίτλο."""
+    def cap(w):
+        y, m = w["date"].split("-")
+        t = w[lang]
+        return (f'<figcaption><time datetime="{w["date"]}">{MONTHS[lang][int(m) - 1]} {y}</time>'
+                f'<strong>{esc(t["title"])}</strong>{esc(t["desc"])}</figcaption>')
+    vids = [w for w in WORK if w["type"] == "video"]
+    imgs = [w for w in WORK if w["type"] == "image"]
+    v = "".join(
+        f'<figure class="work-v"><video src="{w["src"]}" poster="{w["poster"]}" width="{w["w"]}" height="{w["h"]}" '
+        f'autoplay muted loop playsinline preload="metadata" aria-label="{esc(w[lang]["alt"])}"></video>{cap(w)}</figure>' for w in vids)
+    i = "".join(
+        f'<figure><img src="/images/work/alexandros-hair-salon-thiseio-{w["id"]}-1200.webp" '
+        f'srcset="/images/work/alexandros-hair-salon-thiseio-{w["id"]}-600.webp 600w, /images/work/alexandros-hair-salon-thiseio-{w["id"]}-1200.webp 1200w" '
+        f'sizes="(max-width: 760px) 100vw, 520px" width="{w["w"]}" height="{w["h"]}" loading="lazy" decoding="async" alt="{esc(w[lang]["alt"])}">{cap(w)}</figure>'
+        for w in imgs)
+    return f'<div class="work">{v}<div class="work-col">{i}</div></div>'
+
+
+BEFORE_AFTER = '<h2>Πριν &amp; μετά</h2>' + work_grid("el")
 ROOT_OPTS = dict((o, p) for o, _, p in MENU[ROOT][1])
 service_page(
     "/vafi-mallion-athina/", "Βαφή μαλλιών στην Αθήνα",
@@ -496,39 +511,6 @@ CC_HEAD = (f'<link rel="alternate" hreflang="el" href="{SITE}{CC_EL}">'
 DIAG = dict((o, p) for o, _, p in MENU["Διόρθωση χρώματος"][1])["Διάγνωση & προσφορά"]
 
 
-def work_figs(lang):
-    data = {
-        "el": [("color-correction-sunset-copper", "Θησείο Sunset Copper", "Διόρθωση χρώματος: από σκούρα, ανομοιόμορφη βαφή σε καθαρό, φωτεινό χάλκινο από τη ρίζα ως τις άκρες.",
-                "Πριν και μετά: διόρθωση χρώματος σε χάλκινο Θησείο Sunset Copper, Alexandros Hair Salon, Θησείο"),
-               ("cherry-cola", "Cherry Cola · Midnight Merlot", "Αλλαγή χρώματος: από μαύρο βαμμένο σε βαθύ κερασί με βελούδινη λάμψη.",
-                "Στάδιο ξανοίγματος και τελικό: αλλαγή χρώματος από μαύρο σε cherry cola, Alexandros Hair Salon, Θησείο")],
-        "en": [("color-correction-sunset-copper", "Thiseio Sunset Copper", "Colour correction: from dark, patchy colour to a clean, bright copper from root to ends.",
-                "Before and after: colour correction to Thiseio Sunset Copper, Alexandros Hair Salon, Thiseio, Athens"),
-               ("cherry-cola", "Cherry Cola · Midnight Merlot", "Colour change: from dyed black to a deep cherry with a velvet shine.",
-                "Lightening stage and final result: colour change from black to cherry cola, Alexandros Hair Salon, Thiseio, Athens")],
-    }[lang]
-    vt, vc, va = {
-        "el": ("Το βίντεο", "Από μαύρο σε Cherry Cola, με ξάνοιγμα, χρώμα και νέο pixie κούρεμα.",
-               "Βίντεο: αλλαγή χρώματος από μαύρο σε cherry cola και pixie κούρεμα, Alexandros Hair Salon, Θησείο"),
-        "en": ("The video", "From black to Cherry Cola, with lightening, colour and a new pixie cut.",
-               "Video: colour change from black to cherry cola and a pixie cut, Alexandros Hair Salon, Thiseio, Athens"),
-    }[lang]
-    video = (
-        f'<figure style="margin:0 auto 28px;max-width:360px"><video src="/videos/alexandros-hair-salon-thiseio-cherry-cola.mp4" '
-        f'poster="/videos/alexandros-hair-salon-thiseio-cherry-cola-poster.webp" width="720" height="1280" '
-        f'autoplay muted loop playsinline controls preload="metadata" aria-label="{esc(va)}" '
-        f'style="width:100%;height:auto;display:block;border-radius:14px;border:1px solid var(--line);background:#eee"></video>'
-        f'<figcaption style="margin-top:10px"><strong>{esc(vt)}</strong> · {esc(vc)}</figcaption></figure>')
-    return "".join(
-        f'<figure style="margin:0 0 28px"><img src="/images/work/alexandros-hair-salon-thiseio-{n}-1200.webp" '
-        f'srcset="/images/work/alexandros-hair-salon-thiseio-{n}-600.webp 600w, /images/work/alexandros-hair-salon-thiseio-{n}-1200.webp 1200w" '
-        f'sizes="(max-width: 760px) 100vw, 760px" width="1200" height="900" loading="lazy" decoding="async" alt="{esc(alt)}" '
-        f'style="width:100%;height:auto;display:block;border-radius:14px;border:1px solid var(--line)">'
-        f'<figcaption style="margin-top:10px"><strong>{esc(t)}</strong> · {esc(c)}</figcaption></figure>'
-        + (video if n == "cherry-cola" else "")
-        for n, t, c, alt in data)
-
-
 service_page(
     CC_EL, "Διόρθωση & αλλαγή χρώματος στην Αθήνα",
     "Διόρθωση & Αλλαγή Χρώματος Αθήνα – Θησείο | Color Correction | Alexandros Hair Salon",
@@ -544,7 +526,7 @@ service_page(
 <p><strong>2. Ελεγχόμενο {FQ('ξάνοιγμα', 'ntekapaz')}</strong>, μόνο όπου χρειάζεται: σκούρες λωρίδες ή παλιό μαύρο ανοίγουν ως το φόντο που θέλει το τελικό χρώμα, χωρίς να ταλαιπωρούνται τα σημεία που είναι ήδη σωστά.</p>
 <p><strong>3. Χρώμα ανά ζώνη</strong>: διαφορετική συνταγή για ρίζα, μήκη και άκρες, συχνά με {FQ('ρεφλέ', 'refle')} στο τέλος, ώστε το αποτέλεσμα να βγει ομοιόμορφο από τη ρίζα ως τις άκρες.</p>
 <p>Μερικές φορές το ασφαλέστερο είναι να γίνει σε δύο ραντεβού. Θα σου το πούμε από τη διάγνωση, όχι στη μέση της δουλειάς.</p>
-<h2>Πριν &amp; μετά</h2>{work_figs('el')}""",
+<h2>Πριν &amp; μετά</h2>{work_grid('el')}""",
     ["Διόρθωση χρώματος", "Βαφή σε όλο το μαλλί", "Ρεφλέ", "+ Προστασία τρίχας στο ξάνοιγμα", "+ Επιπλέον χρώμα"],
     [("Πόσο κοστίζει η διόρθωση ή η αλλαγή χρώματος;", f"Εξαρτάται από το ιστορικό και το μήκος, γι' αυτό ξεκινάμε με διάγνωση (€{DIAG}). Παίρνεις γραπτή προσφορά με συγκεκριμένη τιμή, και το ποσό της διάγνωσης αφαιρείται αν κάνεις τη δουλειά σε εμάς."),
      ("Μπορώ να πάω από μαύρο σε κόκκινο ή χάλκινο;", "Συνήθως ναι. Είναι αλλαγή χρώματος: ελεγχόμενο ξάνοιγμα και μετά το χρώμα που θέλεις, όπως το cherry cola στις φωτογραφίες. Στη διάγνωση βλέπουμε αν γίνεται σε ένα ή σε δύο ραντεβού."),
@@ -975,7 +957,7 @@ b2b_page(
 <p><strong>2. Controlled lightening</strong>, only where needed: dark bands or old black are lifted to the base the final colour needs, without stressing the parts that are already right.</p>
 <p><strong>3. Colour by zone</strong>: a different formula for roots, lengths and ends, often finished with a gloss, so the result is even from root to ends.</p>
 <p>Sometimes the safest route is two appointments. We tell you at the assessment, not halfway through.</p>
-<h2>Before &amp; after</h2>{work_figs('en')}""",
+<h2>Before &amp; after</h2>{work_grid('en')}""",
     ["Διόρθωση χρώματος", "Βαφή σε όλο το μαλλί", "Ρεφλέ", "+ Προστασία τρίχας στο ξάνοιγμα"],
     [("How much does colour correction cost?", f"It depends on your colour history and hair length, so we start with an assessment (€{DIAG}). You get a written quote with a fixed price, and the assessment fee is deducted if you book the work with us."),
      ("Can I go from black to red or copper?", "Usually yes. That is a colour change: controlled lightening, then the colour you want, like the cherry cola in the photos. At the assessment we see whether it takes one or two appointments."),
