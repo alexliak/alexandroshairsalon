@@ -507,12 +507,25 @@ def work_figs(lang):
                ("cherry-cola", "Cherry Cola · Midnight Merlot", "Colour change: from dyed black to a deep cherry with a velvet shine.",
                 "Lightening stage and final result: colour change from black to cherry cola, Alexandros Hair Salon, Thiseio, Athens")],
     }[lang]
+    vt, vc, va = {
+        "el": ("Το βίντεο", "Από μαύρο σε Cherry Cola, με ξάνοιγμα, χρώμα και νέο pixie κούρεμα.",
+               "Βίντεο: αλλαγή χρώματος από μαύρο σε cherry cola και pixie κούρεμα, Alexandros Hair Salon, Θησείο"),
+        "en": ("The video", "From black to Cherry Cola, with lightening, colour and a new pixie cut.",
+               "Video: colour change from black to cherry cola and a pixie cut, Alexandros Hair Salon, Thiseio, Athens"),
+    }[lang]
+    video = (
+        f'<figure style="margin:0 auto 28px;max-width:360px"><video src="/videos/alexandros-hair-salon-thiseio-cherry-cola.mp4" '
+        f'poster="/videos/alexandros-hair-salon-thiseio-cherry-cola-poster.webp" width="720" height="1280" '
+        f'autoplay muted loop playsinline controls preload="metadata" aria-label="{esc(va)}" '
+        f'style="width:100%;height:auto;display:block;border-radius:14px;border:1px solid var(--line);background:#eee"></video>'
+        f'<figcaption style="margin-top:10px"><strong>{esc(vt)}</strong> · {esc(vc)}</figcaption></figure>')
     return "".join(
         f'<figure style="margin:0 0 28px"><img src="/images/work/alexandros-hair-salon-thiseio-{n}-1200.webp" '
         f'srcset="/images/work/alexandros-hair-salon-thiseio-{n}-600.webp 600w, /images/work/alexandros-hair-salon-thiseio-{n}-1200.webp 1200w" '
         f'sizes="(max-width: 760px) 100vw, 760px" width="1200" height="900" loading="lazy" decoding="async" alt="{esc(alt)}" '
         f'style="width:100%;height:auto;display:block;border-radius:14px;border:1px solid var(--line)">'
         f'<figcaption style="margin-top:10px"><strong>{esc(t)}</strong> · {esc(c)}</figcaption></figure>'
+        + (video if n == "cherry-cola" else "")
         for n, t, c, alt in data)
 
 
