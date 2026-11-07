@@ -42,7 +42,7 @@ const content = {
     howTitleEm: 'κανένα μισό αποτέλεσμα.',
     how: [
       ['Διάγνωση & strand test', 'Κοιτάμε το ιστορικό του χρώματος και δοκιμάζουμε σε μια κρυφή τούφα πώς ανοίγει και πώς πιάνει το χρώμα.'],
-      ['Πλάνο & γραπτή προσφορά', 'Ξέρεις από πριν τι θα γίνει, πόση ώρα θα πάρει και πόσο κοστίζει. Χωρίς εκπλήξεις στο ταμείο.'],
+      ['Πλάνο & προσφορά', 'Ξέρεις από πριν τι θα γίνει, πόση ώρα θα πάρει και πόσο κοστίζει. Χωρίς εκπλήξεις στο ταμείο.'],
       ['Το αποτέλεσμα', 'Σε ένα ή σε δύο ραντεβού, ανάλογα με το τι αντέχει η τρίχα. Θα σου το πούμε από τη διάγνωση.']
     ],
     endTitleA: 'Έχεις μαύρο ή μια βαφή που δεν σου αρέσει; ',
@@ -72,7 +72,7 @@ const content = {
     howTitleEm: 'no half results.',
     how: [
       ['Assessment & strand test', 'We look at your colour history and test a hidden section to see how it lifts and takes colour.'],
-      ['Plan & written quote', 'You know beforehand what we’ll do, how long it takes and what it costs. No surprises at the till.'],
+      ['Plan & quote', 'You know beforehand what we’ll do, how long it takes and what it costs. No surprises at the till.'],
       ['The result', 'In one or two appointments, depending on what your hair can take. We’ll tell you at the assessment.']
     ],
     endTitleA: 'Dyed black, or colour you don’t like? ',

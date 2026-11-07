@@ -534,7 +534,7 @@ DIAG = dict((o, p) for o, _, p in MENU["Διόρθωση χρώματος"][1])[
 service_page(
     CC_EL, "Διόρθωση & αλλαγή χρώματος στην Αθήνα",
     "Διόρθωση & Αλλαγή Χρώματος Αθήνα – Θησείο | Color Correction | Alexandros Hair Salon",
-    f"Διόρθωση χρώματος (color correction) και αλλαγή χρώματος στο Θησείο, Αθήνα: από σκούρα ή ανομοιόμορφη βαφή σε καθαρό χρώμα, ή από μαύρο σε χάλκινο και κόκκινο. Διάγνωση με strand test και γραπτή προσφορά €{DIAG}, που αφαιρείται από την τιμή.",
+    f"Διόρθωση χρώματος (color correction) και αλλαγή χρώματος στο Θησείο, Αθήνα: από σκούρα ή ανομοιόμορφη βαφή σε καθαρό χρώμα, ή από μαύρο σε χάλκινο και κόκκινο. Διάγνωση με strand test και προσφορά €{DIAG}, που αφαιρείται από την τιμή.",
     "Color correction · Θησείο",
     "Διόρθωση &amp; αλλαγή χρώματος, <em>με πλάνο πριν από κάθε βήμα.</em>",
     "Διόρθωση, όταν το χρώμα βγήκε σκούρο, ανομοιόμορφο, πορτοκαλί ή κίτρινο. Αλλαγή, όταν θέλεις κάτι εντελώς διαφορετικό, π.χ. από μαύρο σε χάλκινο ή κόκκινο. Και στις δύο ξεκινάμε με διάγνωση και strand test, ώστε να ξέρεις από πριν το πλάνο, τον χρόνο και την τιμή.",
@@ -542,13 +542,13 @@ service_page(
     f"""<h2>Διόρθωση ή αλλαγή χρώματος;</h2>
 <p><strong>Διόρθωση χρώματος</strong> είναι όταν το χρώμα δεν βγήκε όπως έπρεπε: σκούρες ζώνες, βαφή που δεν έπιασε, πορτοκαλί ή κίτρινο που δεν έφυγε. <strong>Αλλαγή χρώματος</strong> είναι όταν θέλεις να πας σε κάτι εντελώς άλλο, π.χ. από μαύρο σε cherry cola. Η δουλειά μοιάζει, γι' αυτό και οι δύο ξεκινούν με {FQ('διάγνωση', 'diorthosi-allagi')}.</p>
 <h2>Πώς γίνεται</h2>
-<p><strong>1. Διάγνωση (€{DIAG}, 30′)</strong>: κοιτάμε το ιστορικό του χρώματος, την κατάσταση της τρίχας και κάνουμε {FQ('strand test', 'strand-test')}. Παίρνεις γραπτή προσφορά με πλάνο, χρόνο και τιμή. Αν κάνεις τη δουλειά σε εμάς, το ποσό της διάγνωσης αφαιρείται.</p>
+<p><strong>1. Διάγνωση (€{DIAG}, 30′)</strong>: κοιτάμε το ιστορικό του χρώματος, την κατάσταση της τρίχας και κάνουμε {FQ('strand test', 'strand-test')}. Παίρνεις προσφορά με πλάνο, χρόνο και τιμή. Αν κάνεις τη δουλειά σε εμάς, το ποσό της διάγνωσης αφαιρείται.</p>
 <p><strong>2. Ελεγχόμενο {FQ('ξάνοιγμα', 'ntekapaz')}</strong>, μόνο όπου χρειάζεται: σκούρες λωρίδες ή παλιό μαύρο ανοίγουν ως το φόντο που θέλει το τελικό χρώμα, χωρίς να ταλαιπωρούνται τα σημεία που είναι ήδη σωστά.</p>
 <p><strong>3. Χρώμα ανά ζώνη</strong>: διαφορετική συνταγή για ρίζα, μήκη και άκρες, συχνά με {FQ('ρεφλέ', 'refle')} στο τέλος, ώστε το αποτέλεσμα να βγει ομοιόμορφο από τη ρίζα ως τις άκρες.</p>
 <p>Μερικές φορές το ασφαλέστερο είναι να γίνει σε δύο ραντεβού. Θα σου το πούμε από τη διάγνωση, όχι στη μέση της δουλειάς.</p>
 <h2>Πριν &amp; μετά</h2>{work_grid('el')}""",
     ["Διόρθωση χρώματος", "Βαφή σε όλο το μαλλί", "Ρεφλέ", "+ Προστασία τρίχας στο ξάνοιγμα", "+ Επιπλέον χρώμα"],
-    [("Πόσο κοστίζει η διόρθωση ή η αλλαγή χρώματος;", f"Εξαρτάται από το ιστορικό και το μήκος, γι' αυτό ξεκινάμε με διάγνωση (€{DIAG}). Παίρνεις γραπτή προσφορά με συγκεκριμένη τιμή, και το ποσό της διάγνωσης αφαιρείται αν κάνεις τη δουλειά σε εμάς."),
+    [("Πόσο κοστίζει η διόρθωση ή η αλλαγή χρώματος;", f"Εξαρτάται από το ιστορικό και το μήκος, γι' αυτό ξεκινάμε με διάγνωση (€{DIAG}). Παίρνεις προσφορά με συγκεκριμένη τιμή, και το ποσό της διάγνωσης αφαιρείται αν κάνεις τη δουλειά σε εμάς."),
      ("Μπορώ να πάω από μαύρο σε κόκκινο ή χάλκινο;", "Συνήθως ναι. Είναι αλλαγή χρώματος: ελεγχόμενο ξάνοιγμα και μετά το χρώμα που θέλεις, όπως το cherry cola στις φωτογραφίες. Στη διάγνωση βλέπουμε αν γίνεται σε ένα ή σε δύο ραντεβού."),
      ("Τι είναι το strand test;", "Δοκιμή σε μια μικρή, κρυφή τούφα πριν από τη δουλειά: βλέπουμε πώς ανοίγει και πώς πιάνει το χρώμα, και πόσο αντέχει η τρίχα. Έτσι η προσφορά και ο χρόνος βασίζονται στα δικά σου μαλλιά."),
      ("Θα χαλάσουν τα μαλλιά μου;", "Ανοίγουμε μόνο όσο χρειάζεται και μόνο εκεί που χρειάζεται. Προτείνουμε και την προστασία τρίχας στο ξάνοιγμα. Αν η τρίχα δεν αντέχει όλη τη δουλειά σε μία μέρα, τη χωρίζουμε σε δύο ραντεβού."),
@@ -844,16 +844,16 @@ b2b_page(
     "Μαλλιά για φωτογράφιση · Θησείο, Αθήνα",
     "Χτένισμα για φωτογράφιση, <em>στο κομμωτήριο ή στο σετ.</em>",
     "Για προσωπικές, επαγγελματικές και φωτογραφίσεις μόδας. Ετοιμάζουμε τα μαλλιά στο κομμωτήριο στο Θησείο, λίγα λεπτά από τον Φιλοπάππου και την Αποστόλου Παύλου, ή ερχόμαστε στο σετ για μισή ή πλήρη ημέρα.",
-    [f"Χτένισμα από €{P(EV)}", "Θησείο, 5′ από το μετρό", "Στο σετ με μισή ή πλήρη ημέρα", "Γραπτή προσφορά πριν τη φωτογράφιση"],
+    [f"Χτένισμα από €{P(EV)}", "Θησείο, 5′ από το μετρό", "Στο σετ με μισή ή πλήρη ημέρα", "Προσφορά πριν τη φωτογράφιση"],
     f"""<h2>Για τη δική σου φωτογράφιση</h2>
 <p>Κλείσε <strong>Χτένισμα για εκδήλωση</strong> για μπούκλες, κυματισμούς ή πιάσιμο, <strong>Φορμάρισμα με λάμψη</strong> για ίσιο και λείο, ή <strong>Blowout · Κλασικό χτένισμα</strong> για όγκο και κίνηση. Καλό είναι να έρθεις με λουσμένα, στεγνά μαλλιά και μια φωτογραφία με αυτό που σου αρέσει. Κανονίζουμε την ώρα μαζί με τον φωτογράφο, ώστε τα μαλλιά να είναι φρέσκα στο πρώτο κάδρο.</p>
 <h2>Για φωτογράφους, brands και παραγωγές</h2>
-<p>Lookbooks, editorial, φωτογραφίες προϊόντων για e-shop, διαφημιστικές καμπάνιες. Στο κομμωτήριο ή στο σετ, με μισή ή πλήρη ημέρα και γραπτή προσφορά πριν τη φωτογράφιση. Στείλε μας ημερομηνία, χώρο και αριθμό looks στο WhatsApp.</p>
+<p>Lookbooks, editorial, φωτογραφίες προϊόντων για e-shop, διαφημιστικές καμπάνιες. Στο κομμωτήριο ή στο σετ, με μισή ή πλήρη ημέρα και προσφορά πριν τη φωτογράφιση. Στείλε μας ημερομηνία, χώρο και αριθμό looks στο WhatsApp.</p>
 <h2>Ποιος κάνει τη δουλειά</h2>
 <p>{esc(EXPERIENCE_EL)}</p>""",
     PHOTO_KEYS,
     [("Πόσο κοστίζει το χτένισμα για φωτογράφιση;", f"Το Χτένισμα για εκδήλωση κοστίζει €{P(EV)} και διαρκεί περίπου 45 λεπτά. Το Blowout · Κλασικό χτένισμα από €{P(BD)}, 30–45 λεπτά."),
-     ("Έρχεστε στο σετ;", "Ναι, κατόπιν συνεννόησης. Για παραγωγές δίνουμε γραπτή προσφορά για μισή ή πλήρη ημέρα, ανάλογα με τα looks και τον χώρο."),
+     ("Έρχεστε στο σετ;", "Ναι, κατόπιν συνεννόησης. Για παραγωγές δίνουμε προσφορά για μισή ή πλήρη ημέρα, ανάλογα με τα looks και τον χώρο."),
      ("Πώς κλείνω για μια παραγωγή;", "Με μήνυμα στο WhatsApp ή στο Viber στο 698 131 9000, με ημερομηνία, χώρο, ώρες και αριθμό μοντέλων."),
      ("Πού βρίσκεστε;", "Ερυσίχθονος 3-5 στο Θησείο, περίπου 5 λεπτά με τα πόδια από τον σταθμό Θησείο.")],
     [("English version", "/hair-stylist-photoshoot-athens/"), ("Για συνεργάτες", "/synergasies/"), ("Κούρεμα στην Αθήνα", "/kourema-athina/"), ("Όλες οι τιμές", "/services")],
@@ -923,7 +923,7 @@ def partners_page(lang):
     prose = f"""<h2>{t("Με ποιους δουλεύουμε", "Who we work with")}</h2>
 <p>{t("Φωτογράφους, ξενοδοχεία και καταλύματα, wedding planners, brands ρούχων, πρακτορεία μοντέλων και σχολές μόδας και φωτογραφίας.", "Photographers, hotels and short-stay hosts, wedding planners, fashion brands, model agencies, and fashion and photography schools.")}</p>
 <h2>{t("Τι προσφέρουμε", "What we offer")}</h2>
-<p>{t(f"Χτένισμα για φωτογράφιση στο κομμωτήριο από €{P(EV)}, για τους πελάτες σας στη δημόσια τιμή του τιμοκαταλόγου. Μαλλιά στο σετ με μισή ή πλήρη ημέρα, με γραπτή προσφορά πριν τη δουλειά. Νυφικό χτένισμα στο κομμωτήριο ή σε ξενοδοχείο.", f"Photo-ready styling in the salon from €{P(EV)}, at our public price for your clients. Hair on set by the half or full day, with a written quote before the job. Bridal hair in the salon or at the hotel.")}</p>
+<p>{t(f"Χτένισμα για φωτογράφιση στο κομμωτήριο από €{P(EV)}, για τους πελάτες σας στη δημόσια τιμή του τιμοκαταλόγου. Μαλλιά στο σετ με μισή ή πλήρη ημέρα, με προσφορά πριν τη δουλειά. Νυφικό χτένισμα στο κομμωτήριο ή σε ξενοδοχείο.", f"Photo-ready styling in the salon from €{P(EV)}, at our public price for your clients. Hair on set by the half or full day, with a quote before the job. Bridal hair in the salon or at the hotel.")}</p>
 <p>{esc(EXPERIENCE_EN if en else EXPERIENCE_EL)}</p>
 <h2>{t("Αν δείξετε τη δουλειά μας", "If you show our work")}</h2>
 <p>{t("Αντιγράψτε όποιο από τα παρακάτω ταιριάζει στη σελίδα σας. Στο Instagram αρκεί ένα tag στον λογαριασμό του κομμωτηρίου. Θα δείξουμε κι εμείς τη δική σας δουλειά, με σύνδεσμο προς εσάς.", "Copy whichever line fits your page. On Instagram, a tag to the salon’s account is enough. We show your work too, with a link back to you.")}</p>
@@ -933,7 +933,7 @@ def partners_page(lang):
     faqs = [(t("Πληρώνετε προμήθεια για συστάσεις;", "Do you pay a referral commission?"),
              t("Όχι χρηματική. Ανταποδίδουμε με προβολή: σύνδεσμο, αναφορά και φωτογραφίες της δουλειάς σας.", "No cash commission. We return the favour with exposure: a link, a mention and photos of your work.")),
             (t("Πώς ζητάμε προσφορά για παραγωγή;", "How do we ask for a quote?"),
-             t("Στείλτε στο WhatsApp ημερομηνία, χώρο, ώρες και αριθμό looks. Απαντάμε με γραπτή προσφορά.", "Send the date, place, hours and number of looks on WhatsApp. We reply with a written quote."))]
+             t("Στείλτε στο WhatsApp ημερομηνία, χώρο, ώρες και αριθμό looks. Απαντάμε με προσφορά.", "Send the date, place, hours and number of looks on WhatsApp. We reply with a quote."))]
     b2b_page(path, t("Συνεργασίες", "Partners"),
              t("Συνεργασίες με φωτογράφους, ξενοδοχεία & brands | Alexandros Hair Salon", "Partners: photographers, hotels & brands | Alexandros Hair Salon"),
              t("Κομμωτής για φωτογράφους, ξενοδοχεία, wedding planners και brands στο Θησείο, Αθήνα: χτένισμα, μαλλιά στο σετ, νυφικά. Όροι συνεργασίας και έτοιμο κείμενο credit.",
@@ -941,7 +941,7 @@ def partners_page(lang):
              t("Συνεργασίες · Θησείο, Αθήνα", "Partners · Thiseio, Athens"),
              t("Συνεργασίες, <em>με απλούς όρους.</em>", "Working together, <em>on simple terms.</em>"),
              t("Για όσους φέρνουν πελάτες ή χρειάζονται μαλλιά για τη δουλειά τους: φωτογράφους, ξενοδοχεία, wedding planners και brands.", "For those who send us clients or need hair for their work: photographers, hotels, wedding planners and brands."),
-             [t("Δημόσια τιμή για τους πελάτες σας", "Public price for your clients"), t("Γραπτή προσφορά για παραγωγές", "Written quotes for productions"), t("Θησείο, 5′ από το μετρό", "5′ from Thiseio metro")],
+             [t("Δημόσια τιμή για τους πελάτες σας", "Public price for your clients"), t("Προσφορά για παραγωγές", "Quotes for productions"), t("Θησείο, 5′ από το μετρό", "5′ from Thiseio metro")],
              prose, [], faqs,
              [(t("Χτένισμα για φωτογράφιση", "Hair for photo shoots"), "/xtenisma-fotografisi-athina/" if not en else "/hair-stylist-photoshoot-athens/"),
               (t("English version", "Ελληνικά"), "/partners/" if not en else "/synergasies/")],
@@ -965,7 +965,7 @@ page("/kratisi/", "Κράτηση ραντεβού online | Alexandros Hair Salo
 b2b_page(
     CC_EN, "Hair colour correction in Athens",
     "Hair Colour Correction in Athens – Thiseio | Alexandros Hair Salon",
-    f"Hair colour correction and colour change in Thiseio, central Athens: from dark or patchy colour to a clean, even result, or from black to copper and red. Assessment with a strand test and a written quote, €{DIAG}, deducted from the price.",
+    f"Hair colour correction and colour change in Thiseio, central Athens: from dark or patchy colour to a clean, even result, or from black to copper and red. Assessment with a strand test and a quote, €{DIAG}, deducted from the price.",
     "Colour correction · Thiseio, central Athens",
     "Hair colour correction in Athens, <em>with a plan before every step.</em>",
     "Correction, when colour came out too dark, patchy, orange or yellow. Change, when you want something completely different, such as black to copper or red. Both start with an assessment and a strand test, so you know the plan, the time and the price in advance. We speak English.",
@@ -973,13 +973,13 @@ b2b_page(
     f"""<h2>Correction or colour change?</h2>
 <p><strong>Colour correction</strong> is when colour didn’t turn out as it should: dark bands, colour that didn’t take, orange or yellow that won’t go. <strong>Colour change</strong> is when you want something completely different, such as dyed black to cherry cola. The work is similar, so both start with an assessment.</p>
 <h2>How it works</h2>
-<p><strong>1. Assessment (€{DIAG}, 30′)</strong>: we look at your colour history and the condition of your hair, and do a <strong>strand test</strong> on a small hidden section. You get a written quote with the plan, time and price. If you book the work with us, the assessment fee is deducted.</p>
+<p><strong>1. Assessment (€{DIAG}, 30′)</strong>: we look at your colour history and the condition of your hair, and do a <strong>strand test</strong> on a small hidden section. You get a quote with the plan, time and price. If you book the work with us, the assessment fee is deducted.</p>
 <p><strong>2. Controlled lightening</strong>, only where needed: dark bands or old black are lifted to the base the final colour needs, without stressing the parts that are already right.</p>
 <p><strong>3. Colour by zone</strong>: a different formula for roots, lengths and ends, often finished with a gloss, so the result is even from root to ends.</p>
 <p>Sometimes the safest route is two appointments. We tell you at the assessment, not halfway through.</p>
 <h2>Before &amp; after</h2>{work_grid('en')}""",
     ["Διόρθωση χρώματος", "Βαφή σε όλο το μαλλί", "Ρεφλέ", "+ Προστασία τρίχας στο ξάνοιγμα"],
-    [("How much does colour correction cost?", f"It depends on your colour history and hair length, so we start with an assessment (€{DIAG}). You get a written quote with a fixed price, and the assessment fee is deducted if you book the work with us."),
+    [("How much does colour correction cost?", f"It depends on your colour history and hair length, so we start with an assessment (€{DIAG}). You get a quote with a fixed price, and the assessment fee is deducted if you book the work with us."),
      ("Can I go from black to red or copper?", "Usually yes. That is a colour change: controlled lightening, then the colour you want, like the cherry cola in the photos. At the assessment we see whether it takes one or two appointments."),
      ("What is a strand test?", "A test on a small, hidden section before the work: we see how your hair lifts and takes colour, and how much it can handle. Your quote and timing are then based on your own hair."),
      ("How do I book an assessment?", "Message us on WhatsApp or call +30 698 131 9000, ideally with a photo of your hair in daylight. The salon is at Erisichthonos 3-5, Thiseio, a five-minute walk from Thiseio metro.")],
