@@ -465,6 +465,7 @@ def work_grid(lang):
                          f'sizes="(max-width: 760px) 100vw, 760px" width="{w["w"]}" height="{w["h"]}" loading="lazy" decoding="async" alt="{esc(t["alt"])}">')
             out.append(f'<figure class="work-card work-{w["type"]}">{media}{cap}</figure>')
         out.append('</div>')
+    out.append('<p><a class="il" href="/apotelesmata">' + ('Όλα τα αποτελέσματα πριν &amp; μετά →' if lang == 'el' else 'All before &amp; after results →') + '</a></p>')
     out += [f'<script type="application/ld+json">{json.dumps(x, ensure_ascii=False)}</script>' for x in ld]
     return "".join(out)
 

@@ -89,7 +89,8 @@ const layoutText = {
       { label: 'Υπηρεσίες & τιμές', to: '/services' },
       { label: 'L’Oréal & Redken', href: '/#brands' },
       { label: 'Ωράριο', to: '/hours' },
-      { label: 'Φωτογραφίες', to: '/fotografies' },
+      { label: 'Αποτελέσματα', to: '/apotelesmata' },
+      { label: 'Ο χώρος', to: '/fotografies' },
       { label: 'Shop', to: '/shop' },
       { label: 'Γίνε μοντέλο', to: '/montela', promo: true },
       { label: 'We are hiring', to: '/douleia', hiring: true }
@@ -132,6 +133,7 @@ const layoutText = {
       ['Βαφή & balayage για μοντέλα', '/montelo-vafi-balayage-athina/'],
       ['Χτένισμα για φωτογράφιση', '/xtenisma-fotografisi-athina/'],
       ['Συνεργασίες', '/synergasies/'],
+      ['Αποτελέσματα πριν & μετά', '/apotelesmata'],
       ['Φωτογραφίες του κομμωτηρίου', '/fotografies'],
       ['Κράτηση online', '/kratisi/']
     ]
@@ -141,7 +143,8 @@ const layoutText = {
       { label: 'Services & prices', to: '/services' },
       { label: 'L’Oréal & Redken', href: '/#brands' },
       { label: 'Hours', to: '/hours' },
-      { label: 'Photos', to: '/fotografies' },
+      { label: 'Results', to: '/apotelesmata' },
+      { label: 'The salon', to: '/fotografies' },
       { label: 'Shop', to: '/shop' },
       { label: 'Be our model', to: '/montela', promo: true },
       { label: 'We are hiring', to: '/douleia', hiring: true }
@@ -185,6 +188,7 @@ const layoutText = {
       ['Hair salon for hotel guests', '/hotel-hair-stylist-athens/'],
       ['Elopement & wedding hair', '/elopement-hair-athens/'],
       ['Partners', '/partners/'],
+      ['Before & after results', '/apotelesmata'],
       ['Photos of the salon', '/fotografies'],
       ['Book online', '/kratisi/']
     ]

@@ -52,5 +52,15 @@
       "height": 630,
       "type": "image/jpeg"
     }
+  },
+  "/apotelesmata": {
+    "title": "Αποτελέσματα πριν & μετά: αλλαγή χρώματος από μαύρο, διόρθωση χρώματος | Alexandros Hair Salon, Θησείο",
+    "description": "Πραγματικά αποτελέσματα με ημερομηνία: από μαύρο σε κόκκινο και cherry cola, διόρθωση χρώματος σε χάλκινο. Στείλε φωτογραφία των μαλλιών σου στο WhatsApp ή κλείσε διάγνωση στο Θησείο, Αθήνα.",
+    "image": {
+      "url": "https://alexandroshairsalon.gr/images/og-apotelesmata.jpg",
+      "width": 1200,
+      "height": 630,
+      "type": "image/jpeg"
+    }
   }
 }

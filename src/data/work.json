@@ -12,12 +12,22 @@
     "el": {
       "title": "Από μαύρο σε cherry cola & pixie",
       "desc": "Αλλαγή χρώματος από μαύρο βαμμένο: ελεγχόμενο ξάνοιγμα, κόκκινο cherry cola και νέο pixie κούρεμα.",
-      "alt": "Βίντεο αλλαγής χρώματος από μαύρο σε κόκκινο cherry cola με pixie κούρεμα, Alexandros Hair Salon, κομμωτήριο στο Θησείο, Αθήνα"
+      "alt": "Βίντεο αλλαγής χρώματος από μαύρο σε κόκκινο cherry cola με pixie κούρεμα, Alexandros Hair Salon, κομμωτήριο στο Θησείο, Αθήνα",
+      "steps": [
+        "Ελεγχόμενο ξάνοιγμα του μαύρου",
+        "Cherry cola: κόκκινο με βιολετί αντανάκλαση",
+        "Νέο pixie κούρεμα με μακριά φράντζα"
+      ]
     },
     "en": {
       "title": "Black to cherry cola & pixie",
       "desc": "Colour change from dyed black: controlled lightening, cherry cola red and a new pixie cut.",
-      "alt": "Video of a colour change from black to cherry cola red with a pixie cut, Alexandros Hair Salon, Thiseio, Athens"
+      "alt": "Video of a colour change from black to cherry cola red with a pixie cut, Alexandros Hair Salon, Thiseio, Athens",
+      "steps": [
+        "Controlled lightening of the black",
+        "Cherry cola: red with a violet reflect",
+        "New pixie cut with a long fringe"
+      ]
     }
   },
   {
@@ -30,12 +40,22 @@
     "el": {
       "title": "Από μαύρο σε Cherry Cola",
       "desc": "Αλλαγή χρώματος από μαύρο βαμμένο σε βαθύ κερασί κόκκινο: από μαύρο, ξάνοιγμα, μετά.",
-      "alt": "Αλλαγή χρώματος από μαύρο σε κόκκινο cherry cola: από μαύρο, ξάνοιγμα και τελικό, Alexandros Hair Salon, Θησείο, Αθήνα"
+      "alt": "Αλλαγή χρώματος από μαύρο σε κόκκινο cherry cola: από μαύρο, ξάνοιγμα και τελικό, Alexandros Hair Salon, Θησείο, Αθήνα",
+      "steps": [
+        "Ελεγχόμενο ξάνοιγμα από μαύρο βαμμένο",
+        "Χρώμα ανά ζώνη: ρίζα, μήκη, άκρες",
+        "Βαθύ κερασί με βελούδινη λάμψη"
+      ]
     },
     "en": {
       "title": "Black to Cherry Cola",
       "desc": "Colour change from dyed black to a deep cherry red: from black, lightening, after.",
-      "alt": "Colour change from black to cherry cola red: from black, lightening and final result, Alexandros Hair Salon, Thiseio, Athens"
+      "alt": "Colour change from black to cherry cola red: from black, lightening and final result, Alexandros Hair Salon, Thiseio, Athens",
+      "steps": [
+        "Controlled lightening from dyed black",
+        "Colour by zone: root, lengths, ends",
+        "Deep cherry with a velvet shine"
+      ]
     }
   },
   {
@@ -48,12 +68,22 @@
     "el": {
       "title": "Θησείο Sunset Copper",
       "desc": "Διόρθωση χρώματος (color correction): από σκούρα, ανομοιόμορφη βαφή σε καθαρό, φωτεινό χάλκινο από τη ρίζα ως τις άκρες.",
-      "alt": "Πριν και μετά: διόρθωση χρώματος (color correction) σε χάλκινο Θησείο Sunset Copper, Alexandros Hair Salon, Θησείο, Αθήνα"
+      "alt": "Πριν και μετά: διόρθωση χρώματος (color correction) σε χάλκινο Θησείο Sunset Copper, Alexandros Hair Salon, Θησείο, Αθήνα",
+      "steps": [
+        "Ξάνοιγμα των σκούρων, ανομοιόμορφων ζωνών",
+        "Χάλκινο ανά ζώνη για ομοιόμορφο τόνο",
+        "Φωτεινό χάλκινο από τη ρίζα ως τις άκρες"
+      ]
     },
     "en": {
       "title": "Thiseio Sunset Copper",
       "desc": "Colour correction: from dark, patchy colour to a clean, bright copper from root to ends.",
-      "alt": "Before and after: colour correction to Thiseio Sunset Copper, Alexandros Hair Salon, Thiseio, Athens"
+      "alt": "Before and after: colour correction to Thiseio Sunset Copper, Alexandros Hair Salon, Thiseio, Athens",
+      "steps": [
+        "Lifting the dark, patchy areas",
+        "Copper by zone for an even tone",
+        "Bright copper from root to ends"
+      ]
     }
   }
 ]
