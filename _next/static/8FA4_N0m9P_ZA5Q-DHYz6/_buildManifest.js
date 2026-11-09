@@ -12,7 +12,7 @@ self.__BUILD_MANIFEST = {
     "static/chunks/2zt54b-ovidr1.js"
   ],
   "/apotelesmata": [
-    "static/chunks/33qm3t8pjq0xj.js"
+    "static/chunks/09_x4f7vt7sc6.js"
   ],
   "/douleia": [
     "static/chunks/3g6b0xg59g34a.js"
