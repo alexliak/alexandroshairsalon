@@ -18,7 +18,7 @@ const content = {
     reviews: 'Κριτικές στο Google (4,6 ★)',
     map: 'Οδηγίες στον χάρτη',
     team: 'Ο Αλέξανδρος Λιακόπουλος και η ομάδα του κομμωτηρίου σάς περιμένουν στο Θησείο.',
-    license: '© Alexandros Hair Salon. Οι φωτογραφίες ανήκουν στο κομμωτήριο. Για χρήση τους ζήτησε άδεια από την '
+    license: '© Alexandros Hair Salon. Οι φωτογραφίες ανήκουν στο κομμωτήριο. Για χρήση τους χρειάζεται άδεια, που μπορείς να ζητήσεις από τη '
   },
   en: {
     eyebrow: 'Thiseio · Erisichthonos 3-5',
@@ -31,7 +31,7 @@ const content = {
     reviews: 'Google reviews (4.6 ★)',
     map: 'Directions on the map',
     team: 'Alexandros Liakopoulos and the salon team look forward to seeing you in Thiseio.',
-    license: '© Alexandros Hair Salon. The photos belong to the salon. To use them, ask for permission via the '
+    license: '© Alexandros Hair Salon. The photos belong to the salon. To use them, please ask for permission via the '
   }
 };
 

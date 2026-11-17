@@ -409,7 +409,7 @@ service_page(
 <p>Ξεκινάμε με λίγη κουβέντα: τι σε ενοχλεί σήμερα, πώς χτενίζεσαι στο σπίτι και πόσο συχνά θέλεις να έρχεσαι. Μετά προτείνουμε γραμμή και μήκος που θα στέκονται σωστά και όταν τα φορμάρεις μόνη σου.</p>
 <p>Κάνουμε κλασικά και σύγχρονα κουρέματα: pixie, mullet, bob και lob, butterfly, curtain bangs, φιλάρισμα για όγκο ή ελάφρυνση, καθαρό φρεσκάρισμα άκρων.</p>
 <h2>Πώς θέλεις να φύγεις;</h2>
-<p>Μία τιμή για κάθε μήκος· διαλέγεις μόνο το τέλος. <strong>Χωρίς στέγνωμα</strong>: τα μαλλιά στεγνώνουν φυσικά, ιδανικό για σγουρά. <strong>Στέγνωμα</strong>: με τα χέρια, με πιστολάκι ή φυσούνα, για φυσικό αποτέλεσμα. <strong>Φορμάρισμα</strong>: πιστολάκι και βούρτσα για όγκο και φόρμα. <strong>Χτένισμα</strong>: πλήρες, ίσιο και λείο ή με όγκο και κίνηση, που κρατά συνήθως 2–3 ημέρες.</p>""",
+<p>Μία τιμή για κάθε μήκος· διαλέγεις μόνο το τέλος. <strong>Χωρίς στέγνωμα</strong>: τα μαλλιά στεγνώνουν φυσικά, ιδανικό για σγουρά. <strong>Στέγνωμα</strong>: με τα χέρια, με πιστολάκι ή φυσούνα, για φυσικό αποτέλεσμα. <strong>Φορμάρισμα</strong>: πιστολάκι και βούρτσα για όγκο και φόρμα. <strong>Χτένισμα</strong>: πλήρες, ίσιο και λείο ή με όγκο και κίνηση, που κρατά συνήθως 2–4 ημέρες.</p>""",
     CUTS + ["Φράτζα & αφέλειες", "Ανδρικό κούρεμα", "Ανδρικό με μηχανή", "Παιδικό κούρεμα"],
     [("Πόσο κοστίζει ένα γυναικείο κούρεμα;", f"€{P(CUTS[0])} με φυσικό στέγνωμα, €{P(CUTS[1])} με στέγνωμα, €{P(CUTS[2])} με φορμάρισμα και €{P(CUTS[3])} με πλήρες χτένισμα. Ίδια τιμή για όλα τα μήκη."),
      ("Κάνετε και ανδρικά ή παιδικά κουρέματα;", f"Ναι. Ανδρικό κούρεμα {OP('Ανδρικό κούρεμα','Κλασικό')} (μηνιαίο {OP('Ανδρικό κούρεμα','Μηνιαίο')}), με μηχανή €{P('Ανδρικό με μηχανή')} και παιδικό (έως 12 ετών) €{P('Παιδικό κούρεμα')}."),
@@ -474,12 +474,12 @@ BEFORE_AFTER = '<h2>Πριν &amp; μετά</h2>' + work_grid("el")
 ROOT_OPTS = dict((o, p) for o, _, p in MENU[ROOT][1])
 service_page(
     "/vafi-mallion-athina/", "Βαφή μαλλιών στην Αθήνα",
-    f"Βαφή Μαλλιών Αθήνα – Θησείο | Ρίζα από €{P(ROOT)} | Alexandros Hair Salon",
+    f"Βαφή Μαλλιών Αθήνα – Θησείο | Ρίζα €{ROOT_OPTS['Κλασική']} | Alexandros Hair Salon",
     f"Βαφή ρίζας & κάλυψη λευκών €{ROOT_OPTS['Κλασική']}, Μηνιαία ρίζα €{ROOT_OPTS['Μηνιαία ρίζα']}, χωρίς αμμωνία €{ROOT_OPTS['Χωρίς αμμωνία']} (INOA, Redken). Ρίζα & ρεφλέ από €{P('Βαφή ρίζας & ρεφλέ στα μήκη')}. Κομμωτήριο στο Θησείο, Αθήνα. Κλείσε online.",
     "Χρώμα · L’Oréal Professionnel & Redken",
     "Βαφή μαλλιών στην Αθήνα, <em>με L’Oréal &amp; Redken.</em>",
     "Κάλυψη λευκών στη ρίζα, βαφή χωρίς αμμωνία, ρεφλέ για λάμψη και τόνο. Μία τιμή για κάθε υπηρεσία, με συγκεκριμένη ποσότητα χρώματος, ώστε να ξέρεις από πριν τι πληρώνεις.",
-    [f"Βαφή ρίζας από €{P(ROOT)}"] + COMMON_FACTS,
+    [f"Βαφή ρίζας €{ROOT_OPTS['Κλασική']}"] + COMMON_FACTS,
     f"""<h2>Βαφή ρίζας και Μηνιαία ρίζα</h2>
 <p><strong>Βαφή ρίζας (€{ROOT_OPTS['Κλασική']})</strong>: μόνιμη βαφή με Farcom ή Majirel της L’Oréal Professionnel, για σίγουρη κάλυψη λευκών. <strong>Χωρίς αμμωνία (€{ROOT_OPTS['Χωρίς αμμωνία']})</strong>: INOA της L’Oréal Professionnel ή Redken. Και οι δύο περιλαμβάνουν λούσιμο και στέγνωμα.</p>
 <p><strong>Μηνιαία ρίζα (€{ROOT_OPTS['Μηνιαία ρίζα']}, χωρίς αμμωνία €{ROOT_OPTS['Χωρίς αμμωνία · μηνιαία ρίζα']})</strong>: όταν η επόμενη βαφή ρίζας γίνεται μέσα σε 30 ημέρες από την προηγούμενη σε εμάς. Στο ταμείο παίρνεις καρτελάκι με την ημερομηνία.</p>
@@ -512,8 +512,11 @@ service_page(
 <p><strong>No Bleach French Highlights, χωρίς {FQ('ντεκαπάζ', 'ntekapaz')}</strong>: με την κρέμα ξανοίγματος L’Oréal Professionnel Blond Studio No Bleach™, πιο ήπια για την τρίχα, έως 4 τόνους (σε βαμμένα μαλλιά έως 2,5). Γύρω από το πρόσωπο €{FACE['No Bleach French Highlights · Face Frame']}, με ντεκαπάζ €{FACE['Με ντεκαπάζ']}.</p>
 <p>Οι τιμές είναι για μαλλιά έως τους ώμους· για πιο μακριά υπάρχει το «+ Μακριά μαλλιά» (€{P('+ Μακριά μαλλιά (ανταύγειες / μπαλαγιάζ)')}). Για έντονη αλλαγή, πλατινέ ή <a class="il" href="/diorthosi-xromatos-athina/">διόρθωση παλιού χρώματος</a> κλείσε πρώτα <strong>διάγνωση χρώματος</strong>, ώστε να συμφωνήσουμε ρεαλιστικό πλάνο και συγκεκριμένη τιμή.</p>""",
     ["Ανταύγειες γύρω από το πρόσωπο", "Μερικές ανταύγειες", "Ολόκληρες ανταύγειες", "Μερικό μπαλαγιάζ", "Ολόκληρο μπαλαγιάζ", "+ Μακριά μαλλιά (ανταύγειες / μπαλαγιάζ)", "+ Προστασία τρίχας στο ξάνοιγμα", "Διόρθωση χρώματος"],
-    [("Πόσο κοστίζει το μπαλαγιάζ (balayage) στην Αθήνα;", f"Στο κομμωτήριό μας το μερικό μπαλαγιάζ κοστίζει €{P('Μερικό μπαλαγιάζ')} για μαλλιά έως τους ώμους, με ρεφλέ. Για πιο μακριά μαλλιά προστίθεται το «+ Μακριά μαλλιά» (€{P('+ Μακριά μαλλιά (ανταύγειες / μπαλαγιάζ)')})."),
-     ("Πόσο κοστίζουν οι ανταύγειες;", f"Γύρω από το πρόσωπο €{FACE['No Bleach French Highlights · Face Frame']}–€{FACE['Με ντεκαπάζ']}, μερικές €{P('Μερικές ανταύγειες')} και ολόκληρες €{P('Ολόκληρες ανταύγειες')}, πάντα με ρεφλέ."),
+    [("Τι είναι το μπαλαγιάζ (balayage);", "Τεχνική ανταυγειών όπου το ξάνοιγμα απλώνεται με το χέρι πάνω στα μαλλιά, ελεύθερα ή σε αλουμινόχαρτα (foilayage). Το αποτέλεσμα είναι απαλό και φυσικό, χωρίς έντονες γραμμές, και ολοκληρώνεται με ρεφλέ για τον τόνο που θέλεις."),
+     ("Σε ποια μαλλιά ταιριάζει το μπαλαγιάζ;", "Σε μεσαία και μακριά μαλλιά. Αν θέλεις κάτι πιο διακριτικό ή είναι η πρώτη σου φορά, υπάρχουν οι ανταύγειες γύρω από το πρόσωπο. Την πρώτη φορά προηγείται συμβουλευτική, για να δούμε τι γίνεται στα δικά σου μαλλιά."),
+     ("Πώς συντηρείται το μπαλαγιάζ;", "Το ξάνοιγμα σβήνει απαλά προς τη ρίζα, γι’ αυτό δεν φαίνεται έντονη γραμμή όταν μεγαλώνουν τα μαλλιά. Το ρεφλέ που δίνει τον τόνο διαρκεί 4–6 εβδομάδες και ανανεώνεται χωριστά, χωρίς να ξαναγίνει όλο το μπαλαγιάζ."),
+     ("Πόσο κοστίζει το μπαλαγιάζ (balayage) στην Αθήνα;", f"Στο κομμωτήριό μας το μερικό μπαλαγιάζ κοστίζει €{P('Μερικό μπαλαγιάζ')} για μαλλιά έως τους ώμους, με ρεφλέ. Για πιο μακριά μαλλιά προστίθεται το «+ Μακριά μαλλιά» (€{P('+ Μακριά μαλλιά (ανταύγειες / μπαλαγιάζ)')})."),
+     ("Πόσο κοστίζουν οι ανταύγειες;", f"Γύρω από το πρόσωπο €{FACE['Με ντεκαπάζ']}–€{FACE['No Bleach French Highlights · Face Frame']}, μερικές €{P('Μερικές ανταύγειες')} και ολόκληρες €{P('Ολόκληρες ανταύγειες')}, πάντα με ρεφλέ."),
      ("Υπάρχει επιλογή χωρίς ντεκαπάζ;", "Ναι, με την κρέμα L’Oréal Professionnel Blond Studio No Bleach™: έως 4 τόνους πιο ανοιχτά, πιο ήπια για την τρίχα."),
      FAQ_WHEN,
      ("Πόση ώρα διαρκεί;", "Από περίπου 1 ώρα 10′ για ανταύγειες γύρω από το πρόσωπο έως περίπου 3 ώρες για μπαλαγιάζ."),
@@ -597,7 +600,7 @@ EN_KEYS = ["Κούρεμα & στέγνωμα", "Κούρεμα & χτένισμ
 EN_FAQ = [
     ("Are you open on Mondays or in the evening?",
      "Usually yes. We work on Mondays and until late on Wednesday and Saturday afternoons, when many salons in Athens are closed or close early. You see live free slots in online booking; our current opening hours are always on Google."),
-    ("Do you speak English?", "Yes. Book online in English, or message us on WhatsApp or Viber at +30 698 131 9000."),
+    ("Do you speak English?", "Yes. The booking system itself is in Greek, but our price list in English (alexandroshairsalon.gr/services, tap EN) opens it with your service already selected, so you only pick a time. You can also message us in English on WhatsApp or Viber at +30 698 131 9000."),
     ("Where is the salon?", "Erisichthonos 3-5, Thiseio, central Athens: about 5 minutes on foot from Thiseio metro station, a short walk from the Acropolis area and Monastiraki."),
     ("How do I pay?", "Online when you book, or at the salon after your appointment. Prices are the same online and at the salon."),
     ("Can I just walk in?", "If there is a free chair, yes, but booking online is the safest way to get the time you want, especially when you are in Athens for a few days."),
@@ -616,7 +619,7 @@ en_body = f"""
 </section>
 <section class="block prose">
 <h2>What to expect</h2>
-<p>A haircut is a shape around the face. We start with a short talk about your face, your hair and how you style it, then cut and finish it the way you choose: a natural dry, a brushed blow-dry, or a full blow-out, bouncy or sleek, that usually lasts 2–3 days.</p>
+<p>A haircut is a shape around the face. We start with a short talk about your face, your hair and how you style it, then cut and finish it the way you choose: a natural dry, a brushed blow-dry, or a full blow-out, bouncy or sleek, that usually lasts 2–4 days.</p>
 <p>For colour we use L’Oréal Professionnel and Redken, including ammonia-free options and bleach-free lightening with L’Oréal Blond Studio No Bleach™. Every price includes a set amount of product; anything extra is agreed before we start.</p>
 </section>
 <section class="block"><h2>Questions</h2>{_items}</section>
@@ -714,7 +717,7 @@ model_page(
     "Ψάχνουμε γυναίκες και άνδρες κάθε ηλικίας για κούρεμα και χτένισμα δωρεάν, σε αντάλλαγμα για φωτογραφίες του νέου look. Δουλεύουν οι έμπειροι κομμωτές του κομμωτηρίου, με αποτέλεσμα που στέκεται στην καθημερινότητά σου.",
     MODEL_FACTS,
     """<h2>Τι περιλαμβάνει το δωρεάν κούρεμα</h2>
-<p>Συζήτηση για το πρόσωπο, τα χαρακτηριστικά και την υφή των μαλλιών σου, λούσιμο, κούρεμα και χτένισμα με πιστολάκι, και φωτογράφιση στο τέλος. Υπολόγισε περίπου μία ώρα.</p>
+<p>Συζήτηση για το πρόσωπο, τα χαρακτηριστικά και την υφή των μαλλιών σου, λούσιμο, κούρεμα και χτένισμα με πιστολάκι, και φωτογράφιση στο τέλος. Διαρκεί περίπου μία ώρα.</p>
 <p>Στα γυναικεία κουρεύουμε pixie, bob και lob, butterfly, curtain bangs, φιλάρισμα για όγκο, καθαρό φρεσκάρισμα. Στα ανδρικά, κλασικά και μοντέρνα κουρέματα με ψαλίδι και μηχανή, με styling για τη φωτογράφιση. Ό,τι κάνουμε το συμφωνούμε πριν ξεκινήσουμε· αν κάτι δεν σου ταιριάζει, θα σου το πούμε.</p>
 <h2>Γιατί δωρεάν;</h2>
 <p>Δοκιμάζουμε νέες τεχνικές και χρειαζόμαστε φωτογραφίες της δουλειάς μας για το site και τα social. Εσύ παίρνεις ένα επαγγελματικό κούρεμα, εμείς τις φωτογραφίες.</p>""",
@@ -848,7 +851,7 @@ b2b_page(
     f"""<h2>Για τη δική σου φωτογράφιση</h2>
 <p>Κλείσε <strong>Χτένισμα για εκδήλωση</strong> για μπούκλες, κυματισμούς ή πιάσιμο, <strong>Φορμάρισμα με λάμψη</strong> για ίσιο και λείο, ή <strong>Blowout · Κλασικό χτένισμα</strong> για όγκο και κίνηση. Καλό είναι να έρθεις με λουσμένα, στεγνά μαλλιά και μια φωτογραφία με αυτό που σου αρέσει. Κανονίζουμε την ώρα μαζί με τον φωτογράφο, ώστε τα μαλλιά να είναι φρέσκα στο πρώτο κάδρο.</p>
 <h2>Για φωτογράφους, brands και παραγωγές</h2>
-<p>Lookbooks, editorial, φωτογραφίες προϊόντων για e-shop, διαφημιστικές καμπάνιες. Στο κομμωτήριο ή στο σετ, με μισή ή πλήρη ημέρα και προσφορά πριν τη φωτογράφιση. Στείλε μας ημερομηνία, χώρο και αριθμό looks στο WhatsApp.</p>
+<p>Lookbooks, editorial, φωτογραφίες προϊόντων για e-shop, διαφημιστικές καμπάνιες. Στο κομμωτήριο ή στο σετ, με μισή ή πλήρη ημέρα και προσφορά πριν τη φωτογράφιση. Για προσφορά αρκεί ένα μήνυμα στο WhatsApp με ημερομηνία, χώρο και αριθμό looks.</p>
 <h2>Ποιος κάνει τη δουλειά</h2>
 <p>{esc(EXPERIENCE_EL)}</p>""",
     PHOTO_KEYS,
@@ -1166,9 +1169,9 @@ FAQ_GROUPS = [
    f"For anyone who wants to look polished all week, at work and out, without thinking about it. Wash, mask and blow-dry, same day and time every week: short {O('Εβδομαδιαίο χτένισμα με μάσκα','Κοντά')}, medium {O('Εβδομαδιαίο χτένισμα με μάσκα','Μεσαία')}, long {O('Εβδομαδιαίο χτένισμα με μάσκα','Μακριά')} (separately €39). Monday to Thursday, when there is a free slot, and when your previous blow-dry was with us in the last 8 days.",
    [("Εβδομαδιαίο χτένισμα με μάσκα", "Μεσαία"), ("Εβδομαδιαίο χτένισμα με μάσκα", "Κοντά"), ("Εβδομαδιαίο χτένισμα με μάσκα", "Μακριά")]),
   ("Πόσο κρατά το χτένισμα;",
-   "Έως και 7 ημέρες. Η διάρκεια εξαρτάται από τη φύση των μαλλιών, τις συνθήκες, όπως η υγρασία, και τη φροντίδα τους στο σπίτι.",
+   "Συνήθως 2–4 ημέρες. Η διάρκεια εξαρτάται από τη φύση των μαλλιών, τις συνθήκες, όπως η υγρασία, και τη φροντίδα τους στο σπίτι.",
    "How long does a blow-dry last?",
-   "Up to 7 days. It depends on your hair, on conditions such as humidity, and on how it is cared for at home.",
+   "Usually 2–4 days. It depends on your hair, on conditions such as humidity, and on how it is cared for at home.",
    [("Blowout · Κλασικό χτένισμα", None)]),
   ("Μπούκλες ή πιάσιμο σε πολλά ή πολύ μακριά μαλλιά;",
    "Οι μπούκλες και το πιάσιμο κρατούν καλύτερα σε μαλλιά λουσμένα από πριν και στεγνωμένα φυσικά, χωρίς βαριά μαλακτικά ή έλαια μαλλιών. Σε πολλά ή πολύ μακριά μαλλιά βοηθά το λούσιμο να γίνει την προηγούμενη μέρα.",
@@ -1239,7 +1242,7 @@ page("/syxnes-erotiseis/", "Συχνές ερωτήσεις: βαφή, ποσό�
 GNOMI_FORM = "1FAIpQLSe4NOQXPGj1ujfBYrkWBSyJFPEOs2VepAY-TrU6v1NJCtsKew"
 _gn_body = """
 <section class="hero">
-  <span class="eyebrow" data-en="Help us get better">Βοηθήστε μας να γίνουμε καλύτεροι</span>
+  <span class="eyebrow" data-en="To help us get better">Για να γινόμαστε καλύτεροι</span>
   <h1 data-en="Your feedback, &lt;em&gt;anonymously.&lt;/em&gt;">Η γνώμη σου, <em>ανώνυμα.</em></h1>
   <p class="lead" data-en="We don’t ask for your name, phone or email. Only Alexandros reads it, to improve your experience and our services. It helps us; we don’t judge it.">Δεν ζητάμε όνομα, τηλέφωνο ή email. Το διαβάζει μόνο ο Αλέξανδρος, για να βελτιώσει την εμπειρία σου και τις υπηρεσίες μας. Μας βοηθάει· δεν το κρίνουμε.</p>
 </section>

@@ -36,7 +36,7 @@ const text = {
     bookText: 'See free times, prices and durations and book in a minute. Pay online or at the salon.',
     bookCta: 'Book online',
     addressTitle: 'Address',
-    address: 'Erysichthonos 3-5, Thiseio, Athens 118\u00a051',
+    address: 'Erisichthonos 3-5, Thiseio, Athens 118\u00a051',
     directions: 'Directions on the map',
     phoneTitle: 'Phone',
     salonLabel: 'Salon',
