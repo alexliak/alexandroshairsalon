@@ -12,7 +12,7 @@
     "description": "Ωράριο, διεύθυνση και τηλέφωνα του Alexandros Hair Salon, Ερυσίχθονος 3-5, Θησείο, Αθήνα. WhatsApp, Viber ή online κράτηση."
   },
   "/shop": {
-    "title": "Shop Επαγγελματικών Προϊόντων Μαλλιών | L’Oréal Professionnel | Alexandros Hair Salon",
+    "title": "Shop L’Oréal Professionnel: προϊόντα μαλλιών | Alexandros Hair Salon",
     "description": "Επαγγελματικά προϊόντα μαλλιών L’Oréal Professionnel με τιμές, διάγνωση μαλλιών σε τρεις ερωτήσεις, παραλαβή από το Θησείο ή αποστολή σε όλη την Ελλάδα."
   },
   "/douleia": {
@@ -26,8 +26,8 @@
     }
   },
   "/montela": {
-    "title": "Μοντέλο για δωρεάν κούρεμα & βαφή μαλλιών στο Θησείο, Αθήνα | Alexandros Hair Salon",
-    "description": "Γίνε μοντέλο μαλλιών στο Θησείο: κούρεμα, βαφή, balayage ή ανταύγειες δωρεάν ή σε πολύ χαμηλή τιμή, με L’Oréal και Redken. Γυναίκες και άνδρες κάθε ηλικίας. Φόρμα 1 λεπτού.",
+    "title": "Μοντέλο μαλλιών Θησείο: δωρεάν κούρεμα & βαφή | Alexandros Hair Salon",
+    "description": "Γίνε μοντέλο μαλλιών στο Θησείο: κούρεμα, βαφή, balayage ή ανταύγειες δωρεάν ή σε χαμηλή τιμή, με L’Oréal και Redken. Γυναίκες και άνδρες, φόρμα 1 λεπτού.",
     "image": {
       "url": "https://alexandroshairsalon.gr/images/og-montela-2.jpg",
       "width": 1200,
@@ -45,7 +45,7 @@
   },
   "/fotografies": {
     "title": "Φωτογραφίες | Alexandros Hair Salon, κομμωτήριο στο Θησείο, Αθήνα",
-    "description": "Δες το Alexandros Hair Salon από μέσα: θέσεις κουρέματος, λούσιμο, υποδοχή και χώρο αναμονής. Ερυσίχθονος 3-5, Θησείο, 5′ από το μετρό. Τιμές, κριτικές Google και online κράτηση.",
+    "description": "Το Alexandros Hair Salon από μέσα: θέσεις κουρέματος, λούσιμο, υποδοχή και χώρος αναμονής. Ερυσίχθονος 3-5, Θησείο, 5′ από το μετρό.",
     "image": {
       "url": "https://alexandroshairsalon.gr/images/og-fotografies.jpg",
       "width": 1200,
@@ -54,8 +54,8 @@
     }
   },
   "/apotelesmata": {
-    "title": "Αποτελέσματα πριν & μετά: αλλαγή χρώματος από μαύρο, διόρθωση χρώματος | Alexandros Hair Salon, Θησείο",
-    "description": "Πραγματικά αποτελέσματα με ημερομηνία: από μαύρο σε κόκκινο και cherry cola, διόρθωση χρώματος σε χάλκινο. Στείλε φωτογραφία των μαλλιών σου στο WhatsApp ή κλείσε διάγνωση στο Θησείο, Αθήνα.",
+    "title": "Πριν & μετά: αλλαγή & διόρθωση χρώματος, Θησείο | Alexandros Hair Salon",
+    "description": "Πραγματικά αποτελέσματα με ημερομηνία: από μαύρο σε κόκκινο και cherry cola, διόρθωση χρώματος σε χάλκινο. Πρώτη γνώμη με μια φωτογραφία στο WhatsApp.",
     "image": {
       "url": "https://alexandroshairsalon.gr/images/og-apotelesmata.jpg",
       "width": 1200,
