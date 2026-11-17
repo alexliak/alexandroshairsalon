@@ -54,7 +54,7 @@ const TXT = {
     title: 'Bag & order',
     delivery: 'Delivery',
     pickup: 'Pick up at the salon',
-    pickupNote: 'Erysichthonos 3-5, Thiseio · Free',
+    pickupNote: 'Erisichthonos 3-5, Thiseio · Free',
     courier: 'Courier delivery',
     courierNote: 'Across Greece · we confirm the cost by email',
     details: 'Your details',
