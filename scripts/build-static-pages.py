@@ -409,7 +409,7 @@ service_page(
 <p>Ξεκινάμε με λίγη κουβέντα: τι σε ενοχλεί σήμερα, πώς χτενίζεσαι στο σπίτι και πόσο συχνά θέλεις να έρχεσαι. Μετά προτείνουμε γραμμή και μήκος που θα στέκονται σωστά και όταν τα φορμάρεις μόνη σου.</p>
 <p>Κάνουμε κλασικά και σύγχρονα κουρέματα: pixie, mullet, bob και lob, butterfly, curtain bangs, φιλάρισμα για όγκο ή ελάφρυνση, καθαρό φρεσκάρισμα άκρων.</p>
 <h2>Πώς θέλεις να φύγεις;</h2>
-<p>Μία τιμή για κάθε μήκος· διαλέγεις μόνο το τέλος. <strong>Χωρίς στέγνωμα</strong>: τα μαλλιά στεγνώνουν φυσικά, ιδανικό για σγουρά. <strong>Στέγνωμα</strong>: με τα χέρια, με πιστολάκι ή φυσούνα, για φυσικό αποτέλεσμα. <strong>Φορμάρισμα</strong>: πιστολάκι και βούρτσα για όγκο και φόρμα. <strong>Χτένισμα</strong>: πλήρες, ίσιο και λείο ή με όγκο και κίνηση, που κρατά συνήθως 2–3 ημέρες.</p>""",
+<p>Μία τιμή για κάθε μήκος· διαλέγεις μόνο το τέλος. <strong>Χωρίς στέγνωμα</strong>: τα μαλλιά στεγνώνουν φυσικά, ιδανικό για σγουρά. <strong>Στέγνωμα</strong>: με τα χέρια, με πιστολάκι ή φυσούνα, για φυσικό αποτέλεσμα. <strong>Φορμάρισμα</strong>: πιστολάκι και βούρτσα για όγκο και φόρμα. <strong>Χτένισμα</strong>: πλήρες, ίσιο και λείο ή με όγκο και κίνηση, που κρατά συνήθως 2–4 ημέρες.</p>""",
     CUTS + ["Φράτζα & αφέλειες", "Ανδρικό κούρεμα", "Ανδρικό με μηχανή", "Παιδικό κούρεμα"],
     [("Πόσο κοστίζει ένα γυναικείο κούρεμα;", f"€{P(CUTS[0])} με φυσικό στέγνωμα, €{P(CUTS[1])} με στέγνωμα, €{P(CUTS[2])} με φορμάρισμα και €{P(CUTS[3])} με πλήρες χτένισμα. Ίδια τιμή για όλα τα μήκη."),
      ("Κάνετε και ανδρικά ή παιδικά κουρέματα;", f"Ναι. Ανδρικό κούρεμα {OP('Ανδρικό κούρεμα','Κλασικό')} (μηνιαίο {OP('Ανδρικό κούρεμα','Μηνιαίο')}), με μηχανή €{P('Ανδρικό με μηχανή')} και παιδικό (έως 12 ετών) €{P('Παιδικό κούρεμα')}."),
@@ -474,12 +474,12 @@ BEFORE_AFTER = '<h2>Πριν &amp; μετά</h2>' + work_grid("el")
 ROOT_OPTS = dict((o, p) for o, _, p in MENU[ROOT][1])
 service_page(
     "/vafi-mallion-athina/", "Βαφή μαλλιών στην Αθήνα",
-    f"Βαφή Μαλλιών Αθήνα – Θησείο | Ρίζα από €{P(ROOT)} | Alexandros Hair Salon",
+    f"Βαφή Μαλλιών Αθήνα – Θησείο | Ρίζα €{ROOT_OPTS['Κλασική']} | Alexandros Hair Salon",
     f"Βαφή ρίζας & κάλυψη λευκών €{ROOT_OPTS['Κλασική']}, Μηνιαία ρίζα €{ROOT_OPTS['Μηνιαία ρίζα']}, χωρίς αμμωνία €{ROOT_OPTS['Χωρίς αμμωνία']} (INOA, Redken). Ρίζα & ρεφλέ από €{P('Βαφή ρίζας & ρεφλέ στα μήκη')}. Κομμωτήριο στο Θησείο, Αθήνα. Κλείσε online.",
     "Χρώμα · L’Oréal Professionnel & Redken",
     "Βαφή μαλλιών στην Αθήνα, <em>με L’Oréal &amp; Redken.</em>",
     "Κάλυψη λευκών στη ρίζα, βαφή χωρίς αμμωνία, ρεφλέ για λάμψη και τόνο. Μία τιμή για κάθε υπηρεσία, με συγκεκριμένη ποσότητα χρώματος, ώστε να ξέρεις από πριν τι πληρώνεις.",
-    [f"Βαφή ρίζας από €{P(ROOT)}"] + COMMON_FACTS,
+    [f"Βαφή ρίζας €{ROOT_OPTS['Κλασική']}"] + COMMON_FACTS,
     f"""<h2>Βαφή ρίζας και Μηνιαία ρίζα</h2>
 <p><strong>Βαφή ρίζας (€{ROOT_OPTS['Κλασική']})</strong>: μόνιμη βαφή με Farcom ή Majirel της L’Oréal Professionnel, για σίγουρη κάλυψη λευκών. <strong>Χωρίς αμμωνία (€{ROOT_OPTS['Χωρίς αμμωνία']})</strong>: INOA της L’Oréal Professionnel ή Redken. Και οι δύο περιλαμβάνουν λούσιμο και στέγνωμα.</p>
 <p><strong>Μηνιαία ρίζα (€{ROOT_OPTS['Μηνιαία ρίζα']}, χωρίς αμμωνία €{ROOT_OPTS['Χωρίς αμμωνία · μηνιαία ρίζα']})</strong>: όταν η επόμενη βαφή ρίζας γίνεται μέσα σε 30 ημέρες από την προηγούμενη σε εμάς. Στο ταμείο παίρνεις καρτελάκι με την ημερομηνία.</p>
@@ -619,7 +619,7 @@ en_body = f"""
 </section>
 <section class="block prose">
 <h2>What to expect</h2>
-<p>A haircut is a shape around the face. We start with a short talk about your face, your hair and how you style it, then cut and finish it the way you choose: a natural dry, a brushed blow-dry, or a full blow-out, bouncy or sleek, that usually lasts 2–3 days.</p>
+<p>A haircut is a shape around the face. We start with a short talk about your face, your hair and how you style it, then cut and finish it the way you choose: a natural dry, a brushed blow-dry, or a full blow-out, bouncy or sleek, that usually lasts 2–4 days.</p>
 <p>For colour we use L’Oréal Professionnel and Redken, including ammonia-free options and bleach-free lightening with L’Oréal Blond Studio No Bleach™. Every price includes a set amount of product; anything extra is agreed before we start.</p>
 </section>
 <section class="block"><h2>Questions</h2>{_items}</section>
@@ -1169,9 +1169,9 @@ FAQ_GROUPS = [
    f"For anyone who wants to look polished all week, at work and out, without thinking about it. Wash, mask and blow-dry, same day and time every week: short {O('Εβδομαδιαίο χτένισμα με μάσκα','Κοντά')}, medium {O('Εβδομαδιαίο χτένισμα με μάσκα','Μεσαία')}, long {O('Εβδομαδιαίο χτένισμα με μάσκα','Μακριά')} (separately €39). Monday to Thursday, when there is a free slot, and when your previous blow-dry was with us in the last 8 days.",
    [("Εβδομαδιαίο χτένισμα με μάσκα", "Μεσαία"), ("Εβδομαδιαίο χτένισμα με μάσκα", "Κοντά"), ("Εβδομαδιαίο χτένισμα με μάσκα", "Μακριά")]),
   ("Πόσο κρατά το χτένισμα;",
-   "Έως και 7 ημέρες. Η διάρκεια εξαρτάται από τη φύση των μαλλιών, τις συνθήκες, όπως η υγρασία, και τη φροντίδα τους στο σπίτι.",
+   "Συνήθως 2–4 ημέρες. Η διάρκεια εξαρτάται από τη φύση των μαλλιών, τις συνθήκες, όπως η υγρασία, και τη φροντίδα τους στο σπίτι.",
    "How long does a blow-dry last?",
-   "Up to 7 days. It depends on your hair, on conditions such as humidity, and on how it is cared for at home.",
+   "Usually 2–4 days. It depends on your hair, on conditions such as humidity, and on how it is cared for at home.",
    [("Blowout · Κλασικό χτένισμα", None)]),
   ("Μπούκλες ή πιάσιμο σε πολλά ή πολύ μακριά μαλλιά;",
    "Οι μπούκλες και το πιάσιμο κρατούν καλύτερα σε μαλλιά λουσμένα από πριν και στεγνωμένα φυσικά, χωρίς βαριά μαλακτικά ή έλαια μαλλιών. Σε πολλά ή πολύ μακριά μαλλιά βοηθά το λούσιμο να γίνει την προηγούμενη μέρα.",
