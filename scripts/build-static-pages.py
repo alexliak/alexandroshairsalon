@@ -512,11 +512,11 @@ service_page(
 <p><strong>No Bleach French Highlights, χωρίς {FQ('ντεκαπάζ', 'ntekapaz')}</strong>: με την κρέμα ξανοίγματος L’Oréal Professionnel Blond Studio No Bleach™, πιο ήπια για την τρίχα, έως 4 τόνους (σε βαμμένα μαλλιά έως 2,5). Γύρω από το πρόσωπο €{FACE['No Bleach French Highlights · Face Frame']}, με ντεκαπάζ €{FACE['Με ντεκαπάζ']}.</p>
 <p>Οι τιμές είναι για μαλλιά έως τους ώμους· για πιο μακριά υπάρχει το «+ Μακριά μαλλιά» (€{P('+ Μακριά μαλλιά (ανταύγειες / μπαλαγιάζ)')}). Για έντονη αλλαγή, πλατινέ ή <a class="il" href="/diorthosi-xromatos-athina/">διόρθωση παλιού χρώματος</a> κλείσε πρώτα <strong>διάγνωση χρώματος</strong>, ώστε να συμφωνήσουμε ρεαλιστικό πλάνο και συγκεκριμένη τιμή.</p>""",
     ["Ανταύγειες γύρω από το πρόσωπο", "Μερικές ανταύγειες", "Ολόκληρες ανταύγειες", "Μερικό μπαλαγιάζ", "Ολόκληρο μπαλαγιάζ", "+ Μακριά μαλλιά (ανταύγειες / μπαλαγιάζ)", "+ Προστασία τρίχας στο ξάνοιγμα", "Διόρθωση χρώματος"],
-    [("Τι είναι το μπαλαγιάζ (balayage);", "Τεχνική ξανοίγματος όπου το φως ζωγραφίζεται με το χέρι πάνω στα μαλλιά, ελεύθερα ή σε αλουμινόχαρτα (foilayage). Το αποτέλεσμα είναι απαλό και φυσικό, χωρίς έντονες γραμμές, και ολοκληρώνεται με ρεφλέ για τον τόνο που θέλεις."),
+    [("Τι είναι το μπαλαγιάζ (balayage);", "Τεχνική ανταυγειών όπου το ξάνοιγμα απλώνεται με το χέρι πάνω στα μαλλιά, ελεύθερα ή σε αλουμινόχαρτα (foilayage). Το αποτέλεσμα είναι απαλό και φυσικό, χωρίς έντονες γραμμές, και ολοκληρώνεται με ρεφλέ για τον τόνο που θέλεις."),
      ("Σε ποια μαλλιά ταιριάζει το μπαλαγιάζ;", "Σε μεσαία και μακριά μαλλιά. Αν θέλεις κάτι πιο διακριτικό ή είναι η πρώτη σου φορά, υπάρχουν οι ανταύγειες γύρω από το πρόσωπο. Την πρώτη φορά προηγείται συμβουλευτική, για να δούμε τι γίνεται στα δικά σου μαλλιά."),
-     ("Κάθε πότε χρειάζεται συντήρηση το μπαλαγιάζ;", "Το φως σβήνει απαλά προς τη ρίζα, γι’ αυτό δεν φαίνεται έντονη γραμμή όταν μεγαλώνουν τα μαλλιά. Το ρεφλέ που δίνει τον τόνο διαρκεί 4–6 εβδομάδες και ανανεώνεται χωριστά, χωρίς να ξαναγίνει όλο το μπαλαγιάζ."),
+     ("Πώς συντηρείται το μπαλαγιάζ;", "Το ξάνοιγμα σβήνει απαλά προς τη ρίζα, γι’ αυτό δεν φαίνεται έντονη γραμμή όταν μεγαλώνουν τα μαλλιά. Το ρεφλέ που δίνει τον τόνο διαρκεί 4–6 εβδομάδες και ανανεώνεται χωριστά, χωρίς να ξαναγίνει όλο το μπαλαγιάζ."),
      ("Πόσο κοστίζει το μπαλαγιάζ (balayage) στην Αθήνα;", f"Στο κομμωτήριό μας το μερικό μπαλαγιάζ κοστίζει €{P('Μερικό μπαλαγιάζ')} για μαλλιά έως τους ώμους, με ρεφλέ. Για πιο μακριά μαλλιά προστίθεται το «+ Μακριά μαλλιά» (€{P('+ Μακριά μαλλιά (ανταύγειες / μπαλαγιάζ)')})."),
-     ("Πόσο κοστίζουν οι ανταύγειες;", f"Γύρω από το πρόσωπο €{FACE['No Bleach French Highlights · Face Frame']}–€{FACE['Με ντεκαπάζ']}, μερικές €{P('Μερικές ανταύγειες')} και ολόκληρες €{P('Ολόκληρες ανταύγειες')}, πάντα με ρεφλέ."),
+     ("Πόσο κοστίζουν οι ανταύγειες;", f"Γύρω από το πρόσωπο €{FACE['Με ντεκαπάζ']}–€{FACE['No Bleach French Highlights · Face Frame']}, μερικές €{P('Μερικές ανταύγειες')} και ολόκληρες €{P('Ολόκληρες ανταύγειες')}, πάντα με ρεφλέ."),
      ("Υπάρχει επιλογή χωρίς ντεκαπάζ;", "Ναι, με την κρέμα L’Oréal Professionnel Blond Studio No Bleach™: έως 4 τόνους πιο ανοιχτά, πιο ήπια για την τρίχα."),
      FAQ_WHEN,
      ("Πόση ώρα διαρκεί;", "Από περίπου 1 ώρα 10′ για ανταύγειες γύρω από το πρόσωπο έως περίπου 3 ώρες για μπαλαγιάζ."),
@@ -600,7 +600,7 @@ EN_KEYS = ["Κούρεμα & στέγνωμα", "Κούρεμα & χτένισμ
 EN_FAQ = [
     ("Are you open on Mondays or in the evening?",
      "Usually yes. We work on Mondays and until late on Wednesday and Saturday afternoons, when many salons in Athens are closed or close early. You see live free slots in online booking; our current opening hours are always on Google."),
-    ("Do you speak English?", "Yes. Our English price list opens the booking with your service already selected, so you only pick a time. You can also message us in English on WhatsApp or Viber at +30 698 131 9000."),
+    ("Do you speak English?", "Yes. The booking system itself is in Greek, but our price list in English (alexandroshairsalon.gr/services, tap EN) opens it with your service already selected, so you only pick a time. You can also message us in English on WhatsApp or Viber at +30 698 131 9000."),
     ("Where is the salon?", "Erisichthonos 3-5, Thiseio, central Athens: about 5 minutes on foot from Thiseio metro station, a short walk from the Acropolis area and Monastiraki."),
     ("How do I pay?", "Online when you book, or at the salon after your appointment. Prices are the same online and at the salon."),
     ("Can I just walk in?", "If there is a free chair, yes, but booking online is the safest way to get the time you want, especially when you are in Athens for a few days."),
@@ -1242,7 +1242,7 @@ page("/syxnes-erotiseis/", "Συχνές ερωτήσεις: βαφή, ποσό�
 GNOMI_FORM = "1FAIpQLSe4NOQXPGj1ujfBYrkWBSyJFPEOs2VepAY-TrU6v1NJCtsKew"
 _gn_body = """
 <section class="hero">
-  <span class="eyebrow" data-en="You help us get better">Μας βοηθάς να γίνουμε καλύτεροι</span>
+  <span class="eyebrow" data-en="To help us get better">Για να γινόμαστε καλύτεροι</span>
   <h1 data-en="Your feedback, &lt;em&gt;anonymously.&lt;/em&gt;">Η γνώμη σου, <em>ανώνυμα.</em></h1>
   <p class="lead" data-en="We don’t ask for your name, phone or email. Only Alexandros reads it, to improve your experience and our services. It helps us; we don’t judge it.">Δεν ζητάμε όνομα, τηλέφωνο ή email. Το διαβάζει μόνο ο Αλέξανδρος, για να βελτιώσει την εμπειρία σου και τις υπηρεσίες μας. Μας βοηθάει· δεν το κρίνουμε.</p>
 </section>
