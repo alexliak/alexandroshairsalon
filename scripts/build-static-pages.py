@@ -536,8 +536,8 @@ DIAG = dict((o, p) for o, _, p in MENU["Διόρθωση χρώματος"][1])[
 
 service_page(
     CC_EL, "Διόρθωση & αλλαγή χρώματος στην Αθήνα",
-    "Διόρθωση & Αλλαγή Χρώματος Αθήνα – Θησείο | Color Correction | Alexandros Hair Salon",
-    f"Διόρθωση χρώματος (color correction) και αλλαγή χρώματος στο Θησείο, Αθήνα: από σκούρα ή ανομοιόμορφη βαφή σε καθαρό χρώμα, ή από μαύρο σε χάλκινο και κόκκινο. Διάγνωση με strand test και προσφορά €{DIAG}, που αφαιρείται από την τιμή.",
+    "Διόρθωση & Αλλαγή Χρώματος Αθήνα – Θησείο | Alexandros Hair Salon",
+    f"Διόρθωση (color correction) και αλλαγή χρώματος στο Θησείο: από ανομοιόμορφη βαφή ή μαύρο σε καθαρό χρώμα. Strand test €{DIAG}, που αφαιρείται από την τιμή.",
     "Color correction · Θησείο",
     "Διόρθωση &amp; αλλαγή χρώματος, <em>με πλάνο πριν από κάθε βήμα.</em>",
     "Διόρθωση, όταν το χρώμα βγήκε σκούρο, ανομοιόμορφο, πορτοκαλί ή κίτρινο. Αλλαγή, όταν θέλεις κάτι εντελώς διαφορετικό, π.χ. από μαύρο σε χάλκινο ή κόκκινο. Και στις δύο ξεκινάμε με διάγνωση και strand test, ώστε να ξέρεις από πριν το πλάνο, τον χρόνο και την τιμή.",
@@ -710,8 +710,8 @@ MODEL_FAQ_COMMON = [
 
 model_page(
     "/dorean-kourema-athina/", "Δωρεάν κούρεμα στην Αθήνα",
-    "Δωρεάν κούρεμα στην Αθήνα – Γίνε μοντέλο μαλλιών στο Θησείο | Alexandros Hair Salon",
-    "Δωρεάν κούρεμα και χτένισμα για γυναίκες και άνδρες στην Αθήνα, ως μοντέλο μαλλιών στο Θησείο. Φυσικό, κλασικό ή ελαφρώς μοντέρνο αποτέλεσμα από έμπειρους κομμωτές. Φόρμα 1 λεπτού.",
+    "Δωρεάν κούρεμα Αθήνα – Μοντέλο μαλλιών, Θησείο | Alexandros Hair Salon",
+    "Δωρεάν κούρεμα και χτένισμα για γυναίκες και άνδρες, ως μοντέλο μαλλιών στο Θησείο. Φυσικό, κλασικό ή ελαφρώς μοντέρνο αποτέλεσμα. Φόρμα 1 λεπτού.",
     "Μοντέλα μαλλιών · Θησείο, κέντρο Αθήνας",
     "Δωρεάν κούρεμα στην Αθήνα, <em>ως μοντέλο μαλλιών.</em>",
     "Ψάχνουμε γυναίκες και άνδρες κάθε ηλικίας για κούρεμα και χτένισμα δωρεάν, σε αντάλλαγμα για φωτογραφίες του νέου look. Δουλεύουν οι έμπειροι κομμωτές του κομμωτηρίου, με αποτέλεσμα που στέκεται στην καθημερινότητά σου.",
@@ -729,8 +729,8 @@ model_page(
 
 model_page(
     "/montelo-vafi-balayage-athina/", "Βαφή & balayage για μοντέλα",
-    "Βαφή μαλλιών & balayage σε τιμή υλικών – Μοντέλο μαλλιών Αθήνα | Alexandros Hair Salon",
-    "Γίνε μοντέλο μαλλιών στο Θησείο: βαφή ρίζας, ρεφλέ, ανταύγειες χωρίς ντεκαπάζ ή balayage μόνο με το κόστος των υλικών, με L’Oréal Professionnel και Redken. Φόρμα 1 λεπτού.",
+    "Μοντέλο για βαφή & balayage σε τιμή υλικών, Αθήνα | Alexandros Hair Salon",
+    "Γίνε μοντέλο μαλλιών στο Θησείο: βαφή ρίζας, ρεφλέ, ανταύγειες χωρίς ντεκαπάζ ή balayage μόνο με το κόστος των υλικών, με L’Oréal και Redken.",
     "Μοντέλα για χρώμα · Θησείο, κέντρο Αθήνας",
     "Βαφή και balayage <em>σε τιμή υλικών.</em>",
     "Για τις νέες τεχνικές χρώματος ψάχνουμε μοντέλα: βαφή ρίζας με ρεφλέ, ανταύγειες χωρίς ντεκαπάζ, balayage. Πληρώνεις μόνο ένα μικρό ποσό για τα υλικά, και το ξέρεις πριν ξεκινήσουμε.",
@@ -749,8 +749,8 @@ model_page(
 
 model_page(
     "/hair-model-athens/", "Hair model in Athens",
-    "Free Haircut in Athens – Become a Hair Model in Thiseio | Alexandros Hair Salon",
-    "Become a hair model in central Athens: free haircut and styling, colour and balayage at material cost, with L’Oréal Professionnel and Redken. Natural, classic or softly modern results. One-minute form.",
+    "Free Haircut in Athens – Hair Model, Thiseio | Alexandros Hair Salon",
+    "Become a hair model in central Athens: free haircut and styling, colour and balayage at material cost, with L’Oréal Professionnel and Redken. One-minute form.",
     "Hair models wanted · Thiseio, central Athens",
     "Free haircut in Athens, <em>as a hair model.</em>",
     "We are looking for women and men of any age (men mainly for haircuts and styling), including students and visitors living in Athens, for a free haircut and styling or colour at material cost, in exchange for photos of the result. The work is done by the salon’s experienced stylists, not trainees.",
@@ -816,8 +816,8 @@ PHOTO_KEYS = [EV, BD, "Κούρεμα & χτένισμα"]
 # /hair-stylist-photoshoot-athens/ (EN)
 b2b_page(
     "/hair-stylist-photoshoot-athens/", "Hair stylist for photo shoots in Athens",
-    f"Hair Stylist for Photo Shoots in Athens, Thiseio | from €{P(EV)} | Alexandros Hair Salon",
-    f"Photo-ready hair in Thiseio, a short walk from Filopappou Hill and the Acropolis views: styling for portrait, couple and fashion shoots from €{P(EV)}. Half and full days on set for photographers and brands.",
+    f"Hair Stylist for Photo Shoots, Athens | from €{P(EV)} | Alexandros Hair Salon",
+    f"Photo-ready hair in Thiseio, near Filopappou Hill and the Acropolis views: styling for portrait, couple and fashion shoots from €{P(EV)}. Half and full days on set.",
     "Hair for photo shoots · Thiseio, Athens",
     "Photo-ready hair, <em>a short walk from the Acropolis views.</em>",
     "Many photo shoots in Athens do not include hair. We style it in our salon in Thiseio, right before your session, and you walk to Filopappou Hill, Apostolou Pavlou or the Ancient Agora. For photographers and brands we also work on set, by the half or full day.",
@@ -843,7 +843,7 @@ b2b_page(
 b2b_page(
     "/xtenisma-fotografisi-athina/", "Χτένισμα για φωτογράφιση στην Αθήνα",
     f"Κομμωτής για Φωτογράφιση Αθήνα – Θησείο | από €{P(EV)} | Alexandros Hair Salon",
-    f"Χτένισμα για φωτογράφιση στο Θησείο από €{P(EV)}. Κομμωτής για lookbook, editorial, e-shop και διαφημιστικές φωτογραφίσεις, στο κομμωτήριο ή στο σετ, με μισή ή πλήρη ημέρα.",
+    f"Χτένισμα για φωτογράφιση στο Θησείο από €{P(EV)}. Κομμωτής για lookbook, editorial, e-shop και διαφημιστικές φωτογραφίσεις, στο κομμωτήριο ή στο σετ.",
     "Μαλλιά για φωτογράφιση · Θησείο, Αθήνα",
     "Χτένισμα για φωτογράφιση, <em>στο κομμωτήριο ή στο σετ.</em>",
     "Για προσωπικές, επαγγελματικές και φωτογραφίσεις μόδας. Ετοιμάζουμε τα μαλλιά στο κομμωτήριο στο Θησείο, λίγα λεπτά από τον Φιλοπάππου και την Αποστόλου Παύλου, ή ερχόμαστε στο σετ για μισή ή πλήρη ημέρα.",
@@ -867,8 +867,8 @@ b2b_page(
 # /hotel-hair-stylist-athens/ (EN)
 b2b_page(
     "/hotel-hair-stylist-athens/", "Hair salon for hotel guests in Athens",
-    f"Hair Salon near the Acropolis for Hotel Guests | Blowdry €{P(BD)} | Alexandros Hair Salon",
-    f"Staying near the Acropolis, Thiseio or Monastiraki? Blowdry €{P(BD)}, occasion styling €{P(EV)}, haircut and colour in Thiseio, often the same day. English spoken. Book online or on WhatsApp.",
+    f"Hair Stylist for Hotel Guests, Acropolis | Blowdry €{P(BD)} | Alexandros Hair Salon",
+    f"Staying near the Acropolis, Thiseio or Monastiraki? Blowdry €{P(BD)}, occasion styling €{P(EV)}, haircut and colour, often the same day. English spoken.",
     "For hotel guests · Thiseio, near the Acropolis",
     "Your hair done before dinner, <em>a short walk from your hotel.</em>",
     "A blowdry before a dinner, an up-do for a wedding, a haircut on a long trip. Our salon in Thiseio is a few minutes from the hotels around the Acropolis, Thiseio, Psyrri and Monastiraki, and we often have free time the same day.",
@@ -892,7 +892,7 @@ BRIDE = "Νυφικό χτένισμα"
 b2b_page(
     "/elopement-hair-athens/", "Elopement and wedding hair in Athens",
     f"Elopement & Wedding Hair in Athens | Bridal Hair €{P(BRIDE)} | Alexandros Hair Salon",
-    f"Bridal hair for weddings and elopements in Athens: trial €{P(TRIAL)}, bridal hair €{P(BRIDE)} in our Thiseio salon, near Filopappou Hill and the Acropolis views, or on location by arrangement.",
+    f"Bridal hair for weddings and elopements in Athens: trial €{P(TRIAL)}, bridal hair €{P(BRIDE)} in our Thiseio salon near the Acropolis views, or on location.",
     "Weddings & elopements · Athens",
     "Bridal hair in Athens, <em>near the Acropolis views.</em>",
     "For couples who marry or elope in Athens. We try your bridal hair together, keep notes, and on the day we style it in our salon in Thiseio, a short walk from Filopappou Hill, or at your hotel or venue.",
@@ -968,7 +968,7 @@ page("/kratisi/", "Κράτηση ραντεβού online | Alexandros Hair Salo
 b2b_page(
     CC_EN, "Hair colour correction in Athens",
     "Hair Colour Correction in Athens – Thiseio | Alexandros Hair Salon",
-    f"Hair colour correction and colour change in Thiseio, central Athens: from dark or patchy colour to a clean, even result, or from black to copper and red. Assessment with a strand test and a quote, €{DIAG}, deducted from the price.",
+    f"Hair colour correction and colour change in Thiseio, central Athens: from patchy colour or black to a clean result. Strand test €{DIAG}, deducted from the price.",
     "Colour correction · Thiseio, central Athens",
     "Hair colour correction in Athens, <em>with a plan before every step.</em>",
     "Correction, when colour came out too dark, patchy, orange or yellow. Change, when you want something completely different, such as black to copper or red. Both start with an assessment and a strand test, so you know the plan, the time and the price in advance. We speak English.",
@@ -1164,9 +1164,9 @@ FAQ_GROUPS = [
  ]),
  ("Χτένισμα", "Blow-dry & styling", [
   ("Τι είναι το Εβδομαδιαίο χτένισμα με μάσκα;",
-   f"Για όσες θέλουν να είναι περιποιημένες όλη την εβδομάδα, στη δουλειά και στα ραντεβού τους, χωρίς να το σκέφτονται. Λούσιμο, μάσκα και χτένισμα με βούρτσα, την ίδια μέρα και ώρα κάθε εβδομάδα: κοντά {O('Εβδομαδιαίο χτένισμα με μάσκα','Κοντά')}, μεσαία {O('Εβδομαδιαίο χτένισμα με μάσκα','Μεσαία')}, μακριά {O('Εβδομαδιαίο χτένισμα με μάσκα','Μακριά')} (χωριστά θα ήταν €39). Δευτέρα έως Πέμπτη, όταν υπάρχει ελεύθερη ώρα, και όταν το προηγούμενο χτένισμα έγινε σε εμάς τις τελευταίες 8 ημέρες.",
+   f"Για όσες θέλουν να είναι περιποιημένες κάθε εβδομάδα, στη δουλειά και στα ραντεβού τους, χωρίς να το σκέφτονται. Λούσιμο, μάσκα και χτένισμα με βούρτσα, την ίδια μέρα και ώρα κάθε εβδομάδα: κοντά {O('Εβδομαδιαίο χτένισμα με μάσκα','Κοντά')}, μεσαία {O('Εβδομαδιαίο χτένισμα με μάσκα','Μεσαία')}, μακριά {O('Εβδομαδιαίο χτένισμα με μάσκα','Μακριά')} (χωριστά θα ήταν €39). Δευτέρα έως Πέμπτη, όταν υπάρχει ελεύθερη ώρα, και όταν το προηγούμενο χτένισμα έγινε σε εμάς τις τελευταίες 8 ημέρες.",
    "What is the Weekly Blowdry with Mask?",
-   f"For anyone who wants to look polished all week, at work and out, without thinking about it. Wash, mask and blow-dry, same day and time every week: short {O('Εβδομαδιαίο χτένισμα με μάσκα','Κοντά')}, medium {O('Εβδομαδιαίο χτένισμα με μάσκα','Μεσαία')}, long {O('Εβδομαδιαίο χτένισμα με μάσκα','Μακριά')} (separately €39). Monday to Thursday, when there is a free slot, and when your previous blow-dry was with us in the last 8 days.",
+   f"For anyone who wants to look polished every week, at work and out, without thinking about it. Wash, mask and blow-dry, same day and time every week: short {O('Εβδομαδιαίο χτένισμα με μάσκα','Κοντά')}, medium {O('Εβδομαδιαίο χτένισμα με μάσκα','Μεσαία')}, long {O('Εβδομαδιαίο χτένισμα με μάσκα','Μακριά')} (separately €39). Monday to Thursday, when there is a free slot, and when your previous blow-dry was with us in the last 8 days.",
    [("Εβδομαδιαίο χτένισμα με μάσκα", "Μεσαία"), ("Εβδομαδιαίο χτένισμα με μάσκα", "Κοντά"), ("Εβδομαδιαίο χτένισμα με μάσκα", "Μακριά")]),
   ("Πόσο κρατά το χτένισμα;",
    "Συνήθως 2–4 ημέρες. Η διάρκεια εξαρτάται από τη φύση των μαλλιών, τις συνθήκες, όπως η υγρασία, και τη φροντίδα τους στο σπίτι.",

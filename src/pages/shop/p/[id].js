@@ -52,13 +52,17 @@ const schemaFor = (p, description, url, image) => {
 export default function ProductRoute({ id, detail, language, setLanguage }) {
   const product = useMemo(() => withDetail(id, detail), [id, detail]);
   const url = `${SITE}/shop/p/${id}`;
-  const description = (product.short.el || product.description.el || product.name.el).slice(0, 155);
+  const body = (product.short.el || product.description.el || '').replace(/\s+/g, ' ').trim();
+  const rawDesc = body ? `${product.name.el}: ${body}` : product.name.el;
+  const description = rawDesc.length <= 155 ? rawDesc : `${rawDesc.slice(0, 154).replace(/\s+\S*$/, '')}…`;
+  const fullTitle = `${product.name.el} | Alexandros Hair Salon`;
+  const title = fullTitle.length <= 65 ? fullTitle : product.name.el;
   const image = product.image ? `${SITE}${imageSrc(product.image, 800)}` : null;
   return (
     <>
       <Seo
         path={`/shop/p/${id}`}
-        title={`${product.name.el} | ${product.brand} | Alexandros Hair Salon`}
+        title={title}
         description={description}
         image={image ? { url: image, width: 800, height: 800, type: 'image/webp' } : undefined}
         jsonld={schemaFor(product, description, url, image)}
