@@ -33,19 +33,19 @@ self.__BUILD_MANIFEST = {
     "static/chunks/3cxoaarix_2ns.js"
   ],
   "/shop": [
-    "static/chunks/3_vpp054udoic.js"
+    "static/chunks/3j4_zbij6f7nj.js"
   ],
   "/shop/admin": [
-    "static/chunks/1u7m9wabkhi2g.js"
+    "static/chunks/0g277tba18441.js"
   ],
   "/shop/cart": [
-    "static/chunks/3h-_r7a98hwnl.js"
+    "static/chunks/3hve-01rhm511.js"
   ],
   "/shop/diagnosi": [
-    "static/chunks/3nyskfn2puny7.js"
+    "static/chunks/18e51rtiq_75s.js"
   ],
   "/shop/p/[id]": [
-    "static/chunks/1goumk_vl5k0f.js"
+    "static/chunks/443er217gkvkl.js"
   ],
   "__rewrites": {
     "afterFiles": [],
