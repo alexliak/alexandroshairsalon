@@ -100,7 +100,10 @@
   "3474637361877": "https://images.salsify.com/image/upload/s--8YJWuI8t--/w_1500,h_1500,c_pad,dn_300,b_white/8575ff7e73d661d22a84fda63c4f352beed1c871.PNG",
   "3474637363819": "https://images.salsify.com/image/upload/s--n1VKy1I3--/w_1500,h_1500,c_pad,dn_300,b_white/3f74997996238de8fc0207fad16a68f119a32f69.PNG",
   "3474637363826": "https://images.salsify.com/image/upload/s--6coT__2U--/w_1500,h_1500,c_pad,dn_300,b_white/a8d669e7553690cb7eb2ee3fcc0646f630b69af3.PNG",
-  "3474637374617": "https://images.salsify.com/image/upload/s--okguzZMG--/w_1500,h_1500,c_pad,dn_300,b_white/62fedc76942d667e61d114a66f3b9ec9b69653b5.PNG"
+  "3474637374617": "https://images.salsify.com/image/upload/s--okguzZMG--/w_1500,h_1500,c_pad,dn_300,b_white/62fedc76942d667e61d114a66f3b9ec9b69653b5.PNG",
+  "3474637202866": "https://gr.lorealpartnershop.com/dw/image/v2/BJDW_PRD/on/demandware.static/-/Sites-master-PPD-GR/el_GR/dw6c19fcde/3474637202866_EN_01.jpg?sw=1500",
+  "3474637324728": "https://gr.lorealpartnershop.com/dw/image/v2/BJDW_PRD/on/demandware.static/-/Sites-master-PPD-GR/el_GR/dw7e0d4693/3474637324728_EN_01.jpg?sw=1500",
+  "3474637324766": "https://gr.lorealpartnershop.com/dw/image/v2/BJDW_PRD/on/demandware.static/-/Sites-master-PPD-GR/el_GR/dwb5e4bcfe/3474637324766_EN_01.jpg?sw=1500"
  },
  "local": {
   "0000030157743": "p/0000030157743",
@@ -202,6 +205,9 @@
   "3474637361877": "p/3474637361877",
   "3474637363819": "p/3474637363819",
   "3474637363826": "p/3474637363826",
-  "3474637374617": "p/3474637374617"
+  "3474637374617": "p/3474637374617",
+  "3474637202866": "p/3474637202866",
+  "3474637324728": "p/3474637324728",
+  "3474637324766": "p/3474637324766"
  }
 }

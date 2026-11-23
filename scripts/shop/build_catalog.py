@@ -654,6 +654,17 @@ def main():
         if path.exists():
             manual += json.loads(path.read_text(encoding='utf-8'))
     if manual:
+        # Όταν ένα EAN υπάρχει και στα αρχεία της L'Oréal και στα χειροκίνητα, κρατάμε το χειροκίνητο
+        # (δικά μας κείμενα), με τη φωτογραφία της L'Oréal αν υπάρχει. Έτσι δεν βγαίνει δύο φορές.
+        manual_eans = {ean13(v['sku']) for o in manual for v in o['variants']}
+        products = [q for q in products if not ({ean13(v['ean']) for v in q['variants']} & manual_eans)]
+        for o in manual:
+            for v in o['variants']:
+                img = images.get('products', {}).get(ean13(v['sku']))
+                if img and not v.get('image'):
+                    v['image'] = img
+            if not o.get('image'):
+                o['image'] = next((v['image'] for v in o['variants'] if v.get('image')), None)
         for o in manual:
             for v in o['variants']:
                 p = prices.get(v['sku'], {})
