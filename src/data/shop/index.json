@@ -795,6 +795,105 @@
    "kw": "Vitamino Color Spectrum Επαγγελματικό Conditioner από τη L'Oréal Professionnel, εμπλουτισμένο με Φερουλικό Οξύ + Κιτρικό Οξύ 2.5%."
   },
   {
+   "id": "loreal-x-zuvi-airlight-pro-professional-infrared-hair",
+   "brand": "L'Oréal Professionnel",
+   "brandKey": "loreal",
+   "line": "AirLight Pro",
+   "category": "tools",
+   "type": "hair-tool",
+   "name": {
+    "el": "X Zuvi AirLight Pro: Επαγγελματικό Σεσουάρ Μαλλιών Υπέρυθρης Ακτινοβολίας με προηγμένη τεχνολογία υπέρυθρων.",
+    "en": "X Zuvi AirLight Pro. Professional Infrared Hair Dryer with advanced infrared technology."
+   },
+   "hairTypes": [
+    "all"
+   ],
+   "needs": [],
+   "variants": [
+    {
+     "sku": "3474637202866",
+     "ean": "3474637202866",
+     "label": "Standard",
+     "size": "",
+     "price": 519.99,
+     "active": true,
+     "image": "p/3474637202866"
+    }
+   ],
+   "image": "p/3474637202866",
+   "related": [
+    "loreal-airlight-pro-filters-pack",
+    "loreal-airlight-pro-professional-comb-nozzle"
+   ],
+   "kw": "\"Στεγνώνει με την ταχύτητα του φωτός. Χωρίς φθορά*. Το AirLight Pro είναι το πρώτο επαγγελματικό πιστολάκι μαλλιών της L'Oréal Professionnel που τροφοδοτείται"
+  },
+  {
+   "id": "loreal-airlight-pro-filters-pack",
+   "brand": "L'Oréal Professionnel",
+   "brandKey": "loreal",
+   "line": "AirLight Pro",
+   "category": "tools",
+   "type": "accessory",
+   "name": {
+    "el": "AirLight Pro Filters Pack: Πακέτο Φίλτρων, 2 Κύρια και 2 Φίλτρα Χειρολαβής.",
+    "en": "AirLight Pro Filters Pack"
+   },
+   "hairTypes": [
+    "all"
+   ],
+   "needs": [],
+   "variants": [
+    {
+     "sku": "3474637324766",
+     "ean": "3474637324766",
+     "label": "Standard",
+     "size": "",
+     "price": 39.49,
+     "active": true,
+     "image": "p/3474637324766"
+    }
+   ],
+   "image": "p/3474637324766",
+   "related": [
+    "loreal-x-zuvi-airlight-pro-professional-infrared-hair",
+    "loreal-airlight-pro-professional-comb-nozzle"
+   ],
+   "kw": "L'Oréal Professionnel AirLight Pro Πακέτο Φίλτρων, 2 Κύρια και 2 Φίλτρα Λαβής"
+  },
+  {
+   "id": "loreal-airlight-pro-professional-comb-nozzle",
+   "brand": "L'Oréal Professionnel",
+   "brandKey": "loreal",
+   "line": "AirLight Pro",
+   "category": "tools",
+   "type": "accessory",
+   "name": {
+    "el": "AirLight Pro Professional Comb Nozzle: Επαγγελματικό Ακροφύσιο Χτένας, σχεδιασμένο για σγουρά και με μπούκλες μαλλιά, ξεμπλέκει και λειαίνει με την ταχύτητα του φωτός.",
+    "en": "AirLight Pro Professional Comb Nozzle"
+   },
+   "hairTypes": [
+    "all"
+   ],
+   "needs": [],
+   "variants": [
+    {
+     "sku": "3474637324728",
+     "ean": "3474637324728",
+     "label": "Standard",
+     "size": "",
+     "price": 39.49,
+     "active": true,
+     "image": "p/3474637324728"
+    }
+   ],
+   "image": "p/3474637324728",
+   "related": [
+    "loreal-x-zuvi-airlight-pro-professional-infrared-hair",
+    "loreal-airlight-pro-filters-pack"
+   ],
+   "kw": "L'Oréal Professionnel AirLight Pro Επαγγελματικό Ακροφύσιο Χτένας, Σχεδιασμένο για Σγουρά & Σπαστά Μαλλιά, Ξεμπλέκει και Λειαίνει με την Ταχύτητα του Φωτός."
+  },
+  {
    "id": "loreal-pro-longer-maska-kata-tis-palidas-gia",
    "brand": "L'Oréal Professionnel",
    "brandKey": "loreal",
