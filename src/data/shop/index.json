@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-14",
+ "generated": "2026-11-23",
  "currency": "EUR",
  "brands": [
   {
@@ -3467,7 +3467,7 @@
     "loreal-metal-detox-maska-gia-apolyti-epanortosi-mallion",
     "loreal-absolut-repair-molecular-bi-phase-oil-gia"
    ],
-   "kw": "Το Tecni.ART Super Dust είναι μία επαγγελματική πούδρα μαλλιών για όγκο και υφή με ματ τελείωμα."
+   "kw": "Το Tecni.ART Super Dust της L’Oréal Professionnel είναι μία πούδρα μαλλιών για όγκο και υφή με ματ τελείωμα. Πλούσιο σε μεταλλική πούδρα για έξτρα όγκο."
   },
   {
    "id": "loreal-steampod-4-presa-atmou",
@@ -3494,7 +3494,7 @@
      "ean": "3474637116415",
      "label": "SteamPod 4.0",
      "size": "",
-     "price": 292.99,
+     "price": 384.99,
      "active": true
     }
    ],
@@ -3527,7 +3527,7 @@
      "ean": "3474636819713",
      "label": "SteamPod 3.0",
      "size": "",
-     "price": 211.99,
+     "price": 278.49,
      "active": true
     }
    ],
@@ -3543,8 +3543,8 @@
    "category": "tools",
    "type": "hair-tool",
    "name": {
-    "el": "AirLight Pro Σεσουάρ",
-    "en": "AirLight Pro Hair Dryer"
+    "el": "AirLight Pro Επαγγελματικό Σεσουάρ Υπέρυθρης Ακτινοβολίας",
+    "en": "AirLight Pro Professional Infrared Hair Dryer"
    },
    "hairTypes": [
     "all"
@@ -3559,13 +3559,13 @@
      "ean": "3474637202866",
      "label": "AirLight Pro",
      "size": "",
-     "price": 395.49,
+     "price": 519.99,
      "active": true
     }
    ],
    "image": null,
    "related": [],
-   "kw": "Επαγγελματικό σεσουάρ με υπέρυθρο φως και μοτέρ υψηλής ταχύτητας. Σύμφωνα με τον κατασκευαστή: γρηγορότερο στέγνωμα χωρίς υπερβολική θερμότητα και έως 31%"
+   "kw": "Το πρώτο επαγγελματικό πιστολάκι της L'Oréal Professionnel με τεχνολογία υπέρυθρων: ταχύτερο στέγνωμα, περισσότερη ενυδάτωση και λιγότερη κατανάλωση ενέργειας"
   },
   {
    "id": "loreal-airlight-pro-xtena-akrofysio",
@@ -3591,13 +3591,13 @@
      "ean": "3474637324728",
      "label": "Ακροφύσιο-χτένα",
      "size": "",
-     "price": 30.49,
+     "price": 39.49,
      "active": true
     }
    ],
    "image": null,
    "related": [],
-   "kw": "Ακροφύσιο-χτένα για το σεσουάρ AirLight Pro, για σγουρά και κυματιστά μαλλιά. Ξεμπλέκει και λειαίνει κατά το στέγνωμα."
+   "kw": "Επαγγελματικό ακροφύσιο χτένας για το AirLight Pro, σχεδιασμένο για σγουρά και με μπούκλες μαλλιά. Ξεμπλέκει και λειαίνει με την ταχύτητα του φωτός. Πωλείται"
   },
   {
    "id": "loreal-airlight-pro-filtra",
@@ -3621,13 +3621,13 @@
      "ean": "3474637324766",
      "label": "2 + 2 φίλτρα",
      "size": "",
-     "price": 30.49,
+     "price": 39.49,
      "active": true
     }
    ],
    "image": null,
    "related": [],
-   "kw": "Ανταλλακτικά φίλτρα για το σεσουάρ AirLight Pro: 2 κύρια φίλτρα και 2 φίλτρα χειρολαβής."
+   "kw": "Πακέτο ανταλλακτικών φίλτρων για το AirLight Pro: 2 κύρια φίλτρα και 2 φίλτρα χειρολαβής."
   }
  ]
 }
