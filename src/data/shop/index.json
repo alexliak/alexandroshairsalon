@@ -3495,6 +3495,7 @@
      "label": "SteamPod 4.0",
      "size": "",
      "price": 384.99,
+     "stock": 0,
      "active": true
     }
    ],
@@ -3528,6 +3529,7 @@
      "label": "SteamPod 3.0",
      "size": "",
      "price": 278.49,
+     "stock": 0,
      "active": true
     }
    ],
