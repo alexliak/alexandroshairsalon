@@ -306,7 +306,7 @@ def page(path, title, desc, body, ld, extra_head="", mbar=True, bilingual=False,
     <a class="hide-m" href="/services" data-en="Services &amp; prices">Υπηρεσίες &amp; τιμές</a>
     <a class="hide-m" href="/hours" data-en="Hours">Ωράριο</a>
     <a class="hide-m" href="/montela" style="color:var(--gold)" data-en="Be our model">Γίνετε μοντέλο</a>
-    <a class="hide-m" href="/douleia" style="color:var(--gold)">We are hiring</a>
+    <a class="hide-m" href="/douleia" style="color:var(--gold)" data-en="We are hiring">Θέσεις εργασίας</a>
     <span class="icons" role="group" aria-label="Επικοινωνία στο κινητό">
       <a class="mp" href="{DIRECTIONS}" data-maps target="_blank" rel="noopener" aria-label="Πού θα μας βρείτε: άνοιγμα στο Google Maps" title="Google Maps">{ICONS['FaMapMarkerAlt']}</a>
       <a class="ph" href="tel:{PHONE}" aria-label="Κλήση στο κομμωτήριο {PHONE_TXT}" title="Κλήση στο κομμωτήριο {PHONE_TXT}">{ICONS['FaPhoneAlt']}</a>

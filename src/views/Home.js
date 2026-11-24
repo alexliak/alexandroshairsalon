@@ -3,7 +3,7 @@ import { Link } from '../lib/router';
 import NhLayout, { BOOK, PHONE, GOOGLE_PROFILE_URL, DIRECTIONS_URL, REVIEWS_URL, mapLinkProps } from '../components/NhLayout';
 import MapEmbed from '../components/MapEmbed';
 import SalonGallery from '../components/SalonGallery';
-import { priceText, serviceBookUrl } from '../data/prices';
+import { priceText, serviceBookUrl, MONTHLY_DAYS } from '../data/prices';
 
 // Μαθηματικά animation «Κομμωτική 2050»: φορτώνονται σε ξεχωριστό, μικρό αρχείο μετά την αρχική σελίδα.
 const MathArt = lazy(() => import('../components/MathArt'));
@@ -40,7 +40,7 @@ const content = {
     popularTitle: 'Κράτηση σε ένα λεπτό',
     allServices: 'Όλες οι τιμές →',
     services: [
-      { tone: 'cut', cat: 'Κουρέματα', name: 'Γυναικείο κούρεμα', desc: 'Pixie, mullet, butterfly, curtain bangs, φιλάρισμα ή κλασικό, με εμπειρία τριών δεκαετιών.', time: '30–55′', price: priceText('el', 'Κούρεμα χωρίς στέγνωμα', 'Κούρεμα & στέγνωμα', 'Κούρεμα & φορμάρισμα', 'Κούρεμα & χτένισμα'), href: '/services#haircuts' },
+      { tone: 'cut', cat: 'Κουρέματα', name: 'Γυναικείο κούρεμα', desc: 'Σχήμα που αναδεικνύει το πρόσωπο, κοντό ή μακρύ, κλασικό ή σύγχρονο, με εμπειρία τριών δεκαετιών.', time: '30–55′', price: priceText('el', 'Κούρεμα χωρίς στέγνωμα', 'Κούρεμα & στέγνωμα', 'Κούρεμα & φορμάρισμα', 'Κούρεμα & χτένισμα'), href: '/services#haircuts' },
       { tone: 'style', cat: 'Χτένισμα', name: 'Blowout · Κλασικό χτένισμα', desc: 'Χτένισμα με όγκο και κίνηση που κρατά μέρες, με βούρτσα ή με ρολά και κλιπς.', time: '30–45′', price: priceText('el', 'Blowout · Κλασικό χτένισμα'), href: serviceBookUrl('Blowout · Κλασικό χτένισμα') },
       { tone: 'colour', cat: 'Χρώμα', name: 'Βαφή ρίζας & ρεφλέ', desc: 'Κάλυψη λευκών στη ρίζα και ξεχωριστό gloss για λάμψη σε όλο το μαλλί.', time: '1 ώρα – 1 ώρα 10′', price: priceText('el', 'Βαφή ρίζας & ρεφλέ στα μήκη'), href: '/services#colour' },
       { tone: 'light', cat: 'Ανταύγειες', name: 'Μερικό μπαλαγιάζ', desc: 'Φυσικό, φωτεινό αποτέλεσμα με εύκολη συντήρηση.', time: '3 ώρες', price: priceText('el', 'Μερικό μπαλαγιάζ'), href: serviceBookUrl('Μερικό μπαλαγιάζ') },
@@ -58,7 +58,7 @@ const content = {
     brandsText: 'Εκπαιδευόμαστε συνεχώς στις νέες τεχνικές τους.',
     brandsCta: 'Κράτηση για χρώμα',
     colorList: [
-      ['Βαφή ρίζας – κάλυψη λευκών', priceText('el', 'Βαφή ρίζας')],
+      ['Βαφή ρίζας – κάλυψη λευκών', priceText('el', 'Βαφή ρίζας'), `η χαμηλότερη με Μηνιαία ρίζα, όταν βάφετε ξανά μέσα σε ${MONTHLY_DAYS} ημέρες`],
       ['Βαφή ρίζας & ρεφλέ (gloss)', priceText('el', 'Βαφή ρίζας & ρεφλέ στα μήκη')],
       ['Ανταύγειες γύρω από το πρόσωπο', priceText('el', 'Ανταύγειες γύρω από το πρόσωπο')],
       ['Μερικό μπαλαγιάζ', priceText('el', 'Μερικό μπαλαγιάζ')]
@@ -103,7 +103,7 @@ const content = {
     popularTitle: 'Pick & book',
     allServices: 'All prices →',
     services: [
-      { tone: 'cut', cat: 'Haircuts', name: 'Women’s haircut', desc: 'Pixie, mullet, butterfly, curtain bangs, texturising or classic, with thirty years of experience.', time: '30–55′', price: priceText('en', 'Κούρεμα χωρίς στέγνωμα', 'Κούρεμα & στέγνωμα', 'Κούρεμα & φορμάρισμα', 'Κούρεμα & χτένισμα'), href: '/services#haircuts' },
+      { tone: 'cut', cat: 'Haircuts', name: 'Women’s haircut', desc: 'A shape that brings out your face, short or long, classic or modern, with thirty years of experience.', time: '30–55′', price: priceText('en', 'Κούρεμα χωρίς στέγνωμα', 'Κούρεμα & στέγνωμα', 'Κούρεμα & φορμάρισμα', 'Κούρεμα & χτένισμα'), href: '/services#haircuts' },
       { tone: 'style', cat: 'Styling', name: 'Classic blowout', desc: 'A blowout with volume and movement that lasts for days, brushed or set with rollers and clips.', time: '30–45′', price: priceText('en', 'Blowout · Κλασικό χτένισμα'), href: serviceBookUrl('Blowout · Κλασικό χτένισμα') },
       { tone: 'colour', cat: 'Colour', name: 'Root colour & gloss', desc: 'Grey coverage at the root plus a separate gloss for shine throughout.', time: '1 h – 1 h 10′', price: priceText('en', 'Βαφή ρίζας & ρεφλέ στα μήκη'), href: '/services#colour' },
       { tone: 'light', cat: 'Highlights', name: 'Partial balayage', desc: 'Natural, luminous result that is easy to maintain.', time: '3 h', price: priceText('en', 'Μερικό μπαλαγιάζ'), href: serviceBookUrl('Μερικό μπαλαγιάζ') },
@@ -121,7 +121,7 @@ const content = {
     brandsText: 'We train continuously in their latest techniques.',
     brandsCta: 'Book colour',
     colorList: [
-      ['Root colour & grey coverage', priceText('en', 'Βαφή ρίζας')],
+      ['Root colour & grey coverage', priceText('en', 'Βαφή ρίζας'), `lowest with the Monthly Root, when you colour again within ${MONTHLY_DAYS} days`],
       ['Root colour & gloss', priceText('en', 'Βαφή ρίζας & ρεφλέ στα μήκη')],
       ['Face-frame highlights', priceText('en', 'Ανταύγειες γύρω από το πρόσωπο')],
       ['Partial balayage', priceText('en', 'Μερικό μπαλαγιάζ')]
@@ -264,9 +264,12 @@ const Home = ({ language, setLanguage }) => {
               <Art scene="colour" lang={language} legend className="nh-art-fill" />
             </div>
             <ul className="nh-brands-list">
-              {t.colorList.map(([name, price]) => (
+              {t.colorList.map(([name, price, note]) => (
                 <li key={name}>
-                  <span>{name}</span>
+                  <span>
+                    {name}
+                    {note ? <small style={{ display: 'block', fontSize: '0.78em', opacity: 0.7, marginTop: 2 }}>{note}</small> : null}
+                  </span>
                   <strong>{price}</strong>
                 </li>
               ))}
