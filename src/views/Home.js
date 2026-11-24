@@ -58,7 +58,7 @@ const content = {
     brandsText: 'Εκπαιδευόμαστε συνεχώς στις νέες τεχνικές τους.',
     brandsCta: 'Κράτηση για χρώμα',
     colorList: [
-      ['Βαφή ρίζας – κάλυψη λευκών', priceText('el', 'Βαφή ρίζας'), `η χαμηλότερη με Μηνιαία ρίζα, όταν βάφετε ξανά μέσα σε ${MONTHLY_DAYS} ημέρες`],
+      ['Βαφή ρίζας – κάλυψη λευκών', priceText('el', 'Βαφή ρίζας'), `Μηνιαία ρίζα: όταν βάφετε ξανά μέσα σε ${MONTHLY_DAYS} ημέρες`],
       ['Βαφή ρίζας & ρεφλέ (gloss)', priceText('el', 'Βαφή ρίζας & ρεφλέ στα μήκη')],
       ['Ανταύγειες γύρω από το πρόσωπο', priceText('el', 'Ανταύγειες γύρω από το πρόσωπο')],
       ['Μερικό μπαλαγιάζ', priceText('el', 'Μερικό μπαλαγιάζ')]
@@ -121,7 +121,7 @@ const content = {
     brandsText: 'We train continuously in their latest techniques.',
     brandsCta: 'Book colour',
     colorList: [
-      ['Root colour & grey coverage', priceText('en', 'Βαφή ρίζας'), `lowest with the Monthly Root, when you colour again within ${MONTHLY_DAYS} days`],
+      ['Root colour & grey coverage', priceText('en', 'Βαφή ρίζας'), `Monthly Root: when you colour again within ${MONTHLY_DAYS} days`],
       ['Root colour & gloss', priceText('en', 'Βαφή ρίζας & ρεφλέ στα μήκη')],
       ['Face-frame highlights', priceText('en', 'Ανταύγειες γύρω από το πρόσωπο')],
       ['Partial balayage', priceText('en', 'Μερικό μπαλαγιάζ')]
