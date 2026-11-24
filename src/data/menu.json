@@ -38,8 +38,8 @@
           "en": "Haircut & Dry"
         },
         "desc": {
-          "el": "Λούσιμο, κούρεμα και στέγνωμα με τα χέρια, με πιστολάκι ή φυσούνα, για φυσικό αποτέλεσμα. Με προϊόν styling (προαιρετικά).",
-          "en": "Wash, cut and a dry shaped by hand, with a hairdryer or diffuser, for a natural finish. With styling product (optional)."
+          "el": "Λούσιμο, κούρεμα και στέγνωμα με τα χέρια, με πιστολάκι ή φυσούνα, για φυσικό αποτέλεσμα. Με προϊόν styling, αν το θέλετε.",
+          "en": "Wash, cut and a dry shaped by hand, with a hairdryer or diffuser, for a natural finish. With styling product if you like."
         },
         "note": {
           "el": "Χωρίς βούρτσα. Για φόρμα με βούρτσα: «Κούρεμα & φορμάρισμα».",
@@ -68,8 +68,8 @@
           "en": "Haircut & Blow-dry"
         },
         "desc": {
-          "el": "Λούσιμο, κούρεμα και φορμάρισμα με πιστολάκι και βούρτσα, για όγκο και φόρμα. Με θερμοπροστατευτικό και προϊόν styling (προαιρετικά).",
-          "en": "Wash, cut and a brushed blow-dry for volume and shape. With heat protectant and styling product (optional)."
+          "el": "Λούσιμο, κούρεμα και φορμάρισμα με πιστολάκι και βούρτσα, για όγκο και φόρμα. Με θερμοπροστατευτικό και, αν το θέλετε, προϊόν styling.",
+          "en": "Wash, cut and a brushed blow-dry for volume and shape. With heat protectant, and styling product if you like."
         },
         "note": {
           "el": "Για πλήρες χτένισμα με λάμψη που έχει διάρκεια: «Κούρεμα & χτένισμα».",
@@ -98,8 +98,8 @@
           "en": "Haircut & Blow-out"
         },
         "desc": {
-          "el": "Λούσιμο, κούρεμα και πλήρες χτένισμα με πιστολάκι και βούρτσα — ίσιο και λείο, ή με όγκο και κίνηση — με λάμψη που έχει διάρκεια. Με θερμοπροστατευτικό και προϊόν styling (προαιρετικά).",
-          "en": "Wash, cut and a full blow-out — bouncy or sleek — for shine that lasts. With heat protectant and styling product (optional)."
+          "el": "Λούσιμο, κούρεμα και πλήρες χτένισμα με πιστολάκι και βούρτσα — ίσιο και λείο, ή με όγκο και κίνηση — με λάμψη που έχει διάρκεια. Με θερμοπροστατευτικό και, αν το θέλετε, προϊόν styling.",
+          "en": "Wash, cut and a full blow-out — bouncy or sleek — for shine that lasts. With heat protectant, and styling product if you like."
         },
         "note": {
           "el": "Για ίσιωμα με πρέσα: «+ Ίσιωμα με πρέσα ατμού». Για μπούκλες ή κυματισμούς: «Χτένισμα για εκδήλωση». Κρατά συνήθως 2–4 ημέρες, ανάλογα με τη φύση των μαλλιών, τις συνθήκες, όπως η υγρασία, και τη φροντίδα τους στο σπίτι.",
@@ -158,8 +158,8 @@
           "en": "Gentlemen’s Haircut"
         },
         "desc": {
-          "el": "Λούσιμο, κούρεμα με ψαλίδι και μηχανή και φορμάρισμα. Με προϊόν styling (προαιρετικά). Μηνιαίο: όταν το επόμενο κούρεμα γίνεται μέσα σε 30 ημέρες από το προηγούμενο σε εμάς.",
-          "en": "Wash, scissor and clipper cut, and styling. With styling product (optional). Monthly: when your next cut is within 30 days of your last one with us."
+          "el": "Λούσιμο, κούρεμα με ψαλίδι και μηχανή και φορμάρισμα, με προϊόν styling αν το θέλετε.",
+          "en": "Wash, scissor and clipper cut and styling, with styling product if you like."
         },
         "online": true,
         "options": [
@@ -184,15 +184,12 @@
               "en": "20′"
             },
             "price": 18,
-            "book": {
-              "item": "TR7229061",
-              "option": "14269233"
-            }
+            "monthly": true
           }
         ],
         "note": {
-          "el": "Το μηνιαίο κλείνεται online ως κλασικό· η μηνιαία τιμή εφαρμόζεται στο κομμωτήριο.",
-          "en": "Monthly is booked online as Classic; the monthly price is applied at the salon."
+          "el": "Μηνιαίο κούρεμα: όταν κουρεύεστε ξανά σε εμάς μέσα σε {monthlyDays} ημέρες από το προηγούμενο κούρεμα. Κλείνεται με ένα τηλεφώνημα ή μήνυμα.",
+          "en": "Monthly cut: when you have your next cut with us within {monthlyDays} days of the last one. Book it with a call or a message."
         }
       },
       {
@@ -201,8 +198,8 @@
           "en": "Clipper Cut"
         },
         "desc": {
-          "el": "Κούρεμα μόνο με μηχανή, χωρίς λούσιμο. Με προϊόν styling (προαιρετικά).",
-          "en": "Clipper-only cut, no wash. With styling product (optional)."
+          "el": "Κούρεμα μόνο με μηχανή, χωρίς λούσιμο, με προϊόν styling αν το θέλετε.",
+          "en": "Clipper-only cut, no wash, with styling product if you like."
         },
         "note": {
           "el": "Για σβήσιμο (fade): «Ανδρικό κούρεμα». Για φρεσκάρισμα στα πλαϊνά και στον αυχένα: «Πλαϊνά & αυχένας» (κλείνεται τηλεφωνικά).",
@@ -288,8 +285,8 @@
           "en": "Glossy Blow-dry"
         },
         "desc": {
-          "el": "Το ίσιωμα με πιστολάκι και βούρτσα, με λούσιμο: λείο και λαμπερό, ή με απαλή κίνηση στις άκρες, με βούρτσες από φυσική τρίχα. Ταιριάζει και στα σγουρά μαλλιά. Με θερμοπροστατευτικό και προϊόν styling (προαιρετικά).",
-          "en": "A classic straight blow-dry with a wash: smooth and glossy, or with a soft bend at the ends, using natural-bristle brushes. Works on curly hair too. With heat protectant and styling product (optional)."
+          "el": "Το ίσιωμα με πιστολάκι και βούρτσα, με λούσιμο: λείο και λαμπερό, ή με απαλή κίνηση στις άκρες, με βούρτσες από φυσική τρίχα. Ταιριάζει και στα σγουρά μαλλιά. Με θερμοπροστατευτικό και, αν το θέλετε, προϊόν styling.",
+          "en": "A classic straight blow-dry with a wash: smooth and glossy, or with a soft bend at the ends, using natural-bristle brushes. Works on curly hair too. With heat protectant, and styling product if you like."
         },
         "note": {
           "el": "Για όγκο και κίνηση που κρατούν μέρες: «Blowout · Κλασικό χτένισμα».",
@@ -361,8 +358,8 @@
           "en": "Weekly Blowdry with Mask"
         },
         "desc": {
-          "el": "Για όσες θέλουν να είναι περιποιημένες κάθε εβδομάδα, στη δουλειά και στα ραντεβού τους, χωρίς να το σκέφτονται. Λούσιμο, μάσκα και χτένισμα με βούρτσα, την ίδια μέρα και ώρα κάθε εβδομάδα. Με θερμοπροστατευτικό και προϊόν styling (προαιρετικά). Κρατά συνήθως 2–4 ημέρες, ανάλογα με τα μαλλιά και τις συνθήκες. Χωριστά θα ήταν €39.",
-          "en": "For those who like to look polished every week, at work and at every meeting, without having to think about it. Wash, mask and a full blow-out, on the same day and time every week. With heat protectant and styling product (optional). Usually lasts 2–4 days, depending on your hair and conditions. Separately it would be €39."
+          "el": "Για όσες θέλουν να είναι περιποιημένες κάθε εβδομάδα, στη δουλειά και στα ραντεβού τους, χωρίς να το σκέφτονται. Λούσιμο, μάσκα και χτένισμα με βούρτσα, την ίδια μέρα και ώρα κάθε εβδομάδα. Με θερμοπροστατευτικό και, αν το θέλετε, προϊόν styling. Κρατά συνήθως 2–4 ημέρες, ανάλογα με τα μαλλιά και τις συνθήκες. Χωριστά θα ήταν €39.",
+          "en": "For those who like to look polished every week, at work and at every meeting, without having to think about it. Wash, mask and a full blow-out, on the same day and time every week. With heat protectant, and styling product if you like. Usually lasts 2–4 days, depending on your hair and conditions. Separately it would be €39."
         },
         "note": {
           "el": "Δευτέρα–Πέμπτη, όταν υπάρχει ελεύθερη ώρα. Ισχύει όταν το προηγούμενο χτένισμα έγινε σε εμάς τις τελευταίες 8 ημέρες· την πρώτη φορά ξεκινάμε μαζί. Online κλείνεται το μεσαίο· κοντά και μακριά τηλεφωνικά. Δεν συνδυάζεται με άλλη έκπτωση.",
@@ -409,8 +406,8 @@
           "en": "Special Occasion Styling"
         },
         "desc": {
-          "el": "Μπούκλες, κυματισμοί ή πιάσιμο, για γάμο, έξοδο, σημαντική συνάντηση ή φωτογράφιση. Με θερμοπροστατευτικό και προϊόν styling (προαιρετικά).",
-          "en": "Curls, waves or an up-do, for a wedding, a night out, an important meeting or a photo shoot. With heat protectant and styling product (optional)."
+          "el": "Μπούκλες, κυματισμοί ή πιάσιμο, για γάμο, έξοδο, σημαντική συνάντηση ή φωτογράφιση. Με θερμοπροστατευτικό και, αν το θέλετε, προϊόν styling.",
+          "en": "Curls, waves or an up-do, for a wedding, a night out, an important meeting or a photo shoot. With heat protectant, and styling product if you like."
         },
         "note": {
           "el": "Μια φωτογραφία με αυτό που σας αρέσει μάς βοηθά πολύ. Για μπούκλες ή πιάσιμο σε πολλά ή πολύ μακριά μαλλιά, υπάρχει μια μικρή συμβουλή στις Συχνές ερωτήσεις.",
@@ -469,8 +466,8 @@
           "en": "Blow-dry after Colour (add-on)"
         },
         "desc": {
-          "el": "Φορμάρισμα με πιστολάκι και βούρτσα μετά τη βαφή, για όγκο και φόρμα. Με θερμοπροστατευτικό και προϊόν styling (προαιρετικά).",
-          "en": "A brushed blow-dry after your colour, for volume and shape. With heat protectant and styling product (optional)."
+          "el": "Φορμάρισμα με πιστολάκι και βούρτσα μετά τη βαφή, για όγκο και φόρμα. Με θερμοπροστατευτικό και, αν το θέλετε, προϊόν styling.",
+          "en": "A brushed blow-dry after your colour, for volume and shape. With heat protectant, and styling product if you like."
         },
         "note": {
           "el": "Μόνο μαζί με βαφή. Για πλήρες χτένισμα: «+ Χτένισμα μετά τη βαφή». Χωρίς βαφή: «Φορμάρισμα με λάμψη» €22.",
@@ -499,8 +496,8 @@
           "en": "Blow-out after Colour (add-on)"
         },
         "desc": {
-          "el": "Πλήρες χτένισμα μετά τη βαφή, με πιστολάκι και βούρτσα — ίσιο και λείο, ή με όγκο και κίνηση. Με θερμοπροστατευτικό και προϊόν styling (προαιρετικά).",
-          "en": "A full blow-out after your colour — bouncy or sleek. With heat protectant and styling product (optional)."
+          "el": "Πλήρες χτένισμα μετά τη βαφή, με πιστολάκι και βούρτσα — ίσιο και λείο, ή με όγκο και κίνηση. Με θερμοπροστατευτικό και, αν το θέλετε, προϊόν styling.",
+          "en": "A full blow-out after your colour — bouncy or sleek. With heat protectant, and styling product if you like."
         },
         "note": {
           "el": "Μόνο μαζί με βαφή. Κρατά συνήθως 2–4 ημέρες, ανάλογα με τη φύση των μαλλιών, τις συνθήκες, όπως η υγρασία, και τη φροντίδα τους στο σπίτι.",
@@ -529,8 +526,8 @@
           "en": "Bridal Hair Trial"
         },
         "desc": {
-          "el": "Δοκιμάζουμε μαζί το νυφικό σας χτένισμα και κρατάμε σημειώσεις για την ημέρα του γάμου. Με θερμοπροστατευτικό και προϊόν styling (προαιρετικά).",
-          "en": "We try your bridal hair together and keep notes for the wedding day. With heat protectant and styling product (optional)."
+          "el": "Δοκιμάζουμε μαζί το νυφικό σας χτένισμα και κρατάμε σημειώσεις για την ημέρα του γάμου. Με θερμοπροστατευτικό και, αν το θέλετε, προϊόν styling.",
+          "en": "We try your bridal hair together and keep notes for the wedding day. With heat protectant, and styling product if you like."
         },
         "note": {
           "el": "Θα βοηθήσει να έχετε μαζί σας το πέπλο, τα αξεσουάρ και φωτογραφίες που σας αρέσουν.",
@@ -555,8 +552,8 @@
           "en": "Bridal Hair"
         },
         "desc": {
-          "el": "Το νυφικό σας χτένισμα την ημέρα του γάμου, όπως το δοκιμάσαμε. Με θερμοπροστατευτικό και προϊόν styling (προαιρετικά).",
-          "en": "Your bridal hair on the day, as trialled. With heat protectant and styling product (optional)."
+          "el": "Το νυφικό σας χτένισμα την ημέρα του γάμου, όπως το δοκιμάσαμε. Με θερμοπροστατευτικό και, αν το θέλετε, προϊόν styling.",
+          "en": "Your bridal hair on the day, as trialled. With heat protectant, and styling product if you like."
         },
         "note": {
           "el": "Μόνο μετά από δοκιμαστικό. Εκτός κομμωτηρίου: +€40.",
