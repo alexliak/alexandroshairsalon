@@ -139,35 +139,35 @@ const WHY = {
 
 const TIP = {
   fine: { el: 'Λεπτά μαλλιά: λίγη ποσότητα και μόνο στα μήκη, για να μη βαραίνουν.', en: 'Fine hair: use a small amount, on the lengths only, so it isn’t weighed down.' },
-  thick: { el: 'Πυκνά μαλλιά: χώρισε τα μαλλιά σε τμήματα για να απλωθεί σωστά η περιποίηση.', en: 'Thick hair: work in sections so the treatment spreads evenly.' },
-  curly: { el: 'Σγουρά μαλλιά: εφάρμοσε σε βρεγμένα μαλλιά και στέγνωσε με διαχυτή.', en: 'Curly hair: apply on wet hair and dry with a diffuser.' },
-  normal: { el: 'Για να δεις διαφορά, κράτα τη ρουτίνα σταθερή μερικές εβδομάδες.', en: 'Keep the routine steady for a few weeks to see the difference.' }
+  thick: { el: 'Πυκνά μαλλιά: χωρίστε τα μαλλιά σε τμήματα για να απλωθεί σωστά η περιποίηση.', en: 'Thick hair: work in sections so the treatment spreads evenly.' },
+  curly: { el: 'Σγουρά μαλλιά: εφαρμόστε σε βρεγμένα μαλλιά και στεγνώστε με διαχυτή.', en: 'Curly hair: apply on wet hair and dry with a diffuser.' },
+  normal: { el: 'Για να δείτε διαφορά, κρατήστε τη ρουτίνα σταθερή μερικές εβδομάδες.', en: 'Keep the routine steady for a few weeks to see the difference.' }
 };
 
 const TEXT = {
   el: {
     eyebrow: 'Online shop · Διάγνωση',
-    title: 'Η ρουτίνα που σου <em>ταιριάζει.</em>',
-    lead: 'Τρεις ερωτήσεις, δέκα δευτερόλεπτα. Βλέπεις τη ρουτίνα της L’Oréal Professionnel που αντιστοιχεί στα μαλλιά σου, βήμα προς βήμα. Αν θες, ρώτα μας.',
+    title: 'Η ρουτίνα που σας <em>ταιριάζει.</em>',
+    lead: 'Τρεις ερωτήσεις, δέκα δευτερόλεπτα. Βλέπετε τη ρουτίνα της L’Oréal Professionnel που αντιστοιχεί στα μαλλιά σας, βήμα προς βήμα. Αν θέλετε, ρωτήστε μας.',
     facts: ['Ρουτίνες της L’Oréal Professionnel', 'Χωρίς λογαριασμό'],
     start: 'Ξεκίνα τη διάγνωση',
     step: (i) => `Ερώτηση ${i} από 3`,
     back: '← Πίσω',
-    composing: 'Συνθέτουμε τη <em>ρουτίνα σου</em>',
+    composing: 'Συνθέτουμε τη <em>ρουτίνα σας</em>',
     a1: 'Τύπος μαλλιών', a2: 'Ανάγκη', a3: 'Χρώμα',
-    card: 'Η κάρτα των μαλλιών σου',
-    routine: 'Η ρουτίνα σου',
-    live: 'Η ρουτίνα σου στο shop',
+    card: 'Η κάρτα των μαλλιών σας',
+    routine: 'Η ρουτίνα σας',
+    live: 'Η ρουτίνα σας στο shop',
     more: 'Περισσότερα από τις ίδιες σειρές',
     addAll: (n, sum) => `Όλη η ρουτίνα στο καλάθι (${n}) · ${sum}`,
     addOne: 'Στο καλάθι',
     added: '✓ Στο καλάθι',
-    allAdded: '✓ Όλα στο καλάθι · Δες το καλάθι',
+    allAdded: '✓ Όλα στο καλάθι · Δείτε το καλάθι',
     orAsk: 'Θες να το συζητήσουμε πρώτα;',
-    ask: 'Ζήτα τιμές για τη ρουτίνα σου',
-    keep: 'Κράτησέ τα για το ραντεβού μου',
-    again: '↺ Κάνε ξανά τη διάγνωση',
-    toShop: 'Δες όλο το shop',
+    ask: 'Ζητήστε τιμές για τη ρουτίνα σας',
+    keep: 'Κρατήστε τα για το ραντεβού μου',
+    again: '↺ Κάντε ξανά τη διάγνωση',
+    toShop: 'Δείτε όλο το shop',
     extraOil: 'Έλαιο Metal Detox',
     extraOilD: 'Καθημερινά στα μήκη, μετά από βαφή, balayage ή ξάνοιγμα.',
     wa: (s) => `Γεια σας! Έκανα τη διάγνωση στο site. Μαλλιά: ${s}.`,
@@ -208,9 +208,9 @@ const TEXT = {
 };
 
 const QUESTIONS = [
-  { key: 'texture', q: { el: 'Πώς είναι <em>τα μαλλιά σου;</em>', en: 'What is <em>your hair like?</em>' }, opts: [
+  { key: 'texture', q: { el: 'Πώς είναι <em>τα μαλλιά σας;</em>', en: 'What is <em>your hair like?</em>' }, opts: [
     ['fine', 'Λεπτά', 'Fine'], ['normal', 'Κανονικά', 'Normal'], ['thick', 'Πυκνά', 'Thick'], ['curly', 'Σγουρά ή κυματιστά', 'Curly or wavy']] },
-  { key: 'concern', q: { el: 'Τι σε απασχολεί <em>περισσότερο;</em>', en: 'What bothers you <em>most?</em>' }, opts: [
+  { key: 'concern', q: { el: 'Τι σας απασχολεί <em>περισσότερο;</em>', en: 'What bothers you <em>most?</em>' }, opts: [
     ['damage', 'Σπάνε, είναι ταλαιπωρημένα', 'It breaks, it’s damaged'], ['dry', 'Είναι ξηρά, χωρίς λάμψη', 'It’s dry and dull'],
     ['frizz', 'Φριζάρουν', 'Frizz'], ['length', 'Θέλω να μακρύνουν, έχω ψαλίδα', 'I want length, I have split ends'],
     ['fade', 'Το χρώμα ξεθωριάζει γρήγορα', 'My colour fades fast'], ['brass', 'Κιτρινίζουν (ξανθά ή γκρι)', 'It turns yellow (blonde or grey)'],

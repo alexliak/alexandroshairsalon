@@ -8,8 +8,8 @@ export default function DiagnosisPage({ language, setLanguage }) {
     <>
       <Seo
         path="/shop/diagnosi"
-        title="Διάγνωση μαλλιών: ποια ρουτίνα σου ταιριάζει | Alexandros Hair Salon"
-        description="Τρεις ερωτήσεις για τα μαλλιά σου και βλέπεις τη ρουτίνα της L’Oréal Professionnel βήμα προς βήμα. Alexandros Hair Salon, Θησείο."
+        title="Διάγνωση μαλλιών: ποια ρουτίνα σας ταιριάζει | Alexandros Hair Salon"
+        description="Τρεις ερωτήσεις για τα μαλλιά σας και βλέπετε τη ρουτίνα της L’Oréal Professionnel βήμα προς βήμα. Alexandros Hair Salon, Θησείο."
       />
       <ShopShell language={language} setLanguage={setLanguage}>
         {() => <Diagnosis lang={language} />}
