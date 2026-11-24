@@ -15,7 +15,7 @@ self.__BUILD_MANIFEST = {
     "static/chunks/1xtkw0h2rosul.js"
   ],
   "/douleia": [
-    "static/chunks/062iju-57rrpa.js"
+    "static/chunks/1ahz_0xqtmrqo.js"
   ],
   "/fotografies": [
     "static/chunks/0k5ig0e-66g_g.js"
@@ -24,7 +24,7 @@ self.__BUILD_MANIFEST = {
     "static/chunks/3srtrntp4o3sn.js"
   ],
   "/montela": [
-    "static/chunks/2omvqdqmhduiz.js"
+    "static/chunks/35-tgpemu0jg0.js"
   ],
   "/oroi": [
     "static/chunks/2vfr-zyw9-z5e.js"
@@ -33,19 +33,19 @@ self.__BUILD_MANIFEST = {
     "static/chunks/1jlf519q7i8vs.js"
   ],
   "/shop": [
-    "static/chunks/1ne76j1neb1kh.js"
+    "static/chunks/41sapy8lkkocn.js"
   ],
   "/shop/admin": [
-    "static/chunks/37qnkcx30-ndq.js"
+    "static/chunks/1wae6rqm8xtve.js"
   ],
   "/shop/cart": [
-    "static/chunks/0wf5w86ibciuv.js"
+    "static/chunks/3i_uwx9df-5a-.js"
   ],
   "/shop/diagnosi": [
-    "static/chunks/2yedm1nj4s0-q.js"
+    "static/chunks/0wdgr2ptj9_wa.js"
   ],
   "/shop/p/[id]": [
-    "static/chunks/0jb-d5aw81xxq.js"
+    "static/chunks/3rtdous14t69k.js"
   ],
   "__rewrites": {
     "afterFiles": [],
