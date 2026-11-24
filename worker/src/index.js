@@ -27,9 +27,14 @@ const sha256 = async (text) => {
   return [...new Uint8Array(buf)].map((b) => b.toString(16).padStart(2, '0')).join('');
 };
 
+// Ο κωδικός διαχείρισης πρέπει να είναι μακρύς (24+ χαρακτήρες), αλλιώς το admin μένει κλειστό.
+const MIN_TOKEN = 24;
+// Όριο λάθος κωδικών: 10 ανά 15 λεπτά από την ίδια σύνδεση, μετά 429.
+const MAX_FAILS = 10;
+
 const isAdmin = (req, env) => {
   const got = (req.headers.get('Authorization') || '').replace(/^Bearer\s+/i, '');
-  if (!env.ADMIN_TOKEN || got.length !== env.ADMIN_TOKEN.length) return false;
+  if (!env.ADMIN_TOKEN || env.ADMIN_TOKEN.length < MIN_TOKEN || got.length !== env.ADMIN_TOKEN.length) return false;
   let diff = 0;
   for (let i = 0; i < got.length; i++) diff |= got.charCodeAt(i) ^ env.ADMIN_TOKEN.charCodeAt(i);
   return diff === 0;
@@ -93,7 +98,16 @@ export default {
       }
 
       if (path.startsWith('/admin/')) {
-        if (!isAdmin(req, env)) return json({ error: 'unauthorized' }, 401, h);
+        const ipHash = await sha256(`${env.IP_SALT || 'ahs'}:${req.headers.get('CF-Connecting-IP') || ''}`);
+        const fails = await env.DB.prepare(
+          "SELECT COUNT(*) AS n FROM auth_fails WHERE ip_hash = ? AND created_at > strftime('%Y-%m-%dT%H:%M:%SZ', 'now', '-15 minutes')"
+        ).bind(ipHash).first();
+        if (fails && fails.n >= MAX_FAILS) return json({ error: 'too many attempts' }, 429, h);
+        if (!isAdmin(req, env)) {
+          await env.DB.prepare('INSERT INTO auth_fails (ip_hash) VALUES (?)').bind(ipHash).run();
+          await env.DB.prepare("DELETE FROM auth_fails WHERE created_at < strftime('%Y-%m-%dT%H:%M:%SZ', 'now', '-1 day')").run();
+          return json({ error: 'unauthorized' }, 401, h);
+        }
         if (req.method === 'GET' && path === '/admin/reviews') {
           const status = ['pending', 'approved', 'rejected'].includes(url.searchParams.get('status')) ? url.searchParams.get('status') : 'pending';
           const { results } = await env.DB.prepare('SELECT * FROM reviews WHERE status = ? ORDER BY created_at DESC LIMIT 200').bind(status).all();
