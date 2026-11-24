@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import { FaWhatsapp, FaViber, FaPhoneAlt } from 'react-icons/fa';
 import { PHONE, PHONE_DISPLAY, WHATSAPP_URL, VIBER_URL } from './NhLayout';
 
@@ -66,6 +66,8 @@ const shrinkImage = (file) =>
 // Χειρισμός αποστολής. Επιστρέφει onSubmit για το <form> και την κατάσταση.
 export const useSiteForm = (formKey, lang, onSent) => {
   const [status, setStatus] = useState('idle'); // idle | sending | error | tooBig
+  // Πότε άνοιξε η φόρμα: ο server αγνοεί αποστολές που έγιναν σε λιγότερο από 3″ (bots)
+  const openedAt = useRef(Date.now());
 
   const onSubmit = async (e) => {
     if (!FORMS_ENDPOINT) return; // κανονική αποστολή στη FormSubmit
@@ -75,6 +77,7 @@ export const useSiteForm = (formKey, lang, onSent) => {
     if (fd.get('_honey')) return;
     const body = new URLSearchParams();
     body.append('_form', formKey);
+    body.append('_elapsed', String(Math.round((Date.now() - openedAt.current) / 1000)));
     let files = [];
     for (const [k, v] of fd.entries()) {
       if (v instanceof File) {

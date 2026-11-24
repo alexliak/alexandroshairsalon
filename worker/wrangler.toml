@@ -13,7 +13,7 @@ database_id = "ΒΑΛΕ-ΕΔΩ-ΤΟ-ID"
 ALLOWED_ORIGINS = "https://alexandroshairsalon.gr,https://www.alexandroshairsalon.gr,http://localhost:3000"
 
 # Μυστικά (δεν μπαίνουν σε αρχείο):
-#   wrangler secret put ADMIN_TOKEN     -> κωδικός για τη σελίδα /shop/admin
+#   wrangler secret put ADMIN_TOKEN     -> κωδικός για τη σελίδα /shop/admin (τουλάχιστον 24 τυχαίοι χαρακτήρες)
 #   wrangler secret put IP_SALT         -> τυχαίο κείμενο για ανωνυμοποίηση IP
 
 # Προαιρετικά δικό σου subdomain (χρειάζεται το domain στο Cloudflare, που ήδη ισχύει):

@@ -16,3 +16,10 @@ CREATE TABLE IF NOT EXISTS reviews (
 );
 CREATE INDEX IF NOT EXISTS idx_reviews_product ON reviews (product, status);
 CREATE INDEX IF NOT EXISTS idx_reviews_ip ON reviews (ip_hash, created_at);
+
+-- Λάθος κωδικοί στο /admin (όριο προσπαθειών)
+CREATE TABLE IF NOT EXISTS auth_fails (
+  ip_hash    TEXT NOT NULL,
+  created_at TEXT NOT NULL DEFAULT (strftime('%Y-%m-%dT%H:%M:%SZ', 'now'))
+);
+CREATE INDEX IF NOT EXISTS idx_auth_fails ON auth_fails (ip_hash, created_at);
