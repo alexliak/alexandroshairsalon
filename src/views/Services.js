@@ -81,8 +81,7 @@ const text = {
 };
 
 const priceLabel = (options, t, lang) => {
-  // Οι μηνιαίες τιμές ισχύουν υπό προϋπόθεση, άρα δεν μετράνε ως «από €…».
-  const prices = options.filter((o) => !o.monthly).map((o) => o.price);
+  const prices = options.map((o) => o.price);
   const min = Math.min(...prices);
   return prices.length > 1 && Math.max(...prices) !== min ? `${t.from} ${eur(min, lang)}` : eur(min, lang);
 };

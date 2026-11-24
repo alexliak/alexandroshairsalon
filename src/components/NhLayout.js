@@ -93,7 +93,7 @@ const layoutText = {
       { label: 'Ο χώρος', to: '/fotografies' },
       { label: 'Shop', to: '/shop' },
       { label: 'Γίνετε μοντέλο', to: '/montela', promo: true },
-      { label: 'We are hiring', to: '/douleia', hiring: true }
+      { label: 'Θέσεις εργασίας', to: '/douleia', hiring: true }
     ],
     menu: 'Κύριο μενού',
     city: 'Θησείο',

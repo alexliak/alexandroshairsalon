@@ -17,9 +17,9 @@ export const eur = (p, lang) =>
     : Number.isInteger(p) ? `€${p}` : `€${lang === 'en' ? p.toFixed(2) : p.toFixed(2).replace('.', ',')}`;
 
 // '€54' for one price, 'από €26' / 'from €26' for several.
-// Οι μηνιαίες τιμές (π.χ. Μηνιαία ρίζα) ισχύουν υπό προϋπόθεση, άρα δεν μετράνε ως «από €…».
+// Η χαμηλότερη τιμή μετράει και τη Μηνιαία ρίζα (€35): όπου φαίνεται, γράφουμε δίπλα πότε ισχύει.
 export const priceText = (lang, ...names) => {
-  const ps = names.flatMap((n) => service(n).options.filter((o) => !o.monthly).map((o) => o.price));
+  const ps = names.flatMap((n) => service(n).options.map((o) => o.price));
   const min = Math.min(...ps);
   return min === Math.max(...ps) ? eur(min, lang) : `${lang === 'en' ? 'from' : 'από'} ${eur(min, lang)}`;
 };
