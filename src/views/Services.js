@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { FaWhatsapp, FaViber, FaPhoneAlt } from 'react-icons/fa';
 import NhLayout, { BOOK, PHONE, PHONE_DISPLAY, WHATSAPP_URL, VIBER_URL } from '../components/NhLayout';
 import menu from '../data/menu';
-import { priceText, bookUrl, eur, service } from '../data/prices';
+import { priceText, bookUrl, eur, service, fill, MONTHLY_DAYS } from '../data/prices';
 
 // Ίδιο με το svc_anchor() του scripts/build-static-pages.py: σύνδεσμος σε συγκεκριμένη υπηρεσία
 const anchor = (s) => s.name.en.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
@@ -15,34 +15,34 @@ const text = {
     eyebrow: 'Τιμές κομμωτηρίου · Θησείο, Αθήνα',
     title: 'Τιμές',
     titleEm: 'και χρόνοι.',
-    lead: 'Ξέρεις την τιμή πριν καθίσεις. Κάτω από κάθε υπηρεσία γράφουμε τι περιλαμβάνει, για ποιο μήκος και πόσο χρώμα. Ό,τι επιπλέον χρειαστεί είναι κι αυτό γραμμένο εδώ, και μπορείς πάντα να ρωτήσεις πριν ξεκινήσουμε. Ίδιες τιμές στο κομμωτήριο και online.',
+    lead: 'Ξέρετε την τιμή πριν καθίσετε. Κάτω από κάθε υπηρεσία γράφουμε τι περιλαμβάνει, για ποιο μήκος και πόσο χρώμα. Ό,τι επιπλέον χρειαστεί είναι κι αυτό γραμμένο εδώ, και μπορείτε πάντα να ρωτήσετε πριν ξεκινήσουμε. Ίδιες τιμές στο κομμωτήριο και online.',
     phoneOnly: 'Κλείνεται τηλεφωνικά',
-    pickOnline: 'Πάτησε την τιμή που σου ταιριάζει: ανοίγει η κράτηση online.',
-    pickMixed: 'Πάτησε την τιμή που σου ταιριάζει: με → κλείνεις online, με ☎ μας καλείς ή μας στέλνεις μήνυμα.',
-    pickPhone: 'Πάτησε την τιμή που σου ταιριάζει για να μας καλέσεις ή να μας στείλεις μήνυμα.',
-    phoneBtn: 'Κλείσε με κλήση ή μήνυμα',
-    contactTitle: 'Κλείσε ραντεβού για',
+    pickOnline: 'Πατήστε την τιμή που σας ταιριάζει: ανοίγει η κράτηση online.',
+    pickMixed: 'Πατήστε την τιμή που σας ταιριάζει: με → κλείνετε online, με ☎ μας καλείτε ή μας στέλνετε μήνυμα.',
+    pickPhone: 'Πατήστε την τιμή που σας ταιριάζει για να μας καλέσετε ή να μας στείλετε μήνυμα.',
+    phoneBtn: 'Κράτηση με κλήση ή μήνυμα',
+    contactTitle: 'Κράτηση ραντεβού για',
     callBtn: 'Κλήση',
     waMsg: 'Γεια σας, θα ήθελα να κλείσω ραντεβού για: ',
-    book: 'Κλείσε online',
-    call: 'Κάλεσε',
+    book: 'Κράτηση online',
+    call: 'Κλήση',
     from: 'από',
     bookThis: 'Κράτηση',
-    notesTitle: 'Καλό να ξέρεις',
+    notesTitle: 'Καλό να ξέρετε',
+    skinNote: 'Αν βάφεστε πρώτη φορά σε εμάς, μπορούμε να κάνουμε δωρεάν τεστ ευαισθησίας πριν από τη βαφή. Δεν χρειάζεται για να κλείσετε ραντεβού.',
     footnotes: [
-      '* Αν βάφεσαι πρώτη φορά σε εμάς, μπορούμε να κάνουμε δωρεάν τεστ ευαισθησίας πριν από τη βαφή. Δεν χρειάζεται για να κλείσεις ραντεβού.',
       'Κάθε βαφή περιλαμβάνει συγκεκριμένη ποσότητα χρώματος. Αν χρειαστεί περισσότερο, το «+ Επιπλέον χρώμα» (' + eur(service('+ Επιπλέον χρώμα').options[0].price, 'el') + ' ανά 30 g, Redken ' + eur(service('+ Επιπλέον χρώμα').options[1].price, 'el') + ') το συμφωνούμε πριν την εφαρμογή.'
     ],
     notes: [
-      'Μηνιαία ρίζα (' + rootPrice('Μηνιαία ρίζα', 'el') + ', χωρίς αμμωνία ' + rootPrice('Χωρίς αμμωνία · μηνιαία ρίζα', 'el') + '): όταν η επόμενη βαφή ρίζας γίνεται μέσα σε 30 ημέρες από την προηγούμενη σε εμάς. Στο ταμείο παίρνεις καρτελάκι με την ημερομηνία.',
+      'Μηνιαία ρίζα (' + rootPrice('Μηνιαία ρίζα', 'el') + ', χωρίς αμμωνία ' + rootPrice('Χωρίς αμμωνία · μηνιαία ρίζα', 'el') + '): όταν βάφετε ξανά τη ρίζα σε εμάς μέσα σε ' + MONTHLY_DAYS + ' ημέρες από την προηγούμενη βαφή. Κλείνεται με ένα τηλεφώνημα ή μήνυμα στο ' + PHONE_DISPLAY + '. Στο ταμείο σας δίνουμε καρτελάκι με την ημερομηνία.',
       'Στις ανταύγειες και στο μπαλαγιάζ, για μαλλιά κάτω από τους ώμους υπάρχει το «+ Μακριά μαλλιά» (' + priceText('el', '+ Μακριά μαλλιά (ανταύγειες / μπαλαγιάζ)') + ').',
-      'Αν έχεις extensions, μπορείς να το σημειώσεις στην κράτηση, για να κρατήσουμε τον σωστό χρόνο.',
+      'Αν έχετε extensions, μπορείτε να το σημειώσετε στην κράτηση, για να κρατήσουμε τον σωστό χρόνο.',
       <>Ποια βαφή σού ταιριάζει, τι περιλαμβάνει κάθε υπηρεσία και τι δεν συνδυάζεται: στις <a className="nh-inline-link" href="/syxnes-erotiseis/">Συχνές ερωτήσεις</a>.</>,
-      <>Κάτι δεν σου άρεσε; Μπορείς να μας το πεις <a className="nh-inline-link" href="/gnomi/">ανώνυμα εδώ</a>.</>
+      <>Κάτι δεν σας άρεσε; Μπορείτε να μας το πείτε <a className="nh-inline-link" href="/gnomi/">ανώνυμα εδώ</a>.</>
     ],
     jump: 'Κατηγορίες',
     faq: 'Συχνές ερωτήσεις',
-    feedback: 'Η γνώμη σου, ανώνυμα'
+    feedback: 'Η γνώμη σας, ανώνυμα'
   },
   en: {
     eyebrow: 'Hair salon prices · Thiseio, Athens',
@@ -63,12 +63,12 @@ const text = {
     bookThis: 'Book',
     bookNote: 'Tap any price to book: the booking page opens in Greek with your service already selected, so you only pick a time. Prefer to message us in English? WhatsApp +30 698 131 9000.',
     notesTitle: 'Good to know',
+    skinNote: 'If it’s your first colour with us, we can do a free skin test beforehand. You don’t need one to book.',
     footnotes: [
-      '* If it’s your first colour with us, we can do a free skin test beforehand. You don’t need one to book.',
       'Every colour includes a set amount of product. If more is needed, Extra Colour (' + eur(service('+ Επιπλέον χρώμα').options[0].price, 'en') + ' per 30 g, Redken ' + eur(service('+ Επιπλέον χρώμα').options[1].price, 'en') + ') is agreed before we apply it.'
     ],
     notes: [
-      'Monthly Root (' + rootPrice('Μηνιαία ρίζα', 'en') + ', ammonia-free ' + rootPrice('Χωρίς αμμωνία · μηνιαία ρίζα', 'en') + '): when your next root colour is within 30 days of your last one with us. At the desk you get a small card with the date.',
+      'Monthly Root (' + rootPrice('Μηνιαία ρίζα', 'en') + ', ammonia-free ' + rootPrice('Χωρίς αμμωνία · μηνιαία ρίζα', 'en') + '): when you colour your roots with us again within ' + MONTHLY_DAYS + ' days of your last root colour. Book it with a call or message on ' + PHONE_DISPLAY + '. At the desk you get a small card with the date.',
       'For highlights and balayage on hair below the shoulders there is the Long Hair add-on (' + priceText('en', '+ Μακριά μαλλιά (ανταύγειες / μπαλαγιάζ)') + ').',
       'If you wear extensions, you can note it when you book so we reserve the right time.',
       <>Which colour suits you, what each service includes and what can’t be combined: see our <a className="nh-inline-link" href="/syxnes-erotiseis/">FAQ</a>.</>,
@@ -81,7 +81,8 @@ const text = {
 };
 
 const priceLabel = (options, t, lang) => {
-  const prices = options.map((o) => o.price);
+  // Οι μηνιαίες τιμές ισχύουν υπό προϋπόθεση, άρα δεν μετράνε ως «από €…».
+  const prices = options.filter((o) => !o.monthly).map((o) => o.price);
   const min = Math.min(...prices);
   return prices.length > 1 && Math.max(...prices) !== min ? `${t.from} ${eur(min, lang)}` : eur(min, lang);
 };
@@ -144,7 +145,7 @@ const Services = ({ language, setLanguage }) => {
                     <span className="nh-menu-from">{priceLabel(s.options, t, lang)}</span>
                   </div>
                   {s.desc ? <p className="nh-menu-desc">{s.desc[lang]}</p> : null}
-                  {s.note ? <p className="nh-menu-note">{s.note[lang]}</p> : null}
+                  {s.note ? <p className="nh-menu-note">{fill(s.note[lang])}</p> : null}
                   {s.faq ? <p className="nh-menu-note"><a className="nh-inline-link" href={s.faq.href}>{s.faq[lang]} →</a></p> : null}
                   {s.options.length === 1 && !s.options[0][lang] ? (
                     <p className="nh-menu-meta">{s.options[0].time[lang]}</p>
@@ -217,6 +218,9 @@ const Services = ({ language, setLanguage }) => {
           <div style={{ height: 10 }} />
           <a href={BOOK} className="nh-btn nh-btn-gold">{t.book}</a>
         </section>
+
+        {/* Υποσημείωση στο τέλος της σελίδας: ενημερώνει χωρίς να αποθαρρύνει την κράτηση */}
+        <p className="nh-footnote" style={{ fontSize: '0.78em', opacity: 0.65, margin: '24px 0 0' }}>{t.skinNote}</p>
       </main>
     </NhLayout>
   );
