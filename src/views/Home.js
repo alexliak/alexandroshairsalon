@@ -18,17 +18,17 @@ const Art = (props) => (
 const content = {
   el: {
     eyebrow: 'Κομμωτήριο στο Θησείο, κέντρο Αθήνας · από το 1992',
-    titleA: 'Κούρεμα που σου ',
+    titleA: 'Κούρεμα που σας ',
     titleEm: 'μοιάζει.',
     titleB: ' Χρώμα που λάμπει.',
     lead:
-      'Τρεις δεκαετίες σε κούρεμα, χρώμα και χτένισμα, με L’Oréal Professionnel και Redken. Διάλεξε υπηρεσία, δες τιμή και ώρα, κλείσε σε ένα λεπτό.',
-    bookOnline: 'Κλείσε online',
-    seePrices: 'Δες τιμές',
+      'Τρεις δεκαετίες σε κούρεμα, χρώμα και χτένισμα, με L’Oréal Professionnel και Redken. Επιλέγετε υπηρεσία, βλέπετε τιμή και ώρα και κλείνετε σε ένα λεπτό.',
+    bookOnline: 'Κράτηση online',
+    seePrices: 'Τιμές & χρόνοι',
     reassure: ['Πληρωμή online ή στο κομμωτήριο', 'Online κράτηση 24/7'],
     artCaption: 'Θησείο · Αθήνα',
     stats: [
-      { big: '4,6 ★', small: 'βαθμολογία στο Google · δες κριτικές', go: 'reviews' },
+      { big: '4,6 ★', small: 'βαθμολογία στο Google · κριτικές', go: 'reviews' },
       { big: '24/7', small: 'online κράτηση, χωρίς τηλέφωνο', go: 'book' },
       { big: '5′', small: 'με τα πόδια από το μετρό Θησείο · χάρτης', go: 'map' }
     ],
@@ -37,7 +37,7 @@ const content = {
     salonTitleEm: 'από μέσα.',
     salonAll: 'Όλες οι φωτογραφίες →',
     popularEyebrow: 'Οι πιο δημοφιλείς',
-    popularTitle: 'Διάλεξε & κλείσε',
+    popularTitle: 'Κράτηση σε ένα λεπτό',
     allServices: 'Όλες οι τιμές →',
     services: [
       { tone: 'cut', cat: 'Κουρέματα', name: 'Γυναικείο κούρεμα', desc: 'Pixie, mullet, butterfly, curtain bangs, φιλάρισμα ή κλασικό, με εμπειρία τριών δεκαετιών.', time: '30–55′', price: priceText('el', 'Κούρεμα χωρίς στέγνωμα', 'Κούρεμα & στέγνωμα', 'Κούρεμα & φορμάρισμα', 'Κούρεμα & χτένισμα'), href: '/services#haircuts' },
@@ -56,7 +56,7 @@ const content = {
       ['Ξάνοιγμα', 'ντεκαπάζ L’Oréal Blond Studio ή, όπου γίνεται, χωρίς ντεκαπάζ']
     ],
     brandsText: 'Εκπαιδευόμαστε συνεχώς στις νέες τεχνικές τους.',
-    brandsCta: 'Κλείσε χρώμα',
+    brandsCta: 'Κράτηση για χρώμα',
     colorList: [
       ['Βαφή ρίζας – κάλυψη λευκών', priceText('el', 'Βαφή ρίζας')],
       ['Βαφή ρίζας & ρεφλέ (gloss)', priceText('el', 'Βαφή ρίζας & ρεφλέ στα μήκη')],
@@ -67,23 +67,16 @@ const content = {
     promiseTitleA: 'Κάθε πρόσωπο έχει όμορφα χαρακτηριστικά. ',
     promiseTitleEm: 'Δουλειά μας είναι να τα βρούμε.',
     promiseText: [
-      'Το κούρεμα είναι σχήμα πάνω στο πρόσωπο: μπορεί να το αναδείξει ή να το κρύψει. Γι’ αυτό πρώτα κοιτάμε το πρόσωπο, τα χαρακτηριστικά, την υφή και τη δομή των μαλλιών σου.',
-      'Μετά σχεδιάζουμε κούρεμα, χρώμα και χτένισμα μαζί, ως ένα ολοκληρωμένο αποτέλεσμα που σου ταιριάζει και στέκεται στην καθημερινότητά σου.'
+      'Το κούρεμα είναι σχήμα πάνω στο πρόσωπο: μπορεί να το αναδείξει ή να το κρύψει. Γι’ αυτό πρώτα κοιτάμε το πρόσωπο, τα χαρακτηριστικά, την υφή και τη δομή των μαλλιών σας.',
+      'Μετά σχεδιάζουμε κούρεμα, χρώμα και χτένισμα μαζί, ως ένα ολοκληρωμένο αποτέλεσμα που σας ταιριάζει και στέκεται στην καθημερινότητά σας.'
     ],
     promiseSign: 'Αλέξανδρος Λιακόπουλος',
-    promises: ['Πρώτα ακούμε.', 'Ό,τι δεν σου ταιριάζει, θα σου το πούμε.'],
-    joinTitle: 'Μοντέλα μαλλιών & θέσεις εργασίας',
-    modelsEyebrow: 'Γίνε μοντέλο',
-    modelsText: 'Κούρεμα ή χρώμα με νέες τεχνικές, δωρεάν ή σε χαμηλότερη τιμή. Γυναίκες και άνδρες κάθε ηλικίας.',
-    modelsCta: 'Δήλωσε συμμετοχή →',
-    jobsEyebrow: 'We are hiring',
-    jobsText: 'Βοηθός κομμωτηρίου: σταθερή θέση, με εκπαίδευση στη δουλειά.',
-    jobsCta: 'Κάνε αίτηση →',
-    visitTitleA: 'Σε περιμένουμε',
+    promises: ['Πρώτα ακούμε.', 'Ό,τι δεν σας ταιριάζει, θα σας το πούμε.'],
+    visitTitleA: 'Σας περιμένουμε',
     visitTitleEm: 'στο Θησείο.',
     address: 'Ερυσίχθονος 3-5, Θησείο, Αθήνα 118\u00a051',
-    hours: 'Δες το ωράριο στο Google',
-    call: 'Κάλεσε 210 346 5554',
+    hours: 'Ωράριο στο Google',
+    call: 'Κλήση 210 346 5554',
     directions: 'Οδηγίες στον χάρτη',
   },
   en: {
@@ -142,13 +135,6 @@ const content = {
     ],
     promiseSign: 'Alexandros Liakopoulos',
     promises: ['We listen first.', 'If something doesn’t suit you, we’ll tell you.'],
-    joinTitle: 'Hair models & jobs',
-    modelsEyebrow: 'Be our model',
-    modelsText: 'A cut or colour with new techniques, free or at a lower price. Women and men of any age.',
-    modelsCta: 'Sign up →',
-    jobsEyebrow: 'We are hiring',
-    jobsText: 'Salon assistant: a stable position with on-the-job training.',
-    jobsCta: 'Apply →',
     visitTitleA: 'See you',
     visitTitleEm: 'in Thiseio.',
     address: 'Erisichthonos 3-5, Thiseio, Athens 118\u00a051',
@@ -308,20 +294,6 @@ const Home = ({ language, setLanguage }) => {
               </ul>
             </div>
           </div>
-        </section>
-
-        <section className="nh-join" aria-labelledby="join-title">
-          <h2 id="join-title" className="nh-visually-hidden">{t.joinTitle}</h2>
-          <Link to="/montela" className="nh-join-tile nh-join-tile--model">
-            <span className="nh-join-eyebrow">{t.modelsEyebrow}</span>
-            <span className="nh-join-text">{t.modelsText}</span>
-            <span className="nh-join-cta">{t.modelsCta}</span>
-          </Link>
-          <Link to="/douleia" className="nh-join-tile nh-join-tile--job">
-            <span className="nh-join-eyebrow">{t.jobsEyebrow}</span>
-            <span className="nh-join-text">{t.jobsText}</span>
-            <span className="nh-join-cta">{t.jobsCta}</span>
-          </Link>
         </section>
 
         <section className="nh-section nh-visit" id="visit">

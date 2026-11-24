@@ -132,7 +132,7 @@
           "en": "A fringe or bangs refresh between cuts."
         },
         "note": {
-          "el": "Δωρεάν, αν έχεις κουρευτεί σε εμάς τις τελευταίες 6 εβδομάδες.",
+          "el": "Δωρεάν, αν έχετε κουρευτεί σε εμάς τις τελευταίες 6 εβδομάδες.",
           "en": "Free if you’ve had a haircut with us in the last 6 weeks."
         },
         "online": true,
@@ -413,7 +413,7 @@
           "en": "Curls, waves or an up-do, for a wedding, a night out, an important meeting or a photo shoot. With heat protectant and styling product (optional)."
         },
         "note": {
-          "el": "Μια φωτογραφία με αυτό που σου αρέσει μάς βοηθά πολύ. Για μπούκλες ή πιάσιμο σε πολλά ή πολύ μακριά μαλλιά, υπάρχει μια μικρή συμβουλή στις Συχνές ερωτήσεις.",
+          "el": "Μια φωτογραφία με αυτό που σας αρέσει μάς βοηθά πολύ. Για μπούκλες ή πιάσιμο σε πολλά ή πολύ μακριά μαλλιά, υπάρχει μια μικρή συμβουλή στις Συχνές ερωτήσεις.",
           "en": "A photo of the look you like is always helpful. For curls or an up-do on thick or very long hair, there is a small tip in our FAQ."
         },
         "online": true,
@@ -529,11 +529,11 @@
           "en": "Bridal Hair Trial"
         },
         "desc": {
-          "el": "Δοκιμάζουμε μαζί το νυφικό σου χτένισμα και κρατάμε σημειώσεις για την ημέρα του γάμου. Με θερμοπροστατευτικό και προϊόν styling (προαιρετικά).",
+          "el": "Δοκιμάζουμε μαζί το νυφικό σας χτένισμα και κρατάμε σημειώσεις για την ημέρα του γάμου. Με θερμοπροστατευτικό και προϊόν styling (προαιρετικά).",
           "en": "We try your bridal hair together and keep notes for the wedding day. With heat protectant and styling product (optional)."
         },
         "note": {
-          "el": "Θα βοηθήσει να έχεις μαζί σου το πέπλο, τα αξεσουάρ και φωτογραφίες που σου αρέσουν.",
+          "el": "Θα βοηθήσει να έχετε μαζί σας το πέπλο, τα αξεσουάρ και φωτογραφίες που σας αρέσουν.",
           "en": "It helps to bring your veil, accessories and photos you like."
         },
         "online": false,
@@ -555,7 +555,7 @@
           "en": "Bridal Hair"
         },
         "desc": {
-          "el": "Το νυφικό σου χτένισμα την ημέρα του γάμου, όπως το δοκιμάσαμε. Με θερμοπροστατευτικό και προϊόν styling (προαιρετικά).",
+          "el": "Το νυφικό σας χτένισμα την ημέρα του γάμου, όπως το δοκιμάσαμε. Με θερμοπροστατευτικό και προϊόν styling (προαιρετικά).",
           "en": "Your bridal hair on the day, as trialled. With heat protectant and styling product (optional)."
         },
         "note": {
@@ -590,14 +590,15 @@
           "en": "Root Colour"
         },
         "desc": {
-          "el": "Μόνιμη βαφή ρίζας με κάλυψη λευκών, λούσιμο και στέγνωμα, με Farcom ή Majirel της L’Oréal. Χωρίς αμμωνία: INOA της L’Oréal ή Redken. Μηνιαία ρίζα: όταν η επόμενη βαφή ρίζας γίνεται μέσα σε 30 ημέρες από την προηγούμενη σε εμάς.",
-          "en": "Permanent root colour with grey coverage, wash and dry, with Farcom or L’Oréal Majirel. Ammonia-free: L’Oréal INOA or Redken. Monthly Root: when your next root colour is within 30 days of your last one with us."
+          "el": "Μόνιμη βαφή ρίζας με κάλυψη λευκών, λούσιμο και στέγνωμα, με Farcom ή Majirel της L’Oréal. Χωρίς αμμωνία: INOA της L’Oréal ή Redken.",
+          "en": "Permanent root colour with grey coverage, wash and dry, with Farcom or L’Oréal Majirel. Ammonia-free: L’Oréal INOA or Redken."
         },
         "note": {
-          "el": "Περιλαμβάνει έως 45 g χρώμα. Αν χρειαστεί περισσότερο, το συμφωνούμε πριν. Η Μηνιαία ρίζα κλείνεται online ως κλασική βαφή ρίζας· η μηνιαία τιμή εφαρμόζεται στο κομμωτήριο.",
-          "en": "Includes up to 45 g of colour. If more is needed, we agree it beforehand. Monthly Root is booked online as a regular root colour; the monthly price is applied at the salon."
+          "el": "Περιλαμβάνει έως 45 g χρώμα· αν χρειαστεί περισσότερο, το συμφωνούμε πριν. Μηνιαία ρίζα: όταν βάφετε ξανά τη ρίζα σε εμάς μέσα σε {monthlyDays} ημέρες από την προηγούμενη βαφή. Κλείνεται με ένα τηλεφώνημα ή μήνυμα.",
+          "en": "Includes up to 45 g of colour; if more is needed, we agree it beforehand. Monthly Root: when you colour your roots with us again within {monthlyDays} days of your last root colour. Book it with a call or a message."
         },
         "online": true,
+        "monthlyDays": 30,
         "options": [
           {
             "el": "Κλασική",
@@ -620,10 +621,7 @@
               "en": "1 h"
             },
             "price": 35,
-            "book": {
-              "item": "TR7492468",
-              "option": "14289303"
-            }
+            "monthly": true
           },
           {
             "el": "Χωρίς αμμωνία",
@@ -646,10 +644,7 @@
               "en": "1 h"
             },
             "price": 36,
-            "book": {
-              "item": "TR7492468",
-              "option": "14289305"
-            }
+            "monthly": true
           }
         ],
         "faq": {
@@ -955,7 +950,7 @@
           "en": "Root Colour, 10-Minute Processing"
         },
         "desc": {
-          "el": "Βαφή ρίζας Redken με μόλις 10′ αναμονή, για όταν βιάζεσαι.",
+          "el": "Βαφή ρίζας Redken με μόλις 10′ αναμονή, για όταν βιάζεστε.",
           "en": "Redken root colour with a 10-minute process, for when you are short on time."
         },
         "note": {
@@ -985,7 +980,7 @@
           "en": "History check, strand test and a quote."
         },
         "note": {
-          "el": "Το ποσό αφαιρείται από την τιμή, αν κάνεις τη διόρθωση σε εμάς. Προστασία τρίχας: προτείνουμε το σπρέι προθεραπείας L’Oréal Metal Detox πριν από το ξάνοιγμα, μέρος του ολοκληρωμένου πρωτοκόλλου Metal Detox (+ Προστασία τρίχας στο ξάνοιγμα).",
+          "el": "Το ποσό αφαιρείται από την τιμή, αν κάνετε τη διόρθωση σε εμάς. Προστασία τρίχας: προτείνουμε το σπρέι προθεραπείας L’Oréal Metal Detox πριν από το ξάνοιγμα, μέρος του ολοκληρωμένου πρωτοκόλλου Metal Detox (+ Προστασία τρίχας στο ξάνοιγμα).",
           "en": "Deducted from the price if you book the correction with us. Hair protection: we recommend the L’Oréal Metal Detox pre-treatment spray before lightening, part of the complete Metal Detox protocol (Hair Protection for Lightening add-on)."
         },
         "online": false,
@@ -1486,14 +1481,14 @@
           "en": "Colour, Bridal & Keratin Consultation"
         },
         "desc": {
-          "el": "15 λεπτά για να σχεδιάσουμε μαζί χρώμα, νυφικό ή κερατίνη. Πριν ξεκινήσουμε, ξέρεις την τελική τιμή.",
+          "el": "15 λεπτά για να σχεδιάσουμε μαζί χρώμα, νυφικό ή κερατίνη. Πριν ξεκινήσουμε, ξέρετε την τελική τιμή.",
           "en": "15 minutes to plan your colour, bridal hair or keratin together. Before we start, you know the final price."
         },
         "note": {
-          "el": "Φωτογραφίες με αυτό που σου αρέσει μάς βοηθούν πολύ.",
+          "el": "Φωτογραφίες με αυτό που σας αρέσει μάς βοηθούν πολύ.",
           "en": "Photos of looks you like are always helpful."
         },
-        "online": true,
+        "online": false,
         "options": [
           {
             "el": "",
@@ -1502,11 +1497,7 @@
               "el": "15′",
               "en": "15′"
             },
-            "price": 0.01,
-            "book": {
-              "item": "TR7496077",
-              "option": "14237792"
-            }
+            "price": 0
           }
         ]
       }

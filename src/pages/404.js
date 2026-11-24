@@ -4,7 +4,7 @@ import NhLayout from '../components/NhLayout';
 import { Link } from '../lib/router';
 
 const TXT = {
-  el: { title: 'Η σελίδα δεν βρέθηκε.', lead: 'Ο σύνδεσμος μπορεί να άλλαξε. Δες τις υπηρεσίες μας ή το shop.', home: 'Αρχική', services: 'Υπηρεσίες & τιμές', shop: 'Shop' },
+  el: { title: 'Η σελίδα δεν βρέθηκε.', lead: 'Ο σύνδεσμος μπορεί να άλλαξε. Δείτε τις υπηρεσίες μας ή το shop.', home: 'Αρχική', services: 'Υπηρεσίες & τιμές', shop: 'Shop' },
   en: { title: 'Page not found.', lead: 'The link may have changed. See our services or the shop.', home: 'Home', services: 'Services & prices', shop: 'Shop' }
 };
 

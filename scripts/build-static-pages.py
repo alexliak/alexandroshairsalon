@@ -36,6 +36,10 @@ ADDRESS = "Ερυσίχθονος 3-5, Θησείο, Αθήνα 118 51"
 _MENU_JSON = json.loads((pathlib.Path(__file__).parent.parent / "src/data/menu.json").read_text(encoding="utf-8"))
 MENU = {s["name"]["el"]: (s["name"]["el"], [(o["el"], o["time"]["el"], o["price"]) for o in s["options"]])
         for c in _MENU_JSON for s in c["services"]}
+# Μηνιαίες τιμές (Μηνιαία ρίζα): ισχύουν υπό προϋπόθεση, άρα δεν μετράνε ως «από €…».
+# Μέρες για τη Μηνιαία ρίζα: αλλάζουν σε ένα σημείο, στο "monthlyDays" της «Βαφή ρίζας» στο menu.json.
+MONTHLY_DAYS = next(s["monthlyDays"] for c in _MENU_JSON for s in c["services"] if s["name"]["el"] == "Βαφή ρίζας")
+MONTHLY = {(s["name"]["el"], o["el"]) for c in _MENU_JSON for s in c["services"] for o in s["options"] if o.get("monthly")}
 import urllib.parse as _up
 
 
@@ -64,8 +68,8 @@ def OP(name, label):
 
 
 def P(name):
-    """Μία τιμή, ή η χαμηλότερη αν η υπηρεσία έχει επιλογές."""
-    return min(p for _, _, p in MENU[name][1])
+    """Μία τιμή, ή η χαμηλότερη αν η υπηρεσία έχει επιλογές (χωρίς τις μηνιαίες)."""
+    return min(p for l, _, p in MENU[name][1] if (name, l) not in MONTHLY)
 
 
 LANG_JS = """<script>
@@ -174,7 +178,9 @@ html[data-theme=light] .skip,html[data-theme=light] .totop:hover,html[data-theme
 
 
 def eur(p, en=False):
-    """€54 ή €0,01 / €0.01 (ίδιο με eur() στο src/data/prices.js)."""
+    """€54, €0,01 / €0.01, ή «Δωρεάν» / «Free» για 0 (ίδιο με eur() στο src/data/prices.js)."""
+    if p == 0:
+        return "Free" if en else "Δωρεάν"
     if float(p).is_integer():
         return f"€{int(p)}"
     t = f"{p:.2f}"
@@ -204,7 +210,7 @@ def offers(keys):
     out = []
     for k in keys:
         name, opts = MENU[k]
-        prices = [p for _, _, p in opts]
+        prices = [p for l, _, p in opts if (k, l) not in MONTHLY]
         out.append({"@type": "Offer", "name": name, "priceCurrency": "EUR",
                     "price": str(min(prices)) if len(prices) == 1 else None,
                     "priceSpecification": None if len(prices) == 1 else {
@@ -299,15 +305,15 @@ def page(path, title, desc, body, ld, extra_head="", mbar=True, bilingual=False,
   <nav aria-label="Κύριο μενού">
     <a class="hide-m" href="/services" data-en="Services &amp; prices">Υπηρεσίες &amp; τιμές</a>
     <a class="hide-m" href="/hours" data-en="Hours">Ωράριο</a>
-    <a class="hide-m" href="/montela" style="color:var(--gold)" data-en="Be our model">Γίνε μοντέλο</a>
+    <a class="hide-m" href="/montela" style="color:var(--gold)" data-en="Be our model">Γίνετε μοντέλο</a>
     <a class="hide-m" href="/douleia" style="color:var(--gold)">We are hiring</a>
     <span class="icons" role="group" aria-label="Επικοινωνία στο κινητό">
-      <a class="mp" href="{DIRECTIONS}" data-maps target="_blank" rel="noopener" aria-label="Πού θα μας βρεις: άνοιγμα στο Google Maps" title="Google Maps">{ICONS['FaMapMarkerAlt']}</a>
+      <a class="mp" href="{DIRECTIONS}" data-maps target="_blank" rel="noopener" aria-label="Πού θα μας βρείτε: άνοιγμα στο Google Maps" title="Google Maps">{ICONS['FaMapMarkerAlt']}</a>
       <a class="ph" href="tel:{PHONE}" aria-label="Κλήση στο κομμωτήριο {PHONE_TXT}" title="Κλήση στο κομμωτήριο {PHONE_TXT}">{ICONS['FaPhoneAlt']}</a>
       <a class="wa" href="https://wa.me/306981319000" target="_blank" rel="noopener" aria-label="Μήνυμα στο WhatsApp" title="WhatsApp">{ICONS['FaWhatsapp']}</a>
       <a class="vb" href="viber://chat?number=%2B306981319000" aria-label="Μήνυμα στο Viber" title="Viber">{ICONS['FaViber']}</a>
     </span>
-    <a class="btn gold" href="/kratisi/" data-en="Book now">Κλείσε ραντεβού</a>
+    <a class="btn gold" href="/kratisi/" data-en="Book now">Κράτηση ραντεβού</a>
     {'<button type="button" class="lang" data-lang-toggle aria-label="Switch to English">EN</button>' if bilingual else (f'<a class="lang" href="{EN_SISTER[path]}" hreflang="en" lang="en" aria-label="English version" style="display:inline-flex;align-items:center;justify-content:center;text-decoration:none">EN</a>' if path in EN_SISTER else '')}
   </nav>
 </div></header>
@@ -316,10 +322,10 @@ def page(path, title, desc, body, ld, extra_head="", mbar=True, bilingual=False,
 </main>
 <footer class="bottom"><div class="wrap">
   <p><strong>Alexandros Hair Salon</strong> · {ADDRESS} · <a href="tel:{PHONE}">{PHONE_TXT}</a> · <a href="mailto:info@alexandroshairsalon.gr">info@alexandroshairsalon.gr</a> · <a href="tel:+306981319000" data-en="Call mobile">Κλήση κινητού</a> · <a href="https://wa.me/306981319000" target="_blank" rel="noopener">WhatsApp</a> · <a href="viber://chat?number=%2B306981319000">Viber</a> · <a href="{GOOGLE}" data-maps target="_blank" rel="noopener" data-en="Hours on Google">Ωράριο στο Google</a> · <a href="{DIRECTIONS}" data-maps target="_blank" rel="noopener" data-en="Directions">Οδηγίες</a></p>
-  <p class="tsw" role="radiogroup" aria-label="Εμφάνιση"><span data-en="Theme">Εμφάνιση</span><button type="button" role="radio" data-mode="auto" title="Όπως η συσκευή σου" data-en="Auto">Αυτόματο</button><button type="button" role="radio" data-mode="light" data-en="Light">Ανοιχτό</button><button type="button" role="radio" data-mode="dark" data-en="Dark">Σκούρο</button></p>
-  <p class="links"><a href="/" data-en="Home">Αρχική</a><a href="/services" data-en="All prices">Όλες οι τιμές</a><a href="/kourema-athina/">Κούρεμα στην Αθήνα</a><a href="/vafi-mallion-athina/">Βαφή μαλλιών στην Αθήνα</a><a href="/balayage-athina/">Balayage στην Αθήνα</a><a href="/diorthosi-xromatos-athina/" data-en="Colour correction">Διόρθωση &amp; αλλαγή χρώματος</a><a href="/dorean-kourema-athina/">Δωρεάν κούρεμα (μοντέλο)</a><a href="/fotografies" data-en="Photos">Φωτογραφίες</a><a href="/kratisi/" data-en="Book online">Κράτηση online</a><a href="/hair-salon-athens/" hreflang="en">Hair salon in Athens (English)</a><a href="/xtenisma-fotografisi-athina/">Χτένισμα για φωτογράφιση</a><a href="/synergasies/">Συνεργασίες</a><a href="/syxnes-erotiseis/" data-en="FAQ">Συχνές ερωτήσεις</a><a href="/dorokarta/" data-en="Gift card">Δωροκάρτα</a><a href="/gnomi/" data-en="Your feedback">Η γνώμη σου</a><a href="/shop">Shop</a></p>
+  <p class="tsw" role="radiogroup" aria-label="Εμφάνιση"><span data-en="Theme">Εμφάνιση</span><button type="button" role="radio" data-mode="auto" title="Όπως η συσκευή σας" data-en="Auto">Αυτόματο</button><button type="button" role="radio" data-mode="light" data-en="Light">Ανοιχτό</button><button type="button" role="radio" data-mode="dark" data-en="Dark">Σκούρο</button></p>
+  <p class="links"><a href="/" data-en="Home">Αρχική</a><a href="/services" data-en="All prices">Όλες οι τιμές</a><a href="/kourema-athina/">Κούρεμα στην Αθήνα</a><a href="/vafi-mallion-athina/">Βαφή μαλλιών στην Αθήνα</a><a href="/balayage-athina/">Balayage στην Αθήνα</a><a href="/diorthosi-xromatos-athina/" data-en="Colour correction">Διόρθωση &amp; αλλαγή χρώματος</a><a href="/dorean-kourema-athina/">Δωρεάν κούρεμα (μοντέλο)</a><a href="/fotografies" data-en="Photos">Φωτογραφίες</a><a href="/kratisi/" data-en="Book online">Κράτηση online</a><a href="/hair-salon-athens/" hreflang="en">Hair salon in Athens (English)</a><a href="/xtenisma-fotografisi-athina/">Χτένισμα για φωτογράφιση</a><a href="/synergasies/">Συνεργασίες</a><a href="/syxnes-erotiseis/" data-en="FAQ">Συχνές ερωτήσεις</a><a href="/dorokarta/" data-en="Gift card">Δωροκάρτα</a><a href="/gnomi/" data-en="Your feedback">Η γνώμη σας</a><a href="/shop">Shop</a></p>
 </div></footer>
-{'<div class="mbar"><span class="mb2"><small data-en="Book online">Online κράτηση</small><b data-en="in 1 minute">σε 1 λεπτό</b></span><a class="btn gold" href="/kratisi/" data-en="Book now">Κλείσε ραντεβού</a></div>' if mbar else ''}
+{'<div class="mbar"><span class="mb2"><small data-en="Book online">Online κράτηση</small><b data-en="in 1 minute">σε 1 λεπτό</b></span><a class="btn gold" href="/kratisi/" data-en="Book now">Κράτηση ραντεβού</a></div>' if mbar else ''}
 <button type="button" class="totop" aria-label="Επιστροφή στην κορυφή" title="Επιστροφή στην κορυφή" tabindex="-1">{ICONS['FaArrowUp']}</button>
 <script>
 (function(){{var b=document.querySelector('.totop');function f(){{var on=window.scrollY>600;b.classList.toggle('on',on);b.tabIndex=on?0:-1;}}
@@ -374,15 +380,15 @@ def service_page(path, crumb, title, desc, eyebrow, h1, lead, facts, prose, keys
   <span class="eyebrow">{esc(eyebrow)}</span>
   <h1>{h1}</h1>
   <p class="lead">{esc(lead)}</p>
-  <div class="cta"><a class="btn gold" href="/kratisi/">Δες ελεύθερες ώρες &amp; κλείσε</a><a class="btn ghost" href="tel:{PHONE}">Κάλεσε {PHONE_TXT}</a></div>
+  <div class="cta"><a class="btn gold" href="/kratisi/">Ελεύθερες ώρες &amp; κράτηση</a><a class="btn ghost" href="tel:{PHONE}">Κλήση {PHONE_TXT}</a></div>
   <ul class="facts">{facts_html}</ul>
 </section>
 <section class="block"><h2>Τιμές &amp; χρόνοι</h2>{''.join(svc_html(k) for k in keys)}
-  <p class="cta" style="margin-top:20px"><a class="btn gold" href="/kratisi/">Κλείσε online</a><a href="/services">Όλος ο τιμοκατάλογος →</a></p>
+  <p class="cta" style="margin-top:20px"><a class="btn gold" href="/kratisi/">Κράτηση online</a><a href="/services">Όλος ο τιμοκατάλογος →</a></p>
 </section>
 <section class="block prose">{prose}{footnote}</section>
 {faq_html}
-<section class="block"><h2>Δες επίσης</h2><p class="links">{rel}</p></section>
+<section class="block"><h2>Δείτε επίσης</h2><p class="links">{rel}</p></section>
 """
     service_ld = {"@context": "https://schema.org", "@type": "Service", "name": crumb, "serviceType": service_type,
                   "areaServed": {"@type": "City", "name": "Αθήνα"}, "provider": SALON_REF, "url": f"{SITE}{path}",
@@ -392,7 +398,7 @@ def service_page(path, crumb, title, desc, eyebrow, h1, lead, facts, prose, keys
 
 # Ώρες που άλλα κομμωτήρια είναι κλειστά: χωρίς ωράριο στο site, το ωράριο είναι μόνο στο Google Business Profile
 FAQ_WHEN = ("Μπορώ να κλείσω Δευτέρα ή αργά το απόγευμα;",
-            "Συνήθως ναι. Δουλεύουμε και Δευτέρα, και τα απογεύματα της Τετάρτης και του Σαββάτου ως αργά, όταν πολλά κομμωτήρια στην Αθήνα είναι κλειστά ή κλείνουν νωρίς. Τις ελεύθερες ώρες τις βλέπεις ζωντανά στην online κράτηση· το ισχύον ωράριο είναι πάντα στο Google.")
+            "Συνήθως ναι. Δουλεύουμε και Δευτέρα, και τα απογεύματα της Τετάρτης και του Σαββάτου ως αργά, όταν πολλά κομμωτήρια στην Αθήνα είναι κλειστά ή κλείνουν νωρίς. Τις ελεύθερες ώρες τις βλέπετε ζωντανά στην online κράτηση· το ισχύον ωράριο είναι πάντα στο Google.")
 COMMON_FACTS = ["Θησείο, ~5′ με τα πόδια από τον σταθμό", "Πληρωμή online ή στο κομμωτήριο", "Online κράτηση 24/7"]
 
 # ---------- /kourema-athina/ ----------
@@ -400,21 +406,21 @@ CUTS = ["Κούρεμα χωρίς στέγνωμα", "Κούρεμα & στέγ
 service_page(
     "/kourema-athina/", "Κούρεμα στην Αθήνα",
     f"Κούρεμα Αθήνα – Θησείο | Γυναικείο από €{P(CUTS[0])} | Alexandros Hair Salon",
-    f"Γυναικείο κούρεμα από €{P(CUTS[0])}, ανδρικό {OP('Ανδρικό κούρεμα','Κλασικό')} (μηνιαίο {OP('Ανδρικό κούρεμα','Μηνιαίο')}), παιδικό €{P('Παιδικό κούρεμα')} στο Θησείο, Αθήνα. Pixie, bob, butterfly, curtain bangs. Από το 1992. Κλείσε online.",
+    f"Γυναικείο κούρεμα από €{P(CUTS[0])}, ανδρικό {OP('Ανδρικό κούρεμα','Κλασικό')} (μηνιαίο {OP('Ανδρικό κούρεμα','Μηνιαίο')}), παιδικό €{P('Παιδικό κούρεμα')} στο Θησείο, Αθήνα. Pixie, bob, butterfly, curtain bangs. Από το 1992. Κράτηση online.",
     "Κούρεμα · Θησείο, κέντρο Αθήνας",
     "Κούρεμα στην Αθήνα, <em>με τρεις δεκαετίες εμπειρίας.</em>",
     "Το κούρεμα είναι σχήμα πάνω στο πρόσωπο: μπορεί να το αναδείξει ή να το κρύψει. Κάθε πρόσωπο έχει όμορφα χαρακτηριστικά· τα βρίσκουμε και σχεδιάζουμε το κούρεμα που τα αναδεικνύει, μαζί με το σωστό styling. Γυναικείο, ανδρικό και παιδικό κούρεμα στο Θησείο, από το 1992.",
     [f"Γυναικείο από €{P(CUTS[0])}"] + COMMON_FACTS,
     """<h2>Πώς δουλεύουμε το κούρεμα</h2>
-<p>Ξεκινάμε με λίγη κουβέντα: τι σε ενοχλεί σήμερα, πώς χτενίζεσαι στο σπίτι και πόσο συχνά θέλεις να έρχεσαι. Μετά προτείνουμε γραμμή και μήκος που θα στέκονται σωστά και όταν τα φορμάρεις μόνη σου.</p>
+<p>Ξεκινάμε με λίγη κουβέντα: τι σας ενοχλεί σήμερα, πώς χτενίζεστε στο σπίτι και πόσο συχνά θέλετε να έρχεστε. Μετά προτείνουμε γραμμή και μήκος που θα στέκονται σωστά και όταν τα φορμάρετε μόνη σας.</p>
 <p>Κάνουμε κλασικά και σύγχρονα κουρέματα: pixie, mullet, bob και lob, butterfly, curtain bangs, φιλάρισμα για όγκο ή ελάφρυνση, καθαρό φρεσκάρισμα άκρων.</p>
-<h2>Πώς θέλεις να φύγεις;</h2>
-<p>Μία τιμή για κάθε μήκος· διαλέγεις μόνο το τέλος. <strong>Χωρίς στέγνωμα</strong>: τα μαλλιά στεγνώνουν φυσικά, ιδανικό για σγουρά. <strong>Στέγνωμα</strong>: με τα χέρια, με πιστολάκι ή φυσούνα, για φυσικό αποτέλεσμα. <strong>Φορμάρισμα</strong>: πιστολάκι και βούρτσα για όγκο και φόρμα. <strong>Χτένισμα</strong>: πλήρες, ίσιο και λείο ή με όγκο και κίνηση, που κρατά συνήθως 2–4 ημέρες.</p>""",
+<h2>Πώς θέλετε να φύγετε;</h2>
+<p>Μία τιμή για κάθε μήκος· διαλέγετε μόνο το τέλος. <strong>Χωρίς στέγνωμα</strong>: τα μαλλιά στεγνώνουν φυσικά, ιδανικό για σγουρά. <strong>Στέγνωμα</strong>: με τα χέρια, με πιστολάκι ή φυσούνα, για φυσικό αποτέλεσμα. <strong>Φορμάρισμα</strong>: πιστολάκι και βούρτσα για όγκο και φόρμα. <strong>Χτένισμα</strong>: πλήρες, ίσιο και λείο ή με όγκο και κίνηση, που κρατά συνήθως 2–4 ημέρες.</p>""",
     CUTS + ["Φράτζα & αφέλειες", "Ανδρικό κούρεμα", "Ανδρικό με μηχανή", "Παιδικό κούρεμα"],
     [("Πόσο κοστίζει ένα γυναικείο κούρεμα;", f"€{P(CUTS[0])} με φυσικό στέγνωμα, €{P(CUTS[1])} με στέγνωμα, €{P(CUTS[2])} με φορμάρισμα και €{P(CUTS[3])} με πλήρες χτένισμα. Ίδια τιμή για όλα τα μήκη."),
      ("Κάνετε και ανδρικά ή παιδικά κουρέματα;", f"Ναι. Ανδρικό κούρεμα {OP('Ανδρικό κούρεμα','Κλασικό')} (μηνιαίο {OP('Ανδρικό κούρεμα','Μηνιαίο')}), με μηχανή €{P('Ανδρικό με μηχανή')} και παιδικό (έως 12 ετών) €{P('Παιδικό κούρεμα')}."),
      FAQ_WHEN,
-     ("Πρέπει να κλείσω ραντεβού;", "Προτείνουμε ραντεβού για να σε περιμένουμε στην ώρα σου. Κλείνεις online στο alexandroshairsalon.gr/kratisi ή τηλεφωνικά στο 210 346 5554."),
+     ("Πρέπει να κλείσω ραντεβού;", "Προτείνουμε ραντεβού για να σας περιμένουμε στην ώρα σας. Κλείνετε online στο alexandroshairsalon.gr/kratisi ή τηλεφωνικά στο 210 346 5554."),
      ("Πού βρίσκεστε;", "Ερυσίχθονος 3-5 στο Θησείο, περίπου 5 λεπτά με τα πόδια από τον σταθμό Θησείο, στο κέντρο της Αθήνας."),
      ("Πώς πληρώνω;", "Όπως προτιμάς: online κατά την κράτηση ή στο κομμωτήριο, μετά την υπηρεσία.")],
     "Κούρεμα μαλλιών",
@@ -422,7 +428,7 @@ service_page(
 )
 
 # ---------- /vafi-mallion-athina/ ----------
-SKIN_NOTE = '<p class="footnote" style="font-size:.82em;opacity:.75">* Αν βάφεσαι πρώτη φορά σε εμάς, μπορούμε να κάνουμε δωρεάν τεστ ευαισθησίας πριν από τη βαφή. Δεν χρειάζεται για να κλείσεις ραντεβού.</p>'
+SKIN_NOTE = '<p class="footnote" style="font-size:.82em;opacity:.75">* Αν βάφεστε πρώτη φορά σε εμάς, μπορούμε να κάνουμε δωρεάν τεστ ευαισθησίας πριν από τη βαφή. Δεν χρειάζεται για να κλείσετε ραντεβού.</p>'
 ROOT = "Βαφή ρίζας"
 # Πριν & μετά από δουλειές του κομμωτηρίου: μία πηγή, src/data/work.json (τη διαβάζει και η αρχική).
 WORK = json.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "src", "data", "work.json"), encoding="utf-8"))
@@ -475,23 +481,23 @@ ROOT_OPTS = dict((o, p) for o, _, p in MENU[ROOT][1])
 service_page(
     "/vafi-mallion-athina/", "Βαφή μαλλιών στην Αθήνα",
     f"Βαφή Μαλλιών Αθήνα – Θησείο | Ρίζα €{ROOT_OPTS['Κλασική']} | Alexandros Hair Salon",
-    f"Βαφή ρίζας & κάλυψη λευκών €{ROOT_OPTS['Κλασική']}, Μηνιαία ρίζα €{ROOT_OPTS['Μηνιαία ρίζα']}, χωρίς αμμωνία €{ROOT_OPTS['Χωρίς αμμωνία']} (INOA, Redken). Ρίζα & ρεφλέ από €{P('Βαφή ρίζας & ρεφλέ στα μήκη')}. Κομμωτήριο στο Θησείο, Αθήνα. Κλείσε online.",
+    f"Βαφή ρίζας & κάλυψη λευκών €{ROOT_OPTS['Κλασική']}, Μηνιαία ρίζα €{ROOT_OPTS['Μηνιαία ρίζα']}, χωρίς αμμωνία €{ROOT_OPTS['Χωρίς αμμωνία']} (INOA, Redken). Ρίζα & ρεφλέ από €{P('Βαφή ρίζας & ρεφλέ στα μήκη')}. Κομμωτήριο στο Θησείο, Αθήνα. Κράτηση online.",
     "Χρώμα · L’Oréal Professionnel & Redken",
     "Βαφή μαλλιών στην Αθήνα, <em>με L’Oréal &amp; Redken.</em>",
-    "Κάλυψη λευκών στη ρίζα, βαφή χωρίς αμμωνία, ρεφλέ για λάμψη και τόνο. Μία τιμή για κάθε υπηρεσία, με συγκεκριμένη ποσότητα χρώματος, ώστε να ξέρεις από πριν τι πληρώνεις.",
+    "Κάλυψη λευκών στη ρίζα, βαφή χωρίς αμμωνία, ρεφλέ για λάμψη και τόνο. Μία τιμή για κάθε υπηρεσία, με συγκεκριμένη ποσότητα χρώματος, ώστε να ξέρετε από πριν τι πληρώνετε.",
     [f"Βαφή ρίζας €{ROOT_OPTS['Κλασική']}"] + COMMON_FACTS,
     f"""<h2>Βαφή ρίζας και Μηνιαία ρίζα</h2>
 <p><strong>Βαφή ρίζας (€{ROOT_OPTS['Κλασική']})</strong>: μόνιμη βαφή με Farcom ή Majirel της L’Oréal Professionnel, για σίγουρη κάλυψη λευκών. <strong>Χωρίς αμμωνία (€{ROOT_OPTS['Χωρίς αμμωνία']})</strong>: INOA της L’Oréal Professionnel ή Redken. Και οι δύο περιλαμβάνουν λούσιμο και στέγνωμα.</p>
-<p><strong>Μηνιαία ρίζα (€{ROOT_OPTS['Μηνιαία ρίζα']}, χωρίς αμμωνία €{ROOT_OPTS['Χωρίς αμμωνία · μηνιαία ρίζα']})</strong>: όταν η επόμενη βαφή ρίζας γίνεται μέσα σε 30 ημέρες από την προηγούμενη σε εμάς. Στο ταμείο παίρνεις καρτελάκι με την ημερομηνία.</p>
+<p><strong>Μηνιαία ρίζα (€{ROOT_OPTS['Μηνιαία ρίζα']}, χωρίς αμμωνία €{ROOT_OPTS['Χωρίς αμμωνία · μηνιαία ρίζα']})</strong>: όταν βάφετε ξανά τη ρίζα σε εμάς μέσα σε {MONTHLY_DAYS} ημέρες από την προηγούμενη βαφή. Κλείνεται με ένα τηλεφώνημα ή μήνυμα στο <a href="tel:{PHONE}">{PHONE_TXT}</a>. Στο ταμείο σας δίνουμε καρτελάκι με την ημερομηνία.</p>
 <h2>Ρίζα + ρεφλέ</h2>
-<p>Με το <strong>{FQ('ρεφλέ (gloss)', 'refle')}</strong> στα μήκη το χρώμα δένει από τη ρίζα ως τις άκρες και τα μαλλιά αποκτούν λάμψη. Είναι ξεχωριστή εφαρμογή στα μήκη, 30–45 ml για μαλλιά έως τους ώμους ή έως 60 ml κάτω από τους ώμους, όχι απλό τράβηγμα της βαφής της ρίζας. Για μεγάλη <a class="il" href="/diorthosi-xromatos-athina/">αλλαγή ή διόρθωση προηγούμενου χρώματος</a> ξεκινάμε με διάγνωση, ώστε να ξέρεις πλάνο και τιμή πριν από οτιδήποτε.</p>
+<p>Με το <strong>{FQ('ρεφλέ (gloss)', 'refle')}</strong> στα μήκη το χρώμα δένει από τη ρίζα ως τις άκρες και τα μαλλιά αποκτούν λάμψη. Είναι ξεχωριστή εφαρμογή στα μήκη, 30–45 ml για μαλλιά έως τους ώμους ή έως 60 ml κάτω από τους ώμους, όχι απλό τράβηγμα της βαφής της ρίζας. Για μεγάλη <a class="il" href="/diorthosi-xromatos-athina/">αλλαγή ή διόρθωση προηγούμενου χρώματος</a> ξεκινάμε με διάγνωση, ώστε να ξέρετε πλάνο και τιμή πριν από οτιδήποτε.</p>
 {BEFORE_AFTER}""",
     [ROOT, "Βαφή ρίζας & ρεφλέ στα μήκη", "Ρεφλέ", "Βαφή σε όλο το μαλλί", "Ξάνοιγμα ρίζας & ρεφλέ", "+ Επιπλέον χρώμα", "Διόρθωση χρώματος"],
-    [("Πόσο κοστίζει η βαφή ρίζας;", f"€{ROOT_OPTS['Κλασική']}, ή €{ROOT_OPTS['Χωρίς αμμωνία']} χωρίς αμμωνία, με λούσιμο και στέγνωμα. Όταν η επόμενη βαφή ρίζας γίνεται μέσα σε 30 ημέρες, η Μηνιαία ρίζα είναι €{ROOT_OPTS['Μηνιαία ρίζα']} (χωρίς αμμωνία €{ROOT_OPTS['Χωρίς αμμωνία · μηνιαία ρίζα']})."),
+    [("Πόσο κοστίζει η βαφή ρίζας;", f"€{ROOT_OPTS['Κλασική']}, ή €{ROOT_OPTS['Χωρίς αμμωνία']} χωρίς αμμωνία, με λούσιμο και στέγνωμα. Όταν βάφετε ξανά τη ρίζα σε εμάς μέσα σε {MONTHLY_DAYS} ημέρες, η Μηνιαία ρίζα είναι €{ROOT_OPTS['Μηνιαία ρίζα']} (χωρίς αμμωνία €{ROOT_OPTS['Χωρίς αμμωνία · μηνιαία ρίζα']})."),
      ("Έχετε βαφή χωρίς αμμωνία;", f"Ναι: INOA της L’Oréal Professionnel ή Redken, €{ROOT_OPTS['Χωρίς αμμωνία']} (Μηνιαία ρίζα €{ROOT_OPTS['Χωρίς αμμωνία · μηνιαία ρίζα']})."),
      FAQ_WHEN,
      ("Πόση ώρα διαρκεί η βαφή ρίζας;", "Περίπου μία ώρα μαζί με την αναμονή. Με ρεφλέ στα μήκη από μία ώρα έως μία ώρα και δέκα λεπτά."),
-     ("Πώς κλείνω ραντεβού για βαφή;", "Online στο alexandroshairsalon.gr/kratisi, όπου βλέπεις ελεύθερες ώρες, ή στο 210 346 5554. Πληρώνεις online ή στο κομμωτήριο.")],
+     ("Πώς κλείνω ραντεβού για βαφή;", "Online στο alexandroshairsalon.gr/kratisi, όπου βλέπετε ελεύθερες ώρες, ή στο 210 346 5554. Πληρώνετε online ή στο κομμωτήριο.")],
     "Βαφή μαλλιών",
     [("Διόρθωση χρώματος", "/diorthosi-xromatos-athina/"), ("Balayage στην Αθήνα", "/balayage-athina/"), ("Όλες οι τιμές", "/services")],
     footnote=SKIN_NOTE + f'<p class="footnote" style="font-size:.82em;opacity:.75">Κάθε βαφή περιλαμβάνει συγκεκριμένη ποσότητα χρώματος (στη βαφή ρίζας έως 45 g). Αν χρειαστεί περισσότερο, το «+ Επιπλέον χρώμα» (€{P("+ Επιπλέον χρώμα")} ανά 30 g, Redken {OP("+ Επιπλέον χρώμα","Redken · ανά 30 g ή 30 ml")}) το συμφωνούμε πριν την εφαρμογή.</p>',
@@ -510,17 +516,17 @@ service_page(
     f"""<h2>Ποιο να διαλέξω;</h2>
 <p><strong>Γύρω από το πρόσωπο</strong>: λεπτές ανταύγειες που φωτίζουν το πρόσωπο, ιδανικές για πρώτη φορά. <strong>Μερικές</strong>: στο πάνω μέρος και γύρω από το πρόσωπο. <strong>Ολόκληρες</strong>: σε όλο το κεφάλι. <strong>Μερικό μπαλαγιάζ (balayage)</strong>: απαλό φως ζωγραφισμένο με το χέρι, ελεύθερα ή σε αλουμινόχαρτα (foilayage), για μεσαία και μακριά μαλλιά.</p>
 <p><strong>No Bleach French Highlights, χωρίς {FQ('ντεκαπάζ', 'ntekapaz')}</strong>: με την κρέμα ξανοίγματος L’Oréal Professionnel Blond Studio No Bleach™, πιο ήπια για την τρίχα, έως 4 τόνους (σε βαμμένα μαλλιά έως 2,5). Γύρω από το πρόσωπο €{FACE['No Bleach French Highlights · Face Frame']}, με ντεκαπάζ €{FACE['Με ντεκαπάζ']}.</p>
-<p>Οι τιμές είναι για μαλλιά έως τους ώμους· για πιο μακριά υπάρχει το «+ Μακριά μαλλιά» (€{P('+ Μακριά μαλλιά (ανταύγειες / μπαλαγιάζ)')}). Για έντονη αλλαγή, πλατινέ ή <a class="il" href="/diorthosi-xromatos-athina/">διόρθωση παλιού χρώματος</a> κλείσε πρώτα <strong>διάγνωση χρώματος</strong>, ώστε να συμφωνήσουμε ρεαλιστικό πλάνο και συγκεκριμένη τιμή.</p>""",
+<p>Οι τιμές είναι για μαλλιά έως τους ώμους· για πιο μακριά υπάρχει το «+ Μακριά μαλλιά» (€{P('+ Μακριά μαλλιά (ανταύγειες / μπαλαγιάζ)')}). Για έντονη αλλαγή, πλατινέ ή <a class="il" href="/diorthosi-xromatos-athina/">διόρθωση παλιού χρώματος</a> κλείστε πρώτα <strong>διάγνωση χρώματος</strong>, ώστε να συμφωνήσουμε ρεαλιστικό πλάνο και συγκεκριμένη τιμή.</p>""",
     ["Ανταύγειες γύρω από το πρόσωπο", "Μερικές ανταύγειες", "Ολόκληρες ανταύγειες", "Μερικό μπαλαγιάζ", "Ολόκληρο μπαλαγιάζ", "+ Μακριά μαλλιά (ανταύγειες / μπαλαγιάζ)", "+ Προστασία τρίχας στο ξάνοιγμα", "Διόρθωση χρώματος"],
-    [("Τι είναι το μπαλαγιάζ (balayage);", "Τεχνική ανταυγειών όπου το ξάνοιγμα απλώνεται με το χέρι πάνω στα μαλλιά, ελεύθερα ή σε αλουμινόχαρτα (foilayage). Το αποτέλεσμα είναι απαλό και φυσικό, χωρίς έντονες γραμμές, και ολοκληρώνεται με ρεφλέ για τον τόνο που θέλεις."),
-     ("Σε ποια μαλλιά ταιριάζει το μπαλαγιάζ;", "Σε μεσαία και μακριά μαλλιά. Αν θέλεις κάτι πιο διακριτικό ή είναι η πρώτη σου φορά, υπάρχουν οι ανταύγειες γύρω από το πρόσωπο. Την πρώτη φορά προηγείται συμβουλευτική, για να δούμε τι γίνεται στα δικά σου μαλλιά."),
+    [("Τι είναι το μπαλαγιάζ (balayage);", "Τεχνική ανταυγειών όπου το ξάνοιγμα απλώνεται με το χέρι πάνω στα μαλλιά, ελεύθερα ή σε αλουμινόχαρτα (foilayage). Το αποτέλεσμα είναι απαλό και φυσικό, χωρίς έντονες γραμμές, και ολοκληρώνεται με ρεφλέ για τον τόνο που θέλετε."),
+     ("Σε ποια μαλλιά ταιριάζει το μπαλαγιάζ;", "Σε μεσαία και μακριά μαλλιά. Αν θέλετε κάτι πιο διακριτικό ή είναι η πρώτη σας φορά, υπάρχουν οι ανταύγειες γύρω από το πρόσωπο. Την πρώτη φορά προηγείται συμβουλευτική, για να δούμε τι γίνεται στα δικά σας μαλλιά."),
      ("Πώς συντηρείται το μπαλαγιάζ;", "Το ξάνοιγμα σβήνει απαλά προς τη ρίζα, γι’ αυτό δεν φαίνεται έντονη γραμμή όταν μεγαλώνουν τα μαλλιά. Το ρεφλέ που δίνει τον τόνο διαρκεί 4–6 εβδομάδες και ανανεώνεται χωριστά, χωρίς να ξαναγίνει όλο το μπαλαγιάζ."),
      ("Πόσο κοστίζει το μπαλαγιάζ (balayage) στην Αθήνα;", f"Στο κομμωτήριό μας το μερικό μπαλαγιάζ κοστίζει €{P('Μερικό μπαλαγιάζ')} για μαλλιά έως τους ώμους, με ρεφλέ. Για πιο μακριά μαλλιά προστίθεται το «+ Μακριά μαλλιά» (€{P('+ Μακριά μαλλιά (ανταύγειες / μπαλαγιάζ)')})."),
      ("Πόσο κοστίζουν οι ανταύγειες;", f"Γύρω από το πρόσωπο €{FACE['Με ντεκαπάζ']}–€{FACE['No Bleach French Highlights · Face Frame']}, μερικές €{P('Μερικές ανταύγειες')} και ολόκληρες €{P('Ολόκληρες ανταύγειες')}, πάντα με ρεφλέ."),
      ("Υπάρχει επιλογή χωρίς ντεκαπάζ;", "Ναι, με την κρέμα L’Oréal Professionnel Blond Studio No Bleach™: έως 4 τόνους πιο ανοιχτά, πιο ήπια για την τρίχα."),
      FAQ_WHEN,
      ("Πόση ώρα διαρκεί;", "Από περίπου 1 ώρα 10′ για ανταύγειες γύρω από το πρόσωπο έως περίπου 3 ώρες για μπαλαγιάζ."),
-     ("Πώς κλείνω ραντεβού;", "Online στο alexandroshairsalon.gr/kratisi ή στο 210 346 5554. Αν δεν είσαι σίγουρη τι χρειάζεσαι, κλείσε διάγνωση χρώματος.")],
+     ("Πώς κλείνω ραντεβού;", "Online στο alexandroshairsalon.gr/kratisi ή στο 210 346 5554. Αν δεν είστε σίγουρη τι χρειάζεστε, κλείστε διάγνωση χρώματος.")],
     "Balayage και ανταύγειες",
     [("Βαφή μαλλιών στην Αθήνα", "/vafi-mallion-athina/"), ("Κούρεμα στην Αθήνα", "/kourema-athina/"), ("Όλες οι τιμές", "/services")],
     footnote=SKIN_NOTE,
@@ -540,23 +546,23 @@ service_page(
     f"Διόρθωση (color correction) και αλλαγή χρώματος στο Θησείο: από ανομοιόμορφη βαφή ή μαύρο σε καθαρό χρώμα. Strand test €{DIAG}, που αφαιρείται από την τιμή.",
     "Color correction · Θησείο",
     "Διόρθωση &amp; αλλαγή χρώματος, <em>με πλάνο πριν από κάθε βήμα.</em>",
-    "Διόρθωση, όταν το χρώμα βγήκε σκούρο, ανομοιόμορφο, πορτοκαλί ή κίτρινο. Αλλαγή, όταν θέλεις κάτι εντελώς διαφορετικό, π.χ. από μαύρο σε χάλκινο ή κόκκινο. Και στις δύο ξεκινάμε με διάγνωση και strand test, ώστε να ξέρεις από πριν το πλάνο, τον χρόνο και την τιμή.",
+    "Διόρθωση, όταν το χρώμα βγήκε σκούρο, ανομοιόμορφο, πορτοκαλί ή κίτρινο. Αλλαγή, όταν θέλετε κάτι εντελώς διαφορετικό, π.χ. από μαύρο σε χάλκινο ή κόκκινο. Και στις δύο ξεκινάμε με διάγνωση και strand test, ώστε να ξέρετε από πριν το πλάνο, τον χρόνο και την τιμή.",
     [f"Διάγνωση & προσφορά €{DIAG}", "Αφαιρείται από την τιμή της δουλειάς"] + COMMON_FACTS[:2],
     f"""<h2>Διόρθωση ή αλλαγή χρώματος;</h2>
-<p><strong>Διόρθωση χρώματος</strong> είναι όταν το χρώμα δεν βγήκε όπως έπρεπε: σκούρες ζώνες, βαφή που δεν έπιασε, πορτοκαλί ή κίτρινο που δεν έφυγε. <strong>Αλλαγή χρώματος</strong> είναι όταν θέλεις να πας σε κάτι εντελώς άλλο, π.χ. από μαύρο σε cherry cola. Η δουλειά μοιάζει, γι' αυτό και οι δύο ξεκινούν με {FQ('διάγνωση', 'diorthosi-allagi')}.</p>
+<p><strong>Διόρθωση χρώματος</strong> είναι όταν το χρώμα δεν βγήκε όπως έπρεπε: σκούρες ζώνες, βαφή που δεν έπιασε, πορτοκαλί ή κίτρινο που δεν έφυγε. <strong>Αλλαγή χρώματος</strong> είναι όταν θέλετε να πάτε σε κάτι εντελώς άλλο, π.χ. από μαύρο σε cherry cola. Η δουλειά μοιάζει, γι' αυτό και οι δύο ξεκινούν με {FQ('διάγνωση', 'diorthosi-allagi')}.</p>
 <h2>Πώς γίνεται</h2>
-<p><strong>1. Διάγνωση (€{DIAG}, 30′)</strong>: κοιτάμε το ιστορικό του χρώματος, την κατάσταση της τρίχας και κάνουμε {FQ('strand test', 'strand-test')}. Παίρνεις προσφορά με πλάνο, χρόνο και τιμή. Αν κάνεις τη δουλειά σε εμάς, το ποσό της διάγνωσης αφαιρείται.</p>
+<p><strong>1. Διάγνωση (€{DIAG}, 30′)</strong>: κοιτάμε το ιστορικό του χρώματος, την κατάσταση της τρίχας και κάνουμε {FQ('strand test', 'strand-test')}. Παίρνετε προσφορά με πλάνο, χρόνο και τιμή. Αν κάνετε τη δουλειά σε εμάς, το ποσό της διάγνωσης αφαιρείται.</p>
 <p><strong>2. Ελεγχόμενο {FQ('ξάνοιγμα', 'ntekapaz')}</strong>, μόνο όπου χρειάζεται: σκούρες λωρίδες ή παλιό μαύρο ανοίγουν ως το φόντο που θέλει το τελικό χρώμα, χωρίς να ταλαιπωρούνται τα σημεία που είναι ήδη σωστά.</p>
 <p><strong>3. Χρώμα ανά ζώνη</strong>: διαφορετική συνταγή για ρίζα, μήκη και άκρες, συχνά με {FQ('ρεφλέ', 'refle')} στο τέλος, ώστε το αποτέλεσμα να βγει ομοιόμορφο από τη ρίζα ως τις άκρες.</p>
-<p>Μερικές φορές το ασφαλέστερο είναι να γίνει σε δύο ραντεβού. Θα σου το πούμε από τη διάγνωση, όχι στη μέση της δουλειάς.</p>
+<p>Μερικές φορές το ασφαλέστερο είναι να γίνει σε δύο ραντεβού. Θα σας το πούμε από τη διάγνωση, όχι στη μέση της δουλειάς.</p>
 <h2>Πριν &amp; μετά</h2>{work_grid('el')}""",
     ["Διόρθωση χρώματος", "Βαφή σε όλο το μαλλί", "Ρεφλέ", "+ Προστασία τρίχας στο ξάνοιγμα", "+ Επιπλέον χρώμα"],
-    [("Πόσο κοστίζει η διόρθωση ή η αλλαγή χρώματος;", f"Εξαρτάται από το ιστορικό και το μήκος, γι' αυτό ξεκινάμε με διάγνωση (€{DIAG}). Παίρνεις προσφορά με συγκεκριμένη τιμή, και το ποσό της διάγνωσης αφαιρείται αν κάνεις τη δουλειά σε εμάς."),
-     ("Μπορώ να πάω από μαύρο σε κόκκινο ή χάλκινο;", "Συνήθως ναι. Είναι αλλαγή χρώματος: ελεγχόμενο ξάνοιγμα και μετά το χρώμα που θέλεις, όπως το cherry cola στις φωτογραφίες. Στη διάγνωση βλέπουμε αν γίνεται σε ένα ή σε δύο ραντεβού."),
-     ("Τι είναι το strand test;", "Δοκιμή σε μια μικρή, κρυφή τούφα πριν από τη δουλειά: βλέπουμε πώς ανοίγει και πώς πιάνει το χρώμα, και πόσο αντέχει η τρίχα. Έτσι η προσφορά και ο χρόνος βασίζονται στα δικά σου μαλλιά."),
+    [("Πόσο κοστίζει η διόρθωση ή η αλλαγή χρώματος;", f"Εξαρτάται από το ιστορικό και το μήκος, γι' αυτό ξεκινάμε με διάγνωση (€{DIAG}). Παίρνετε προσφορά με συγκεκριμένη τιμή, και το ποσό της διάγνωσης αφαιρείται αν κάνετε τη δουλειά σε εμάς."),
+     ("Μπορώ να πάω από μαύρο σε κόκκινο ή χάλκινο;", "Συνήθως ναι. Είναι αλλαγή χρώματος: ελεγχόμενο ξάνοιγμα και μετά το χρώμα που θέλετε, όπως το cherry cola στις φωτογραφίες. Στη διάγνωση βλέπουμε αν γίνεται σε ένα ή σε δύο ραντεβού."),
+     ("Τι είναι το strand test;", "Δοκιμή σε μια μικρή, κρυφή τούφα πριν από τη δουλειά: βλέπουμε πώς ανοίγει και πώς πιάνει το χρώμα, και πόσο αντέχει η τρίχα. Έτσι η προσφορά και ο χρόνος βασίζονται στα δικά σας μαλλιά."),
      ("Θα χαλάσουν τα μαλλιά μου;", "Ανοίγουμε μόνο όσο χρειάζεται και μόνο εκεί που χρειάζεται. Προτείνουμε και την προστασία τρίχας στο ξάνοιγμα. Αν η τρίχα δεν αντέχει όλη τη δουλειά σε μία μέρα, τη χωρίζουμε σε δύο ραντεβού."),
      FAQ_WHEN,
-     ("Πώς κλείνω διάγνωση;", "Στο 210 346 5554 ή στο κινητό μέσω WhatsApp/Viber, με μια φωτογραφία των μαλλιών σου στο φως της μέρας.")],
+     ("Πώς κλείνω διάγνωση;", "Στο 210 346 5554 ή στο κινητό μέσω WhatsApp/Viber, με μια φωτογραφία των μαλλιών σας στο φως της μέρας.")],
     "Διόρθωση χρώματος",
     [("Βαφή μαλλιών στην Αθήνα", "/vafi-mallion-athina/"), ("Balayage στην Αθήνα", "/balayage-athina/"), ("Συχνές ερωτήσεις", "/syxnes-erotiseis/"), ("Colour correction (English)", CC_EN)],
     footnote=SKIN_NOTE, head=CC_HEAD,
@@ -584,7 +590,7 @@ def svc_html_en(name):
 def offers_en(names):
     out = []
     for n in names:
-        ps = [o["price"] for o in EN_SVC[n]["options"]]
+        ps = [o["price"] for o in EN_SVC[n]["options"] if not o.get("monthly")]
         o = {"@type": "Offer", "name": EN_SVC[n]["name"]["en"], "priceCurrency": "EUR"}
         if len(set(ps)) == 1:
             o["price"] = str(ps[0])
@@ -650,21 +656,21 @@ a#wahanda-online-booking-widget.btn:hover{{filter:brightness(1.08)}}
 kratisi_body = f"""
 <section class="hero" style="padding-bottom:20px">
   <span class="eyebrow" data-en="Book online">Online κράτηση</span>
-  <h1 data-en="Book in <em>one minute.</em>">Κλείσε ραντεβού <em>σε ένα λεπτό.</em></h1>
-  <p class="lead" data-en="Choose a service and time below. You see the price and duration and pay online or at the salon.">Διάλεξε υπηρεσία και ώρα παρακάτω. Βλέπεις τιμή και διάρκεια και πληρώνεις online ή στο κομμωτήριο.</p>
+  <h1 data-en="Book in <em>one minute.</em>">Κράτηση ραντεβού <em>σε ένα λεπτό.</em></h1>
+  <p class="lead" data-en="Choose a service and time below. You see the price and duration and pay online or at the salon.">Επιλέξτε υπηρεσία και ώρα παρακάτω. Βλέπετε τιμή και διάρκεια και πληρώνετε online ή στο κομμωτήριο.</p>
   <div class="en-only"><p><strong>Booking in English:</strong> our booking system is in Greek. The easiest way is our English price list: tap any price and the booking opens with your service already selected, so you only pick a time.</p><p class="cta"><a class="btn gold" href="/services">English price list &amp; booking</a><a class="btn ghost" href="https://wa.me/306981319000" target="_blank" rel="noopener">WhatsApp</a></p></div>
   <div class="cta">
-    <a class="btn gold" href="{WIDGET}" id="wahanda-online-booking-widget" onclick='wahanda.openOnlineBookingWidget("{WIDGET}"); return false;' target="_blank"><span data-en="See times &amp; book">Δες ώρες &amp; κλείσε</span></a>
-    <a class="btn ghost" href="tel:{PHONE}" data-en="Call {PHONE_TXT}">Κάλεσε {PHONE_TXT}</a>
+    <a class="btn gold" href="{WIDGET}" id="wahanda-online-booking-widget" onclick='wahanda.openOnlineBookingWidget("{WIDGET}"); return false;' target="_blank"><span data-en="See times &amp; book">Δείτε ώρες &amp; κλείστε</span></a>
+    <a class="btn ghost" href="tel:{PHONE}" data-en="Call {PHONE_TXT}">Κλήση {PHONE_TXT}</a>
   </div>
 </section>
 <section style="padding-bottom:24px">
   <div id="wahanda-online-booking-widget-iframe" data-widget-url="{WIDGET}"></div>
-  <p class="tw-fallback" data-en='Calendar not showing? <a href="{WIDGET}" target="_blank" rel="noopener">Open the booking here</a> or call <a href="tel:{PHONE}">{PHONE_TXT}</a>.'>Δεν εμφανίζεται το ημερολόγιο; <a href="{WIDGET}" target="_blank" rel="noopener">Άνοιξε την κράτηση εδώ</a> ή κάλεσε στο <a href="tel:{PHONE}">{PHONE_TXT}</a>.</p>
+  <p class="tw-fallback" data-en='Calendar not showing? <a href="{WIDGET}" target="_blank" rel="noopener">Open the booking here</a> or call <a href="tel:{PHONE}">{PHONE_TXT}</a>.'>Δεν εμφανίζεται το ημερολόγιο; <a href="{WIDGET}" target="_blank" rel="noopener">Ανοίξτε την κράτηση εδώ</a> ή κάλεσε στο <a href="tel:{PHONE}">{PHONE_TXT}</a>.</p>
 </section>
 <section class="block prose">
-  <h2 data-en="Good to know">Καλό να ξέρεις</h2>
-  <p data-en="One price per service, the same online and at the salon; the price list says what each one includes. If a colour needs more product, Extra Colour (€{P('+ Επιπλέον χρώμα')} per 30 g, Redken {OP('+ Επιπλέον χρώμα','Redken · ανά 30 g ή 30 ml')}) is agreed before we apply it. Wearing extensions? Mention it when you book so we reserve the right time.">Μία τιμή για κάθε υπηρεσία, ίδια online και στο κομμωτήριο· στον τιμοκατάλογο γράφουμε τι περιλαμβάνει η καθεμία. Αν η βαφή θέλει περισσότερο χρώμα, το «+ Επιπλέον χρώμα» (€{P('+ Επιπλέον χρώμα')} ανά 30 g, Redken {OP('+ Επιπλέον χρώμα','Redken · ανά 30 g ή 30 ml')}) το συμφωνούμε πριν την εφαρμογή. Αν έχεις extensions, μπορείς να το σημειώσεις στην κράτηση, για να κρατήσουμε τον σωστό χρόνο.</p>
+  <h2 data-en="Good to know">Καλό να ξέρετε</h2>
+  <p data-en="One price per service, the same online and at the salon; the price list says what each one includes. If a colour needs more product, Extra Colour (€{P('+ Επιπλέον χρώμα')} per 30 g, Redken {OP('+ Επιπλέον χρώμα','Redken · ανά 30 g ή 30 ml')}) is agreed before we apply it. Wearing extensions? Mention it when you book so we reserve the right time.">Μία τιμή για κάθε υπηρεσία, ίδια online και στο κομμωτήριο· στον τιμοκατάλογο γράφουμε τι περιλαμβάνει η καθεμία. Αν η βαφή θέλει περισσότερο χρώμα, το «+ Επιπλέον χρώμα» (€{P('+ Επιπλέον χρώμα')} ανά 30 g, Redken {OP('+ Επιπλέον χρώμα','Redken · ανά 30 g ή 30 ml')}) το συμφωνούμε πριν την εφαρμογή. Αν έχετε extensions, μπορείτε να το σημειώσεις στην κράτηση, για να κρατήσουμε τον σωστό χρόνο.</p>
   <p><a href="/services" data-en="Full price list with descriptions →">Όλος ο τιμοκατάλογος με περιγραφές →</a></p>
 </section>
 """
@@ -675,7 +681,7 @@ MODELS_FORM = "/montela#dilosi"
 MODEL_OG = f"{SITE}/images/og-montela-2.jpg"
 
 
-def model_page(path, crumb, title, desc, eyebrow, h1, lead, facts, prose, faqs, related, cta, lang="el", faq_title="Συχνές ερωτήσεις", related_title="Δες επίσης", share=""):
+def model_page(path, crumb, title, desc, eyebrow, h1, lead, facts, prose, faqs, related, cta, lang="el", faq_title="Συχνές ερωτήσεις", related_title="Δείτε επίσης", share=""):
     items = "".join(f"<details><summary>{esc(q)}</summary><p>{linkify(esc(a))}</p></details>" for q, a in faqs)
     faq_ld = {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
         {"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": a}} for q, a in faqs]}
@@ -702,9 +708,9 @@ def model_page(path, crumb, title, desc, eyebrow, h1, lead, facts, prose, faqs, 
 
 MODEL_FACTS = ["Κούρεμα & χτένισμα δωρεάν", "Χρώμα μόνο με το κόστος των υλικών", "Φυσικό, κλασικό ή ελαφρώς μοντέρνο", "Θησείο, 5′ από το μετρό"]
 MODEL_FAQ_COMMON = [
-    ("Θα φαίνεται το πρόσωπό μου στις φωτογραφίες;", "Το διαλέγεις εσύ: με το πρόσωπό σου ή μόνο τα μαλλιά. Με πρόσωπο έχεις προτεραιότητα στα ραντεβού. Βλέπεις πρώτα εσύ τις φωτογραφίες και υπογράφεις συγκατάθεση πριν από τη φωτογράφιση."),
+    ("Θα φαίνεται το πρόσωπό μου στις φωτογραφίες;", "Το διαλέγετε εσείς: με το πρόσωπό σας ή μόνο τα μαλλιά. Με πρόσωπο έχετε προτεραιότητα στα ραντεβού. Βλέπετε πρώτα εσείς τις φωτογραφίες και υπογράφετε συγκατάθεση πριν από τη φωτογράφιση."),
     ("Ποιος κάνει τη δουλειά;", "Οι έμπειροι κομμωτές του κομμωτηρίου, που δουλεύει στο Θησείο από το 1992, με L’Oréal Professionnel και Redken. Όχι μαθητευόμενοι."),
-    ("Πώς δηλώνω συμμετοχή;", "Συμπληρώνεις τη φόρμα ενός λεπτού στο alexandroshairsalon.gr/montela. Όταν προγραμματίσουμε τεχνική που ταιριάζει στα μαλλιά σου, σου στέλνουμε μήνυμα για ραντεβού."),
+    ("Πώς δηλώνω συμμετοχή;", "Συμπληρώνετε τη φόρμα ενός λεπτού στο alexandroshairsalon.gr/montela. Όταν προγραμματίσουμε τεχνική που ταιριάζει στα μαλλιά σας, σας στέλνουμε μήνυμα για ραντεβού."),
     ("Υπάρχει όριο ηλικίας;", "Δεχόμαστε από 18 ετών και άνω, γυναίκες και άνδρες κάθε ηλικίας· οι άνδρες κυρίως για κούρεμα και styling. Τα λευκά μαλλιά, τα πολύ μακριά ή τα σγουρά είναι ευπρόσδεκτα: χρειαζόμαστε ποικιλία."),
 ]
 
@@ -714,36 +720,36 @@ model_page(
     "Δωρεάν κούρεμα και χτένισμα για γυναίκες και άνδρες, ως μοντέλο μαλλιών στο Θησείο. Φυσικό, κλασικό ή ελαφρώς μοντέρνο αποτέλεσμα. Φόρμα 1 λεπτού.",
     "Μοντέλα μαλλιών · Θησείο, κέντρο Αθήνας",
     "Δωρεάν κούρεμα στην Αθήνα, <em>ως μοντέλο μαλλιών.</em>",
-    "Ψάχνουμε γυναίκες και άνδρες κάθε ηλικίας για κούρεμα και χτένισμα δωρεάν, σε αντάλλαγμα για φωτογραφίες του νέου look. Δουλεύουν οι έμπειροι κομμωτές του κομμωτηρίου, με αποτέλεσμα που στέκεται στην καθημερινότητά σου.",
+    "Ψάχνουμε γυναίκες και άνδρες κάθε ηλικίας για κούρεμα και χτένισμα δωρεάν, σε αντάλλαγμα για φωτογραφίες του νέου look. Δουλεύουν οι έμπειροι κομμωτές του κομμωτηρίου, με αποτέλεσμα που στέκεται στην καθημερινότητά σας.",
     MODEL_FACTS,
     """<h2>Τι περιλαμβάνει το δωρεάν κούρεμα</h2>
-<p>Συζήτηση για το πρόσωπο, τα χαρακτηριστικά και την υφή των μαλλιών σου, λούσιμο, κούρεμα και χτένισμα με πιστολάκι, και φωτογράφιση στο τέλος. Διαρκεί περίπου μία ώρα.</p>
-<p>Στα γυναικεία κουρεύουμε pixie, bob και lob, butterfly, curtain bangs, φιλάρισμα για όγκο, καθαρό φρεσκάρισμα. Στα ανδρικά, κλασικά και μοντέρνα κουρέματα με ψαλίδι και μηχανή, με styling για τη φωτογράφιση. Ό,τι κάνουμε το συμφωνούμε πριν ξεκινήσουμε· αν κάτι δεν σου ταιριάζει, θα σου το πούμε.</p>
+<p>Συζήτηση για το πρόσωπο, τα χαρακτηριστικά και την υφή των μαλλιών σας, λούσιμο, κούρεμα και χτένισμα με πιστολάκι, και φωτογράφιση στο τέλος. Διαρκεί περίπου μία ώρα.</p>
+<p>Στα γυναικεία κουρεύουμε pixie, bob και lob, butterfly, curtain bangs, φιλάρισμα για όγκο, καθαρό φρεσκάρισμα. Στα ανδρικά, κλασικά και μοντέρνα κουρέματα με ψαλίδι και μηχανή, με styling για τη φωτογράφιση. Ό,τι κάνουμε το συμφωνούμε πριν ξεκινήσουμε· αν κάτι δεν σας ταιριάζει, θα σας το πούμε.</p>
 <h2>Γιατί δωρεάν;</h2>
-<p>Δοκιμάζουμε νέες τεχνικές και χρειαζόμαστε φωτογραφίες της δουλειάς μας για το site και τα social. Εσύ παίρνεις ένα επαγγελματικό κούρεμα, εμείς τις φωτογραφίες.</p>""",
+<p>Δοκιμάζουμε νέες τεχνικές και χρειαζόμαστε φωτογραφίες της δουλειάς μας για το site και τα social. Εσείς παίρνετε ένα επαγγελματικό κούρεμα, εμείς τις φωτογραφίες.</p>""",
     MODEL_FAQ_COMMON,
     [("Βαφή & balayage σε τιμή υλικών", "/montelo-vafi-balayage-athina/"), ("Free haircut in Athens (English)", "/hair-model-athens/"), ("Κούρεμα στην Αθήνα", "/kourema-athina/")],
-    "Δήλωσε συμμετοχή",
+    "Δήλωση συμμετοχής",
     share=share_html("/dorean-kourema-athina/", "dorean-kourema-athina", "Δωρεάν κούρεμα ως μοντέλο μαλλιών στο Θησείο", "Το Alexandros Hair Salon στο Θησείο ψάχνει μοντέλα μαλλιών για δωρεάν κούρεμα και χτένισμα. Μήπως σε ενδιαφέρει;", "Αποστολή σε φίλο ή φίλη", "el")
 )
 
 model_page(
     "/montelo-vafi-balayage-athina/", "Βαφή & balayage για μοντέλα",
     "Μοντέλο για βαφή & balayage σε τιμή υλικών, Αθήνα | Alexandros Hair Salon",
-    "Γίνε μοντέλο μαλλιών στο Θησείο: βαφή ρίζας, ρεφλέ, ανταύγειες χωρίς ντεκαπάζ ή balayage μόνο με το κόστος των υλικών, με L’Oréal και Redken.",
+    "Γίνετε μοντέλο μαλλιών στο Θησείο: βαφή ρίζας, ρεφλέ, ανταύγειες χωρίς ντεκαπάζ ή balayage μόνο με το κόστος των υλικών, με L’Oréal και Redken.",
     "Μοντέλα για χρώμα · Θησείο, κέντρο Αθήνας",
     "Βαφή και balayage <em>σε τιμή υλικών.</em>",
-    "Για τις νέες τεχνικές χρώματος ψάχνουμε μοντέλα: βαφή ρίζας με ρεφλέ, ανταύγειες χωρίς ντεκαπάζ, balayage. Πληρώνεις μόνο ένα μικρό ποσό για τα υλικά, και το ξέρεις πριν ξεκινήσουμε.",
+    "Για τις νέες τεχνικές χρώματος ψάχνουμε μοντέλα: βαφή ρίζας με ρεφλέ, ανταύγειες χωρίς ντεκαπάζ, balayage. Πληρώνετε μόνο ένα μικρό ποσό για τα υλικά, και το ξέρετε πριν ξεκινήσουμε.",
     ["Χρώμα μόνο με το κόστος των υλικών", "L’Oréal Professionnel & Redken", "Online κράτηση 24/7", "Θησείο, 5′ από το μετρό"],
     """<h2>Ποιες τεχνικές χρώματος</h2>
 <p><strong>Βαφή ρίζας με ρεφλέ:</strong> κάλυψη λευκών με Majirel, INOA χωρίς αμμωνία ή Redken, και ξεχωριστό gloss στα μήκη για λάμψη.</p>
-<p><strong>Ανταύγειες χωρίς ντεκαπάζ:</strong> απαλό φως γύρω από το πρόσωπο, ιδανικό αν δεν έχεις κάνει ποτέ ανταύγειες.</p>
+<p><strong>Ανταύγειες χωρίς ντεκαπάζ:</strong> απαλό φως γύρω από το πρόσωπο, ιδανικό αν δεν έχετε κάνει ποτέ ανταύγειες.</p>
 <p><strong>Balayage:</strong> φυσικό σβήσιμο από τη ρίζα στα άκρα, με ρεφλέ.</p>
 <h2>Πόση ώρα και τι χρειάζεται</h2>
 <p>Η βαφή θέλει περίπου δύο ώρες, το balayage δύο με τρεις, μαζί με τη φωτογράφιση.</p>""",
-    [("Πόσο κοστίζει η βαφή ως μοντέλο;", "Μόνο ένα μικρό μέρος της κανονικής τιμής, για τα υλικά. Το ακριβές ποσό το ξέρεις πριν κλείσουμε ραντεβού.")] + MODEL_FAQ_COMMON,
+    [("Πόσο κοστίζει η βαφή ως μοντέλο;", "Μόνο ένα μικρό μέρος της κανονικής τιμής, για τα υλικά. Το ακριβές ποσό το ξέρετε πριν κλείσουμε ραντεβού.")] + MODEL_FAQ_COMMON,
     [("Δωρεάν κούρεμα ως μοντέλο", "/dorean-kourema-athina/"), ("Βαφή μαλλιών στην Αθήνα", "/vafi-mallion-athina/"), ("Balayage στην Αθήνα", "/balayage-athina/")],
-    "Δήλωσε συμμετοχή",
+    "Δήλωση συμμετοχής",
     share=share_html("/montelo-vafi-balayage-athina/", "montelo-vafi-balayage-athina", "Βαφή και balayage σε τιμή υλικών στο Θησείο", "Το Alexandros Hair Salon στο Θησείο ψάχνει μοντέλα για βαφή και balayage, μόνο με το κόστος των υλικών. Μήπως σε ενδιαφέρει;", "Αποστολή σε φίλο ή φίλη", "el")
 )
 
@@ -797,10 +803,10 @@ def b2b_page(path, crumb, title, desc, eyebrow, h1, lead, facts, prose, keys, fa
   <div class="cta"><a class="btn gold" href="{WA}" target="_blank" rel="noopener">{t("Μήνυμα στο WhatsApp", "Message us on WhatsApp")}</a><a class="btn ghost" href="tel:+306981319000">{t("Κλήση 698 131 9000", "Call +30 698 131 9000")}</a>{share}</div>
   <ul class="facts">{facts_html}</ul>
 </section>
-{"<section class='block'><h2>" + t("Τιμές &amp; χρόνοι", "Prices &amp; times") + "</h2>" + cards + "<p class='cta' style='margin-top:20px'><a class='btn gold' href='/kratisi/'>" + t("Κλείσε online", "Book online") + "</a></p></section>" if keys else ""}
+{"<section class='block'><h2>" + t("Τιμές &amp; χρόνοι", "Prices &amp; times") + "</h2>" + cards + "<p class='cta' style='margin-top:20px'><a class='btn gold' href='/kratisi/'>" + t("Κράτηση online", "Book online") + "</a></p></section>" if keys else ""}
 <section class="block prose">{prose}</section>
 <section class="block"><h2>{t("Συχνές ερωτήσεις", "Questions")}</h2>{items}</section>
-<section class="block"><h2>{t("Δες επίσης", "See also")}</h2><p class="links">{rel}</p></section>
+<section class="block"><h2>{t("Δείτε επίσης", "See also")}</h2><p class="links">{rel}</p></section>
 """
     ld = {"@context": "https://schema.org", "@type": "Service", "name": crumb, "serviceType": service_type,
           "areaServed": {"@type": "City", "name": "Athens" if en else "Αθήνα"}, "provider": SALON_REF, "url": f"{SITE}{path}"}
@@ -848,8 +854,8 @@ b2b_page(
     "Χτένισμα για φωτογράφιση, <em>στο κομμωτήριο ή στο σετ.</em>",
     "Για προσωπικές, επαγγελματικές και φωτογραφίσεις μόδας. Ετοιμάζουμε τα μαλλιά στο κομμωτήριο στο Θησείο, λίγα λεπτά από τον Φιλοπάππου και την Αποστόλου Παύλου, ή ερχόμαστε στο σετ για μισή ή πλήρη ημέρα.",
     [f"Χτένισμα από €{P(EV)}", "Θησείο, 5′ από το μετρό", "Στο σετ με μισή ή πλήρη ημέρα", "Προσφορά πριν τη φωτογράφιση"],
-    f"""<h2>Για τη δική σου φωτογράφιση</h2>
-<p>Κλείσε <strong>Χτένισμα για εκδήλωση</strong> για μπούκλες, κυματισμούς ή πιάσιμο, <strong>Φορμάρισμα με λάμψη</strong> για ίσιο και λείο, ή <strong>Blowout · Κλασικό χτένισμα</strong> για όγκο και κίνηση. Καλό είναι να έρθεις με λουσμένα, στεγνά μαλλιά και μια φωτογραφία με αυτό που σου αρέσει. Κανονίζουμε την ώρα μαζί με τον φωτογράφο, ώστε τα μαλλιά να είναι φρέσκα στο πρώτο κάδρο.</p>
+    f"""<h2>Για τη δική σας φωτογράφιση</h2>
+<p>Κλείστε <strong>Χτένισμα για εκδήλωση</strong> για μπούκλες, κυματισμούς ή πιάσιμο, <strong>Φορμάρισμα με λάμψη</strong> για ίσιο και λείο, ή <strong>Blowout · Κλασικό χτένισμα</strong> για όγκο και κίνηση. Καλό είναι να έρθετε με λουσμένα, στεγνά μαλλιά και μια φωτογραφία με αυτό που σας αρέσει. Κανονίζουμε την ώρα μαζί με τον φωτογράφο, ώστε τα μαλλιά να είναι φρέσκα στο πρώτο κάδρο.</p>
 <h2>Για φωτογράφους, brands και παραγωγές</h2>
 <p>Lookbooks, editorial, φωτογραφίες προϊόντων για e-shop, διαφημιστικές καμπάνιες. Στο κομμωτήριο ή στο σετ, με μισή ή πλήρη ημέρα και προσφορά πριν τη φωτογράφιση. Για προσφορά αρκεί ένα μήνυμα στο WhatsApp με ημερομηνία, χώρο και αριθμό looks.</p>
 <h2>Ποιος κάνει τη δουλειά</h2>
@@ -960,7 +966,7 @@ partners_page("en")
 
 
 page("/kratisi/", "Κράτηση ραντεβού online | Alexandros Hair Salon – Κομμωτήριο Θησείο",
-     "Κλείσε online ραντεβού στο Alexandros Hair Salon, Θησείο: κούρεμα, χτένισμα, βαφή, balayage. Βλέπεις ελεύθερες ώρες, τιμή και διάρκεια.",
+     "Κράτηση online ραντεβού στο Alexandros Hair Salon, Θησείο: κούρεμα, χτένισμα, βαφή, balayage. Βλέπετε ελεύθερες ώρες, τιμή και διάρκεια.",
      kratisi_body, kratisi_ld, extra_head=kratisi_head, mbar=False, bilingual=True)
 
 
@@ -1064,9 +1070,9 @@ def book_links(books, lang):
 FAQ_GROUPS = [
  ("Χρώμα", "Colour", [
   ("Θέλω να καλύψω τα λευκά στη ρίζα. Τι μου ταιριάζει;",
-   f"Η Βαφή ρίζας ({O('Βαφή ρίζας','Κλασική')}), με Farcom Expertia ή Majirel της L’Oréal, που καλύπτουν πλήρως τα λευκά. Αν βάφεσαι κάθε μήνα, η Μηνιαία ρίζα ({O('Βαφή ρίζας','Μηνιαία ρίζα')}).",
+   f"Η Βαφή ρίζας ({O('Βαφή ρίζας','Κλασική')}), με Farcom Expertia ή Majirel της L’Oréal, που καλύπτουν πλήρως τα λευκά. Αν βάφετε ξανά τη ρίζα μέσα σε {MONTHLY_DAYS} ημέρες, η Μηνιαία ρίζα ({O('Βαφή ρίζας','Μηνιαία ρίζα')}), με τηλεφώνημα ή μήνυμα.",
    "I want to cover grey at the roots. What suits me?",
-   f"Root Colour ({O('Βαφή ρίζας','Κλασική')}), with Farcom Expertia or L’Oréal Majirel, for full grey coverage. If you colour every month, the Monthly Root ({O('Βαφή ρίζας','Μηνιαία ρίζα')}).",
+   f"Root Colour ({O('Βαφή ρίζας','Κλασική')}), with Farcom Expertia or L’Oréal Majirel, for full grey coverage. If you colour your roots again within {MONTHLY_DAYS} days, the Monthly Root ({O('Βαφή ρίζας','Μηνιαία ρίζα')}), booked by call or message.",
    [("Βαφή ρίζας", "Κλασική"), ("Βαφή ρίζας", "Μηνιαία ρίζα")]),
   ("Με ενοχλεί η μυρωδιά ή έχω ευαίσθητο δέρμα.",
    f"Η Βαφή ρίζας χωρίς αμμωνία ({O('Βαφή ρίζας','Χωρίς αμμωνία')}, μηνιαία {O('Βαφή ρίζας','Χωρίς αμμωνία · μηνιαία ρίζα')}), με INOA της L’Oréal ή Redken Color Gels Oils. Η μυρωδιά είναι πολύ πιο ήπια και η κάλυψη των λευκών παραμένει πλήρης.",
@@ -1116,7 +1122,7 @@ FAQ_GROUPS = [
    "We don’t offer plant colour. For the gentlest result there is Gloss & Tone, also done as a root smudge for first greys, with an ammonia-free acidic colour technology.",
    [("Ρεφλέ", "Έως τους ώμους · 30–45 ml")], "fytiki-vafi"),
   ("Τι είναι το ντεκαπάζ;",
-   "Το ξάνοιγμα των μαλλιών με σκόνη ξανοίγματος, για ανταύγειες και μπαλαγιάζ που χρειάζονται να ανοίξουν αρκετούς τόνους. Μετά ακολουθεί σχεδόν πάντα ρεφλέ, για τον τόνο που θέλεις. "
+   "Το ξάνοιγμα των μαλλιών με σκόνη ξανοίγματος, για ανταύγειες και μπαλαγιάζ που χρειάζονται να ανοίξουν αρκετούς τόνους. Μετά ακολουθεί σχεδόν πάντα ρεφλέ, για τον τόνο που θέλετε. "
    "Για πιο ήπιο αποτέλεσμα υπάρχει και η επιλογή χωρίς ντεκαπάζ, με L’Oréal Blond Studio No Bleach™, που ανοίγει έως 4 τόνους σε φυσικά μαλλιά και έως 2,5 σε βαμμένα. "
    f"Για επιπλέον προστασία, πριν από το ξάνοιγμα μπορούμε να ψεκάσουμε L’Oréal Metal Detox: «+ Προστασία τρίχας στο ξάνοιγμα» ({O('+ Προστασία τρίχας στο ξάνοιγμα')}). Σε βαμμένα μαλλιά προηγείται συμβουλευτική.",
    "What is bleaching (ντεκαπάζ)?",
@@ -1130,12 +1136,12 @@ FAQ_GROUPS = [
    f"L’Oréal Professionnel Metal Detox is a complete protocol that protects hair from the metals it picks up from tap water (such as copper), which increase breakage during lightening and colour. In the salon it starts with the Metal Detox pre-treatment spray, applied before highlights, balayage or lightening ({O('+ Προστασία τρίχας στο ξάνοιγμα')}). We recommend it with every lightening technique. The protocol continues at home with the Metal Detox care range (shampoo, mask and more).",
    [("+ Προστασία τρίχας στο ξάνοιγμα", None)], "metal-detox"),
   ("Τι είναι το strand test;",
-   "Δοκιμή σε μια μικρή, κρυφή τούφα πριν από διόρθωση ή μεγάλη αλλαγή χρώματος: βλέπουμε πώς ανοίγει και πώς πιάνει το χρώμα, και πόσο αντέχει η τρίχα. Γίνεται στη διάγνωση, ώστε η προσφορά, ο χρόνος και το πλάνο να βασίζονται στα δικά σου μαλλιά. Περισσότερα: alexandroshairsalon.gr/diorthosi-xromatos-athina",
+   "Δοκιμή σε μια μικρή, κρυφή τούφα πριν από διόρθωση ή μεγάλη αλλαγή χρώματος: βλέπουμε πώς ανοίγει και πώς πιάνει το χρώμα, και πόσο αντέχει η τρίχα. Γίνεται στη διάγνωση, ώστε η προσφορά, ο χρόνος και το πλάνο να βασίζονται στα δικά σας μαλλιά. Περισσότερα: alexandroshairsalon.gr/diorthosi-xromatos-athina",
    "What is a strand test?",
    "A test on a small, hidden section before a colour correction or a big colour change: we see how your hair lifts and takes colour, and how much it can handle. It is part of the assessment, so your quote, timing and plan are based on your own hair. More: alexandroshairsalon.gr/hair-colour-correction-athens",
    [("Διόρθωση χρώματος", "Διάγνωση & προσφορά")], "strand-test"),
   ("Τι διαφέρει η διόρθωση από την αλλαγή χρώματος;",
-   f"Διόρθωση χρώματος είναι όταν το χρώμα δεν βγήκε όπως έπρεπε: σκούρες ζώνες, βαφή που δεν έπιασε, πορτοκαλί ή κίτρινο που δεν έφυγε. Αλλαγή χρώματος είναι όταν θέλεις κάτι εντελώς άλλο, π.χ. από μαύρο σε χάλκινο ή κόκκινο. Και οι δύο ξεκινούν με διάγνωση και strand test ({O('Διόρθωση χρώματος')}), που αφαιρείται από την τιμή αν κάνεις τη δουλειά σε εμάς. Περισσότερα: alexandroshairsalon.gr/diorthosi-xromatos-athina",
+   f"Διόρθωση χρώματος είναι όταν το χρώμα δεν βγήκε όπως έπρεπε: σκούρες ζώνες, βαφή που δεν έπιασε, πορτοκαλί ή κίτρινο που δεν έφυγε. Αλλαγή χρώματος είναι όταν θέλετε κάτι εντελώς άλλο, π.χ. από μαύρο σε χάλκινο ή κόκκινο. Και οι δύο ξεκινούν με διάγνωση και strand test ({O('Διόρθωση χρώματος')}), που αφαιρείται από την τιμή αν κάνετε τη δουλειά σε εμάς. Περισσότερα: alexandroshairsalon.gr/diorthosi-xromatos-athina",
    "What’s the difference between colour correction and a colour change?",
    f"Colour correction is when colour didn’t turn out as it should: dark bands, colour that didn’t take, orange or yellow that won’t go. A colour change is when you want something completely different, such as black to copper or red. Both start with an assessment and a strand test ({O('Διόρθωση χρώματος')}), deducted from the price if you book the work with us. More: alexandroshairsalon.gr/hair-colour-correction-athens",
    [("Διόρθωση χρώματος", "Διάγνωση & προσφορά")], "diorthosi-allagi"),
@@ -1145,11 +1151,11 @@ FAQ_GROUPS = [
    "Root Colour up to 45 g. All-over Colour up to 60 g or 60 ml. Gloss 30–45 ml for hair up to the shoulders, or up to 60 ml for longer hair. Root Colour & Gloss: roots up to 45 g and gloss 30–45 ml or up to 60 ml. Amounts are before developer.",
    []),
   ("Έχω πολλά ή μακριά μαλλιά. Θα πληρώσω παραπάνω;",
-   f"Μόνο αν χρειαστεί περισσότερο χρώμα από όσο περιλαμβάνει η υπηρεσία: {XC} για κάθε 30 g βαφής ή 30 ml ρεφλέ ({XR} με Redken). Χρεώνεται μόνο το υλικό, όχι ο χρόνος, και θα σου το πούμε πριν το εφαρμόσουμε. Για παράδειγμα, βαφή σε όλο με 90 g κοστίζει €{P('Βαφή σε όλο το μαλλί')+7:g}.",
+   f"Μόνο αν χρειαστεί περισσότερο χρώμα από όσο περιλαμβάνει η υπηρεσία: {XC} για κάθε 30 g βαφής ή 30 ml ρεφλέ ({XR} με Redken). Χρεώνεται μόνο το υλικό, όχι ο χρόνος, και θα σας το πούμε πριν το εφαρμόσουμε. Για παράδειγμα, βαφή σε όλο με 90 g κοστίζει €{P('Βαφή σε όλο το μαλλί')+7:g}.",
    "I have thick or long hair. Will I pay more?",
    f"Only if more colour is needed than the service includes: {XC} for every extra 30 g of colour or 30 ml of gloss ({XR} with Redken). You pay for the product only, not the time, and we always tell you before we apply it. For example, All-over Colour with 90 g costs €{P('Βαφή σε όλο το μαλλί')+7:g}.",
    []),
-  ("Έχω λίγα ή λεπτά μαλλιά.", "Πληρώνεις την ίδια τιμή και δεν θα χρειαστείς ποτέ επιπλέον χρώμα.",
+  ("Έχω λίγα ή λεπτά μαλλιά.", "Πληρώνετε την ίδια τιμή και δεν θα χρειαστείτε ποτέ επιπλέον χρώμα.",
    "I have fine or thin hair.", "You pay the same price, and you will never need extra colour.", []),
   ("Μπορώ να φέρω τη δική μου βαφή;",
    f"Ναι, η Βαφή με τη δική σας βαφή: ρίζα {O('Βαφή με τη δική σας βαφή','Ρίζα')}, ρίζα και μήκη {O('Βαφή με τη δική σας βαφή','Ρίζα & μήκη')}, με λούσιμο και στέγνωμα. Η βαφή έρχεται κατά προτίμηση κλειστή, ή ανοιγμένη πρόσφατα, στη συσκευασία της και μαζί με το οξειδωτικό της. Το αποτέλεσμα εξαρτάται από τη βαφή που επιλέχθηκε.",
@@ -1157,9 +1163,9 @@ FAQ_GROUPS = [
    f"Yes: Bring Your Own Colour, roots {O('Βαφή με τη δική σας βαφή','Ρίζα')}, roots and lengths {O('Βαφή με τη δική σας βαφή','Ρίζα & μήκη')}, with a wash and dry. The colour is preferably unopened, or only recently opened, in its box and with its own developer. The result depends on the colour chosen.",
    [("Βαφή με τη δική σας βαφή", "Ρίζα"), ("Βαφή με τη δική σας βαφή", "Ρίζα & μήκη")]),
   ("Πότε ισχύει η Μηνιαία ρίζα;",
-   "Όταν η επόμενη βαφή ρίζας γίνεται μέσα σε 30 ημέρες από την προηγούμενη σε εμάς. Στο ταμείο σού δίνουμε ένα καρτελάκι με την ημερομηνία.",
+   f"Όταν βάφετε ξανά τη ρίζα σε εμάς μέσα σε {MONTHLY_DAYS} ημέρες από την προηγούμενη βαφή. Κλείνεται με ένα τηλεφώνημα ή μήνυμα στο {PHONE_TXT}. Στο ταμείο σάς δίνουμε ένα καρτελάκι με την ημερομηνία.",
    "When does the Monthly Root apply?",
-   "When your next root colour is within 30 days of your last one with us. At the desk we give you a small card with the date.",
+   f"When you colour your roots with us again within {MONTHLY_DAYS} days of your last root colour. Book it by call or message on {PHONE_TXT}. At the desk we give you a small card with the date.",
    [("Βαφή ρίζας", "Μηνιαία ρίζα"), ("Βαφή ρίζας", "Χωρίς αμμωνία · μηνιαία ρίζα")]),
  ]),
  ("Χτένισμα", "Blow-dry & styling", [
@@ -1196,12 +1202,12 @@ FAQ_GROUPS = [
    "The Monthly Root and the Weekly Blowdry are already lower prices for regular clients. They can’t be combined with any other discount or offer, such as Treatwell off-peak or last-minute discounts.",
    []),
   ("Τι δεν κάνουμε;",
-   "Δεν φρεσκάρουμε τα μήκη με τα υπόλοιπα της μόνιμης βαφής: για τα μήκη υπάρχει το ρεφλέ ή η ημιμόνιμη βαφή, που είναι πιο ήπια. Δεν χρησιμοποιούμε επιπλέον χρώμα χωρίς να σου το πούμε πριν. Δεν υποσχόμαστε πλήρη κάλυψη λευκών με ρεφλέ.",
+   "Δεν φρεσκάρουμε τα μήκη με τα υπόλοιπα της μόνιμης βαφής: για τα μήκη υπάρχει το ρεφλέ ή η ημιμόνιμη βαφή, που είναι πιο ήπια. Δεν χρησιμοποιούμε επιπλέον χρώμα χωρίς να σας το πούμε πριν. Δεν υποσχόμαστε πλήρη κάλυψη λευκών με ρεφλέ.",
    "What we don’t do",
    "We don’t refresh the lengths with leftover permanent colour: for the lengths there is gloss or demi-permanent colour, which are gentler. We don’t use extra colour without telling you first. We don’t promise full grey coverage with a gloss.",
    []),
-  ("Κάτι δεν σου άρεσε;",
-   "Μπορείς να μας το πεις ανώνυμα στη σελίδα alexandroshairsalon.gr/gnomi, χωρίς όνομα, τηλέφωνο ή email.",
+  ("Κάτι δεν σας άρεσε;",
+   "Μπορείτε να μας το πείτε ανώνυμα στη σελίδα alexandroshairsalon.gr/gnomi, χωρίς όνομα, τηλέφωνο ή email.",
    "Something you didn’t like?",
    "You can tell us anonymously at alexandroshairsalon.gr/gnomi, with no name, phone or email.",
    []),
@@ -1219,8 +1225,8 @@ _faq_ld = {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
 _faq_body = """
 <section class="hero">
   <span class="eyebrow" data-en="FAQ">Συχνές ερωτήσεις</span>
-  <h1 data-en="Know the price &lt;em&gt;before you sit down.&lt;/em&gt;">Ξέρεις την τιμή <em>πριν καθίσεις.</em></h1>
-  <p class="lead" data-en="Which colour suits you, how much colour each service includes, what happens with thick or long hair, and what can’t be combined. Anything not covered here, you can always ask before we start.">Ποια βαφή σού ταιριάζει, πόσο χρώμα περιλαμβάνει κάθε υπηρεσία, τι γίνεται με τα πολλά ή τα μακριά μαλλιά και τι δεν συνδυάζεται. Ό,τι δεν βρεις εδώ, μπορείς πάντα να το ρωτήσεις πριν ξεκινήσουμε.</p>
+  <h1 data-en="Know the price &lt;em&gt;before you sit down.&lt;/em&gt;">Ξέρετε την τιμή <em>πριν καθίσετε.</em></h1>
+  <p class="lead" data-en="Which colour suits you, how much colour each service includes, what happens with thick or long hair, and what can’t be combined. Anything not covered here, you can always ask before we start.">Ποια βαφή σάς ταιριάζει, πόσο χρώμα περιλαμβάνει κάθε υπηρεσία, τι γίνεται με τα πολλά ή τα μακριά μαλλιά και τι δεν συνδυάζεται. Ό,τι δεν βρείτε εδώ, μπορείτε πάντα να το ρωτήσετε πριν ξεκινήσουμε.</p>
   <div class="cta"><a class="btn gold" href="/services" data-en="All prices">Όλες οι τιμές</a><a class="btn ghost" href="tel:""" + PHONE + """" data-en="Call """ + PHONE_TXT + """">Κλήση """ + PHONE_TXT + """</a></div>
 </section>
 """ + "".join(
@@ -1229,12 +1235,12 @@ _faq_body = """
         f'<p data-en="{esc(_answer(ae, b, "en"))}">{_answer(a, b, "el")}</p></details>'
         for q, a, qe, ae, b, *r in g) + "</section>"
     for t, ten, g in FAQ_GROUPS) + """
-<section class="block"><p class="links"><a href="/services" data-en="All prices">Όλες οι τιμές</a><a href="/vafi-mallion-athina/" data-en="Hair colour">Βαφή μαλλιών</a><a href="/gnomi/" data-en="Your feedback, anonymously">Η γνώμη σου, ανώνυμα</a></p></section>
+<section class="block"><p class="links"><a href="/services" data-en="All prices">Όλες οι τιμές</a><a href="/vafi-mallion-athina/" data-en="Hair colour">Βαφή μαλλιών</a><a href="/gnomi/" data-en="Your feedback, anonymously">Η γνώμη σας, ανώνυμα</a></p></section>
 <style>.bk{display:block;margin-top:10px;font-size:.92em;color:var(--muted)}</style>
 <script>(function(){function o(){var h=location.hash.slice(1);if(!h)return;var d=document.getElementById(h);if(d&&d.tagName==="DETAILS"){d.open=true;d.scrollIntoView();}}window.addEventListener("hashchange",o);o();})();</script>
 """
 page("/syxnes-erotiseis/", "Συχνές ερωτήσεις: βαφή, ποσότητες, τιμές | Alexandros Hair Salon – Θησείο",
-     "Ποια βαφή σού ταιριάζει (μόνιμη, ημιμόνιμη, ρεφλέ), πόσο χρώμα περιλαμβάνει κάθε υπηρεσία, Μηνιαία ρίζα, εβδομαδιαίο χτένισμα και τι δεν συνδυάζεται.",
+     "Ποια βαφή σάς ταιριάζει (μόνιμη, ημιμόνιμη, ρεφλέ), πόσο χρώμα περιλαμβάνει κάθε υπηρεσία, Μηνιαία ρίζα, εβδομαδιαίο χτένισμα και τι δεν συνδυάζεται.",
      _faq_body, [_faq_ld, crumbs("Συχνές ερωτήσεις", "/syxnes-erotiseis/")], bilingual=True)
 
 
@@ -1243,17 +1249,17 @@ GNOMI_FORM = "1FAIpQLSe4NOQXPGj1ujfBYrkWBSyJFPEOs2VepAY-TrU6v1NJCtsKew"
 _gn_body = """
 <section class="hero">
   <span class="eyebrow" data-en="To help us get better">Για να γινόμαστε καλύτεροι</span>
-  <h1 data-en="Your feedback, &lt;em&gt;anonymously.&lt;/em&gt;">Η γνώμη σου, <em>ανώνυμα.</em></h1>
-  <p class="lead" data-en="We don’t ask for your name, phone or email. Only Alexandros reads it, to improve your experience and our services. It helps us; we don’t judge it.">Δεν ζητάμε όνομα, τηλέφωνο ή email. Το διαβάζει μόνο ο Αλέξανδρος, για να βελτιώσει την εμπειρία σου και τις υπηρεσίες μας. Μας βοηθάει· δεν το κρίνουμε.</p>
+  <h1 data-en="Your feedback, &lt;em&gt;anonymously.&lt;/em&gt;">Η γνώμη σας, <em>ανώνυμα.</em></h1>
+  <p class="lead" data-en="We don’t ask for your name, phone or email. Only Alexandros reads it, to improve your experience and our services. It helps us; we don’t judge it.">Δεν ζητάμε όνομα, τηλέφωνο ή email. Το διαβάζει μόνο ο Αλέξανδρος, για να βελτιώσει την εμπειρία σας και τις υπηρεσίες μας. Μας βοηθάει· δεν το κρίνουμε.</p>
 </section>
 <section class="block">
 <form id="gn" class="gn" novalidate>
-  <fieldset><legend data-en="What would you like to tell us?">Τι θα ήθελες να μας πεις;</legend>
+  <fieldset><legend data-en="What would you like to tell us?">Τι θα θέλατε να μας πείτε;</legend>
     <label><input type="radio" name="kind" value="Κάτι δεν πήγε καλά" checked> <span data-en="Something didn’t go well">Κάτι δεν πήγε καλά</span></label>
     <label><input type="radio" name="kind" value="Κάτι μου άρεσε"> <span data-en="Something I liked">Κάτι μου άρεσε</span></label>
     <label><input type="radio" name="kind" value="Έχω μια ιδέα"> <span data-en="I have an idea">Έχω μια ιδέα</span></label>
   </fieldset>
-  <label for="gn-msg" class="gn-l" data-en="Your message">Το μήνυμά σου</label>
+  <label for="gn-msg" class="gn-l" data-en="Your message">Το μήνυμά σας</label>
   <textarea id="gn-msg" name="message" rows="7" maxlength="3000" required></textarea>
   <input type="text" name="website" tabindex="-1" autocomplete="off" class="gn-hp" aria-hidden="true">
   <button type="submit" class="btn gold" data-en="Send">Αποστολή</button>
@@ -1268,12 +1274,12 @@ _gn_body = """
 function T(el,en){return document.documentElement.lang==='en'?en:el;}
 f.addEventListener('submit',function(e){e.preventDefault();var m=f.message.value.trim();
 if(f.website.value){return;}
-if(m.length<3){st.textContent=T('Το κουτί είναι άδειο. Μπορείς να γράψεις όσα λίγα θέλεις.','The box is empty. A few words are enough.');return;}
+if(m.length<3){st.textContent=T('Το κουτί είναι άδειο. Μπορείτε να γράψετε όσα λίγα θέλετε.','The box is empty. A few words are enough.');return;}
 var b=f.querySelector('button');b.disabled=true;st.textContent=T('Αποστολή…','Sending…');
 var fd=new URLSearchParams();fd.append('entry.760992725',f.kind.value);fd.append('entry.329498901',m);
 fetch('https://docs.google.com/forms/d/e/""" + GNOMI_FORM + """/formResponse',{method:'POST',mode:'no-cors',body:fd}).then(function(){
-f.reset();st.textContent=T('Ευχαριστούμε. Το μήνυμά σου έφτασε.','Thank you. Your message has arrived.');}).catch(function(){
-st.textContent=T('Δεν στάλθηκε. Μπορείς να δοκιμάσεις ξανά σε λίγο.','It wasn’t sent. You can try again in a moment.');}).then(function(){b.disabled=false;});});})();
+f.reset();st.textContent=T('Ευχαριστούμε. Το μήνυμά σας έφτασε.','Thank you. Your message has arrived.');}).catch(function(){
+st.textContent=T('Δεν στάλθηκε. Μπορείτε να δοκιμάσετε ξανά σε λίγο.','It wasn’t sent. You can try again in a moment.');}).then(function(){b.disabled=false;});});})();
 </script>
 """
 # ---------- /dorokarta/ : δωροκάρτες (πληρωμή στο κομμωτήριο, IRIS ή κατάθεση· όχι online ακόμα) ----------
@@ -1285,26 +1291,26 @@ _dk_body = f"""
   <span class="eyebrow" data-en="Gift card">Δωροκάρτα</span>
   <h1 data-en="A gift she’ll <em>actually use.</em>">Ένα δώρο που <em>θα χρησιμοποιήσει.</em></h1>
   <p class="lead" data-en="A gift card from Alexandros Hair Salon in Thiseio, for any service or product. She chooses what she wants, when she wants it, within 12 months.">Δωροκάρτα του Alexandros Hair Salon στο Θησείο, για όποια υπηρεσία ή προϊόν θέλει. Διαλέγει εκείνη τι και πότε, μέσα σε 12 μήνες.</p>
-  <div class="cta"><a class="btn gold" href="{_WA_GIFT}" target="_blank" rel="noopener" data-en="Order on WhatsApp">Παραγγελία στο WhatsApp</a><a class="btn ghost" href="tel:{PHONE}" data-en="Call {PHONE_TXT}">Κάλεσε {PHONE_TXT}</a></div>
+  <div class="cta"><a class="btn gold" href="{_WA_GIFT}" target="_blank" rel="noopener" data-en="Order on WhatsApp">Παραγγελία στο WhatsApp</a><a class="btn ghost" href="tel:{PHONE}" data-en="Call {PHONE_TXT}">Κλήση {PHONE_TXT}</a></div>
 </section>
 <section class="block">
-  <h2 data-en="Choose the amount">Διάλεξε ποσό</h2>
+  <h2 data-en="Choose the amount">Επιλέξτε ποσό</h2>
   <div class="gcs">
     {_dk_card(30, "Για κούρεμα ή χτένισμα.", "For a haircut or a blow-dry.")}
     {_dk_card(50, "Για βαφή ρίζας ή κούρεμα με χτένισμα.", "For root colour, or a cut with a blow-out.")}
     {_dk_card(100, "Για ανταύγειες, ή για βαφή με κούρεμα και χτένισμα.", "For highlights, or colour with a cut and blow-out.")}
   </div>
-  <p data-en="Any other amount is possible too. Just tell us.">Γίνεται και όποιο άλλο ποσό θέλεις· αρκεί να μας το πεις.</p>
+  <p data-en="Any other amount is possible too. Just tell us.">Γίνεται και όποιο άλλο ποσό θέλετε· αρκεί να μας το πείτε.</p>
 </section>
 <section class="block prose">
   <h2 data-en="How it works">Πώς γίνεται</h2>
   <ol>
     <li data-en="Tell us the amount on WhatsApp, by phone or at the salon.">Μας λες το ποσό στο WhatsApp, στο τηλέφωνο ή στο κομμωτήριο.</li>
-    <li data-en="Pay at the salon, by IRIS or bank transfer; we send you the details in a message.">Πληρώνεις στο κομμωτήριο, με IRIS ή με κατάθεση· τα στοιχεία σού τα στέλνουμε με μήνυμα.</li>
-    <li data-en="You receive the card printed at the salon, or as a PDF to forward, with its own unique code.">Παίρνεις την κάρτα τυπωμένη από το κομμωτήριο ή σε PDF για να τη στείλεις, με δικό της μοναδικό κωδικό.</li>
+    <li data-en="Pay at the salon, by IRIS or bank transfer; we send you the details in a message.">Πληρώνετε στο κομμωτήριο, με IRIS ή με κατάθεση· τα στοιχεία σάς τα στέλνουμε με μήνυμα.</li>
+    <li data-en="You receive the card printed at the salon, or as a PDF to forward, with its own unique code.">Παίρνετε την κάρτα τυπωμένη από το κομμωτήριο ή σε PDF για να τη στείλετε, με δικό της μοναδικό κωδικό.</li>
     <li data-en="She books online or by phone and shows the code at the desk.">Εκείνη κλείνει ραντεβού online ή τηλεφωνικά και δείχνει τον κωδικό στο ταμείο.</li>
   </ol>
-  <h2 data-en="Good to know">Καλό να ξέρεις</h2>
+  <h2 data-en="Good to know">Καλό να ξέρετε</h2>
   <ul>
     <li data-en="Valid for 12 months from the date of purchase, for any service or product of the salon.">Ισχύει 12 μήνες από την αγορά, για όποια υπηρεσία ή προϊόν του κομμωτηρίου.</li>
     <li data-en="It can be used in more than one visit; the remaining balance stays on the card.">Χρησιμοποιείται και σε περισσότερες από μία επισκέψεις· το υπόλοιπο μένει στην κάρτα.</li>
@@ -1312,7 +1318,7 @@ _dk_body = f"""
     <li data-en="If the service costs more, the difference is paid at the salon.">Αν η υπηρεσία κοστίζει περισσότερο, η διαφορά πληρώνεται στο κομμωτήριο.</li>
     <li data-en="A receipt is issued when you buy the card.">Η απόδειξη εκδίδεται κατά την αγορά της κάρτας.</li>
   </ul>
-  <p class="links"><a href="/services" data-en="See all prices">Δες όλες τις τιμές</a><a href="/syxnes-erotiseis/" data-en="FAQ">Συχνές ερωτήσεις</a></p>
+  <p class="links"><a href="/services" data-en="See all prices">Δείτε όλες τις τιμές</a><a href="/syxnes-erotiseis/" data-en="FAQ">Συχνές ερωτήσεις</a></p>
 </section>
 <style>.gcs{{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px;margin:18px 0}}.gc{{border:1px solid var(--gold);border-radius:16px;padding:22px;background:var(--panel)}}.gc-amt{{display:block;font-family:var(--serif);font-size:44px;color:var(--gold);line-height:1}}.gc p{{margin:10px 0 0;color:var(--soft)}}</style>
 """
@@ -1321,6 +1327,6 @@ page("/dorokarta/", "Δωροκάρτα κομμωτηρίου στο Θησεί
      _dk_body, [crumbs("Δωροκάρτα", "/dorokarta/")], bilingual=True)
 
 
-page("/gnomi/", "Η γνώμη σου, ανώνυμα | Alexandros Hair Salon – Θησείο",
-     "Μπορείς να μας πεις ανώνυμα τι δεν πήγε καλά ή τι σου άρεσε. Δεν ζητάμε όνομα, τηλέφωνο ή email.",
-     _gn_body, [crumbs("Η γνώμη σου", "/gnomi/")], bilingual=True)
+page("/gnomi/", "Η γνώμη σας, ανώνυμα | Alexandros Hair Salon – Θησείο",
+     "Μπορείτε να μας πείτε ανώνυμα τι δεν πήγε καλά ή τι σας άρεσε. Δεν ζητάμε όνομα, τηλέφωνο ή email.",
+     _gn_body, [crumbs("Η γνώμη σας", "/gnomi/")], bilingual=True)

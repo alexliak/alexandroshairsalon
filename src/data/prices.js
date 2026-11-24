@@ -9,16 +9,26 @@ export const service = (name) => {
   return s;
 };
 
-// '€54' (ακέραιο) ή '€0,01' / '€0.01' (δεκαδικό: η Treatwell δεν δέχεται €0).
+// '€54' (ακέραιο), '€0,01' / '€0.01' (δεκαδικό) ή «Δωρεάν» / «Free» για 0.
+// Στο site και στο Google οι δωρεάν υπηρεσίες γράφουν «Δωρεάν»· το €0,01 υπάρχει μόνο στην Treatwell, που δεν δέχεται €0.
 export const eur = (p, lang) =>
-  Number.isInteger(p) ? `€${p}` : `€${lang === 'en' ? p.toFixed(2) : p.toFixed(2).replace('.', ',')}`;
+  p === 0
+    ? (lang === 'en' ? 'Free' : 'Δωρεάν')
+    : Number.isInteger(p) ? `€${p}` : `€${lang === 'en' ? p.toFixed(2) : p.toFixed(2).replace('.', ',')}`;
 
 // '€54' for one price, 'από €26' / 'from €26' for several.
+// Οι μηνιαίες τιμές (π.χ. Μηνιαία ρίζα) ισχύουν υπό προϋπόθεση, άρα δεν μετράνε ως «από €…».
 export const priceText = (lang, ...names) => {
-  const ps = names.flatMap((n) => service(n).options.map((o) => o.price));
+  const ps = names.flatMap((n) => service(n).options.filter((o) => !o.monthly).map((o) => o.price));
   const min = Math.min(...ps);
   return min === Math.max(...ps) ? eur(min, lang) : `${lang === 'en' ? 'from' : 'από'} ${eur(min, lang)}`;
 };
+
+// Μέρες για τη Μηνιαία ρίζα: αλλάζει σε ένα σημείο, στο "monthlyDays" της «Βαφή ρίζας» στο menu.json.
+export const MONTHLY_DAYS = service('Βαφή ρίζας').monthlyDays;
+
+// Κείμενο υπηρεσίας με τις μεταβλητές του menu.json (π.χ. {monthlyDays}).
+export const fill = (txt) => (typeof txt === 'string' ? txt.replace(/\{monthlyDays\}/g, String(MONTHLY_DAYS)) : txt);
 
 // Κράτηση μιας συγκεκριμένης υπηρεσίας/επιλογής στο ίδιο widget της Treatwell (widget.treatwell.gr, όχι marketplace).
 // Ανοίγει κατευθείαν την «Επιλογή ώρας» με την υπηρεσία ήδη στο καλάθι.
