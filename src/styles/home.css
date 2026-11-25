@@ -917,6 +917,7 @@ html[data-theme='light'] .nh .nh-share-menu { box-shadow: 0 16px 40px rgba(70, 5
 .nh-rs-top time { font-size: 11px; letter-spacing: .26em; text-transform: uppercase; color: var(--r-muted); }
 .nh-rs-chip { align-self: flex-start; font-style: normal; font-size: 10.5px; letter-spacing: .2em; text-transform: uppercase; padding: 5px 12px; border-radius: 999px; color: #f0c9b0; border: 1px solid rgba(214, 120, 96, .55); background: rgba(176, 58, 72, .16); }
 .nh-rs-chip--diorthosi { color: var(--r-gold); border-color: rgba(212, 182, 124, .55); background: rgba(212, 182, 124, .1); }
+.nh-rs-chip--xroma { color: #e9b8c8; border-color: rgba(190, 90, 130, .55); background: rgba(150, 40, 90, .16); }
 .nh-rs-title { font-family: var(--nh-serif); font-weight: 400; font-size: clamp(28px, 3vw, 42px); line-height: 1.05; margin: 2px 0 0; color: var(--r-text); }
 .nh-rs-desc { margin: 0; color: var(--r-muted); font-size: 16px; line-height: 1.55; }
 .nh-rs-what { margin-top: 6px; font-size: 11px; letter-spacing: .26em; text-transform: uppercase; color: var(--r-gold); }
