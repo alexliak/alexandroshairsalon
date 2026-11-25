@@ -441,6 +441,8 @@ WORK_CATS = {
                "en": ("Colour change from black", "From dyed black to red, copper or a lighter colour.")},
     "diorthosi": {"el": ("Διόρθωση χρώματος", "Color correction: όταν η βαφή βγήκε σκούρα, ανομοιόμορφη ή σε λάθος τόνο."),
                   "en": ("Colour correction", "When colour came out too dark, patchy or the wrong tone.")},
+    "xroma": {"el": ("Αλλαγή χρώματος", "Από μια απόχρωση σε μια εντελώς άλλη: νέο χρώμα ανά ζώνη, από τη ρίζα ως τις άκρες."),
+              "en": ("Colour change", "From one shade to a completely different one: new colour by zone, from root to ends.")},
 }
 
 

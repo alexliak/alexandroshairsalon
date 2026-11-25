@@ -85,5 +85,33 @@
         "Bright copper from root to ends"
       ]
     }
+  },
+  {
+    "id": "allagi-xromatos-xalkino-se-cherry-cola",
+    "type": "image",
+    "category": "xroma",
+    "w": 1200,
+    "h": 900,
+    "date": "2026-11",
+    "el": {
+      "title": "Από χάλκινο σε Cherry Cola",
+      "desc": "Αλλαγή χρώματος από χάλκινο καστανό σε βαθύ κερασί κόκκινο με βιολετί αντανάκλαση, σε ένα ραντεβού.",
+      "alt": "Πριν και μετά: αλλαγή χρώματος από χάλκινο καστανό σε κόκκινο cherry cola, Alexandros Hair Salon, κομμωτήριο στο Θησείο, Αθήνα",
+      "steps": [
+        "Ρίζα: βαθύ κόκκινο-βιολετί για βάθος",
+        "Μήκη: έντονο κερασί με ενισχυτή χρώματος",
+        "Άκρες και φράντζα τελευταίες, για ομοιόμορφο τόνο"
+      ]
+    },
+    "en": {
+      "title": "Copper to Cherry Cola",
+      "desc": "Colour change from copper brown to a deep cherry red with a violet reflect, in one appointment.",
+      "alt": "Before and after: colour change from copper brown to cherry cola red, Alexandros Hair Salon, Thiseio, Athens",
+      "steps": [
+        "Root: deep red-violet for depth",
+        "Lengths: intense cherry with a colour booster",
+        "Ends and fringe last, for an even tone"
+      ]
+    }
   }
 ]

@@ -19,6 +19,10 @@ const CATS = {
   diorthosi: {
     el: { name: 'Διόρθωση χρώματος', short: 'Διόρθωση', text: 'Color correction: όταν η βαφή βγήκε σκούρα, ανομοιόμορφη ή σε λάθος τόνο.' },
     en: { name: 'Colour correction', short: 'Correction', text: 'When colour came out too dark, patchy or the wrong tone.' }
+  },
+  xroma: {
+    el: { name: 'Αλλαγή χρώματος', short: 'Νέο χρώμα', text: 'Από μια απόχρωση σε μια εντελώς άλλη: νέο χρώμα ανά ζώνη, από τη ρίζα ως τις άκρες.' },
+    en: { name: 'Colour change', short: 'New colour', text: 'From one shade to a completely different one: new colour by zone, from root to ends.' }
   }
 };
 
